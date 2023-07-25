@@ -1,1 +1,52 @@
-<p>signup works!</p>
+<html>
+    <section class="form-container">
+
+        <div class="form-banner">
+            <img src="../../assets/images/coffee-beans-background.webp" alt="coffee-beans">
+        </div>
+    
+        <div class="contact-form">
+            <div class="form-header">
+                <h1>Create your account</h1>
+                <p>Let's get started.</p>
+            </div>
+    
+            <form class="form" id="form" action="" method="POST">
+                
+                <!-- HONEYPOT(to catch spammers ) -->
+                <input type="text" name="_honey" style="display: none">
+        
+                <div class="form-control name">
+                    <label for="name" class="block">Full Name*</label>
+                    <input type="text" placeholder="Enter your name" id="name" name="name" autocomplete="name" required>
+                </div>
+        
+                <div class="form-control email">
+                    <label for="email" class="block">Email*</label>
+                    <input type="email" placeholder="Enter your email e.g johndoe@gmail.com" id="email" name="email" autocomplete="email" required>
+                </div>
+        
+                <!-- <div class="form-control phone">
+                    <label for="phone" class="block">Telephone Number</label>
+                    <input type="number" placeholder="0700 000 000" id="phone" name="phone" autocomplete="tel-national" required>
+                </div> -->
+    
+                <div class="form-control password">
+                    <label for="password" class="block">Password*</label>
+                    <input type="password" placeholder="Enter your password" id="password" name="password" required>
+                </div>
+        
+                <div class="form-control terms-link form-terms">
+                    <input class="fit-content" type="checkbox" id="terms" name="terms" value="accept" required>
+                    <label for="terms" class="inline">I have read and agreed to Nice's&#174; <a href="Signup">Terms and
+                            Conditions</a> and the <a href="Signup">Global Privacy Statement</a> on Data
+                        protection</label>
+                </div>
+        
+                <div class="form-control form-btn form-submit">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</html>
