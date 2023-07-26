@@ -1,5 +1,6 @@
-import { Component,AfterViewInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component,Output, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AuthenticationService } from '../AuthService/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,26 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class LoginComponent {
 
-constructor(public dialog: MatDialog){}
+constructor(
+  public dialogRef: MatDialogRef<LoginComponent>,
+  @Inject(MAT_DIALOG_DATA) public data: any,
+  public service: AuthenticationService
 
+){}
+email: any;
+password: any;
+profile:any;
+  
 
+  loginUser(){
+    let form = new FormData();
+    form.append('username',this.email),
+    form.append('password',this.password),
+    this.service.login(form)
+    this.dialogRef.close();
+  }
+  
+  closeDialog() {
+    this.dialogRef.close();
+  }
 }

@@ -19,6 +19,17 @@ h3 {
     font-weight: 500;
 }
 
+.banner {
+    width: 100%;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 50px;
+}
+
 form input {
     width: 100%;
     border: 2px solid gray;

@@ -1,13 +1,13 @@
 <div class="container">
-            <h1 class="clo-lg-5 text-center py-1">NICE</h1>
+            <h1 class="clo-lg-5 text-center py-1"><img src="../../assets/images/d90a1c41c1294e9ebd3e6cba576ae35f.png" alt=""></h1>
             <h2 class="clo-lg-5 text-center py-1">Welcome</h2>
-            <h3 class="clo-lg-5 text-center py-2">Sign in into your Account.</h3>
-            <form>
+            <h3 class="clo-lg-5 text-center">Sign in into your Account.</h3>
+            <form (ngSubmit)="loginUser()">
                 <label for="email">Email</label>
-                <input id="email" name="email" placeholder="email"  class="form-control form-control" type="email" required>
+                <input id="email" name="email" placeholder="email" [(ngModel)]="email" class="form-control form-control" type="email" required>
                 <br>
                 <label for="password">Password</label>
-                <input input id="password" name="password" placeholder="enter your password" class="form-control" type="password" required>
+                <input input id="password" name="password" placeholder="enter your password" [(ngModel)]="password" class="form-control" type="password" required>
                 <p class="clo-lg-5 text-left">Forgotten Password?</p>
                 <br>
                 <button mat-raised-button type="submit">Login</button>
