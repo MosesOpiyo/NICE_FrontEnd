@@ -33,3 +33,12 @@ li {
     padding-left: 10px;
     padding-right: 10px;
 }
+.dropdown-menu a{
+    font-weight: 400;
+    padding: 10px;
+}
+.dropdown-menu a:hover{
+    background-color: black;
+    color: white;
+    transition: all 0.5s;
+}
