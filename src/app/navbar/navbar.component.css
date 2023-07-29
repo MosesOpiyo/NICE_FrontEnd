@@ -1,0 +1,44 @@
+.navbar{
+    background-color: white;
+    padding: 15px;
+    width: 100vw;
+}
+i{
+    color: white;
+    font-size: larger;
+    padding: 10px;
+}
+img {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 50px;
+}
+p {
+    padding-top: 10px;
+    font-size: 30px;
+    color: black;
+}
+h6{
+    color: black;
+    padding-top: 15px;
+    padding-right: 10px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+li {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.dropdown-menu a{
+    font-weight: 400;
+    padding: 10px;
+}
+.dropdown-menu a:hover{
+    background-color: black;
+    color: white;
+    transition: all 0.5s;
+}
