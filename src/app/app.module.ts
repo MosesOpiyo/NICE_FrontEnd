@@ -13,6 +13,7 @@ import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     SignupComponent,
     NavbarComponent,
     LoginComponent,
-    HomepageComponent
+    HomepageComponent,
+    NicehomepageComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
