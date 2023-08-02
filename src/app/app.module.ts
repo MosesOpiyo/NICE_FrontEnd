@@ -5,6 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { CoffeeNavbarComponent } from './coffee-navbar/coffee-navbar.component';
+import { CoffeeComponent } from './coffee/coffee.component';
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     SignupComponent,
     NavbarComponent,
     LoginComponent,
-    HomepageComponent
+    HomepageComponent,
+    CoffeeNavbarComponent,
+    CoffeeComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -32,7 +37,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
