@@ -14,6 +14,10 @@ import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
+
+import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
+import { WarehousedashboardModule } from './warehousedashboard/warehousedashboard.module';
+
 import { CoffeeNavbarComponent } from './coffee-navbar/coffee-navbar.component';
 import { CoffeeComponent } from './coffee/coffee.component';
 
@@ -24,8 +28,13 @@ import { CoffeeComponent } from './coffee/coffee.component';
     SignupComponent,
     NavbarComponent,
     LoginComponent,
+
+    HomepageComponent,
+    NicehomepageComponent,
+
     CoffeeNavbarComponent,
     CoffeeComponent
+
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -36,6 +45,10 @@ import { CoffeeComponent } from './coffee/coffee.component';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
+
+    FormsModule,
+    WarehousedashboardModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
