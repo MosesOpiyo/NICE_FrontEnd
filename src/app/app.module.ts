@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
+import { WarehousedashboardModule } from './warehousedashboard/warehousedashboard.module';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomep
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    WarehousedashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
