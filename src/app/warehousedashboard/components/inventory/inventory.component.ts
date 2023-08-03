@@ -27,7 +27,7 @@ export class InventoryComponent implements OnInit {
       price: '10$',
       location: 'Aisle 3, Shelf 1',
       lastRestockDate: '2023-07-20',
-      stockAlert: false
+      stockAlert: true
     },
 
     {

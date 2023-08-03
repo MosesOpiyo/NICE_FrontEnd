@@ -177,7 +177,9 @@
 
 /* RAW DATA SECTION */
 .data-container {
-    margin-block: 10rem;
+    margin-bottom: 10rem;
+    background-color: #000000;
+    color: #db9457;
     /* border: 2px solid red; */
     font-family: 'Raleway', sans-serif;
     display: flex;
@@ -187,7 +189,7 @@
     gap: 1rem;
     height: fit-content;
     width: 100%;
-    padding: .2rem;
+    padding: 4rem .2rem;
 }
 .data-container > * {
     flex-basis: 100%;
@@ -198,6 +200,10 @@
     font-size: 1rem;
     line-height: 1rem;
 }
+.data-card i {
+    font-size: 4rem;
+    /* color: #e2ddd9; */
+}
 
 /* media queries */
 @media (min-width: 425px) {
@@ -207,7 +213,7 @@
 }
 @media (min-width: 768px) {
     .data-card {
-        max-width: 220px;
+        max-width: 270px;
     }
 }
 
@@ -285,6 +291,10 @@
     flex-direction: column;
     justify-content: center;
     gap: .5rem;
+}
+.whyus-cards > *:hover {
+    background-color: #000000;
+    color: #db9457;
 }
 .whyus-card i {
     font-size: 2rem
