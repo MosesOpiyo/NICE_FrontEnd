@@ -5,6 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,8 +14,12 @@ import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
+
 import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
 import { WarehousedashboardModule } from './warehousedashboard/warehousedashboard.module';
+
+import { CoffeeNavbarComponent } from './coffee-navbar/coffee-navbar.component';
+import { CoffeeComponent } from './coffee/coffee.component';
 
 
 @NgModule({
@@ -23,8 +28,13 @@ import { WarehousedashboardModule } from './warehousedashboard/warehousedashboar
     SignupComponent,
     NavbarComponent,
     LoginComponent,
+
     HomepageComponent,
-    NicehomepageComponent
+    NicehomepageComponent,
+
+    CoffeeNavbarComponent,
+    CoffeeComponent
+
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -35,8 +45,10 @@ import { WarehousedashboardModule } from './warehousedashboard/warehousedashboar
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
+
     FormsModule,
     WarehousedashboardModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

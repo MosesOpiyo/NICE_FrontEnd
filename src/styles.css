@@ -5,8 +5,18 @@
     box-sizing: border-box;
     height: auto;
 }
+
 /* body {
     overflow: hidden;
   } */
 html, body { height: 100%; }
+
+body {
+    overflow: hidden; 
+    overflow-y: scroll;/* Hide scrollbars */
+  }
+html, body { height: 100%;
+  
+}
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
