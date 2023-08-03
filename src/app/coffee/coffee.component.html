@@ -8,7 +8,7 @@
                         <div class = "container">
                             <div class = "product-items">
                                 <!-- single product -->
-                                <div class = "product">
+                                <div *ngFor="let product of products" class = "product">
                                     <div class = "product-content" style="background-image: url(../../assets/images/pexels-jessica-lewis-creative-606545.jpg);background-position: center;background-size: contain;">
                                         <div class = "product-img">
                                         </div>
@@ -24,7 +24,7 @@
             
                                     <div class = "product-info">
                                         <div class = "product-info-top">
-                                            <h2 class = "sm-title">location</h2>
+                                            <p class = "product-producer sm-title">produced by: {{product.producer.username}}</p>
                                             <div class = "rating">
                                                 <span><i class = "fas fa-star"></i></span>
                                                 <span><i class = "fas fa-star"></i></span>
@@ -33,8 +33,9 @@
                                                 <span><i class = "far fa-star"></i></span>
                                             </div>
                                         </div>
-                                        <a href = "#" class = "product-name">Kenyan Coffee, new product</a>
-                                        <p class = "product-price">$ 133.00</p>
+                                        <a href = "#" class = "product-name">{{product.name}}, new product</a>
+                                        <p class = "product-price">{{product.quantity}} oz</p>
+                                        <p style="font-weight: bold;" class = "product-price">$ 133.00</p>
                                     </div>
             
                                     <div class = "off-info">
