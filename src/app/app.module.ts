@@ -36,7 +36,6 @@ import { CoffeeComponent } from './coffee/coffee.component';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
-    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
