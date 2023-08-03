@@ -24,7 +24,6 @@ import { CoffeeComponent } from './coffee/coffee.component';
     SignupComponent,
     NavbarComponent,
     LoginComponent,
-    HomepageComponent,
     CoffeeNavbarComponent,
     CoffeeComponent
   ],
