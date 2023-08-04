@@ -13,7 +13,6 @@
     position: relative;
 }
 .myaccount-header {
-    background-color: #7bc4b2;
     padding: 2rem;
 }
 .myaccount-header h1 {
@@ -28,28 +27,12 @@
     position: absolute;
     top: 5rem;
 }
-.c-card {
-    /* border: 2px solid red; */
-    box-shadow: 5px 10px #dfdcdc;;
-    background-color: #ffffff;
+.row{
+    width: 100vw;
+    
 }
-.c-card span {
-    font-weight: bold;
-}
-
-.myaccount-content > * {
-    /* border: 2px solid rgba(0, 0, 0, 0.541); */
-    border-radius: .3rem;
-    padding: .5rem;
-    flex-basis: 100%;
-}
-.myaccount-content h1 {
-    border-bottom: 2px solid rgba(0, 0, 0, 0.575);
+.card{
+    padding:18px;
+    margin:10px;
 }
 
-@media (max-width: 768px) {
-    .myaccount-content {
-        /* border: 2px solid blue; */
-        flex-wrap: wrap;
-    }
-}

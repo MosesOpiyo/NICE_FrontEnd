@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
@@ -45,7 +46,7 @@ import { CoffeeComponent } from './coffee/coffee.component';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
-
+    MatTableModule,
     FormsModule,
     WarehousedashboardModule
 

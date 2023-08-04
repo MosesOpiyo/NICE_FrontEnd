@@ -7,14 +7,14 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
 
 import { CoffeeComponent } from './coffee/coffee.component';
+import { WarehousedashboardComponent } from './warehousedashboard/warehousedashboard.component';
 
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
   {path:'Signup',component:SignupComponent},
- 
   {path:'homepage',component:NicehomepageComponent},
-
+  {path:'Warehouse',component:WarehousedashboardComponent},
   {path:'Coffee',component:CoffeeComponent}
 
 ];

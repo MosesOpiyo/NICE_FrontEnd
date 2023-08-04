@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { WarehousedashboardRoutingModule } from './warehousedashboard-routing.module';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,8 +19,11 @@ import { WarehousedashboardComponent } from './warehousedashboard.component';
     InventoryComponent,
     WarehousedashboardComponent
   ],
+  entryComponents:[InventoryComponent],
   imports: [
     CommonModule,
+    MatTableModule,
+    MatPaginatorModule,
     WarehousedashboardRoutingModule
   ]
 })

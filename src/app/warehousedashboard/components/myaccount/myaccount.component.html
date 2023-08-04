@@ -1,24 +1,29 @@
 <div class="myaccount-container">
     <div class="myaccount-header">
-        <h1>My Account</h1>
+        <h2>Account Overview</h2>
     </div>
 
     <div class="myaccount-content">
-        <div class="details-card c-card">
-            <h1>Details</h1>
-            <p><span>Name:</span> Jack Robinson</p>
-            <p><span>Contact:</span> +1 345678389</p>
-            <p><span>Email Address:</span> jackrobinson@gmail.com</p>
-            <p><span>Role:</span> Warehouse Manager</p>
-        </div>
-    
-        <div class="address-card c-card">
-            <h1>Address Book</h1>
-            <p><span>Warehouse Name:</span> Coffee Bean Central Warehouse</p>
-            <p><span>Warehouse Location:</span> 234 Roastery Lane, Java City, </p>
-            <p><span>Warehouse Contact info:</span>  info@coffeebeanwarehouse.com</p>
-            <p><span>Warehouse Capacity:</span> Total Storage Capacity: 50,000 sq. ft.</p>
-            <p><span>Warehouse Identifier:</span> WH-00123</p>
+        <div class="row g-0">
+            <div class="col-lg-4">
+                <div class="card">
+                        <h1>Details</h1>
+                        <p><span>Name:</span> {{user.username | titlecase}}</p>
+                        <p><span>Contact:</span> +1 345678389</p>
+                        <p><span>Email Address:</span> {{user.email}}</p>
+                        <p><span>Role:</span> Warehouse Manager</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <h1>Address Book</h1>
+                    <p><span>Warehouse Name:</span> {{warehouse.name | titlecase}}</p>
+                    <p><span>Warehouse Location:</span> {{warehouse.location | titlecase}} </p>
+                    <p><span>Warehouse Contact info:</span>  info@coffeebeanwarehouse.com</p>
+                    <p><span>Warehouse Capacity:</span> Total Storage Capacity: 50,000 sq. ft.</p>
+                    <p><span>Warehouse Identifier:</span> WH-00123</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
