@@ -21,22 +21,6 @@
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
 }
-.inventory-content {
-    display: flex;
-    gap: 8rem;
-    padding-inline: 1rem;
-    position: absolute;
-    top: 5rem;
-}
-
-table, th, td {
-    border:1px solid black;
-    padding: .5rem;
-}
-
-table {
-    width: 100%;
-}
 /* .inventory {
     overflow-x: scroll;
 } */
