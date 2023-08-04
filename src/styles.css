@@ -5,18 +5,29 @@
     box-sizing: border-box;
     height: auto;
 }
-
-/* body {
-    overflow: hidden;
-  } */
-html, body { height: 100%; }
-
-body {
-    overflow: hidden; 
-    overflow-y: scroll;/* Hide scrollbars */
-  }
-html, body { height: 100%;
-  
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body { 
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  overflow-y: scroll;
+  /* Hide scrollbars */
+  /* put width 100% to remove any overflow;
+       the overflow styling above creates a 
+       scroll within the nav in the homepage */
+
+  margin: 0;
+  font-family: Roboto,
+    "Helvetica Neue", sans-serif;
+}

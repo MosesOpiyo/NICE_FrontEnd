@@ -20,6 +20,7 @@ import { WarehousedashboardModule } from './warehousedashboard/warehousedashboar
 
 import { CoffeeNavbarComponent } from './coffee-navbar/coffee-navbar.component';
 import { CoffeeComponent } from './coffee/coffee.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CoffeeComponent } from './coffee/coffee.component';
     NicehomepageComponent,
 
     CoffeeNavbarComponent,
-    CoffeeComponent
+    CoffeeComponent,
+    FooterComponent
 
   ],
   entryComponents:[LoginComponent],

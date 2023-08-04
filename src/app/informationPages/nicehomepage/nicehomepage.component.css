@@ -147,8 +147,8 @@
         color: #f1ece9;
     }
     .hero-btn:hover {
-        background-color: #884408;
-        color: #f1ece9;
+        background-color: #db9457;
+        color: #000000;
     }
     .hero-par {
         font-size: 19px;
@@ -250,12 +250,14 @@
     font-size: 1.1rem;
     padding-top: 1rem;
 }
-.whyus-header .hero-btn {
+.whyus-header .hero-btn,
+.farmers-btn .hero-btn {
     background-color: #000000;
     color: #f1ece9;
     margin-block: 2rem;
 }
-.whyus-header .hero-btn:hover {
+.whyus-header .hero-btn:hover,
+.farmers-btn .hero-btn:hover {
     background-color: #db9457;
     color: #000000;
 }
@@ -331,7 +333,8 @@
         margin: auto;
         font-size: 1.5rem;
     }
-    .whyus-header .hero-btn {
+    .whyus-header .hero-btn,
+    .farmers-btn .hero-btn {
         width: 400px;
         margin-inline: auto;
     }
@@ -340,13 +343,20 @@
 
 /* HOW IT WORKS SECTION STYLING */
 .how-container {
+    /* border: 2px solid rgba(128, 128, 128, 0.205); */
     margin-block: 10rem;
+    padding-block: 1rem;
     text-align: center;
-    height: 300px;
+    height: 500px;
 }
 .how-header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
+}
+.how-header p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    padding-top: 1rem;
 }
 
 /* media queries */
@@ -360,4 +370,338 @@
         margin: auto;
         font-size: 1.5rem;
     }
+}
+
+
+/* HOW IT WORKS SECTION STYLING */
+.farmers-container {
+    /* border: 2px solid grey; */
+    margin-bottom: 10rem;
+    text-align: center;
+    /* height: 500px; */
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+.farmers-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.farmers-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+}
+.farmers-header p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    padding-top: 1rem;
+}
+.farmerslist-container {
+    /* border: 2px solid blue; */
+    /* padding: .5rem; */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.farmers-list {
+    padding: 1rem;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+.farmer-card {
+    /* border: 2px solid red; */
+    height: 270px;
+    min-width: 240px;
+    max-width: 300px;
+
+    background-image: url("../../../assets/images/coffee-factory.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+
+    position: relative;
+    z-index: 1;
+}
+.farmer-card::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: .3;
+    z-index: -1;
+    position: absolute;
+}
+.farmer-card:hover {
+    transform: scale(1.05);
+}
+.farmer-card a {
+    text-decoration: none;
+}
+.farmer-card p {
+    padding: .5rem;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    border: 2px solid #000000;
+    background-color: #000000b6;
+    color: #ffffff;
+}
+.farmers-btn .hero-btn {
+    border-radius: 0;
+    padding: .7rem 2rem;
+}
+
+
+/* media queries */
+@media (min-width: 768px) {
+    .farmers-header h1 {
+        font-size: 2.5rem;
+    }
+    .farmers-header p {
+        width: 70%;
+        margin: auto;
+        font-size: 1.5rem;
+    }
+}
+ @media (min-width: 1024px) {
+    .farmer-card {
+        height: 300px;
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .farmers-list {
+        gap: 1rem;
+    }
+}
+@media (min-width: 1220px) {
+    .farmer-card {
+        height: 350px;
+        min-width: 350px;
+        max-width: 350px;
+    }
+    .farmers-list {
+        gap: 2rem;
+    }
+}
+
+
+/* JOIN OUR MOVEMENT SECTION */
+.join-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10rem;
+    gap: 3rem;
+    /* height: fit-content; */
+}
+.joincontainer-header {
+    /* border: 2px solid red; */
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 1rem;
+}
+.joincontainer-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+}
+.joincontainer-header p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    padding-top: 1rem;
+}
+.joincontainer-content {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.joincontainer-content > * {
+    /* border: 2px solid blue; */
+    width: 100%;
+}
+.join-card {
+    color: #f1ece9;
+    height: 360px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 2rem;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    z-index: 1;
+    position: relative;
+}
+.join-card::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: .6;
+    z-index: -1;
+    position: absolute;
+}
+.join-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+.join-subheader {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+}
+.join-content {
+    padding-bottom: 2rem;
+}
+.join-content p {
+    /* margin: auto; */
+    /* box-sizing: border-box; */
+    /* padding: .5rem; */
+    /* font-weight: bold; */
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    line-height: .3rem;
+}
+.join-btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    background-color: #ffb575;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    /* width: 50%; */
+    /* margin-inline: auto; */
+  
+    padding: .5rem 1rem;
+    /* border-radius: 1.5rem; */
+    border: 2px solid black;
+    transition: all 300ms ease-in;
+}
+.join-btn:hover {
+    background-color: #000000;
+    color: #ffb575;
+}
+.love-coffee {
+    background-image: url("../../../assets/images/coffee.webp");
+}
+.cafe {
+    background-image: url("../../../assets/images/coffee-house.webp");
+}
+.coffee-farm {
+    background-image: url("../../../assets/images/coffee-farm.webp");
+}
+
+/* media queries */
+@media (min-width: 768px) {
+    .joincontainer-header h2 {
+        font-size: 2.5rem;
+    }
+    .joincontainer-header p {
+        width: 70%;
+        margin: auto;
+        font-size: 1.5rem;
+    }
+    .joincontainer-content {
+        flex-wrap: nowrap;
+    }
+    .joincontainer-content > * {
+        flex-basis: 100%;
+    }
+    .join-card {
+        height: 500px;
+    }
+}
+
+/* NEWSLETEER SECTION */
+.newsletter-container {
+    /* border: 2px solid blue; */
+    text-align: center;
+    background-color: #e2ddd9;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
+    gap: 1rem;
+
+    /* background-image: url("../../../assets/images/subscribe.webp");
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+.news-header h2 {
+    font-family: 'Playfair Display', serif;
+    /* font-weight: bold; */
+    font-size: 1.6rem;
+}
+.news-content {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+}
+.news-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+}
+.news-form form input{
+    padding: .7rem .5rem;
+    font-family: 'Raleway', sans-serif;
+}
+.news-form form button {
+    padding: .7rem .5rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    /* width: 150px; */
+    background-color: #000000;
+    color: #f1ece9;
+    transition: all 300ms ease-in;
+}
+.news-form form button:hover {
+    background-color: #db9457;
+    color: #000000;
+}
+
+
+/* media queries */
+@media (min-width: 768px) {
+    .news-form form {
+        flex-direction: row;
+    }
+    .news-form form button {
+        width: 150px;
+    }
+}
+
+
+/* FAQ SECTION */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    gap: 2rem;
+    margin-bottom: 10rem;
+}
+.faq-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
 }
