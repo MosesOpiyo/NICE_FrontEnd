@@ -15,7 +15,6 @@
     position: relative;
 }
 .inventory-header {
-    background-color: #7bc4b2;
     padding: 2rem;
 }
 .inventory-header h1 {
@@ -23,13 +22,9 @@
     font-weight: bold;
 }
 .inventory-content {
-    /* display: flex;
-    gap: 8rem; */
-    box-shadow: 5px 10px #dfdcdc;;
-    background-color: #ffffff;
-    margin-left: 5rem;
-    padding: 2rem;
-
+    display: flex;
+    gap: 8rem;
+    padding-inline: 1rem;
     position: absolute;
     top: 5rem;
 }
