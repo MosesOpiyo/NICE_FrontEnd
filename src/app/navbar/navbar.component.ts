@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog'
 import { LoginComponent } from '../login/login.component';
 import { AuthenticationService } from '../AuthService/authentication.service';
@@ -9,7 +10,7 @@ import { AuthenticationService } from '../AuthService/authentication.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  constructor(private dialog: MatDialog,private service:AuthenticationService){}
+  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){}
   user:any | null = null;;
 
   showLoginDialog(){
@@ -20,6 +21,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.service.getProfile().subscribe((res:any)=>{
       this.user = res['user']
+      if(this.user.type == "WAREHOUSER"){
+        this.route.navigate(['Warehouse'])
+      }
     })
   }
 
