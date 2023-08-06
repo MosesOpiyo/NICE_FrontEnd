@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
 
-    background-image: url("../../../assets/images/hero5.webp");
+    background-image: url("../../../assets/images/hero12.jpg");
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
@@ -72,7 +72,6 @@
 .hero-btn {
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
-    color: #000000;
     text-decoration: none;
     font-weight: 600;
     width: 50%;
@@ -82,12 +81,13 @@
     padding: .5rem;
     border-radius: 1.5rem;
     border: 2px solid black;
-    background-color: #db9457;
+    background-color: #000000;
+    color: #f1ece9;
     transition: all 300ms ease-in;
 }
 .hero-btn:hover {
-    background-color: #000000;
-    color: #f1ece9;
+    background-color: #db9457;
+    color: #000000;
 }
 
 
@@ -123,9 +123,9 @@
     .hero-container {
         color: #000000;
         /* border: 2px solid red; */
-        background-position: right;
-        background-size: contain;
-        text-align: start;
+        background-position: center;
+        background-size: cover;
+        text-align: start; 
     }
     .hero-container::after {
         display: none;
@@ -159,7 +159,7 @@
     .hero-container {
         color: #000000;
         /* border: 2px solid red; */
-        background-size: 90%;
+        background-position: top;
     }
     .hero-text {
         /* border: 2px solid red; */
@@ -177,9 +177,9 @@
 
 /* RAW DATA SECTION */
 .data-container {
-    margin-bottom: 10rem;
+    margin-bottom: 20rem;
     background-color: #000000;
-    color: #db9457;
+    color: #f1ece9;
     /* border: 2px solid red; */
     font-family: 'Raleway', sans-serif;
     display: flex;
@@ -228,6 +228,18 @@
     gap: 3rem;
 
     padding: .2rem;
+}
+/* .whyus-container > * {
+    border: 2px solid red;
+} */
+.whyus-image {
+    /* border: 2px solid blue; */
+    height: 350px;
+    background-image: url("../../../assets/images/why2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f1ece9;
 }
 .whyus-header {
     /* border: 2px solid red; */
@@ -278,7 +290,8 @@
 }
 
 .whyus-cards .dark {
-    background-color: #e2ddd9;
+    background-color: #000000;
+    color: #f1ece9;
 }
 /* .whyus-cards .dark:hover,
 .whyus-cards .light:hover {
@@ -294,10 +307,10 @@
     justify-content: center;
     gap: .5rem;
 }
-.whyus-cards > *:hover {
+/* .whyus-cards > *:hover {
     background-color: #000000;
     color: #db9457;
-}
+} */
 .whyus-card i {
     font-size: 2rem
 }
@@ -315,12 +328,26 @@
 }
 
 @media (min-width: 768px) {
-    .whyus-cards {
-        flex-wrap: nowrap;
+    .whyus-container {
+        flex-direction: row;
+        gap: 1rem;
     }
+    .whyus-image {
+        width: 50%;
+        height: inherit;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .whyus-content {
+        width: 50%;
+    }
+    /* .whyus-cards {
+        flex-wrap: nowrap;
+    } */
     .whyus-card {
         padding: .5rem;
-        height: 350px;
+        height: 160px;
     }
     .empower h2 {
         line-height: 1.2rem;
@@ -329,17 +356,34 @@
         font-size: 2.5rem;
     }
     .whyus-header p {
-        width: 70%;
-        margin: auto;
+        width: 100%;
+        /* margin: auto; */
         font-size: 1.5rem;
     }
-    .whyus-header .hero-btn,
-    .farmers-btn .hero-btn {
-        width: 400px;
+    .whyus-header .hero-btn {
         margin-inline: auto;
     }
 }
 
+@media (min-width: 850px) {
+    .whyus-cards {
+        flex-wrap: nowrap;
+    }
+    .whyus-card {
+        padding: .5rem;
+        height: 300px;
+    }
+    .whyus-image {
+        width: 40%;
+        /* height: inherit;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; */
+    }
+    .whyus-content {
+        width: 60%;
+    }
+}
 
 /* HOW IT WORKS SECTION STYLING */
 .how-container {
@@ -459,6 +503,8 @@
 .farmers-btn .hero-btn {
     border-radius: 0;
     padding: .7rem 2rem;
+    width: 400px;
+    margin-inline: auto;
 }
 
 
