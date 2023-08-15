@@ -16,13 +16,10 @@
     font-weight: bold;
     font-size: 1rem;
     color: white
-    /* color: #db9457; */
 }
 .user {
-    /* border: 2px solid red; */
     font-weight: bold;
     color:white
-    /* height: 70px; */
 }
 .user-image {
     margin-left: .5rem;
@@ -30,7 +27,4 @@
     border: 2px solid white;
     background-color: white;
     color: black;
-    /* height: 100px;
-    width: 100px;
-    border-radius: 50%; */
 }
