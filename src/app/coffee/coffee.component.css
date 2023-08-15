@@ -19,7 +19,7 @@ img{
     margin: 0 auto;
 }
 
-/* product section */
+
 .products{
     background: var(--alice-blue);
 }
@@ -128,8 +128,6 @@ img{
     letter-spacing: 3px;
     cursor: pointer;
 }
-
-/* product collection */
 .product-collection{
     padding: 3.2rem 0;
 }
@@ -182,14 +180,6 @@ img{
 .btn-dark:hover{
     background: var(--carribean-green);
 }
-
-
-
-
-
-
-
-/* Media Queries */
 @media screen and (min-width: 992px){
     .product-items{
         display: grid;

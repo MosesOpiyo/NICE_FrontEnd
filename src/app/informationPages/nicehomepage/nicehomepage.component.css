@@ -7,18 +7,13 @@
     color: #db9457;
 }
 
-
-/* HERO SECTION STYLING */
 .hero-container {
     font-family: 'Playfair Display', serif;
     height: 560px;
     color: #ffffff;
-    /* border: 2px solid red; */
     text-align: center;
-
     display: flex;
     align-items: center;
-
     background-image: url("../../../assets/images/hero5.webp");
     background-position: right;
     background-size: cover;
@@ -40,10 +35,7 @@
     position: absolute;
 }
 .hero-text {
-    /* border: 2px solid white; */
     padding: 1rem;
-    /* backdrop-filter: blur(1px); */
-
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -90,8 +82,6 @@
     color: #f1ece9;
 }
 
-
-/* media queries */
 @media (min-width: 375px) {
     .hero-header {
         font-size: 2.5rem;
@@ -122,7 +112,6 @@
 @media (min-width: 768px) {
     .hero-container {
         color: #000000;
-        /* border: 2px solid red; */
         background-position: right;
         background-size: contain;
         text-align: start;
@@ -131,7 +120,6 @@
         display: none;
     }
     .hero-text {
-        /* border: 2px solid red; */
         width: 50%;
         gap: 1.5rem;
         padding-right: 0rem;
@@ -158,11 +146,9 @@
 @media (min-width: 1024px) {
     .hero-container {
         color: #000000;
-        /* border: 2px solid red; */
         background-size: 90%;
     }
     .hero-text {
-        /* border: 2px solid red; */
         padding-left: 4rem;
     }
     .hero-header {
@@ -175,12 +161,10 @@
 }
 
 
-/* RAW DATA SECTION */
 .data-container {
     margin-bottom: 10rem;
     background-color: #000000;
     color: #db9457;
-    /* border: 2px solid red; */
     font-family: 'Raleway', sans-serif;
     display: flex;
     flex-wrap: wrap;
@@ -195,17 +179,14 @@
     flex-basis: 100%;
 }
 .data-card {
-    /* border: 2px solid red; */
     max-width: 140px;
     font-size: 1rem;
     line-height: 1rem;
 }
 .data-card i {
     font-size: 4rem;
-    /* color: #e2ddd9; */
 }
 
-/* media queries */
 @media (min-width: 425px) {
     .data-container {
         flex-wrap: nowrap;
@@ -217,12 +198,7 @@
     }
 }
 
-
-
-/* WHY US SECTION */
 .whyus-container {
-    /* border: 2px solid red; */
-
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -230,7 +206,6 @@
     padding: .2rem;
 }
 .whyus-header {
-    /* border: 2px solid red; */
     text-align: center;
 
     display: flex;
@@ -238,9 +213,6 @@
     gap: .5rem;
     padding-block: 1rem;
 }
-/* .whyus-header > * {
-    border: 2px solid red;
-} */
 .whyus-header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
@@ -260,9 +232,7 @@
     color: #000000;
 }
 .whyus-cards {
-    /* border: 2px solid red; */
     text-align: center;
-    /* padding: .2rem; */
     font-family: 'Raleway', sans-serif;
 
     display: flex;
@@ -278,12 +248,7 @@
 .whyus-cards .dark {
     background-color: #e2ddd9;
 }
-/* .whyus-cards .dark:hover,
-.whyus-cards .light:hover {
-    background-color: rgb(80, 133, 80);
-} */
 .whyus-card {
-    /* border: 2px solid blue; */
     padding: .2rem;
     height: 250px;
 
@@ -304,8 +269,6 @@
     font-weight: bold;
 }
 
-
-/* media queries */
 @media (min-width: 425px) {
     .whyus-card {
         height: 200px;
@@ -336,9 +299,6 @@
         margin-inline: auto;
     }
 }
-
-
-/* HOW IT WORKS SECTION STYLING */
 .how-container {
     margin-block: 10rem;
     text-align: center;
@@ -348,8 +308,6 @@
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
 }
-
-/* media queries */
 @media (min-width: 768px) {
     .how-header h1 {
         font-size: 2.5rem;
