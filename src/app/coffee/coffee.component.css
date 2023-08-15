@@ -134,12 +134,6 @@ img{
 .product-collection-wrapper{
     padding: 3.2rem 0;
 }
-.product-col-left{
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("../../assets/images/coffee-beans-background.webp") center/cover no-repeat;
-}
-.product-col-r-top{
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("../../assets/images/coffee-beans-background.webp") center/cover no-repeat;
-}
 .flex{
     display: flex;
     justify-content: center;
@@ -179,42 +173,4 @@ img{
 }
 .btn-dark:hover{
     background: var(--carribean-green);
-}
-@media screen and (min-width: 992px){
-    .product-items{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .product-col-r-bottom{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media screen and (min-width: 1200px){
-    .product-items{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .product{
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
-    .products .text-light{
-        width: 50%;
-    }
-}
-
-@media screen and (min-width: 1336px){
-    .product-items{
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .product-collection-wrapper{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .flex{
-        height: 60vh;
-    }
-    .product-col-left{
-        height: 121.5vh;
-    }
 }
