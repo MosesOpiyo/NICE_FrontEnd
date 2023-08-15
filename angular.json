@@ -101,6 +101,97 @@
           }
         }
       }
+    },
+    "FarmersDashboard": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/farmers-dashboard",
+      "sourceRoot": "projects/farmers-dashboard/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/farmers-dashboard",
+            "index": "projects/farmers-dashboard/src/index.html",
+            "main": "projects/farmers-dashboard/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/farmers-dashboard/tsconfig.app.json",
+            "assets": [
+              "projects/farmers-dashboard/src/favicon.ico",
+              "projects/farmers-dashboard/src/assets"
+            ],
+            "styles": [
+              "projects/farmers-dashboard/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "FarmersDashboard:build:production"
+            },
+            "development": {
+              "browserTarget": "FarmersDashboard:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "FarmersDashboard:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/farmers-dashboard/tsconfig.spec.json",
+            "assets": [
+              "projects/farmers-dashboard/src/favicon.ico",
+              "projects/farmers-dashboard/src/assets"
+            ],
+            "styles": [
+              "projects/farmers-dashboard/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   }
 }

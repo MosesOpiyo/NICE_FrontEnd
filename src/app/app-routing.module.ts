@@ -8,6 +8,7 @@ import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomep
 
 import { CoffeeComponent } from './coffee/coffee.component';
 import { WarehousedashboardComponent } from './warehousedashboard/warehousedashboard.component';
+import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-board.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'Signup',component:SignupComponent},
   {path:'homepage',component:NicehomepageComponent},
   {path:'Warehouse',component:WarehousedashboardComponent},
+  {path:'Farmer',component:FarmersDashBoardComponent},
   {path:'Coffee',component:CoffeeComponent}
 
 ];

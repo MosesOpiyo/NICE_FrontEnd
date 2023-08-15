@@ -17,6 +17,10 @@ export class CoffeeNavbarComponent implements OnInit {
       width: '25pc'
     }); 
   }
+  logOut(){
+    this.service.logout()
+    this.ngOnInit()
+  }
   ngOnInit(): void {
     this.service.getProfile().subscribe((res:any)=>{
       this.user = res['user']

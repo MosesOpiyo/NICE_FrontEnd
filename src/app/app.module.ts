@@ -21,6 +21,10 @@ import { WarehousedashboardModule } from './warehousedashboard/warehousedashboar
 
 import { CoffeeNavbarComponent } from './coffee-navbar/coffee-navbar.component';
 import { CoffeeComponent } from './coffee/coffee.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-board.component';
+import { FarmersDashBoardModule } from './farmers-dash-board/farmers-dash-board.module';
+
 
 
 @NgModule({
@@ -29,13 +33,11 @@ import { CoffeeComponent } from './coffee/coffee.component';
     SignupComponent,
     NavbarComponent,
     LoginComponent,
-
     HomepageComponent,
     NicehomepageComponent,
-
     CoffeeNavbarComponent,
-    CoffeeComponent
-
+    CoffeeComponent,
+    SignUpComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -48,7 +50,8 @@ import { CoffeeComponent } from './coffee/coffee.component';
     MatButtonModule,
     MatTableModule,
     FormsModule,
-    WarehousedashboardModule
+    WarehousedashboardModule,
+    FarmersDashBoardModule
 
   ],
   providers: [],

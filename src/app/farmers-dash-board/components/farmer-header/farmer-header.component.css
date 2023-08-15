@@ -1,0 +1,30 @@
+.nav-container {
+    background-color: black;
+    color: #000000;
+    height: 50px;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+}
+.logo {
+    font-weight: bold;
+    font-size: 1rem;
+    color: white
+}
+.user {
+    font-weight: bold;
+    color:white
+}
+.user-image {
+    margin-left: .5rem;
+    padding: 10px;
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+}
