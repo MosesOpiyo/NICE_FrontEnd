@@ -7,18 +7,13 @@
     color: #db9457;
 }
 
-
-/* HERO SECTION STYLING */
 .hero-container {
     font-family: 'Playfair Display', serif;
     height: 560px;
     color: #ffffff;
-    /* border: 2px solid red; */
     text-align: center;
-
     display: flex;
     align-items: center;
-
     background-image: url("../../../assets/images/hero5.webp");
     background-position: right;
     background-size: cover;
@@ -40,10 +35,7 @@
     position: absolute;
 }
 .hero-text {
-    /* border: 2px solid white; */
     padding: 1rem;
-    /* backdrop-filter: blur(1px); */
-
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -91,96 +83,10 @@
 }
 
 
-/* media queries */
-@media (min-width: 375px) {
-    .hero-header {
-        font-size: 2.5rem;
-        line-height: 2.3rem;
-    }
-    .hero-par {
-        font-size: 1.2rem;
-    }
-}
-@media (min-width: 425px) {
-    .hero-header {
-        font-size: 2.7rem;
-        line-height: 2.3rem;
-    }
-    .hero-par {
-        font-size: 1.4rem;
-        line-height: 1.2rem;
-    }
-    .hero-btn {
-        font-size: 1.1rem;
-    }
-}
-@media (min-width: 600px) {
-    .hero-text {
-        gap: 2rem;
-    }
-}
-@media (min-width: 768px) {
-    .hero-container {
-        color: #000000;
-        /* border: 2px solid red; */
-        background-position: right;
-        background-size: contain;
-        text-align: start;
-    }
-    .hero-container::after {
-        display: none;
-    }
-    .hero-text {
-        /* border: 2px solid red; */
-        width: 50%;
-        gap: 1.5rem;
-        padding-right: 0rem;
-    }
-    .header-family {
-        color: #884408;
-    }
-    .hero-btn {
-        width: 80%;
-        margin-inline: 0;
-        text-align: center;
-        background-color: #000000;
-        color: #f1ece9;
-    }
-    .hero-btn:hover {
-        background-color: #884408;
-        color: #f1ece9;
-    }
-    .hero-par {
-        font-size: 19px;
-        line-height: 1.35rem;
-    }
-}
-@media (min-width: 1024px) {
-    .hero-container {
-        color: #000000;
-        /* border: 2px solid red; */
-        background-size: 90%;
-    }
-    .hero-text {
-        /* border: 2px solid red; */
-        padding-left: 4rem;
-    }
-    .hero-header {
-        font-size: 3rem;
-        line-height: 2.8rem;
-    }
-    .hero-btn {
-        width: 50%;
-    }
-}
-
-
-/* RAW DATA SECTION */
 .data-container {
     margin-bottom: 10rem;
     background-color: #000000;
     color: #db9457;
-    /* border: 2px solid red; */
     font-family: 'Raleway', sans-serif;
     display: flex;
     flex-wrap: wrap;
@@ -195,34 +101,15 @@
     flex-basis: 100%;
 }
 .data-card {
-    /* border: 2px solid red; */
     max-width: 140px;
     font-size: 1rem;
     line-height: 1rem;
 }
 .data-card i {
     font-size: 4rem;
-    /* color: #e2ddd9; */
 }
 
-/* media queries */
-@media (min-width: 425px) {
-    .data-container {
-        flex-wrap: nowrap;
-    }
-}
-@media (min-width: 768px) {
-    .data-card {
-        max-width: 270px;
-    }
-}
-
-
-
-/* WHY US SECTION */
 .whyus-container {
-    /* border: 2px solid red; */
-
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -230,7 +117,6 @@
     padding: .2rem;
 }
 .whyus-header {
-    /* border: 2px solid red; */
     text-align: center;
 
     display: flex;
@@ -238,9 +124,6 @@
     gap: .5rem;
     padding-block: 1rem;
 }
-/* .whyus-header > * {
-    border: 2px solid red;
-} */
 .whyus-header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
@@ -260,9 +143,7 @@
     color: #000000;
 }
 .whyus-cards {
-    /* border: 2px solid red; */
     text-align: center;
-    /* padding: .2rem; */
     font-family: 'Raleway', sans-serif;
 
     display: flex;
@@ -278,12 +159,7 @@
 .whyus-cards .dark {
     background-color: #e2ddd9;
 }
-/* .whyus-cards .dark:hover,
-.whyus-cards .light:hover {
-    background-color: rgb(80, 133, 80);
-} */
 .whyus-card {
-    /* border: 2px solid blue; */
     padding: .2rem;
     height: 250px;
 
@@ -304,41 +180,12 @@
     font-weight: bold;
 }
 
-
-/* media queries */
 @media (min-width: 425px) {
     .whyus-card {
         height: 200px;
     }
 }
 
-@media (min-width: 768px) {
-    .whyus-cards {
-        flex-wrap: nowrap;
-    }
-    .whyus-card {
-        padding: .5rem;
-        height: 350px;
-    }
-    .empower h2 {
-        line-height: 1.2rem;
-    }
-    .whyus-header h1 {
-        font-size: 2.5rem;
-    }
-    .whyus-header p {
-        width: 70%;
-        margin: auto;
-        font-size: 1.5rem;
-    }
-    .whyus-header .hero-btn {
-        width: 400px;
-        margin-inline: auto;
-    }
-}
-
-
-/* HOW IT WORKS SECTION STYLING */
 .how-container {
     margin-block: 10rem;
     text-align: center;
@@ -347,17 +194,4 @@
 .how-header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
-}
-
-/* media queries */
-@media (min-width: 768px) {
-    .how-header h1 {
-        font-size: 2.5rem;
-    }
-    .how-header p {
-        font-family: 'Raleway', sans-serif;
-        width: 70%;
-        margin: auto;
-        font-size: 1.5rem;
-    }
 }
