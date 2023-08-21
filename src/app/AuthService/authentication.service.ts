@@ -13,9 +13,7 @@ export class AuthenticationService {
   constructor(private http:HttpClient,private authService:AuthService) { }
   Register(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Registration`,credentials).subscribe((response:any)=>{
-      sessionStorage.setItem('token', response['token'])
-      this.authService.authentication(true)
-      alert(`Welcome back`)
+      alert(`Account Created.`)
     })
   }
   login(credentials:any){

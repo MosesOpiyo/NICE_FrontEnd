@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { LoginComponent } from '../login/login.component';
 import { AuthenticationService } from '../AuthService/authentication.service';
 import { SignUpComponent } from '../sign-up/sign-up.component';
+import { AuthService } from '../Auth/auth.service';
 
 
 @Component({
@@ -12,8 +13,17 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){}
+  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router,private auth:AuthService){}
   user:any | null = null;;
+
+  authCheck(){
+    if(this.auth.isAuthenticated == false){
+      this.showLoginDialog()
+    }
+    else if(this.auth.isAuthenticated == true){
+      this.route.navigate(['Coffee'])
+    }
+  }
 
   showLoginDialog(){
     const dialogRef = this.dialog.open(LoginComponent,{
@@ -27,7 +37,9 @@ export class NavbarComponent implements OnInit {
   }
   logOut(){
     this.service.logout()
+    this.ngOnInit()
   }
+  
   ngOnInit(): void {
     this.service.getProfile().subscribe((res:any)=>{
       this.user = res['user']

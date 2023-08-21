@@ -19,13 +19,11 @@ export class SignUpComponent {
   is_producer:any;
   is_warehouser:any;
   registerBuyer(){
-    if(this.is_producer == false && this.is_warehouser == false){
-      let form = new FormData();
+    let form = new FormData();
     form.append('username',this.username),
     form.append('email',this.email),
     form.append('password',this.password),
     this.service.Register(form)
-    }
   }
   switchToProducer(){
     this.is_producer = true
