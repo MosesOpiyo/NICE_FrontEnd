@@ -24,6 +24,7 @@ import { CoffeeComponent } from './coffee/coffee.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-board.component';
 import { FarmersDashBoardModule } from './farmers-dash-board/farmers-dash-board.module';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -37,7 +38,9 @@ import { FarmersDashBoardModule } from './farmers-dash-board/farmers-dash-board.
     NicehomepageComponent,
     CoffeeNavbarComponent,
     CoffeeComponent,
-    SignUpComponent
+
+    SignUpComponent,
+    FooterComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
