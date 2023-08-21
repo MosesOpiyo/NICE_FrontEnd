@@ -1,266 +1,662 @@
-<section class="main-content">
+<div class="homepage-container">
 
-    <!-- HERO SECTION -->
-    <section class="hero-container">
-    
-        <!-- Hero Section text and background image-->
-        <div class="hero-text">
-            <h1 class="hero-header">Buy coffee direct from the farmer. <span class="header-family">No resellers.</span></h1>
-            <p class="hero-par"><span class="font-italic fw-bold">Nicedirect&#174;</span> brings you the opportunity to buy
-                coffee beans directly from passionate farmers,
-                eliminating resellers from the equation. Embrace transparency, support sustainability, and savor the true
-                essence of coffee like never before.</p>
-            <p class="hero-par2">100% Direct | 100% Transparent | 100% Amazing Coffee</p>
-            <a class="hero-btn" routerLink="/Coffee" role="button">BUY NOW</a>
-        </div>
-    
-    </section>
-    
-    <!-- RAW DATA SECTION -->
-    <section class="data-container">
-        <p class="data-card"> <i class="bi bi-currency-dollar"></i><br><br>10 Million shillings total cummulative sales</p>
-        <p class="data-card"><i class="bi bi-building-check"></i><br><br>62 Exhibiting coffee related companies</p>
-        <p class="data-card"><i class="bi bi-emoji-smile"></i><br><br>5000 Happy farmers</p>
-        <p class="data-card"><i class="bi bi-cash-coin"></i><br><br>20 Billion shillings value of Kenya's coffee industry</p>
-                    
-    </section>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
 
+      <div class="logo">
+        <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="#"><img src="../../../assets/img/d90a1c41c1294e9ebd3e6cba576ae35f.png" alt="" class="img-fluid"></a>
+      </div>
 
-    <!-- WHY US SECTION -->
-    <section class="whyus-container">
+      <div class="credentials-mobile">
+        <ul *ngIf="!user">
+              <li>
+                <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
+              </li>
+              <li>
+                <button mat-raised-button type="button" class="btn btn-outline-dark">Sign Up</button>
+              </li>
+            </ul>
+            <ul *ngIf="user">
+              <li>
+                <a style="color: white;border-radius: 20px;font-size: 20px;" class="active btn btn-dark" href="#">{{user['username']}}</a>
+              </li>
+            </ul>
+      </div>
 
-        <div class="whyus-image"></div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link active" href="/">Home</a></li>
+          <li><a class="nav-link" href="#about">Shop Coffee</a></li>
+          <li><a class="nav-link" href="#services">Expo</a></li>
+          <!-- <li><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
+          <!-- <li><a class="nav-link" href="#team">Team</a></li> -->
+          <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <!-- <li><a href="#">Expo</a></li> -->
+              <li class="dropdown"><a href="#"><span>Expo</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Register for Expo</a></li>
+                  <!-- <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li> -->
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Register for Origin Trip</a></li>
+                </ul>
+              </li>
+              <!-- <li><a href="#">Origin Trip</a></li> -->
+              <li><a href="#">Cupping</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
+          <li><i class="bi bi-cart" value=8></i></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
 
-        <div class="whyus-content">
-            <div class="whyus-header">
-                <h1>Why Us?</h1>
-                <span class="arrow-down">&#8675;</span>
-                <p>Everytime you buy direct you get pure unadulterated coffee from source, you empower farmers by giving them the
-                    highest pay possible and you put a face to the coffee you buy by getting first hand acquintance with the farmers who
-                    grow it.</p>
-                <a class="hero-btn" routerLink="/Coffee" role="button">BUY NOW</a>
+      <div class="credentials-nonmobile">
+        <ul *ngIf="!user">
+              <li>
+                <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
+              </li>
+              <li>
+                <button mat-raised-button type="button" class="btn btn-outline-dark">Sign Up</button>
+              </li>
+            </ul>
+            <ul *ngIf="user">
+              <li>
+                <a style="color: white;border-radius: 20px;font-size: 20px;" class="active btn btn-dark" href="#">{{user['username']}}</a>
+              </li>
+            </ul>
+      </div>
+      
+      <!-- .navbar -->
+
+    </div>
+  </header>
+  <!-- End Header -->
+   
+  
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+      <div class="hero-container" data-aos="fade-up">
+        <h1>Buy coffee direct from the farmer. <span class="header-family">No resellers.</span></h1>
+        <p class="hero-par"><span class="font-italic fw-bold">Nicedirect&#174;</span> brings you the opportunity to buy
+          coffee beans directly from passionate Kenyan farmers, eliminating resellers from the equation. Embrace
+          transparency,
+          support sustainability, and savor the true essence of coffee like never before.
+        </p>
+        <p class="hero-par2">100% Direct | 100% Transparent | 100% Amazing Coffee</p>
+        <a class="hero-btn" routerLink="/Coffee" role="button">BUY NOW</a>
+      </div>
+    </section><!-- End Hero -->
+  
+    <main id="main">
+  
+      <!-- ======= Counts Section ======= -->
+      <section id="counts" class="counts  section-bg">
+        <div class="container">
+  
+          <div class="row no-gutters">
+  
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="bi bi-currency-dollar"></i>
+                <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"
+                  class="purecounter">10</span>
+                <p><strong>Million shillings</strong> total cummulative sales</p>
+              </div>
             </div>
-    
-            <div class="whyus-cards">
-                <div class="whyus-card light">
+  
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="bi bi-building"></i>
+                <span data-purecounter-start="0" data-purecounter-end="62" data-purecounter-duration="1"
+                  class="purecounter">62</span>
+                <p>Exhibiting coffee related <strong>companies</strong></p>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="bi bi-emoji-smile"></i>
+                <span data-purecounter-start="0" data-purecounter-end="5000" data-purecounter-duration="1"
+                  class="purecounter">5000</span>
+                <p>Happy <strong>farmers</strong></p>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="bi bi-cash-coin"></i>
+                <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
+                  class="purecounter">20</span>
+                <p><strong>Billion shillings</strong> value of Kenya's coffee industry</p>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Counts Section -->
+  
+      <!-- ======= About Section ======= -->
+      <section id="about" class="about">
+        <div class="container">
+  
+          <div class="about-header section-title" data-aos="fade-up">
+            <h2>Why Us?</h2>
+            <p>Everytime you buy direct you get pure unadulterated coffee from source, you empower farmers by giving them
+              the
+              highest pay possible and you put a face to the coffee you buy by getting first hand acquintance with the
+              farmers who
+              grow it.</p>
+          </div>
+  
+          <div class="row no-gutters">
+            <div class="content col-xl-5 d-flex" data-aos="fade-up">
+              <div class="content-image">
+                <!-- <h3>Voluptatem dignissimos provident quasi</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              </p>
+              <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a> -->
+              </div>
+            </div>
+  
+            <div class="col-xl-7 d-flex align-items-stretch">
+              <div class="icon-boxes d-flex flex-column justify-content-center">
+                <div class="row">
+                  <div class="col-md-6 icon-box dark" data-aos="fade-up" data-aos-delay="100">
                     <i class="bi bi-piggy-bank"></i>
-                    <h2>Save up to 15%</h2>
+                    <h4>Save up to 15%</h4>
                     <p>Everytime you buy direct from farmers, you save up to 15% with every purchase</p>
-                </div>
-                
-                <div class="whyus-card dark">
+                  </div>
+                  <div class="col-md-6 icon-box light" data-aos="fade-up" data-aos-delay="200">
                     <i class="bi bi-journal-text"></i>
-                    <h2>Coffee with a story</h2>
+                    <h4>Coffee with a story</h4>
                     <p>Put a face to the coffee you buy by getting directly acquinted with farmers</p>
-                </div>
-    
-                <div class="whyus-card light empower">
+                  </div>
+                  <div class="col-md-6 icon-box dark" data-aos="fade-up" data-aos-delay="300">
                     <i class="bi bi-graph-up-arrow"></i>
-                    <h2>Empower and Enrich</h2>
+                    <h4>Empower and Enrich</h4>
                     <p>Farmers get empowered to produce the best coffee when they get the highest pay</p>
-                </div>
-    
-                <div class="whyus-card dark">
-                    <i class="bi bi-house-check"></i>
-                    <h2>Direct impact</h2>
+                  </div>
+                  <div class="col-md-6 icon-box light" data-aos="fade-up" data-aos-delay="400">
+                    <i class="bi bi-house"></i>
+                    <h4>Direct impact</h4>
                     <p>Directly touch the lives of families that work hard to produce amazing coffees.</p>
+                  </div>
                 </div>
+              </div><!-- End .content-->
             </div>
+  
+            <!-- <div class="why-cta">
+            <a class="hero-btn" routerLink="/Coffee" role="button">BUY NOW</a>
+          </div> -->
+          </div>
+  
         </div>
-                    
-    </section>
-
-
-    <!-- HOW IT WORKS SECTION -->
-    <div class="how-container">
-        <div class="how-header">
-            <h1>How it Works</h1>
-            <span class="arrow-down">&#8675;</span>
-            <p>Making direct trade work is a cooperative effort that invloves highly experienced partners who work behind the scenes to make it easy for you.</p>
+      </section><!-- End About Section -->
+  
+  
+      <!-- PRODUCTS SECTION -->
+      <div class="products-container">
+  
+        <div class="products-header section-title" data-aos="fade-up">
+          <h2>Discover the best coffee</h2>
+          <p>Browse through the best coffee we have on offer.</p>
         </div>
-    </div>
-
-
-    <!-- FARMERS SECTION -->
-    <div class="farmers-container">
-        <div class="farmers-header">
-            <h1>Connect with the Farmers</h1>
-            <span class="arrow-down">&#8675;</span>
-            <p>Our growing list of farmers offer diverse tastes and profiles. Check them out and connect directly with them.</p>
-        </div>
-
-        <div class="farmerslist-container">
-             <!--<a routerLink="riaikania" class="coffee-factory"> 
-                <div class="farmer-card" *ngFor="let item of farmerData">
-                    <p>{{item.name}}</p>
+  
+        <!-- Swiper -->
+        <div class="swiper-container" data-aos="fade-up">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let item of coffeeData">
+  
+              <div class="product-image">
+                <img src="{{item.imageUrl}}" alt="coffee">
+                <span class="sticker">OFFER</span>
+              </div>
+  
+              <div class="product-manufacturer">
+                <p class="productname">{{item.productName}}</p>
+                <p><i class={{item.rating[0]}}></i>
+                <i class={{item.rating[1]}}></i>
+                <i class={{item.rating[2]}}></i>
+                <i class={{item.rating[3]}}></i>
+                <i class={{item.rating[4]}}></i></p>
+              </div>
+  
+              <div class="product-details">
+                <p>{{item.farmer}}</p>
+                <div class="product-price">
+                  <div class="product-prices">
+                    <p class="newprice">${{item.newPrice}}</p>
+                    <p class="oldprice">${{item.oldPrice}}</p>
+                  </div>
+                  <div class="product-discount">
+                    <p>-{{item.discountPercentage}}%</p>
+                  </div>
                 </div>
-            </a>-->
-
-            <div class="farmers-list">
-                <div class="farmer-card" *ngFor="let item of farmerData">
-                    <a routerLink="{{item.link}}" class="coffee-factory"> 
-                        <div class="farmer-card">
-                            <p>{{item.name}}</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-             
-            
-            <div class="farmers-btn">
-                <a routerLink="/farmers" role="button" class="hero-btn">
-                    VIEW MORE &nbsp;
-                    <i class="bi bi-box-arrow-in-up-right"></i>
+              </div>
+  
+              <div class="add-actions">
+                <a routerLink="/coffee" role="button">
+                  Add To Cart <i class="bi bi-cart-check"></i>
                 </a>
+                <a routerLink="/wishlist" role="button">
+                  <i class="bi bi-heart"></i>
+                </a>
+              </div>
+  
             </div>
-        </div> 
-    </div>
-
-    <!-- JOIN OUR MOVEMENT SECTION -->
-    <div class="join-container">
-        <div class="joincontainer-header">
-            <h2>Join the Coffee Movement</h2>
-            <span class="arrow-down">&#8675;</span>
-            <p>Don't miss out. Join our movement and connect directly with coffee farmers for authentic, sustainable, and ethically sourced coffee, making a positive impact from seed to cup.</p>
+            <!-- <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div>
+          <div class="swiper-slide">Slide 10</div> -->
+          </div>
+          <!-- Add Pagination -->
+          <!-- <div class="swiper-pagination"></div> -->
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
-
-        <div class="joincontainer-content">
-            <div class="love-coffee join-card">
-                <div class="join-header">
-                    <h2>Love Coffee?</h2>
-                </div>
-                
-                <div class="join-subheader">
-                    <p>Join our community for:</p>
-                </div>
-                
-                <div class="join-content">
-                    <p>Amazing discounts</p>
-                    <p>Wide variety of tastes</p>
-                    <p>Pay direct to farmers</p>
-                    <p>Direct premiums to farmers</p>
-                </div>
-    
-                <div class="join-button">
-                    <a routerLink="/Coffee" role="button" class="join-btn">
-                        BUY COFFEE
-                    </a>
-                </div>
-            </div>
-    
-            <div class="cafe join-card">
-                <div class="join-header">
-                    <h2>Own a Roastery or Café?</h2>
-                </div>
-                
-                <div class="join-subheader">
-                    <p>Join our community for:</p>
-                </div>
-                
-                <div class="join-content">
-                    <p>Amazing bulk offers</p>
-                    <p>Top premium coffees</p>
-                    <p>Free access to farmers</p>
-                    <p>Free samples & cupping</p>
-                </div>
-    
-                <div class="join-button">
-                    <a routerLink="/Coffee" role="button" class="join-btn">
-                        BUY COFFEE
-                    </a>
-                </div>
-            </div>        
-    
-            <div class="coffee-farm join-card">
-                <div class="join-header">
-                    <h2>Own a Coffee Farm?</h2>
-                </div>
-                
-                <div class="join-subheader">
-                    <p>Join our community for:</p>
-                </div>
-                
-                <div class="join-content">
-                    <p>Direct market access</p>
-                    <p>Export pre-finances</p>
-                    <p>Farmer support</p>
-                    <p>Direct premiums</p>
-                </div>
-    
-                <div class="join-button">
-                    <a routerLink="/Sell" role="button" class="join-btn">
-                        SELL COFFEE
-                    </a>
-                </div>
-            </div>
+  
+        <div class="shop-more" data-aos="fade-up">
+          <a routerLink="/Coffee" role="button">
+            SHOP MORE&nbsp;
+            <i class="bi bi-box-arrow-in-up-right"></i>
+          </a>
         </div>
-        
-    </div>
-
-
-    <!-- NEWSLETTER SECTION -->
-    <div class="newsletter-container">
-        <div class="news-header">
-            <h2>Never Miss Out</h2>
-        </div>
-        <div class="news-content">
-            <p>Sign up for our Newsletter and get the latest NICEDIRECT news, unique offers and access to exclusive products.</p>
-        </div>
-        <div class="news-form">
-            <form action="" method="POST">
-                <!-- HONEYPOT(to catch spammers ) -->
-                <input type="text" name="_honey" style="display: none">
-
-                <input type="email" name="email" id="email" placeholder="Enter your Email" autocomplete="email" required>
-                <button type="submit">SIGN UP</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- FAQ SECTION -->
-    <div class="faq-container">
-        <div class="faq-header">
-            <h2>Do you have any Questions? View the FAQs below or Contact Us</h2>
-            <span class="arrow-down">&#8675;</span>
-        </div>
-
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Accordion Item #1
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
+  
+  
+      </div>
+      <!-- END OF PRODUCTS SECTION -->
+  
+  
+      <!-- HOW IT WORKS -->
+      <section id="services" class="services">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+            <h2>How it works</h2>
+            <p>Making direct trade work is a cooperative effort that invloves highly experienced partners who work behind the scenes
+              to make it easy for you.
+            </p>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6 col-lg-2 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up">
+                <div class="icon"><i class='bx bxs-certification'></i></div>
+                <span class="process-number">1</span>
+                <h4 class="title"><a href="">Quality control</a></h4>
+                <p class="description">Our presence at soure ensures that all coffees the farmer brings to market directly are sustainably grown and give you the best possible cup.</p>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Accordion Item #2
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
+  
+            <div class="col-md-6 col-lg-2 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class='bx bx-money-withdraw'></i></div>
+                <span class="process-number">2</span>
+                <h4 class="title"><a href="">Prefinances</a></h4>
+                <p class="description">We ensure the farmer gets prefinancing that allows them to get partial payment which enables them to continue working while the coffee goes to market.</p>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Accordion Item #3
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
+  
+            <div class="col-md-6 col-lg-2 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon"><i class='bx bxs-plane-take-off'></i></div>
+                <span class="process-number">3</span>
+                <h4 class="title"><a href="">Logistics</a></h4>
+                <p class="description">Our network of reliable logistics partners enables the farmer to ship their coffee to any part of the world and have it warehoused and delivered on order.</p>
               </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-2 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon"><i class='bx bxs-user-voice'></i></div>
+                <span class="process-number">4</span>
+                <h4 class="title"><a href="">Marketing</a></h4>
+                <p class="description">We make noise on behalf of farmers to let you know their coffee is in the market. Joint marketing manages costs and allows the farmer to concentrate on what they do best.</p>
+              </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-2 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up">
+                <div class="icon"><i class='bx bx-search-alt-2'></i></div>
+                <span class="process-number">5</span>
+                <h4 class="title"><a href="">Transparency</a></h4>
+                <p class="description">All direct coffees are fully traceable and everything from transaction costs, prices, and what finally ends up in the farmer’s pocket is open for all transacting parties to view.</p>
+              </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-2 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up">
+                <div class="icon"><i class='bx bx-cart-alt'></i></div>
+                <span class="process-number">6</span>
+                <h4 class="title"><a href="">Shop</a></h4>
+                <p class="description">Once coffees are warehoused in the destination market, you can make orders for both green or roasted which can be fullfilled quickly and delivered to your doorstep.</p>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Services Section -->
+      
+      <!-- ======= Services Section ======= -->
+      <!-- <section id="services" class="services">
+        <div class="container">
+  
+          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+            <h2>Services</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+              consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+              in iste officiis commodi quidem hic quas.</p>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up">
+                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon"><i class="bx bx-tachometer"></i></div>
+                <h4 class="title"><a href="">Magni Dolores</a></h4>
+                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon"><i class="bx bx-world"></i></div>
+                <h4 class="title"><a href="">Nemo Enim</a></h4>
+                <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section>End Services Section -->
+  
+      <!-- ======= Cta Section ======= -->
+      <section id="cta" class="cta">
+        <div class="container" data-aos="zoom-in">
+  
+          <div class="text-center">
+            <h3>Your Perfect Cup, Your Way</h3>
+            <p>Explore our premium coffee collection and place your order today. Your taste buds will thank you! Check out the variety of exquisite Coffee we have. From the bold and robust to the smooth and mellow, there's everything for every coffee enthusiast.</p>
+              <a routerLink="/Coffee" role="button">
+                SHOP NOW&nbsp;
+                <i class="bi bi-box-arrow-in-up-right"></i>
+              </a>
+          </div>
+  
+        </div>
+      </section><!-- End Cta Section -->
+  
+  
+  
+      <!-- ======= Portfolio Section ======= -->
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+  
+          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+            <h2>Meet the Farmers Behind Your Brew</h2>
+            <p>Click on a farmer from our list below to not only explore their unique story and commitment to sustainability but also to shop their exceptional coffee straight from their farm. Experience the connection between farmer and brew like never before.</p>
+          </div>
+  
+          <div class="row" data-aos="fade-in">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">Mix Ratings</li>
+                <li data-filter=".filter-five">Rated 5</li>
+                <li data-filter=".filter-four">Rated 4</li>
+                <li data-filter=".filter-three">Rated 3</li>
+              </ul>
             </div>
           </div>
-    </div>
-</section>
+  
+          <div class="row portfolio-container" data-aos="fade-up">
+  
+            <div class="col-lg-4 col-md-6 portfolio-item filter-five">
+              <div class="portfolio-wrap">
+                <img src="../../assets/img/farm/farm1.jpg" class="img-fluid" alt="">
+                <a routerLink="/riakiania" role="button" class="factory-name">Riakiania Coffee Factory</a>
+                <div class="portfolio-links">
+                  <a href="../../assets/img/farm/farm1.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="View Image"><i class="bx bx-plus"></i></a>
+                  <a routerLink="/riakiania" title="View Riakiania"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 portfolio-item filter-three">
+              <div class="portfolio-wrap">
+                <img src="../../assets/img/farm/farm2.jpg" class="img-fluid" alt="">
+                <a routerLink="/kariaini" role="button" class="factory-name">Kariaini Coffee Factory</a>
+                <div class="portfolio-links">
+                  <a href="../../assets/img/farm/farm2.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="View Image"><i class="bx bx-plus"></i></a>
+                  <a routerLink="/kariaini" title="View Kariaini"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 portfolio-item filter-five">
+              <div class="portfolio-wrap">
+                <img src="../../assets/img/farm/farm3.jpg" class="img-fluid" alt="">
+                <a routerLink="/Kiaragana" role="button" class="factory-name">Kiaragana Coffee Factory</a>
+                <div class="portfolio-links">
+                  <a href="../../assets/img/farm/farm3.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                  <a routerLink="/Kiaragana" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 portfolio-item filter-four">
+              <div class="portfolio-wrap">
+                <!-- <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""> -->
+                <img src="../../assets/img/farm/farm4.jpg" class="img-fluid" alt="">
+                <a routerLink="/Kiaragana" role="button" class="factory-name">Kiambwe Coffee Factory</a>
+                <div class="portfolio-links">
+                  <a href="../../assets/img/farm/farm4.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 portfolio-item filter-three">
+              <div class="portfolio-wrap">
+                <img src="../../assets/img/farm/farm5.jpg" class="img-fluid" alt="">
+                <a routerLink="/Kiaragana" role="button" class="factory-name">Mitondo Coffee Factory</a>
+                <div class="portfolio-links">
+                  <a href="../../assets/img/farm/farm5.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 portfolio-item filter-five">
+              <div class="portfolio-wrap">
+                <img src="../../assets/img/farm/farm6.jpg" class="img-fluid" alt="">
+                <a routerLink="/Kiaragana" role="button" class="factory-name">Kaga Coffee Factory</a>
+                <div class="portfolio-links">
+                  <a href="../../assets/img/farm/farm6.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 portfolio-item filter-five">
+              <div class="portfolio-wrap">
+                <img src="../../assets/img/farm/farm7.jpg" class="img-fluid" alt="">
+                <a routerLink="/Kiaragana" role="button" class="factory-name">Ihara Coffee Factory</a>
+                <div class="portfolio-links">
+                  <a href="../../assets/img/farm/farm7.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 portfolio-item filter-four">
+              <div class="portfolio-wrap">
+                <img src="../../assets/img/farm/farm5.jpg" class="img-fluid" alt="">
+                <a routerLink="/Kiaragana" role="button" class="factory-name">Gathambi Coffee Factory</a>
+                <div class="portfolio-links">
+                  <a href="../../assets/img/farm/farm5.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 portfolio-item filter-three">
+              <div class="portfolio-wrap">
+                <img src="../../assets/img/farm/farm3.jpg" class="img-fluid" alt="">
+                <a routerLink="/Kiaragana" role="button" class="factory-name">Getuya Coffee Factory</a>
+                <div class="portfolio-links">
+                  <a href="../../assets/img/farm/farm3.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+          <div class="view-more" data-aos="fade-up">
+            <a routerLink="/farmers" role="button">
+              VIEW MORE FARMERS&nbsp;
+              <i class="bi bi-box-arrow-in-up-right"></i>
+            </a>
+          </div>
+  
+  
+  
+        </div>
+      </section><!-- End Portfolio Section -->
+  
+  
+  
+  
+      <!-- JOIN OUR MOVEMENT SECTION -->
+      <div class="join-container">
+          <div class="section-title" data-aos="fade-up">
+              <h2>Join the Coffee Movement</h2>
+              <p>Don't miss out. Join our movement and connect directly with coffee farmers for authentic, sustainable, and ethically sourced coffee, making a positive impact from seed to cup.</p>
+          </div>
+  
+          <div class="joincontainer-content" data-aos="fade-up">
+              <div class="love-coffee join-card">
+                  <div class="join-header">
+                      <h2>Love Coffee?</h2>
+                  </div>
+                  
+                  <div class="join-subheader">
+                      <p>Join our community for:</p>
+                  </div>
+                  
+                  <div class="join-content">
+                      <p>Amazing discounts</p>
+                      <p>Wide variety of tastes</p>
+                      <p>Pay direct to farmers</p>
+                      <p>Direct premiums to farmers</p>
+                  </div>
+      
+                  <div class="join-button">
+                      <a routerLink="/Coffee" role="button" class="join-btn">
+                          BUY COFFEE
+                      </a>
+                  </div>
+              </div>
+      
+              <div class="cafe join-card">
+                  <div class="join-header">
+                      <h2>Own a Roastery or Café?</h2>
+                  </div>
+                  
+                  <div class="join-subheader">
+                      <p>Join our community for:</p>
+                  </div>
+                  
+                  <div class="join-content">
+                      <p>Amazing bulk offers</p>
+                      <p>Top premium coffees</p>
+                      <p>Free access to farmers</p>
+                      <p>Free samples & cupping</p>
+                  </div>
+      
+                  <div class="join-button">
+                      <a routerLink="/Coffee" role="button" class="join-btn">
+                          BUY COFFEE
+                      </a>
+                  </div>
+              </div>        
+      
+              <div class="coffee-farm join-card">
+                  <div class="join-header">
+                      <h2>Own a Coffee Farm?</h2>
+                  </div>
+                  
+                  <div class="join-subheader">
+                      <p>Join our community for:</p>
+                  </div>
+                  
+                  <div class="join-content">
+                      <p>Direct market access</p>
+                      <p>Export pre-finances</p>
+                      <p>Farmer support</p>
+                      <p>Direct premiums</p>
+                  </div>
+      
+                  <div class="join-button">
+                      <a routerLink="/Sell" role="button" class="join-btn">
+                          SELL COFFEE
+                      </a>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  
+    </main><!-- End #main -->
+  
+    
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+  
+  </div>
