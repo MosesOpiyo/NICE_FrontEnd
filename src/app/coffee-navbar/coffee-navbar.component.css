@@ -8,11 +8,12 @@ i{
     font-size: larger;
     padding: 10px;
 }
-img {
+.navbar-brand img {
     margin: 0;
     padding: 0;
     width: auto;
-    height: 50px;
+    height: 40px;
+    border-radius: 50px;
 }
 input{
     width: 30pc;
@@ -20,14 +21,26 @@ input{
     margin-top: 5px;
     margin-right: 5px;
 }
-a{
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
+.d-flex button {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
 }
-li {
-    padding-left: 10px;
-    padding-right: 10px;
+.d-flex button:hover {
+    background-color: #a9e541;
+    border: 1px solid #a9e541;
+    color: black;
+}
+.d-flex input{
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.navbar-nav i{
+    font-size: 18px;
+}
+a{
+    color: black;
 }
 .bi{
     color: black;

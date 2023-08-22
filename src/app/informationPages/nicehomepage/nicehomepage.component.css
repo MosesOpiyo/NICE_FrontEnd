@@ -6,7 +6,9 @@ a {
   color: #151915;
 }
 
-
+.logo img{
+  border-radius: 50px;
+}
 
 /**
 * Mobile Navigation 
