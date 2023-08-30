@@ -21,6 +21,7 @@ import { WarehousedashboardModule } from './warehousedashboard/warehousedashboar
 import { CoffeeNavbarComponent } from './coffee-navbar/coffee-navbar.component';
 import { CoffeeComponent } from './coffee/coffee.component';
 import { FooterComponent } from './footer/footer.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { FooterComponent } from './footer/footer.component';
     MatButtonModule,
 
     FormsModule,
-    WarehousedashboardModule
+    WarehousedashboardModule,
+    DashboardModule
 
   ],
   providers: [],
