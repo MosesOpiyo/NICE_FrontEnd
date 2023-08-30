@@ -4,6 +4,7 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -196,7 +197,7 @@ export class NicehomepageComponent implements OnInit {
   ]
 
   myScriptElement: HTMLScriptElement;
-   constructor(private dialog: MatDialog,private service:AuthenticationService,public auth:AuthService){
+   constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){
       this.myScriptElement = document.createElement("script");
       this.myScriptElement.src = "../../assets/js/main.js";
       document.body.appendChild(this.myScriptElement);
@@ -226,6 +227,18 @@ export class NicehomepageComponent implements OnInit {
     if(sessionStorage.getItem('Token')){
       this.service.getProfile().subscribe((res:any)=>{
         this.user = res['user']
+        if(this.user.type == "FARMER"){
+          this.route.navigate(['DashBoard'])
+        }
+        else if(this.user.type == "WAREHOUSER"){
+          this.route.navigate(['DashBoard'])
+        }
+        else if(this.user.type == "ADMIN"){
+          this.route.navigate(['DashBoard'])
+        }
+        else{
+          false
+        }
       })
     }
     else{
