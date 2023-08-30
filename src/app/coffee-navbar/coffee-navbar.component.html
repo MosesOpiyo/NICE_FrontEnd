@@ -1,41 +1,72 @@
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-          <a class="navbar-brand justify-content-center" href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-              <form class="d-flex">
-                <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
-                <button mat-raised-button class="btn btn-outline-success" style="margin-top: 5px;" type="submit">Search</button>
-              </form>
-            </ul>
-            <ul class="navbar-nav navbar-right">
-              <li class="nav-item dropdown" style="margin-top: 5px;">
-                <a *ngIf="!user" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bi bi-person"></i><span>Account</span>
-                </a>
-                <a *ngIf="user" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bi bi-person"></i><span>{{user['username']}}</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a *ngIf="!user" (click)="showLoginDialog()" class="dropdown-item"><i class="bi bi-door-open"></i>Log In</a>
-                  <a class="dropdown-item" href="#"><i class="bi bi-person"></i>My Account</a>
-                  <a class="dropdown-item" href="#"><i class="bi bi-basket3"></i>Orders</a>
-                  <a class="dropdown-item" href="#"><i class="bi bi-heart"></i>Saved Items</a>
-                  <a *ngIf="user" class="dropdown-item"><i class="bi bi-door-open"></i>Log Out</a>
-                  
-                </div>
-              </li>
-              <li class="nav-item" style="margin-top: 5px;">
-                <a class="nav-link" href="#"><i class="bi bi-info-circle"></i>Help</a>
-              </li>
-              <li class="nav-item" style="margin-top: 5px;">
-                <a class="nav-link" href="#"><i class="bi bi-bag"></i>Cart</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+<header id="header" class="fixed-top header-black">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <div class="logo">
+      <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link active" href="/">Home</a></li>
+        <li><a class="nav-link" href="#about">Shop Coffee</a></li>
+        <li><a class="nav-link" href="#services">Expo</a></li>
+        <!-- <li><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
+        <!-- <li><a class="nav-link" href="#team">Team</a></li> -->
+        <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <!-- <li><a href="#">Expo</a></li> -->
+            <li class="dropdown"><a href="#"><span>Expo</span> <i class="bi bi-chevron-right"></i></a>
+              <ul>
+                <li><a href="#">Register for Expo</a></li>
+                <!-- <li><a href="#">Deep Drop Down 2</a></li>
+                <li><a href="#">Deep Drop Down 3</a></li>
+                <li><a href="#">Deep Drop Down 4</a></li>
+                <li><a href="#">Deep Drop Down 5</a></li> -->
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-right"></i></a>
+              <ul>
+                <li><a href="#">Register for Origin Trip</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="#">Origin Trip</a></li> -->
+            <li><a href="#">Cupping</a></li>
+            <li><a href="#">Drop Down 4</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
+        <li><i class="bi bi-cart" value=8></i></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+
+    <div class="credentials-nonmobile">
+      <ul class="navbar" *ngIf="!user">
+            <li>
+              <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
+            </li>
+            <li>
+              <button mat-raised-button type="button" class="btn btn-outline-dark">Sign Up</button>
+            </li>
+          </ul>
+          <ul *ngIf="user">
+            <li>
+              <div class="navbar">
+                <ul>
+                  <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                      <li><a href="">Log out</a></li><br>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+    </div>
+    <!-- .navbar -->
+
+  </div>
+</header>

@@ -1,6 +1,6 @@
 <div *ngIf="!is_producer && !is_warehouser" class="container">
     <h1 class="clo-lg-5 text-center py-1"><img src="../../assets/images/d90a1c41c1294e9ebd3e6cba576ae35f.png" alt=""></h1>
-    <h2 class="clo-lg-5 text-center py-1">Welcome</h2>
+    <h2 class="clo-lg-5 text-center py-1">Register as Buyer</h2>
     <h3 class="clo-lg-5 text-center">Create an account with us.</h3>
     <form (ngSubmit)="registerBuyer()">
         <label for="username">Username</label>
@@ -29,26 +29,8 @@
         <input input id="password" name="password" placeholder="enter your password" class="form-control" type="password" required>
         <br>
         <button mat-raised-button type="submit">Register</button>
-        <p class="clo-lg-5 text-center py-2">Want to become a warehouser?<br><a style="color: blue;" (click)="switchToWarehouser()">Become Warehouser</a></p>
+        <p class="clo-lg-5 text-center py-2">Register as Buyer,<br><a style="color: blue;" (click)="switchToBuyer()">Become Buyer</a></p>
         <p class="clo-lg-5 text-center py-2">Dont have an account?<br><a routerLink="signup">Sign up</a></p>
-        <p class="clo-lg-5 text-center py-2">By continuing, you agree to Our Business Terms of Service; Opens a new tab and acknowledge you've read our Privacy Policy;</p>
-    </form>
-</div>
-<div *ngIf="!is_producer && is_warehouser" class="container">
-    <h1 class="clo-lg-5 text-center py-1"><img src="../../assets/images/d90a1c41c1294e9ebd3e6cba576ae35f.png" alt=""></h1>
-    <h2 class="clo-lg-5 text-center py-1">Become a warehouser</h2>
-    <h3 class="clo-lg-5 text-center">Warehouse goods for producers with NICE.</h3>
-    <form>
-        <label for="username">Username</label>
-        <input id="username" name="username" placeholder="username" class="form-control form-control" type="username" required>
-        <label for="email">Email</label>
-        <input id="email" name="email" placeholder="email" class="form-control form-control" type="email" required>
-        <label for="password">Password</label>
-        <input input id="password" name="password" placeholder="enter your password" class="form-control" type="password" required>
-        <br>
-        <button mat-raised-button type="submit">Register</button>
-        <p class="clo-lg-5 text-center py-2">Want to become a warehouser?<br><a (click)="switchToProducer()" style="color: blue;">Become Producer</a></p>
-        <p class="clo-lg-5 text-center py-2">Dont have an account?<br><a (click)="switchToBuyer()">Sign up</a></p>
         <p class="clo-lg-5 text-center py-2">By continuing, you agree to Our Business Terms of Service; Opens a new tab and acknowledge you've read our Privacy Policy;</p>
     </form>
 </div>

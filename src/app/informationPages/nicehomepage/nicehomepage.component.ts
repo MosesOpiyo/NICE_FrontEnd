@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'
 import { LoginComponent } from 'src/app/login/login.component'; 
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
+import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
+import { AuthService } from 'src/app/Auth/auth.service';
+
 
 @Component({
   selector: 'app-nicehomepage',
@@ -193,24 +196,41 @@ export class NicehomepageComponent implements OnInit {
   ]
 
   myScriptElement: HTMLScriptElement;
-   constructor(private dialog: MatDialog,private service:AuthenticationService){
+   constructor(private dialog: MatDialog,private service:AuthenticationService,public auth:AuthService){
       this.myScriptElement = document.createElement("script");
       this.myScriptElement.src = "../../assets/js/main.js";
       document.body.appendChild(this.myScriptElement);
    }
 
    user:any | null = null;
+   isLoggedIn:any
 
    showLoginDialog(){
     const dialogRef = this.dialog.open(LoginComponent,{
       width: '25pc'
+    });
+  }
+
+  logout(){
+    this.service.logout()
+    this.ngOnInit()
+  }
+
+  showSignUpDialog(){
+    const dialogRef = this.dialog.open(SignUpComponent,{
+      width: '25pc'
     }); 
   }
 
-   ngOnInit(): void {
-    this.service.getProfile().subscribe((res:any)=>{
-      this.user = res['user']
-    })
+  ngOnInit(): void {
+    if(sessionStorage.getItem('Token')){
+      this.service.getProfile().subscribe((res:any)=>{
+        this.user = res['user']
+      })
+    }
+    else{
+      console.log("No token")
+    }
    }
 }
 

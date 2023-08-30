@@ -6,6 +6,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -51,6 +52,7 @@ import { FooterComponent } from './footer/footer.component';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatSnackBarModule,
     MatTableModule,
     FormsModule,
     WarehousedashboardModule,

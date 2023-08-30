@@ -5,6 +5,18 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
+  login(): void {
+    if(sessionStorage.getItem('Token')){
+      this.isAuthenticated = true;
+    }
+    else{
+      this.isAuthenticated = false;
+    }
+  }
+
+  isAuthenticatedUser(): boolean {
+    return this.isAuthenticated;
+  }
 
   authCheck(){
     if (sessionStorage.getItem('Token')){

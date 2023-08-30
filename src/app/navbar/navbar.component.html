@@ -57,17 +57,18 @@
               </li>
             </ul>
             <ul *ngIf="user" class="navbar-nav navbar-right">
-              <li class="nav-item">
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bi bi-person"></i>{{user['username']}}
+                  {{user.username}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a *ngIf="!user" (click)="showLoginDialog()" class="dropdown-item"><i class="bi bi-door-open"></i>Log In</a>
-                  <a class="dropdown-item" href="#"><i class="bi bi-person"></i>My Account</a>
-                  <a class="dropdown-item" href="#"><i class="bi bi-basket3"></i>Orders</a>
-                  <a class="dropdown-item" href="#"><i class="bi bi-heart"></i>Saved Items</a>
-                  <a *ngIf="user" (click)="logOut()" class="dropdown-item"><i class="bi bi-door-open"></i>Log Out</a>
-                  
+                  <a class="dropdown-item" href="#">Nyeri Origin Trip</a>
+                  <a class="dropdown-item" href="#">Why Participate</a>
+                  <a class="dropdown-item" href="#">Expenses Paid Trip</a>
+                  <a class="dropdown-item" href="#">Meet The Farmers</a>
+                  <a class="dropdown-item" href="#">Tips to Help You</a>
+                  <a class="dropdown-item" href="#">Trip Itinerary</a>
+                  <a class="dropdown-item" href="#">Register For Trip</a>
                 </div>
               </li>
             </ul>
