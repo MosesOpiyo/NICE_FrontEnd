@@ -1,36 +1,56 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 import { AuthService } from '../Auth/auth.service';
 import { environment } from 'src/environments/environment.development';
-import { User } from '../User/user';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService {
+export class AuthenticationService implements OnInit {
 
-  constructor(private http:HttpClient,private authService:AuthService) { }
+
+  constructor(private http:HttpClient,private authService:AuthService,private snackBar: MatSnackBar,private location:Location) { }
+  ngOnInit(): void {
+   
+  }
+
   Register(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Registration`,credentials).subscribe((response:any)=>{
       alert(`Account Created.`)
     })
   }
+  refreshPage() {
+    this.location.replaceState(this.location.path());
+    window.location.reload();
+  }
+
   login(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Login`,credentials).subscribe((response:any)=>{
-      sessionStorage.setItem('token', response['token'])
-      this.authService.authentication(true)
-      alert(`Welcome back`)
+      sessionStorage.setItem('Token', response.tokens.access)
+      this.authService.authentication(true);
+      this.snackBar.open('Login successful.Welcome', 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      this.refreshPage()
     })
   }
   getProfile(){
     let headers = new HttpHeaders({
-      'Authorization':`Token ${sessionStorage.getItem('token')}`
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
     })
     return this.http.get(`${environment.BASE_URL}Authentication/Profile`,{'headers':headers})
   }
   logout(){
-    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('Token')
     this.authService.authentication(false)
+    this.snackBar.open('Log Out successful.', 'Close', {
+      duration: 3000,
+      panelClass: ['blue-snackbar']
+    });
   }
 }

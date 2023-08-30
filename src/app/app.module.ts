@@ -6,7 +6,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-board.component';
 import { FarmersDashBoardModule } from './farmers-dash-board/farmers-dash-board.module';
 import { FooterComponent } from './footer/footer.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 
 
@@ -51,10 +53,12 @@ import { FooterComponent } from './footer/footer.component';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatSnackBarModule,
     MatTableModule,
     FormsModule,
     WarehousedashboardModule,
-    FarmersDashBoardModule
+    FarmersDashBoardModule,
+    DashboardModule
 
   ],
   providers: [],
