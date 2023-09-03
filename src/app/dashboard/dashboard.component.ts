@@ -9,6 +9,12 @@ import { AuthenticationService } from '../AuthService/authentication.service';
 export class DashboardComponent {
   constructor(private service:AuthenticationService){}
   user:any
+
+  logOut(){
+    this.service.logout()
+    this.ngOnInit()
+  }
+
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
       this.service.getProfile().subscribe((res:any)=>{
@@ -18,6 +24,6 @@ export class DashboardComponent {
     else{
       console.log("No token")
     }
-   }
+  }
 
 }
