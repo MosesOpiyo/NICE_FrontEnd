@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { ProductsService } from 'src/app/ProductsService/products.service';
 
 @Component({
@@ -7,13 +8,18 @@ import { ProductsService } from 'src/app/ProductsService/products.service';
   styleUrls: ['./requested.component.css']
 })
 export class RequestedComponent {
-  constructor(private products:ProductsService){}
-  displayedColumns: string[] = ['name','quantity','warehoused_approved','producer'];
+  constructor(private products:ProductsService,private service:AuthenticationService){}
+  displayedColumns: string[] = ['name','producer','quantity','grade','origin','lot_type','is_approved'];
   farmerProducts:any
+  requestsProducts:any
+  user:any
   
   ngOnInit(): void {
-    this.products.getFarmerProducts().subscribe((res:any)=>{
-      this.farmerProducts = res
+    this.service.getProfile().subscribe((res:any)=>{
+      this.user = res['user']
+    })
+    this.products.getWarehouseRequests().subscribe((res:any)=>{
+      this.requestsProducts = res
     })
   }
   

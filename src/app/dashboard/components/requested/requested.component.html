@@ -214,26 +214,38 @@
             <div class="bg-light rounded h-100 p-4">
                 <div class="row g-0" style="width: 100%;">
                     <div class="col-lg-10">
-                        <h4 class="mb-4">Warehousing Requests</h4>
+                        <h4 *ngIf="user.type=='WAREHOUSER'" class="mb-4">Warehousing Requests</h4>
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table mat-table [dataSource]="farmerProducts" class="mat-elevation-z8 demo-table table-light">
+                    <table mat-table [dataSource]="requestsProducts" class="mat-elevation-z8 demo-table table-light">
                         <ng-container matColumnDef="name">
                           <th mat-header-cell *matHeaderCellDef> Name </th>
-                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                          <td mat-cell *matCellDef="let element"> {{element.product.name}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="producer">
+                          <th mat-header-cell *matHeaderCellDef> Producer</th>
+                          <td mat-cell *matCellDef="let element"> {{element.producer.username}} </td>
                         </ng-container>
                         <ng-container matColumnDef="quantity">
                           <th mat-header-cell *matHeaderCellDef> Quantity </th>
-                          <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+                          <td mat-cell *matCellDef="let element"> {{element.product.quantity}} </td>
                         </ng-container>
-                        <ng-container matColumnDef="warehoused_approved">
-                          <th mat-header-cell *matHeaderCellDef> Warehoused Approved </th>
-                          <td mat-cell *matCellDef="let element"> {{element.warehouse_approved}} </td>
+                        <ng-container matColumnDef="grade">
+                            <th mat-header-cell *matHeaderCellDef> Grade </th>
+                            <td mat-cell *matCellDef="let element"> {{element.product.grade}} </td>
                         </ng-container>
-                        <ng-container matColumnDef="producer">
-                          <th mat-header-cell *matHeaderCellDef> Producer </th>
-                          <td mat-cell *matCellDef="let element"> {{element.producer.username}} </td>
+                        <ng-container matColumnDef="origin">
+                            <th mat-header-cell *matHeaderCellDef> Origin </th>
+                            <td mat-cell *matCellDef="let element"> {{element.product.origin}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="lot_type">
+                            <th mat-header-cell *matHeaderCellDef> Lot Type </th>
+                            <td mat-cell *matCellDef="let element"> {{element.product.lot_type}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="is_approved">
+                            <th mat-header-cell *matHeaderCellDef> Approval </th>
+                            <td mat-cell *matCellDef="let element"><i *ngIf="element.is_approved==true" style="color: green;font-size: 25px;" class="bi bi-check2-circle"></i><i *ngIf="element.is_approved==false" style="color: red;font-size: 25px;" class="bi bi-x-circle"></i></td>
                         </ng-container>
                           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                           <tr
