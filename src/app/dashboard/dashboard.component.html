@@ -2,19 +2,26 @@
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <!-- <a href="index.html" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><img style="width: 40px; height: 40px;border-radius: 50px; margin-right: 10px;" src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid">DASHMIN</h3>
-                </a>
+                </a> -->
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
                         <img class="rounded-circle" src="../../assets/dash-assets/img/user.jpg" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">{{user['username'] | titlecase}}</h6>
+                        <h4 class="mb-0">{{user['username'] | titlecase}}</h4>
                         <span>{{user['type'] | titlecase}}</span>
                     </div>
                 </div>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
                 <div class="navbar-nav w-100">
                     <a *ngIf="user.type == 'FARMER'" routerLink="details" class="nav-item nav-link active"><i class="bi bi-person me-2" style="font-size: 1.5rem"></i>Farmer Details</a>
                     <a *ngIf="user.type == 'WAREHOUSER'" routerLink="details" class="nav-item nav-link active"><i class="bi bi-house me-2" style="font-size: 1.5rem"></i>Warehouser Details</a>
@@ -22,13 +29,18 @@
                     <a *ngIf="user.type == 'WAREHOUSER'" routerLink="table" class="nav-item nav-link"><i class="bi bi-box2 me-2" style="font-size: 1.5rem"></i>Inventory</a>
                     <a *ngIf="user.type == 'FARMER'" routerLink="requested" class="nav-item nav-link"><i class="bi bi-airplane me-2" style="font-size: 1.5rem"></i>Requested</a>
                     <a *ngIf="user.type == 'WAREHOUSER'" routerLink="requested" class="nav-item nav-link"><i class="bi bi-boxes me-2" style="font-size: 1.5rem"></i>Requests</a>
-                    <a *ngIf="user.type == 'WAREHOUSER'" routerLink="orders" class="nav-item nav-link"><i class="bi bi-check2-circle me-2" style="font-size: 1.5rem"></i>Orders</a>
                     <a *ngIf="user.type == 'FARMER'" routerLink="form" class="nav-item nav-link"><i class="bi bi-bell me-2" style="font-size: 1.5rem"></i>Notifications</a>
                     <a *ngIf="user.type == 'WAREHOUSER'" routerLink="form" class="nav-item nav-link"><i class="bi bi-bell me-2" style="font-size: 1.5rem"></i>Notifications</a>
                     <a routerLink="/dashboard" class="nav-item nav-link active"><i class="bi bi-house me-2" style="font-size: 1.5rem"></i>Dashboard</a>
                     <a routerLink="form" class="nav-item nav-link"><i class="bi bi-check2-square me-2" style="font-size: 1.5rem"></i>Forms</a>
                     <a routerLink="table" class="nav-item nav-link"><i class="bi bi-table me-2" style="font-size: 1.5rem"></i>Tables</a>
                     <a routerLink="charts" class="nav-item nav-link"><i class="bi bi-bar-chart me-2" style="font-size: 1.5rem"></i>Charts</a>
+                    <br>
+                    <!-- ADMIN DASHBOARD TABS -->
+                    <!-- <a routerLink="table" class="nav-item nav-link"><i class="bi bi-people-fill me-2" style="font-size: 1.5rem"></i>Users</a>
+                    <a routerLink="table" class="nav-item nav-link"><i class="bi bi-stopwatch me-2" style="font-size: 1.5rem"></i>Pending Authentication</a>
+                    <a routerLink="table" class="nav-item nav-link"><i class="bi bi-cup-hot me-2" style="font-size: 1.5rem"></i>Coffee</a> -->
+
                 </div>
             </nav>
         </div>
@@ -44,7 +56,7 @@
                     <input class="form-control border-0" type="search" placeholder="Search">
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
+                    <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="bi bi-envelope-fill me-lg-2"></i>
                             <span class="d-none d-lg-inline-flex">Message</span>
@@ -82,11 +94,11 @@
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item text-center">See all message</a>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="bi bi-bell-fill me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notification</span>
+                            <span class="d-none d-lg-inline-flex">Notifications</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
@@ -109,8 +121,9 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="../../assets/dash-assets/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <!-- <img class="rounded-circle me-lg-2" src="../../assets/dash-assets/img/user.jpg" alt="" style="width: 40px; height: 40px;"> -->
                             <span class="d-none d-lg-inline-flex">{{user['username'] | titlecase}}</span>
+                            <i class="bi bi-caret-down user-dropdown"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
@@ -120,6 +133,7 @@
                     </div>
                 </div>
             </nav>
+            
             <div class="main">
                 <router-outlet></router-outlet>
             </div>
