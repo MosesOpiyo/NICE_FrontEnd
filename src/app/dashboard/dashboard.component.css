@@ -204,6 +204,13 @@
     background: #FFFFFF;
     border-radius: 40px;
 }
+.content .navbar .navbar-nav .nav-link i.user-dropdown {
+    width: 0;
+    height: 0;
+    padding-inline: .5rem;
+    font-size: 1rem;
+}
+
 
 .content .navbar .dropdown-toggle::after {
     margin-left: 6px;
