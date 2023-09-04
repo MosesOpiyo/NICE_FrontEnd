@@ -11,6 +11,7 @@ import { ChartsComponent } from './components/charts/charts.component';
 import { NewproductComponent } from './components/newproduct/newproduct.component';
 import { RequestedComponent } from './components/requested/requested.component';
 import { DetailsComponent } from './components/details/details.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DetailsComponent } from './components/details/details.component';
     ChartsComponent,
     NewproductComponent,
     RequestedComponent,
-    DetailsComponent
+    DetailsComponent,
+    OrdersComponent
   ],
   imports: [
     CommonModule,
