@@ -16,8 +16,8 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a *ngIf="user.type == 'FARMER'" routerLink="details" class="nav-item nav-link"><i class="bi bi-person me-2" style="font-size: 1.5rem"></i>Farmer's Details</a>
-                    <a *ngIf="user.type == 'WAREHOUSER'" routerLink="details" class="nav-item nav-link"><i class="bi bi-house me-2" style="font-size: 1.5rem"></i>Warehouser's Details</a>
+                    <a *ngIf="user.type == 'FARMER'" routerLink="details" class="nav-item nav-link active"><i class="bi bi-person me-2" style="font-size: 1.5rem"></i>Farmer Details</a>
+                    <a *ngIf="user.type == 'WAREHOUSER'" routerLink="details" class="nav-item nav-link active"><i class="bi bi-house me-2" style="font-size: 1.5rem"></i>Warehouser Details</a>
                     <a *ngIf="user.type == 'FARMER'" routerLink="table" class="nav-item nav-link"><i class="bi bi-box2 me-2" style="font-size: 1.5rem"></i>Products</a>
                     <a *ngIf="user.type == 'WAREHOUSER'" routerLink="table" class="nav-item nav-link"><i class="bi bi-box2 me-2" style="font-size: 1.5rem"></i>Inventory</a>
                     <a *ngIf="user.type == 'FARMER'" routerLink="requested" class="nav-item nav-link"><i class="bi bi-airplane me-2" style="font-size: 1.5rem"></i>Requested</a>
@@ -85,7 +85,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="bi bi-bell-fill me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                            <span class="d-none d-lg-inline-flex">Notification</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
