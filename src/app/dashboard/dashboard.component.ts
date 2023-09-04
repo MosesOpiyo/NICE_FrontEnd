@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from '../AuthService/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,7 @@ import { AuthenticationService } from '../AuthService/authentication.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(private service:AuthenticationService){}
+  constructor(private service:AuthenticationService,private route:Router){}
   user:any
 
   logOut(){
@@ -22,7 +23,7 @@ export class DashboardComponent {
       })
     }
     else{
-      console.log("No token")
+      this.route.navigate(['homepage'])
     }
   }
 
