@@ -20,4 +20,22 @@ export class ProductsService {
     })
     return this.http.get(`${environment.BASE_URL}Farmers/FarmerProduct`,{'headers':headers})
   }
+  getinventoryProducts(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Warehouse/Warehouse`,{'headers':headers})
+  }
+  getWarehouseOrders(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/WarehouseOrders`,{'headers':headers})
+  }
+  getWarehouseRequests(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/Requests`,{'headers':headers})
+  }
 }
