@@ -1,3 +1,7 @@
 a {
     text-decoration: none;
 }
+
+.footer-top .container .row {
+    justify-content: space-between;
+}

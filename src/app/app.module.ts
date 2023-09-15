@@ -27,6 +27,8 @@ import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-boa
 import { FarmersDashBoardModule } from './farmers-dash-board/farmers-dash-board.module';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ExpoComponent } from './informationPages/expo/expo.component';
+import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.component';
 
 
 
@@ -42,7 +44,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     CoffeeComponent,
 
     SignUpComponent,
-    FooterComponent
+    FooterComponent,
+    ExpoComponent,
+    OriginTripComponent
   ],
   entryComponents:[LoginComponent],
   imports: [

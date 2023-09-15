@@ -1,91 +1,12 @@
-<div class="homepage-container">
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-transparent">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div class="logo">
-        <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link active" href="/">Home</a></li>
-          <li><a class="nav-link" href="#about">Shop Coffee</a></li>
-          <li><a class="nav-link" href="#services">Expo</a></li>
-          <!-- <li><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
-          <!-- <li><a class="nav-link" href="#team">Team</a></li> -->
-          <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <!-- <li><a href="#">Expo</a></li> -->
-              <li class="dropdown"><a href="#"><span>Expo</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Register for Expo</a></li>
-                  <!-- <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li> -->
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Register for Origin Trip</a></li>
-                </ul>
-              </li>
-              <!-- <li><a href="#">Origin Trip</a></li> -->
-              <li><a href="#">Cupping</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
-          <li><i class="bi bi-cart" value=8></i></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-      <div class="credentials-nonmobile">
-        <ul class="navbar" *ngIf="!user">
-              <li>
-                <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-              </li>
-              <li>
-                <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-              </li>
-            </ul>
-            <ul *ngIf="user">
-              <li>
-                <div class="navbar">
-                  <ul>
-                    <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                      <ul>
-                        <li><a href="" (click)="logout()">Log out</a></li><br>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-      </div>
-      
-      <!-- .navbar -->
-
-    </div>
-  </header>
-  <!-- End Header -->
-   
-  
+<div class="homepage-container">  
     <!-- ======= Hero Section ======= -->
     <section id="hero">
       <div class="hero-container" data-aos="fade-up">
         <h1>Buy coffee direct from the farmer. <span class="header-family">No resellers.</span></h1>
-        <p class="hero-par"><span class="font-italic fw-bold">Nicedirect&#174;</span> brings you the opportunity to buy
-          coffee beans directly from passionate Kenyan farmers, eliminating resellers from the equation. Embrace
-          transparency,
-          support sustainability, and savor the true essence of coffee like never before.
+        <p class="hero-par">Embrace transparency, support sustainability, and savor the true essence of coffee like never
+          before.
         </p>
-        <p class="hero-par2">100% Direct | 100% Transparent | 100% Amazing Coffee</p>
+        <p class="hero-par2">100% Direct | 100% Transparent | 100% Pure Coffee</p>
         <a class="hero-btn" routerLink="/Coffee" role="button">BUY NOW</a>
       </div>
     </section><!-- End Hero -->
@@ -139,7 +60,7 @@
         </div>
       </section><!-- End Counts Section -->
   
-      <!-- ======= About Section ======= -->
+      <!-- ======= Why Us Section ======= -->
       <section id="about" class="about">
         <div class="container">
   
@@ -166,12 +87,12 @@
             <div class="col-xl-7 d-flex align-items-stretch">
               <div class="icon-boxes d-flex">
                 <div class="row">
-                  <div class="col-md-6 icon-box dark" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-md-6 icon-box dark box-one" data-aos="fade-up" data-aos-delay="100">
                     <i class="bi bi-piggy-bank"></i>
                     <h4>Save up to 15%</h4>
                     <p>Everytime you buy direct from farmers, you save up to 15% with every purchase</p>
                   </div>
-                  <div class="col-md-6 icon-box light" data-aos="fade-up" data-aos-delay="200">
+                  <div class="col-md-6 icon-box light box-two" data-aos="fade-up" data-aos-delay="200">
                     <i class="bi bi-journal-text"></i>
                     <h4>Coffee with a story</h4>
                     <p>Put a face to the coffee you buy by getting directly acquinted with farmers</p>
@@ -196,7 +117,7 @@
           </div>
   
         </div>
-      </section><!-- End About Section -->
+      </section><!-- End Why Us Section -->
   
   
       <!-- PRODUCTS SECTION -->
@@ -249,18 +170,7 @@
               </div>
   
             </div>
-            <!-- <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-          <div class="swiper-slide">Slide 5</div>
-          <div class="swiper-slide">Slide 6</div>
-          <div class="swiper-slide">Slide 7</div>
-          <div class="swiper-slide">Slide 8</div>
-          <div class="swiper-slide">Slide 9</div>
-          <div class="swiper-slide">Slide 10</div> -->
           </div>
-          <!-- Add Pagination -->
-          <!-- <div class="swiper-pagination"></div> -->
           <!-- Add Arrows -->
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
@@ -282,10 +192,10 @@
       <section id="services" class="services">
         <div class="container" data-aos="fade-up">
   
-          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-            <h2>How it works</h2>
+          <div class="section-title how-header" data-aos="fade-in" data-aos-delay="100">
+            <h2>How NiceDirect works</h2>
             <p>Making direct trade work is a cooperative effort that invloves highly experienced partners who work behind the scenes
-              to make it easy for you.
+              to make it easy for you to get your coffee fresh from farm to cup.
             </p>
           </div>
   
@@ -347,56 +257,7 @@
           </div>
   
         </div>
-      </section><!-- End Services Section -->
-      
-      <!-- ======= Services Section ======= -->
-      <!-- <section id="services" class="services">
-        <div class="container">
-  
-          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-            <h2>Services</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-              consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-              in iste officiis commodi quidem hic quas.</p>
-          </div>
-  
-          <div class="row">
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box" data-aos="fade-up">
-                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-              </div>
-            </div>
-  
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon"><i class="bx bx-file"></i></div>
-                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-              </div>
-            </div>
-  
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon"><i class="bx bx-tachometer"></i></div>
-                <h4 class="title"><a href="">Magni Dolores</a></h4>
-                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-              </div>
-            </div>
-  
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon"><i class="bx bx-world"></i></div>
-                <h4 class="title"><a href="">Nemo Enim</a></h4>
-                <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-              </div>
-            </div>
-  
-          </div>
-  
-        </div>
-      </section>End Services Section -->
+      </section>
   
       <!-- ======= Cta Section ======= -->
       <section id="cta" class="cta">
@@ -405,10 +266,10 @@
           <div class="text-center">
             <h3>Your Perfect Cup, Your Way</h3>
             <p>Explore our premium coffee collection and place your order today. Your taste buds will thank you! Check out the variety of exquisite Coffee we have. From the bold and robust to the smooth and mellow, there's everything for every coffee enthusiast.</p>
-              <a routerLink="/Coffee" role="button">
+            <a routerLink="/Coffee" role="button">
                 SHOP NOW&nbsp;
                 <i class="bi bi-box-arrow-in-up-right"></i>
-              </a>
+            </a>
           </div>
   
         </div>
@@ -420,7 +281,7 @@
       <section id="portfolio" class="portfolio">
         <div class="container">
   
-          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+          <div class="section-title meet-header" data-aos="fade-in" data-aos-delay="100">
             <h2>Meet the Farmers Behind Your Brew</h2>
             <p>Click on a farmer from our list below to not only explore their unique story and commitment to sustainability but also to shop their exceptional coffee straight from their farm. Experience the connection between farmer and brew like never before.</p>
           </div>
@@ -566,7 +427,7 @@
   
       <!-- JOIN OUR MOVEMENT SECTION -->
       <div class="join-container">
-          <div class="section-title" data-aos="fade-up">
+          <div class="section-title joincontainer-header" data-aos="fade-up">
               <h2>Join the Coffee Movement</h2>
               <p>Don't miss out. Join our movement and connect directly with coffee farmers for authentic, sustainable, and ethically sourced coffee, making a positive impact from seed to cup.</p>
           </div>
@@ -643,7 +504,18 @@
           </div>
           
       </div>
-  
+
+      <!-- SUBSCRIPTION -->
+      <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
+        <h4>Our Newsletter</h4>
+        <p>Sign up for our Newsletter and get the latest NICEDIRECT news, unique offers and access to exclusive products.</p>
+        <form action="" method="post">
+          <input type="email" name="email"><input type="submit" value="Subscribe">
+        </form>
+      
+      </div> -->
+
+
     </main><!-- End #main -->
   
     

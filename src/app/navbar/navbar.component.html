@@ -1,77 +1,85 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
+<header id="header" class="fixed-top header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
 
-          <a class="navbar-brand justify-content-center" href="#"><img src="../../assets/img/d90a1c41c1294e9ebd3e6cba576ae35f.png" alt=""></a>
-          
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <div class="logo">
+        <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
+      </div>
 
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" (click)="authCheck()">Coffee</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Expo
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Nice Expo</a>
-                  <a class="dropdown-item" href="#">Sponsors</a>
-                  <a class="dropdown-item" href="#">Exhibitors</a>
-                  <a class="dropdown-item" href="#">Register For Expo</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Origin Trip
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Nyeri Origin Trip</a>
-                  <a class="dropdown-item" href="#">Why Participate</a>
-                  <a class="dropdown-item" href="#">Expenses Paid Trip</a>
-                  <a class="dropdown-item" href="#">Meet The Farmers</a>
-                  <a class="dropdown-item" href="#">Tips to Help You</a>
-                  <a class="dropdown-item" href="#">Trip Itinerary</a>
-                  <a class="dropdown-item" href="#">Register For Trip</a>
-                  
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Patners</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Gallery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacts</a>
-              </li>
-            </ul>
-            <ul *ngIf="!user" class="navbar-nav navbar-right">
-              <li class="nav-item">
+      <!-- for mobile view -->
+      <div class="credentials-mobile">
+        <ul class="navbar" *ngIf="!user">
+              <li>
                 <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
               </li>
-              <li class="nav-item">
+              <li>
                 <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
               </li>
             </ul>
-            <ul *ngIf="user" class="navbar-nav navbar-right">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{user.username}}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Nyeri Origin Trip</a>
-                  <a class="dropdown-item" href="#">Why Participate</a>
-                  <a class="dropdown-item" href="#">Expenses Paid Trip</a>
-                  <a class="dropdown-item" href="#">Meet The Farmers</a>
-                  <a class="dropdown-item" href="#">Tips to Help You</a>
-                  <a class="dropdown-item" href="#">Trip Itinerary</a>
-                  <a class="dropdown-item" href="#">Register For Trip</a>
+            <ul *ngIf="user">
+              <li>
+                <div class="navbar">
+                  <ul>
+                    <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
+                      <ul>
+                        <li><a href="" (click)="logout()">Log out</a></li><br>
+                      </ul>
+                    </li>
+                  </ul>
                 </div>
               </li>
             </ul>
-          </div>
-        </div>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link active" href="/">Home</a></li>
+          <li><a class="nav-link" href="#about">Shop Coffee</a></li>
+          <li class="dropdown"><a href="#"><span>Expo</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a routerLink="/Expo">NICE Expo</a></li>
+              <li><a href="#">Register for NICE Expo</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Nyeri Origin Trip</a></li>
+              <li><a href="#">Register for Origin Trip</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
+          <li><i class="bi bi-cart" value=8></i></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
+
+      <!-- for non-mobile view -->
+      <div class="credentials-nonmobile">
+        <ul class="navbar" *ngIf="!user">
+              <li>
+                <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
+              </li>
+              <li>
+                <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
+              </li>
+            </ul>
+            <ul *ngIf="user">
+              <li>
+                <div class="navbar">
+                  <ul>
+                    <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
+                      <ul>
+                        <li><a href="" (click)="logout()">Log out</a></li><br>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+      </div>
+      
+      <!-- .navbar -->
+
+    </div>
+  </header>

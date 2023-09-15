@@ -358,8 +358,8 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(11, 43, 3, 0.5), rgba(0, 0, 0, 0.2)), url("../../assets/img/hero2.jpg") top center;
-  /* background: url("../img/hero5.webp") top center; */
+  background: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.2)), url("../../assets/img/hero2.jpg") top center;
+  /* background: url("../../assets/img/hero2.jpg"); */
   background-size: cover;
   position: relative;
   margin-bottom: -90px;
@@ -420,16 +420,16 @@ h6 {
   /* width: 64px;
   height: 64px; */
   text-align: center;
-  border: 2px solid #fff;
-  background-color: #151915;
-  color: #fff;
+  border: 2px solid #000000;
+  background-color: #9afa8a;
+  color: #000000;
 }
 
 #hero .hero-btn:hover {
   /* padding-top: 8px; */
-  background-color: #9afa8a;
-  color: #000000;
-  border: 2px solid #000000;
+  background-color: #151915;
+  color: #fff;
+  border: 2px solid #fff;
 }
 
 @media (min-width: 1024px) {
@@ -458,6 +458,53 @@ h6 {
   }
 }
 
+@media (max-width: 500px) {
+  #hero .hero-container {
+      width: 90%;
+      gap: 1.5rem;
+    }
+  #hero h1 {
+      /* border: 2px solid white; */
+      font-size: 35px;
+      line-height: 2rem;
+    /* line-height: 36px; */
+  }
+
+  #hero p {
+      /* border: 2px solid white; */
+    font-size: 17px;
+    line-height: 20px;
+    margin-bottom: 0;
+  }
+
+  #hero .hero-btn {
+    font-size: 15px;
+    padding: 6px 100px;
+  }
+}
+
+@media (max-width: 375px) {
+  #hero .hero-container {
+      width: 100%;
+    }
+  #hero h1 {
+      /* border: 2px solid white; */
+      font-size: 30px;
+      line-height: 1.7rem;
+  }
+
+  #hero p {
+      /* border: 2px solid white; */
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  #hero .hero-btn {
+    font-size: 15px;
+    padding: 6px 50px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -476,7 +523,7 @@ section {
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 35px;
   font-weight: bold;
   position: relative;
   margin-bottom: 30px;
@@ -609,6 +656,10 @@ section {
       /* border: 2px solid white; */
       text-align: center;
     }
+
+    .counts .count-box p {
+      margin: 0;
+    }
     
     .counts .count-box i {
       display: inline;
@@ -629,7 +680,7 @@ section {
   /* border: 2px solid black; */
   /* background: url("../../assets/img/about-bg.jpg") center center no-repeat;
   background-size: cover; */
-  margin-top: 100px;
+  margin-block: 150px;
   padding: 60px 0;
   text-align: center;
   /* position: relative; */
@@ -656,9 +707,9 @@ section {
   /* border: 2px solid black; */
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   padding-block: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .about-header h2 {
@@ -678,9 +729,10 @@ section {
 }
 
 .about .content-image {
-  /* background-image: url("../../assets/img/why3.jpg"); */
-  background: linear-gradient(rgba(11, 43, 3, 0.5), rgba(0, 0, 0, 0.2)), url("../../assets/img/why2.jpg") center center;
+  background-image: url("../../assets/img/why2.jpg");
+  /* background: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.2)), url("../../assets/img/why2.jpg") center center; */
   background-size: cover;
+  background-position: center;
   width: 100%;
   height: 100%;
   /* border: 2px solid blue; */
@@ -729,14 +781,16 @@ section {
   margin-inline: 0;
 }
 
-/* .about .icon-boxes .icon-box {
-  margin-top: 12px;
-} */
+.about .icon-boxes .icon-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 .about .icon-boxes .icon-box i {
-  font-size: 40px;
+  font-size: 60px;
   /* color: #151915; */
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .about .icon-boxes .icon-box h4 {
@@ -756,7 +810,11 @@ section {
 }
 
 .about .icon-boxes .light {
-  background-color: #c4fcbb;
+  background-color: lightgray;
+}
+
+.about .icon-boxes .light p {
+  color: #000000;
 }
 
 @media (max-width: 1200px) {
@@ -794,7 +852,11 @@ section {
   }
   .about .icon-boxes .icon-box {
     margin-top: 12px;
-}
+  }
+  .about .icon-boxes .box-one,
+  .about .icon-boxes .box-two{
+    margin-top: 0;
+  }
 }
 
 
@@ -811,14 +873,21 @@ section {
   gap: 2rem;
 }
 
+.how-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .services .icon-box {
   /* border: 2px solid red; */
   width: 100%;
   padding: 1rem .5rem;
   position: relative;
   overflow: hidden;
-  background: #f3fef1;
-  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  background-color: #d3d3d3;
+  box-shadow: 0 0 29px 0 #f4f4f4;
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
@@ -841,7 +910,7 @@ section {
 }
 
 .services .icon-box:hover::before {
-  background: #566554;
+  background: #151915;
   top: 0;
   border-radius: 0px;
 }
@@ -853,13 +922,13 @@ section {
 .services .icon i {
   font-size: 6rem;
   line-height: 1;
-  color: rgba(11, 43, 3, 0.5);
+  color: #000000bf;
   transition: all 0.3s ease-in-out;
 }
 
 .services .process-number {
   /* border: 2px solid black; */
-  color: rgba(11, 43, 3, 0.5);
+  color: #000000bf;
   font-size: 3.5rem;
   font-weight: 200;
   position: absolute;
@@ -913,16 +982,22 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  height: 350px;
-  margin-block: 7rem;
-  background: linear-gradient(rgba(11, 43, 3, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/img/cta-bg2.jpg") fixed center center;
+  height: 400px;
+  margin-block: 150px;
+  background: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.6)), url("../../assets/img/cta-bg2.jpg") fixed center center;
   background-size: cover;
   padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.cta .text-center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.3rem;
 }
 
 .cta h3 {
@@ -955,12 +1030,28 @@ section {
   border: 2px solid #fff;
 }
 
+@media (max-width: 425px) {
+  .cta .text-center {
+    gap: .5rem;
+  }
+  .cta p {
+    font-size: .9rem;
+    line-height: 1rem;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio {
   text-align: center;
+}
+
+.meet-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .portfolio .portfolio-item {
@@ -1010,7 +1101,7 @@ section {
 
 .portfolio .portfolio-wrap::before {
   content: "";
-  background: rgba(11, 43, 3, 0.6);
+  background: rgba(0, 0, 0, 0.705);
   position: absolute;
   left: 0;
   right: 0;
@@ -1084,13 +1175,13 @@ section {
 
 
 .portfolio .view-more a {
-  border: 2px solid black;
+  border: 2px solid #fff;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
   text-align: center;
-  background-color: #9afa8a;
-  color: #000000;
+  background-color: #000000;
+  color: #fff;
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: 1px;
@@ -1098,9 +1189,9 @@ section {
 }
 
 .portfolio .view-more a:hover {
-  background-color: #000000;
-  color: #fff;
-  border: 2px solid #fff;
+  background-color: #9afa8a;
+  color: #000000;
+  border: 2px solid #000000;
 }
 /*--------------------------------------------------------------
 # Portfolio Details
@@ -1173,9 +1264,15 @@ section {
 .join-container {
 display: flex;
 flex-direction: column;
-margin: 5.5rem 0 15rem 0;
+margin-block: 150px;
 gap: 3rem;
 /* height: fit-content; */
+}
+
+.joincontainer-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .join-container .section-title p {
@@ -1244,21 +1341,18 @@ line-height: .3rem;
 .join-btn {
 font-family: 'Raleway', sans-serif;
 font-size: 1rem;
-background-color: #18d26e;
+background-color: #9afa8a;
 color: #000000;
 text-decoration: none;
 font-weight: 600;
-/* width: 50%; */
-/* margin-inline: auto; */
-
 padding: .5rem 1rem;
-/* border-radius: 1.5rem; */
-border: 2px solid black;
+border: 2px solid #000000;
 transition: all 300ms ease-in;
 }
 .join-btn:hover {
 background-color: #000000;
-color: #18d26e;
+color: #fff;
+border-color: #fff;
 }
 .love-coffee {
 background-image: url("../../assets/img/movement/coffee.webp");
@@ -1272,14 +1366,14 @@ background-image: url("../../assets/img/movement/coffee-farm.webp");
 
 /* media queries */
 @media (min-width: 768px) {
-.joincontainer-header h2 {
+/* .joincontainer-header h2 {
     font-size: 2.5rem;
 }
 .joincontainer-header p {
     width: 70%;
     margin: auto;
     font-size: 1.5rem;
-}
+} */
 .joincontainer-content {
     flex-wrap: nowrap;
 }
@@ -1615,7 +1709,7 @@ background-image: url("../../assets/img/movement/coffee-farm.webp");
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #151915;
+  background: #000000;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
@@ -1629,8 +1723,8 @@ background-image: url("../../assets/img/movement/coffee-farm.webp");
   margin-top: -90px;
   margin-bottom: 15px;
   background: white;
-  color: #151915;
-  border-top: 4px solid #0e580e;
+  color: #000000;
+  border-top: 4px solid #000000;
   text-align: center;
   padding: 30px 20px;
 }
@@ -1653,7 +1747,7 @@ background-image: url("../../assets/img/movement/coffee-farm.webp");
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #151915;
+  background: #000000;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -1783,18 +1877,25 @@ background-image: url("../../assets/img/movement/coffee-farm.webp");
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  margin-block: 7rem;
+  margin-bottom: 150px;
 }
+
+.products-header {
+  display: flex;
+  flex-direction: column;
+  /* gap: 1.5rem; */
+}
+
 .swiper-container {
   width: 100%;
-  /* height: 500px; */
+  height: 560px;
   position: relative;
   /* border: 2px solid red; */
   overflow: hidden;
 }
 /* .swiper-wrapper {
   border: 2px solid blue;
-  padding: .5rem;
+  height: 475px;
 } */
 .swiper-slide {
   text-align: center;
