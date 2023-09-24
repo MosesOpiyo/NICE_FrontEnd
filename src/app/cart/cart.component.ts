@@ -5,15 +5,23 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service'; 
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
+import { CartService } from '../Service/Cart/cart.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
+
 export class CartComponent implements OnInit {
+
+  public product : any =  [];
+  public grandTotal !: number;
+
+
+
   myScriptElement: HTMLScriptElement;
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){
+  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
@@ -60,6 +68,20 @@ export class CartComponent implements OnInit {
    else{
      console.log("No token")
    }
+
+   this.cartService.getProducts()
+   .subscribe(res=> {
+    this.product = res;
+    this.grandTotal = this.cartService.getTotalPrice();
+   })
+ }
+
+  removeItem(item: any){
+    this.cartService.removeCartItem(item);
+  }
+
+  emptyCart(){
+    this.cartService.removeAllCart();
   }
 
 }

@@ -84,18 +84,7 @@
         </div>
     </header>
 
-    <div class="navbar-two navbar navbar-dark shadow-sm">
-      <div class="navbar-brand">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="search products">
-        </div>
-        <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-      </div>
-
-      <button class="btn" style="margin-right: 3rem">
-        <i style="font-size: 30px; color: white" class="fa-solid fa-cart-arrow-down" value=0></i>
-      </button>
-    </div>
+    <app-productsnavbar></app-productsnavbar>
 
 
     <div class="products">
@@ -211,15 +200,54 @@
           </div>
         </div>
 
-        <div class="productlist-contet">
+        <div class="productlist-content">
+          <div class="product-card"  *ngFor="let item of productData | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+            <div class="product-image">
+              <img src="{{item.imageUrl}}" alt="coffee">
+              <span class="sticker">OFFER</span>
+            </div>
+
+            <div class="product-manufacturer">
+              <p class="productname">{{item.productName}}</p>
+              <p><i class={{item.rating[0]}}></i>
+                <i class={{item.rating[1]}}></i>
+                <i class={{item.rating[2]}}></i>
+                <i class={{item.rating[3]}}></i>
+                <i class={{item.rating[4]}}></i>
+              </p>
+            </div>
+
+            <div class="product-details">
+              <p>{{item.farmer}}</p>
+              <div class="product-price">
+                <div class="product-prices">
+                  <p class="newprice">${{item.newPrice}}</p>
+                  <!-- <p class="oldprice">${{item.oldPrice}}</p> -->
+                </div>
+                <!-- <div class="product-discount">
+                  <p>-{{item.discountPercentage}}%</p>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="add-actions">
+              <a role="button" (click)=addtoCart(item)>
+                Add To Cart <i class="bi bi-cart-check"></i>
+              </a>
+              <a routerLink="/wishlist" role="button">
+                <i class="bi bi-heart"></i>
+              </a>
+            </div>
+          </div>
 
         </div>
-                        
-                  
+                             
       </div>
-
     </div>
 
+    <div class="products-pagination">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
 
     <app-footer></app-footer>
 </section>

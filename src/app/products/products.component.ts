@@ -5,6 +5,7 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service'; 
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
+import { CartService } from '../Service/Cart/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -12,11 +13,384 @@ import { AuthService } from 'src/app/Auth/auth.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
+
+  p:number = 1;
+  itemsPerPage:number = 10;
+  totalProduct:any;
+
+
+  productData = [ 
+    {
+      id: 1,
+      imageUrl: '../../assets/img/packaging/pkg7.jpg',
+      sticker: true,
+      farmer: 'Riakiania Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star',
+      ],
+      productName: 'AA Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 2,
+      imageUrl: '../../assets/img/packaging/pkg8.jpg',
+      sticker: true,
+      farmer: 'Kiaragana Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star',
+        'bi bi-star',
+      ],
+      productName: 'AB Coffee',
+      newPrice: 80,
+      oldPrice: 90,
+      discountPercentage: '5'
+    },
+
+    {
+      id: 3,
+      imageUrl: '../../assets/img/coffee-04.jpg',
+      sticker: true,
+      farmer: 'Kaga Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'PB Coffee',
+      newPrice: 70,
+      oldPrice: 100,
+      discountPercentage: '10'
+    },
+
+    {
+      id: 4,
+      imageUrl: '../../assets/img/packaging/pkg1.jpg',
+      sticker: true,
+      farmer: 'Kiambwe Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star',
+        'bi bi-star',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 50,
+      oldPrice: 80,
+      discountPercentage: '10'
+    },
+
+    {
+      id: 5,
+      imageUrl: '../../assets/img/packaging/pkg10.jpg',
+      sticker: true,
+      farmer: 'Mitondo Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'AA Coffee',
+      newPrice: 70,
+      oldPrice: 100,
+      discountPercentage: '15'
+    },
+
+    {
+      id: 6,
+      imageUrl: '../../assets/img/coffee-bag-02.jpg',
+      sticker: true,
+      farmer: 'Gathambi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star',
+      ],
+      productName: 'T Coffee',
+      newPrice: 80,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 7,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Ihara Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star',
+        'bi bi-star',
+      ],
+      productName: 'AA Coffee',
+      newPrice: 70,
+      oldPrice: 90,
+      discountPercentage: '10'
+    },
+
+    {
+      id: 8,
+      imageUrl: '../../assets/img/packaging/pkg9.jpg',      
+      sticker: true,
+      farmer: 'Getuya Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star',
+      ],
+      productName: 'PB Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 9,
+      imageUrl: '../../assets/img/coffee-bag-01.jpg',
+      sticker: true,
+      farmer: 'Ikuni Coffee Factory',
+      rating:  [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'AB Coffee',
+      newPrice: 80,
+      oldPrice: 90,
+      discountPercentage: '10'
+    },
+
+    {
+      id: 10,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 11,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 12,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 13,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 14,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 15,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 16,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 17,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 18,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 19,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+
+    {
+      id: 20,
+      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      sticker: true,
+      farmer: 'Zambezi Coffee Factory',
+      rating: [
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+        'bi bi-star-fill',
+      ],
+      productName: 'TT Coffee',
+      newPrice: 78,
+      oldPrice: 90,
+      discountPercentage: '7'
+    },
+  ]
+
+
   myScriptElement: HTMLScriptElement;
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){
+  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
+  }
+
+  addtoCart(item: any){
+    this.cartService.addtoCart(item);
   }
 
   user:any | null = null;
@@ -60,5 +434,11 @@ export class ProductsComponent implements OnInit {
    else{
      console.log("No token")
    }
+
+   this.productData.forEach((a:any) => {
+    Object.assign(a,{quantity:1, total:a.newPrice});
+   })
+
+   this.totalProduct = this.productData.length;
   }
 }

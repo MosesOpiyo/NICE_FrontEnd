@@ -31,6 +31,9 @@ import { ExpoComponent } from './informationPages/expo/expo.component';
 import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
+import { ProductsnavbarComponent } from './productsnavbar/productsnavbar.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -50,7 +53,8 @@ import { ProductsComponent } from './products/products.component';
     ExpoComponent,
     OriginTripComponent,
     CartComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductsnavbarComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -66,7 +70,8 @@ import { ProductsComponent } from './products/products.component';
     FormsModule,
     WarehousedashboardModule,
     FarmersDashBoardModule,
-    DashboardModule
+    DashboardModule,
+    NgxPaginationModule
 
   ],
   providers: [],
