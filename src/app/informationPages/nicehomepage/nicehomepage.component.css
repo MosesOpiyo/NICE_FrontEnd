@@ -27,3 +27,52 @@ a {
     opacity: 1;
   }
 }
+
+.how .how-container {
+  border: 2px solid red;
+}
+.how-content {
+  border: 2px solid black;
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+}
+.how-list {
+  border: 2px solid blue;
+}
+.how-list .icon-box {
+  display: flex;
+}
+.how-list .icon-box .icon-container {
+  border: 2px solid red;
+  width: 40%;
+}
+.how-list .icon-box .icon-content {
+  border: 2px solid blue;
+  /* width: 40%; */
+}
+.icon i {
+  font-size: 6rem;
+  line-height: 1;
+  color: #000000bf;
+  transition: all 0.3s ease-in-out;
+}
+.process-number {
+  /* border: 2px solid black; */
+  color: #000000bf;
+  font-size: 3.5rem;
+  font-weight: 200;
+  /* position: absolute;
+  top: 75px;
+  left: 10px; */
+}
+.how-image {
+  width: 60%;
+}
+.how-image img {
+  border: 2px solid green;
+  height: 896px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

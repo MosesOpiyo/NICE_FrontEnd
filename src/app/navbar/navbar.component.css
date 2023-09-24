@@ -9,18 +9,19 @@ a {
 }
 
 
+.navbar button {
+  border-radius: 0;
+}
+
 .credentials-mobile ul li button,
 .credentials-nonmobile ul li button {
-  border: 2px solid #000000;
   background-color: #9afa8a;
   color: #000000;
   transition: all 250ms ease-out-in;
 }
 .credentials-mobile ul li button:hover,
 .credentials-nonmobile ul li button:hover {
-  border: 2px solid #fff;
-  background-color: #000000;
-  color: #fff;
+  background-color: #abfa9d;
 }
 .mobile-nav-toggle {
   color: #fff;
@@ -165,6 +166,6 @@ a {
 
 .navbar ul li i {
   color: white;
-  font-size: 1.4rem;
+  font-size: 1rem;
   /* margin-left: 3rem; */
 }

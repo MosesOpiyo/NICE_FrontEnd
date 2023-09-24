@@ -1,0 +1,226 @@
+<section>
+    <header id="header" class="fixed-top header-transparent">
+        <div class="container d-flex align-items-center justify-content-between">
+    
+          <div class="logo">
+            <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
+          </div>
+    
+          <!-- for mobile view -->
+          <div class="credentials-mobile">
+            <ul class="navbar" *ngIf="!user">
+                  <li>
+                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
+                  </li>
+                  <li>
+                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
+                  </li>
+                </ul>
+                <ul *ngIf="user">
+                  <li>
+                    <div class="navbar">
+                      <ul>
+                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
+                          <ul>
+                            <li><a href="" (click)="logout()">Log out</a></li><br>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+          </div>
+    
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a class="nav-link" routerLink="">Home</a></li>
+              <li><a class="nav-link active" href="#about">Shop Coffee</a></li>
+              <li class="dropdown"><a href="#"><span>Expo</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a routerLink="/Expo">NICE Expo</a></li>
+                  <li><a href="#">Register for NICE Expo</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
+                  <li><a href="#">Register for Origin Trip</a></li>
+                </ul>
+              </li>
+              <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+    
+          <!-- for non-mobile view -->
+          <div class="credentials-nonmobile">
+            <ul class="navbar" *ngIf="!user">
+                  <li>
+                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
+                  </li>
+                  <li>
+                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
+                  </li>
+                </ul>
+                <ul *ngIf="user">
+                  <li>
+                    <div class="navbar">
+                      <ul>
+                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
+                          <ul>
+                            <li><a href="" (click)="logout()">Log out</a></li><br>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+          </div>
+          
+          <!-- .navbar -->
+    
+        </div>
+    </header>
+
+    <div class="navbar-two navbar navbar-dark shadow-sm">
+      <div class="navbar-brand">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="search products">
+        </div>
+        <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+      </div>
+
+      <button class="btn" style="margin-right: 3rem">
+        <i style="font-size: 30px; color: white" class="fa-solid fa-cart-arrow-down" value=0></i>
+      </button>
+    </div>
+
+
+    <div class="products">
+      <div class="sidebar">
+        <div class="widget-title"><h2>Coffee Variety</h2></div>
+        <input type="hidden" id="previous_select">
+          <ul>
+            <li class="customRadio">
+              <input type="checkbox" value="Variety1" id="Variety1"  />
+              <label for="Variety1"><span><span></span></span>Variety 1</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="Variety2" id="Variety2"  />
+              <label for="Variety2"><span><span></span></span>Variety 2</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="Variety2" id="Variety2"  />
+              <label for="Variety2"><span><span></span></span>Variety 3</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="Variety2" id="Variety2"  />
+              <label for="Variety2"><span><span></span></span>Variety 4</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="Variety2" id="Variety2"  />
+              <label for="Variety2"><span><span></span></span>Variety 5</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="Variety2" id="Variety2"  />
+              <label for="Variety2"><span><span></span></span>Variety 6</label>
+            </li>
+          </ul>
+
+
+          <div class="widget-title"><h2>Coffee Farms</h2></div>
+          <input type="hidden" id="previous_select">
+          <ul>
+            <li class="customRadio">
+              <input type="checkbox" value="farm1" id="farm1"  />
+              <label for="farm1"><span><span></span></span>Farm 1</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="farm2" id="farm2"  />
+              <label for="farm2"><span><span></span></span>Farm 2</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="farm2" id="farm2"  />
+              <label for="farm2"><span><span></span></span>Farm 3</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="farm2" id="farm2"  />
+              <label for="farm2"><span><span></span></span>Farm 4</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="farm2" id="farm2"  />
+              <label for="farm2"><span><span></span></span>Farm 5</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="farm2" id="farm2"  />
+              <label for="farm2"><span><span></span></span>Farm 6</label>
+            </li>
+          </ul>
+
+          <div class="widget-title"><h2>Price</h2></div>
+          <input type="hidden" id="previous_select">
+          <ul>
+            <li class="customRadio">
+              <input type="checkbox" value="farm1" id="farm1"  />
+              <label for="farm1"><span><span></span></span>Price 1 - Price 2</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="farm2" id="farm2"  />
+              <label for="farm2"><span><span></span></span>Price 3 - Price 4</label>
+            </li>
+
+            <li class="customRadio">
+              <input type="checkbox" value="farm2" id="farm2"  />
+              <label for="farm2"><span><span></span></span>Price 5 - Price 6</label>
+            </li>
+          </ul>
+
+      </div>
+
+      <div class="productlist">
+
+        <div class="productlist-nav">
+          <div class="views">
+            <i style="font-size: 20px;" class="fa-solid fa-grip"></i>
+            <i style="font-size: 20px;" class="fa-solid fa-list"></i>
+          </div>
+  
+          <div class="filters-toolbar__item text-right">
+            <label for="SortBy" class="label--hidden">sort by</label>
+            <select name="SortBy" id="SortBy" class="filters-toolbar__input filters-toolbar__input--sort hidden">
+    
+                <option value="title-ascending" selected="selected">sort by</option>      
+                <option value="best-selling">Most sold</option>                             
+                <option value="title-ascending">Alphabetically, A-Z</option>                           
+                <option value="title-descending">Alphabetically, Z-A</option>                             
+                <option value="price-ascending">price, low to high</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="productlist-contet">
+
+        </div>
+                        
+                  
+      </div>
+
+    </div>
+
+
+    <app-footer></app-footer>
+</section>
+

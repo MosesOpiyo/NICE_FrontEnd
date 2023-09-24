@@ -12,6 +12,8 @@ import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-boa
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExpoComponent } from './informationPages/expo/expo.component';
 import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.component';
+import { CartComponent } from './cart/cart.component';
+import { ProductsComponent } from './products/products.component';
 
 
 const routes: Routes = [
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path:'Coffee',component:CoffeeComponent},
   {path:'DashBoard',component:DashboardComponent},
   {path:'Expo',component:ExpoComponent},
-  {path:'Origin-Trip',component:OriginTripComponent}
+  {path:'Origin-Trip',component:OriginTripComponent},
+  {path: 'Cart', component:CartComponent},
+  {path: 'Products', component:ProductsComponent}
 
 ];
 

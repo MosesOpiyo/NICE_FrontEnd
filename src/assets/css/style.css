@@ -161,11 +161,11 @@ h6 {
   padding: 8px 16px;
   margin-left: 10px;
   font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 14px;
   color: #fff;
   white-space: nowrap;
   transition: 0.3s;
+  text-transform: uppercase;
 }
 
 .navbar a i,
@@ -387,7 +387,7 @@ h6 {
   margin: 0 0 10px 0;
   font-size: 46px;
   line-height: 3rem;
-  font-weight: 700;
+  font-weight: bolder;
   /* text-transform: uppercase; */
   color: #fff;
   text-shadow: -1px 0 2px #2f4d5a;
@@ -414,22 +414,16 @@ h6 {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
   padding: 6px 100px;
-  border-radius: 50px;
   transition: all 0.3s ease-in-out;
-  /* margin: 10px; */
-  /* width: 64px;
-  height: 64px; */
   text-align: center;
-  border: 2px solid #000000;
   background-color: #9afa8a;
   color: #000000;
+  box-shadow: 2px 2px -1px #000000;
 }
 
 #hero .hero-btn:hover {
-  /* padding-top: 8px; */
-  background-color: #151915;
-  color: #fff;
-  border: 2px solid #fff;
+  background-color: #abfa9d;
+  letter-spacing: 3px;
 }
 
 @media (min-width: 1024px) {
@@ -1900,7 +1894,7 @@ background-image: url("../../assets/img/movement/coffee-farm.webp");
 .swiper-slide {
   text-align: center;
   font-size: 15px;
-  background: #d3d9fd;
+  background: #dee4d9;
   padding: 1rem .5rem;
 
   height: 475px;
@@ -1941,7 +1935,7 @@ background-image: url("../../assets/img/movement/coffee-farm.webp");
   transition: all 300ms ease-in-out;
 }
 .swiper-slide:hover {
-  background: #d3d9fd;
+  background: #dee4d9;
   height: 550px;
 }
 .swiper-slide:hover .add-actions {
@@ -2020,6 +2014,7 @@ background-image: url("../../assets/img/movement/coffee-farm.webp");
   /* border: 2px solid #fff; */
   background-color: #151915;
   color: #fff;
+  box-shadow: 2px 2px 2px #888888;
 }
 
 .swiper-slide .add-actions a:hover,
