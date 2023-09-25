@@ -14,6 +14,7 @@ import { ExpoComponent } from './informationPages/expo/expo.component';
 import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:'Expo',component:ExpoComponent},
   {path:'Origin-Trip',component:OriginTripComponent},
   {path: 'Cart', component:CartComponent},
-  {path: 'Products', component:ProductsComponent}
+  {path: 'Products', component:ProductsComponent},
+  { path: 'Products/:productId', component: ProductDetailsComponent }
 
 ];
 

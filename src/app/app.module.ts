@@ -34,6 +34,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductsnavbarComponent } from './productsnavbar/productsnavbar.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 
@@ -54,7 +55,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     OriginTripComponent,
     CartComponent,
     ProductsComponent,
-    ProductsnavbarComponent
+    ProductsnavbarComponent,
+    ProductDetailsComponent
   ],
   entryComponents:[LoginComponent],
   imports: [

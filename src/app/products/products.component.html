@@ -201,7 +201,7 @@
         </div>
 
         <div class="productlist-content">
-          <div class="product-card"  *ngFor="let item of productData | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+          <a routerLink="/Products/{{item.id}}" class="product-card"  *ngFor="let item of productData | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
             <div class="product-image">
               <img src="{{item.imageUrl}}" alt="coffee">
               <span class="sticker">OFFER</span>
@@ -227,26 +227,29 @@
                 <!-- <div class="product-discount">
                   <p>-{{item.discountPercentage}}%</p>
                 </div> -->
+                <div class="product-quantity">
+                  <p>500g</p>
+                </div>
               </div>
             </div>
 
-            <div class="add-actions">
+            <!-- <div class="add-actions">
               <a role="button" (click)=addtoCart(item)>
                 Add To Cart <i class="bi bi-cart-check"></i>
               </a>
               <a routerLink="/wishlist" role="button">
                 <i class="bi bi-heart"></i>
               </a>
-            </div>
-          </div>
+            </div> -->
+          </a>
 
+        </div>
+
+        <div class="products-pagination">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
                              
       </div>
-    </div>
-
-    <div class="products-pagination">
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
 
     <app-footer></app-footer>

@@ -26,3 +26,9 @@
 .search-icon i {
   color: black;
 }
+
+.badge {
+  position:relative;
+  left:-15px;
+  top:-12px;
+}
