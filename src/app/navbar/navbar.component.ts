@@ -13,43 +13,54 @@ import { AuthService } from '../Auth/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router,private auth:AuthService){}
-  user:any | null = null;;
+  myScriptElement: HTMLScriptElement;
+   constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){
+      this.myScriptElement = document.createElement("script");
+      this.myScriptElement.src = "../../assets/js/main.js";
+      document.body.appendChild(this.myScriptElement);
+   }
 
-  authCheck(){
-    if(this.auth.isAuthenticated == false){
-      this.showLoginDialog()
-    }
-    else if(this.auth.isAuthenticated == true){
-      this.route.navigate(['Coffee'])
-    }
-  }
+   user:any | null = null;
+   isLoggedIn:any
 
-  showLoginDialog(){
+   showLoginDialog(){
     const dialogRef = this.dialog.open(LoginComponent,{
       width: '25pc'
     });
   }
-  showSignUpDialog(){
-    const dialogRef = this.dialog.open(SignUpComponent,{
-      width: '25pc'
-    });
-  }
-  logOut(){
+
+  logout(){
     this.service.logout()
     this.ngOnInit()
   }
-  
-  ngOnInit(): void {
-    this.service.getProfile().subscribe((res:any)=>{
-      this.user = res['user']
-      if(this.user.type == "WAREHOUSER"){
-        this.route.navigate(['Warehouse'])
-      }
-      else if(this.user.type == "FARMER"){
-        this.route.navigate(['Farmer'])
-      }
-    })
+
+  showSignUpDialog(){
+    const dialogRef = this.dialog.open(SignUpComponent,{
+      width: '25pc'
+    }); 
   }
+
+  ngOnInit(): void {
+    if(sessionStorage.getItem('Token')){
+      this.service.getProfile().subscribe((res:any)=>{
+        this.user = res['user']
+        if(this.user.type == "FARMER"){
+          this.route.navigate(['DashBoard'])
+        }
+        else if(this.user.type == "WAREHOUSER"){
+          this.route.navigate(['DashBoard'])
+        }
+        else if(this.user.type == "ADMIN"){
+          this.route.navigate(['DashBoard'])
+        }
+        else{
+          false
+        }
+      })
+    }
+    else{
+      console.log("No token")
+    }
+   }
 
 }

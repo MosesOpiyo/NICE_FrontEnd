@@ -1,0 +1,95 @@
+<section>
+    <header id="header" class="fixed-top header-transparent">
+        <div class="container d-flex align-items-center justify-content-between">
+    
+          <div class="logo">
+            <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
+          </div>
+    
+          <!-- for mobile view -->
+          <div class="credentials-mobile">
+            <ul class="navbar" *ngIf="!user">
+                  <li>
+                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
+                  </li>
+                  <li>
+                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
+                  </li>
+                </ul>
+                <ul *ngIf="user">
+                  <li>
+                    <div class="navbar">
+                      <ul>
+                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
+                          <ul>
+                            <li><a href="" (click)="logout()">Log out</a></li><br>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+          </div>
+    
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a class="nav-link" routerLink="">Home</a></li>
+              <li><a class="nav-link" href="#about">Shop Coffee</a></li>
+              <li class="dropdown"><a href="#"><span>Expo</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a routerLink="/Expo">NICE Expo</a></li>
+                  <li><a href="#">Register for NICE Expo</a></li>
+                </ul>
+              </li>
+              <li class="dropdown active"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
+                  <li><a href="#second">Register for Origin Trip</a></li>
+                </ul>
+              </li>
+              <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
+              <li><i class="bi bi-cart" value=8></i></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+    
+          <!-- for non-mobile view -->
+          <div class="credentials-nonmobile">
+            <ul class="navbar" *ngIf="!user">
+                  <li>
+                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
+                  </li>
+                  <li>
+                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
+                  </li>
+                </ul>
+                <ul *ngIf="user">
+                  <li>
+                    <div class="navbar">
+                      <ul>
+                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
+                          <ul>
+                            <li><a href="" (click)="logout()">Log out</a></li><br>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+          </div>
+          
+          <!-- .navbar -->
+    
+        </div>
+      </header>
+
+
+    <p id="first">origin-trip works!</p>
+    <p id="second">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos in amet ullam voluptate quo. Odit officiis obcaecati dolorum. Autem hic excepturi nam atque ut dolorem vitae dignissimos molestias. Inventore, eos!</p>
+
+
+    <app-footer></app-footer>
+</section>
+

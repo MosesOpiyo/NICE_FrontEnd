@@ -27,6 +27,14 @@ import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-boa
 import { FarmersDashBoardModule } from './farmers-dash-board/farmers-dash-board.module';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ExpoComponent } from './informationPages/expo/expo.component';
+import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.component';
+import { CartComponent } from './cart/cart.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductsnavbarComponent } from './productsnavbar/productsnavbar.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 
@@ -42,7 +50,13 @@ import { DashboardModule } from './dashboard/dashboard.module';
     CoffeeComponent,
 
     SignUpComponent,
-    FooterComponent
+    FooterComponent,
+    ExpoComponent,
+    OriginTripComponent,
+    CartComponent,
+    ProductsComponent,
+    ProductsnavbarComponent,
+    ProductDetailsComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -58,7 +72,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     FormsModule,
     WarehousedashboardModule,
     FarmersDashBoardModule,
-    DashboardModule
+    DashboardModule,
+    NgxPaginationModule
 
   ],
   providers: [],
