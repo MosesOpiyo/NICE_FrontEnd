@@ -1,47 +1,19 @@
-*{
-    height: auto;
-}
-.container{
-    padding-right: 20px;
-    padding-left: 20px;
+ng-template{
     background-color: white;
 }
-h1{
-    font-weight: 500;
-    font-style: italic;
-    color: rgb(255, 192, 1);
-    font-size:xx-large;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+mat-form-field{
+    margin: 10px;
+    width: 45%;
+    
 }
-h2 {
-    font-size: 30px;
-}
-h4 {
-    font-weight: 500;
-}
-
-.banner {
-    width: 100%;
-}
-
-form input {
-    width: 100%;
-    border: 2px solid gray;
-    border-radius: 10px;
-    height: 3pc;
-}
-form .row{
-    width: 100%;
-    align-items: center;
-}
-form .col-lg-5{
-    padding: 5px;
-}
-
-form button {
-    width: 100%;
-    height: 40px;
-    background-color: black;
-    color: white;
+input{
     border-radius: 10px;
 }
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    opacity: 0.03 !important;
+    background-color: red !important;
+  }
+  
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: red;
+  }
