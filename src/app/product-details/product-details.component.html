@@ -89,29 +89,79 @@
       <section class="product-container">
 
         <div class="product-details">
+
             <div class="product-image">
                 <img src="../../assets/img/coffee-bag-03.jpg" alt="coffee">
             </div>
-    
-            <div class="product-info">
-                <div class="product-detail">
-                    <p>Mettle</p>
-                    <p>Riaikania Coffee Factory</p>
-                    <p>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </p>
-                    <p>12oz</p>
+
+            <div class="product-alldetails">
+
+                <div class="product-info">
+                    <div class="product-detail">
+                        <p>Mettle - Nuty & toasty, vanila, sweet, winy, clean cup</p>
+                        <p>Riaikania Coffee Factory</p>
+                        <p>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </p>
+                        <p>In stock</p>
+                        <p>12oz</p>
+                    </div> 
                 </div>
-                
 
                 <div class="product-form">
-    
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCoffeeType(event, 'Roasted')" id="defaultOpen">Roasted</button>
+                        <button class="tablinks" onclick="openCoffeeType(event, 'Green')">Green</button>
+                    </div>
+
+                    <div id="Roasted" class="tabcontent">
+                        <h3>Roasted</h3>
+                        
+                        <form action="/">
+                            <select id="packsize" name="packsize" required>
+                              <option value="">Choose Pack Size...</option>
+                              <option value="18.80|12oz">12oz ($18.80)</option>
+                              <option value="46.80|32oz">32oz ($46.80)</option>
+                              <option value="68.20|3lbs">3lbs ($68.20)</option>
+                              <option value="68.20|3lbs">5lbs ($113.00)</option>
+                            </select>
+
+                            <select id="grind" name="grind" required>
+                                <option value="">Choose Grind...</option>
+                                <option value="Whole beans">Whole beans</option>
+                                <option value="Extra coarse">Extra coarse (Cold brews)</option>
+                                <option value="Coarse">Coarse (French press/percolators)</option>
+                                <option value="Medium-coarse">Medium-coarse (Chemex/clever drippers)</option>
+                                <option value="Medium">Medium (Drip/regular)</option>
+                                <option value="Medium-fine">Medium-fine (Pour overs/siphon)</option>
+                                <option value="Fine">Fine (Espresso)</option>
+                                <option value="Super-fine">Super-fine (Turkish)</option>
+                            </select>
+
+                            <select id="roast" name="roast">
+                                <option value="">Choose Roast Type...</option>
+                                <option value="Light">Light</option>
+                                <option value="Medium/light">Medium/light</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Medium/dark">Medium/dark</option>
+                                <option value="Dark">Dark</option>
+                            </select>
+                    
+                          </form>
+                    </div>
+
+                    <div id="Green" class="tabcontent">
+                        <h3>Green</h3>
+                        <p>Green is the capital city of England.</p>
+                    </div>
                 </div>
             </div>
+    
+            
         </div>
 
       </section>
