@@ -8,6 +8,7 @@ import { ChartsComponent } from './components/charts/charts.component';
 import { RequestedComponent } from './components/requested/requested.component';
 import { DetailsComponent } from './components/details/details.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { AccountsComponent } from './components/accounts/accounts.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
       {path: 'orders', component: OrdersComponent},
       {path: 'form', component: FormsComponent},
       {path: 'table', component: TablesComponent},
-      {path: 'charts', component: ChartsComponent}
+      {path: 'charts', component: ChartsComponent},
+      {path: 'pending_accounts', component: AccountsComponent},
     ]
   }
 ];

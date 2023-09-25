@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from '../AuthService/authentication.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +11,8 @@ import { Router } from '@angular/router';
 export class DashboardComponent {
   constructor(private service:AuthenticationService,private route:Router){}
   user:any
+  cloudinaryUrl = environment.CLOUDINARY_URL
+  pic:any
 
   logOut(){
     this.service.logout()
@@ -19,7 +22,8 @@ export class DashboardComponent {
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
       this.service.getProfile().subscribe((res:any)=>{
-        this.user = res['user']
+        this.user = res
+        console.log(this.user)
       })
     }
     else{

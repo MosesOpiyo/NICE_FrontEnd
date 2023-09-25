@@ -12,6 +12,13 @@ import { NewproductComponent } from './components/newproduct/newproduct.componen
 import { RequestedComponent } from './components/requested/requested.component';
 import { DetailsComponent } from './components/details/details.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { AccountsComponent } from './components/accounts/accounts.component';
+
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -24,12 +31,19 @@ import { OrdersComponent } from './components/orders/orders.component';
     NewproductComponent,
     RequestedComponent,
     DetailsComponent,
-    OrdersComponent
+    OrdersComponent,
+    AccountsComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MatTableModule
+    MatTableModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule
   ]
 })
 export class DashboardModule { }
