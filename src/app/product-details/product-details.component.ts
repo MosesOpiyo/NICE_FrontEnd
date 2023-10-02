@@ -14,6 +14,18 @@ import { CartService } from '../Service/Cart/cart.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
+  num: number = 1;
+  isShowDiv = false;
+  isShowDiv2 = false;
+
+  // product form tabs
+  tabs: string [] = ['Roasted', 'Green'];
+  activatedTabIndex: number = 0;
+
+  // tabbed-info tabs
+  tabs2: string [] = ['Seller Info', 'Reviews'];
+  activatedTabIndex2: number = 0;
+
   myScriptElement: HTMLScriptElement;
   constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){
      this.myScriptElement = document.createElement("script");
@@ -62,6 +74,54 @@ export class ProductDetailsComponent implements OnInit {
    else{
      console.log("No token")
    }
+
+   
+  }
+
+  //product form tab index
+  tabChange(tabIndex: number) {
+    this.activatedTabIndex = tabIndex;
+  }
+
+  // detailedtabs tab index
+  tabChange2(tabIndex: number) {
+    this.activatedTabIndex2 = tabIndex;
+  }
+
+  // for roasted section
+  toggleDivOff() {
+    this.isShowDiv = false;
+  }
+
+  toggleDivOn() {
+    this.isShowDiv = true;
+  }
+
+  // for green tab section
+  toggleDivOff2() {
+    this.isShowDiv2 = false;
+  }
+
+  toggleDivOn2() {
+    this.isShowDiv2 = true;
+  }
+
+  // increment button
+  increment(){
+    this.num += 1;
+    console.log(this.num + 1);
+    }
+    
+  //decrements item
+  decrement(){
+    if(this.num-1 < 1){
+      this.num = 1;
+      console.log('item_1->' + this.num)
+    }
+    else{
+      this.num -= 1;
+      console.log('item_2->' + this.num);
+    }
   }
 
 }

@@ -674,7 +674,7 @@ section {
   /* border: 2px solid black; */
   /* background: url("../../assets/img/about-bg.jpg") center center no-repeat;
   background-size: cover; */
-  margin-block: 150px;
+  margin-block: 50px;
   padding: 60px 0;
   text-align: center;
   /* position: relative; */
@@ -707,7 +707,9 @@ section {
 }
 
 .about-header h2 {
-  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 45px;
 }
 
 .about-header p {
@@ -904,7 +906,7 @@ section {
 }
 
 .services .icon-box:hover::before {
-  background: #151915;
+  /* background: #151915; */
   top: 0;
   border-radius: 0px;
 }
@@ -913,8 +915,8 @@ section {
   margin-bottom: 20px;
 }
 
-.services .icon i {
-  font-size: 6rem;
+.services .icon-box i {
+  font-size: 4rem;
   line-height: 1;
   color: #000000bf;
   transition: all 0.3s ease-in-out;

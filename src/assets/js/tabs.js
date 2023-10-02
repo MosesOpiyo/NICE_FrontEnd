@@ -1,6 +1,8 @@
- // START OF coffeeType tabs in individual product page
- function openCoffeeType(evt, coffeeType) {
+(function () {
+  "use strict";
 
+  // START OF coffeeType tabs in individual product page
+  const openCoffeeType = (evt, coffeeType) => {
     var i, tabcontent, tablinks;
 
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -16,8 +18,12 @@
     document.getElementById(coffeeType).style.display = "block";
     evt.currentTarget.className += " active";
   }
-  
+
   // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById("defaultOpen").click();
+  })
+  
 
   // END OF COFFEE TYPE TABS IN INDIVIDUAL PRODUCT PAGE
+})();

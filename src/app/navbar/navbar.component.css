@@ -56,7 +56,12 @@ a {
   }
 }
 
+.bi-cart {
+  margin-left: 60px;
+}
+
 .bi-cart::after {
+  font-style: normal;
     content:attr(value);
     font-size:14px;
     color: #000000;
