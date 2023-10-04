@@ -12,7 +12,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -41,7 +40,6 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
     NavbarComponent,
     LoginComponent,
     HomepageComponent,
@@ -74,7 +72,6 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     FarmersDashBoardModule,
     DashboardModule,
     NgxPaginationModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
