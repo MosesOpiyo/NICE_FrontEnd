@@ -67,4 +67,10 @@ export class ProductsService {
     })
     return this.http.get(`${environment.BASE_URL}Orders&Cart/Requests`,{'headers':headers})
   }
+  getProcessedProducts(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/Products`,{'headers':headers})
+  }
 }
