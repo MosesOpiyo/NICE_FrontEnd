@@ -6,6 +6,11 @@ section {
     padding-bottom: 0;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 /**
 * Mobile Navigation 
 */
@@ -180,13 +185,23 @@ a {
 
   /* INDIVIDUAL PRODUCT STYLING */
   .product-container {
+    padding: 1rem;
     border: 2px solid red;
-    margin-top: 45px;
+    margin: 45px 0 150px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .product-details {
+    border: 2px solid blue;
+    padding: .5rem;
     display: flex;
     flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    /* justify-content: center; */
   }
 
   .product-details > * {
@@ -205,3 +220,169 @@ a {
     height: 100%;
   }
 
+  .product-alldetails {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+  }
+  
+  .product-alldetails p {
+    margin-bottom: 0;
+  }
+
+  .product-detail i {
+    color: rgb(209, 209, 53);
+  }
+
+
+
+  /* TABBED INFO SECTION */
+  .tab2 {
+    /* border: 2px solid black; */
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tabbed-info {
+    border: 2px solid blue;
+    padding: .5rem;
+  }
+
+  .farmdetails {
+    border: 2px solid red;
+    padding: .5rem;
+
+    display: flex;
+    gap: .3rem;
+  }
+
+  .farmdetails > * {
+    border: 2px solid blue;
+    padding: .2rem;
+    flex-basis: 100%;
+  }
+
+  .farm-images .image-one {
+    height: 250px;
+    width: 250px;
+  }
+
+  .farm-images .image-one img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .farmadddetails {
+    border: 2px solid red;
+    padding: .5rem;
+
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tab1 {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .packaging,
+  .price-lb {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .incrdecr {
+    margin: .5rem;
+    display: flex;
+    gap: .5rem;
+  }
+
+  .incrdecr button {
+    padding-inline: .5rem;
+  }
+
+  .farmadddetails > * {
+    border: 2px solid black;
+    flex-basis: 100%;
+  }
+
+  .farmadddetails .map {
+    height: 400px;
+  }
+
+  .map iframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  .farmadddetails .history {
+    padding: .5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .farmadddetails .history table {
+    border: 2px solid black;
+    /* padding: .5rem; */
+  }
+
+  .farmadddetails .history table tbody tr {
+    border: 1px solid black;
+    /* padding: .3rem; */
+  }
+
+  .history-info,
+  .cycle-info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .rating-card {
+    padding: .5rem;
+    border: 1px solid rgba(0, 0, 0, 0.349);
+  }
+
+  .rating-card .user-icon {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .rating-card .user-icon .icon {
+    border: 2px solid black;
+    padding: .5rem;
+    background-color: #000000;
+    color: #fff;
+  }
+
+  .rating-card .user-rating {
+    display: flex;
+    gap: .5rem;
+  }
+
+  .owners {
+    border: 2px solid red;
+    height: 400px;
+    display: flex;
+    gap: 1rem;
+    padding: .5rem;
+  }
+
+  .owners > * {
+    border: 2px solid black;
+    flex-basis: 100%;
+    padding: .5rem;
+  }
