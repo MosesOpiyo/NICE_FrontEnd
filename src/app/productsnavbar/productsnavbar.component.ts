@@ -7,16 +7,17 @@ import { CartService } from '../Service/Cart/cart.service';
   styleUrls: ['./productsnavbar.component.css']
 })
 export class ProductsnavbarComponent implements OnInit {
-
-  public totalItem : number = 0;
-  
-  constructor(private cartService : CartService){}
-
+  constructor(private cart: CartService){}
+  userCart:any
   ngOnInit(): void {
-    this.cartService.getProducts()
-    .subscribe(res=> {
-     this.totalItem = res.length;
-    })
+    if(sessionStorage.getItem('Token')){
+      this.cart.getCart().subscribe((res:any)=>{
+        this.userCart = res['products']
+      })
+     }
+     else{
+       console.log("No token")
+     }
    }
 
 }

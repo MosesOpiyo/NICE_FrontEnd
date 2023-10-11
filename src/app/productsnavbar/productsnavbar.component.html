@@ -3,11 +3,11 @@
       <div class="form-group">
         <input type="text" class="form-control" placeholder="search products">
       </div>
-      <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+      <span matSuffix class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
     </div>
 
     <button class="btn" style="margin-right: 3rem" routerLink="/Cart">
       <i style="font-size: 30px; color: white" class="bi bi-cart"></i>
-      <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+      <div style="font-size: 10px;" class="badge bg-danger">{{userCart.length}}</div>
     </button>
   </div>
