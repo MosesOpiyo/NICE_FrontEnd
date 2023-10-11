@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog'
 import { LoginComponent } from 'src/app/login/login.component';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service'; 
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
-import { AuthService } from 'src/app/Auth/auth.service';
+import { environment } from 'src/environments/environment.development';
+import { ProductsService } from '../ProductsService/products.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from '../Service/Cart/cart.service';
 
 @Component({
@@ -27,7 +29,7 @@ export class ProductDetailsComponent implements OnInit {
   activatedTabIndex2: number = 0;
 
   myScriptElement: HTMLScriptElement;
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){
+  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private cart:CartService){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
@@ -35,6 +37,10 @@ export class ProductDetailsComponent implements OnInit {
 
   user:any | null = null;
   isLoggedIn:any
+  id:any
+  item:any
+  cloudinaryUrl = environment.CLOUDINARY_URL
+  quantity = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
 
   showLoginDialog(){
    const dialogRef = this.dialog.open(LoginComponent,{
@@ -51,6 +57,14 @@ export class ProductDetailsComponent implements OnInit {
    const dialogRef = this.dialog.open(SignUpComponent,{
      width: '25pc'
    }); 
+ }
+ addToCart(id:number){
+   this.cart.addToCart(id).subscribe((res:any)=>{
+    this.snackBar.open(res, 'Close', {
+      duration: 3000,
+      panelClass: ['blue-snackbar']
+    });
+   })
  }
 
  ngOnInit(): void {
@@ -70,10 +84,16 @@ export class ProductDetailsComponent implements OnInit {
          false
        }
      })
+     this.id = this.idRouter.snapshot.paramMap.get('id');
+     this.product.getProcessedProduct(this.id).subscribe((res:any)=>{
+     this.item = res
+     console.log(this.item)
+   })
    }
    else{
      console.log("No token")
    }
+   
 
    
   }
