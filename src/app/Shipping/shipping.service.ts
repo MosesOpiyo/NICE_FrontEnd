@@ -1,25 +1,24 @@
-import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
-
-export class CartService {
+export class ShippingService {
 
   constructor(private http:HttpClient) { }
-  getCart(){
+  getManifest(){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
     })
-    return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart`,{'headers':headers})
+    return this.http.get(`${environment.BASE_URL}Warehouse/Manifests`,{'headers':headers})
   }
-  addToCart(id:number){
+  approveManifest(id:number){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
     })
-    return this.http.get(`${environment.BASE_URL}Orders&Cart/NewProductInCart/${id}`,{'headers':headers})
+    return this.http.get(`${environment.BASE_URL}Warehouse/Shipping/${id}`,{'headers':headers})
   }
 }

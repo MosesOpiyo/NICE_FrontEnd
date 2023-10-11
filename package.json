@@ -23,6 +23,7 @@
     "@types/body-parser": "^1.19.2",
     "cloudinary": "^1.40.0",
     "ngx-pagination": "^6.0.3",
+    "platform-browser": "^0.0.1-security",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

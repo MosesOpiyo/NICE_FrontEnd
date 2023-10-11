@@ -199,52 +199,46 @@
             </select>
           </div>
         </div>
-
         <div class="productlist-content">
-          <a routerLink="/Products/{{item.id}}" class="product-card"  *ngFor="let item of productData | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+          <a routerLink="/Products/{{item.id}}" class="product-card"  *ngFor="let item of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
             <div class="product-image">
-              <img src="{{item.imageUrl}}" alt="coffee">
+              <img src="{{cloudinaryUrl}}{{item.img}}" alt="coffee">
               <span class="sticker">OFFER</span>
             </div>
-
             <div class="product-manufacturer">
-              <p class="productname">{{item.productName}}</p>
-              <p><i class={{item.rating[0]}}></i>
-                <i class={{item.rating[1]}}></i>
-                <i class={{item.rating[2]}}></i>
-                <i class={{item.rating[3]}}></i>
-                <i class={{item.rating[4]}}></i>
+              <p class="productname">{{item.product.name}}</p>
+              <p><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <span>{{item.rating.length}}</span>
               </p>
             </div>
-
             <div class="product-details">
-              <p>{{item.farmer}}</p>
+              <div class="sales">
+                <h6>More than 6k Sales</h6>
+                <div class="row g-2">
+                  <div class="col-3">
+                    <button type="button" class="btn btn-outline-dark">Roasted</button>
+                  </div>
+                  <div class="col-3">
+                    <button type="button" class="btn btn-outline-dark">Green</button>
+                  </div>
+                </div>
+              </div>
               <div class="product-price">
                 <div class="product-prices">
-                  <p class="newprice">${{item.newPrice}}</p>
-                  <!-- <p class="oldprice">${{item.oldPrice}}</p> -->
+                  <h4 style="font-family: 'Courier New', Courier, monospace;" class="newprice fw-bold">${{item.price}}</h4>
                 </div>
-                <!-- <div class="product-discount">
-                  <p>-{{item.discountPercentage}}%</p>
-                </div> -->
                 <div class="product-quantity">
-                  <p>500g</p>
+                  <p>{{item.quantity}}g</p>
                 </div>
               </div>
             </div>
-
-            <!-- <div class="add-actions">
-              <a role="button" (click)=addtoCart(item)>
-                Add To Cart <i class="bi bi-cart-check"></i>
-              </a>
-              <a routerLink="/wishlist" role="button">
-                <i class="bi bi-heart"></i>
-              </a>
-            </div> -->
           </a>
 
         </div>
-
         <div class="products-pagination">
           <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>

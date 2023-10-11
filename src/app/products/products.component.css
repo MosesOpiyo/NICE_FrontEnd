@@ -212,7 +212,7 @@ a {
     /* border: 2px solid black; */
     height: fit-content;
     padding: .5rem;
-
+    margin-left: 25px;
     display: grid;
     width: 100%;
     grid: repeat(4, 340px) / repeat(4, 250px);
@@ -223,9 +223,11 @@ a {
   .product-card {
     padding: .5rem;
     /* border: 2px solid blue; */
-    height: 330px;
-    width: 250px;
+    height: 400px;
+    width: 255px;
     margin-bottom: 1rem;
+    
+  }.product-card:hover{
     box-shadow: 3px 3px 3px 2px #dddddd;
   }
 
@@ -235,7 +237,7 @@ a {
   
   .product-image {
     /* border: 2px solid red; */
-    height: 200px;
+    height: 250px;
     display: flex;
     justify-content: center;
   }
@@ -243,7 +245,7 @@ a {
   .product-image img {
     /* border: 2px solid black; */
     height: 100%;
-    width: 230px;
+    width: 250px;
     object-fit: cover;
     object-position: center;
   }
@@ -251,12 +253,40 @@ a {
   .product-manufacturer {
     display: flex;
     justify-content: space-between;
-    /* border: 2px solid black; */
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+  }
+  .product-manufacturer p {
+    font-size: 13px;
+  }
+  .bi-star-fill{
+    color: orange;
+  }
+  .product-manufacturer span {
+    padding-left: 4px;
   }
 
   .product-details {
     text-align: center;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
     /* border: 2px solid grey; */
+  }
+  .sales h6{
+    text-align: left;
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  .sales button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    text-align: left;
+    font-size: 10px;
+  }
+  .add-to-cart{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
   .add-actions {

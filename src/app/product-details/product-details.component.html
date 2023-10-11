@@ -91,15 +91,15 @@
         <div class="product-details">
 
             <div class="product-image">
-                <img src="../../assets/img/coffee-04.jpg" alt="coffee">
+                <img src="{{cloudinaryUrl}}{{item.img}}" alt="coffee">
             </div>
 
             <div class="product-alldetails">
 
                 <div class="product-info">
                     <div class="product-detail">
-                        <p>Mettle</p>
-                        <p>Description:  - Nuty & toasty, vanila, sweet, winy, clean cup</p>
+                        <h2>{{item.product.name}}</h2>
+                        <p>Description:  - {{item.product.cup_notes}}</p>
                         <p>Riaikania Coffee Factory</p>
                         <p>
                             <i class="bi bi-star-fill"></i>
@@ -171,13 +171,13 @@
                             </div>
 
                             <div class="incrdecr">
-                              <button (click)=decrement()>-</button>
+                              <button class="btn btn-dark" (click)=decrement()>-</button>
                               <h2 id="counting">{{num}}</h2>
-                              <button (click)=increment()>+</button>
+                              <button  class="btn btn-dark" (click)=increment()>+</button>
                             </div>
 
                             <div class="submit-btn">
-                              <input type="submit" value="ADD TO CART">
+                              <input (click)="addToCart(item.id)" class="btn btn-dark" type="submit" value="ADD TO CART">
                             </div>
 
                           </form>
@@ -224,13 +224,14 @@
                           </div>
 
                           <div class="incrdecr">
-                            <button (click)=decrement()>-</button>
-                            <h2 id="counting">{{num}}</h2>
-                            <button (click)=increment()>+</button>
+                            <label for="quantity">Quantity:</label>
+                            <select id="quantity" name="delivery" required>
+                              <option *ngFor="let item of quantity" [value]="item">{{item}}</option>
+                            </select>
                           </div>
 
                           <div class="submit-btn">
-                            <input type="button" value="ADD TO CART">
+                            <input class="btn btn-dark" type="button" value="ADD TO CART">
                           </div>
 
                         </form>
@@ -408,49 +409,77 @@
             </div>
 
             <div *ngIf="activatedTabIndex2 == 1" class="tab2">
-
-              <div class="average-reviews">
-                <h4>Average Customer reviews</h4>
-                <p>
-                  <span>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </span>
-
-                  <span>
-                    <p>4.6 out of 5</p>
-                  </span>
-                </p>
-
-              </div>
-
-              <div class="rating-card">
-                <div class="user-icon">
-                  <div class="icon">P</div>
-                  <div class="username">Peter</div>
-                </div>
-
-                <div class="user-rating">
+              <div *ngFor="let rating of item.rating" class="ratings">
+                <div class="average-reviews">
+                  <h4>Average Customer reviews</h4>
                   <p>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
+                    <span>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </span>
+  
+                    <span>
+                      <p>4.6 out of 5</p>
+                    </span>
                   </p>
-
-                  <p>Verified Purchase</p>
+  
                 </div>
-
-                <div class="ratinginfo">
-                  <h4>Love It!!</h4>
-                  <p>The best coffee I've ever heard.</p>
+  
+                <div class="rating-card">
+                  <div class="user-icon">
+                    <div class="icon">{{rating.user.username[0] | uppercase}}</div>
+                    <div class="username">{{rating.user.username | titlecase}}</div>
+                  </div>
+  
+                  <div class="user-rating">
+                    <p *ngIf="rating.rating == 1">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </p>
+                    <p *ngIf="rating.rating == 2">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </p>
+                    <p *ngIf="rating.rating == 3">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </p>
+                    <p *ngIf="rating.rating == 4">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                    </p>
+                    <p *ngIf="rating.rating == 5">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </p>
+                    <p>Verified Purchase</p>
+                  </div>
+  
+                  <div class="ratinginfo">
+                    <h4>{{rating.comment}}</h4>
+                    <p>The best coffee I've ever heard.</p>
+                  </div>
                 </div>
               </div>
-            </div>
+              </div>
         </div>
 
       </section>

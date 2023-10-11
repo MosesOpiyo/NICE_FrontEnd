@@ -12,7 +12,7 @@ import { AdminService } from 'src/app/AdminService/admin.service';
 })
 export class TablesComponent implements OnInit {
   constructor(private products:ProductsService,private service:AuthenticationService,private admin:AdminService,private dialog:MatDialog){}
-  displayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','level','request'];
+  displayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','level'];
   adminDisplayedColumns: string[] = ['email','username','type','date_joined','last_login','terminate'];
   farmerProducts:any
   users:any
@@ -28,9 +28,15 @@ export class TablesComponent implements OnInit {
           this.farmerProducts = res
         })
       }
+      else if(this.user.type=='ORIGINWAREHOUSER'){
+        this.products.getShippingProducts().subscribe((res:any)=>{
+          this.farmerProducts = res
+        })
+      }
       else if(this.user.type=='WAREHOUSER'){
         this.products.getinventoryProducts().subscribe((res:any)=>{
           this.inventoryProducts = res['warehoused_products']
+          console.log(res)
         })
       }
       else if(this.user.type=='ADMIN'){

@@ -7,12 +7,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -42,7 +42,6 @@ import { TabsComponent } from './tabs/tabs.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
     NavbarComponent,
     LoginComponent,
     HomepageComponent,
@@ -75,8 +74,8 @@ import { TabsComponent } from './tabs/tabs.component';
     WarehousedashboardModule,
     FarmersDashBoardModule,
     DashboardModule,
-    NgxPaginationModule
-
+    NgxPaginationModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

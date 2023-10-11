@@ -230,6 +230,9 @@ export class NicehomepageComponent implements OnInit {
         if(this.user.type == "FARMER"){
           this.route.navigate(['DashBoard'])
         }
+        else if(this.user.type == "ORIGINWAREHOUSER"){
+          this.route.navigate(['DashBoard'])
+        }
         else if(this.user.type == "WAREHOUSER"){
           this.route.navigate(['DashBoard'])
         }

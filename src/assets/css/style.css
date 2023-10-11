@@ -1948,7 +1948,6 @@ background-image: url("../../assets/img/movement/coffee-farm.webp");
   display: flex;
   justify-content: space-between;
   padding-inline: .5rem;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.404);
   font-weight: bold;
 }
 .product-manufacturer i {

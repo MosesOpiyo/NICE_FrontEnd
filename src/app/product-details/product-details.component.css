@@ -186,7 +186,7 @@ a {
   /* INDIVIDUAL PRODUCT STYLING */
   .product-container {
     padding: 1rem;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin: 45px 0 150px 0;
 
     display: flex;
@@ -195,7 +195,7 @@ a {
   }
 
   .product-details {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     padding: .5rem;
     display: flex;
     flex-direction: row;
@@ -204,12 +204,8 @@ a {
     /* justify-content: center; */
   }
 
-  .product-details > * {
-    border: 2px solid black;
-  }
-
   .product-image {
-    height: 500px;
+    height: 400px;
     width: 300px;
   }
 
@@ -222,20 +218,39 @@ a {
 
   .product-alldetails {
     padding: 1rem;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 1rem
   }
+  .product-alldetails h2 {
+    font-weight: 600;
+  }
   
   .product-alldetails p {
     margin-bottom: 0;
+  }
+  .product-alldetails .bi {
+    color: orange;
   }
 
   .product-detail i {
     color: rgb(209, 209, 53);
   }
 
-
+  select{
+    padding: 5px;
+    margin-top: 8px;
+  }
+  .radio input{
+    margin-top: 8px;
+  }
+  .radio label{
+    margin-left: 5px;
+  }
+  .incrdecr label{
+    margin-top: 10px;
+  }
 
   /* TABBED INFO SECTION */
   .tab2 {
@@ -379,6 +394,9 @@ a {
     display: flex;
     gap: 1rem;
     padding: .5rem;
+  }
+  .bi{
+    color: orange;
   }
 
   .owners > * {
