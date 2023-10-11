@@ -279,9 +279,6 @@ a {
     padding-left: 10px;
     font-size: 12px;
   }
-  .sales .row .col{
-    margin-right:2px;
-  }
   .sales button{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;

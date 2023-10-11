@@ -30,7 +30,7 @@ export class ProductsComponent implements OnInit {
   }
 
   addtoCart(item: any){
-    this.cartService.addtoCart(item);
+    
   }
 
   user:any | null = null;
