@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:'Origin-Trip',component:OriginTripComponent},
   {path: 'Cart', component:CartComponent},
   {path: 'Products', component:ProductsComponent},
-  { path: 'Products/:productId', component: ProductDetailsComponent }
+  {path: 'Products/:id', component: ProductDetailsComponent }
 
 ];
 
