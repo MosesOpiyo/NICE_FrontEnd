@@ -50,7 +50,7 @@
                 </ul>
               </li>
               <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
-              <li><i class="bi bi-cart active" value=8></i></li>
+              <li><i class="bi bi-cart active" [attr.value]="userCart.length"></i></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav>
@@ -84,68 +84,88 @@
     
         </div>
       </header>
-
       <app-productsnavbar></app-productsnavbar>
 
-      <ng-container *ngIf ="product.length != 0">
+      <ng-container>
         <div class="cart-table">
-          <div class="cart-product">
-            <table class="table table-responsive">
-              <thead>
-                <tr>
-                  <th>Sr. No</th>
-                  <th>Product Name</th>
-                  <th>Product Image</th>
-                  <th>Description</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Total</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-    
-              <tbody>
-                <tr *ngFor="let item of product; let i = index">
-                  <td>{{i+1}}</td>
-                  <td>{{item.productName}}</td>
-                  <td><img src={{item.imageUrl}} alt="item"></td>
-                  <td>Description 1</td>
-                  <td>${{item.newPrice}}</td>
-                  <td>{{item.quantity}}</td>
-                  <td>{{item.total}}</td>
-                  <td>
-                    <button (click)="removeItem(item)"  class="btn btn-danger"><i class="fa fa-trash"></i></button>
+          <div class="row g-0" style="width: 100vw;">
+            <div class="col-lg-7">
+              <table mat-table [dataSource]="userCart" class="card mat-elevation-z2">
+                <!-- Product Image Column -->
+                <ng-container matColumnDef="image">
+                  <th mat-header-cell *matHeaderCellDef>Product</th>
+                  <td style="padding: 5px;" mat-cell *matCellDef="let item">
+                    <img style="width: 80px;height: 80px;" [src]="cloudinaryUrl+item.img" alt="Product Image" class="product-image">
                   </td>
-                </tr>
-
-                <tr>
-                  <td colspan="4"></td>
-                  <td><button class="btn btn-danger" (click)="emptyCart()">Empty Cart</button></td>
-                  <td><button class="btn btn-primary" routerLink="/Products">Shop More</button></td>
-                  <td><strong>Grand Total: $ {{grandTotal}}</strong></td>
-                  <td><button class="btn btn-success">Checkout</button></td>
-                </tr>
-              </tbody>
-            </table>
+                </ng-container>
+              
+                <!-- Product Name Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef>Name</th>
+                  <td mat-cell *matCellDef="let item">
+                    <h6>{{ item.product.name }}</h6>
+                    <p>Produced By: {{ item.product.producer.username |titlecase }}</p>
+                  </td>
+                  
+                </ng-container>
+                <ng-container matColumnDef="quantity">
+                  <th mat-header-cell *matHeaderCellDef>Quantity</th>
+                  <td mat-cell *matCellDef="let item">
+                    <button (click)="add()" class="btn btn-outline-dark"><i class="bi bi-plus"></i></button><span style="padding: 15px;">{{quantity}}</span><button (click)="subtract()" class="btn btn-outline-dark"><i class="bi bi-dash"></i></button>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="price">
+                  <th mat-header-cell *matHeaderCellDef>Price</th>
+                  <td mat-cell *matCellDef="let item"><b>{{ item.price | currency: 'USD' }}</b></td>
+                </ng-container>
+                <ng-container matColumnDef="delete">
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td mat-cell *matCellDef="let item"><b><button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button></b></td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+              </table>
+            </div>
+            <div style="margin-left: 15px;" class="col-lg-3">
+              <div class="summary">
+                <div class="card mat-elevation-z2">
+                  <h4>Summary</h4>
+                  <hr>
+                  <div class="details">
+                    <div class="row g-0" style="justify-content: space-between;">
+                      <div class="col-lg-6"><span>Total Products:</span></div>
+                      <div class="col-lg-3"><span><b>$125.00</b></span></div>
+                    </div>
+                    <br>
+                    <div class="row g-0">
+                      <div class="col-lg-6"><span>Shipping Costs:</span></div>
+                    </div>
+                    <hr>
+                    <div class="row g-0">
+                      <div class="col-lg-6"><span>Total:</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
        </ng-container>
 
-   <ng-container *ngIf ="product.length == 0">
+   <ng-container>
     <div class="cart-container">
       <div class="cart-header">
-        <h5>My Cart</h5>
+        <h3>My Cart</h3>
       </div>
   
       <div class="cart-content">
         <div class="cart-image">
-          <img src="../../assets/img/coffee-04.jpg" alt="cart">
         </div>
   
         <div class="cart-contents">
           <h4>mmmmhh... seems like your Cart is Empty!</h4>
-          <h6>Add item(s) to it now</h6>
-          <a routerLink="/Products">SHOP NOW</a>
+          <br>
+          <a class="btn btn-dark" routerLink="/Products">SHOP NOW</a>
         </div>
       </div>
      </div>

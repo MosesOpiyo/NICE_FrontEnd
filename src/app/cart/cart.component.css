@@ -183,9 +183,20 @@ a {
     padding: .5rem;
     margin-block: 100px;
     /* height: 700px; */
-    border: 2px solid red;
     width: 1000px;
     margin-inline: auto;
+  }
+  .card{
+    padding: 10px;
+  }
+  
+  table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .cart-table table th, td{
+    color: #000000;
   }
 
   .cart-container {
