@@ -22,7 +22,7 @@ export class ProductsComponent implements OnInit {
   productData = [ 
     {
       id: 1,
-      imageUrl: '../../assets/img/packaging/pkg7.jpg',
+      imageUrl: '../../assets/img/packaging/pkg7.png',
       sticker: true,
       farmer: 'Riakiania Coffee Factory',
       rating: [
@@ -40,7 +40,7 @@ export class ProductsComponent implements OnInit {
 
     {
       id: 2,
-      imageUrl: '../../assets/img/packaging/pkg8.jpg',
+      imageUrl: '../../assets/img/packaging/pkg1.png',
       sticker: true,
       farmer: 'Kiaragana Coffee Factory',
       rating: [
@@ -58,7 +58,7 @@ export class ProductsComponent implements OnInit {
 
     {
       id: 3,
-      imageUrl: '../../assets/img/coffee-04.jpg',
+      imageUrl: '../../assets/img/packaging/coffee-bag-04.png',
       sticker: true,
       farmer: 'Kaga Coffee Factory',
       rating: [
@@ -76,7 +76,7 @@ export class ProductsComponent implements OnInit {
 
     {
       id: 4,
-      imageUrl: '../../assets/img/packaging/pkg1.jpg',
+      imageUrl: '../../assets/img/packaging/pkg1.png',
       sticker: true,
       farmer: 'Kiambwe Coffee Factory',
       rating: [
@@ -94,7 +94,7 @@ export class ProductsComponent implements OnInit {
 
     {
       id: 5,
-      imageUrl: '../../assets/img/packaging/pkg10.jpg',
+      imageUrl: '../../assets/img/packaging/coffee-bag-02.png',
       sticker: true,
       farmer: 'Mitondo Coffee Factory',
       rating: [
@@ -112,7 +112,7 @@ export class ProductsComponent implements OnInit {
 
     {
       id: 6,
-      imageUrl: '../../assets/img/coffee-bag-02.jpg',
+      imageUrl: '../../assets/img/packaging/coffee-bag-01.png',
       sticker: true,
       farmer: 'Gathambi Coffee Factory',
       rating: [
@@ -130,7 +130,7 @@ export class ProductsComponent implements OnInit {
 
     {
       id: 7,
-      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      imageUrl: '../../assets/img/packaging/coffee-bag-03.png',
       sticker: true,
       farmer: 'Ihara Coffee Factory',
       rating: [
@@ -148,7 +148,7 @@ export class ProductsComponent implements OnInit {
 
     {
       id: 8,
-      imageUrl: '../../assets/img/packaging/pkg9.jpg',      
+      imageUrl: '../../assets/img/packaging/pkg7.png',      
       sticker: true,
       farmer: 'Getuya Coffee Factory',
       rating: [
@@ -166,7 +166,7 @@ export class ProductsComponent implements OnInit {
 
     {
       id: 9,
-      imageUrl: '../../assets/img/coffee-bag-01.jpg',
+      imageUrl: '../../assets/img/packaging/coffee-bag-01.png',
       sticker: true,
       farmer: 'Ikuni Coffee Factory',
       rating:  [
@@ -184,7 +184,7 @@ export class ProductsComponent implements OnInit {
 
     {
       id: 10,
-      imageUrl: '../../assets/img/coffee-bag-03.jpg',
+      imageUrl: '../../assets/img/packaging/coffee-bag-03.png',
       sticker: true,
       farmer: 'Zambezi Coffee Factory',
       rating: [

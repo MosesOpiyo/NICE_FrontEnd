@@ -1,89 +1,5 @@
-<section>
-    <header id="header" class="fixed-top header-transparent">
-        <div class="container d-flex align-items-center justify-content-between">
-    
-          <div class="logo">
-            <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
-          </div>
-    
-          <!-- for mobile view -->
-          <div class="credentials-mobile">
-            <ul class="navbar" *ngIf="!user">
-                  <li>
-                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-                  </li>
-                  <li>
-                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-                  </li>
-                </ul>
-                <ul *ngIf="user">
-                  <li>
-                    <div class="navbar">
-                      <ul>
-                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                          <ul>
-                            <li><a href="" (click)="logout()">Log out</a></li><br>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-          </div>
-    
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link" routerLink="">Home</a></li>
-              <li><a class="nav-link" href="#about">Shop Coffee</a></li>
-              <li class="dropdown active"><a href="#"><span>Expo</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a routerLink="/Expo">NICE Expo</a></li>
-                  <li><a href="#">Register for NICE Expo</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
-                  <li><a href="#">Register for Origin Trip</a></li>
-                </ul>
-              </li>
-              <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
-              <li><i class="bi bi-cart" value=8></i></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav>
-    
-          <!-- for non-mobile view -->
-          <div class="credentials-nonmobile">
-            <ul class="navbar" *ngIf="!user">
-                  <li>
-                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-                  </li>
-                  <li>
-                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-                  </li>
-                </ul>
-                <ul *ngIf="user">
-                  <li>
-                    <div class="navbar">
-                      <ul>
-                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                          <ul>
-                            <li><a href="" (click)="logout()">Log out</a></li><br>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-          </div>
-          
-          <!-- .navbar -->
-    
-        </div>
-      </header>
+<section class="product-component">
+    <app-navbar></app-navbar>
 
 
       <section class="product-container">
@@ -91,7 +7,7 @@
         <div class="product-details">
 
             <div class="product-image">
-                <img src="../../assets/img/coffee-04.jpg" alt="coffee">
+                <img src="../../assets/img/packaging/coffee-bag-03.png" alt="coffee">
             </div>
 
             <div class="product-alldetails">
@@ -102,11 +18,11 @@
                         <p>Description:  - Nuty & toasty, vanila, sweet, winy, clean cup</p>
                         <p>Riaikania Coffee Factory</p>
                         <p>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                         </p>
                         <p>In stock</p>
                         <p>$18.80 / 12oz</p>
@@ -119,18 +35,19 @@
                     <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)" ></app-tabs>
                   </div>
 
-                    <div *ngIf="activatedTabIndex == 0">
+                    <div *ngIf="activatedTabIndex == 0" class="roasted">
                         
-                        <form action="google.com" method="post">
-                            <select id="packsize" name="packsize" required>
-                              <option value="">Choose Pack Size...</option>
-                              <option value="18.80|12oz">12oz ($18.80)</option>
-                              <option value="46.80|32oz">32oz ($46.80)</option>
-                              <option value="68.20|3lbs">3lbs ($68.20)</option>
-                              <option value="68.20|3lbs">5lbs ($113.00)</option>
+                        <form action="" method="post">
+                          <div class="option-list">
+                            <select id="packsize" name="packsize" title="packsize" required>
+                                <option value="">Choose Pack Size...</option>
+                                <option value="18.80|12oz">12oz ($18.80)</option>
+                                <option value="46.80|32oz">32oz ($46.80)</option>
+                                <option value="68.20|3lbs">3lbs ($68.20)</option>
+                                <option value="68.20|3lbs">5lbs ($113.00)</option>
                             </select>
-
-                            <select id="grind" name="grind" required>
+            
+                            <select id="grind" name="grind" title="grind" required>
                                 <option value="">Choose Grind...</option>
                                 <option value="Whole beans">Whole beans</option>
                                 <option value="Extra coarse">Extra coarse (Cold brews)</option>
@@ -141,8 +58,8 @@
                                 <option value="Fine">Fine (Espresso)</option>
                                 <option value="Super-fine">Super-fine (Turkish)</option>
                             </select>
-
-                            <select id="roast" name="roast" required>
+            
+                            <select id="roast" name="roast" title="roast" required>
                                 <option value="">Choose Roast Type...</option>
                                 <option value="Light">Light</option>
                                 <option value="Medium/light">Medium/light</option>
@@ -150,40 +67,45 @@
                                 <option value="Medium/dark">Medium/dark</option>
                                 <option value="Dark">Dark</option>
                             </select>
+                          </div>
 
                             <div class="radio">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
-                              <label for="onetime">One time purchase</label><br>
-                            
-                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
-                              <label for="subscribe">Subscribe & save 10%</label><br>
+                              <div class="radio1">
+                                <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
+                                <label for="onetime">One time purchase</label><br>
+                              </div>
+  
+                              <div class="radio2">
+                                <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
+                                <label for="subscribe">Subscribe & save 10%</label><br>
+                              </div>
                             
                               <div *ngIf="isShowDiv2">
-                                <select id="delivery" name="delivery" required>
+                                <select id="greendelivery" name="delivery" title="delivery" required>
                                   <option value="">Choose Delivery Period...</option>
                                   <option value="2 weeks">Deliver every 2 weeks</option>
                                   <option value="3 weeks">Deliver every 3 weeks</option>
                                   <option value="month">Deliver every month</option>
                                   <option value="6 weeks">Deliver every 6 weeks</option>
                                   <option value="2 months">Deliver every 2 months</option>
-                              </select>
+                                </select>
                               </div>
                             </div>
 
                             <div class="incrdecr">
-                              <button (click)=decrement()>-</button>
-                              <h2 id="counting">{{num}}</h2>
-                              <button (click)=increment()>+</button>
+                              <div (click)=decrement() class="decrement">-</div>
+                              <span id="counting">{{num}}</span>
+                              <div (click)=increment() class="increment">+</div>
                             </div>
 
                             <div class="submit-btn">
-                              <input type="submit" value="ADD TO CART">
+                              <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
                             </div>
 
-                          </form>
+                        </form>
                     </div>
 
-                    <div *ngIf="activatedTabIndex == 1" class=tab1>
+                    <div *ngIf="activatedTabIndex == 1" class="green">
                         <div class="packaging">
                           <p>Packaging</p>
                           <p>Grainpro & Outer Jutebag</p>
@@ -205,14 +127,18 @@
 
                         <form action="/" method="post">
                           <div class="radio">
-                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
-                            <label for="onetime">One time purchase</label><br>
-                          
-                            <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
-                            <label for="subscribe">Subscribe & save 10%</label><br>
+                            <div class="radio1">
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
+                              <label for="onetime">One time purchase</label><br>
+                          </div>
+
+                          <div class="radio1">
+                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
+                              <label for="subscribe">Subscribe & save 10%</label><br>
+                          </div>
                           
                             <div *ngIf="isShowDiv">
-                              <select id="delivery" name="delivery" required>
+                              <select id="delivery" name="delivery" title="delivery" required>
                                 <option value="">Choose Delivery Period...</option>
                                 <option value="2 weeks">Deliver every 2 weeks</option>
                                 <option value="3 weeks">Deliver every 3 weeks</option>
@@ -224,14 +150,14 @@
                           </div>
 
                           <div class="incrdecr">
-                            <button (click)=decrement()>-</button>
-                            <h2 id="counting">{{num}}</h2>
-                            <button (click)=increment()>+</button>
+                            <div (click)=decrement2() class="decrement">-</div>
+                            <span id="counting2">{{num2}}</span>
+                            <div (click)=increment2() class="increment">+</div>
                           </div>
 
                           <div class="submit-btn">
-                            <input type="button" value="ADD TO CART">
-                          </div>
+                            <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                        </div>
 
                         </form>
                         

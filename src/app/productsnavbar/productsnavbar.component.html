@@ -1,13 +1,20 @@
-<div class="navbar-two navbar navbar-dark shadow-sm">
-    <div class="navbar-brand">
+<div class="products-navbar">
+
+    <div class="navbar-input">
+
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="search products">
+        <input type="text" class="form-control" placeholder="Search products" id="search" name="search">
+        <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
       </div>
-      <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+
     </div>
 
-    <button class="btn" style="margin-right: 3rem" routerLink="/Cart">
-      <i style="font-size: 30px; color: white" class="bi bi-cart"></i>
-      <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
-    </button>
-  </div>
+    <div class="cart-link">
+      <a class="btn" routerLink="/Cart">
+        <ul class="cart-icon">
+          <li class="cart"><i class="fa-solid fa-bag-shopping" value=0></i></li>
+        </ul>
+      </a>
+    </div>
+
+</div>

@@ -13,6 +13,7 @@ import { AuthService } from '../Auth/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
   myScriptElement: HTMLScriptElement;
    constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){
       this.myScriptElement = document.createElement("script");
@@ -23,7 +24,7 @@ export class NavbarComponent implements OnInit {
    user:any | null = null;
    isLoggedIn:any
 
-   showLoginDialog(){
+  showLoginDialog(){
     const dialogRef = this.dialog.open(LoginComponent,{
       width: '25pc'
     });

@@ -10,7 +10,12 @@ export class ProductsnavbarComponent implements OnInit {
 
   public totalItem : number = 0;
   
-  constructor(private cartService : CartService){}
+  myScriptElement: HTMLScriptElement;
+  constructor(private cartService : CartService){
+    this.myScriptElement = document.createElement("script");
+     this.myScriptElement.src = "../../assets/js/main.js";
+     document.body.appendChild(this.myScriptElement);
+  }
 
   ngOnInit(): void {
     this.cartService.getProducts()
