@@ -174,15 +174,31 @@
               <app-tabs [tabsArray]="tabs2" (onTabChange)="tabChange2($event)" ></app-tabs>
             </div>
 
-            <div *ngIf="activatedTabIndex2 == 0" class="tab2">
+            <div *ngIf="activatedTabIndex2 == 0" class="farm-tab">
+
+              <div class="owners">
+                <div class="owner-image">
+                  <img src="../../assets/img/farmers/farmer1.jpg" alt="owner image">
+                </div>
+
+                <div class="owner-bio">
+                  <div class="owner-name">
+                    <h4>Owner: Moses King'ori</h4>
+                  </div>
+
+                  <div class="owner-info">
+                    <p>Moses King'ori is no stranger to the coffee industry. His career began at Gerald's Coffee Estate in Nyeri. His commitment and passion for coffee led Moses to various coffee farms in Kenya, Africa. Among other things, he is responsible for and gives the coffee varieties of the Nyeri an even higher level thanks to his enormous expertise and down-to-earth attitude.</p>
+                  </div>
+
+                </div>
+              </div>
 
               <div class="farmdetails">
 
                 <div class="farm-bio">
 
                   <div class="farm-story">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tempora facere, ullam sunt veniam commodi expedita, minima quae unde voluptas, veritatis soluta officia ipsum dolor fuga rem iure! Voluptatum, dolores!
-                      Molestias at sed tenetur dicta necessitatibus laborum natus ut ipsam fuga enim dignissimos alias earum, facilis deserunt recusandae atque vel saepe eius minima amet? Neque consequatur autem sequi dolorem incidunt!</p>
+                    <p>Geralds Coffee Estate was started in 1958 by our late father Gerald Kingori. He developed a passion for coffee in all of us and taught us to work on the coffee. Traditionally land is subdivided among sons when a father passes away but we have chosen to manage the estate as one. We work hard to maintain good agricultural practices like our father taught us and our goal is to consistently produce high quality coffee. We hope that soon we will start making good earnings from our hard work by selling our coffee directly to roasters.</p>
                   </div>
 
                   <div class="farm-origin">
@@ -194,19 +210,20 @@
                 </div>
 
                 <div class="farm-images">
-                  <div class="image-one">
+                  <div class="farm-image">
                     <img src="../../assets/img/farm/farm1.jpg" alt="farm1">
                   </div>
                 </div>
 
               </div>
 
-              <div class="farmadddetails">
+              <div class="morefarmdetails">
                 <div class="map">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.930759430594!2d36.82183079271866!3d-1.1726699277239063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3c6280decd87%3A0x1a1a1908e6fd13e9!2sKiambu!5e0!3m2!1sen!2ske!4v1696248692754!5m2!1sen!2ske"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
+                    allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="map">
                   </iframe>
                 </div>
 
@@ -314,36 +331,19 @@
 
                 </div>
               </div>
-
-              <div class="owners">
-                <div class="owner-image">
-                  <img src="" alt="owner image">
-                </div>
-
-                <div class="owner-bio">
-                  <div class="owner-name">
-                    <h4>Owner: Moses Gitau</h4>
-                  </div>
-
-                  <div class="owner-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ea error totam alias accusamus, eaque recusandae doloribus, velit nemo perferendis eveniet, quos aspernatur asperiores quisquam fugiat odit ad accusantium impedit.</p>
-                  </div>
-
-                </div>
-              </div>
             </div>
 
-            <div *ngIf="activatedTabIndex2 == 1" class="tab2">
+            <div *ngIf="activatedTabIndex2 == 1" class="reviews-tab">
 
               <div class="average-reviews">
                 <h4>Average Customer reviews</h4>
                 <p>
                   <span>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
                   </span>
 
                   <span>
@@ -361,11 +361,11 @@
 
                 <div class="user-rating">
                   <p>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                   </p>
 
                   <p>Verified Purchase</p>

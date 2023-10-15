@@ -1,93 +1,8 @@
-<section>
-    <header id="header" class="fixed-top header-transparent">
-        <div class="container d-flex align-items-center justify-content-between">
-    
-          <div class="logo">
-            <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
-          </div>
-    
-          <!-- for mobile view -->
-          <div class="credentials-mobile">
-            <ul class="navbar" *ngIf="!user">
-                  <li>
-                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-                  </li>
-                  <li>
-                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-                  </li>
-                </ul>
-                <ul *ngIf="user">
-                  <li>
-                    <div class="navbar">
-                      <ul>
-                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                          <ul>
-                            <li><a href="" (click)="logout()">Log out</a></li><br>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-          </div>
-    
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link" routerLink="">Home</a></li>
-              <li><a class="nav-link" href="#about">Shop Coffee</a></li>
-              <li class="dropdown"><a href="#"><span>Expo</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a routerLink="/Expo">NICE Expo</a></li>
-                  <li><a href="#">Register for NICE Expo</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
-                  <li><a href="#">Register for Origin Trip</a></li>
-                </ul>
-              </li>
-              <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
-              <li><i class="bi bi-cart active" value=8></i></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav>
-    
-          <!-- for non-mobile view -->
-          <div class="credentials-nonmobile">
-            <ul class="navbar" *ngIf="!user">
-                  <li>
-                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-                  </li>
-                  <li>
-                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-                  </li>
-                </ul>
-                <ul *ngIf="user">
-                  <li>
-                    <div class="navbar">
-                      <ul>
-                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                          <ul>
-                            <li><a href="" (click)="logout()">Log out</a></li><br>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-          </div>
-          
-          <!-- .navbar -->
-    
-        </div>
-      </header>
+<section class="cart-component">
+    <app-navbar></app-navbar>
 
-      <app-productsnavbar></app-productsnavbar>
-
-      <ng-container *ngIf ="product.length != 0">
+    <div class="cart-container">
+      <ng-container *ngIf="product.length != 0">
         <div class="cart-table">
           <div class="cart-product">
             <table class="table table-responsive">
@@ -103,7 +18,7 @@
                   <th>Action</th>
                 </tr>
               </thead>
-    
+      
               <tbody>
                 <tr *ngFor="let item of product; let i = index">
                   <td>{{i+1}}</td>
@@ -114,10 +29,10 @@
                   <td>{{item.quantity}}</td>
                   <td>{{item.total}}</td>
                   <td>
-                    <button (click)="removeItem(item)"  class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                    <button (click)="removeItem(item)" class="btn btn-danger" title="delete"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
-
+      
                 <tr>
                   <td colspan="4"></td>
                   <td><button class="btn btn-danger" (click)="emptyCart()">Empty Cart</button></td>
@@ -129,27 +44,24 @@
             </table>
           </div>
         </div>
-       </ng-container>
+      </ng-container>
 
-   <ng-container *ngIf ="product.length == 0">
-    <div class="cart-container">
-      <div class="cart-header">
-        <h5>My Cart</h5>
-      </div>
-  
-      <div class="cart-content">
-        <div class="cart-image">
-          <img src="../../assets/img/coffee-04.jpg" alt="cart">
+      <ng-container *ngIf="product.length == 0">
+        <div class="cartempty-container">
+          <div class="cart-image">
+            <img src="../../assets/img/empty-cart.png" alt="cart">
+          </div>
+        
+          <div class="cart-contents">
+            <h4>mmmmhh... seems like your Cart is Empty!</h4>
+            <h6>Add item(s) to it now</h6>
+            <a routerLink="/Products">SHOP NOW&nbsp;<i class="fa-solid fa-cart-arrow-down"></i></a>
+          </div>
         </div>
-  
-        <div class="cart-contents">
-          <h4>mmmmhh... seems like your Cart is Empty!</h4>
-          <h6>Add item(s) to it now</h6>
-          <a routerLink="/Products">SHOP NOW</a>
-        </div>
-      </div>
-     </div>
-   </ng-container>
+      </ng-container>
+    </div>
+
+      
 
 
     <app-footer></app-footer>

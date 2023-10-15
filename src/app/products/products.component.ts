@@ -385,7 +385,7 @@ export class ProductsComponent implements OnInit {
   myScriptElement: HTMLScriptElement;
   constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService){
      this.myScriptElement = document.createElement("script");
-     this.myScriptElement.src = "../../assets/js/main.js";
+     this.myScriptElement.src = "./assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
 

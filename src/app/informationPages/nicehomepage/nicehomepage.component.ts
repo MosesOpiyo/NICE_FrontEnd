@@ -212,7 +212,7 @@ export class NicehomepageComponent implements OnInit {
   myScriptElement: HTMLScriptElement;
    constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){
       this.myScriptElement = document.createElement("script");
-      this.myScriptElement.src = "../../../assets/js/main.js";
+      this.myScriptElement.src = "./assets/js/main.js";
       document.body.appendChild(this.myScriptElement);
    }
 
