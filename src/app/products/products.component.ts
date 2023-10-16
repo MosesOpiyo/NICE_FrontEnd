@@ -17,6 +17,14 @@ export class ProductsComponent implements OnInit {
   p:number = 1;
   itemsPerPage:number = 10;
   totalProduct:any;
+  num: number = 1;
+  num2: number = 1;
+  isShowDiv = false;
+  isShowDiv2 = false;
+
+  // product form tabs
+  tabs: string [] = ['Roasted', 'Green'];
+  activatedTabIndex: number = 0;
 
 
   productData = [ 
@@ -440,5 +448,64 @@ export class ProductsComponent implements OnInit {
    })
 
    this.totalProduct = this.productData.length;
+  }
+
+  //product form tab index
+  tabChange(tabIndex: number) {
+    this.activatedTabIndex = tabIndex;
+  }
+
+  // for roasted section
+  toggleDivOff() {
+    this.isShowDiv = false;
+  }
+
+  toggleDivOn() {
+    this.isShowDiv = true;
+  }
+
+  // for green tab section
+  toggleDivOff2() {
+    this.isShowDiv2 = false;
+  }
+
+  toggleDivOn2() {
+    this.isShowDiv2 = true;
+  }
+
+  // increment button for roasted section
+  increment(){
+    this.num += 1;
+    console.log(this.num);
+    }
+    
+  //decrements item for roasted section
+  decrement(){
+    if(this.num-1 < 1){
+      this.num = 1;
+      console.log('item_1->' + this.num)
+    }
+    else{
+      this.num -= 1;
+      console.log('item_2->' + this.num);
+    }
+  }
+
+  // increment button for green section
+  increment2(){
+    this.num2 += 1;
+    console.log(this.num2);
+    }
+    
+  //decrements item for green section
+  decrement2(){
+    if(this.num2-1 < 1){
+      this.num2 = 1;
+      console.log('item_1->' + this.num2)
+    }
+    else{
+      this.num2 -= 1;
+      console.log('item_2->' + this.num2);
+    }
   }
 }
