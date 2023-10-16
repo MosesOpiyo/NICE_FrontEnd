@@ -1,251 +1,87 @@
-<section>
-    <header id="header" class="fixed-top header-transparent">
-        <div class="container d-flex align-items-center justify-content-between">
-    
-          <div class="logo">
-            <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
+<section class="product-component">
+  <app-navbar></app-navbar>
+
+
+    <section class="product-container">
+
+      <div class="product-details">
+
+          <div class="product-image">
+              <img src="../../assets/img/packaging/coffee-bag-03.png" alt="coffee">
           </div>
-    
-          <!-- for mobile view -->
-          <div class="credentials-mobile">
-            <ul class="navbar" *ngIf="!user">
-                  <li>
-                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-                  </li>
-                  <li>
-                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-                  </li>
-                </ul>
-                <ul *ngIf="user">
-                  <li>
-                    <div class="navbar">
-                      <ul>
-                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                          <ul>
-                            <li><a href="" (click)="logout()">Log out</a></li><br>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-          </div>
-    
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link" routerLink="">Home</a></li>
-              <li><a class="nav-link" href="#about">Shop Coffee</a></li>
-              <li class="dropdown active"><a href="#"><span>Expo</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a routerLink="/Expo">NICE Expo</a></li>
-                  <li><a href="#">Register for NICE Expo</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
-                  <li><a href="#">Register for Origin Trip</a></li>
-                </ul>
-              </li>
-              <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
-              <li><i class="bi bi-cart" value=8></i></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav>
-    
-          <!-- for non-mobile view -->
-          <div class="credentials-nonmobile">
-            <ul class="navbar" *ngIf="!user">
-                  <li>
-                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-                  </li>
-                  <li>
-                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-                  </li>
-                </ul>
-                <ul *ngIf="user">
-                  <li>
-                    <div class="navbar">
-                      <ul>
-                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                          <ul>
-                            <li><a href="" (click)="logout()">Log out</a></li><br>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-          </div>
-          
-          <!-- .navbar -->
-    
-        </div>
-      </header>
 
+          <div class="product-alldetails">
 
-      <section class="product-container">
+              <div class="product-info">
+                  <div class="product-detail">
+                      <p>Mettle</p>
+                      <p>Description:  - Nuty & toasty, vanila, sweet, winy, clean cup</p>
+                      <p>Riaikania Coffee Factory</p>
+                      <p>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p>In stock</p>
+                      <p>$18.80 / 12oz</p>
+                      <p>Shipping: Free (Continental US only)</p>
+                  </div> 
+              </div>
 
-        <div class="product-details">
-
-            <div class="product-image">
-                <img src="{{cloudinaryUrl}}{{item.img}}" alt="coffee">
-            </div>
-
-            <div class="product-alldetails">
-
-                <div class="product-info">
-                    <div class="product-detail">
-                        <h2>{{item.product.name}}</h2>
-                        <p>Description:  - {{item.product.cup_notes}}</p>
-                        <p>Riaikania Coffee Factory</p>
-                        <p *ngIf="total == 5">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <span>{{total}}</span>
-                        </p>
-                        <p *ngIf="total == 4">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star"></i>
-                          <span>{{total}}</span>
-                        </p>
-                        <p *ngIf="total == 3">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star"></i>
-                          <i class="bi bi-star"></i>
-                          <span>{{total}}</span>
-                        </p>
-                        <p *ngIf="total == 2">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star"></i>
-                          <i class="bi bi-star"></i>
-                          <i class="bi bi-star"></i>
-                          <span>{{total}}</span>
-                        </p>
-                        <p *ngIf="total == 1">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star"></i>
-                          <i class="bi bi-star"></i>
-                          <i class="bi bi-star"></i>
-                          <i class="bi bi-star"></i>
-                          <span>{{total}}</span>
-                        </p>
-                        <p>In stock</p>
-                        <p>{{item.price | currency:'USD'}} / 12oz</p>
-                        <p>Shipping: Free (Continental US only)</p>
-                    </div> 
+              <div class="product-form">
+                <div class="col">
+                  <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)" ></app-tabs>
                 </div>
 
-                <div class="product-form">
-                  <div class="col">
-                    <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)" ></app-tabs>
-                  </div>
-
-                    <div *ngIf="activatedTabIndex == 0">
-                        
-                        <form action="google.com" method="post">
-                            <select id="packsize" name="packsize" required>
+                  <div *ngIf="activatedTabIndex == 0" class="roasted">
+                      
+                      <form action="" method="post">
+                        <div class="option-list">
+                          <select id="packsize" name="packsize" title="packsize" required>
                               <option value="">Choose Pack Size...</option>
                               <option value="18.80|12oz">12oz ($18.80)</option>
                               <option value="46.80|32oz">32oz ($46.80)</option>
                               <option value="68.20|3lbs">3lbs ($68.20)</option>
                               <option value="68.20|3lbs">5lbs ($113.00)</option>
-                            </select>
+                          </select>
+          
+                          <select id="grind" name="grind" title="grind" required>
+                              <option value="">Choose Grind...</option>
+                              <option value="Whole beans">Whole beans</option>
+                              <option value="Extra coarse">Extra coarse (Cold brews)</option>
+                              <option value="Coarse">Coarse (French press/percolators)</option>
+                              <option value="Medium-coarse">Medium-coarse (Chemex/clever drippers)</option>
+                              <option value="Medium">Medium (Drip/regular)</option>
+                              <option value="Medium-fine">Medium-fine (Pour overs/siphon)</option>
+                              <option value="Fine">Fine (Espresso)</option>
+                              <option value="Super-fine">Super-fine (Turkish)</option>
+                          </select>
+          
+                          <select id="roast" name="roast" title="roast" required>
+                              <option value="">Choose Roast Type...</option>
+                              <option value="Light">Light</option>
+                              <option value="Medium/light">Medium/light</option>
+                              <option value="Medium">Medium</option>
+                              <option value="Medium/dark">Medium/dark</option>
+                              <option value="Dark">Dark</option>
+                          </select>
+                        </div>
 
-                            <select id="grind" name="grind" required>
-                                <option value="">Choose Grind...</option>
-                                <option value="Whole beans">Whole beans</option>
-                                <option value="Extra coarse">Extra coarse (Cold brews)</option>
-                                <option value="Coarse">Coarse (French press/percolators)</option>
-                                <option value="Medium-coarse">Medium-coarse (Chemex/clever drippers)</option>
-                                <option value="Medium">Medium (Drip/regular)</option>
-                                <option value="Medium-fine">Medium-fine (Pour overs/siphon)</option>
-                                <option value="Fine">Fine (Espresso)</option>
-                                <option value="Super-fine">Super-fine (Turkish)</option>
-                            </select>
-
-                            <select id="roast" name="roast" required>
-                                <option value="">Choose Roast Type...</option>
-                                <option value="Light">Light</option>
-                                <option value="Medium/light">Medium/light</option>
-                                <option value="Medium">Medium</option>
-                                <option value="Medium/dark">Medium/dark</option>
-                                <option value="Dark">Dark</option>
-                            </select>
-
-                            <div class="radio">
+                          <div class="radio">
+                            <div class="radio1">
                               <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
                               <label for="onetime">One time purchase</label><br>
-                            
+                            </div>
+
+                            <div class="radio2">
                               <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
                               <label for="subscribe">Subscribe & save 10%</label><br>
-                            
-                              <div *ngIf="isShowDiv2">
-                                <select id="delivery" name="delivery" required>
-                                  <option value="">Choose Delivery Period...</option>
-                                  <option value="2 weeks">Deliver every 2 weeks</option>
-                                  <option value="3 weeks">Deliver every 3 weeks</option>
-                                  <option value="month">Deliver every month</option>
-                                  <option value="6 weeks">Deliver every 6 weeks</option>
-                                  <option value="2 months">Deliver every 2 months</option>
-                              </select>
-                              </div>
                             </div>
-
-                            <div class="incrdecr">
-                              <button class="btn btn-dark" (click)=decrement()>-</button>
-                              <h2 id="counting">{{num}}</h2>
-                              <button  class="btn btn-dark" (click)=increment()>+</button>
-                            </div>
-
-                            <div class="submit-btn">
-                              <input (click)="addToCart(item.id)" class="btn btn-dark" type="submit" value="ADD TO CART">
-                            </div>
-
-                          </form>
-                    </div>
-
-                    <div *ngIf="activatedTabIndex == 1" class=tab1>
-                        <div class="packaging">
-                          <p>Packaging</p>
-                          <p>Grainpro & Outer Jutebag</p>
-                        </div>
-
-                        <div class="price-lb">
-                          <p>Price/Lb</p>
-
-                          <div class="lb">
-                            <p>1 - 660 lbs</p>
-                            <p>660lbs +</p>
-                          </div>
-
-                          <div class="lb-price">
-                            <p>- $7.70</p>
-                            <p>- $6.93</p>
-                          </div>
-                        </div>
-
-                        <form action="/" method="post">
-                          <div class="radio">
-                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
-                            <label for="onetime">One time purchase</label><br>
                           
-                            <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
-                            <label for="subscribe">Subscribe & save 10%</label><br>
-                          
-                            <div *ngIf="isShowDiv">
-                              <select id="delivery" name="delivery" required>
+                            <div *ngIf="isShowDiv2">
+                              <select id="greendelivery" name="delivery" title="delivery" required>
                                 <option value="">Choose Delivery Period...</option>
                                 <option value="2 weeks">Deliver every 2 weeks</option>
                                 <option value="3 weeks">Deliver every 3 weeks</option>
@@ -257,267 +93,294 @@
                           </div>
 
                           <div class="incrdecr">
-                            <label for="quantity">Quantity:</label>
-                            <select id="quantity" name="delivery" required>
-                              <option *ngFor="let item of quantity" [value]="item">{{item}}</option>
-                            </select>
+                            <div (click)=decrement() class="decrement">-</div>
+                            <span id="counting">{{num}}</span>
+                            <div (click)=increment() class="increment">+</div>
                           </div>
 
                           <div class="submit-btn">
-                            <input class="btn btn-dark" type="button" value="ADD TO CART">
+                            <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
                           </div>
 
-                        </form>
+                      </form>
+                  </div>
+
+                  <div *ngIf="activatedTabIndex == 1" class="green">
+                      <div class="packaging">
+                        <p>Packaging</p>
+                        <p>Grainpro & Outer Jutebag</p>
+                      </div>
+
+                      <div class="price-lb">
+                        <p>Price/Lb</p>
+
+                        <div class="lb">
+                          <p>1 - 660 lbs</p>
+                          <p>660lbs +</p>
+                        </div>
+
+                        <div class="lb-price">
+                          <p>- $7.70</p>
+                          <p>- $6.93</p>
+                        </div>
+                      </div>
+
+                      <form action="/" method="post">
+                        <div class="radio">
+                          <div class="radio1">
+                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
+                            <label for="onetime">One time purchase</label><br>
+                        </div>
+
+                        <div class="radio1">
+                            <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
+                            <label for="subscribe">Subscribe & save 10%</label><br>
+                        </div>
                         
-                    </div>
-                </div>
-            </div>
-      
-        </div>
+                          <div *ngIf="isShowDiv">
+                            <select id="delivery" name="delivery" title="delivery" required>
+                              <option value="">Choose Delivery Period...</option>
+                              <option value="2 weeks">Deliver every 2 weeks</option>
+                              <option value="3 weeks">Deliver every 3 weeks</option>
+                              <option value="month">Deliver every month</option>
+                              <option value="6 weeks">Deliver every 6 weeks</option>
+                              <option value="2 months">Deliver every 2 months</option>
+                            </select>
+                          </div>
+                        </div>
 
+                        <div class="incrdecr">
+                          <div (click)=decrement2() class="decrement">-</div>
+                          <span id="counting2">{{num2}}</span>
+                          <div (click)=increment2() class="increment">+</div>
+                        </div>
 
-        <div class="tabbed-info">
+                        <div class="submit-btn">
+                          <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                      </div>
 
-            <div class="col">
-              <app-tabs [tabsArray]="tabs2" (onTabChange)="tabChange2($event)" ></app-tabs>
-            </div>
-
-            <div *ngIf="activatedTabIndex2 == 0" class="tab2">
-
-              <div class="farmdetails">
-
-                <div class="farm-bio">
-
-                  <div class="farm-story">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tempora facere, ullam sunt veniam commodi expedita, minima quae unde voluptas, veritatis soluta officia ipsum dolor fuga rem iure! Voluptatum, dolores!
-                      Molestias at sed tenetur dicta necessitatibus laborum natus ut ipsam fuga enim dignissimos alias earum, facilis deserunt recusandae atque vel saepe eius minima amet? Neque consequatur autem sequi dolorem incidunt!</p>
+                      </form>
+                      
                   </div>
+              </div>
+          </div>
+    
+      </div>
 
-                  <div class="farm-origin">
-                    <p><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Location: Kiambu, Kenya</p>
-                    <p><i class="fa-solid fa-tree"></i>&nbsp;&nbsp;Area: 150 Ha</p>
-                    <p><i class="fa-solid fa-flag-checkered"></i>&nbsp;&nbsp;Founded: 1991</p>
-                 </div>
-                  
-                </div>
 
-                <div class="farm-images">
-                  <div class="image-one">
-                    <img src="../../assets/img/farm/farm1.jpg" alt="farm1">
-                  </div>
-                </div>
+      <div class="tabbed-info">
 
+          <div class="col">
+            <app-tabs [tabsArray]="tabs2" (onTabChange)="tabChange2($event)" ></app-tabs>
+          </div>
+
+          <div *ngIf="activatedTabIndex2 == 0" class="farm-tab">
+
+            <div class="owners">
+              <div class="owner-image">
+                <img src="../../assets/img/farmers/farmer1.jpg" alt="owner image">
               </div>
 
-              <div class="farmadddetails">
-                <div class="map">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.930759430594!2d36.82183079271866!3d-1.1726699277239063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3c6280decd87%3A0x1a1a1908e6fd13e9!2sKiambu!5e0!3m2!1sen!2ske!4v1696248692754!5m2!1sen!2ske"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                  </iframe>
+              <div class="owner-bio">
+                <div class="owner-name">
+                  <h4>Owner: Moses King'ori</h4>
                 </div>
 
-                <div class="history">
-                  <div class="history-info">
-                    <table>
-                      <thead>
-                        <th>Year</th>
-                        <th>Total</th>
-                        <th>Specialty</th>
-                      </thead>
-
-                      <tbody>
-                        <tr>
-                          <td>2020</td>
-                          <td>7,000</td>
-                          <td>5,600</td>
-                        </tr>
-
-                        <tr>
-                          <td>2019</td>
-                          <td>8500</td>
-                          <td>6800</td>
-                        </tr>
-
-                        <tr>
-                          <td>2018</td>
-                          <td>6,000</td>
-                          <td>4,800</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div class="cycle-info">
-                    <table>
-                      <thead>
-                        <th>Month</th>
-                        <th>Main Season</th>
-                      </thead>
-
-                      <tbody>
-                        <tr>
-                          <td>January</td>
-                          <td>Sale</td>
-                        </tr>
-
-                        <tr>
-                          <td>February</td>
-                          <td>Sale</td>
-                        </tr>
-
-                        <tr>
-                          <td>March</td>
-                          <td>Sale</td>
-                        </tr>
-
-                        <tr>
-                          <td>April</td>
-                          <td>Flowering</td>
-                        </tr>
-
-                        <tr>
-                          <td>May</td>
-                          <td>Flowering</td>
-                        </tr>
-
-                        <tr>
-                          <td>June</td>
-                          <td>Maturing</td>
-                        </tr>
-
-                        <tr>
-                          <td>July</td>
-                          <td>Maturing</td>
-                        </tr>
-
-                        <tr>
-                          <td>August</td>
-                          <td>Maturing</td>
-                        </tr>
-
-                        <tr>
-                          <td>September</td>
-                          <td>Maturing</td>
-                        </tr>
-
-                        <tr>
-                          <td>October</td>
-                          <td>Harvesting & Processing</td>
-                        </tr>
-
-                        <tr>
-                          <td>November</td>
-                          <td>Harvesting & Processing</td>
-                        </tr>
-
-                        <tr>
-                          <td>December</td>
-                          <td>Harvesting & Processing</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="owners">
-                <div class="owner-image">
-                  <img src="" alt="owner image">
+                <div class="owner-info">
+                  <p>Moses King'ori is no stranger to the coffee industry. His career began at Gerald's Coffee Estate in Nyeri. His commitment and passion for coffee led Moses to various coffee farms in Kenya, Africa. Among other things, he is responsible for and gives the coffee varieties of the Nyeri an even higher level thanks to his enormous expertise and down-to-earth attitude.</p>
                 </div>
 
-                <div class="owner-bio">
-                  <div class="owner-name">
-                    <h4>Owner: Moses Gitau</h4>
-                  </div>
-
-                  <div class="owner-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ea error totam alias accusamus, eaque recusandae doloribus, velit nemo perferendis eveniet, quos aspernatur asperiores quisquam fugiat odit ad accusantium impedit.</p>
-                  </div>
-
-                </div>
               </div>
             </div>
 
-            <div *ngIf="activatedTabIndex2 == 1" class="tab2">
-              <div *ngFor="let rating of item.rating" class="ratings">
-                <div class="average-reviews">
-                  <h4>Average Customer reviews</h4>
-                  <p>
-                    <span>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </span>
-  
-                    <span>
-                      <p>4.6 out of 5</p>
-                    </span>
-                  </p>
-  
+            <div class="farmdetails">
+
+              <div class="farm-bio">
+
+                <div class="farm-story">
+                  <p>Geralds Coffee Estate was started in 1958 by our late father Gerald Kingori. He developed a passion for coffee in all of us and taught us to work on the coffee. Traditionally land is subdivided among sons when a father passes away but we have chosen to manage the estate as one. We work hard to maintain good agricultural practices like our father taught us and our goal is to consistently produce high quality coffee. We hope that soon we will start making good earnings from our hard work by selling our coffee directly to roasters.</p>
                 </div>
-  
-                <div class="rating-card">
-                  <div class="user-icon">
-                    <div class="icon">{{rating.user.username[0] | uppercase}}</div>
-                    <div class="username">{{rating.user.username | titlecase}}</div>
-                  </div>
-  
-                  <div class="user-rating">
-                    <p *ngIf="rating.rating == 1">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                      <i class="bi bi-star"></i>
-                      <i class="bi bi-star"></i>
-                      <i class="bi bi-star"></i>
-                    </p>
-                    <p *ngIf="rating.rating == 2">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                      <i class="bi bi-star"></i>
-                      <i class="bi bi-star"></i>
-                    </p>
-                    <p *ngIf="rating.rating == 3">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                      <i class="bi bi-star"></i>
-                    </p>
-                    <p *ngIf="rating.rating == 4">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                    </p>
-                    <p *ngIf="rating.rating == 5">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </p>
-                    <p>Verified Purchase</p>
-                  </div>
-  
-                  <div class="ratinginfo">
-                    <h4>{{rating.comment}}</h4>
-                    <p>The best coffee I've ever heard.</p>
-                  </div>
+
+                <div class="farm-origin">
+                  <p><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Location: Kiambu, Kenya</p>
+                  <p><i class="fa-solid fa-tree"></i>&nbsp;&nbsp;Area: 150 Ha</p>
+                  <p><i class="fa-solid fa-flag-checkered"></i>&nbsp;&nbsp;Founded: 1991</p>
+               </div>
+                
+              </div>
+
+              <div class="farm-images">
+                <div class="farm-image">
+                  <img src="../../assets/img/farm/farm1.jpg" alt="farm1">
                 </div>
               </div>
+
+            </div>
+
+            <div class="morefarmdetails">
+              <div class="map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.930759430594!2d36.82183079271866!3d-1.1726699277239063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3c6280decd87%3A0x1a1a1908e6fd13e9!2sKiambu!5e0!3m2!1sen!2ske!4v1696248692754!5m2!1sen!2ske"
+                  allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="map">
+                </iframe>
               </div>
-        </div>
 
-      </section>
+              <div class="history">
+                <div class="history-info">
+                  <table>
+                    <thead>
+                      <th>Year</th>
+                      <th>Total</th>
+                      <th>Specialty</th>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>2020</td>
+                        <td>7,000</td>
+                        <td>5,600</td>
+                      </tr>
+
+                      <tr>
+                        <td>2019</td>
+                        <td>8500</td>
+                        <td>6800</td>
+                      </tr>
+
+                      <tr>
+                        <td>2018</td>
+                        <td>6,000</td>
+                        <td>4,800</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="cycle-info">
+                  <table>
+                    <thead>
+                      <th>Month</th>
+                      <th>Main Season</th>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>January</td>
+                        <td>Sale</td>
+                      </tr>
+
+                      <tr>
+                        <td>February</td>
+                        <td>Sale</td>
+                      </tr>
+
+                      <tr>
+                        <td>March</td>
+                        <td>Sale</td>
+                      </tr>
+
+                      <tr>
+                        <td>April</td>
+                        <td>Flowering</td>
+                      </tr>
+
+                      <tr>
+                        <td>May</td>
+                        <td>Flowering</td>
+                      </tr>
+
+                      <tr>
+                        <td>June</td>
+                        <td>Maturing</td>
+                      </tr>
+
+                      <tr>
+                        <td>July</td>
+                        <td>Maturing</td>
+                      </tr>
+
+                      <tr>
+                        <td>August</td>
+                        <td>Maturing</td>
+                      </tr>
+
+                      <tr>
+                        <td>September</td>
+                        <td>Maturing</td>
+                      </tr>
+
+                      <tr>
+                        <td>October</td>
+                        <td>Harvesting & Processing</td>
+                      </tr>
+
+                      <tr>
+                        <td>November</td>
+                        <td>Harvesting & Processing</td>
+                      </tr>
+
+                      <tr>
+                        <td>December</td>
+                        <td>Harvesting & Processing</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="activatedTabIndex2 == 1" class="reviews-tab">
+
+            <div class="average-reviews">
+              <h4>Average Customer reviews</h4>
+              <p>
+                <span>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half"></i>
+                </span>
+
+                <span>
+                  <p>4.6 out of 5</p>
+                </span>
+              </p>
+
+            </div>
+
+            <div class="rating-card">
+              <div class="user-icon">
+                <div class="icon">P</div>
+                <div class="username">Peter</div>
+              </div>
+
+              <div class="user-rating">
+                <p>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </p>
+
+                <p>Verified Purchase</p>
+              </div>
+
+              <div class="ratinginfo">
+                <h4>Love It!!</h4>
+                <p>The best coffee I've ever heard.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </section>
 
 
-    <app-footer></app-footer>
+  <app-footer></app-footer>
 </section>
-

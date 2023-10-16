@@ -134,15 +134,14 @@ img{
 .product-collection-wrapper{
     padding: 3.2rem 0;
 }
-<<<<<<< HEAD
-=======
+
 .product-col-left{
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("../../assets/img/about-bg.jpg") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("../../assets/img/packaging/coffee-bag-02.png") center/cover no-repeat;
 }
 .product-col-r-top{
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("../../assets/img/about-bg.jpg") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("../../assets/img/packaging/coffee-bag-02.png") center/cover no-repeat;
 }
->>>>>>> fc6434b766cc281058ee2bb73a0e07023d0c1327
+
 .flex{
     display: flex;
     justify-content: center;

@@ -1,34 +1,44 @@
-.navbar-two {
-    /* border: 2px solid red; */
-    background-color: black;
-    margin-top: 42px;
+.products-navbar {
+    background-color: #f6f6f6;
+    position: fixed;
+    width: 100%;
+    top: 68px;
+    z-index: 996;
     height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
-.navbar-brand {
+.products-navbar > * {
+  padding: .5rem;
+}
+
+.navbar-input {
+  width: 50%;
+}
+
+.navbar-input .form-group {
+  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: .5rem;
 }
 
-.form-control {
+.navbar-input .form-group .form-control {
   border-radius: 3px;
-  width: 600px;
-  margin-left: 50%;
+  width: 100%;
+  padding: .5rem;
+  border: 2px solid #000000be;
 }
 
-.search-icon {
-  position: absolute;
-  z-index: 10;
-  right: 35%;
+.products-navbar .search-icon {
+  cursor: pointer;
 }
 
-.search-icon i {
-  color: black;
-}
-
-.badge {
-  position:relative;
-  left:-15px;
-  top:-12px;
+.products-navbar .search-icon i,
+.products-navbar .cart-link i {
+  font-size: 26px;
 }

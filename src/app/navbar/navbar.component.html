@@ -1,83 +1,86 @@
-<header id="header" class="fixed-top header-transparent">
-    <div class="container d-flex align-items-center justify-content-between">
+<header id="header" class="header-container header-transparent">
+  <div class="navbar-container">
 
       <div class="logo">
-        <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
+        <a routerLink="/">
+          <img src="../../../assets/img/coffee_logo2.png" alt="coffee bean" class="img-fluid">
+        </a>
       </div>
 
-      <!-- for mobile view -->
-      <div class="credentials-mobile">
-        <ul class="navbar" *ngIf="!user">
+      <div class="mobile-icons">
+          <ul>
+              <li class="mobile-cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" value=0></i></a></li>
               <li>
-                <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-              </li>
-              <li>
-                <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-              </li>
-            </ul>
-            <ul *ngIf="user">
-              <li>
-                <div class="navbar">
-                  <ul>
-                    <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                      <ul>
-                        <li><a href="" (click)="logout()">Log out</a></li><br>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
+                  <button (click)="showLoginDialog()" type="button" class="mobilelogin-btn" title="login">
+                      <i class="fa-solid fa-circle-user"></i>
+                  </button>
               </li>
             </ul>
-      </div>
+        </div>
 
       <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link active" href="/">Home</a></li>
-          <li><a class="nav-link" routerLink="Products">Shop Coffee</a></li>
-          <li class="dropdown"><a href="#"><span>Expo</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a routerLink="/Expo">NICE Expo</a></li>
-              <li><a href="#">Register for NICE Expo</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Nyeri Origin Trip</a></li>
-              <li><a href="#">Register for Origin Trip</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
-          <li><i class="bi bi-cart" routerLink="Cart" value=8></i></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-      <!-- for non-mobile view -->
-      <div class="credentials-nonmobile">
-        <ul class="navbar" *ngIf="!user">
-              <li>
-                <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark"><i class="bi bi-person-fill"></i>Log In</button>
-              </li>
-              <li>
-                <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark"><i class="bi bi-arrow-bar-up"></i>Sign Up</button>
-              </li>
-            </ul>
-            <ul *ngIf="user">
-              <li>
-                <div class="navbar">
+          <ul class="navbar-links">
+              <li><a class="nav-link active" routerLink="/">Home</a></li>
+              <li><a class="nav-link shop" routerLink="/Products">Shop Coffee</a></li>
+              <li class="dropdown"><a class="expo-link" href="#"><span>Expo</span> <i class="fa-solid fa-chevron-down"></i></a>
                   <ul>
-                    <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                      <ul>
-                        <li><a href="" (click)="logout()">Log out</a></li><br>
-                      </ul>
-                    </li>
+                      <li><a routerLink="/Expo">NICE Expo</a></li>
+                      <li><a href="#">Sponsors</a></li>
+                      <li><a href="#">Exhibitors</a></li>
+                      <li><a href="#">Register for NICE Expo</a></li>
                   </ul>
-                </div>
               </li>
-            </ul>
-      </div>
+              <li class="dropdown"><a class="trip-link" href="#"><span>Origin Trip</span><i class="fa-solid fa-chevron-down"></i></a>
+                  <ul>
+                      <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
+                      <li><a href="#">Origin Trip Tips</a></li>
+                      <li><a href="#">Itinerary</a></li>
+                      <li><a href="#">Register for Origin Trip</a></li>
+                  </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>About Us</span><i class="fa-solid fa-chevron-down"></i></a>
+                  <ul>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Partners</a></li>
+                      <li><a href="#">Gallery</a></li>
+                      <li><a href="#">How NiceDirect Works</a></li>
+                      <li><a href="#">FAQ</a></li>
+                  </ul>
+              </li>
+              
+          </ul>
+          <ul class="cart-icon">
+              <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" value=0></i></a></li>
+          </ul>
+          
+          <i class="fa-solid fa-bars mobile-nav-toggle"></i>
+          
+      </nav>
       
-      <!-- .navbar -->
+      <div class="credentials-nonmobile">
+          <ul class="navbar-login" *ngIf="!user">
+              <li>
+                  <button (click)="showLoginDialog()" type="button"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Log In</button>
+              </li>
+              <li>
+                  <button (click)="showSignUpDialog()" type="button"><i class="fa-solid fa-arrow-right-to-bracket"></i>&nbsp;&nbsp;Sign Up</button>
+              </li>
+          </ul>
 
-    </div>
-  </header>
+          <ul *ngIf="user">
+            <li>
+              <div class="navbar">
+                <ul>
+                  <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
+                    <ul>
+                      <li><a href="" (click)="logout()">Log out</a></li><br>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+      </div>
+
+  </div>
+</header>

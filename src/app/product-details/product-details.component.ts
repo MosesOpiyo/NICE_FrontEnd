@@ -17,6 +17,7 @@ import { CartService } from '../Service/Cart/cart.service';
 export class ProductDetailsComponent implements OnInit {
 
   num: number = 1;
+  num2: number = 1;
   isShowDiv = false;
   isShowDiv2 = false;
 
@@ -31,7 +32,7 @@ export class ProductDetailsComponent implements OnInit {
   myScriptElement: HTMLScriptElement;
   constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private cart:CartService){
      this.myScriptElement = document.createElement("script");
-     this.myScriptElement.src = "../../assets/js/main.js";
+     this.myScriptElement.src = "./assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
 
@@ -133,13 +134,13 @@ export class ProductDetailsComponent implements OnInit {
     this.isShowDiv2 = true;
   }
 
-  // increment button
+  // increment button for roasted section
   increment(){
     this.num += 1;
-    console.log(this.num + 1);
+    console.log(this.num);
     }
     
-  //decrements item
+  //decrements item for roasted section
   decrement(){
     if(this.num-1 < 1){
       this.num = 1;
@@ -148,6 +149,24 @@ export class ProductDetailsComponent implements OnInit {
     else{
       this.num -= 1;
       console.log('item_2->' + this.num);
+    }
+  }
+
+  // increment button for green section
+  increment2(){
+    this.num2 += 1;
+    console.log(this.num2);
+    }
+    
+  //decrements item for green section
+  decrement2(){
+    if(this.num2-1 < 1){
+      this.num2 = 1;
+      console.log('item_1->' + this.num2)
+    }
+    else{
+      this.num2 -= 1;
+      console.log('item_2->' + this.num2);
     }
   }
 
