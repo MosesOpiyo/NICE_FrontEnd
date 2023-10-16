@@ -3,11 +3,14 @@
   /* position: relative; */
 }
 
-:host ::ng-deep #header .navbar .active {
+:host ::ng-deep #header .navbar .active,
+:host ::ng-deep #header .navbar-mobile .active {
+  color: #000000;
   background-color: transparent;
 }
 
-:host ::ng-deep #header .navbar .shop {
+:host ::ng-deep #header .navbar .shop,
+:host ::ng-deep #header .navbar-mobile .shop {
   background-color: rgb(216, 216, 216);
 }
 
