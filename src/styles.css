@@ -1191,7 +1191,8 @@ opacity: .2;
   }
 
   .product-item .latestadd-actions a,
-  .popular-container .popularadd-actions a {
+  .popular-container .popularadd-actions a,
+  .productlist .productlist-content .product-addactions a {
     padding: 6px 10px;
     transition: all 0.3s ease-in-out;
     text-align: center;
@@ -1201,7 +1202,8 @@ opacity: .2;
   }
 
   .product-item .latestadd-actions a:hover,
-  .popular-container .popularadd-actions a:hover {
+  .popular-container .popularadd-actions a:hover,
+  .productlist .productlist-content .product-addactions a:hover {
     word-spacing: 3px;
   }
 
@@ -1235,7 +1237,6 @@ opacity: .2;
 
   /* MODAL STYLING */
   .modal {
-    display: none;  /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1000; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -1250,7 +1251,7 @@ opacity: .2;
 
   
   /* The Close Button */
-  .close {
+  .modal-close {
     color: #ffffff;
     float: right;
     font-size: 28px;
@@ -1259,8 +1260,8 @@ opacity: .2;
     padding: 0 .5rem;
   }
   
-  .close:hover,
-  .close:focus {
+  .modal-close:hover,
+  .modal-close:focus {
     color: #aaaaaa;
     text-decoration: none;
     cursor: pointer;
@@ -1300,10 +1301,6 @@ opacity: .2;
     align-items: center;
     gap: 2rem;
   }
-
-  /* .modal-content .product-form .roasted form > * {
-    border: 2px solid red;
-  } */
 
   .modal-content .product-form .roasted .option-list,
   .product-component .product-form .roasted .option-list {

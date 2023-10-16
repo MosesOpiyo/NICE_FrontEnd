@@ -102,9 +102,9 @@
       <div class="productlist">
 
         <div class="productlist-content">
-          <a routerLink="/Products/{{item.id}}" class="product-card"  *ngFor="let item of productData | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
+          <div class="product-card"  *ngFor="let item of productData | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
             
-            <div class="product-item">
+            <a routerLink="/Products/{{item.id}}" class="product-item">
               <div class="product-image">
                   <img src="{{item.imageUrl}}" alt="package">
               </div>
@@ -134,17 +134,17 @@
                   <p>$18.80 / 12oz</p>
               </div>
 
-              <div class="latestadd-actions product-addactions">
-                  <a role="button" id="myBtn">
-                    Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                  </a>
-                  <a role="button" title="wishlist">
-                      <i class="fa-solid fa-heart"></i>
-                  </a>
-              </div>
+            </a>
 
-            </div>
-          </a>
+            <div class="latestadd-actions product-addactions">
+              <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+              </a>
+              <a role="button" title="wishlist">
+                  <i class="fa-solid fa-heart"></i>
+              </a>
+          </div>
+        </div>
         </div>
 
         <div class="products-pagination">
@@ -153,12 +153,17 @@
                              
       </div>
     </div>
+    
 
-    <div id="myModal" class="modal">
+
+    <!-- modal -->
+    <div *ngIf="isModalOpen" class="modal">
 
       <!-- Modal content -->
       <div class="modal-content">
-          <span class="close">&times;</span>
+        <span class="modal-close" (click)="toggleModal()">
+          <i class="fa-solid fa-x"></i>
+        </span>
 
           <div class="product-form">
               <div class="col">
@@ -297,6 +302,7 @@
       </div>
     
     </div>
+    <!-- end of modal -->
 
     <app-footer></app-footer>
 </section>

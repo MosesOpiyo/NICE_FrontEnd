@@ -136,12 +136,12 @@
     color: orange;
   }
 
-  .product-addactions {
+  .productlist .productlist-content  .product-addactions {
+    text-align: center;
     font-size: .9rem;
-    flex-wrap: wrap;
   }
 
-  .product-addactions a {
+  .productlist .productlist-content .product-addactions a {
     padding: 3px 5px;
   }
 
