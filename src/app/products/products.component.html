@@ -207,12 +207,45 @@
             </div>
             <div class="product-manufacturer">
               <p class="productname">{{item.product.name}}</p>
-              <p><i class="bi bi-star-fill"></i>
+              <p *ngIf="total == 5">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <span>{{total}}</span>
+              </p>
+              <p *ngIf="total == 4">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <span>{{total}}</span>
+              </p>
+              <p *ngIf="total == 3">
+                <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star"></i>
                 <i class="bi bi-star"></i>
-                <span>{{item.rating.length}}</span>
+                <span>{{total}}</span>
+              </p>
+              <p *ngIf="total == 2">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <span>{{total}}</span>
+              </p>
+              <p *ngIf="total == 1">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <span>{{total}}</span>
               </p>
             </div>
             <div class="product-details">

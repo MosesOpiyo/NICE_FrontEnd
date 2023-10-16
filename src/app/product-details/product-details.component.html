@@ -101,15 +101,48 @@
                         <h2>{{item.product.name}}</h2>
                         <p>Description:  - {{item.product.cup_notes}}</p>
                         <p>Riaikania Coffee Factory</p>
-                        <p>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
+                        <p *ngIf="total == 5">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <span>{{total}}</span>
+                        </p>
+                        <p *ngIf="total == 4">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star"></i>
+                          <span>{{total}}</span>
+                        </p>
+                        <p *ngIf="total == 3">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star"></i>
+                          <i class="bi bi-star"></i>
+                          <span>{{total}}</span>
+                        </p>
+                        <p *ngIf="total == 2">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star"></i>
+                          <i class="bi bi-star"></i>
+                          <i class="bi bi-star"></i>
+                          <span>{{total}}</span>
+                        </p>
+                        <p *ngIf="total == 1">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star"></i>
+                          <i class="bi bi-star"></i>
+                          <i class="bi bi-star"></i>
+                          <i class="bi bi-star"></i>
+                          <span>{{total}}</span>
                         </p>
                         <p>In stock</p>
-                        <p>$18.80 / 12oz</p>
+                        <p>{{item.price | currency:'USD'}} / 12oz</p>
                         <p>Shipping: Free (Continental US only)</p>
                     </div> 
                 </div>

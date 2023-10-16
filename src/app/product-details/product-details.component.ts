@@ -39,6 +39,8 @@ export class ProductDetailsComponent implements OnInit {
   isLoggedIn:any
   id:any
   item:any
+  ratings : number[] = [];
+  total:any
   cloudinaryUrl = environment.CLOUDINARY_URL
   quantity = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
 
@@ -87,7 +89,12 @@ export class ProductDetailsComponent implements OnInit {
      this.id = this.idRouter.snapshot.paramMap.get('id');
      this.product.getProcessedProduct(this.id).subscribe((res:any)=>{
      this.item = res
-     console.log(this.item)
+     this.item.rating.forEach((ratingItem:any) => {
+      this.ratings.push(ratingItem.rating)
+    });
+    const sum = this.ratings.reduce((acc, item) => acc + item, 0);
+    this.total = Math.floor(sum / this.ratings.length);
+
    })
    }
    else{

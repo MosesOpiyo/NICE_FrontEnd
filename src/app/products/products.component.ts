@@ -29,12 +29,12 @@ export class ProductsComponent implements OnInit {
      document.body.appendChild(this.myScriptElement);
   }
 
-  addtoCart(item: any){
-    
-  }
-
   user:any | null = null;
   isLoggedIn:any
+  ratings : number[] = [];
+  total:any
+
+  generalRating(){}
 
   showLoginDialog(){
    const dialogRef = this.dialog.open(LoginComponent,{
@@ -77,6 +77,14 @@ export class ProductsComponent implements OnInit {
 
    this.product.getProcessedProducts().subscribe((res:any)=>{
     this.products = res
+    this.products.forEach((product:any) => {
+      product.rating.forEach((ratingItem: any) => {
+        this.ratings.push(ratingItem.rating)
+      });
+    });
+    const sum = this.ratings.reduce((acc, item) => acc + item, 0);
+    this.total = Math.floor(sum / this.ratings.length);
+    console.log(this.ratings)
    })
 
  
