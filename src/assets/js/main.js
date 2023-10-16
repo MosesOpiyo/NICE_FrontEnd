@@ -1,28 +1,47 @@
-/**
-* Template Name: Squadfree - v4.9.1
-* Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function() {
   "use strict";
 
-  //  Initialize Swiper 
-		var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1,
+  //  Initialize Hero Swiper 
+		var swiper = new Swiper('.hero', {
+      // slidesPerView: 1,
       spaceBetween: 10,
-      
+      effect: "fade",
       loop: true,
       loopFillGroupWithBlank: true,
-      // pagination: {
-      //   el: '.swiper-pagination',
-      //   clickable: true,
-      // },
+      autoplay: {
+        delay: 5000,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-			breakpoints: {     
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },			
+    });
+
+  // Initialize popular section swiper
+  var swiper = new Swiper(".popular-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {     
 			// when window width is 425px - 640px
 			 425: {       
          slidesPerView: 2,
@@ -32,15 +51,21 @@
        640: {       
          slidesPerView: 3,       
          spaceBetween: 20     
-       },   
-  
-      // when window width is >= 900px     
-       900: {       
-         slidesPerView: 4,       
-         spaceBetween: 30     
-       } 
-      }
+       }
+    },
+  });
+
+  /**
+   * Animation on scroll
+   */
+  window.addEventListener('load', () => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false
     });
+  });
 
   /**
    * Easy selector helper function
@@ -76,26 +101,6 @@
   }
 
   /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
-
-  /**
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
@@ -129,6 +134,38 @@
     onscroll(document, headerScrolled)
   }
 
+   // Get the modal
+   let modal = document.getElementById("myModal");
+
+   // Get the button that opens the modal
+   let btn = document.getElementById("myBtn");
+   let cartbtn = document.getElementById("cartbtn");
+ 
+   // Get the <span> element that closes the modal
+   let span = document.getElementsByClassName("close")[0];
+ 
+   // When the user clicks the button, open the modal
+   btn.onclick = function () {
+     modal.style.display = "block";
+   };
+ 
+   cartbtn.onclick = function () {
+     modal.style.display = "block";
+     console.log("im clicked")
+   };
+ 
+   // When the user clicks on <span> (x), close the modal
+   span.onclick = function () {
+     modal.style.display = "none";
+   };
+ 
+   // When the user clicks anywhere outside of the modal, close it
+   window.onclick = function (event) {
+     if (event.target == modal) {
+       modal.style.display = "none";
+     }
+   };
+
   /**
    * Back to top button
    */
@@ -150,8 +187,8 @@
    */
   on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
+    this.classList.toggle('fa-bars')
+    this.classList.toggle('fa-x')
   })
 
   /**
@@ -192,105 +229,5 @@
       }
     }
   });
-
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-      });
-
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
-
-  });
-
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 40
-      },
-
-      1200: {
-        slidesPerView: 3,
-      }
-    }
-  });
-
-  /**
-   * Animation on scroll
-   */
-  window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false
-    });
-  });
-
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
 
 })()

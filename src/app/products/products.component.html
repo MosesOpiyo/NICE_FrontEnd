@@ -1,96 +1,12 @@
+<app-navbar></app-navbar>
+<app-productsnavbar></app-productsnavbar>
+
 <section>
-    <header id="header" class="fixed-top header-transparent">
-        <div class="container d-flex align-items-center justify-content-between">
-    
-          <div class="logo">
-            <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
-          </div>
-    
-          <!-- for mobile view -->
-          <div class="credentials-mobile">
-            <ul class="navbar" *ngIf="!user">
-                  <li>
-                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-                  </li>
-                  <li>
-                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-                  </li>
-                </ul>
-                <ul *ngIf="user">
-                  <li>
-                    <div class="navbar">
-                      <ul>
-                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                          <ul>
-                            <li><a href="" (click)="logout()">Log out</a></li><br>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-          </div>
-    
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link" routerLink="">Home</a></li>
-              <li><a class="nav-link active" href="#about">Shop Coffee</a></li>
-              <li class="dropdown"><a href="#"><span>Expo</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a routerLink="/Expo">NICE Expo</a></li>
-                  <li><a href="#">Register for NICE Expo</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
-                  <li><a href="#">Register for Origin Trip</a></li>
-                </ul>
-              </li>
-              <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav>
-    
-          <!-- for non-mobile view -->
-          <div class="credentials-nonmobile">
-            <ul class="navbar" *ngIf="!user">
-                  <li>
-                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-                  </li>
-                  <li>
-                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-                  </li>
-                </ul>
-                <ul *ngIf="user">
-                  <li>
-                    <div class="navbar">
-                      <ul>
-                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                          <ul>
-                            <li><a href="" (click)="logout()">Log out</a></li><br>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-          </div>
-          
-          <!-- .navbar -->
-    
-        </div>
-    </header>
-
-    <app-productsnavbar></app-productsnavbar>
-
-
     <div class="products">
       <div class="sidebar">
-        <div class="widget-title"><h2>Coffee Variety</h2></div>
-        <input type="hidden" id="previous_select">
+        <div>
+          <div class="widget-title"><h2>Coffee Variety</h2></div>
+          <input type="hidden" id="previous_select">
           <ul>
             <li class="customRadio">
               <input type="checkbox" value="Variety1" id="Variety1"  />
@@ -103,8 +19,8 @@
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="Variety2" id="Variety2"  />
-              <label for="Variety2"><span><span></span></span>Variety 3</label>
+              <input type="checkbox" value="Variety2" id="Variety3"  />
+              <label for="Variety3"><span><span></span></span>Variety 3</label>
             </li>
 
             <li class="customRadio">
@@ -122,8 +38,9 @@
               <label for="Variety2"><span><span></span></span>Variety 6</label>
             </li>
           </ul>
+        </div>
 
-
+        <div>
           <div class="widget-title"><h2>Coffee Farms</h2></div>
           <input type="hidden" id="previous_select">
           <ul>
@@ -157,88 +74,79 @@
               <label for="farm2"><span><span></span></span>Farm 6</label>
             </li>
           </ul>
+        </div>
 
+        <div>
           <div class="widget-title"><h2>Price</h2></div>
           <input type="hidden" id="previous_select">
           <ul>
-            <li class="customRadio">
-              <input type="checkbox" value="farm1" id="farm1"  />
-              <label for="farm1"><span><span></span></span>Price 1 - Price 2</label>
-            </li>
+          <li class="customRadio">
+            <input type="checkbox" value="farm1" id="farm1"  />
+            <label for="farm1"><span><span></span></span>Price 1 - Price 2</label>
+          </li>
 
-            <li class="customRadio">
-              <input type="checkbox" value="farm2" id="farm2"  />
-              <label for="farm2"><span><span></span></span>Price 3 - Price 4</label>
-            </li>
+          <li class="customRadio">
+            <input type="checkbox" value="farm2" id="farm2"  />
+            <label for="farm2"><span><span></span></span>Price 3 - Price 4</label>
+          </li>
 
-            <li class="customRadio">
-              <input type="checkbox" value="farm2" id="farm2"  />
-              <label for="farm2"><span><span></span></span>Price 5 - Price 6</label>
-            </li>
+          <li class="customRadio">
+            <input type="checkbox" value="farm2" id="farm2"  />
+            <label for="farm2"><span><span></span></span>Price 5 - Price 6</label>
+          </li>
           </ul>
+        </div>
 
       </div>
 
       <div class="productlist">
 
-        <div class="productlist-nav">
-          <div class="views">
-            <i style="font-size: 20px;" class="fa-solid fa-grip"></i>
-            <i style="font-size: 20px;" class="fa-solid fa-list"></i>
-          </div>
-  
-          <div class="filters-toolbar__item text-right">
-            <label for="SortBy" class="label--hidden">sort by</label>
-            <select name="SortBy" id="SortBy" class="filters-toolbar__input filters-toolbar__input--sort hidden">
-    
-                <option value="title-ascending" selected="selected">sort by</option>      
-                <option value="best-selling">Most sold</option>                             
-                <option value="title-ascending">Alphabetically, A-Z</option>                           
-                <option value="title-descending">Alphabetically, Z-A</option>                             
-                <option value="price-ascending">price, low to high</option>
-            </select>
-          </div>
-        </div>
         <div class="productlist-content">
-          <a routerLink="/Products/{{item.id}}" class="product-card"  *ngFor="let item of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
-            <div class="product-image">
-              <img src="{{cloudinaryUrl}}{{item.img}}" alt="coffee">
-              <span class="sticker">OFFER</span>
-            </div>
-            <div class="product-manufacturer">
-              <p class="productname">{{item.product.name}}</p>
-              <p><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star"></i>
-                <i class="bi bi-star"></i>
-                <span>{{item.rating.length}}</span>
-              </p>
-            </div>
-            <div class="product-details">
-              <div class="sales">
-                <h6>More than 6k Sales</h6>
-                <div class="row g-2">
-                  <div class="col-3">
-                    <button type="button" class="btn btn-outline-dark">Roasted</button>
-                  </div>
-                  <div class="col-3">
-                    <button type="button" class="btn btn-outline-dark">Green</button>
-                  </div>
+          <a routerLink="/Products/{{item.id}}" class="product-card"  *ngFor="let item of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
+            
+            <div class="product-item">
+              <div class="product-image">
+                  <img src="{{item.imageUrl}}" alt="package">
+              </div>
+
+              <div class="product-name">
+                <div class="name">
+                  <p>Mettle</p>
+                </div>
+                  
+                <div class="rating">
+                  <p>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
                 </div>
               </div>
-              <div class="product-price">
-                <div class="product-prices">
-                  <h4 style="font-family: 'Courier New', Courier, monospace;" class="newprice fw-bold">${{item.price}}</h4>
-                </div>
-                <div class="product-quantity">
-                  <p>{{item.quantity}}g</p>
-                </div>
+
+              <div class="farm-name">
+                <p>Kiaragana Coffee Factory</p>
               </div>
+
+              <div class="product-details">
+                  <p>Origin: Kenya</p>
+                  <p>$18.80 / 12oz</p>
+              </div>
+
+              <div class="latestadd-actions product-addactions">
+                  <a role="button" id="myBtn">
+                    Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                  </a>
+                  <a role="button" title="wishlist">
+                      <i class="fa-solid fa-heart"></i>
+                  </a>
+              </div>
+
             </div>
           </a>
-
         </div>
+
         <div class="products-pagination">
           <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
@@ -246,6 +154,149 @@
       </div>
     </div>
 
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <div class="product-form">
+              <div class="col">
+                  <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)"></app-tabs>
+              </div>
+      
+              <div *ngIf="activatedTabIndex == 0" class="roasted">
+      
+                  <form action="" method="post">
+                      <div class="option-list">
+                          <select id="packsize" name="packsize" title="packsize" required>
+                              <option value="">Choose Pack Size...</option>
+                              <option value="18.80|12oz">12oz ($18.80)</option>
+                              <option value="46.80|32oz">32oz ($46.80)</option>
+                              <option value="68.20|3lbs">3lbs ($68.20)</option>
+                              <option value="68.20|3lbs">5lbs ($113.00)</option>
+                          </select>
+          
+                          <select id="grind" name="grind" title="grind" required>
+                              <option value="">Choose Grind...</option>
+                              <option value="Whole beans">Whole beans</option>
+                              <option value="Extra coarse">Extra coarse (Cold brews)</option>
+                              <option value="Coarse">Coarse (French press/percolators)</option>
+                              <option value="Medium-coarse">Medium-coarse (Chemex/clever drippers)</option>
+                              <option value="Medium">Medium (Drip/regular)</option>
+                              <option value="Medium-fine">Medium-fine (Pour overs/siphon)</option>
+                              <option value="Fine">Fine (Espresso)</option>
+                              <option value="Super-fine">Super-fine (Turkish)</option>
+                          </select>
+          
+                          <select id="roast" name="roast" title="roast" required>
+                              <option value="">Choose Roast Type...</option>
+                              <option value="Light">Light</option>
+                              <option value="Medium/light">Medium/light</option>
+                              <option value="Medium">Medium</option>
+                              <option value="Medium/dark">Medium/dark</option>
+                              <option value="Dark">Dark</option>
+                          </select>
+                      </div>
+      
+                      <div class="radio">
+                          <div class="radio1">
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
+                              <label for="onetime">One time purchase</label><br>
+                          </div>
+
+                          <div class="radio2">
+                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
+                              <label for="subscribe">Subscribe & save 10%</label><br>
+                          </div>
+      
+                          <div *ngIf="isShowDiv2">
+                              <select id="delivery" name="delivery" title="delivery" required>
+                                  <option value="">Choose Delivery Period...</option>
+                                  <option value="2 weeks">Deliver every 2 weeks</option>
+                                  <option value="3 weeks">Deliver every 3 weeks</option>
+                                  <option value="month">Deliver every month</option>
+                                  <option value="6 weeks">Deliver every 6 weeks</option>
+                                  <option value="2 months">Deliver every 2 months</option>
+                              </select>
+                          </div>
+                      </div>
+      
+                      <div class="incrdecr">
+                          <div (click)=decrement() class="decrement">-</div>
+                          <span id="counting">{{num}}</span>
+                          <div (click)=increment() class="increment">+</div>
+                      </div>
+      
+                      <div class="submit-btn">
+                          <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                      </div>
+      
+                  </form>
+              </div>
+      
+              <div *ngIf="activatedTabIndex == 1" class="green">
+                  <div class="packaging">
+                      <p>Packaging</p>
+                      <p>Grainpro & Outer Jutebag</p>
+                  </div>
+      
+                  <div class="price-lb">
+                      <p>Price/Lb</p>
+      
+                      <div class="lb">
+                          <p>1 - 660 lbs</p>
+                          <p>660lbs +</p>
+                      </div>
+      
+                      <div class="lb-price">
+                          <p>- $7.70</p>
+                          <p>- $6.93</p>
+                      </div>
+                  </div>
+      
+                  <form action="/" method="post">
+                      <div class="radio">
+                          <div class="radio1">
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
+                              <label for="onetime">One time purchase</label><br>
+                          </div>
+
+                          <div class="radio1">
+                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
+                              <label for="subscribe">Subscribe & save 10%</label><br>
+                          </div>
+
+                          <div *ngIf="isShowDiv">
+                              <select id="delivery2" name="delivery" title="delivery" required>
+                                  <option value="">Choose Delivery Period...</option>
+                                  <option value="2 weeks">Deliver every 2 weeks</option>
+                                  <option value="3 weeks">Deliver every 3 weeks</option>
+                                  <option value="month">Deliver every month</option>
+                                  <option value="6 weeks">Deliver every 6 weeks</option>
+                                  <option value="2 months">Deliver every 2 months</option>
+                              </select>
+                          </div>
+                      </div>
+      
+                      <div class="incrdecr">
+                          <div (click)=decrement2() class="decrement">-</div>
+                          <span id="counting2">{{num2}}</span>
+                          <div (click)=increment2() class="increment">+</div>
+                      </div>
+      
+                      <div class="submit-btn">
+                          <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                      </div>
+      
+                  </form>
+      
+              </div>
+          </div>
+
+      </div>
+    
+    </div>
+
     <app-footer></app-footer>
 </section>
-

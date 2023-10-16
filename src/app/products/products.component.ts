@@ -17,6 +17,8 @@ export class ProductsComponent implements OnInit {
 
   p:number = 1;
   itemsPerPage:number = 10;
+  num: number = 1;
+  num2: number = 1;
   totalProduct:any;
   products:any;
   cloudinaryUrl = environment.CLOUDINARY_URL
@@ -28,13 +30,19 @@ export class ProductsComponent implements OnInit {
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
+  isShowDiv = false;
+  isShowDiv2 = false;
 
-  addtoCart(item: any){
-    
-  }
+  // product form tabs
+  tabs: string [] = ['Roasted', 'Green'];
+  activatedTabIndex: number = 0;
 
   user:any | null = null;
   isLoggedIn:any
+  ratings : number[] = [];
+  total:any
+
+  generalRating(){}
 
   showLoginDialog(){
    const dialogRef = this.dialog.open(LoginComponent,{
@@ -77,8 +85,73 @@ export class ProductsComponent implements OnInit {
 
    this.product.getProcessedProducts().subscribe((res:any)=>{
     this.products = res
+    this.products.forEach((product:any) => {
+      product.rating.forEach((ratingItem: any) => {
+        this.ratings.push(ratingItem.rating)
+      });
+    });
+    const sum = this.ratings.reduce((acc, item) => acc + item, 0);
+    this.total = Math.floor(sum / this.ratings.length);
    })
 
  
   }
+  tabChange(tabIndex: number) {
+    this.activatedTabIndex = tabIndex;
+  }
+
+  // for roasted section
+  toggleDivOff() {
+    this.isShowDiv = false;
+  }
+
+  toggleDivOn() {
+    this.isShowDiv = true;
+  }
+
+  // for green tab section
+  toggleDivOff2() {
+    this.isShowDiv2 = false;
+  }
+
+  toggleDivOn2() {
+    this.isShowDiv2 = true;
+  }
+
+  // increment button for roasted section
+  increment(){
+    this.num += 1;
+    console.log(this.num);
+    }
+    
+  //decrements item for roasted section
+  decrement(){
+    if(this.num-1 < 1){
+      this.num = 1;
+      console.log('item_1->' + this.num)
+    }
+    else{
+      this.num -= 1;
+      console.log('item_2->' + this.num);
+    }
+  }
+
+  // increment button for green section
+  increment2(){
+    this.num2 += 1;
+    console.log(this.num2);
+    }
+    
+  //decrements item for green section
+  decrement2(){
+    if(this.num2-1 < 1){
+      this.num2 = 1;
+      console.log('item_1->' + this.num2)
+    }
+    else{
+      this.num2 -= 1;
+      console.log('item_2->' + this.num2);
+    }
+  }
 }
+
