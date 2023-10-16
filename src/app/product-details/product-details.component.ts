@@ -56,6 +56,16 @@ export class ProductDetailsComponent implements OnInit {
    this.ngOnInit()
  }
 
+ averageRating(item:any){
+  const list :number[] = []
+  item.rating.forEach((ratingItem:any) => {
+    list.push(ratingItem.rating)
+  });
+  const sum = list.reduce((acc, item) => acc + item, 0);
+  const total = Math.floor(sum /list.length);
+  return total
+ }
+
  showSignUpDialog(){
    const dialogRef = this.dialog.open(SignUpComponent,{
      width: '25pc'
@@ -90,11 +100,11 @@ export class ProductDetailsComponent implements OnInit {
      this.id = this.idRouter.snapshot.paramMap.get('id');
      this.product.getProcessedProduct(this.id).subscribe((res:any)=>{
      this.item = res
+     console.log(this.item)
      this.item.rating.forEach((ratingItem:any) => {
       this.ratings.push(ratingItem.rating)
     });
-    const sum = this.ratings.reduce((acc, item) => acc + item, 0);
-    this.total = Math.floor(sum / this.ratings.length);
+    
 
    })
    }

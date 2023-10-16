@@ -422,6 +422,16 @@ export class ProductsComponent implements OnInit {
    }); 
  }
 
+ averageRating(item:any){
+  const list :number[] = []
+  item.rating.forEach((ratingItem:any) => {
+    list.push(ratingItem.rating)
+  });
+  const sum = list.reduce((acc, item) => acc + item, 0);
+  const total = Math.floor(sum / list.length);
+  return total
+ }
+
  ngOnInit(): void {
    if(sessionStorage.getItem('Token')){
      this.service.getProfile().subscribe((res:any)=>{

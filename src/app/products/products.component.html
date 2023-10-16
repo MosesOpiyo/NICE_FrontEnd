@@ -115,32 +115,32 @@
                 </div>
                   
                 <div class="rating">
-                  <p *ngIf="total == 5">
+                  <p *ngIf=" averageRating(item) == 5">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                   </p>
-                  <p *ngIf="total == 4">
+                  <p *ngIf="averageRating(item) == 4">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                   </p>
-                  <p *ngIf="total == 3">
+                  <p *ngIf="averageRating(item) == 3">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                   </p>
-                  <p *ngIf="total == 2">
+                  <p *ngIf="averageRating(item) == 2">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                   </p>
-                  <p *ngIf="total == 1">
+                  <p *ngIf="averageRating(item) == 1">
                     <i class="fa-solid fa-star"></i>
                   </p>
-                  <p *ngIf="total == 0">
+                  <p *ngIf="averageRating(item) == 0">
                     
                   </p>
                 </div>

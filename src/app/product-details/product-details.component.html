@@ -7,7 +7,7 @@
       <div class="product-details">
 
           <div class="product-image">
-              <img src="../../assets/img/packaging/coffee-bag-03.png" alt="coffee">
+              <img src="{{cloudinaryUrl}}{{item.img}}" alt="coffee">
           </div>
 
           <div class="product-alldetails">
@@ -17,32 +17,32 @@
                       <p>{{item.product.name}}</p>
                       <p>Description:  - {{item.product.cup_notes}}</p>
                       <p>Riaikania Coffee Factory</p>
-                      <p *ngIf="total == 5">
+                      <p *ngIf=" averageRating(item) == 5">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                       </p>
-                      <p *ngIf="total == 4">
+                      <p *ngIf="averageRating(item) == 4">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                       </p>
-                      <p *ngIf="total == 3">
+                      <p *ngIf="averageRating(item) == 3">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                       </p>
-                      <p *ngIf="total == 2">
+                      <p *ngIf="averageRating(item) == 2">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                       </p>
-                      <p *ngIf="total == 1">
+                      <p *ngIf="averageRating(item) == 1">
                         <i class="fa-solid fa-star"></i>
                       </p>
-                      <p *ngIf="total == 0">
+                      <p *ngIf="averageRating(item) == 0">
                         
                       </p>
                       <p>In stock</p>
@@ -120,7 +120,7 @@
                           </div>
 
                           <div class="submit-btn">
-                            <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                            <button (click)="addToCart(item.id)" type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
                           </div>
 
                       </form>
@@ -358,42 +358,80 @@
 
             <div class="average-reviews">
               <h4>Average Customer reviews</h4>
-              <p>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half"></i>
-                </span>
+              <p *ngIf="total == 5">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <p *ngIf="total == 4">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <p *ngIf="total == 3">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <p *ngIf="total == 2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <p *ngIf="total == 1">
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <p *ngIf="total == 0">
+                
+              </p>
 
                 <span>
-                  <p>4.6 out of 5</p>
+                  <p>{{total}} out of 5</p>
                 </span>
-              </p>
+              
 
             </div>
 
-            <div class="rating-card">
+            <div *ngFor="let rating of item.rating" class="rating-card">
               <div class="user-icon">
-                <div class="icon">P</div>
-                <div class="username">Peter</div>
+                <div class="icon">{{rating.user.username.substring(0, 1) | titlecase}}</div>
+                <div class="username">{{rating.user.username | titlecase}}</div>
               </div>
 
               <div class="user-rating">
-                <p>
+                <p *ngIf="rating.rating == 5">
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                 </p>
+                <p *ngIf="rating.rating == 4">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </p>
+                <p *ngIf="rating.rating == 3">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </p>
+                <p *ngIf="rating.rating == 2">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </p>
+                <p *ngIf="rating.rating == 1">
+                  <i class="fa-solid fa-star"></i>
+                </p>
 
-                <p>Verified Purchase</p>
+                <p style="color: green;">Verified Purchase</p>
               </div>
 
               <div class="ratinginfo">
-                <h4>Love It!!</h4>
+                <h4>{{rating.comment}}</h4>
                 <p>The best coffee I've ever heard.</p>
               </div>
             </div>
