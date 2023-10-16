@@ -5,6 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { AuthenticationService } from '../AuthService/authentication.service';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { AuthService } from '../Auth/auth.service';
+import { CartService } from '../Service/Cart/cart.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { AuthService } from '../Auth/auth.service';
 export class NavbarComponent implements OnInit {
 
   myScriptElement: HTMLScriptElement;
-   constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){
+   constructor(private dialog: MatDialog,private cart:CartService,private service:AuthenticationService,private route:Router){
       this.myScriptElement = document.createElement("script");
       this.myScriptElement.src = "./assets/js/main.js";
       document.body.appendChild(this.myScriptElement);
@@ -23,6 +24,7 @@ export class NavbarComponent implements OnInit {
 
    user:any | null = null;
    isLoggedIn:any
+   userCart:any
 
   showLoginDialog(){
     const dialogRef = this.dialog.open(LoginComponent,{
@@ -43,6 +45,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
+      this.cart.getCart().subscribe((res:any)=>{
+        this.userCart = res['products'].length
+      })
       this.service.getProfile().subscribe((res:any)=>{
         this.user = res['user']
         if(this.user.type == "FARMER"){

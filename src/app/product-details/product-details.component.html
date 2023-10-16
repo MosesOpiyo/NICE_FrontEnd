@@ -14,15 +14,36 @@
 
               <div class="product-info">
                   <div class="product-detail">
-                      <p>Mettle</p>
-                      <p>Description:  - Nuty & toasty, vanila, sweet, winy, clean cup</p>
+                      <p>{{item.product.name}}</p>
+                      <p>Description:  - {{item.product.cup_notes}}</p>
                       <p>Riaikania Coffee Factory</p>
-                      <p>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
+                      <p *ngIf="total == 5">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p *ngIf="total == 4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p *ngIf="total == 3">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p *ngIf="total == 2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p *ngIf="total == 1">
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p *ngIf="total == 0">
+                        
                       </p>
                       <p>In stock</p>
                       <p>$18.80 / 12oz</p>

@@ -22,6 +22,9 @@
     display: flex;
     gap: 1rem;
   }
+  .product-details .fa-star{
+    color: orange;
+  }
 
   .product-alldetails {
     width: 70%;

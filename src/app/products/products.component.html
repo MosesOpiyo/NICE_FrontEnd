@@ -106,21 +106,42 @@
             
             <div class="product-item">
               <div class="product-image">
-                  <img src="{{item.imageUrl}}" alt="package">
+                  <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
               </div>
 
               <div class="product-name">
                 <div class="name">
-                  <p>Mettle</p>
+                  <p>{{item.product.name}}</p>
                 </div>
                   
                 <div class="rating">
-                  <p>
+                  <p *ngIf="total == 5">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="total == 4">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="total == 3">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="total == 2">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="total == 1">
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="total == 0">
+                    
                   </p>
                 </div>
               </div>
@@ -130,7 +151,7 @@
               </div>
 
               <div class="product-details">
-                  <p>Origin: Kenya</p>
+                  <p>Origin: {{item.product.origin | titlecase}}</p>
                   <p>$18.80 / 12oz</p>
               </div>
 

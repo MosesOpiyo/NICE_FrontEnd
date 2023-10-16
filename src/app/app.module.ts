@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -75,7 +76,8 @@ import { TabsComponent } from './tabs/tabs.component';
     FarmersDashBoardModule,
     DashboardModule,
     NgxPaginationModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
