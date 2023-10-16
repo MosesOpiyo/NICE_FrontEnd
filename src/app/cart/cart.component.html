@@ -1,243 +1,68 @@
-<<<<<<< HEAD
-<section>
-    <header id="header" class="fixed-top header-transparent">
-        <div class="container d-flex align-items-center justify-content-between">
-    
-          <div class="logo">
-            <!-- <h1 class="text-light"><a href="../../index.html"><span>NiceDirect&#174;</span></a></h1> -->
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="#"><img src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid"></a>
-          </div>
-    
-          <!-- for mobile view -->
-          <div class="credentials-mobile">
-            <ul class="navbar" *ngIf="!user">
-                  <li>
-                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-                  </li>
-                  <li>
-                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-                  </li>
-                </ul>
-                <ul *ngIf="user">
-                  <li>
-                    <div class="navbar">
-                      <ul>
-                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                          <ul>
-                            <li><a href="" (click)="logout()">Log out</a></li><br>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-          </div>
-    
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link" routerLink="">Home</a></li>
-              <li><a class="nav-link" href="#about">Shop Coffee</a></li>
-              <li class="dropdown"><a href="#"><span>Expo</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a routerLink="/Expo">NICE Expo</a></li>
-                  <li><a href="#">Register for NICE Expo</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Origin Trip</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                  <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
-                  <li><a href="#">Register for Origin Trip</a></li>
-                </ul>
-              </li>
-              <li><a class="nav-link" routerLink="/Coffee">Partners</a></li>
-              <li><i class="bi bi-cart active" [attr.value]="userCart.length"></i></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav>
-    
-          <!-- for non-mobile view -->
-          <div class="credentials-nonmobile">
-            <ul class="navbar" *ngIf="!user">
-                  <li>
-                    <button mat-raised-button (click)="showLoginDialog()" type="button" class="btn btn-dark">Log In</button>
-                  </li>
-                  <li>
-                    <button mat-raised-button (click)="showSignUpDialog()" type="button" class="btn btn-outline-dark">Sign Up</button>
-                  </li>
-                </ul>
-                <ul *ngIf="user">
-                  <li>
-                    <div class="navbar">
-                      <ul>
-                        <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span> <i class="bi bi-chevron-down"></i></a>
-                          <ul>
-                            <li><a href="" (click)="logout()">Log out</a></li><br>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-          </div>
-          
-          <!-- .navbar -->
-    
-        </div>
-      </header>
-      <app-productsnavbar></app-productsnavbar>
-
-      <ng-container>
-        <div class="cart-table">
-          <div class="row g-0" style="width: 100vw;">
-            <div class="col-lg-7">
-              <table mat-table [dataSource]="userCart" class="card mat-elevation-z2">
-                <!-- Product Image Column -->
-                <ng-container matColumnDef="image">
-                  <th mat-header-cell *matHeaderCellDef>Product</th>
-                  <td style="padding: 5px;" mat-cell *matCellDef="let item">
-                    <img style="width: 80px;height: 80px;" [src]="cloudinaryUrl+item.img" alt="Product Image" class="product-image">
-                  </td>
-                </ng-container>
-              
-                <!-- Product Name Column -->
-                <ng-container matColumnDef="name">
-                  <th mat-header-cell *matHeaderCellDef>Name</th>
-                  <td mat-cell *matCellDef="let item">
-                    <h6>{{ item.product.name }}</h6>
-                    <p>Produced By: {{ item.product.producer.username |titlecase }}</p>
-                  </td>
-                  
-                </ng-container>
-                <ng-container matColumnDef="quantity">
-                  <th mat-header-cell *matHeaderCellDef>Quantity</th>
-                  <td mat-cell *matCellDef="let item">
-                    <button (click)="add()" class="btn btn-outline-dark"><i class="bi bi-plus"></i></button><span style="padding: 15px;">{{quantity}}</span><button (click)="subtract()" class="btn btn-outline-dark"><i class="bi bi-dash"></i></button>
-                  </td>
-                </ng-container>
-                <ng-container matColumnDef="price">
-                  <th mat-header-cell *matHeaderCellDef>Price</th>
-                  <td mat-cell *matCellDef="let item"><b>{{ item.price | currency: 'USD' }}</b></td>
-                </ng-container>
-                <ng-container matColumnDef="delete">
-                  <th mat-header-cell *matHeaderCellDef></th>
-                  <td mat-cell *matCellDef="let item"><b><button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button></b></td>
-                </ng-container>
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-              </table>
-            </div>
-            <div style="margin-left: 15px;" class="col-lg-3">
-              <div class="summary">
-                <div class="card mat-elevation-z2">
-                  <h4>Summary</h4>
-                  <hr>
-                  <div class="details">
-                    <div class="row g-0" style="justify-content: space-between;">
-                      <div class="col-lg-6"><span>Total Products:</span></div>
-                      <div class="col-lg-3"><span><b>$125.00</b></span></div>
-                    </div>
-                    <br>
-                    <div class="row g-0">
-                      <div class="col-lg-6"><span>Shipping Costs:</span></div>
-                    </div>
-                    <hr>
-                    <div class="row g-0">
-                      <div class="col-lg-6"><span>Total:</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-=======
 <section class="cart-component">
-    <app-navbar></app-navbar>
+  <app-navbar></app-navbar>
 
-    <div class="cart-container">
-      <ng-container *ngIf="product.length != 0">
-        <div class="cart-table">
-          <div class="cart-product">
-            <table class="table table-responsive">
-              <thead>
-                <tr>
-                  <th>Sr. No</th>
-                  <th>Product Name</th>
-                  <th>Product Image</th>
-                  <th>Description</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Total</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-      
-              <tbody>
-                <tr *ngFor="let item of product; let i = index">
-                  <td>{{i+1}}</td>
-                  <td>{{item.productName}}</td>
-                  <td><img src={{item.imageUrl}} alt="item"></td>
-                  <td>Description 1</td>
-                  <td>${{item.newPrice}}</td>
-                  <td>{{item.quantity}}</td>
-                  <td>{{item.total}}</td>
-                  <td>
-                    <button (click)="removeItem(item)" class="btn btn-danger" title="delete"><i class="fa fa-trash"></i></button>
-                  </td>
-                </tr>
-      
-                <tr>
-                  <td colspan="4"></td>
-                  <td><button class="btn btn-danger" (click)="emptyCart()">Empty Cart</button></td>
-                  <td><button class="btn btn-primary" routerLink="/Products">Shop More</button></td>
-                  <td><strong>Grand Total: $ {{grandTotal}}</strong></td>
-                  <td><button class="btn btn-success">Checkout</button></td>
-                </tr>
-              </tbody>
-            </table>
->>>>>>> c5fcd4f1685310a46a69e8c52ed027b58004d3b6
-          </div>
+  <div class="cart-container">
+    <ng-container *ngIf="product.length != 0">
+      <div class="cart-table">
+        <div class="cart-product">
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th>Sr. No</th>
+                <th>Product Name</th>
+                <th>Product Image</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr *ngFor="let item of product; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{item.productName}}</td>
+                <td><img src={{item.imageUrl}} alt="item"></td>
+                <td>Description 1</td>
+                <td>${{item.newPrice}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.total}}</td>
+                <td>
+                  <button class="btn btn-danger" title="delete"><i class="fa fa-trash"></i></button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td colspan="4"></td>
+                <td><button class="btn btn-danger">Empty Cart</button></td>
+                <td><button class="btn btn-primary" routerLink="/Products">Shop More</button></td>
+                <td><strong>Grand Total: $ {{grandTotal}}</strong></td>
+                <td><button class="btn btn-success">Checkout</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </ng-container>
-
-<<<<<<< HEAD
-   <ng-container>
-    <div class="cart-container">
-      <div class="cart-header">
-        <h3>My Cart</h3>
       </div>
-  
-      <div class="cart-content">
+    </ng-container>
+
+    <ng-container *ngIf="product.length == 0">
+      <div class="cartempty-container">
         <div class="cart-image">
+          <img src="../../assets/img/empty-cart.png" alt="cart">
         </div>
-  
+      
         <div class="cart-contents">
           <h4>mmmmhh... seems like your Cart is Empty!</h4>
-          <br>
-          <a class="btn btn-dark" routerLink="/Products">SHOP NOW</a>
+          <h6>Add item(s) to it now</h6>
+          <a routerLink="/Products">SHOP NOW&nbsp;<i class="fa-solid fa-cart-arrow-down"></i></a>
         </div>
       </div>
-     </div>
-   </ng-container>
-=======
-      <ng-container *ngIf="product.length == 0">
-        <div class="cartempty-container">
-          <div class="cart-image">
-            <img src="../../assets/img/empty-cart.png" alt="cart">
-          </div>
-        
-          <div class="cart-contents">
-            <h4>mmmmhh... seems like your Cart is Empty!</h4>
-            <h6>Add item(s) to it now</h6>
-            <a routerLink="/Products">SHOP NOW&nbsp;<i class="fa-solid fa-cart-arrow-down"></i></a>
-          </div>
-        </div>
-      </ng-container>
-    </div>
+    </ng-container>
+  </div>
 
-      
->>>>>>> c5fcd4f1685310a46a69e8c52ed027b58004d3b6
+    
 
 
-    <app-footer></app-footer>
+  <app-footer></app-footer>
 </section>
-
