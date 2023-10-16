@@ -144,8 +144,11 @@ opacity: .2;
   #header.header-scrolled .navbar .active,
   #header.header-scrolled .navbar .active:focus,
   #header.header-scrolled .navbar li:hover>a {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #eccece;
+  }
+
+  #header.header-scrolled .navbar .cart-icon li:hover a {
+    background-color: transparent;
   }
 
   #header.header-scrolled .navbar .dropdown ul {
