@@ -247,25 +247,40 @@
 
      
       <div class="roast-details">
-          <div class="roast-card light2" data-aos="fade-right">
-              <p>light roast</p>
-          </div>
+        <a routerLink="/Products" class="light2">
+            <div class="roast-card" data-aos="fade-right">
+                <div class="roast-img"></div>
+                <p>light roast</p>
+            </div>
+        </a>
+          
+        <a routerLink="/Products" class="lightmed2">
+            <div class="roast-card" data-aos="fade-up">
+                <div class="roast-img"></div>  
+                <p>light medium roast</p>
+            </div>
+        </a>
 
-          <div class="roast-card lightmed2" data-aos="fade-up">
-              <p>light medium roast</p>
-          </div>
+        <a routerLink="/Products" class="med2">
+            <div class="roast-card" data-aos="fade-right">
+                <div class="roast-img"></div>  
+                <p>medium roast</p>
+            </div>
+        </a>
 
-          <div class="roast-card med2" data-aos="fade-right">
-              <p>medium roast</p>
-          </div>
+        <a routerLink="/Products" class="meddark2">
+            <div class="roast-card" data-aos="fade-up">
+                <div class="roast-img"></div>  
+                <p>medium dark roast</p>
+            </div>
+        </a>
 
-          <div class="roast-card meddark2" data-aos="fade-up">
-              <p>medium dark roast</p>
-          </div>
-
-          <div class="roast-card dark2" data-aos="fade-left">
-              <p>dark roast</p>
-          </div>
+        <a routerLink="/Products" class="dark2">
+            <div class="roast-card" data-aos="fade-left">
+                <div class="roast-img"></div>  
+                <p>dark roast</p>
+            </div>
+        </a>
       </div>
   </div>
   <!-- End SELECT ROAST -->
@@ -278,31 +293,33 @@
       </div>
 
       <div class="latest-products">
-          <div class="product-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-01.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <p>Mettle</p>
-                  
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-
-              <div class="latestadd-actions">
-                  <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+        <div class="product-item" data-aos="fade-up" data-aos-delay="100">
+            <a routerLink="/Products/1">
+                <div class="product-image">
+                    <img src="../../../assets/img/packaging/coffee-bag-01.png" alt="package">
+                </div>
+        
+                <div class="product-name">
+                    <p>Mettle</p>
+        
+                </div>
+        
+                <div class="product-details">
+                    <p>Origin: Kenya</p>
+                    <p>$18.80 / 12oz</p>
+                </div>
+            </a>
+        
+            <div class="latestadd-actions">
+                <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
                     Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                  </a>
-                  <a role="button" title="wishlist">
-                      <i class="fa-solid fa-heart"></i>
-                  </a>
-              </div>
-
-          </div>
+                </a>
+                <a role="button" title="wishlist">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+            </div>
+        
+        </div>
 
           <div class="product-item" data-aos="fade-up" data-aos-delay="200">
               <div class="product-image">

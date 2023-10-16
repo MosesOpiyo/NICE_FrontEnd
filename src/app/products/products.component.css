@@ -1,3 +1,7 @@
+section {
+  overflow: hidden;
+}
+
 :host ::ng-deep #header {
   background-color: #f6f6f6;
   /* position: relative; */
