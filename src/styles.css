@@ -9,6 +9,10 @@
   font-family: Outfit;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .homepage-container {
 overflow: hidden;
 }
@@ -657,7 +661,8 @@ opacity: .2;
 
   #hero .one .hero-btn:hover,
   .mobilehero-btn:hover,
-  .error-container .error-link a:hover {
+  .error-container .error-link a:hover,
+  .register-btn a:hover {
     background-color: #f7f7f7;
     color: #000000;
     letter-spacing: 3px;
@@ -1398,8 +1403,9 @@ opacity: .2;
   }
 
   .modal-content .product-form .submit-btn button,
-  .product-component .product-form .submit-btn button {
-    border: none;
+  .product-component .product-form .submit-btn button,
+  .submit-btn .buy {
+    border: 2px solid black;
   }
 
   /* green tab */
@@ -1420,11 +1426,6 @@ opacity: .2;
   .product-component .product-form .green .price-lb {
     display: flex;
     gap: 1rem;
-  }
-
-  .modal-content .product-form .submit-btn button:hover,
-  .product-component .product-form .submit-btn button:hover {
-    border: 2px solid black;
   }
 
   /* media queries */
@@ -1521,9 +1522,15 @@ opacity: .2;
     font-size: 2rem;
   }
 
+  .product-form .submit-btn {
+    display: flex;
+    gap: .5rem;
+  }
+
   .cta-container .cta-content a,
   .modal-content .product-form .submit-btn button,
-  .product-component .product-form .submit-btn button {
+  .product-component .product-form .submit-btn button,
+  .submit-btn .buy {
     background-color: #000000;
     color: #f0f7fa;
     padding: .5rem 1rem;
@@ -1532,7 +1539,8 @@ opacity: .2;
 
   .cta-container .cta-content a:hover,
   .modal-content .product-form .submit-btn button:hover,
-  .product-component .product-form .submit-btn button:hover {
+  .product-component .product-form .submit-btn button:hover,
+  .submit-btn .buy:hover {
     background-color: #f7f7f7;
     cursor: pointer;
     color: #000000;

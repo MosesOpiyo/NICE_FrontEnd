@@ -1,6 +1,6 @@
-:host ::ng-deep #header {
+/* :host ::ng-deep #header {
   background-color: #f6f6f6;
-}
+} */
 
 :host ::ng-deep #header .navbar .active,
 :host ::ng-deep #header .navbar-mobile .active {
@@ -12,3 +12,83 @@
 :host ::ng-deep #header .navbar-mobile .trip-link {
   background-color: rgb(216, 216, 216);
 }
+
+
+.trip-container {
+  /* position: relative;
+  top: 76px; */
+  overflow: hidden;
+}
+
+/* .trip-container .video-container > * {
+  border: 2px solid red;
+} */
+
+.trip-container .video-container {
+  height: 650px;
+  width: 100%;  
+  position: relative;
+  overflow: hidden;
+}
+
+.trip-container .video-container:after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0000001f;
+  z-index: 1;
+}
+
+.trip-container video {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.trip-container .trip-content {
+  position: absolute;
+  color: #fff;
+  top: 25%;
+  left: 17%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+  z-index: 3;
+}
+
+.trip-container .trip-content h2 {
+  font-size: 3rem;
+}
+
+.trip-container .trip-content .trip-text {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.trip-container .trip-content .trip-text p {
+  font-size: 2rem;
+}
+
+.register-btn a {
+  align-self: center;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 10px 50px;
+  transition: all 0.6s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  color: #000000;
+}
+

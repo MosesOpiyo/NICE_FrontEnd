@@ -206,7 +206,7 @@
       
                       <div class="radio">
                           <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2() checked>
                               <label for="onetime">One time purchase</label><br>
                           </div>
 
@@ -235,6 +235,7 @@
       
                       <div class="submit-btn">
                           <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                          <a routerLink="/Checkout" class="buy">BUY NOW</a>
                       </div>
       
                   </form>
@@ -263,7 +264,7 @@
                   <form action="/" method="post">
                       <div class="radio">
                           <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff() checked>
                               <label for="onetime">One time purchase</label><br>
                           </div>
 
@@ -292,6 +293,7 @@
       
                       <div class="submit-btn">
                           <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                          <a routerLink="/Checkout" class="buy">BUY NOW</a>
                       </div>
       
                   </form>
