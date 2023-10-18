@@ -15,6 +15,7 @@ import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.
 import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,9 @@ const routes: Routes = [
   {path:'Origin-Trip',component:OriginTripComponent},
   {path: 'Cart', component:CartComponent},
   {path: 'Products', component:ProductsComponent},
-  { path: 'Products/:productId', component: ProductDetailsComponent }
+  { path: 'Products/:productId', component: ProductDetailsComponent },
+  { path: '404', component: NotfoundComponent },
+  { path: '**', redirectTo:'/404', pathMatch: 'full' }
 
 ];
 

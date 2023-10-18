@@ -12,3 +12,106 @@
 :host ::ng-deep #header .navbar-mobile .expo {
   background-color: rgb(216, 216, 216);
 }
+
+
+.expo-container {
+  position: relative;
+  top: 75px;
+  overflow: hidden;
+}
+
+/* .expo-container .video-container > * {
+  border: 2px solid red;
+} */
+
+.expo-container .video-container {
+  height: 500px;
+  width: 100%;  
+  position: relative;
+  overflow: hidden;
+}
+
+.expo-container .video-container:after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #00000081;
+  z-index: 1;
+}
+
+.expo-container video {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.expo-container .expo-content {
+  position: absolute;
+  color: #fff;
+  top: 25%;
+  left: 17%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+  z-index: 3;
+}
+
+.expo-container .expo-content h2 {
+  font-size: 3rem;
+}
+
+.expo-container .expo-content .expo-text {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.expo-container .expo-content .expo-text p {
+  font-size: 2rem;
+}
+
+/* partners marquee section */
+.expo-partners {
+  /* border: 2px solid blue; */
+  padding-block: 1rem;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.expo-partners .partners-header h2 {
+  font-size: 2rem;
+}
+
+.expo-partners .partners {
+  display: flex;
+  gap: 4rem;
+  /* border: 2px solid red; */
+  padding: .5rem;
+}
+
+.expo-partners .partners .image-card {
+  /* border: 2px solid black; */
+  height: 100px;
+  width: 100px;
+}
+
+.expo-partners .partners .image-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}

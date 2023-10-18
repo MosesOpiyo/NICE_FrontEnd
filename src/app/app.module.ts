@@ -36,6 +36,7 @@ import { ProductsnavbarComponent } from './productsnavbar/productsnavbar.compone
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 
 
 
@@ -58,7 +59,8 @@ import { TabsComponent } from './tabs/tabs.component';
     ProductsComponent,
     ProductsnavbarComponent,
     ProductDetailsComponent,
-    TabsComponent
+    TabsComponent,
+    NotfoundComponent
   ],
   entryComponents:[LoginComponent],
   imports: [

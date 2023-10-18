@@ -656,7 +656,8 @@ opacity: .2;
   }
 
   #hero .one .hero-btn:hover,
-  .mobilehero-btn:hover {
+  .mobilehero-btn:hover,
+  .error-container .error-link a:hover {
     background-color: #f7f7f7;
     color: #000000;
     letter-spacing: 3px;
@@ -1150,19 +1151,20 @@ opacity: .2;
     width: 95%;
     margin-inline: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px 5px;
+    gap: 20px 5px;
     padding-top: .5rem;
     justify-items: center;
   }
   
   .latest-container .latest-products .product-item {
     width: 100%;
+    height: 350px;
     box-shadow: 0 0 2px 1px #e6e6e6;
     border-radius: 5px;
     transition: all 500ms ease-in-out;
   }
 
-  .latest-container .latest-products .product-item:hover {
+  .latest-container .latest-products .product1:hover {
     height: 400px;
   }
 
@@ -1212,13 +1214,19 @@ opacity: .2;
   }
 
   .product-item .latestadd-actions {
-    display: none;
-    transition: all 500ms ease-in-out;
+    display: flex;
+    gap: .2rem;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.5s,
+                opacity 0.5s linear;
   }
 
-  .latest-container .latest-products .product-item:hover .latestadd-actions {
-    display: flex;
-    justify-content: center;
+  .latest-container .latest-products .product1:hover .latestadd-actions {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
    }
 
   .popular-container .popularadd-actions {
@@ -1229,7 +1237,8 @@ opacity: .2;
 
   .product-item .latestadd-actions a,
   .popular-container .popularadd-actions a,
-  .productlist .productlist-content .product-addactions a {
+  .productlist .productlist-content .product-addactions a,
+  .error-container .error-link a {
     padding: 6px 10px;
     transition: all 0.3s ease-in-out;
     text-align: center;
