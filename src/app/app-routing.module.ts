@@ -32,7 +32,7 @@ const routes: Routes = [
   {path: 'Products', component:ProductsComponent},
   { path: 'Products/:productId', component: ProductDetailsComponent },
   { path: '404', component: NotfoundComponent },
-  { path: '**', redirectTo:'/404', pathMatch: 'full' }
+  // { path: '**', redirectTo:'/404', pathMatch: 'full' }
 
 ];
 

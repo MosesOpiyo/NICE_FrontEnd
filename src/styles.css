@@ -1348,7 +1348,7 @@ opacity: .2;
   .product-component .product-container .product-form .roasted form,
   .product-component .product-container .product-form .green form {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     gap: 2rem;
   }
@@ -1358,6 +1358,12 @@ opacity: .2;
     display: flex;
     gap: 1rem;
     justify-content: center;
+    flex-direction: column;
+  }
+
+  .buttons-list {
+    display: flex;
+    flex-direction: column;
   }
 
   .modal-content .product-form .roasted .option-list > *,

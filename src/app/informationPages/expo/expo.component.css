@@ -6,7 +6,8 @@
   color: #fff;
 }
 
-:host ::ng-deep #header .navbar .dropdown ul a {
+:host ::ng-deep #header .navbar .dropdown ul a,
+:host ::ng-deep #header .navbar ul li i.fa-chevron-down {
   color: #000000;
 }
 
@@ -27,11 +28,20 @@
   color: #000000;
 }
 
+:host ::ng-deep #header.header-scrolled .navbar a,
+:host ::ng-deep #header.header-scrolled .navbar ul li i.fa-chevron-down,
+:host ::ng-deep #header.header-scrolled .navbar ul li i.fa-bag-shopping {
+  color: #000000;
+}
+
+:host ::ng-deep #header.header-scrolled .navbar .active {
+  background-color: transparent;
+  color: #000000;
+}
+
 
 .expo-container {
-  /* position: relative;
-  top: 76px; */
-  overflow: hidden;
+  border: 2px solid black; 
 }
 
 /* .expo-container .video-container > * {
@@ -39,13 +49,19 @@
 } */
 
 .expo-container .video-container {
-  height: 650px;
+  color: #fff;
   width: 100%;  
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 650px;
+  z-index: 2;
 }
 
-.expo-container .video-container:after {
+.expo-container .video-container::after {
   content: '';
   display: block;
   height: 100%;
@@ -57,24 +73,26 @@
   z-index: 1;
 }
 
-.expo-container video {
+.expo-container .video-container video {
   object-fit: cover;
   height: 100%;
   width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
 
-.expo-container .expo-content {
-  position: absolute;
-  color: #fff;
-  top: 25%;
-  left: 17%;
+.expo-container .video-container .expo-content {
+  /* border: 2px solid rgb(0, 0, 0); */
+  position: relative;
   display: flex;
   justify-content:center;
   align-items: center;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
   text-align: center;
-  z-index: 3;
+  z-index: 2;
+  padding-top: 7rem;
 }
 
 .expo-container .expo-content h2 {
@@ -83,6 +101,7 @@
 
 .expo-container .expo-content .expo-text {
   display: flex;
+  /* border: 2px solid blue; */
   justify-content:center;
   align-items: center;
   flex-direction: column;
@@ -90,8 +109,12 @@
   text-align: center;
 }
 
+.expo-container marquee {
+  color: #fcff48;
+}
+
 .expo-container .expo-content .expo-text p {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .register-btn a {
@@ -102,7 +125,325 @@
   transition: all 0.6s ease-in-out;
   text-align: center;
   cursor: pointer;
-  background-color: #f7f7f7;
+  background-color: #fcff48;
   color: #000000;
 }
 
+.expo-container .video-container .pure-counter {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  padding-top: 50px;
+  gap: 15rem;
+}
+
+/* .expo-container .video-container .pure-counter > * {
+  border: 2px solid white;
+} */
+
+.pure-counter .count-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pure-counter .count-box span {
+  font-size: 3rem;
+}
+
+
+
+/* EXPO DETAILS SECTION */
+.expo-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-block: 4rem;
+}
+
+.expo-details .expo-info {
+  display: grid;
+  width: 95%;
+  height: 600px;
+  margin-inline: auto;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 10px;
+}
+
+.expo-details .expo-info > * {
+  /* border: 2px solid red; */
+  flex-basis: 100%;
+  height: 400px;
+}
+
+.expo-details .expo-header,
+.sponsor-container .sponsor-header,
+.exhibitor-container .exhibitor-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.expo-details .expo-info .expo-card {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  border-radius: .5rem;
+  height: 100%;
+  width: 100%;
+}
+
+.expo-details .expo-info .expo-card::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0000004a;
+  z-index: -1;
+  border-radius: .5rem;
+}
+
+.expo-details .expo-info .expo-card.farming {
+  grid-area: 1 / 1 / 3 / 2;
+  background-image: url("https://img.freepik.com/free-photo/men-piloting-drone-capture-aerial-farm-image-generated-by-ai_188544-31059.jpg?size=626&ext=jpg&ga=GA1.1.284457176.1697818535&semt=ais");
+}
+
+.expo-details .expo-info .expo-card.processing {
+  grid-area: 1 / 2 / 2 / 4;
+  background-image: url("https://img.freepik.com/free-photo/metallic-machinery-roasts-gourmet-coffee-with-precision-heat-generated-by-ai_188544-29684.jpg?size=626&ext=jpg&ga=GA1.1.284457176.1697818535&semt=ais");
+}
+
+.expo-details .expo-info .expo-card.markets {
+  grid-area: 2 / 2 / 3 / 3;
+  background-image: url("https://img.freepik.com/free-photo/friendly-african-barista-gives-ordered-coffee-customer-modern-coffee-shop_613910-21579.jpg?size=626&ext=jpg&ga=GA1.1.284457176.1697818535&semt=ais");
+}
+
+.expo-details .expo-info .expo-card.platform {
+  grid-area: 2 / 3 / 3 / 4;
+  background-image: url("https://images.pexels.com/photos/5984730/pexels-photo-5984730.jpeg?auto=compress&cs=tinysrgb&w=600");
+}
+
+/* SPONSOR */
+.sponsor-container {
+  /* border: 2px solid black; */
+  margin-bottom: 4rem;
+  width: 95%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.sponsor-container > *,
+.sponsor-container .sponsor-content > * {
+  flex-basis: 100%;
+  /* border: 2px solid blue; */
+}
+
+.sponsor-container .sponsor-content {
+  display: flex;
+  gap: .5rem;
+  padding: .5rem;
+}
+
+.sponsor-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
+  justify-content: space-between;
+  padding-block: 1rem;
+}
+
+.sponsor-card.prize {
+  background-color: #000000;
+  color: #fff;
+}
+
+.sponsor-card.silver {
+  background-color: #C0C0C0;
+}
+
+.sponsor-card.gold {
+  background-color: #FFD700;
+}
+
+.sponsor-card.platinum {
+  background-color: #E5E4E2;
+}
+
+.sponsor-card > * {
+  /* border: 2px solid red; */
+  padding: .5rem;
+}
+
+.sponsor-card .card-icon {
+  height: 100px;
+  width: 100px;
+  margin-inline: auto;
+  /* border: 2px solid blue; */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.sponsor-card.prize .card-icon i {
+  font-size: 5rem;
+  color: #fff;
+}
+
+.sponsor-card.silver .card-icon {
+  background-image: url("../../../assets/img/expo/air-balloon.png");
+}
+
+.sponsor-card.gold .card-icon {
+  background-image: url("https://cdn-icons-png.flaticon.com/128/1085/1085493.png?track=ais");
+}
+
+.sponsor-card.platinum .card-icon {
+  background-image: url("../../../assets/img/expo/rocket.png");
+}
+
+.sponsor-card .sponsor-perks {
+  text-align: start;
+  height: 160px;
+}
+
+.sponsor-card .sponsor-level {
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.sponsor-card .sponsor-price {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.sponsor-card .sponsor-price span {
+  font-size: 1.5rem;
+}
+
+.sponsor-card .sponsor-perks li i {
+  color: #008000;
+}
+
+.sponsor-card .sponsor-btn {
+  background-color: black;
+  color: #fff;
+  width: 70%;
+  margin-inline: auto;
+}
+
+.sponsor-card.prize .sponsor-btn {
+  background-color: #fff;
+  color: #000000;
+}
+
+.expo-header h2,
+.sponsor-header h2,
+.exhibitor-header h2,
+.partners-header h2 {
+  font-size: 3rem;
+}
+
+.expo-header p,
+.sponsor-header p,
+.exhibitor-header p,
+.partners-header p {
+  width: 70%;
+  margin-inline: auto;
+  font-size: 1.6rem;
+}
+
+
+/* exhibitors */
+.exhibitors-container {
+  /* border: 2px solid black; */
+  margin-bottom: 4rem;
+  width: 95%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.exhibitorinfo-container,
+.exhibitor-fplan {
+  display: flex;
+  gap: 1rem;
+}
+
+.exhibitor-fplan {
+  align-items: center;
+}
+
+.exhibitorinfo-container > * ,
+.exhibitor-fplan > * {
+  flex-basis: 100%;
+  /* border: 2px solid #000000; */
+}
+
+.exhibitorinfo-container .exhibitor-image,
+.exhibitor-fplan .fplan {
+  height: 600px;
+  width: 100%;
+}
+
+.exhibitorinfo-container .exhibitor-image img,
+.exhibitor-fplan .fplan img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.exhibitor-fplan .fplan img {
+  object-fit: contain;
+}
+
+.exhibitorinfo-container .exhibitor-info {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  justify-content: space-evenly;
+}
+
+.exhibitors-container .exhibition-btn {
+  align-self: center;
+  padding: 15px 100px;
+}
+
+.exhibitors-container .exhibition-btn a {
+  /* border: 2px solid black; */
+  background-color: #a58834;
+  color: #fff;
+  padding: 15px 100px;
+}
+
+/* partners */
+.partners-container {
+  /* border: 2px solid black; */
+  margin-bottom: 4rem;
+  width: 95%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}

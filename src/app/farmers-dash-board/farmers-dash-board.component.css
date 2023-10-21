@@ -4,11 +4,16 @@
     
     /* gap: 1rem; */
     height: 100vh;
-    margin-top: 96px;
-    /* border: 2px solid red; */
+    position: relative;
+    top: 97px;
+    border: 2px solid red;
 }
 .main { 
-    width: 100%;
+    width: 80%;
+    position: relative;
+    /* left: 20%; */
+    background-color: #f5f6fa;
+    border: 2px solid black;
 }
 .side-nav {
     /* border: 2px solid red; */

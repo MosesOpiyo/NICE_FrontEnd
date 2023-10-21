@@ -5,12 +5,16 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service'; 
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
+// import { PureCounter } from '@srexi/purecounterjs';
+// const pure = new PureCounter();
+
 
 @Component({
   selector: 'app-expo',
   templateUrl: './expo.component.html',
   styleUrls: ['./expo.component.css']
 })
+
 export class ExpoComponent implements OnInit {
   myScriptElement: HTMLScriptElement;
   constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){

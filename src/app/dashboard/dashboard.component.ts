@@ -19,16 +19,6 @@ export class DashboardComponent {
     this.ngOnInit()
   }
 
-  ngOnInit(): void {
-    if(sessionStorage.getItem('Token')){
-      this.service.getProfile().subscribe((res:any)=>{
-        this.user = res
-        console.log(this.user)
-      })
-    }
-    else{
-      this.route.navigate(['homepage'])
-    }
-  }
+  ngOnInit(): void {}
 
 }
