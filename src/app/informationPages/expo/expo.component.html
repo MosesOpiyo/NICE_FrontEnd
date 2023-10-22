@@ -76,6 +76,38 @@
         </div>
     </div>
 
+    <div class="timer" *ngIf="(timeLeft$ | async) as t; else sorry" data-aos="fade-up">
+        <div class="timer-header">
+            <p>Time is ticking <br> Don't Miss Out!</p>
+        </div>
+
+        <div class="time-content">
+            <div class="days time-card">
+                <span> {{t.daysToDday}} </span>
+                <p>DAYS</p>
+            </div>
+    
+            <div class="hours time-card">
+                <span> {{t.hoursToDday}} </span>
+                <p>HOURS</p>
+            </div>
+    
+            <div class="minutes time-card">
+                <span> {{t.minutesToDday}} </span>
+                <p>MINUTES</p>
+            </div>
+    
+            <div class="seconds time-card">
+                <span> {{t.secondsToDday}} </span>
+                <p>SECONDS</p>
+            </div>
+        </div>
+    </div>
+    
+    <ng-template #sorry>
+        Sorry, something went wrong...
+    </ng-template>
+
     <div class="sponsor-container" data-aos="fade-up">
         <div class="sponsor-header">
             <h2>Sponsors</h2>
@@ -222,7 +254,7 @@
             </div>
         </div>
 
-        <div class="exhibition-btn">
+        <div class="exhibition-btn" data-aos="fade-up">
             <a href="">Reserve your space</a>
         </div>
     </div>
@@ -232,8 +264,152 @@
             <h2>NICE partners since 2016</h2>
             <p>Join our growing list of partners</p>
         </div>
+
+        <div class="partners-info">
+            <div class="partners-list">
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Barichu.png" alt="Barichu">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Bayer.jpg" alt="Barichu">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Coffee Kenya.png" alt="Barichu">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Fairtrade.png" alt="Fairtrade">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Keproba.jpeg" alt="Keproba">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Mitchell Cotts.png" alt="Mitchell">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Murphy.gif" alt="Murphy">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/nestle.jpg" alt="nestle">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Nyeri county gvt.png" alt="Nyeri">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Toyota.png" alt="Toyota">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Barichu.png" alt="Barichu">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Bayer.jpg" alt="Barichu">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Coffee Kenya.png" alt="Barichu">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Fairtrade.png" alt="Fairtrade">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Keproba.jpeg" alt="Keproba">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Mitchell Cotts.png" alt="Mitchell">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Murphy.gif" alt="Murphy">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/nestle.jpg" alt="nestle">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Nyeri county gvt.png" alt="Nyeri">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Toyota.png" alt="Toyota">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Barichu.png" alt="Barichu">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Bayer.jpg" alt="Barichu">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Coffee Kenya.png" alt="Barichu">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Fairtrade.png" alt="Fairtrade">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Keproba.jpeg" alt="Keproba">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Mitchell Cotts.png" alt="Mitchell">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Murphy.gif" alt="Murphy">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/nestle.jpg" alt="nestle">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Nyeri county gvt.png" alt="Nyeri">
+                </div>
+
+                <div class="partner-image">
+                    <img src="../../../assets/img/partners/Toyota.png" alt="Toyota">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="register-cta" data-aos="fade-up">
+        <div class="register-content">
+            <p>Join us at the ultimate coffee experience</p>
+            <a href="">REGISTER NOW</a>
+        </div>
+
+        <div class="register-image">
+            <img src="https://images.pexels.com/photos/17312403/pexels-photo-17312403/free-photo-of-coffee-in-glass-cup-and-package-in-nature.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        </div>
+    </div>
+
+    <div class="gallery-container" data-aos="fade-up">
+        <div class="gallery-header">
+            <h2>Gallery</h2>
+            <!-- <p>Join our growing list of partners</p> -->
+        </div>
     </div>
 
 </section>
+
+<app-footer></app-footer>
 
 

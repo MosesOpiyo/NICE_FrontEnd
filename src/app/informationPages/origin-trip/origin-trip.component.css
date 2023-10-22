@@ -26,12 +26,16 @@
 
 .trip-container .video-container {
   height: 650px;
-  width: 100%;  
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  background-image: url("../../../assets/img/Trip/trip.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.trip-container .video-container:after {
+/* .trip-container .video-container:after {
   content: '';
   display: block;
   height: 100%;
@@ -41,26 +45,14 @@
   left: 0;
   background-color: #0000001f;
   z-index: 1;
-}
-
-.trip-container video {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
+} */
 
 .trip-container .trip-content {
-  position: absolute;
-  color: #fff;
-  top: 25%;
-  left: 17%;
   display: flex;
   justify-content:center;
-  align-items: center;
   flex-direction: column;
   gap: 3rem;
-  text-align: center;
-  z-index: 3;
+  width: 50%;
 }
 
 .trip-container .trip-content h2 {
@@ -69,26 +61,23 @@
 
 .trip-container .trip-content .trip-text {
   display: flex;
-  justify-content:center;
-  align-items: center;
-  flex-direction: column;
   gap: 1rem;
-  text-align: center;
 }
 
 .trip-container .trip-content .trip-text p {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .register-btn a {
   align-self: center;
+  border: 2px solid black;
   font-size: 17px;
   font-weight: bold;
   padding: 10px 50px;
   transition: all 0.6s ease-in-out;
   text-align: center;
   cursor: pointer;
-  background-color: #f7f7f7;
+  background-color: #779ec9;
   color: #000000;
 }
 
