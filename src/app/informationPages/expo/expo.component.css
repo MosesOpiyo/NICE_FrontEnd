@@ -270,7 +270,7 @@
 }
 
 .sponsor-card.prize {
-  background-color: #000000;
+  background-color: #000000d9;
   color: #fff;
 }
 
@@ -279,7 +279,7 @@
 }
 
 .sponsor-card.gold {
-  background-color: #ffbc01;
+  background-color: #ffbc01ba;
 }
 
 .sponsor-card.platinum {
@@ -301,21 +301,20 @@
   background-repeat: no-repeat;
 }
 
-.sponsor-card.prize .card-icon i {
-  font-size: 3.4rem;
-  color: #fff;
+.sponsor-card.prize .card-icon {
+  background-image: url("https://cdn-icons-png.flaticon.com/128/10302/10302346.png?track=ais");
 }
 
 .sponsor-card.silver .card-icon {
-  background-image: url("../../../assets/img/expo/air-balloon.png");
+  background-image: url("https://nicedirect.com/assets/img/icons/silver.png");
 }
 
 .sponsor-card.gold .card-icon {
-  background-image: url("https://cdn-icons-png.flaticon.com/128/1085/1085493.png?track=ais");
+  background-image: url("https://nicedirect.com/assets/img/icons/gold.png");
 }
 
 .sponsor-card.platinum .card-icon {
-  background-image: url("../../../assets/img/expo/rocket.png");
+  background-image: url("https://nicedirect.com/assets/img/icons/platinum.png");
 }
 
 .sponsor-card .sponsor-perks {
@@ -346,11 +345,6 @@
   color: #fff;
   width: 70%;
   margin-inline: auto;
-}
-
-.sponsor-card.prize .sponsor-btn {
-  background-color: #fff;
-  color: #000000;
 }
 
 .expo-header h2,
@@ -418,7 +412,8 @@
   object-fit: contain;
 }
 
-.exhibitorinfo-container .exhibitor-info {
+.exhibitor-fplan .exhibitor-info {
+  margin-top: .5rem;
   text-align: start;
   display: flex;
   flex-direction: column;
@@ -533,7 +528,7 @@
 
 /* timer */
 .timer {
-  background-color: #15305b;
+  background-color: #daebef;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -545,7 +540,6 @@
 
 .timer-header p {
   font-size: 3rem;
-  color: #fff;
 }
 
 .timer .time-content {
@@ -562,7 +556,7 @@
 }
 
 .timer .days {
-  background-color: #f22f3f;
+  background-color: #F0A6CA;
 }
 
 .timer .hours {
@@ -570,11 +564,11 @@
 }
 
 .timer .minutes {
-  background-color: #276ec0;
+  background-color: #576490;
 }
 
 .timer .seconds {
-  background-color: #eda201;
+  background-color: #F8F272;
 }
 
 .timer .time-card span {
