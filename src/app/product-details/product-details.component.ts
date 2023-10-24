@@ -40,6 +40,7 @@ export class ProductDetailsComponent implements OnInit {
   isLoggedIn:any
   id:any
   item:any
+  userCart:any
   ratings : number[] = [];
   total:any
   cloudinaryUrl = environment.CLOUDINARY_URL
@@ -82,6 +83,9 @@ export class ProductDetailsComponent implements OnInit {
 
  ngOnInit(): void {
    if(sessionStorage.getItem('Token')){
+     this.cart.getCart().subscribe((res:any)=>{
+      this.userCart = res
+     })
      this.service.getProfile().subscribe((res:any)=>{
        this.user = res['user']
        if(this.user.type == "FARMER"){

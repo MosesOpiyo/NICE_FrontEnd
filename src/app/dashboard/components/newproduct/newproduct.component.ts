@@ -29,6 +29,7 @@ export class NewproductComponent implements OnInit {
   caffeine:any
   acidity:any
   level:any
+  email:any
 
 
   ngOnInit(): void {
@@ -50,6 +51,7 @@ export class NewproductComponent implements OnInit {
       caffeine: ['', Validators.required],
       acidity: ['', Validators.required],
       level: ['', Validators.required],
+      email: ['', Validators.required],
     });
   }
 
@@ -68,6 +70,7 @@ export class NewproductComponent implements OnInit {
       caffeine: new FormControl(this.thirdFormGroup.controls['caffeine'].value),
       acidity: new FormControl(this.thirdFormGroup.controls['acidity'].value),
       level: new FormControl(this.thirdFormGroup.controls['level'].value),
+      email: new FormControl(this.thirdFormGroup.controls['email'].value),
     });
     this.dialog.closeAll
     this.product.addProduct(form.value)

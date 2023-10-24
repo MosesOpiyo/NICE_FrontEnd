@@ -27,7 +27,7 @@ export class DashboardComponent {
         this.user = res
       })
       this.notification.getNotifications().subscribe((res)=>{
-        this.data = Object.values(res)
+        this.data = res
         console.log(this.data)
       })
     }
