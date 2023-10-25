@@ -55,6 +55,29 @@
     },
   });
 
+  //  Initialize origin-trip farm images Swiper 
+  var swiper = new Swiper('.farmer-images', {
+    // slidesPerView: 1,
+    spaceBetween: 10,
+    effect: "fade",
+    loop: true,
+    loopFillGroupWithBlank: true,
+    autoplay: {
+      delay: 5000,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },			
+  }); 
+
+
   /**
    * Animation on scroll
    */
@@ -189,6 +212,35 @@
     selector: '.glightbox'
   });
 
-  
+  /**
+   * Gallery isotope and filter
+   */
+  window.addEventListener('load', () => {
+    let portfolioContainer = select('.gallery-images');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.gallery-item',
+        layoutMode: 'fitRows'
+      });
+
+      let portfolioFilters = select('#gallery-flters li', true);
+
+      on('click', '#gallery-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function() {
+          AOS.refresh()
+        });
+      }, true);
+    }
+
+  });
 
 })()

@@ -353,22 +353,26 @@
 .partners-header h2,
 .gallery-header h2 {
   font-size: 3rem;
+  position: relative;
 }
 
-.roast-header h2::after, .latest-header h2::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 122px;
-    height: 66px;
-    background-image: url(headerbg.avif);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: -1;
-    opacity: .2;
+.sponsor-header h2::after,
+.exhibitor-header h2::after,
+.partners-header h2::after,
+.gallery-header h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 122px;
+  height: 66px;
+  background-image: url("../../../assets/img/headerbg.avif");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: .2;
 }
 
 .expo-header p,

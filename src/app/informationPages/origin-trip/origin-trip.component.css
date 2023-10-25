@@ -20,11 +20,7 @@
   overflow: hidden;
 }
 
-/* .trip-container .video-container > * {
-  border: 2px solid red;
-} */
-
-.trip-container .video-container {
+.trip-container .triphero-container {
   height: 650px;
   display: flex;
   align-items: center;
@@ -34,18 +30,6 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-/* .trip-container .video-container:after {
-  content: '';
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #0000001f;
-  z-index: 1;
-} */
 
 .trip-container .trip-content {
   display: flex;
@@ -81,3 +65,300 @@
   color: #000000;
 }
 
+/* PURPOSE SECTION */
+.trip-purpose {
+  /* border: 2px solid red; */
+  margin-block: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.trip-purpose .purpose-header h2 {
+  margin-bottom: .5rem;
+}
+
+.trip-purpose .purpose-list {
+  display: flex;
+  /* border: 2px solid blue; */
+}
+
+.trip-purpose .purpose-list > * {
+  flex-basis: 100%;
+  border-right: 2px solid #00000059;
+  height: 250px;
+}
+
+.purpose-list .purpose-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.purpose-list .purpose-card.relations {
+  border-right: none;
+}
+
+.purpose-list .purpose-card .purpose-icon {
+  height: 70px;
+}
+
+.purpose-list .purpose-card .purpose-icon img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.purpose-list .purpose-card .purpose-content h2 {
+  margin-bottom: .5rem;
+}
+
+/* EXPENSES SECTION */
+.expenses {
+  /* border: 2px solid black; */
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.expenses .expenses-content {
+  /* border: 2px solid blue; */
+  display: flex;
+  gap: .5rem;
+}
+
+.expenses .expenses-content > * {
+  flex-basis: 100%;
+  /* border: 2px solid red; */
+}
+
+.expenses .expenses-content .expenses-image {
+  height: 500px;
+}
+
+.expenses .expenses-content .expenses-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.expenses .expenses-content .expenses-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: start;
+}
+
+.expenses-info .covered ul li i {
+  color: green;
+}
+
+.expenses-info .not-covered ul li i {
+  color: red;
+}
+
+/* MEET FARMERS */
+.meet-farmers {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  text-align: center;
+}
+
+.meet-farmers .farmers-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 95%;
+  margin-inline: auto;
+}
+
+.farmers-content .farmer-card.geralds .farm-info,
+.farmers-content .farmer-card.jungle .farm-info {
+  flex-direction: row-reverse;
+}
+
+.farmers-content .farmer-card .farm-info {
+  display: flex;
+  gap: 1rem;
+  background-image: url(../../../assets/img/Trip/cupping4.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.farmers-content .farmer-card .farm-info > * {
+  flex-basis: 100%;
+  /* border: 2px solid blue; */
+  height: 400px;
+}
+
+.farm-info .farmer-images {
+  height: 100%;
+  width: 50%;
+  position: relative;
+}
+
+.farm-info .farmer-images img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.farm-info .swiper-button-next,
+.farm-info .swiper-button-prev {
+    color: #ffffff;
+}
+
+.farmer-card .farm-story p {
+  padding-top: 25%;
+}
+
+.farmer-card .farm-name h2 {
+  margin-bottom: 1rem;
+}
+
+/* cupping */
+.cupping-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+  background-color: #ced8e0;
+  height: 500px;
+}
+
+.cupping-container > * {
+  flex-basis: 100%;
+}
+
+.cupping-container .cupping-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 10px;
+  font-size: 1.5rem;
+}
+
+.cupping-container .cupping-text a {
+  background-color: #1c160f;
+  color: #fff;
+  padding: 5px 60px;
+  font-size: 1.2rem;
+}
+
+.cupping-container .cupping-image {
+  height: 100%;
+  width: 100%;
+}
+
+.cupping-container .cupping-image img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+/* bonus trip */
+.bonus-trip {
+  margin-bottom: 4rem;
+  background-image: url("../../../assets/img/Trip/kenya.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  height: 600px;
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.bonus-trip .bonus-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* TIPS CONTAINER */
+.tips-container {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  width: 95%;
+  margin-inline: auto;
+}
+
+.tips-container .tips-content {
+  display: flex;
+  gap: .5rem;
+}
+
+.tips-container .tips-content > * {
+  flex-basis: 100%;
+  border: 2px solid #00000014;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  padding: 1rem;
+  height: 400px;
+}
+
+.tips-card {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  justify-content: space-between;
+}
+
+.tips-card .card-header {
+  padding-block: .5rem;
+  border-bottom: 5px solid black;
+}
+
+.tips-card .card-icon {
+  height: 70px;
+}
+
+.tips-card .card-icon img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* CHECKLIST */
+.checklist-container {
+  /* border: 2px solid red; */
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  align-items: center;
+}
+
+.checklist-container .checklist-list {
+  text-align: start;
+}
+
+.checklist-container .checklist-list ul li {
+  padding-block: .5rem;
+  display: flex;
+  align-items: center;
+}
+
+.checklist-container .checklist-list ul li i {
+  font-size: 2rem;
+  color: green;
+}
