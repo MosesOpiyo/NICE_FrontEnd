@@ -23,6 +23,7 @@
     "@srexi/purecounterjs": "^1.5.0",
     "@types/body-parser": "^1.19.2",
     "cloudinary": "^1.40.0",
+    "glightbox": "^3.2.0",
     "ngx-pagination": "^6.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

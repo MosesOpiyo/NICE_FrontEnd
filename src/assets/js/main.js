@@ -179,4 +179,16 @@
     }
   });
 
+  // initiate pure counter
+  new PureCounter();
+
+   /**
+   * Initiate GALLERY lightbox 
+   */
+   const portfolioLightbox = GLightbox({
+    selector: '.glightbox'
+  });
+
+  
+
 })()

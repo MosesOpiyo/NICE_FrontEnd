@@ -7,8 +7,6 @@ import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
 import { interval, Observable } from "rxjs";
 import { map, shareReplay } from "rxjs/operators";
-// import { PureCounter } from '@srexi/purecounterjs';
-// const pure = new PureCounter();
 
 interface timeComponents {
   secondsToDday: number;

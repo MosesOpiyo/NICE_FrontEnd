@@ -355,6 +355,22 @@
   font-size: 3rem;
 }
 
+.roast-header h2::after, .latest-header h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 122px;
+    height: 66px;
+    background-image: url(headerbg.avif);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: .2;
+}
+
 .expo-header p,
 .sponsor-header p,
 .exhibitor-header p,
@@ -362,7 +378,7 @@
 .gallery-header p {
   width: 70%;
   margin-inline: auto;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
 
@@ -574,4 +590,28 @@
 .timer .time-card span {
   font-size: 5rem;
   font-weight: bold;
+}
+
+.gallery-list {
+  display: grid;
+  /* height: 1000px; */
+  width: 95%;
+  margin-inline: auto;
+  /* border: 2px solid black; */
+  /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.gallery-list a {
+  /* border: 2px solid blue; */
+  height: 200px;
+  width: 100%;
+}
+
+.gallery-list a img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
