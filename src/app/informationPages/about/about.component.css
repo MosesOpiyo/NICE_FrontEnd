@@ -1,0 +1,108 @@
+/* GENERAL */
+.about-header h2,
+.story-header h2 {
+    font-size: 2.5rem;
+}
+
+
+
+/* ABOUT HEADER */
+.about-header {
+    background-image: url("../../../assets/img/about/aboutbg.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* OUR STORY */
+.our-story {
+    margin-block: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.our-story .story-content {
+    display: flex;
+    align-items: center;
+}
+
+.our-story .story-content > * {
+    flex-basis: 100%;
+}
+
+.our-story .story-content .story-image {
+    height: 500px;
+    width: 100%;
+}
+
+.our-story .story-content .story-image img {
+    height: 100%;
+    width: 75%;
+    margin-inline: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.our-story .story-content .story p {
+    padding-right: 100px;
+}
+
+
+/* OUR MISSION */
+.our-mission {
+    display: flex;
+    margin-bottom: 4rem;
+    width: 70%;
+    margin-inline: auto;
+    text-align: center;
+    gap: 1rem;
+}
+
+.our-mission > * {
+    flex-basis: 100%;
+}
+
+.our-mission .mission-content {
+    background-color: #95aad3;
+    border-radius: .5rem;
+}
+
+.our-mission .mission-content p {
+    width: 60%;
+    margin-inline: auto;
+    padding-top: 35%;
+}
+
+.our-mission .mission-image {
+    height: 400px;
+}
+
+.our-mission .mission-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: .5rem;
+}
+
+/* WHY US */
+.whyus-container {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whyus-container .whyus-content {
+    display: flex;
+}
+
+.whyus-container .whyus-content > * {
+    flex-basis: 100%;
+    border: 1px solid black;
+}

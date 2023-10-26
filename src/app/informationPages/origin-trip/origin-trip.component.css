@@ -75,10 +75,6 @@
   text-align: center;
 }
 
-.trip-purpose .purpose-header h2 {
-  margin-bottom: .5rem;
-}
-
 .trip-purpose .purpose-list {
   display: flex;
   /* border: 2px solid blue; */
@@ -172,6 +168,15 @@
   text-align: center;
 }
 
+.trip-purpose .purpose-header h2,
+.expenses .expenses-header h2,
+.meet-farmers .meetfarmers-header h2,
+.tips-container .tips-header h2,
+.bonus-trip .bonus-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+}
+
 .meet-farmers .farmers-content {
   display: flex;
   flex-direction: column;
@@ -188,20 +193,10 @@
 .farmers-content .farmer-card .farm-info {
   display: flex;
   gap: 1rem;
-  background-image: url(../../../assets/img/Trip/cupping4.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.farmers-content .farmer-card .farm-info > * {
-  flex-basis: 100%;
-  /* border: 2px solid blue; */
-  height: 400px;
 }
 
 .farm-info .farmer-images {
-  height: 100%;
+  height: 500px;
   width: 50%;
   position: relative;
 }
@@ -216,14 +211,34 @@
 .farm-info .swiper-button-next,
 .farm-info .swiper-button-prev {
     color: #ffffff;
+    top: 92%;
 }
 
-.farmer-card .farm-story p {
-  padding-top: 25%;
+.farmer-card .farm-story {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: -4%;
+  z-index: 2;
+  background-color: #daebef;
+  height: 250px;
+  top: 130px;
+  padding-inline: 0.5rem;
+  text-align: start;
+}
+
+.farmer-card.geralds .farm-story,
+.farmer-card.jungle .farm-story {
+  left: 4%;
 }
 
 .farmer-card .farm-name h2 {
   margin-bottom: 1rem;
+  font-weight: normal;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #00000066;
 }
 
 /* cupping */
@@ -231,8 +246,22 @@
   display: flex;
   align-items: center;
   margin-bottom: 4rem;
+  background-color: #f3f3f3;
+  height: 700px;
+  position: relative;
+  z-index: 1;
+}
+
+.cupping-container::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 80%;
+  width: 20%;
+  height: 100%;
   background-color: #ced8e0;
-  height: 500px;
+  opacity: .5;
 }
 
 .cupping-container > * {
@@ -249,6 +278,10 @@
   font-size: 1.5rem;
 }
 
+.cupping-container .cupping-text p {
+  width: 70%;
+}
+
 .cupping-container .cupping-text a {
   background-color: #1c160f;
   color: #fff;
@@ -257,7 +290,7 @@
 }
 
 .cupping-container .cupping-image {
-  height: 100%;
+  height: 80%;
   width: 100%;
 }
 
@@ -265,7 +298,7 @@
   object-fit: cover;
   object-position: center;
   height: 100%;
-  width: 100%;
+  width: 80%;
 }
 
 
@@ -288,6 +321,11 @@
   flex-direction: column;
   gap: 5rem;
   align-items: center;
+  color: #fff;
+}
+
+.bonus-trip .bonus-content p {
+  width: 60%;
 }
 
 /* TIPS CONTAINER */
@@ -308,10 +346,10 @@
 
 .tips-container .tips-content > * {
   flex-basis: 100%;
-  border: 2px solid #00000014;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  border: 1px solid #00000014;
   padding: 1rem;
   height: 400px;
+  background-color: aliceblue;
 }
 
 .tips-card {
