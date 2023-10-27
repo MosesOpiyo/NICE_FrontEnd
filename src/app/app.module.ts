@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,9 +20,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 
 import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
 import { WarehousedashboardModule } from './warehousedashboard/warehousedashboard.module';
-
-import { CoffeeNavbarComponent } from './coffee-navbar/coffee-navbar.component';
-import { CoffeeComponent } from './coffee/coffee.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-board.component';
 import { FarmersDashBoardModule } from './farmers-dash-board/farmers-dash-board.module';
@@ -36,6 +34,8 @@ import { ProductsnavbarComponent } from './productsnavbar/productsnavbar.compone
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { NotfoundComponent } from './errorPages/notfound/notfound.component';
+import { AboutComponent } from './informationPages/about/about.component';
 
 
 
@@ -46,9 +46,6 @@ import { TabsComponent } from './tabs/tabs.component';
     LoginComponent,
     HomepageComponent,
     NicehomepageComponent,
-    CoffeeNavbarComponent,
-    CoffeeComponent,
-
     SignUpComponent,
     FooterComponent,
     ExpoComponent,
@@ -57,7 +54,9 @@ import { TabsComponent } from './tabs/tabs.component';
     ProductsComponent,
     ProductsnavbarComponent,
     ProductDetailsComponent,
-    TabsComponent
+    TabsComponent,
+    NotfoundComponent,
+    AboutComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -75,7 +74,8 @@ import { TabsComponent } from './tabs/tabs.component';
     FarmersDashBoardModule,
     DashboardModule,
     NgxPaginationModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

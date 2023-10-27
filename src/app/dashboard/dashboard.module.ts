@@ -18,8 +18,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { SafePipe } from './components/safe.pipe';
 import { ManifestsComponent } from './components/manifests/manifests.component';
+import { NewManifestComponent } from './components/manifests/new-manifest/new-manifest.component';
+import { SearchPipe } from './components/manifests/new-manifest/search.pipe';
+import { ProcessedProductsComponent } from './components/processed-products/processed-products.component';
 
 
 @NgModule({
@@ -34,7 +39,10 @@ import { ManifestsComponent } from './components/manifests/manifests.component';
     OrdersComponent,
     AccountsComponent,
     SafePipe,
-    ManifestsComponent
+    ManifestsComponent,
+    NewManifestComponent,
+    SearchPipe,
+    ProcessedProductsComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +53,9 @@ import { ManifestsComponent } from './components/manifests/manifests.component';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    NgxMatSelectSearchModule
   ]
 })
 export class DashboardModule { }

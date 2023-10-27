@@ -9,6 +9,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
 import { ManifestsComponent } from './components/manifests/manifests.component';
+import { ProcessedProductsComponent } from './components/processed-products/processed-products.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       {path: '', component: MaindashboardComponent},
       {path: 'details', component: DetailsComponent},
       {path: 'orders', component: OrdersComponent},
+      {path: 'processed_products', component: ProcessedProductsComponent},
       {path: 'manifests', component: ManifestsComponent},
       {path: 'form', component: FormsComponent},
       {path: 'table', component: TablesComponent},

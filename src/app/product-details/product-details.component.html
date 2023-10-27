@@ -7,25 +7,46 @@
       <div class="product-details">
 
           <div class="product-image">
-              <img src="../../assets/img/packaging/coffee-bag-03.png" alt="coffee">
+              <img src="{{cloudinaryUrl}}{{item.img}}" alt="coffee">
           </div>
 
           <div class="product-alldetails">
 
               <div class="product-info">
                   <div class="product-detail">
-                      <p>Mettle</p>
-                      <p>Description:  - Nuty & toasty, vanila, sweet, winy, clean cup</p>
+                      <p>{{item.product.name}}</p>
+                      <p>Description:  - {{item.product.cup_notes}}</p>
                       <p>Riaikania Coffee Factory</p>
-                      <p>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
+                      <p *ngIf=" averageRating(item) == 5">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p *ngIf="averageRating(item) == 4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p *ngIf="averageRating(item) == 3">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p *ngIf="averageRating(item) == 2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p *ngIf="averageRating(item) == 1">
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                      <p *ngIf="averageRating(item) == 0">
+                        
                       </p>
                       <p>In stock</p>
-                      <p>$18.80 / 12oz</p>
+                      <p>{{item.price | currency:'USD'}} / 12oz</p>
                       <p>Shipping: Free (Continental US only)</p>
                   </div> 
               </div>
@@ -69,28 +90,28 @@
                           </select>
                         </div>
 
-                          <div class="radio">
-                            <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
-                              <label for="onetime">One time purchase</label><br>
+                            <div class="radio">
+                              <div class="radio1">
+                                <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
+                                <label for="onetime">One time purchase</label><br>
+                              </div>
+  
+                              <div class="radio2">
+                                <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
+                                <label for="subscribe">Subscribe & save 10%</label><br>
+                              </div>
+                            
+                              <div *ngIf="isShowDiv2">
+                                <select id="greendelivery" name="delivery" title="delivery" required>
+                                  <option value="">Choose Delivery Period...</option>
+                                  <option value="2 weeks">Deliver every 2 weeks</option>
+                                  <option value="3 weeks">Deliver every 3 weeks</option>
+                                  <option value="month">Deliver every month</option>
+                                  <option value="6 weeks">Deliver every 6 weeks</option>
+                                  <option value="2 months">Deliver every 2 months</option>
+                                </select>
+                              </div>
                             </div>
-
-                            <div class="radio2">
-                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
-                              <label for="subscribe">Subscribe & save 10%</label><br>
-                            </div>
-                          
-                            <div *ngIf="isShowDiv2">
-                              <select id="greendelivery" name="delivery" title="delivery" required>
-                                <option value="">Choose Delivery Period...</option>
-                                <option value="2 weeks">Deliver every 2 weeks</option>
-                                <option value="3 weeks">Deliver every 3 weeks</option>
-                                <option value="month">Deliver every month</option>
-                                <option value="6 weeks">Deliver every 6 weeks</option>
-                                <option value="2 months">Deliver every 2 months</option>
-                              </select>
-                            </div>
-                          </div>
 
                           <div class="incrdecr">
                             <div (click)=decrement() class="decrement">-</div>
@@ -98,9 +119,9 @@
                             <div (click)=increment() class="increment">+</div>
                           </div>
 
-                          <div class="submit-btn">
-                            <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                          </div>
+                            <div class="submit-btn">
+                              <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                            </div>
 
                       </form>
                   </div>
@@ -125,12 +146,12 @@
                         </div>
                       </div>
 
-                      <form action="/" method="post">
-                        <div class="radio">
-                          <div class="radio1">
-                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
-                            <label for="onetime">One time purchase</label><br>
-                        </div>
+                        <form action="/" method="post">
+                          <div class="radio">
+                            <div class="radio1">
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
+                              <label for="onetime">One time purchase</label><br>
+                          </div>
 
                         <div class="radio1">
                             <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
@@ -155,9 +176,9 @@
                           <div (click)=increment2() class="increment">+</div>
                         </div>
 
-                        <div class="submit-btn">
-                          <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                      </div>
+                          <div class="submit-btn">
+                            <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                        </div>
 
                       </form>
                       
@@ -183,7 +204,7 @@
 
               <div class="owner-bio">
                 <div class="owner-name">
-                  <h4>Owner: Moses King'ori</h4>
+                  <h4>Owner: {{item.product.producer.username | titlecase}}</h4>
                 </div>
 
                 <div class="owner-info">
@@ -337,47 +358,85 @@
 
             <div class="average-reviews">
               <h4>Average Customer reviews</h4>
-              <p>
-                <span>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half"></i>
-                </span>
+              <p *ngIf="total == 5">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <p *ngIf="total == 4">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <p *ngIf="total == 3">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <p *ngIf="total == 2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <p *ngIf="total == 1">
+                <i class="fa-solid fa-star"></i>
+              </p>
+              <p *ngIf="total == 0">
+                
+              </p>
 
                 <span>
-                  <p>4.6 out of 5</p>
+                  <p>{{total}} out of 5</p>
                 </span>
-              </p>
+              
 
             </div>
 
-            <div class="rating-card">
+            <div *ngFor="let rating of item.rating" class="rating-card">
               <div class="user-icon">
-                <div class="icon">P</div>
-                <div class="username">Peter</div>
+                <div class="icon">{{rating.user.username.substring(0, 1) | titlecase}}</div>
+                <div class="username">{{rating.user.username | titlecase}}</div>
               </div>
 
               <div class="user-rating">
-                <p>
+                <p *ngIf="rating.rating == 5">
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                 </p>
+                <p *ngIf="rating.rating == 4">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </p>
+                <p *ngIf="rating.rating == 3">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </p>
+                <p *ngIf="rating.rating == 2">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </p>
+                <p *ngIf="rating.rating == 1">
+                  <i class="fa-solid fa-star"></i>
+                </p>
 
-                <p>Verified Purchase</p>
+                <p style="color: green;">Verified Purchase</p>
               </div>
 
-              <div class="ratinginfo">
-                <h4>Love It!!</h4>
-                <p>The best coffee I've ever heard.</p>
+                <div class="ratinginfo">
+                  <h4>Love It!!</h4>
+                  <p>The best coffee I've ever heard.</p>
+                </div>
               </div>
             </div>
-          </div>
-      </div>
+        </div>
 
     </section>
 

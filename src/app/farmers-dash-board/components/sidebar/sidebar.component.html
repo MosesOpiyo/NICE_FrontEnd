@@ -1,8 +1,33 @@
 <div class="sidenav-container">
     <!-- <div class="mobile-nav">MENU</div> -->
-
     <div class="nav-menu">
+        <!-- *ngif username == warehouser-->
         <ul class="nav-list">
+
+            <li>
+                <a routerLink="/farmer" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                    <i class="bi bi-person"></i>
+                    <span>Account</span>
+                </a>
+            </li>
+
+            <li *ngFor="let link of navData">
+                <a routerLink="{{link.route}}">
+                    <i class="fa-solid {{link.icon}}"></i>
+                    <span>{{link.name}}</span>
+                </a>
+            </li>
+        </ul> 
+
+
+        <div *ngFor="let link of navData">
+            <a routerLink="{{link.route}}">
+                <!-- <i class="fa-solid {{link.icon}}"></i> -->
+                <span>{{link.name}}</span>
+            </a>
+        </div>
+
+        <!-- <ul class="nav-list">
             <li>
                 <a routerLink="/farmer" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
                     <i class="bi bi-person"></i>
@@ -45,7 +70,7 @@
                     Settings
                 </a>
             </li>
-        </ul>
+        </ul> -->
 
     </div>
 </div>

@@ -1,0 +1,41 @@
+:host ::ng-deep #header {
+    background-color: #f6f6f6;
+  }
+  
+  :host ::ng-deep #header .navbar .active,
+  :host ::ng-deep #header .navbar-mobile .active {
+    color: #000000;
+    background-color: transparent;
+  }
+  
+  :host ::ng-deep #header.header-scrolled .navbar .active {
+    background-color: transparent;
+    color: #000000;
+  }
+
+
+  /* ERROR CONTAINER */
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    top: 75px;
+    height: 100vh;
+    text-align: center;
+    margin-bottom: 140px;
+  }
+
+  .error-container .error-image {
+    background-image: url('../../../assets/img/404.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+  }
+
+  .error-container p {
+    font-size: 2rem;
+  }

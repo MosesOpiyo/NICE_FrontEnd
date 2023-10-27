@@ -247,25 +247,40 @@
 
      
       <div class="roast-details">
-          <div class="roast-card light2" data-aos="fade-right">
-              <p>light roast</p>
-          </div>
+        <a routerLink="/Products" class="light2">
+            <div class="roast-card" data-aos="fade-right">
+                <div class="roast-img"></div>
+                <p>light roast</p>
+            </div>
+        </a>
+          
+        <a routerLink="/Products" class="lightmed2">
+            <div class="roast-card" data-aos="fade-up">
+                <div class="roast-img"></div>  
+                <p>light medium roast</p>
+            </div>
+        </a>
 
-          <div class="roast-card lightmed2" data-aos="fade-up">
-              <p>light medium roast</p>
-          </div>
+        <a routerLink="/Products" class="med2">
+            <div class="roast-card" data-aos="fade-right">
+                <div class="roast-img"></div>  
+                <p>medium roast</p>
+            </div>
+        </a>
 
-          <div class="roast-card med2" data-aos="fade-right">
-              <p>medium roast</p>
-          </div>
+        <a routerLink="/Products" class="meddark2">
+            <div class="roast-card" data-aos="fade-up">
+                <div class="roast-img"></div>  
+                <p>medium dark roast</p>
+            </div>
+        </a>
 
-          <div class="roast-card meddark2" data-aos="fade-up">
-              <p>medium dark roast</p>
-          </div>
-
-          <div class="roast-card dark2" data-aos="fade-left">
-              <p>dark roast</p>
-          </div>
+        <a routerLink="/Products" class="dark2">
+            <div class="roast-card" data-aos="fade-left">
+                <div class="roast-img"></div>  
+                <p>dark roast</p>
+            </div>
+        </a>
       </div>
   </div>
   <!-- End SELECT ROAST -->
@@ -278,31 +293,33 @@
       </div>
 
       <div class="latest-products">
-          <div class="product-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-01.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <p>Mettle</p>
-                  
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-
-              <div class="latestadd-actions">
-                  <a role="button" id="myBtn">
+        <div class="product-item product1" data-aos="fade-up" data-aos-delay="100">
+            <a routerLink="/Products/1">
+                <div class="product-image">
+                    <img src="../../../assets/img/packaging/coffee-bag-01.png" alt="package">
+                </div>
+        
+                <div class="product-name">
+                    <p>Mettle</p>
+        
+                </div>
+        
+                <div class="product-details">
+                    <p>Origin: Kenya</p>
+                    <p>$18.80 / 12oz</p>
+                </div>
+            </a>
+        
+            <div class="latestadd-actions">
+                <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
                     Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                  </a>
-                  <a role="button" title="wishlist">
-                      <i class="fa-solid fa-heart"></i>
-                  </a>
-              </div>
-
-          </div>
+                </a>
+                <a role="button" title="wishlist">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+            </div>
+        
+        </div>
 
           <div class="product-item" data-aos="fade-up" data-aos-delay="200">
               <div class="product-image">
@@ -426,151 +443,157 @@
       </div>
 
   </div>
-
-  <div id="myModal" class="modal">
-
-      <!-- Modal content -->
-      <div class="modal-content">
-          <span class="close">&times;</span>
-
-          <div class="product-form">
-              <div class="col">
-                  <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)"></app-tabs>
-              </div>
-      
-              <div *ngIf="activatedTabIndex == 0" class="roasted">
-      
-                  <form action="" method="post">
-                      <div class="option-list">
-                          <select id="packsize" name="packsize" title="packsize" required>
-                              <option value="">Choose Pack Size...</option>
-                              <option value="18.80|12oz">12oz ($18.80)</option>
-                              <option value="46.80|32oz">32oz ($46.80)</option>
-                              <option value="68.20|3lbs">3lbs ($68.20)</option>
-                              <option value="68.20|3lbs">5lbs ($113.00)</option>
-                          </select>
-          
-                          <select id="grind" name="grind" title="grind" required>
-                              <option value="">Choose Grind...</option>
-                              <option value="Whole beans">Whole beans</option>
-                              <option value="Extra coarse">Extra coarse (Cold brews)</option>
-                              <option value="Coarse">Coarse (French press/percolators)</option>
-                              <option value="Medium-coarse">Medium-coarse (Chemex/clever drippers)</option>
-                              <option value="Medium">Medium (Drip/regular)</option>
-                              <option value="Medium-fine">Medium-fine (Pour overs/siphon)</option>
-                              <option value="Fine">Fine (Espresso)</option>
-                              <option value="Super-fine">Super-fine (Turkish)</option>
-                          </select>
-          
-                          <select id="roast" name="roast" title="roast" required>
-                              <option value="">Choose Roast Type...</option>
-                              <option value="Light">Light</option>
-                              <option value="Medium/light">Medium/light</option>
-                              <option value="Medium">Medium</option>
-                              <option value="Medium/dark">Medium/dark</option>
-                              <option value="Dark">Dark</option>
-                          </select>
-                      </div>
-      
-                      <div class="radio">
-                          <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
-                              <label for="onetime">One time purchase</label><br>
-                          </div>
-
-                          <div class="radio2">
-                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
-                              <label for="subscribe">Subscribe & save 10%</label><br>
-                          </div>
-      
-                          <div *ngIf="isShowDiv2">
-                              <select id="delivery" name="delivery" title="delivery" required>
-                                  <option value="">Choose Delivery Period...</option>
-                                  <option value="2 weeks">Deliver every 2 weeks</option>
-                                  <option value="3 weeks">Deliver every 3 weeks</option>
-                                  <option value="month">Deliver every month</option>
-                                  <option value="6 weeks">Deliver every 6 weeks</option>
-                                  <option value="2 months">Deliver every 2 months</option>
-                              </select>
-                          </div>
-                      </div>
-      
-                      <div class="incrdecr">
-                          <div (click)=decrement() class="decrement">-</div>
-                          <span id="counting">{{num}}</span>
-                          <div (click)=increment() class="increment">+</div>
-                      </div>
-      
-                      <div class="submit-btn">
-                          <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                      </div>
-      
-                  </form>
-              </div>
-      
-              <div *ngIf="activatedTabIndex == 1" class="green">
-                  <div class="packaging">
-                      <p>Packaging</p>
-                      <p>Grainpro & Outer Jutebag</p>
-                  </div>
-      
-                  <div class="price-lb">
-                      <p>Price/Lb</p>
-      
-                      <div class="lb">
-                          <p>1 - 660 lbs</p>
-                          <p>660lbs +</p>
-                      </div>
-      
-                      <div class="lb-price">
-                          <p>- $7.70</p>
-                          <p>- $6.93</p>
-                      </div>
-                  </div>
-      
-                  <form action="/" method="post">
-                      <div class="radio">
-                          <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
-                              <label for="onetime">One time purchase</label><br>
-                          </div>
-
-                          <div class="radio1">
-                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
-                              <label for="subscribe">Subscribe & save 10%</label><br>
-                          </div>
-
-                          <div *ngIf="isShowDiv">
-                              <select id="delivery2" name="delivery" title="delivery" required>
-                                  <option value="">Choose Delivery Period...</option>
-                                  <option value="2 weeks">Deliver every 2 weeks</option>
-                                  <option value="3 weeks">Deliver every 3 weeks</option>
-                                  <option value="month">Deliver every month</option>
-                                  <option value="6 weeks">Deliver every 6 weeks</option>
-                                  <option value="2 months">Deliver every 2 months</option>
-                              </select>
-                          </div>
-                      </div>
-      
-                      <div class="incrdecr">
-                          <div (click)=decrement2() class="decrement">-</div>
-                          <span id="counting2">{{num2}}</span>
-                          <div (click)=increment2() class="increment">+</div>
-                      </div>
-      
-                      <div class="submit-btn">
-                          <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                      </div>
-      
-                  </form>
-      
-              </div>
-          </div>
-
-      </div>
-    
-    </div>
   <!-- End Latest Coffees Section -->
+
+  <!-- modal -->
+  <div  *ngIf="isModalOpen" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="modal-close" (click)="toggleModal()">
+          <i class="fa-solid fa-x"></i>
+        </span>
+
+        <div class="product-form">
+            <div class="col">
+                <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)"></app-tabs>
+            </div>
+    
+            <div *ngIf="activatedTabIndex == 0" class="roasted">
+    
+                <form action="" method="post">
+                    <div class="option-list">
+                        <select id="packsize" name="packsize" title="packsize" required>
+                            <option value="">Choose Pack Size...</option>
+                            <option value="18.80|12oz">12oz ($18.80)</option>
+                            <option value="46.80|32oz">32oz ($46.80)</option>
+                            <option value="68.20|3lbs">3lbs ($68.20)</option>
+                            <option value="68.20|3lbs">5lbs ($113.00)</option>
+                        </select>
+        
+                        <select id="grind" name="grind" title="grind" required>
+                            <option value="">Choose Grind...</option>
+                            <option value="Whole beans">Whole beans</option>
+                            <option value="Extra coarse">Extra coarse (Cold brews)</option>
+                            <option value="Coarse">Coarse (French press/percolators)</option>
+                            <option value="Medium-coarse">Medium-coarse (Chemex/clever drippers)</option>
+                            <option value="Medium">Medium (Drip/regular)</option>
+                            <option value="Medium-fine">Medium-fine (Pour overs/siphon)</option>
+                            <option value="Fine">Fine (Espresso)</option>
+                            <option value="Super-fine">Super-fine (Turkish)</option>
+                        </select>
+        
+                        <select id="roast" name="roast" title="roast" required>
+                            <option value="">Choose Roast Type...</option>
+                            <option value="Light">Light</option>
+                            <option value="Medium/light">Medium/light</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Medium/dark">Medium/dark</option>
+                            <option value="Dark">Dark</option>
+                        </select>
+                    </div>
+    
+                    <div class="radio">
+                        <div class="radio1">
+                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2() checked>
+                            <label for="onetime">One time purchase</label><br>
+                        </div>
+
+                        <div class="radio2">
+                            <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
+                            <label for="subscribe">Subscribe & save 10%</label><br>
+                        </div>
+    
+                        <div *ngIf="isShowDiv2">
+                            <select id="delivery" name="delivery" title="delivery" required>
+                                <option value="">Choose Delivery Period...</option>
+                                <option value="2 weeks">Deliver every 2 weeks</option>
+                                <option value="3 weeks">Deliver every 3 weeks</option>
+                                <option value="month">Deliver every month</option>
+                                <option value="6 weeks">Deliver every 6 weeks</option>
+                                <option value="2 months">Deliver every 2 months</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="incrdecr">
+                        <div (click)=decrement() class="decrement">-</div>
+                        <span id="counting">{{num}}</span>
+                        <div (click)=increment() class="increment">+</div>
+                    </div>
+    
+                    <div class="submit-btn">
+                        <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                        <a routerLink="/Checkout" class="buy">BUY NOW</a>
+                    </div>
+    
+                </form>
+            </div>
+    
+            <div *ngIf="activatedTabIndex == 1" class="green">
+                <div class="packaging">
+                    <p>Packaging</p>
+                    <p>Grainpro & Outer Jutebag</p>
+                </div>
+    
+                <div class="price-lb">
+                    <p>Price/Lb</p>
+    
+                    <div class="lb">
+                        <p>1 - 660 lbs</p>
+                        <p>660lbs +</p>
+                    </div>
+    
+                    <div class="lb-price">
+                        <p>- $7.70</p>
+                        <p>- $6.93</p>
+                    </div>
+                </div>
+    
+                <form action="/" method="post">
+                    <div class="radio">
+                        <div class="radio1">
+                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff() checked>
+                            <label for="onetime">One time purchase</label><br>
+                        </div>
+
+                        <div class="radio1">
+                            <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
+                            <label for="subscribe">Subscribe & save 10%</label><br>
+                        </div>
+
+                        <div *ngIf="isShowDiv">
+                            <select id="delivery2" name="delivery" title="delivery" required>
+                                <option value="">Choose Delivery Period...</option>
+                                <option value="2 weeks">Deliver every 2 weeks</option>
+                                <option value="3 weeks">Deliver every 3 weeks</option>
+                                <option value="month">Deliver every month</option>
+                                <option value="6 weeks">Deliver every 6 weeks</option>
+                                <option value="2 months">Deliver every 2 months</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="incrdecr">
+                        <div (click)=decrement2() class="decrement">-</div>
+                        <span id="counting2">{{num2}}</span>
+                        <div (click)=increment2() class="increment">+</div>
+                    </div>
+    
+                    <div class="submit-btn">
+                        <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                        <a routerLink="/Checkout" class="buy">BUY NOW</a>
+                    </div>
+    
+                </form>
+    
+            </div>
+        </div>
+
+    </div>
+  
+  </div>
+  <!-- end of modal -->
 
   <!-- ======= CTA Section ======= -->
   <div class="cta-container">
@@ -636,7 +659,7 @@
               </div>
 
               <div class="popularadd-actions">
-                  <a role="button" id="cartbtn">
+                  <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
                     Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
                   </a>
                   <a role="button" title="wishlist">

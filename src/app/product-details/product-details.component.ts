@@ -40,6 +40,7 @@ export class ProductDetailsComponent implements OnInit {
   isLoggedIn:any
   id:any
   item:any
+  userCart:any
   ratings : number[] = [];
   total:any
   cloudinaryUrl = environment.CLOUDINARY_URL
@@ -54,6 +55,16 @@ export class ProductDetailsComponent implements OnInit {
  logout(){
    this.service.logout()
    this.ngOnInit()
+ }
+
+ averageRating(item:any){
+  const list :number[] = []
+  item.rating.forEach((ratingItem:any) => {
+    list.push(ratingItem.rating)
+  });
+  const sum = list.reduce((acc, item) => acc + item, 0);
+  const total = Math.floor(sum /list.length);
+  return total
  }
 
  showSignUpDialog(){
@@ -72,6 +83,9 @@ export class ProductDetailsComponent implements OnInit {
 
  ngOnInit(): void {
    if(sessionStorage.getItem('Token')){
+     this.cart.getCart().subscribe((res:any)=>{
+      this.userCart = res
+     })
      this.service.getProfile().subscribe((res:any)=>{
        this.user = res['user']
        if(this.user.type == "FARMER"){
@@ -90,11 +104,11 @@ export class ProductDetailsComponent implements OnInit {
      this.id = this.idRouter.snapshot.paramMap.get('id');
      this.product.getProcessedProduct(this.id).subscribe((res:any)=>{
      this.item = res
+     console.log(this.item)
      this.item.rating.forEach((ratingItem:any) => {
       this.ratings.push(ratingItem.rating)
     });
-    const sum = this.ratings.reduce((acc, item) => acc + item, 0);
-    this.total = Math.floor(sum / this.ratings.length);
+    
 
    })
    }

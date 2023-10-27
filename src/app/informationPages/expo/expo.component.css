@@ -1,12 +1,50 @@
-:host ::ng-deep #header {
+/* :host ::ng-deep #header {
   background-color: #f6f6f6;
+} */
+
+:host ::ng-deep #header .navbar a {
+  color: #fff;
 }
 
-:host ::ng-deep #header .navbar .active {
+:host ::ng-deep #header .navbar .dropdown ul a,
+:host ::ng-deep #header .navbar ul li i.fa-chevron-down {
+  color: #000000;
+}
+
+:host ::ng-deep #header .navbar ul li i {
+  color: #fff;
+}
+
+
+:host ::ng-deep #header .navbar .active,
+:host ::ng-deep #header .navbar-mobile .active {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+:host ::ng-deep #header .navbar .expo-link,
+:host ::ng-deep #header .navbar-mobile .expo {
+  background-color: rgb(216, 216, 216);
+  color: #000000;
+}
+
+:host ::ng-deep #header.header-scrolled .navbar a,
+:host ::ng-deep #header.header-scrolled .navbar ul li i.fa-chevron-down,
+:host ::ng-deep #header.header-scrolled .navbar ul li i.fa-bag-shopping {
+  color: #000000;
+}
+
+:host ::ng-deep #header.header-scrolled .navbar .active {
   background-color: transparent;
   color: #000000;
 }
 
-:host ::ng-deep #header .navbar .expo-link {
-  background-color: rgb(216, 216, 216);
-}
+
+/* .expo-container {
+  border: 2px solid black; 
+} */
+
+/* .expo-container .video-container > * {
+  border: 2px solid red;
+} */
+

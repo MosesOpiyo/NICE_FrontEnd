@@ -38,10 +38,14 @@
                             <th mat-header-cell *matHeaderCellDef> Acidity </th>
                             <td mat-cell *matCellDef="let element"> {{element.acidity | titlecase}} </td>
                         </ng-container>
-                        <ng-container matColumnDef="level">
-                            <th mat-header-cell *matHeaderCellDef> Level </th>
-                            <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+                        <ng-container matColumnDef="quantity">
+                            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+                            <td mat-cell *matCellDef="let element"> {{element.quantity | number}}Kg </td>
                         </ng-container>
+                        <ng-container matColumnDef="shipping">
+                          <th mat-header-cell *matHeaderCellDef> Shipping </th>
+                          <td mat-cell *matCellDef="let element"> <button *ngIf="element.shipment_successful == true" class="btn btn-outline-success">Shipment Successful</button><button *ngIf="element.shipment_successful == false" (click)="manifestDialog(element)" class="btn btn-outline-dark"> Create Manifest</button> </td>
+                      </ng-container>
                         <ng-container matColumnDef="status">
                             <th mat-header-cell *matHeaderCellDef> Status </th>
                             <td mat-cell *matCellDef="let element"> <button *ngIf="element.shipment_successful == true" class="btn btn-outline-success">Shipment Successful</button> <button *ngIf="element.shipment_successful == false" class="btn btn-outline-primary"><i><div class="loader"></div></i> Pending Shipment</button></td>

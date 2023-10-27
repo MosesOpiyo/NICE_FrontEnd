@@ -20,14 +20,13 @@ export class DashboardComponent {
     this.service.logout()
     this.ngOnInit()
   }
-
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
       this.service.getProfile().subscribe((res:any)=>{
         this.user = res
       })
       this.notification.getNotifications().subscribe((res)=>{
-        this.data = Object.values(res)
+        this.data = res
         console.log(this.data)
       })
     }
@@ -35,6 +34,5 @@ export class DashboardComponent {
       this.route.navigate(['homepage'])
     }
   }
-  
 
 }

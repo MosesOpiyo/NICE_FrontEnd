@@ -29,7 +29,7 @@ export class CartComponent implements OnInit {
 
   cloudinaryUrl = environment.CLOUDINARY_URL
   user:any | null = null;
-  displayedColumns: string[] = ['image', 'name', 'quantity','price','delete'];
+  displayedColumns: string[] = ['image','name','quantity','price','delete'];
   userCart:any | null = null;
   isLoggedIn:any
   quantity = 0

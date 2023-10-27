@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { NewproductComponent } from '../newproduct/newproduct.component';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { AdminService } from 'src/app/AdminService/admin.service';
+import { NewManifestComponent } from '../manifests/new-manifest/new-manifest.component';
+import { WarehouseService } from 'src/app/Service/Warehouse/warehouse.service';
 
 @Component({
   selector: 'app-tables',
@@ -11,8 +13,8 @@ import { AdminService } from 'src/app/AdminService/admin.service';
   styleUrls: ['./tables.component.css']
 })
 export class TablesComponent implements OnInit {
-  constructor(private products:ProductsService,private service:AuthenticationService,private admin:AdminService,private dialog:MatDialog){}
-  displayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','level'];
+  constructor(private products:ProductsService,private warehouse:WarehouseService,private service:AuthenticationService,private admin:AdminService,private dialog:MatDialog){}
+  displayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity','shipping'];
   adminDisplayedColumns: string[] = ['email','username','type','date_joined','last_login','terminate'];
   farmerProducts:any
   users:any
@@ -78,6 +80,14 @@ export class TablesComponent implements OnInit {
   showProductDialog(){
     const dialogRef = this.dialog.open(NewproductComponent,{
       width: '40pc'
+    });
+  }
+  manifestDialog(object:any){
+    const dialogRef = this.dialog.open(NewManifestComponent,{
+      width: '40pc',
+      data:{ object: object,
+        name:object.name
+      }
     });
   }
 
