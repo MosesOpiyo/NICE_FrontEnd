@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AuthenticationService } from '../AuthService/authentication.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,7 +12,9 @@ import { AuthenticationService } from '../AuthService/authentication.service';
 export class SignUpComponent {
   constructor(
     public dialogRef: MatDialogRef<SignUpComponent>,
-    public service: AuthenticationService
+    private dialog:MatDialog,
+    public service: AuthenticationService,
+    private snackbar:MatSnackBar
   
   ){}
   username:any;
@@ -19,23 +23,27 @@ export class SignUpComponent {
   is_producer:any;
   is_warehouser:any;
   registerBuyer(){
-    let form = new FormData();
-    form.append('username',this.username),
-    form.append('email',this.email),
-    form.append('password',this.password),
-    this.service.Register(form)
+    if(this.password.length < 8){
+      this.snackbar.open("Password must be 8 characters or more.", 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    }
+    if(this.password.length >= 8){
+      let form = new FormData();
+      form.append('username',this.username),
+      form.append('email',this.email),
+      form.append('password',this.password),
+      this.service.Register(form)
+      this.dialogRef.close()
+    }
+   
   }
-  switchToProducer(){
-    this.is_producer = true
-    this.is_warehouser = false
-  }
-  switchToWarehouser(){
-    this.is_producer = false
-    this.is_warehouser = true
-  }
-  switchToBuyer(){
-    this.is_producer = false
-    this.is_warehouser = false
+  showLoginDialog(){
+    this.dialogRef.close()
+    const dialogRef = this.dialog.open(LoginComponent,{
+      width: '25pc'
+    });
   }
 
 }

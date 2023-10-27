@@ -1,6 +1,5 @@
 :host ::ng-deep #header {
   background-color: #f6f6f6;
-  /* position: relative; */
 }
 
 :host ::ng-deep #header .navbar .active {
@@ -37,7 +36,6 @@
 }
 
 .products {
-  /* border: 2px solid black; */
   position: relative;
   display: flex;
   top: 140px;
@@ -55,7 +53,6 @@
 }
 
 .products .productlist {
-  /* border: 2px solid red; */
   padding: 1rem;
   width: 80%;
 
@@ -63,9 +60,7 @@
   flex-direction: column;
 }
 
-  /* PRODUCTS STYLING */
   .productlist-content {
-    /* border: 2px solid black; */
     padding: .5rem;
 
     display: grid;
@@ -83,7 +78,6 @@
   }
 
   .product-card .product-item > * {
-    /* border: 2px solid green; */
     margin-bottom: .7rem;
   }
 
@@ -93,7 +87,6 @@
   
   .product-item {
     text-align: center;
-    /* border: 2px solid grey; */
   }
 
   .product-item .product-name,
@@ -102,7 +95,6 @@
   }
   
   .product-image {
-    /* border: 2px solid red; */
     height: 200px;
     width: 100%;
     display: flex;
@@ -111,7 +103,6 @@
   }
 
   .product-image img {
-    /* border: 2px solid black; */
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -126,7 +117,6 @@
   .product-name {
     display: flex;
     justify-content: space-between;
-    /* border: 2px solid black; */
   }
 
   .product-item .rating i {
@@ -146,8 +136,6 @@
     display: flex;
     justify-content: center;
   }
-
-  /* media-queries */
   @media (max-width: 1024px) {
     .productlist-content {
       grid-template-columns: repeat(3, 1fr);

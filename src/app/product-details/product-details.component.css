@@ -85,8 +85,6 @@
   .product-detail i {
     color: rgb(209, 209, 53);
   }
-
-  /* TABBED INFO SECTION */
   .farm-tab {
     border: 2px solid #0000003b;
     padding-block: .5rem;
@@ -94,21 +92,16 @@
 
   .farm-tab > * {
     margin-bottom: 1rem;
-    /* border-block: 2px solid #0000003b; */
     height: 400px;
     padding: .5rem;
     display: flex;
     gap: 1rem;
   }
 
-  /* .farm-tab .owners {
-    border: 2px solid red;
-  } */
 
   .farm-tab .owners > *,
   .farm-tab .farmdetails > *,
   .farm-tab .morefarmdetails > * {
-    /* border: 2px solid black; */
     flex-basis: 100%;
     padding: .5rem;
   }
@@ -152,7 +145,6 @@
 
   .reviews-tab > *,
   .reviews-tab .rating-card > * {
-    /* border: 2px solid #000000; */
     margin-bottom: 1rem;
     padding: .5rem;
   }
@@ -184,8 +176,6 @@
     gap: .5rem;
   }
 
-
-  /* media queries */
   @media (max-width: 900px) {
     .product-details {
       padding-inline: 0rem;

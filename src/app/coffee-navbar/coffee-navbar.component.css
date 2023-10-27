@@ -9,10 +9,6 @@ a {
 .logo img{
   border-radius: 50px;
 }
-
-/**
-* Mobile Navigation 
-*/
 .credentials-mobile ul li button,
 .credentials-nonmobile ul li button {
   border: 2px solid #000000;
@@ -43,10 +39,6 @@ a {
   .credentials-nonmobile {
     display: none;
   }
-
-  /* .credentials-mobile {
-    display: flex;
-  } */
 
   .navbar ul {
     display: none;
@@ -170,5 +162,4 @@ a {
 .navbar ul li i {
   color: white;
   font-size: 1.4rem;
-  /* margin-left: 3rem; */
 }

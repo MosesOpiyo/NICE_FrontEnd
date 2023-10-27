@@ -38,10 +38,10 @@
                     <a routerLink="form" class="nav-item nav-link"><i class="bi bi-check2-square me-2" style="font-size: 1.5rem"></i>Forms</a>
                     <a routerLink="table" class="nav-item nav-link"><i class="bi bi-table me-2" style="font-size: 1.5rem"></i>Tables</a>
                     <a routerLink="charts" class="nav-item nav-link"><i class="bi bi-bar-chart me-2" style="font-size: 1.5rem"></i>Charts</a>
-                    <br>
+                    <a *ngIf="user.user.type == 'ADMIN'" routerLink="orders" class="nav-item nav-link"><i class="bi bi-bag me-2" style="font-size: 1.5rem"></i>Orders</a>
                     <a *ngIf="user.user.type == 'ADMIN'" routerLink="table" class="nav-item nav-link"><i class="bi bi-people-fill me-2" style="font-size: 1.5rem"></i>Users</a>
                     <a *ngIf="user.user.type == 'ADMIN'" routerLink="pending_accounts" class="nav-item nav-link"><i class="bi bi-stopwatch me-2" style="font-size: 1.5rem"></i>Pending Accounts</a>
-                    <a *ngIf="user.user.type == 'ADMIN'" routerLink="table" class="nav-item nav-link"><i class="bi bi-cup-hot me-2" style="font-size: 1.5rem"></i>Coffee</a>
+                    <a *ngIf="user.user.type == 'ADMIN'" routerLink="processed_products" class="nav-item nav-link"><i class="bi bi-cup-hot me-2" style="font-size: 1.5rem"></i>Products</a>
 
                 </div>
             </nav>

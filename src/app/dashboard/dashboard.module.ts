@@ -24,6 +24,7 @@ import { SafePipe } from './components/safe.pipe';
 import { ManifestsComponent } from './components/manifests/manifests.component';
 import { NewManifestComponent } from './components/manifests/new-manifest/new-manifest.component';
 import { SearchPipe } from './components/manifests/new-manifest/search.pipe';
+import { ProcessedProductsComponent } from './components/processed-products/processed-products.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { SearchPipe } from './components/manifests/new-manifest/search.pipe';
     SafePipe,
     ManifestsComponent,
     NewManifestComponent,
-    SearchPipe
+    SearchPipe,
+    ProcessedProductsComponent
   ],
   imports: [
     CommonModule,
