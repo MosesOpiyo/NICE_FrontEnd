@@ -6,15 +6,9 @@
     padding-left: 20px;
     background-color: white;
 }
-h1{
-    font-weight: 500;
-    font-style: italic;
-    color: rgb(255, 192, 1);
-    font-size:xx-large;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-}
 h2 {
     font-size: 30px;
+    margin-top: 20px;
 }
 h3 {
     font-weight: 500;
@@ -22,13 +16,6 @@ h3 {
 
 .banner {
     width: 100%;
-}
-
-img {
-    margin: 0;
-    padding: 0;
-    width: auto;
-    height: 50px;
 }
 
 form input {

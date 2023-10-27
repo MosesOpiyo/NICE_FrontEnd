@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AuthenticationService } from '../AuthService/authentication.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginComponent } from '../login/login.component';
+import { IPasswordStrengthMeterService } from 'angular-password-strength-meter';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,22 +15,30 @@ export class SignUpComponent {
     public dialogRef: MatDialogRef<SignUpComponent>,
     private dialog:MatDialog,
     public service: AuthenticationService,
-    private snackbar:MatSnackBar
-  
+    private snackbar:MatSnackBar,
+    private checker:IPasswordStrengthMeterService
   ){}
   username:any;
   email: any;
   password: any;
+  confirm_password:any
   is_producer:any;
   is_warehouser:any;
   registerBuyer(){
-    if(this.password.length < 8){
-      this.snackbar.open("Password must be 8 characters or more.", 'Close', {
+    if(this.checker.score(this.password) < 2){
+      this.snackbar.open("Password is too weak. Try Another Password", 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']
       });
     }
-    if(this.password.length >= 8){
+    if(this.password != this.confirm_password){
+      this.snackbar.open("Password confirmation does not match. Try again", 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    }
+    
+    if(this.checker.score(this.password) >= 3 && this.password == this.confirm_password){
       let form = new FormData();
       form.append('username',this.username),
       form.append('email',this.email),
@@ -38,6 +47,14 @@ export class SignUpComponent {
       this.dialogRef.close()
     }
    
+  }
+  toggle(){
+    if(this.password.type == "password"){
+      this.password.type = "text"
+    }
+    if(this.password.type == "text"){
+      this.password.type = "password"
+    }
   }
   showLoginDialog(){
     this.dialogRef.close()

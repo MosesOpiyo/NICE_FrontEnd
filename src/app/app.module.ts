@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
-
+import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -75,7 +75,8 @@ import { AboutComponent } from './informationPages/about/about.component';
     DashboardModule,
     NgxPaginationModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    PasswordStrengthMeterModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,6 @@
 <div *ngIf="!is_producer && !is_warehouser" class="container">
-    <h1 class="clo-lg-5 text-center py-1"><img src="../../assets/images/d90a1c41c1294e9ebd3e6cba576ae35f.png" alt=""></h1>
     <h2 class="clo-lg-5 text-center py-1">Register</h2>
-    <h3 class="clo-lg-5 text-center">Create an account with us.</h3>
+    <h4 class="clo-lg-5 text-center">Create an account with us.</h4>
     <form (ngSubmit)="registerBuyer()">
         <label for="username">Username</label>
         <input id="username" name="username" [(ngModel)]="username" placeholder="username" class="form-control form-control" type="username" required>
@@ -9,7 +8,11 @@
         <input id="email" name="email" placeholder="email" [(ngModel)]="email" class="form-control form-control" type="email" required>
         <label for="password">Password</label>
         <input input id="password" name="password" [(ngModel)]="password" placeholder="enter your password" class="form-control" type="password" required>
+        <password-strength-meter [password]="password"></password-strength-meter>
+        <label for="password">Confirm Password</label>
+        <input input id="confirm_password" name="confirm_password" [(ngModel)]="confirm_password" placeholder="Confirm password" class="form-control" type="password" required>
         <br>
+        <input type="checkbox" (click)="toggle()">
         <button mat-raised-button type="submit">Register</button>
         <p class="clo-lg-5 text-center py-2">Have an account?<br><a (click)="showLoginDialog()">Log In</a></p>
         <p class="clo-lg-5 text-center py-2">By continuing, you agree to Our Business Terms of Service; Opens a new tab and acknowledge you've read our Privacy Policy;</p>
