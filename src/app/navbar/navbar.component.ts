@@ -22,6 +22,26 @@ export class NavbarComponent implements OnInit {
       document.body.appendChild(this.myScriptElement);
    }
 
+   isMenuOpen = false;
+   toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+   }
+
+   isShowDiv = false;
+   toggleDivOn() {
+    this.isShowDiv = !this.isShowDiv;
+   }
+
+   isShowDiv2 = false;
+   toggleDivOn2() {
+    this.isShowDiv2 = !this.isShowDiv2;
+   }
+
+   isShowDiv3 = false;
+   toggleDivOn3() {
+    this.isShowDiv3 = !this.isShowDiv3;
+   }
+
    user:any | null = null;
    isLoggedIn:any
    userCart:any

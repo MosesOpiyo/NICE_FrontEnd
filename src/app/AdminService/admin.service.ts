@@ -56,4 +56,10 @@ export class AdminService {
     })
     return this.http.put(`${environment.BASE_URL}Administration/WarehousingRequest`,{'headers':headers})
   }
+  getProcessedProducts(){
+    let headers = new HttpHeaders({
+      'Authorization': `Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Administration/ProcessedProducts`,{'headers':headers})
+  }
 }

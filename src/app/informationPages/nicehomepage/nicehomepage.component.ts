@@ -18,6 +18,14 @@ export class NicehomepageComponent implements OnInit {
   num2: number = 1;
   isShowDiv = false;
   isShowDiv2 = false;
+  
+  // modal
+  isModalOpen = false;
+  toggleModal(): void {
+    this.isModalOpen = !this.isModalOpen;
+    this.num = 1;
+    this.num2 = 1;
+  }
 
   // product form tabs
   tabs: string [] = ['Roasted', 'Green'];

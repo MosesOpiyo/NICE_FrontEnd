@@ -5,7 +5,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 
 import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
 
-import { CoffeeComponent } from './coffee/coffee.component';
 import { WarehousedashboardComponent } from './warehousedashboard/warehousedashboard.component';
 import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-board.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -14,6 +13,8 @@ import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.
 import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { NotfoundComponent } from './errorPages/notfound/notfound.component';
+import { AboutComponent } from './informationPages/about/about.component';
 
 
 const routes: Routes = [
@@ -21,13 +22,15 @@ const routes: Routes = [
   {path:'homepage',component:NicehomepageComponent},
   {path:'Warehouse',component:WarehousedashboardComponent},
   {path:'Farmer',component:FarmersDashBoardComponent},
-  {path:'Coffee',component:CoffeeComponent},
   {path:'DashBoard',component:DashboardComponent},
   {path:'Expo',component:ExpoComponent},
   {path:'Origin-Trip',component:OriginTripComponent},
   {path: 'Cart', component:CartComponent},
   {path: 'Products', component:ProductsComponent},
-  {path: 'Products/:id', component: ProductDetailsComponent }
+  {path: 'Products/:id', component: ProductDetailsComponent },
+  { path: 'Products/:productId', component: ProductDetailsComponent },
+  { path: '404', component: NotfoundComponent },
+  { path: 'about', component: AboutComponent },
 
 ];
 

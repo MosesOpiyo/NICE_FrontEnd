@@ -97,14 +97,57 @@
           </ul>
         </div>
 
+        <div>
+          <div class="widget-title"><h2>Price</h2></div>
+          <input type="hidden" id="previous_select">
+          <ul>
+          <li class="customRadio">
+            <input type="checkbox" value="farm1" id="farm1"  />
+            <label for="farm1"><span><span></span></span>Price 1 - Price 2</label>
+          </li>
+
+          <li class="customRadio">
+            <input type="checkbox" value="farm2" id="farm2"  />
+            <label for="farm2"><span><span></span></span>Price 3 - Price 4</label>
+          </li>
+
+          <li class="customRadio">
+            <input type="checkbox" value="farm2" id="farm2"  />
+            <label for="farm2"><span><span></span></span>Price 5 - Price 6</label>
+          </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="widget-title"><h2>Price</h2></div>
+          <input type="hidden" id="previous_select">
+          <ul>
+          <li class="customRadio">
+            <input type="checkbox" value="farm1" id="farm1"  />
+            <label for="farm1"><span><span></span></span>Price 1 - Price 2</label>
+          </li>
+
+          <li class="customRadio">
+            <input type="checkbox" value="farm2" id="farm2"  />
+            <label for="farm2"><span><span></span></span>Price 3 - Price 4</label>
+          </li>
+
+          <li class="customRadio">
+            <input type="checkbox" value="farm2" id="farm2"  />
+            <label for="farm2"><span><span></span></span>Price 5 - Price 6</label>
+          </li>
+          </ul>
+        </div>
+
       </div>
 
       <div class="productlist">
 
         <div class="productlist-content">
-          <a routerLink="/Products/{{item.id}}" class="product-card"  *ngFor="let item of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
+          <div class="product-card"  *ngFor="let item of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
+
             
-            <div class="product-item">
+            <a routerLink="/Products/{{item.id}}" class="product-item">
               <div class="product-image">
                   <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
               </div>
@@ -155,17 +198,17 @@
                   <p>{{item.price | currency:'USD'}} / 12oz</p>
               </div>
 
-              <div class="latestadd-actions product-addactions">
-                  <a role="button" id="myBtn">
-                    Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                  </a>
-                  <a role="button" title="wishlist">
-                      <i class="fa-solid fa-heart"></i>
-                  </a>
-              </div>
+            </a>
 
+            <div class="latestadd-actions product-addactions">
+              <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+              </a>
+              <a role="button" title="wishlist">
+                  <i class="fa-solid fa-heart"></i>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
 
         <div class="products-pagination">
@@ -174,12 +217,17 @@
                              
       </div>
     </div>
+    
 
-    <div id="myModal" class="modal">
+
+    <!-- modal -->
+    <div *ngIf="isModalOpen" class="modal">
 
       <!-- Modal content -->
       <div class="modal-content">
-          <span class="close">&times;</span>
+        <span class="modal-close" (click)="toggleModal()">
+          <i class="fa-solid fa-x"></i>
+        </span>
 
           <div class="product-form">
               <div class="col">
@@ -219,10 +267,11 @@
                               <option value="Dark">Dark</option>
                           </select>
                       </div>
-      
-                      <div class="radio">
+
+                      <div class="buttons-list">
+                        <div class="radio">
                           <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2() checked>
                               <label for="onetime">One time purchase</label><br>
                           </div>
 
@@ -251,7 +300,11 @@
       
                       <div class="submit-btn">
                           <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                          <a routerLink="/Checkout" class="buy">BUY NOW</a>
                       </div>
+                      </div>
+      
+                      
       
                   </form>
               </div>
@@ -279,7 +332,7 @@
                   <form action="/" method="post">
                       <div class="radio">
                           <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff() checked>
                               <label for="onetime">One time purchase</label><br>
                           </div>
 
@@ -308,6 +361,7 @@
       
                       <div class="submit-btn">
                           <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                          <a routerLink="/Checkout" class="buy">BUY NOW</a>
                       </div>
       
                   </form>
@@ -318,6 +372,7 @@
       </div>
     
     </div>
+    <!-- end of modal -->
 
     <app-footer></app-footer>
 </section>

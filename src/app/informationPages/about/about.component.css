@@ -1,0 +1,285 @@
+/* GENERAL */
+.about-header h2,
+.story-header h2,
+.whyus-header h2,
+.how-header h2 {
+    font-size: 2.5rem;
+}
+
+
+
+/* ABOUT HEADER */
+.about-header {
+    background-image: url("../../../assets/img/about/aboutbg.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* OUR STORY */
+.our-story {
+    margin-block: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.our-story .story-content {
+    display: flex;
+    align-items: center;
+}
+
+.our-story .story-content > * {
+    flex-basis: 100%;
+}
+
+.our-story .story-content .story-image {
+    height: 500px;
+    width: 100%;
+}
+
+.our-story .story-content .story-image img {
+    height: 100%;
+    width: 75%;
+    margin-inline: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.our-story .story-content .story p {
+    padding-right: 100px;
+}
+
+
+/* OUR MISSION */
+.our-mission {
+    display: flex;
+    margin-bottom: 4rem;
+    width: 70%;
+    margin-inline: auto;
+    text-align: center;
+    gap: 1rem;
+}
+
+.our-mission > * {
+    flex-basis: 100%;
+}
+
+.our-mission .mission-content {
+    background-color: #95aad3;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.our-mission .mission-content p {
+    width: 60%;
+    margin-inline: auto;
+}
+
+.our-mission .mission-image {
+    height: 350px;
+}
+
+.our-mission .mission-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: .5rem;
+}
+
+/* WHY US */
+.whyus-container {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin-inline: auto;
+    gap: 2rem;
+}
+
+.whyus-container .whyus-content {
+    display: flex;
+    gap: 1rem;
+}
+
+.whyus-container .whyus-content > * {
+    flex-basis: 100%;
+}
+
+.whyus-content .why-card {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.whyus-content .why-card.save {
+    background-color: #53627f;
+}
+
+.whyus-content .why-card.empower {
+    background-color: #bdad9d;
+}
+
+.whyus-content .why-card.impact {
+    background-color: #f3795a;
+}
+
+.whyus-content .why-card.story {
+    background-color: #b8b8b8;
+}
+
+.whyus-content .why-card img {
+    height: 70px;
+    width: 100px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.whyus-content .why-card .card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.whyus-content .why-card .card-info h4 {
+    font-size: 1.5rem;
+}
+
+/* HOW */
+.how-container {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin-inline: auto;
+    gap: 2rem;
+}
+
+.how-container .how-content .how-card {
+    display: flex;
+}
+
+.how-container .how-content .how-card.prefinancing,
+.how-container .how-content .how-card.marketing,
+.how-container .how-content .how-card.shop {
+    flex-direction: row-reverse;
+}
+
+/* .how-container .how-content .how-card > * {
+    flex-basis: 100%;
+    border: 2px solid black;
+} */
+
+.how-card .how-details {
+    display: flex;
+    gap: 1rem;
+    /* border: 2px solid blue; */
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+/* .how-card .how-details > * {
+    border: 2px solid red;
+} */
+
+.how-details .process-number {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-size: 2rem;
+    align-items: center;
+}
+
+.how-details .process-number .number {
+    transform: rotate(270deg);
+    font-weight: bold;
+}
+
+.how-details .how-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 400px;
+}
+
+.how-details .how-info h4 {
+    text-transform: uppercase;
+}
+
+.how-details .how-info p {
+    width: 50%;
+}
+
+.how-card .how-image {
+    height: 500px;
+    width: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+.how-card .how-image::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color: #ff3800;
+    opacity: .5;
+}
+
+.how-card.prefinancing .how-image::after,
+.how-card.marketing .how-image::after,
+.how-card.shop .how-image::after {
+    left: 0;
+    right: 50%;
+}
+
+.how-card.prefinancing .how-image::after {
+    background-color: #fac344;
+}
+
+.how-card.logistics .how-image::after {
+    background-color: #4446e9c4;
+}
+
+.how-card.marketing .how-image::after {
+    background-color: #ffcdce;
+}
+
+.how-card.transparency .how-image::after {
+    background-color: #d7d7d7;
+}
+
+.how-card.shop .how-image::after {
+    background-color: #ff735c;
+}
+
+.how-card .how-image img {
+    object-fit: cover;
+    object-position: center;
+    height: 80%;
+    width: 80%;
+    margin-top: 8%;
+    border: 2px solid #0000000d;
+    position: relative;
+    left: -10%;
+}
+
+.how-card.prefinancing .how-image img,
+.how-card.marketing .how-image img,
+.how-card.shop .how-image img {
+    left: 10%;
+}

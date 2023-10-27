@@ -1,0 +1,16 @@
+.footer-section .payment {
+    display: flex;
+    gap: 1rem;
+    padding-top: 2rem;
+    justify-content: center;
+}
+
+.footer-section .payment i {
+    font-size: 1.6rem;
+}
+
+@media (max-width: 320px) {
+    .footer-section .payment {
+        flex-wrap: wrap;
+    }
+}

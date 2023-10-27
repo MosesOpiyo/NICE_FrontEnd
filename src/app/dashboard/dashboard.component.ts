@@ -20,7 +20,6 @@ export class DashboardComponent {
     this.service.logout()
     this.ngOnInit()
   }
-
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
       this.service.getProfile().subscribe((res:any)=>{
@@ -35,6 +34,5 @@ export class DashboardComponent {
       this.route.navigate(['homepage'])
     }
   }
-  
 
 }

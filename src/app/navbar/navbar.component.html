@@ -7,9 +7,113 @@
         </a>
       </div>
 
-      <div class="mobile-icons">
-          <ul>
-              <li class="mobile-cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" value=0></i></a></li>
+        <div class="mobile-icons">
+            <ul>
+                <li class="mobile-cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" value=0></i></a></li>
+                <li>
+                    <button (click)="showLoginDialog()" type="button" class="mobilelogin-btn" title="login">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul class="navbar-links">
+                <li><a class="nav-link active" routerLink="/">Home</a></li>
+                <li><a class="nav-link shop" routerLink="/Products">Shop Coffee</a></li>
+                <li class="dropdown"><a class="expo-link" routerLink="/Expo"><span>Expo</span> <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul>
+                        <li><a routerLink="/Expo">NICE Expo</a></li>
+                        <li><a href="#">Sponsors</a></li>
+                        <li><a href="#">Exhibitors</a></li>
+                        <li><a href="#">Register for NICE Expo</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="trip-link" routerLink="/Origin-Trip"><span>Origin Trip</span><i class="fa-solid fa-chevron-down"></i></a>
+                    <ul>
+                        <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
+                        <li><a href="#">Origin Trip Tips</a></li>
+                        <li><a href="#">Itinerary</a></li>
+                        <li><a href="#">Register for Origin Trip</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a routerLink="/about"><span>About Us</span><i class="fa-solid fa-chevron-down"></i></a>
+                    <ul>
+                        <li><a routerLink="/about">About Us</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">How NiceDirect Works</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+            <ul class="cart-icon">
+                <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" value=0></i></a></li>
+            </ul>
+
+            <span *ngIf="!isMenuOpen" class="burger" (click)="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </span>
+            
+        </nav>
+
+        <!-- mobile nav -->
+        <nav *ngIf="isMenuOpen" class="navbar-mobile">
+            <span class="burger" (click)="toggleMenu()">
+                <i class="fa-solid fa-x"></i>
+            </span>
+            <ul class="navbar-links">
+                <li><a class="nav-link active" routerLink="/">Home</a></li>
+                <li><a class="nav-link shop" routerLink="/Products">Shop Coffee</a></li>
+
+                <li (click)=toggleDivOn() class="expo dropdown-header"><span>Expo</span><i class="fa-solid fa-chevron-down"></i></li>
+                <div *ngIf="isShowDiv" class="dropdown">
+                    <ul>
+                        <li><a routerLink="/Expo">NICE Expo</a></li>
+                        <li><a href="#">Sponsors</a></li>
+                        <li><a href="#">Exhibitors</a></li>
+                        <li><a href="#">Register for NICE Expo</a></li>
+                    </ul>
+                </div>
+
+                <li (click)=toggleDivOn2() class="trip-link dropdown-header"><span> Origin Trip</span><i class="fa-solid fa-chevron-down"></i></li>
+                <div *ngIf="isShowDiv2" class="dropdown">
+                    <ul>
+                        <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
+                        <li><a href="#">Origin Trip Tips</a></li>
+                        <li><a href="#">Itinerary</a></li>
+                        <li><a href="#">Register for Origin Trip</a></li>
+                    </ul>
+                </div>
+
+                <li (click)=toggleDivOn3() class="about-link dropdown-header"><span>About Us</span><i class="fa-solid fa-chevron-down"></i></li>
+                <div *ngIf="isShowDiv3" class="dropdown">
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">How NiceDirect Works</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+            </ul>
+            
+        </nav>
+        
+        <div class="credentials-nonmobile">
+            <ul class="navbar-login" *ngIf="!user">
+                <li>
+                    <button (click)="showLoginDialog()" type="button"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Log In</button>
+                </li>
+                <li>
+                    <button (click)="showSignUpDialog()" type="button"><i class="fa-solid fa-arrow-right-to-bracket"></i>&nbsp;&nbsp;Sign Up</button>
+                </li>
+            </ul>
+
+            <ul *ngIf="user">
               <li>
                   <button (click)="showLoginDialog()" type="button" class="mobilelogin-btn" title="login">
                       <i class="fa-solid fa-circle-user"></i>
@@ -17,73 +121,6 @@
               </li>
             </ul>
         </div>
-
-      <nav id="navbar" class="navbar">
-          <ul class="navbar-links">
-              <li><a class="nav-link active" routerLink="/">Home</a></li>
-              <li><a class="nav-link shop" routerLink="/Products">Shop Coffee</a></li>
-              <li class="dropdown"><a class="expo-link" href="#"><span>Expo</span> <i class="fa-solid fa-chevron-down"></i></a>
-                  <ul>
-                      <li><a routerLink="/Expo">NICE Expo</a></li>
-                      <li><a href="#">Sponsors</a></li>
-                      <li><a href="#">Exhibitors</a></li>
-                      <li><a href="#">Register for NICE Expo</a></li>
-                  </ul>
-              </li>
-              <li class="dropdown"><a class="trip-link" href="#"><span>Origin Trip</span><i class="fa-solid fa-chevron-down"></i></a>
-                  <ul>
-                      <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
-                      <li><a href="#">Origin Trip Tips</a></li>
-                      <li><a href="#">Itinerary</a></li>
-                      <li><a href="#">Register for Origin Trip</a></li>
-                  </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>About Us</span><i class="fa-solid fa-chevron-down"></i></a>
-                  <ul>
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Partners</a></li>
-                      <li><a href="#">Gallery</a></li>
-                      <li><a href="#">How NiceDirect Works</a></li>
-                      <li><a href="#">FAQ</a></li>
-                  </ul>
-              </li>
-              
-          </ul>
-          <ul *ngIf="user || userCart > 0" class="cart-icon">
-              <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" [attr.value]="userCart"></i></a></li>
-          </ul>
-        <ul *ngIf="!user" class="cart-icon">
-          <li class="cart"><a routerLink="/Cart"><i class="fas fa-shopping-bag"></i></a></li>
-      </ul>
-          
-          <i class="fa-solid fa-bars mobile-nav-toggle"></i>
-          
-      </nav>
-      
-      <div class="credentials-nonmobile">
-          <ul class="navbar-login" *ngIf="!user">
-              <li>
-                  <button (click)="showLoginDialog()" type="button"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Log In</button>
-              </li>
-              <li>
-                  <button (click)="showSignUpDialog()" type="button"><i class="fa-solid fa-arrow-right-to-bracket"></i>&nbsp;&nbsp;Sign Up</button>
-              </li>
-          </ul>
-
-          <ul *ngIf="user">
-            <li>
-              <div class="navbar">
-                <ul>
-                  <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
-                    <ul>
-                      <li><a href="" (click)="logout()">Log out</a></li><br>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-      </div>
 
   </div>
 </header>

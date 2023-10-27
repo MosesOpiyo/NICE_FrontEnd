@@ -90,28 +90,28 @@
                           </select>
                         </div>
 
-                          <div class="radio">
-                            <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
-                              <label for="onetime">One time purchase</label><br>
+                            <div class="radio">
+                              <div class="radio1">
+                                <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
+                                <label for="onetime">One time purchase</label><br>
+                              </div>
+  
+                              <div class="radio2">
+                                <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
+                                <label for="subscribe">Subscribe & save 10%</label><br>
+                              </div>
+                            
+                              <div *ngIf="isShowDiv2">
+                                <select id="greendelivery" name="delivery" title="delivery" required>
+                                  <option value="">Choose Delivery Period...</option>
+                                  <option value="2 weeks">Deliver every 2 weeks</option>
+                                  <option value="3 weeks">Deliver every 3 weeks</option>
+                                  <option value="month">Deliver every month</option>
+                                  <option value="6 weeks">Deliver every 6 weeks</option>
+                                  <option value="2 months">Deliver every 2 months</option>
+                                </select>
+                              </div>
                             </div>
-
-                            <div class="radio2">
-                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
-                              <label for="subscribe">Subscribe & save 10%</label><br>
-                            </div>
-                          
-                            <div *ngIf="isShowDiv2">
-                              <select id="greendelivery" name="delivery" title="delivery" required>
-                                <option value="">Choose Delivery Period...</option>
-                                <option value="2 weeks">Deliver every 2 weeks</option>
-                                <option value="3 weeks">Deliver every 3 weeks</option>
-                                <option value="month">Deliver every month</option>
-                                <option value="6 weeks">Deliver every 6 weeks</option>
-                                <option value="2 months">Deliver every 2 months</option>
-                              </select>
-                            </div>
-                          </div>
 
                           <div class="incrdecr">
                             <div (click)=decrement() class="decrement">-</div>
@@ -119,9 +119,9 @@
                             <div (click)=increment() class="increment">+</div>
                           </div>
 
-                          <div class="submit-btn">
-                            <button (click)="addToCart(item.id)" type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                          </div>
+                            <div class="submit-btn">
+                              <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                            </div>
 
                       </form>
                   </div>
@@ -146,12 +146,12 @@
                         </div>
                       </div>
 
-                      <form action="/" method="post">
-                        <div class="radio">
-                          <div class="radio1">
-                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
-                            <label for="onetime">One time purchase</label><br>
-                        </div>
+                        <form action="/" method="post">
+                          <div class="radio">
+                            <div class="radio1">
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
+                              <label for="onetime">One time purchase</label><br>
+                          </div>
 
                         <div class="radio1">
                             <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
@@ -176,9 +176,9 @@
                           <div (click)=increment2() class="increment">+</div>
                         </div>
 
-                        <div class="submit-btn">
-                          <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                      </div>
+                          <div class="submit-btn">
+                            <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                        </div>
 
                       </form>
                       
@@ -430,13 +430,13 @@
                 <p style="color: green;">Verified Purchase</p>
               </div>
 
-              <div class="ratinginfo">
-                <h4>{{rating.comment}}</h4>
-                <p>The best coffee I've ever heard.</p>
+                <div class="ratinginfo">
+                  <h4>Love It!!</h4>
+                  <p>The best coffee I've ever heard.</p>
+                </div>
               </div>
             </div>
-          </div>
-      </div>
+        </div>
 
     </section>
 

@@ -1,1 +1,443 @@
 <app-navbar></app-navbar>
+
+<section class="expo-container">
+    <div class="video-container">
+        <video src="../../../assets/Video/expo2.mp4" autoplay loop playsinline muted [disablePictureInPicture]="true" preload="auto"></video>
+
+        <div class="expo-content">
+            <div class="expo-header">
+                <h2>NYERI INTERNATIONAL COFFEE EXPO</h2>
+            </div>
+            
+            <div class="expo-text">
+                <p><i class="fa-regular fa-calendar"></i> &nbsp; November 9th - 10th</p>
+                <p><i class="fa-solid fa-location-dot"></i> &nbsp; Dedan Kimathi University, Nyeri</p>
+                <p><marquee behavior="" direction="">Early Bird Registration<strong> NOW OPEN</strong></marquee></p>                
+            </div>
+
+            <div class="register-btn">
+                <a href="">REGISTER NOW</a>
+            </div>
+        </div>
+
+        <div class="pure-counter" data-aos="fade-up">
+            <div class="count-box">
+                <span data-purecounter-start="0" data-purecounter-end="62" data-purecounter-duration="1"
+                  class="purecounter">62</span>
+                <p><strong>Exhibiting partners </strong><br>coffee related companies</p>
+            </div>
+
+            <div class="count-box">
+                <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1"
+                  class="purecounter">500</span>
+                <p><strong>Happy farmers</strong><br>cummulative attendance</p>
+            </div>
+
+            <div class="count-box">
+                <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
+                  class="purecounter">20</span>
+                <p><strong>Billion shillings </strong><br>value of Kenya's coffee industry</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="expo-details" data-aos="fade-up">
+        <div class="expo-header" data-aos="fade-up">
+            <h2>Kenya's best coffee expo</h2>
+            <p>The Nyeri International Coffee Expo (NICE) is an annual coffee show organized since 2016. Its objective is to improve production and processing technologies while at the same time opening up new marketing channels for Kenyan coffee.</p>
+            <!-- <h3>Event Attractions:</h3> -->
+        </div>
+
+        <div class="expo-info">
+            <div class="expo-card farming" data-aos="fade-up">
+                <p>New farming technologies</p>
+            </div>
+
+            <div class="expo-card processing" data-aos="fade-up">
+                <p>New processing technologies</p>
+            </div>
+
+            <div class="expo-card markets" data-aos="fade-up">
+                <p>New markets</p>
+            </div>
+
+            <div class="expo-card platform" data-aos="fade-up">
+                <p>Shared platform</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="timer" *ngIf="(timeLeft$ | async) as t; else sorry" data-aos="fade-up">
+        <div class="timer-header">
+            <p>Time is ticking <br> Don't Miss Out!</p>
+        </div>
+
+        <div class="time-content">
+            <div class="days time-card">
+                <span> {{t.daysToDday}} </span>
+                <p>DAYS</p>
+            </div>
+    
+            <div class="hours time-card">
+                <span> {{t.hoursToDday}} </span>
+                <p>HOURS</p>
+            </div>
+    
+            <div class="minutes time-card">
+                <span> {{t.minutesToDday}} </span>
+                <p>MINUTES</p>
+            </div>
+    
+            <div class="seconds time-card">
+                <span> {{t.secondsToDday}} </span>
+                <p>SECONDS</p>
+            </div>
+        </div>
+    </div>
+    
+    <ng-template #sorry>
+        Sorry, something went wrong...
+    </ng-template>
+
+    <div class="sponsor-container" data-aos="fade-up">
+        <div class="sponsor-header">
+            <h2>Sponsors</h2>
+            <p>Drive your brand's international recognition by sponsoring our international coffee expo and connecting with industry leaders and coffee enthusiasts</p>
+        </div>
+
+        <div class="sponsor-content">
+            <div class="sponsor-card platinum">
+                <div class="card-icon">
+                    
+                </div>
+                <div class="sponsor-level">Platinum</div>
+                <div class="sponsor-price"><span>sh</span>2m</div>
+                <div class="sponsor-perks">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;Brand name appended to event name</li>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;Brand logo on event badges and apparel</li>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;20 min address during opening ceremony</li>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;Exclusivity as category partner</li>
+                    </ul> 
+                </div>
+                <div class="sponsor-btn">
+                    <a href="">Choose Sponsorship</a>
+                </div>
+            </div>
+            
+            <div class="sponsor-card gold">
+                <div class="card-icon">
+                    
+                </div>
+                <div class="sponsor-level">Gold</div>
+                <div class="sponsor-price"><span>sh</span>1m</div>
+                <div class="sponsor-perks">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;Brand/logo on event apparel</li>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;Seven teardrop banners</li>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;250 guest gift bags</li>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;Exclusivity as category partner</li>
+                    </ul> 
+                </div>
+                <div class="sponsor-btn">
+                    <a href="">Choose Sponsorship</a>
+                </div>
+            </div>
+
+            <div class="sponsor-card silver">
+                <div class="card-icon">
+                    
+                </div>
+                <div class="sponsor-level">Silver</div>
+                <div class="sponsor-price"><span>sh</span>500k</div>
+                <div class="sponsor-perks">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;Brand/logo on event and apparel</li>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;Four teardrop banners</li>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;100 guest gift bags</li>
+                    </ul> 
+                </div>
+                <div class="sponsor-btn">
+                    <a href="">Choose Sponsorship</a>
+                </div>
+            </div>
+
+            <div class="sponsor-card prize">
+                <div class="card-icon ">
+                </div>
+                <div class="sponsor-level">Prize</div>
+                <div class="sponsor-price"><span>sh</span>250k</div>
+                <div class="sponsor-perks">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;Brand/logo on prize and certificate</li>
+                        <li><i class="fa-solid fa-check"></i>&nbsp;Brand placement during prize giving</li>
+                    </ul> 
+                </div>
+                <div class="sponsor-btn">
+                    <a href="">Choose Sponsorship</a>
+                </div>
+            </div>  
+        </div>
+        
+    </div>
+
+    <div class="exhibitors-container" data-aos="fade-up">
+        <div class="exhibitor-header" data-aos="fade-up">
+            <h2>Exhibitors</h2>
+            <p>Showcase your brand, gain international visibility, network with industry leaders and potential customers and make your mark on the coffee community.</p>
+        </div>
+
+        <!-- <div class="exhibitorinfo-container" data-aos="fade-up">
+            <div class="exhibitor-image">
+                <img src="https://images.pexels.com/photos/16370894/pexels-photo-16370894/free-photo-of-woman-holding-bag-of-brand-coffee.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="exhibition">
+            </div>
+
+            <div class="exhibitor-info">
+                <div class="exhibition-space">
+                    <h2>Your Exhibition Space Includes:</h2>
+                    <ul>
+                        <li>1 table and 2 chairs</li>
+                        <li>Inclusion in event website</li>
+                        <li>Free use of common area (on request - NB: first come first serve basis)</li>
+                        <li>List of registered expo attendants</li>
+                        <li>Electricity supply to stand (on request)</li>
+                        <li>Lunch for four both days</li>
+                    </ul>
+                </div>
+
+                <div class="exhibition-nb">
+                    <h2>NB:</h2>
+                    <p>Bookings to be confirmed with a 50% deposit</p>
+                    <p>The final payment should be made three weeks to the event</p>
+                    <p>Stand set up on Friday November 16th from 8:00am</p>
+                    <p>Demolition of stands to begin after 7:00pm on Saturday November 18th</p>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="exhibitor-fplan" data-aos="fade-up">
+            <div class="fplan">
+                <img src="https://nicedirect.com/assets/img/DeKUT%20floor%20plan%20-%20final.png" alt="NICE floor plan">
+            </div>
+
+            <div class="fplan-details">
+                <table class="rates-table" cellspacing="px" cellpadding="px" data-aos="fade-up">
+                    <tr><th style="text-align: left;" valign="top">Stand</th><th valign="top">Normal rates</th><th valign="top">Early payment</th><th valign="top">Tent size</th></tr>
+                    <tr><td style="text-align: left;">A1 - A10</td><td>Sh250,000</td><td>Sh220,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td style="text-align: left;">B1 - B10</td><td>Sh170,000</td><td>Sh150,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td style="text-align: left;">C1 - C12</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td style="text-align: left;">D1 - D12</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td style="text-align: left;">E1 - E8</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td style="text-align: left;">F1 - F8</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td style="text-align: left;">G1 - G16</td><td>Sh12,500</td><td>Sh10,000</td><td>10ft x 10ft</td></tr>
+                </table>	
+
+                <div class="exhibitor-info">
+                    <div class="exhibition-space" data-aos="fade-up">
+                        <h2>Your Exhibition Space Includes:</h2>
+                        <ul>
+                            <li>1 table and 2 chairs</li>
+                            <li>Inclusion in event website</li>
+                            <li>Free use of common area (on request - NB: first come first serve basis)</li>
+                            <li>List of registered expo attendants</li>
+                            <li>Electricity supply to stand (on request)</li>
+                            <li>Lunch for four both days</li>
+                        </ul>
+                    </div>
+    
+                    <div class="exhibition-nb" data-aos="fade-up">
+                        <h2>NB:</h2>
+                        <p>Bookings to be confirmed with a 50% deposit</p>
+                        <p>The final payment should be made three weeks to the event</p>
+                        <p>Stand set up on Friday November 16th from 8:00am</p>
+                        <p>Demolition of stands to begin after 7:00pm on Saturday November 18th</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exhibition-btn" data-aos="fade-up">
+            <a href="">Reserve your space</a>
+        </div>
+    </div>
+
+    <div class="partners-container" data-aos="fade-up">
+        <div class="partners-header">
+            <h2>NICE partners since 2016</h2>
+            <p>Join our growing list of partners</p>
+        </div>
+
+        <div class="partners-info">
+            <div class="partners-list">
+                <div class="partner-image" *ngFor="let item of partnerData">
+                    <img src="{{item.source}}" alt="company logo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="register-cta" data-aos="fade-up">
+        <div class="register-content">
+            <p>Join us at the ultimate coffee experience</p>
+            <a href="">REGISTER NOW</a>
+        </div>
+
+        <div class="register-image">
+            <img src="https://images.pexels.com/photos/17312403/pexels-photo-17312403/free-photo-of-coffee-in-glass-cup-and-package-in-nature.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        </div>
+    </div>
+
+    <div class="gallery-container" data-aos="fade-up">
+        <div class="gallery-header">
+            <h2>Gallery</h2>
+        </div>
+
+        <div class="gallery-info">
+            <div class="gallery-list">
+                <a href="../../../assets/img/expo/expo1.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo1.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo2.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo2.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo3.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo3.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo4.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo4.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo5.png" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo5.png" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo6.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo6.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo7.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo7.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo8.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo8.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo9.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo9.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo10.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo10.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo11.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo11.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo12.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo12.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo13.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo13.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo14.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo14.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo15.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo15.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo16.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo16.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo17.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo17.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo18.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo18.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo19.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo19.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo20.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo20.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo21.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo21.jpg" alt="image" />
+                </a>
+
+                <a href="../../../assets/img/expo/expo22.jpg" class="glightbox" data-gallery="gallery1">
+                    <img src="../../../assets/img/expo/expo22.jpg" alt="image" />
+                </a>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-container" data-aos="fade-up">
+        <div class="contact-header">
+            <div class="contact-h2" data-aos="fade-up">
+                <h2>We would love <br> to hear from you</h2>
+            </div>
+            <div class="contact-list" data-aos="fade-up">
+                <a href="tel:+254 724 553437"><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;+254 724 553437</a>
+                <a href="mailto:nicecoffeeexpo@gmail.com"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;nicecoffeeexpo@gmail.com</a>
+                <a href="https://www.google.com/maps/place/Dedan+Kimathi+Stadium/@-0.4273891,36.953704,17z/data=!3m1!4b1!4m6!3m5!1s0x182860a813a5099b:0x2da21c25e84dab0!8m2!3d-0.4273945!4d36.9562789!16s%2Fg%2F1tfz7kjh?entry=ttu"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Dedan Kimathi Kamukunji Stadium, Temple road, Nyeri</a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <div class="event-map" data-aos="fade-up">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7073203885!2d36.95370397412775!3d-0.42738913528875344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182860a813a5099b%3A0x2da21c25e84dab0!2sDedan%20Kimathi%20Stadium!5e0!3m2!1sen!2ske!4v1698326163639!5m2!1sen!2ske"
+                 
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="event location map">
+                </iframe>
+            </div>
+
+            <form class="form" id="form" action="https://formspree.io/f/mlekkwqp" method="POST" data-aos="fade-up">
+                <!-- HONEYPOT(to catch spammers ) -->
+                <input type="text" name="_honey" style="display: none">
+    
+                <div class="form-control name">
+                    <label for="name" class="block">Full Name</label>
+                    <input type="text" placeholder="John Doe" id="name" name="name" autocomplete="name" required>
+                </div>
+    
+                <div class="form-control email">
+                    <label for="email" class="block">Email</label>
+                    <input type="email" placeholder="johndoe@gmail.com" id="email" name="email" autocomplete="email" required>
+                </div>
+    
+                <div class="form-control message">
+                    <label for="message" class="block">Message / Question</label>
+                    <textarea placeholder="Write your Message Here" id="message" name="message&nbsp;comments" required></textarea>
+                </div>
+    
+                <div class="form-control form-btn form-submit">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+<app-footer></app-footer>
+
+

@@ -33,6 +33,15 @@ export class ProductsComponent implements OnInit {
   isShowDiv = false;
   isShowDiv2 = false;
 
+
+  // modal
+  isModalOpen = false;
+  toggleModal(): void {
+    this.isModalOpen = !this.isModalOpen;
+    this.num = 1;
+    this.num2 = 1;
+  }
+
   // product form tabs
   tabs: string [] = ['Roasted', 'Green'];
   activatedTabIndex: number = 0;
