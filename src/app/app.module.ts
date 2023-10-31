@@ -4,6 +4,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -36,6 +37,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { TabsComponent } from './tabs/tabs.component';
 import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 import { AboutComponent } from './informationPages/about/about.component';
+import { PasswordToggleDirective } from './sign-up/password-toggle.directive';
+import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.component';
 
 
 
@@ -56,7 +59,9 @@ import { AboutComponent } from './informationPages/about/about.component';
     ProductDetailsComponent,
     TabsComponent,
     NotfoundComponent,
-    AboutComponent
+    AboutComponent,
+    PasswordToggleDirective,
+    FarmerSignUpComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -69,6 +74,7 @@ import { AboutComponent } from './informationPages/about/about.component';
     MatButtonModule,
     MatSnackBarModule,
     MatTableModule,
+    MatSelectModule,
     FormsModule,
     WarehousedashboardModule,
     FarmersDashBoardModule,
