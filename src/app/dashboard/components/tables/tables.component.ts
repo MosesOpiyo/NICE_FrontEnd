@@ -15,6 +15,8 @@ import { WarehouseService } from 'src/app/Service/Warehouse/warehouse.service';
 export class TablesComponent implements OnInit {
   constructor(private products:ProductsService,private warehouse:WarehouseService,private service:AuthenticationService,private admin:AdminService,private dialog:MatDialog){}
   displayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity','shipping'];
+  farmerDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity'];
+  warehouserDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity'];
   adminDisplayedColumns: string[] = ['email','username','type','date_joined','last_login','terminate'];
   farmerProducts:any
   users:any
@@ -28,6 +30,7 @@ export class TablesComponent implements OnInit {
       if(this.user.type=='FARMER'){
         this.products.getFarmerProducts().subscribe((res:any)=>{
           this.farmerProducts = res
+          console.log(this.farmerProducts)
         })
       }
       else if(this.user.type=='ORIGINWAREHOUSER'){

@@ -60,12 +60,19 @@ export class CartComponent implements OnInit {
      width: '25pc'
    }); 
  }
+ subTotal(items:any){
+  const list :number[] = []
+   items.forEach((item:any)=>{
+    list.push(item.price)
+   });
+   const sum = list.reduce((acc, item) => acc + item, 0);
+   return sum
+ }
 
  ngOnInit(): void {
    if(sessionStorage.getItem('Token')){
     this.cart.getCart().subscribe((res:any)=>{
       this.userCart = res['products']
-      console.log(res)
     })
      this.service.getProfile().subscribe((res:any)=>{
        this.user = res['user']

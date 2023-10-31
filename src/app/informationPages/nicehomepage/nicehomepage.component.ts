@@ -5,6 +5,7 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
 import { Router } from '@angular/router';
+import { FarmerSignUpComponent } from 'src/app/sign-up/farmer-sign-up/farmer-sign-up.component';
 
 
 @Component({
@@ -240,6 +241,11 @@ export class NicehomepageComponent implements OnInit {
 
   showSignUpDialog(){
     const dialogRef = this.dialog.open(SignUpComponent,{
+      width: '25pc'
+    }); 
+  }
+  showFarmerSignUpDialog(){
+    const dialogRef = this.dialog.open(FarmerSignUpComponent,{
       width: '25pc'
     }); 
   }

@@ -12,15 +12,42 @@
   /* .cart-container {
     border: 2px solid blue;
   } */
-
+.row g-0{
+  margin: 15px;
+}
   .cart-table {
     padding: .5rem;
     position: relative;
     top: 75px;
     margin-bottom: 100px;
-    border: 2px solid red;
-    width: 1000px;
+    width: 900px;
     margin-inline: auto;
+  }
+  .summary-container{
+    top: 75px;
+    left: 12pc;
+    position: relative;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+  }
+  .summary-container h4 {
+    font-size: medium;
+    padding: .5rem;
+    margin-top: 10px;
+  }
+  .summary-container span {
+    float: right;
+    font-size: large;
+    font-weight: bold;
+  }
+  .completion{
+    padding: 10px;
+    width: 100%;
+  }
+  .completion button{
+    width: 100%;
+    background-color: #000000;
   }
   .card{
     padding: 10px;

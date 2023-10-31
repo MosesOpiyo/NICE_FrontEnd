@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ManifestsComponent {
   constructor(private shipping:ShippingService,private service:AuthenticationService,private snackbar:MatSnackBar){}
-  displayedColumns: string[] = ['number','warehouser','quantity','created_date','approval'];
+  displayedColumns: string[] = ['number','warehouser','quantity','created_date'];
   manifests:any
   user:any
 
