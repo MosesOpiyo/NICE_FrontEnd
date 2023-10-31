@@ -49,9 +49,12 @@
                 </li>
                 
             </ul>
-            <ul class="cart-icon">
+            <ul *ngIf="user" class="cart-icon">
             <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" [attr.value]="userCart"></i></a></li>
             </ul>
+            <ul *ngIf="!user" class="cart-icon">
+                <li class="cart"><a routerLink="/Cart"><i class="fas fa-shopping-bag"></i></a></li>
+                </ul>
 
             <span *ngIf="!isMenuOpen" class="burger" (click)="toggleMenu()">
                 <i class="fa-solid fa-bars"></i>
