@@ -120,7 +120,7 @@
                           </div>
 
                             <div class="submit-btn">
-                              <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                              <button (click)="addToCart(item.id)" type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
                             </div>
 
                       </form>
@@ -358,39 +358,38 @@
 
             <div class="average-reviews">
               <h4>Average Customer reviews</h4>
-              <p *ngIf="total == 5">
+              <p *ngIf="averageRating(item) == 5">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </p>
-              <p *ngIf="total == 4">
+              <p *ngIf="averageRating(item) == 4">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </p>
-              <p *ngIf="total == 3">
+              <p *ngIf="averageRating(item) == 3">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </p>
-              <p *ngIf="total == 2">
+              <p *ngIf="averageRating(item) == 2">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </p>
-              <p *ngIf="total == 1">
+              <p *ngIf="averageRating(item) == 1">
                 <i class="fa-solid fa-star"></i>
               </p>
-              <p *ngIf="total == 0">
+              <p *ngIf="averageRating(item) == 0">
                 
               </p>
 
                 <span>
-                  <p>{{total}} out of 5</p>
+                  <p>{{averageRating(item)}} out of 5</p>
                 </span>
-              
 
             </div>
 

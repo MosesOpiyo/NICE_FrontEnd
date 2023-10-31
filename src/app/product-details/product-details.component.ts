@@ -9,6 +9,7 @@ import { ProductsService } from '../ProductsService/products.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from '../Service/Cart/cart.service';
 
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -74,10 +75,12 @@ export class ProductDetailsComponent implements OnInit {
  }
  addToCart(id:number){
    this.cart.addToCart(id).subscribe((res:any)=>{
+    this.ngOnInit()
     this.snackBar.open(res, 'Close', {
       duration: 3000,
       panelClass: ['blue-snackbar']
     });
+    
    })
  }
 
