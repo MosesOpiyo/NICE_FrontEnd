@@ -1,8 +1,8 @@
  /* DASHBOARD COMPONENT CSS */
   /********** Template CSS **********/
-  .dashboard-container .content > * {
+  /* .dashboard-container .content > * {
     border: 3px solid blue;
-  }
+  } */
   
   .dashboard-container:root {
     --primary: #009CFF;
@@ -83,7 +83,7 @@
   
   /*** Layout ***/
   .dashboard-container .sidebar {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     position: fixed;
     top: 0;
     left: 0;
@@ -98,7 +98,7 @@
   
   .dashboard-container .content {
     margin-left: 250px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     min-height: 100vh;
     background: #FFFFFF;
     transition: 0.5s;
