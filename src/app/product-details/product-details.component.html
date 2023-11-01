@@ -95,7 +95,7 @@
 
                             <div class="incrdecr">
                               <div (click)=decrement() class="decrement">-</div>
-                              <span id="counting">{{num}}</span>
+                              <input type="number" name="roasted-quantity" id="roasted-counting" [(ngModel)]="num" (change)="value($event)" title="input-count">
                               <div (click)=increment() class="increment">+</div>
                             </div>
 
@@ -156,7 +156,7 @@
 
                           <div class="incrdecr">
                             <div (click)=decrement2() class="decrement">-</div>
-                            <span id="counting2">{{num2}}</span>
+                            <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="num2" (change)="value2($event)" title="input-count">
                             <div (click)=increment2() class="increment">+</div>
                           </div>
 

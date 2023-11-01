@@ -5,136 +5,114 @@
     <div class="products">
       <div class="sidebar">
         <div>
-          <div class="widget-title"><h2>Coffee Variety</h2></div>
-          <input type="hidden" id="previous_select">
-          <ul>
+          <div class="widget-title" (click)=toggleVarietyOn() >
+            <h2>Coffee Variety&nbsp;
+              <i *ngIf="!isShowVariety" class="fa-solid fa-chevron-down"></i>
+              <i *ngIf="isShowVariety" class="fa-solid fa-chevron-up"></i>
+            </h2>
+          </div>
+          <!-- <input type="hidden" id="previous_select"> -->
+          <ul *ngIf="isShowVariety">
             <li class="customRadio">
-              <input type="checkbox" value="Variety1" id="Variety1"  />
+              <input type="radio" value="Variety1" id="Variety1" name="variety"  />
               <label for="Variety1"><span><span></span></span>Variety 1</label>
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="Variety2" id="Variety2"  />
+              <input type="radio" value="Variety2" id="Variety2" name="variety"  />
               <label for="Variety2"><span><span></span></span>Variety 2</label>
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="Variety2" id="Variety3"  />
+              <input type="radio" value="Variety2" id="Variety3" name="variety"  />
               <label for="Variety3"><span><span></span></span>Variety 3</label>
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="Variety2" id="Variety2"  />
-              <label for="Variety2"><span><span></span></span>Variety 4</label>
+              <input type="radio" value="Variety2" id="Variety4" name="variety"  />
+              <label for="Variety4"><span><span></span></span>Variety 4</label>
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="Variety2" id="Variety2"  />
-              <label for="Variety2"><span><span></span></span>Variety 5</label>
+              <input type="radio" value="Variety2" id="Variety5" name="variety"  />
+              <label for="Variety5"><span><span></span></span>Variety 5</label>
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="Variety2" id="Variety2"  />
-              <label for="Variety2"><span><span></span></span>Variety 6</label>
+              <input type="radio" value="Variety2" id="Variety6" name="variety"  />
+              <label for="Variety6"><span><span></span></span>Variety 6</label>
             </li>
           </ul>
         </div>
 
         <div>
-          <div class="widget-title"><h2>Coffee Farms</h2></div>
-          <input type="hidden" id="previous_select">
-          <ul>
+          <div class="widget-title" (click)=toggleFarmsOn()>
+            <h2>Coffee Farms&nbsp;
+              <i *ngIf="!isShowFarms" class="fa-solid fa-chevron-down"></i>
+              <i *ngIf="isShowFarms" class="fa-solid fa-chevron-up"></i>
+            </h2>
+          </div>
+          <!-- <input type="hidden" id="previous_select"> -->
+          <ul *ngIf="isShowFarms">
             <li class="customRadio">
-              <input type="checkbox" value="farm1" id="farm1"  />
+              <input type="radio" value="farm1" id="farm1"  name="farm" />
               <label for="farm1"><span><span></span></span>Farm 1</label>
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="farm2" id="farm2"  />
+              <input type="radio" value="farm2" id="farm2" name="farm" />
               <label for="farm2"><span><span></span></span>Farm 2</label>
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="farm2" id="farm2"  />
-              <label for="farm2"><span><span></span></span>Farm 3</label>
+              <input type="radio" value="farm2" id="farm3" name="farm" />
+              <label for="farm3"><span><span></span></span>Farm 3</label>
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="farm2" id="farm2"  />
-              <label for="farm2"><span><span></span></span>Farm 4</label>
+              <input type="radio" value="farm2" id="farm4" name="farm"  />
+              <label for="farm4"><span><span></span></span>Farm 4</label>
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="farm2" id="farm2"  />
-              <label for="farm2"><span><span></span></span>Farm 5</label>
+              <input type="radio" value="farm2" id="farm5" name="farm" />
+              <label for="farm5"><span><span></span></span>Farm 5</label>
             </li>
 
             <li class="customRadio">
-              <input type="checkbox" value="farm2" id="farm2"  />
-              <label for="farm2"><span><span></span></span>Farm 6</label>
+              <input type="radio" value="farm2" id="farm6" name="farm"  />
+              <label for="farm6"><span><span></span></span>Farm 6</label>
             </li>
           </ul>
         </div>
 
         <div>
-          <div class="widget-title"><h2>Price</h2></div>
-          <input type="hidden" id="previous_select">
-          <ul>
+          <div class="widget-title"(click)=togglePriceOn()>
+            <h2>Price&nbsp;
+              <i *ngIf="!isShowPrice" class="fa-solid fa-chevron-down"></i>
+              <i *ngIf="isShowPrice" class="fa-solid fa-chevron-up"></i>
+            </h2>
+          </div>
+          <!-- <input type="hidden" id="previous_select"> -->
+          <ul *ngIf="isShowPrice">
+            <li class="customRadio">
+              <input type="radio" value="farm1" id="price1" name="price"/>
+              <label for="price1"><span><span></span></span>All</label>
+            </li>
+
           <li class="customRadio">
-            <input type="checkbox" value="farm1" id="farm1"  />
-            <label for="farm1"><span><span></span></span>Price 1 - Price 2</label>
+            <input type="radio" value="farm1" id="price2" name="price" />
+            <label for="price2" ><span><span></span></span> $1 - $50</label>
           </li>
 
           <li class="customRadio">
-            <input type="checkbox" value="farm2" id="farm2"  />
-            <label for="farm2"><span><span></span></span>Price 3 - Price 4</label>
+            <input type="radio" value="farm2" id="price3" name="price" />
+            <label for="price3"><span><span></span></span> $51 - $100</label>
           </li>
 
           <li class="customRadio">
-            <input type="checkbox" value="farm2" id="farm2"  />
-            <label for="farm2"><span><span></span></span>Price 5 - Price 6</label>
-          </li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="widget-title"><h2>Price</h2></div>
-          <input type="hidden" id="previous_select">
-          <ul>
-          <li class="customRadio">
-            <input type="checkbox" value="farm1" id="farm1"  />
-            <label for="farm1"><span><span></span></span>Price 1 - Price 2</label>
-          </li>
-
-          <li class="customRadio">
-            <input type="checkbox" value="farm2" id="farm2"  />
-            <label for="farm2"><span><span></span></span>Price 3 - Price 4</label>
-          </li>
-
-          <li class="customRadio">
-            <input type="checkbox" value="farm2" id="farm2"  />
-            <label for="farm2"><span><span></span></span>Price 5 - Price 6</label>
-          </li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="widget-title"><h2>Price</h2></div>
-          <input type="hidden" id="previous_select">
-          <ul>
-          <li class="customRadio">
-            <input type="checkbox" value="farm1" id="farm1"  />
-            <label for="farm1"><span><span></span></span>Price 1 - Price 2</label>
-          </li>
-
-          <li class="customRadio">
-            <input type="checkbox" value="farm2" id="farm2"  />
-            <label for="farm2"><span><span></span></span>Price 3 - Price 4</label>
-          </li>
-
-          <li class="customRadio">
-            <input type="checkbox" value="farm2" id="farm2"  />
-            <label for="farm2"><span><span></span></span>Price 5 - Price 6</label>
+            <input type="radio" value="farm2" id="price4" name="price" />
+            <label for="price4"><span><span></span></span>Price 5 - Price 6</label>
           </li>
           </ul>
         </div>
@@ -173,7 +151,7 @@
 
               <div class="product-details">
                   <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
+                  <p>${{item.newPrice}} / 12oz</p>
               </div>
 
             </a>
@@ -272,7 +250,7 @@
       
                       <div class="incrdecr">
                           <div (click)=decrement() class="decrement">-</div>
-                          <span id="counting">{{num}}</span>
+                          <input type="number" name="roasted-quantity" id="roasted-counting" [(ngModel)]="num" (change)="check($event)" title="input-count">
                           <div (click)=increment() class="increment">+</div>
                       </div>
       
@@ -333,7 +311,7 @@
       
                       <div class="incrdecr">
                           <div (click)=decrement2() class="decrement">-</div>
-                          <span id="counting2">{{num2}}</span>
+                          <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="num2" (change)="check2($event)" title="input-count">
                           <div (click)=increment2() class="increment">+</div>
                       </div>
       

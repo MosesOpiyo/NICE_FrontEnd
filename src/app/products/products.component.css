@@ -14,16 +14,6 @@
   background-color: rgb(216, 216, 216);
 }
 
-:host ::ng-deep #header .navbar .cart-icon {
-  display: none;
-}
-
-@media (max-width: 991px) {
-  :host ::ng-deep #header .mobile-icons .mobile-cart {
-    display: none;
-  }
-}
-
 :host ::ng-deep #header.header-scrolled .navbar .active {
   background-color: transparent;
   color: #000000;
@@ -35,14 +25,6 @@
 }
 
 @media (max-width: 600px) {
-  :host ::ng-deep #header .mobile-icons .mobile-cart {
-    display: contents;
-  }
-
-  :host ::ng-deep .products-navbar .cart-link {
-    display: none;
-  }
-
   :host ::ng-deep .products-navbar .navbar-input {
     width: 70%;
   }
@@ -51,5 +33,31 @@
 @media (max-width: 375px) {
   :host ::ng-deep .products-navbar .navbar-input {
     width: 100%;
+  }
+}
+
+.modal-content input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.modal-content input[type=number]::-webkit-inner-spin-button,
+.modal-content input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.modal-content .incrdecr input[type="number"] {
+  align-self: stretch;
+  max-width: 100px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid #0000004a;
+}
+
+@media (max-width: 375px) {
+  .modal-content .incrdecr {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }

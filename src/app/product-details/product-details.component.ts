@@ -19,6 +19,16 @@ export class ProductDetailsComponent implements OnInit {
   isShowDiv = false;
   isShowDiv2 = false;
 
+  //roasted
+  value(value: any) {
+    this.num = value.target.value;
+  }
+
+  //green
+  value2(value: any) {
+    this.num2 = value.target.value;
+  }
+
   // product form tabs
   tabs: string [] = ['Roasted', 'Green'];
   activatedTabIndex: number = 0;
@@ -109,37 +119,31 @@ export class ProductDetailsComponent implements OnInit {
 
   // increment button for roasted section
   increment(){
-    this.num += 1;
-    console.log(this.num);
-    }
+    this.num++;
+  }
     
   //decrements item for roasted section
   decrement(){
     if(this.num-1 < 1){
       this.num = 1;
-      console.log('item_1->' + this.num)
     }
     else{
       this.num -= 1;
-      console.log('item_2->' + this.num);
     }
   }
 
   // increment button for green section
   increment2(){
-    this.num2 += 1;
-    console.log(this.num2);
+    this.num2++;
     }
     
   //decrements item for green section
   decrement2(){
     if(this.num2-1 < 1){
       this.num2 = 1;
-      console.log('item_1->' + this.num2)
     }
     else{
       this.num2 -= 1;
-      console.log('item_2->' + this.num2);
     }
   }
 

@@ -22,6 +22,24 @@ export class ProductsComponent implements OnInit {
   isShowDiv = false;
   isShowDiv2 = false;
 
+  //Variety sidenav
+  isShowVariety = true;
+   toggleVarietyOn() {
+    this.isShowVariety = !this.isShowVariety;
+   }
+
+  //Farms sidenav
+  isShowFarms = false;
+  toggleFarmsOn() {
+   this.isShowFarms = !this.isShowFarms;
+  }
+
+  //Price sidenav
+  isShowPrice = false;
+  togglePriceOn() {
+   this.isShowPrice = !this.isShowPrice;
+  }
+
 
   // modal
   isModalOpen = false;
@@ -29,6 +47,16 @@ export class ProductsComponent implements OnInit {
     this.isModalOpen = !this.isModalOpen;
     this.num = 1;
     this.num2 = 1;
+  }
+
+  //roasted
+  check(value: any) {
+    this.num = value.target.value;
+  }
+
+  //green
+  check2(value: any) {
+    this.num = value.target.value;
   }
 
   // product form tabs
@@ -484,37 +512,31 @@ export class ProductsComponent implements OnInit {
 
   // increment button for roasted section
   increment(){
-    this.num += 1;
-    console.log(this.num);
+    this.num++;
     }
     
   //decrements item for roasted section
   decrement(){
     if(this.num-1 < 1){
       this.num = 1;
-      console.log('item_1->' + this.num)
     }
     else{
       this.num -= 1;
-      console.log('item_2->' + this.num);
     }
   }
 
   // increment button for green section
   increment2(){
-    this.num2 += 1;
-    console.log(this.num2);
+    this.num2++;
     }
     
   //decrements item for green section
   decrement2(){
     if(this.num2-1 < 1){
       this.num2 = 1;
-      console.log('item_1->' + this.num2)
     }
     else{
       this.num2 -= 1;
-      console.log('item_2->' + this.num2);
     }
   }
 }

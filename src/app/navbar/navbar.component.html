@@ -10,11 +10,16 @@
         <div class="mobile-icons">
             <ul>
                 <li class="mobile-cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" value=0></i></a></li>
-                <li>
+                <li *ngIf="!user">
                     <button (click)="showLoginDialog()" type="button" class="mobilelogin-btn" title="login">
                         <i class="fa-solid fa-circle-user"></i>
                     </button>
                 </li>
+                <li *ngIf="user" class="dropdown user-case"><a href="#"><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
+                    <ul>
+                      <li><a href="" (click)="logout()">Log out</a></li><br>
+                    </ul>
+                  </li>
             </ul>
         </div>
 
@@ -38,7 +43,7 @@
                         <li><a href="#">Register for Origin Trip</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a routerLink="/about"><span>About Us</span><i class="fa-solid fa-chevron-down"></i></a>
+                <li class="dropdown"><a routerLink="/about" class="about-link"><span>About Us</span><i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
                         <li><a routerLink="/about">About Us</a></li>
                         <li><a href="#">Partners</a></li>
@@ -117,7 +122,7 @@
               <li>
                 <div class="navbar">
                   <ul>
-                    <li class="dropdown"><a href="#"><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
+                    <li class="dropdown user-case"><a href="#"><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
                       <ul>
                         <li><a href="" (click)="logout()">Log out</a></li><br>
                       </ul>

@@ -12,5 +12,36 @@
   flex-direction: column;
 } */
 
- 
+.product-component input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.product-component input[type=number]::-webkit-inner-spin-button,
+.product-component input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.product-component .incrdecr input[type="number"] {
+  align-self: stretch;
+  max-width: 100px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid #0000004a;
+}
+
+
+@media (max-width: 375px) {
+  .product-container .incrdecr {
+    flex-direction: column;
+    gap: 0.5rem;
+
+  }
+
+  .product-component .incrdecr input[type="number"] {
+    max-width: 100px;
+    font-size: 1.2rem;
+  }
+}
   
