@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MaindashboardComponent } from './components/maindashboard/maindashboard.component';
@@ -55,7 +56,8 @@ import { ProcessedProductsComponent } from './components/processed-products/proc
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    NgxMatSelectSearchModule
+    NgxMatSelectSearchModule,
+    MatAutocompleteModule
   ]
 })
 export class DashboardModule { }

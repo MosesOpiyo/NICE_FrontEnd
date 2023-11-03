@@ -5,15 +5,15 @@
       <div class="swiper-wrapper">
           <div class="swiper-slide one">
               <div class="slide-header">
-                  <div class="mobile-btn" data-aos="fade-up">
+                  <div class="mobile-btn">
                       <a class="mobilehero-btn" routerLink="/Products" role="button">SHOP NOW&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
                   </div>
 
-                  <div class="image" data-aos="fade-left">
+                  <div class="image">
                       <img src="../../../assets/img/hero/hero1.jpg" alt="farm">
                   </div>
 
-                  <div class="hero-content" data-aos="fade-up">
+                  <div class="hero-content">
                       <h1>Why settle for secondhand when you can have it direct from farm?</h1>
                       <p class="hero-par2">100% Direct | 100% Transparent | 100% Pure Coffee</p>
                       <div class="hero-button">
@@ -518,7 +518,7 @@
     
                     <div class="incrdecr">
                         <div (click)=decrement() class="decrement">-</div>
-                        <span id="counting">{{num}}</span>
+                        <input type="number" name="quantity" id="counting" [(ngModel)]="number_value" (change)="check($event)" title="input-count">
                         <div (click)=increment() class="increment">+</div>
                     </div>
     
@@ -576,7 +576,7 @@
     
                     <div class="incrdecr">
                         <div (click)=decrement2() class="decrement">-</div>
-                        <span id="counting2">{{num2}}</span>
+                        <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="number_value2" (change)="check2($event)" title="input-count">
                         <div (click)=increment2() class="increment">+</div>
                     </div>
     
@@ -841,7 +841,11 @@
                   <div id="cta-content1">
                       <h4><span class="white">Do you</span> own a <span class="white-responsive2">coffee </span><span class="white-responsive">farm?</span></h4>
                       <p>Become a seller and make your coffee available on the world's #1 coffee marketplace.</p>
-                      <div class="cta-btn"><a href="">SELL NOW&nbsp; <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+<<<<<<< HEAD
+                      <div class="cta-btn"><a (click)="showFarmerSignUpDialog()">SELL NOW&nbsp; <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+=======
+                      <div class="cta-btn"><button type="button">SELL NOW&nbsp; <i class="fa-solid fa-arrow-up-right-from-square"></i></button></div>
+>>>>>>> cc4e6c8a2fe5f20fbffba76ef50e7a6447cd0520
                   </div>
                   
               </div>

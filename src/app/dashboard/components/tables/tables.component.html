@@ -12,7 +12,7 @@
                         <button *ngIf="user.type=='ORIGINWAREHOUSER'" (click)="showProductDialog()" class="btn btn-dark">Add Product</button>
                     </div>
                 </div>
-                <div *ngIf="user.type=='FARMER' || user.type=='ORIGINWAREHOUSER'" class="table-responsive">
+                <div *ngIf="user.type=='ORIGINWAREHOUSER'" class="table-responsive">
                     <table mat-table [dataSource]="farmerProducts" class="mat-elevation-z8 demo-table table-light">
                         <ng-container matColumnDef="name">
                           <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -57,7 +57,49 @@
                           ></tr>
                       </table>
                 </div>
-                <div *ngIf="user.type=='WAREHOUSER'" class="table-responsive">
+                <div *ngIf=" user.type=='FARMER'" class="table-responsive">
+                  <table mat-table [dataSource]="farmerProducts" class="mat-elevation-z8 demo-table table-light">
+                      <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.name | uppercase}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="grade">
+                        <th mat-header-cell *matHeaderCellDef> Grade </th>
+                        <td mat-cell *matCellDef="let element"> {{element.grade | uppercase}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="lot_type">
+                        <th mat-header-cell *matHeaderCellDef> Lot Type </th>
+                        <td mat-cell *matCellDef="let element"> {{element.lot_type | titlecase}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="cup_score">
+                        <th mat-header-cell *matHeaderCellDef> Cup Score </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cup_score}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="caffeine">
+                          <th mat-header-cell *matHeaderCellDef> Caffeine </th>
+                          <td mat-cell *matCellDef="let element"> {{element.caffeine | titlecase}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="acidity">
+                          <th mat-header-cell *matHeaderCellDef> Acidity </th>
+                          <td mat-cell *matCellDef="let element"> {{element.acidity | titlecase}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="level">
+                          <th mat-header-cell *matHeaderCellDef> Level </th>
+                          <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="quantity">
+                        <th mat-header-cell *matHeaderCellDef> Quantity </th>
+                        <td mat-cell *matCellDef="let element"> {{element.quantity | number}} </td>
+                    </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="farmerDisplayedColumns"></tr>
+                        <tr
+                            mat-row
+                            *matRowDef="let row; columns: farmerDisplayedColumns;"
+                        ></tr>
+                  </table>
+              </div>
+                <div *ngIf=" user.type=='WAREHOUSER'" class="table-responsive">
                     <table mat-table [dataSource]="inventoryProducts" class="mat-elevation-z8 demo-table table-light">
                         <ng-container matColumnDef="name">
                           <th mat-header-cell *matHeaderCellDef> Name </th>

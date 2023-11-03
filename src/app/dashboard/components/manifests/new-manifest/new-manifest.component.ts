@@ -1,9 +1,11 @@
 import { Component,OnInit,Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AsyncPipe } from '@angular/common';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ReplaySubject, Subject } from 'rxjs';
 import { WarehouseService } from 'src/app/Service/Warehouse/warehouse.service';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @Component({
   selector: 'app-new-manifest',
@@ -17,6 +19,7 @@ export class NewManifestComponent implements OnInit {
   warehouser:any
   quantity:any
   product:any
+  isLinear = true;
   firstFormGroup!: FormGroup;
   constructor(private warehouse:WarehouseService,public form:FormBuilder,public dialogRef: MatDialogRef<NewManifestComponent>,@Inject(MAT_DIALOG_DATA) public data: any){}
 
@@ -29,6 +32,16 @@ export class NewManifestComponent implements OnInit {
       this.warehousers = res
     })
   }
+
+  onKey(value:any) { 
+    
+    this.warehousers = this.search(value);
+    }
+  search(value: string) { 
+    let filter = value.toLowerCase();
+    return this.warehousers.filter((option: any) => option.toLowerCase().startsWith(filter));
+  }
+
   postManifest(){
     let form = new FormGroup({
       warehouser:new FormControl(this.firstFormGroup.controls['warehouser'].value),
