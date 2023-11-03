@@ -2560,6 +2560,7 @@ opacity: .2;
         position: relative;
         overflow: hidden;
         height: auto;
+        gap: .2rem;
       }
   
       .shop-component .products .productlist {
@@ -2573,11 +2574,13 @@ opacity: .2;
       }
 
       .shop-component .sidebar h2 {
-        justify-content: flex-start;
+        justify-content: space-between;
+        font-size: .9rem;
       }
   
       .shop-component .products .sidebar > * {
         margin-bottom: 0rem;
+        border: 2px solid #0000001c;
       }
   
       .shop-component .sidebar > * {
@@ -2588,6 +2591,23 @@ opacity: .2;
     @media (max-width: 600px) {
       .shop-component .productlist-content {
         grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 425px) {
+      .shop-component .products .sidebar {
+        flex-direction: column;
+        margin-inline: auto;
+        width: max-content;
+        gap: .5rem;
+      }
+
+      .shop-component .sidebar .widget-title {
+        width: 150px;
+      }
+
+      .shop-component .sidebar h2 {
+        justify-content: space-between;
       }
     }
   
