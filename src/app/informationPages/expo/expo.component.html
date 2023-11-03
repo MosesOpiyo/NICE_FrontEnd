@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 
 <section class="expo-container">
+    <!-- VIDEO HERO -->
     <div class="video-container">
         <video src="../../../assets/Video/expo2.mp4" autoplay loop playsinline muted [disablePictureInPicture]="true" preload="auto"></video>
 
@@ -41,11 +42,11 @@
         </div>
     </div>
 
+    <!-- EXPO-DETAILS SECTION -->
     <div class="expo-details" data-aos="fade-up">
         <div class="expo-header" data-aos="fade-up">
             <h2>Kenya's best coffee expo</h2>
             <p>The Nyeri International Coffee Expo (NICE) is an annual coffee show organized since 2016. Its objective is to improve production and processing technologies while at the same time opening up new marketing channels for Kenyan coffee.</p>
-            <!-- <h3>Event Attractions:</h3> -->
         </div>
 
         <div class="expo-info">
@@ -67,7 +68,8 @@
         </div>
     </div>
 
-    <div class="timer" *ngIf="(timeLeft$ | async) as t; else sorry" data-aos="fade-up">
+    <!-- TIMER SECTION -->
+     <div class="timer" *ngIf="(timeLeft$ | async) as t; else sorry" data-aos="fade-up">
         <div class="timer-header">
             <p>Time is ticking <br> Don't Miss Out!</p>
         </div>
@@ -99,7 +101,8 @@
         Sorry, something went wrong...
     </ng-template>
 
-    <div class="sponsor-container" data-aos="fade-up">
+    <!-- SPONSORS SECTION -->
+   <div class="sponsor-container" data-aos="fade-up">
         <div class="sponsor-header">
             <h2>Sponsors</h2>
             <p>Drive your brand's international recognition by sponsoring our international coffee expo and connecting with industry leaders and coffee enthusiasts</p>
@@ -179,41 +182,13 @@
             </div>  
         </div>
         
-    </div>
+    </div> 
 
     <div class="exhibitors-container" data-aos="fade-up">
         <div class="exhibitor-header" data-aos="fade-up">
             <h2>Exhibitors</h2>
             <p>Showcase your brand, gain international visibility, network with industry leaders and potential customers and make your mark on the coffee community.</p>
         </div>
-
-        <!-- <div class="exhibitorinfo-container" data-aos="fade-up">
-            <div class="exhibitor-image">
-                <img src="https://images.pexels.com/photos/16370894/pexels-photo-16370894/free-photo-of-woman-holding-bag-of-brand-coffee.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="exhibition">
-            </div>
-
-            <div class="exhibitor-info">
-                <div class="exhibition-space">
-                    <h2>Your Exhibition Space Includes:</h2>
-                    <ul>
-                        <li>1 table and 2 chairs</li>
-                        <li>Inclusion in event website</li>
-                        <li>Free use of common area (on request - NB: first come first serve basis)</li>
-                        <li>List of registered expo attendants</li>
-                        <li>Electricity supply to stand (on request)</li>
-                        <li>Lunch for four both days</li>
-                    </ul>
-                </div>
-
-                <div class="exhibition-nb">
-                    <h2>NB:</h2>
-                    <p>Bookings to be confirmed with a 50% deposit</p>
-                    <p>The final payment should be made three weeks to the event</p>
-                    <p>Stand set up on Friday November 16th from 8:00am</p>
-                    <p>Demolition of stands to begin after 7:00pm on Saturday November 18th</p>
-                </div>
-            </div>
-        </div> -->
 
         <div class="exhibitor-fplan" data-aos="fade-up">
             <div class="fplan">
@@ -222,14 +197,14 @@
 
             <div class="fplan-details">
                 <table class="rates-table" cellspacing="px" cellpadding="px" data-aos="fade-up">
-                    <tr><th style="text-align: left;" valign="top">Stand</th><th valign="top">Normal rates</th><th valign="top">Early payment</th><th valign="top">Tent size</th></tr>
-                    <tr><td style="text-align: left;">A1 - A10</td><td>Sh250,000</td><td>Sh220,000</td><td>20ft x 20ft</td></tr>
-                    <tr><td style="text-align: left;">B1 - B10</td><td>Sh170,000</td><td>Sh150,000</td><td>20ft x 20ft</td></tr>
-                    <tr><td style="text-align: left;">C1 - C12</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
-                    <tr><td style="text-align: left;">D1 - D12</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
-                    <tr><td style="text-align: left;">E1 - E8</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
-                    <tr><td style="text-align: left;">F1 - F8</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
-                    <tr><td style="text-align: left;">G1 - G16</td><td>Sh12,500</td><td>Sh10,000</td><td>10ft x 10ft</td></tr>
+                    <tr><th valign="top">Stand</th><th valign="top">Normal rates</th><th valign="top">Early payment</th><th valign="top">Tent size</th></tr>
+                    <tr><td>A1 - A10</td><td>Sh250,000</td><td>Sh220,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td>B1 - B10</td><td>Sh170,000</td><td>Sh150,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td>C1 - C12</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td>D1 - D12</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td>E1 - E8</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td>F1 - F8</td><td>Sh120,000</td><td>Sh100,000</td><td>20ft x 20ft</td></tr>
+                    <tr><td>G1 - G16</td><td>Sh12,500</td><td>Sh10,000</td><td>10ft x 10ft</td></tr>
                 </table>	
 
                 <div class="exhibitor-info">
@@ -261,7 +236,8 @@
         </div>
     </div>
 
-    <div class="partners-container" data-aos="fade-up">
+    <!-- PARTNERS SECTION -->
+     <div class="partners-container" data-aos="fade-up">
         <div class="partners-header">
             <h2>NICE partners since 2016</h2>
             <p>Join our growing list of partners</p>
@@ -276,17 +252,15 @@
         </div>
     </div>
 
+    <!-- REGISTER SECTION -->
     <div class="register-cta" data-aos="fade-up">
         <div class="register-content">
             <p>Join us at the ultimate coffee experience</p>
             <a href="">REGISTER NOW</a>
         </div>
-
-        <div class="register-image">
-            <img src="https://images.pexels.com/photos/17312403/pexels-photo-17312403/free-photo-of-coffee-in-glass-cup-and-package-in-nature.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
-        </div>
     </div>
 
+    <!-- GALLERY SECTION -->
     <div class="gallery-container" data-aos="fade-up">
         <div class="gallery-header">
             <h2>Gallery</h2>
@@ -411,8 +385,8 @@
             </div>
 
             <form class="form" id="form" action="https://formspree.io/f/mlekkwqp" method="POST" data-aos="fade-up">
-                <!-- HONEYPOT(to catch spammers ) -->
-                <input type="text" name="_honey" style="display: none">
+                 <!-- HONEYPOT(to catch spammers )  -->
+                <input type="text" name="_honey" class="honeypot" title="honeypot">
     
                 <div class="form-control name">
                     <label for="name" class="block">Full Name</label>

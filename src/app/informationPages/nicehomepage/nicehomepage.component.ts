@@ -15,17 +15,28 @@ import { FarmerSignUpComponent } from 'src/app/sign-up/farmer-sign-up/farmer-sig
 })
 export class NicehomepageComponent implements OnInit {
 
-  num: number = 1;
-  num2: number = 1;
+  number_value:any;
+  number_value2:any;
   isShowDiv = false;
   isShowDiv2 = false;
   
+
+  //roasted
+  check(value: any) {
+    this.number_value = value.target.value;
+  }
+
+  //green
+  check2(value: any) {
+    this.number_value2 = value.target.value;
+  }
+
   // modal
   isModalOpen = false;
   toggleModal(): void {
     this.isModalOpen = !this.isModalOpen;
-    this.num = 1;
-    this.num2 = 1;
+    this.number_value = 1;
+    this.number_value2 = 1;
   }
 
   // product form tabs
@@ -306,37 +317,31 @@ export class NicehomepageComponent implements OnInit {
 
   // increment button for roasted section
   increment(){
-    this.num += 1;
-    console.log(this.num);
+    this.number_value++;
     }
     
   //decrements item for roasted section
   decrement(){
-    if(this.num-1 < 1){
-      this.num = 1;
-      console.log('item_1->' + this.num)
+    if(this.number_value-1 < 1){
+      this.number_value = 1;
     }
     else{
-      this.num -= 1;
-      console.log('item_2->' + this.num);
+      this.number_value -= 1;
     }
   }
 
   // increment button for green section
   increment2(){
-    this.num2 += 1;
-    console.log(this.num2);
+    this.number_value2++;
     }
     
   //decrements item for green section
   decrement2(){
-    if(this.num2-1 < 1){
-      this.num2 = 1;
-      console.log('item_1->' + this.num2)
+    if(this.number_value2-1 < 1){
+      this.number_value2 = 1;
     }
     else{
-      this.num2 -= 1;
-      console.log('item_2->' + this.num2);
+      this.number_value2 -= 1;
     }
   }
 }

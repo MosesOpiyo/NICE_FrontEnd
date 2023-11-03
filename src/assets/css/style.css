@@ -1,8 +1,8 @@
  /* DASHBOARD COMPONENT CSS */
   /********** Template CSS **********/
-  .dashboard-container .content > * {
+  /* .dashboard-container .content > * {
     border: 3px solid blue;
-  }
+  } */
   
   .dashboard-container:root {
     --primary: #009CFF;
@@ -83,7 +83,7 @@
   
   /*** Layout ***/
   .dashboard-container .sidebar {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     position: fixed;
     top: 0;
     left: 0;
@@ -98,7 +98,7 @@
   
   .dashboard-container .content {
     margin-left: 250px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     min-height: 100vh;
     background: #FFFFFF;
     transition: 0.5s;
@@ -270,9 +270,7 @@
     background: #191C24;
     border-color: #009CFF;
   }
-  
-  
-  
+    
   
   /* EXPO COMPONENT STYLING */
   .expo-container .video-container {
@@ -310,7 +308,6 @@
   }
   
   .expo-container .video-container .expo-content {
-    /* border: 2px solid rgb(0, 0, 0); */
     position: relative;
     display: flex;
     justify-content:center;
@@ -319,7 +316,7 @@
     gap: 1rem;
     text-align: center;
     z-index: 2;
-    padding-top: 7rem;
+    padding-top: 5rem;
   }
   
   .expo-container .expo-content h2 {
@@ -360,8 +357,11 @@
     position: relative;
     z-index: 3;
     display: flex;
-    padding-top: 50px;
-    gap: 15rem;
+    padding-top: 40px;
+    justify-content: space-between;
+    width: 95%;
+    margin-inline: auto;
+    gap: .7rem;
   }
   
   /* .expo-container .video-container .pure-counter > * {
@@ -377,6 +377,7 @@
   
   .expo-container .pure-counter .count-box span {
     font-size: 3rem;
+    color: #fcff48;
   }
   
   
@@ -428,6 +429,7 @@
     border-radius: .5rem;
     height: 100%;
     width: 100%;
+    text-align: center;
   }
   
   .expo-container .expo-details .expo-info .expo-card::after {
@@ -463,6 +465,64 @@
     background-image: url("https://images.pexels.com/photos/5984730/pexels-photo-5984730.jpeg?auto=compress&cs=tinysrgb&w=600");
   }
   
+
+    /* timer */
+    .expo-container .timer {
+      background-color: #daebef;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      padding-block: 2rem;
+      text-align: center;
+    }
+    
+    .expo-container .timer-header p {
+      font-size: 3rem;
+    }
+    
+    .expo-container .timer .time-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 95%;
+      margin-inline: auto;
+    }
+  
+    .expo-container .timer .time-content > * {
+      flex-basis: 100%;
+      max-width: 150px;
+      height: 150px;
+    }
+    
+    .expo-container .timer .time-card {
+      text-align: center;
+    }
+    
+    .expo-container .timer .days {
+      background-color: #F0A6CA;
+    }
+    
+    .expo-container .timer .hours {
+      background-color: #f5f5f5;
+    }
+    
+    .expo-container .timer .minutes {
+      background-color: #576490;
+    }
+    
+    .expo-container .timer .seconds {
+      background-color: #F8F272;
+    }
+    
+    .expo-container .timer .time-card span {
+      font-size: 5rem;
+      font-weight: bold;
+    }
+  
+  
   /* SPONSOR */
   .expo-container .sponsor-container {
     /* border: 2px solid black; */
@@ -475,15 +535,13 @@
     text-align: center;
   }
   
-  .expo-container .sponsor-container > *,
-  .expo-container .sponsor-container .sponsor-content > * {
-    flex-basis: 100%;
-    /* border: 2px solid blue; */
-  }
-  
   .expo-container .sponsor-container .sponsor-content {
-    display: flex;
-    gap: .5rem;
+    display: grid;
+    width: 100%;
+    margin-inline: auto;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     padding: .5rem;
   }
   
@@ -547,6 +605,9 @@
   .expo-container .sponsor-card .sponsor-perks {
     text-align: start;
     height: 160px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
   
   .expo-container .sponsor-card .sponsor-level {
@@ -612,8 +673,7 @@
     font-size: 1.2rem;
   }
   
-  
-  /* exhibitors */
+  /* EXHIBITORS SECTION STYLING */
   .expo-container .exhibitors-container {
     /* border: 2px solid black; */
     margin-bottom: 4rem;
@@ -625,7 +685,6 @@
     text-align: center;
   }
   
-  .expo-container .exhibitorinfo-container,
   .expo-container .exhibitor-fplan {
     display: flex;
     gap: 3rem;
@@ -635,19 +694,16 @@
     align-items: center;
   }
   
-  .expo-container .exhibitorinfo-container > * ,
   .expo-container .exhibitor-fplan > * {
     flex-basis: 100%;
     /* border: 2px solid #000000; */
   }
   
-  .expo-container .exhibitorinfo-container .exhibitor-image,
   .expo-container .exhibitor-fplan .fplan {
     height: 600px;
     width: 100%;
   }
   
-  .expo-container .exhibitorinfo-container .exhibitor-image img,
   .expo-container .exhibitor-fplan .fplan img {
     height: 100%;
     width: 100%;
@@ -657,6 +713,16 @@
   
   .expo-container .exhibitor-fplan .fplan img {
     object-fit: contain;
+  }
+
+  .expo-container .exhibitor-fplan .rates-table {
+    border: 2px solid #00000026;
+  }
+
+  .expo-container .exhibitor-fplan .rates-table th,
+  .expo-container .exhibitor-fplan .rates-table td {
+    text-align: left;
+    padding: .2rem;
   }
   
   .expo-container .exhibitor-fplan .exhibitor-info {
@@ -680,7 +746,8 @@
     color: #fff;
     padding: 15px 100px;
   }
-  
+
+ 
   /* partners */
   .expo-container .partners-container {
     /* border: 2px solid black; */
@@ -719,22 +786,36 @@
     object-fit: contain;
     object-position: center;
   }
+
   
   /* REGISTER */
   .expo-container .register-cta {
     margin-bottom: 4rem;
-    text-align: center;
     height: 500px;
     display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://images.pexels.com/photos/17312403/pexels-photo-17312403/free-photo-of-coffee-in-glass-cup-and-package-in-nature.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    color: #fff;
   }
-  
-  .expo-container .register-cta > * {
-    flex-basis: 100%;
-    /* border: 2px solid black; */
+
+  .expo-container .register-cta::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000057;
   }
   
   .expo-container .register-cta .register-content {
-    background-color: #ecc55e;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -747,20 +828,14 @@
   }
   
   .expo-container .register-cta .register-content a {
-    background-color: black;
-    color: #fff;
+    background-color: #ecc55e;
     width: 50%;
     padding: 10px 20px;
     margin-inline: auto;
+    color: #000000;
   }
   
-  .expo-container .register-cta .register-image,
-  .expo-container .register-cta .register-image img {
-    height: 100%;
-    width: 100%;
-  }
-  
-  /* gallery */
+   /* GALLERY STYLING */
   .expo-container .gallery-container {
     /* border: 2px solid black; */
     margin-bottom: 4rem;
@@ -771,59 +846,7 @@
     gap: 2rem;
     text-align: center;
   }
-  
-  
-  /* timer */
-  .expo-container .timer {
-    background-color: #daebef;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin-bottom: 4rem;
-  }
-  
-  .expo-container .timer-header p {
-    font-size: 3rem;
-  }
-  
-  .expo-container .timer .time-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .expo-container .timer .time-card {
-    /* border: 2px solid red; */
-    height: 150px;
-    width: 150px;
-    text-align: center;
-  }
-  
-  .expo-container .timer .days {
-    background-color: #F0A6CA;
-  }
-  
-  .expo-container .timer .hours {
-    background-color: #f5f5f5;
-  }
-  
-  .expo-container .timer .minutes {
-    background-color: #576490;
-  }
-  
-  .expo-container .timer .seconds {
-    background-color: #F8F272;
-  }
-  
-  .expo-container .timer .time-card span {
-    font-size: 5rem;
-    font-weight: bold;
-  }
-  
-  /* GALLERY */
+
   .expo-container .gallery-list {
     display: grid;
     /* height: 1000px; */
@@ -863,6 +886,8 @@
     background-color: #f2f3f1;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding-top: 6rem;
   }
   
   .expo-container .contact-container .contact-header > * {
@@ -918,6 +943,10 @@
     grid-template-rows: 100px 100px 200px 80px;
     grid-template-columns: 1fr;
   }
+
+  .honeypot {
+    display: none;
+  }
   
   .expo-container .form-control {
     margin-block: .5rem;
@@ -963,13 +992,13 @@
     padding: .5rem;
     font-size: 1.1rem;
     font-weight: 500;
-    background-color: #ddce2e;
+    background-color: #44f436;
     transition: all 350ms ease;
   }
   
   .expo-container .form-control button:hover {
     cursor: pointer;
-    background-color: #44f436;
+    background-color: #ddce2e;
   }
   
   
@@ -988,6 +1017,366 @@
         padding: 0;
     }
   }
+
+  /* ALL EXPO PAGE COMPONENT STYLING */
+  /* EXPO HERO HEADER media queries */
+  @media (max-width: 600px) {
+    .expo-container .expo-header h2,
+    .expo-container .sponsor-header h2,
+    .expo-container .exhibitor-header h2,
+    .expo-container .partners-header h2,
+    .expo-container .gallery-header h2 {
+      font-size: 2.5rem;
+    }
+
+    .expo-container .expo-content .expo-text {
+      gap: .5rem;
+    }
+
+    .expo-container .pure-counter .count-box span {
+      font-size: 2.5rem;
+    }
+
+    .expo-container .pure-counter .count-box p {
+      font-size: .9rem;
+      line-height: .8rem;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .expo-container .video-container .expo-content {
+      padding-top: 4rem;
+    }
+
+    .expo-container .expo-header h2,
+    .expo-container .sponsor-header h2,
+    .expo-container .exhibitor-header h2,
+    .expo-container .partners-header h2,
+    .expo-container .gallery-header h2 {
+      font-size: 2rem;
+    }
+
+    .expo-container .expo-content .expo-text {
+      gap: .2rem;
+    }
+
+    .expo-container .register-btn a {
+      font-size: 15px;
+      padding: 9px 40px;
+    }
+
+    .expo-container .video-container .pure-counter {
+      width: 99%;
+    }
+
+    .expo-container .pure-counter .count-box span {
+      font-size: 2rem;
+    }
+
+    .expo-container .expo-content .expo-text p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .expo-container .video-container .pure-counter {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 280px) {
+    .expo-container .expo-header h2,
+    .expo-container .sponsor-header h2,
+    .expo-container .exhibitor-header h2,
+    .expo-container .partners-header h2,
+    .expo-container .gallery-header h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+    /* EXPO DETAILS MEDIA QUERIES */
+    @media (max-width: 768px) {
+      .expo-container .expo-header p {
+        width: 90%;
+      }
+  
+      .expo-container .expo-details .expo-info {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    
+      .expo-container .expo-details .expo-info .expo-card.farming {
+        grid-area: 1 / 1 / 2 / 3;
+        background-position: top;
+      }
+    
+      .expo-container .expo-details .expo-info .expo-card.processing {
+        grid-area: 3 / 1 / 4 / 3;
+      }
+    
+      .expo-container .expo-details .expo-info .expo-card.markets {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+    
+      .expo-container .expo-details .expo-info .expo-card.platform {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+    }
+  
+    @media (max-width: 425px) {
+      .expo-container .expo-header h2 {
+        line-height: 2rem;
+      }
+  
+      .expo-container .expo-header p {
+        font-size: 1rem;
+      }
+  
+      .expo-container .expo-details .expo-header {
+        gap: .9rem;
+      }
+  
+      .expo-container .expo-details .expo-info {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        height: 700px;
+      }
+    
+      .expo-container .expo-details .expo-info .expo-card.farming,
+      .expo-container .expo-details .expo-info .expo-card.processing,
+      .expo-container .expo-details .expo-info .expo-card.markets,
+      .expo-container .expo-details .expo-info .expo-card.platform {
+        grid-area: auto;
+      }
+  
+      .expo-container .expo-details .expo-info .expo-card.markets {
+        background-position: top;
+      }
+    }
+  
+    /* TIMER media queries */
+  @media (max-width: 425px) {
+    .expo-container .timer .time-content {
+      flex-wrap: wrap;
+    }
+
+    .expo-container .timer .time-card span {
+      font-size: 4.5rem;
+    }
+
+    .expo-container .timer-header p {
+      font-size: 2.5rem;
+    }
+  }
+
+   /* SPONSOR media queries */
+   @media (max-width: 1024px) {
+    .expo-container .sponsor-container .sponsor-content {
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      width: 85%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .expo-container .sponsor-container .sponsor-content {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .expo-container .sponsor-container .sponsor-content {
+      width: 85%;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+    }
+
+    .expo-container .sponsor-card .sponsor-perks {
+      height: auto;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .expo-container .sponsor-container .sponsor-content {
+      width: 100%;
+    }
+
+    .expo-container .sponsor-header p,
+    .expo-container .exhibitor-header p {
+      width: 95%;
+    }
+  }
+
+   /* EXHIBITORS media queries */
+   @media (max-width: 960px) {
+    .expo-container .exhibitor-fplan {
+      flex-direction: column;
+    }
+
+    .expo-container .exhibitor-fplan > * {
+      flex-basis: auto;
+    }
+
+    .expo-container .exhibitor-fplan .rates-table th,
+    .expo-container .exhibitor-fplan .rates-table td {
+      padding: 0;
+    }
+
+    .expo-container .exhibitor-fplan .fplan {
+      height: 450px;
+    }
+
+    .expo-container .exhibitor-fplan .fplan-details {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .expo-container .exhibitor-fplan .fplan-details > * {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .expo-container .exhibitor-fplan .fplan-details > * {
+      flex-basis: auto;
+    }
+
+    .expo-container .exhibitor-fplan .fplan-details {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .expo-container .exhibitor-fplan .rates-table {
+      width: 100%;
+    }
+
+    .expo-container .exhibitors-container .exhibition-btn {
+      padding: 15px 50px;
+    }
+
+    .expo-container .exhibitors-container .exhibition-btn a {
+      padding: 15px 50px;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .expo-container .exhibitors-container .exhibition-btn {
+      padding: 15px 30px;
+    }
+
+    .expo-container .exhibitors-container .exhibition-btn a {
+      padding: 15px 30px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .expo-container .exhibitors-container .exhibition-btn {
+      padding: 15px 10px;
+    }
+
+    .expo-container .exhibitors-container .exhibition-btn a {
+      padding: 15px 10px;
+    }
+
+    .expo-container .exhibitor-fplan .rates-table th, .expo-container .exhibitor-fplan .rates-table td {
+      font-size: .8rem;
+    }
+  }
+
+  /* PARTNERS media queries */
+  @media (max-width: 768px) {
+    .expo-container .partners-info .partners-list {
+      width: 100%;
+    }
+  }
+
+   /* REGISTER media queries */
+   @media (max-width: 768px) {
+    .expo-container .register-cta {
+      height: 400px;
+    }
+  }
+
+  /* GALLERY media queries */
+  @media (max-width: 768px) {
+    .expo-container .gallery-list {
+      grid-template-rows: auto;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .expo-container .gallery-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .expo-container .gallery-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* CONTACT-US media queries */
+  @media (max-width: 768px) {
+    .expo-container .contact-container .contact-header {
+      height: auto;
+      padding-block: 4rem;
+      gap: 2rem;
+    }
+
+    .expo-container .contact-container .contact-form {
+      flex-direction: column-reverse;
+      gap: 1rem;
+    }
+
+    .expo-container .contact-container .contact-form > * {
+      flex-basis: auto;
+    }
+
+    .expo-container .contact-container .contact-header .contact-list {
+      width: 80%;
+    }
+
+    .expo-container .contact-container .contact-header .contact-h2 h2 {
+      font-size: 3.5rem;
+      padding-inline: 1rem;
+      line-height: 3.1rem;
+    }
+
+    .expo-container .form {
+      width: 70%;
+      margin-inline: auto;
+    }
+
+    .expo-container .form-control input, .expo-container .form-control textarea {
+      width: 100%;
+    }
+
+    .expo-container .form-control button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .expo-container .form {
+      width: 90%;
+    }
+
+    .expo-container .contact-container .contact-header .contact-h2 h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      line-height: 2.1rem;
+    }
+
+    .expo-container .contact-container .contact-header .contact-list {
+      text-align: center;
+    }
+
+    .expo-container .contact-container .contact-header .contact-list a {
+      font-size: 1rem;
+    }
+  }
   
   
   
@@ -1004,7 +1393,7 @@
     display: flex;
     align-items: center;
     justify-content: right;
-    background-image: url("../img/Trip/trip.jpg");
+    background-image: url("../img/Trip/trip3.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1215,8 +1604,6 @@
   .trip-container .farmer-card .farm-name h2 {
     margin-bottom: 1rem;
     font-weight: normal;
-    text-decoration: underline;
-    text-decoration-style: wavy;
     text-decoration-color: #00000066;
   }
   
@@ -1225,7 +1612,6 @@
     display: flex;
     align-items: center;
     margin-bottom: 4rem;
-    background-color: #f3f3f3;
     height: 700px;
     position: relative;
     z-index: 1;
@@ -1293,6 +1679,21 @@
     gap: 5rem;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .trip-container .bonus-trip::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: .3;
   }
   
   .trip-container .bonus-trip .bonus-content {
@@ -1317,6 +1718,10 @@
     width: 95%;
     margin-inline: auto;
   }
+
+  .trip-container .tips-container .tips-header {
+    text-align: center;
+  }
   
   .trip-container .tips-container .tips-content {
     display: flex;
@@ -1327,7 +1732,6 @@
     flex-basis: 100%;
     border: 1px solid #00000014;
     padding: 1rem;
-    height: 400px;
     background-color: aliceblue;
   }
   
@@ -1378,6 +1782,208 @@
   .trip-container .checklist-container .checklist-list ul li i {
     font-size: 2rem;
     color: green;
+  }
+
+  /* ALL ORIGIN TRIP MEDIA QUERIES */
+  /* TRIP HERO media queries */
+  @media (max-width: 1024px) {
+    .trip-container .trip-purpose .purpose-list {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trip-container .trip-purpose .purpose-list > * {
+      flex-basis: auto;
+      border-right:none;
+      width: 350px;
+    }
+
+    .trip-container .tips-container .tips-content {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .trip-container .tips-container .tips-content > * {
+      max-width: 400px;
+      min-width: 300px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .trip-container .trip-purpose .purpose-list > * {
+      width: 301px;
+    }
+  }
+
+  @media (max-width: 950px) {
+    .trip-container .expenses .expenses-content {
+      flex-direction: column;
+    }
+
+    .trip-container .expenses .expenses-content > * {
+      flex-basis: auto;
+    }
+
+    .trip-container .expenses .expenses-content .expenses-info {
+      flex-direction: row;
+      padding-inline: 1rem;
+    }
+
+    .trip-container .expenses .expenses-content .expenses-info > * {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .trip-container .expenses .expenses-content .expenses-info {
+      flex-direction: column;
+      padding-inline: 1rem;
+    }
+
+    .trip-container .expenses .expenses-content .expenses-info > * {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .trip-container .expenses .expenses-content .expenses-image {
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .trip-container .triphero-container {
+      background-position: center;
+      justify-content: center;
+      background-image: url("../img/Trip/trip4.jpg");
+      position: relative;
+      z-index: 1;
+    }
+
+    .trip-container .triphero-container::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff6f1;
+      opacity: .2;
+    }
+
+    .trip-container .trip-content {
+      align-items: center;
+      text-align: center;
+      width: 75%;
+    }
+
+    .trip-container .trip-content .trip-text {
+      gap: 0.2rem;
+      flex-direction: column;
+    }
+
+    .trip-container .farmers-content .farmer-card .farm-info {
+      flex-direction: column;
+    }
+
+    .trip-container .farmer-card .farm-story {
+      left: 0;
+      top: 0;
+      height: auto;
+      padding-block: 1rem;
+    }
+
+    .trip-container .farm-info .farmer-images {
+      width: 100%;
+      height: 350px;
+    }
+
+    .trip-container .farmers-content .farmer-card.geralds .farm-info,
+    .trip-container .farmers-content .farmer-card.jungle .farm-info {
+      flex-direction: column;
+    }
+
+    .trip-container .farmer-card.geralds .farm-story, .trip-container .farmer-card.jungle .farm-story {
+      left: 0;
+    }
+
+    .trip-container .farm-info .farmer-images img {
+      object-position: top;
+    }
+
+    .trip-container .bonus-trip .bonus-content p {
+      width: 80%;
+    }
+
+    .trip-container .cupping-container {
+      flex-direction: column-reverse;
+      height: auto;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .trip-container .cupping-container::after {
+      display: none;
+    }
+
+    .trip-container .cupping-container > * {
+      flex-basis: auto;
+    }
+
+    .trip-container .cupping-container .cupping-image {
+      height: 300px;
+    }
+
+    .trip-container .cupping-container .cupping-image img {
+      width: 95%;
+      margin-inline: auto;
+    }
+
+    .trip-container .cupping-container .cupping-text {
+      gap: 2rem;
+    }
+
+    .trip-container .cupping-container .cupping-text p {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .trip-container .trip-content {
+      width: 100%;
+    }
+
+    .trip-container .trip-content h2 {
+      font-size: 2.3rem;
+    }
+
+    .trip-container .register-btn a {
+      padding: 10px 20px;
+    }
+
+    .trip-container .expenses .expenses-content .expenses-image img {
+      object-fit: cover;
+    }
+
+    .trip-container .trip-purpose .purpose-header h2,
+    .trip-container .expenses .expenses-header h2,
+    .trip-container .meet-farmers .meetfarmers-header h2,
+    .trip-container .tips-container .tips-header h2,
+    .trip-container .bonus-trip .bonus-content h2 {
+      font-size: 2.2rem;
+      line-height: 2rem;
+    }
+
+    .trip-container .bonus-trip .bonus-content p {
+      width: 95%;
+    }
+
+    .trip-container .tips-container .tips-content > * {
+      max-width: 300px;
+      min-width: 200px;
+    }
   }
   
   
@@ -1697,7 +2303,7 @@
   } */
   
   .about-component .team-list .team-card .member-image {
-      height: 200px;
+      height: 240px;
       width: 20%;
   }
   
@@ -1722,4 +2328,12 @@
   
   .about-component .team-list .team-card.md .member-details {
       background-color: #e2e6ff;
+  }
+
+  .about-component .team-list .team-card.tech .member-details {
+    background-color: #f1daa7;
+  }
+
+  .about-component .team-list .team-card .member-name p {
+    margin-block: 1rem;
   }

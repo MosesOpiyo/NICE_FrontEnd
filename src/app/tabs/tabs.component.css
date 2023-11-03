@@ -27,7 +27,7 @@
     width: 100%;
     cursor: pointer;
     font-size: 17px;
-    padding: .5rem;
+    padding: .5rem 1rem;
 }
 
 .nav-tabs .nav-link.active {
@@ -35,4 +35,16 @@
   color: rgb(12, 13, 70);
   font-weight: bold;
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .nav-tabs {
+    width: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-tabs {
+    width: 100%;
+  }
 }

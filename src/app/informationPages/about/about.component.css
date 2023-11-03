@@ -1,0 +1,31 @@
+  :host ::ng-deep #header .navbar .dropdown ul a,
+  :host ::ng-deep #header .navbar ul li i.fa-chevron-down {
+    color: #000000;
+  }
+  
+  :host ::ng-deep #header .navbar ul li i {
+    color: #fff;
+  }
+  
+  
+  :host ::ng-deep #header .navbar .active,
+  :host ::ng-deep #header .navbar-mobile .active {
+    background-color: transparent;
+  }
+  
+  :host ::ng-deep #header .navbar .about-link,
+  :host ::ng-deep #header .navbar-mobile .about-link {
+    background-color: rgb(165, 165, 165);
+    color: #000000;
+  }
+  
+  :host ::ng-deep #header.header-scrolled .navbar a,
+  :host ::ng-deep #header.header-scrolled .navbar ul li i.fa-chevron-down,
+  :host ::ng-deep #header.header-scrolled .navbar ul li i.fa-bag-shopping {
+    color: #000000;
+  }
+  
+  :host ::ng-deep #header.header-scrolled .navbar .active {
+    background-color: transparent;
+    color: #000000;
+  }
