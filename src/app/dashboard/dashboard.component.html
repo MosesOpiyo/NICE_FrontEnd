@@ -1,11 +1,14 @@
 <div class="dashboard-container">
     <div class="container-xxl position-relative bg-white d-flex p-0">
-
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
+                <!-- <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><img style="width: 40px; height: 40px;border-radius: 50px; margin-right: 10px;" src="../../../assets/img/coffee_logo2.png" alt="" class="img-fluid">DASHMIN</h3>
+                </a> -->
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle" *ngIf="user.user.profile_pic" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle" *ngIf="!user.user.profile_pic" src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
@@ -21,23 +24,28 @@
                 <br>
                 <br>
                 <div class="navbar-nav w-100">
-                    <!-- <a *ngIf="user.user.type == 'WAREHOUSER'" routerLink="requested" class="nav-item nav-link"><i class="bi bi-boxes me-2" style="font-size: 1.5rem"></i>Requests</a> -->
-                    <!-- <a *ngIf="user.user.type == 'FARMER'" routerLink="form" class="nav-item nav-link"><i class="bi bi-bell me-2" style="font-size: 1.5rem"></i>Notifications</a> -->
-                    <!-- <a *ngIf="user.user.type == 'WAREHOUSER'" routerLink="form" class="nav-item nav-link"><i class="bi bi-bell me-2" style="font-size: 1.5rem"></i>Notifications</a> -->
+                    <a *ngIf="user.user.type == 'FARMER' or user.user.type == 'ORIGINWAREHOUSER'" routerLink="details" class="nav-item nav-link active"><i class="bi bi-person me-2" style="font-size: 1.5rem"></i>Farmer Details</a>
+                    <a *ngIf="user.user.type == 'ORIGINWAREHOUSER'" routerLink="details" class="nav-item nav-link active"><i class="bi bi-person me-2" style="font-size: 1.5rem"></i>Warehouser Details</a>
+                    <a *ngIf="user.user.type == 'WAREHOUSER'" routerLink="details" class="nav-item nav-link active"><i class="bi bi-house me-2" style="font-size: 1.5rem"></i>Warehouser Details</a>
+                    <a *ngIf="user.user.type == 'FARMER' or user.user.type == 'ORIGINWAREHOUSER'" routerLink="table" class="nav-item nav-link"><i class="bi bi-box2 me-2" style="font-size: 1.5rem"></i>Products</a>
+                    <a *ngIf="user.user.type == 'ORIGINWAREHOUSER'" routerLink="table" class="nav-item nav-link"><i class="bi bi-box2 me-2" style="font-size: 1.5rem"></i>Products</a>
+                    <a *ngIf="user.user.type == 'ORIGINWAREHOUSER'" routerLink="manifests" class="nav-item nav-link"><i class="bi bi-file-earmark-ruled me-2"></i>Manifests</a>
+                    <a *ngIf="user.user.type == 'WAREHOUSER'" routerLink="table" class="nav-item nav-link"><i class="bi bi-box2 me-2" style="font-size: 1.5rem"></i>Inventory</a>
+                    <a *ngIf="user.user.type == 'WAREHOUSER'" routerLink="orders" class="nav-item nav-link"><i class="bi bi-bag me-2" style="font-size: 1.5rem"></i>Orders</a>
+                    <a *ngIf="user.user.type == 'FARMER'" routerLink="form" class="nav-item nav-link"><i class="bi bi-bell me-2" style="font-size: 1.5rem"></i>Notifications</a>
+                    <a *ngIf="user.user.type == 'WAREHOUSER'" routerLink="form" class="nav-item nav-link"><i class="bi bi-bell me-2" style="font-size: 1.5rem"></i>Notifications</a>
                     <a routerLink="/dashboard" class="nav-item nav-link active"><i class="bi bi-house me-2" style="font-size: 1.5rem"></i>Dashboard</a>
                     <a routerLink="form" class="nav-item nav-link"><i class="bi bi-check2-square me-2" style="font-size: 1.5rem"></i>Forms</a>
                     <a routerLink="table" class="nav-item nav-link"><i class="bi bi-table me-2" style="font-size: 1.5rem"></i>Tables</a>
                     <a routerLink="charts" class="nav-item nav-link"><i class="bi bi-bar-chart me-2" style="font-size: 1.5rem"></i>Charts</a>
-                    <br>
-                    <!-- <a *ngIf="user.user.type == 'ADMIN'" routerLink="table" class="nav-item nav-link"><i class="bi bi-people-fill me-2" style="font-size: 1.5rem"></i>Users</a>
+                    <a *ngIf="user.user.type == 'ADMIN'" routerLink="orders" class="nav-item nav-link"><i class="bi bi-bag me-2" style="font-size: 1.5rem"></i>Orders</a>
+                    <a *ngIf="user.user.type == 'ADMIN'" routerLink="table" class="nav-item nav-link"><i class="bi bi-people-fill me-2" style="font-size: 1.5rem"></i>Users</a>
                     <a *ngIf="user.user.type == 'ADMIN'" routerLink="pending_accounts" class="nav-item nav-link"><i class="bi bi-stopwatch me-2" style="font-size: 1.5rem"></i>Pending Accounts</a>
-                    <a *ngIf="user.user.type == 'ADMIN'" routerLink="table" class="nav-item nav-link"><i class="bi bi-cup-hot me-2" style="font-size: 1.5rem"></i>Coffee</a> -->
+                    <a *ngIf="user.user.type == 'ADMIN'" routerLink="processed_products" class="nav-item nav-link"><i class="bi bi-cup-hot me-2" style="font-size: 1.5rem"></i>Products</a>
 
                 </div>
             </nav>
         </div>
-
-
         <div class="content">
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
@@ -50,27 +58,23 @@
                     <input class="form-control border-0" type="search" placeholder="Search">
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
-                   
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="bi bi-bell-fill me-lg-2"></i>
+                            <i *ngIf="data" class="bi bi-bell-fill me-lg-2" value=1></i>
+                            <i *ngIf="!data" class="bi bi-bell-fill me-lg-2" value=1></i>
                             <span class="d-none d-lg-inline-flex">Notifications</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
+                            <div *ngIf="data.length > 1" class="multiplie-notifications">
+                                <a  *ngFor="let object of data" href="#" class="dropdown-item">
+                                    <p style="font-family: Arial, Helvetica, sans-serif;" class="fw-normal mb-0">{{object.message.slice(0,20)}}</p>
+                                </a>
+                            </div>
+                            <div *ngIf="data.length == 1" class="notifications">
+                                <a href="#" class="dropdown-item">
+                                    <p style="font-family: Arial, Helvetica, sans-serif;" class="fw-normal mb-0">{{data.message.slice(0,20)}}</p>
+                                </a>
+                            </div>
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item text-center">See all notifications</a>
                         </div>
@@ -110,7 +114,6 @@
                 </div>
             </div>
         </div>
-
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 </div>

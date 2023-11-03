@@ -1,6 +1,5 @@
 :host ::ng-deep #header {
   background-color: #f6f6f6;
-  /* position: relative; */
 }
 
 :host ::ng-deep #header .navbar .active,

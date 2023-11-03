@@ -1,20 +1,20 @@
 <div class="products-navbar">
 
-    <div class="navbar-input">
+  <div class="navbar-input">
 
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search products" id="search" name="search">
-        <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-      </div>
-
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search products" id="search" name="search">
+      <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
     </div>
 
-    <!-- <div class="cart-link">
-      <a class="btn" routerLink="/Cart">
-        <ul class="cart-icon">
-          <li class="cart"><i class="fa-solid fa-bag-shopping" value=0></i></li>
-        </ul>
-      </a>
-    </div> -->
+  </div>
+
+  <div class="cart-link">
+    <a class="btn" routerLink="/Cart">
+      <ul class="cart-icon">
+        <li class="cart"><i class="fa-solid fa-bag-shopping" [attr.value]="userCart"></i></li>
+      </ul>
+    </a>
+  </div>
 
 </div>

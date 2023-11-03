@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RequestedComponent } from './requested.component';
+import { NewManifestComponent } from './new-manifest.component';
 
-describe('RequestedComponent', () => {
-  let component: RequestedComponent;
-  let fixture: ComponentFixture<RequestedComponent>;
+describe('NewManifestComponent', () => {
+  let component: NewManifestComponent;
+  let fixture: ComponentFixture<NewManifestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RequestedComponent ]
+      declarations: [ NewManifestComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RequestedComponent);
+    fixture = TestBed.createComponent(NewManifestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

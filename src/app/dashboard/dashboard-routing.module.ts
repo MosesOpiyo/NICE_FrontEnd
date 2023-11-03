@@ -5,10 +5,11 @@ import { MaindashboardComponent } from './components/maindashboard/maindashboard
 import { FormsComponent } from './components/forms/forms.component';
 import { TablesComponent } from './components/tables/tables.component';
 import { ChartsComponent } from './components/charts/charts.component';
-import { RequestedComponent } from './components/requested/requested.component';
 import { DetailsComponent } from './components/details/details.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
+import { ManifestsComponent } from './components/manifests/manifests.component';
+import { ProcessedProductsComponent } from './components/processed-products/processed-products.component';
 
 const routes: Routes = [
   {
@@ -16,8 +17,9 @@ const routes: Routes = [
     children: [
       {path: '', component: MaindashboardComponent},
       {path: 'details', component: DetailsComponent},
-      {path: 'requested', component: RequestedComponent},
       {path: 'orders', component: OrdersComponent},
+      {path: 'processed_products', component: ProcessedProductsComponent},
+      {path: 'manifests', component: ManifestsComponent},
       {path: 'form', component: FormsComponent},
       {path: 'table', component: TablesComponent},
       {path: 'charts', component: ChartsComponent},

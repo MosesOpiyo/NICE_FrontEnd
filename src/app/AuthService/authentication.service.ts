@@ -17,10 +17,33 @@ export class AuthenticationService implements OnInit {
   ngOnInit(): void {
    
   }
+  farmerRegister(credentials:any){
+    this.http.post(`${environment.BASE_URL}Authentication/FarmerRegistration`,credentials).subscribe((response:any)=>{
+      this.snackBar.open(response, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    },(error:any) =>{
+      console.log(error.error)
+      this.snackBar.open(error.error, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    })
+  }
 
   Register(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Registration`,credentials).subscribe((response:any)=>{
-      alert(`Account Created.`)
+      this.snackBar.open(response, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    },(error:any) =>{
+      console.log(error.error)
+      this.snackBar.open(error.error, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
     })
   }
   refreshPage() {

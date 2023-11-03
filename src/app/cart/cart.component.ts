@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { LoginComponent } from 'src/app/login/login.component';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service'; 
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
-import { AuthService } from 'src/app/Auth/auth.service';
+import { environment } from 'src/environments/environment.development';
 import { CartService } from '../Service/Cart/cart.service';
 
 @Component({
@@ -21,14 +21,28 @@ export class CartComponent implements OnInit {
 
 
   myScriptElement: HTMLScriptElement;
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService){
+  constructor(private cart:CartService, private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
 
+  cloudinaryUrl = environment.CLOUDINARY_URL
   user:any | null = null;
+  displayedColumns: string[] = ['image','name','quantity','price','delete'];
+  userCart:any | null = null;
   isLoggedIn:any
+  quantity = 0
+  total = 0
+
+  add(){
+    this.quantity++
+  }
+  subtract(){
+    if(this.quantity > 0  ){
+      this.quantity--
+    }
+  }
 
   showLoginDialog(){
    const dialogRef = this.dialog.open(LoginComponent,{
@@ -46,9 +60,20 @@ export class CartComponent implements OnInit {
      width: '25pc'
    }); 
  }
+ subTotal(items:any){
+  const list :number[] = []
+   items.forEach((item:any)=>{
+    list.push(item.price)
+   });
+   const sum = list.reduce((acc, item) => acc + item, 0);
+   return sum
+ }
 
  ngOnInit(): void {
    if(sessionStorage.getItem('Token')){
+    this.cart.getCart().subscribe((res:any)=>{
+      this.userCart = res['products']
+    })
      this.service.getProfile().subscribe((res:any)=>{
        this.user = res['user']
        if(this.user.type == "FARMER"){
@@ -63,25 +88,16 @@ export class CartComponent implements OnInit {
        else{
          false
        }
-     })
+     }
+     
+     )
    }
    else{
      console.log("No token")
    }
+   
 
-   this.cartService.getProducts()
-   .subscribe(res=> {
-    this.product = res;
-    this.grandTotal = this.cartService.getTotalPrice();
-   })
+  
  }
-
-  removeItem(item: any){
-    this.cartService.removeCartItem(item);
-  }
-
-  emptyCart(){
-    this.cartService.removeAllCart();
-  }
 
 }

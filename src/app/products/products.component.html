@@ -122,25 +122,47 @@
       <div class="productlist">
 
         <div class="productlist-content">
-          <div class="product-card"  *ngFor="let item of productData | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
+          <div class="product-card"  *ngFor="let item of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
+
             
             <a routerLink="/Products/{{item.id}}" class="product-item">
               <div class="product-image">
-                  <img src="{{item.imageUrl}}" alt="package">
+                  <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
               </div>
 
               <div class="product-name">
                 <div class="name">
-                  <p>Mettle</p>
+                  <p>{{item.product.name}}</p>
                 </div>
                   
                 <div class="rating">
-                  <p>
+                  <p *ngIf=" averageRating(item) == 5">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="averageRating(item) == 4">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="averageRating(item) == 3">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="averageRating(item) == 2">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="averageRating(item) == 1">
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="averageRating(item) == 0">
+                    
                   </p>
                 </div>
               </div>
@@ -150,8 +172,8 @@
               </div>
 
               <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>${{item.newPrice}} / 12oz</p>
+                  <p>Origin: {{item.product.origin | titlecase}}</p>
+                  <p>{{item.price | currency:'USD'}} / 12oz</p>
               </div>
 
             </a>
@@ -332,4 +354,3 @@
 
     <app-footer></app-footer>
 </section>
-

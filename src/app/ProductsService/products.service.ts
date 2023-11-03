@@ -35,6 +35,20 @@ export class ProductsService {
     })
     return this.http.get(`${environment.BASE_URL}Farmers/FarmerProduct`,{'headers':headers})
   }
+  getFarmerRequestedProducts(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Farmers/FarmerRequestedProduct`,{'headers':headers})
+  }
+
+  getShippingProducts(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Farmers/ShippingProduct`,{'headers':headers})
+  }
+  
   getinventoryProducts(){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
@@ -52,5 +66,17 @@ export class ProductsService {
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
     })
     return this.http.get(`${environment.BASE_URL}Orders&Cart/Requests`,{'headers':headers})
+  }
+  getProcessedProducts(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/Products`,{'headers':headers})
+  }
+  getProcessedProduct(id:number){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/Product/${id}`,{'headers':headers})
   }
 }

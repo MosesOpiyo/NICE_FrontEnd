@@ -4,24 +4,23 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
+import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
 
 import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
 import { WarehousedashboardModule } from './warehousedashboard/warehousedashboard.module';
-
-import { CoffeeNavbarComponent } from './coffee-navbar/coffee-navbar.component';
-import { CoffeeComponent } from './coffee/coffee.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-board.component';
 import { FarmersDashBoardModule } from './farmers-dash-board/farmers-dash-board.module';
@@ -38,20 +37,18 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { TabsComponent } from './tabs/tabs.component';
 import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 import { AboutComponent } from './informationPages/about/about.component';
+import { PasswordToggleDirective } from './sign-up/password-toggle.directive';
+import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
     NavbarComponent,
     LoginComponent,
     HomepageComponent,
     NicehomepageComponent,
-    CoffeeNavbarComponent,
-    CoffeeComponent,
-
     SignUpComponent,
     FooterComponent,
     ExpoComponent,
@@ -62,7 +59,9 @@ import { AboutComponent } from './informationPages/about/about.component';
     ProductDetailsComponent,
     TabsComponent,
     NotfoundComponent,
-    AboutComponent
+    AboutComponent,
+    PasswordToggleDirective,
+    FarmerSignUpComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -75,12 +74,15 @@ import { AboutComponent } from './informationPages/about/about.component';
     MatButtonModule,
     MatSnackBarModule,
     MatTableModule,
+    MatSelectModule,
     FormsModule,
     WarehousedashboardModule,
     FarmersDashBoardModule,
     DashboardModule,
-    NgxPaginationModule
-
+    NgxPaginationModule,
+    MatGridListModule,
+    MatIconModule,
+    PasswordStrengthMeterModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

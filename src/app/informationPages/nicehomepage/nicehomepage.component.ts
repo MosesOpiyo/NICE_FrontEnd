@@ -5,6 +5,7 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
 import { Router } from '@angular/router';
+import { FarmerSignUpComponent } from 'src/app/sign-up/farmer-sign-up/farmer-sign-up.component';
 
 
 @Component({
@@ -254,12 +255,20 @@ export class NicehomepageComponent implements OnInit {
       width: '25pc'
     }); 
   }
+  showFarmerSignUpDialog(){
+    const dialogRef = this.dialog.open(FarmerSignUpComponent,{
+      width: '25pc'
+    }); 
+  }
 
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
       this.service.getProfile().subscribe((res:any)=>{
         this.user = res['user']
         if(this.user.type == "FARMER"){
+          this.route.navigate(['DashBoard'])
+        }
+        else if(this.user.type == "ORIGINWAREHOUSER"){
           this.route.navigate(['DashBoard'])
         }
         else if(this.user.type == "WAREHOUSER"){

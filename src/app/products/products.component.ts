@@ -4,8 +4,9 @@ import { MatDialog } from '@angular/material/dialog'
 import { LoginComponent } from 'src/app/login/login.component';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service'; 
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
-import { AuthService } from 'src/app/Auth/auth.service';
+import { environment } from 'src/environments/environment.development';
 import { CartService } from '../Service/Cart/cart.service';
+import { ProductsService } from '../ProductsService/products.service';
 
 @Component({
   selector: 'app-products',
@@ -16,9 +17,19 @@ export class ProductsComponent implements OnInit {
 
   p:number = 1;
   itemsPerPage:number = 10;
-  totalProduct:any;
   num: number = 1;
   num2: number = 1;
+  totalProduct:any;
+  products:any;
+  cloudinaryUrl = environment.CLOUDINARY_URL
+
+
+  myScriptElement: HTMLScriptElement;
+  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService,private product:ProductsService){
+     this.myScriptElement = document.createElement("script");
+     this.myScriptElement.src = "../../assets/js/main.js";
+     document.body.appendChild(this.myScriptElement);
+  }
   isShowDiv = false;
   isShowDiv2 = false;
 
@@ -63,6 +74,10 @@ export class ProductsComponent implements OnInit {
   tabs: string [] = ['Roasted', 'Green'];
   activatedTabIndex: number = 0;
 
+  user:any | null = null;
+  isLoggedIn:any
+  ratings : number[] = [];
+  total:any
 
   productData = [ 
     {
@@ -427,20 +442,6 @@ export class ProductsComponent implements OnInit {
   ]
 
 
-  myScriptElement: HTMLScriptElement;
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService){
-     this.myScriptElement = document.createElement("script");
-     this.myScriptElement.src = "./assets/js/main.js";
-     document.body.appendChild(this.myScriptElement);
-  }
-
-  addtoCart(item: any){
-    this.cartService.addtoCart(item);
-  }
-
-  user:any | null = null;
-  isLoggedIn:any
-
   showLoginDialog(){
    const dialogRef = this.dialog.open(LoginComponent,{
      width: '25pc'
@@ -456,6 +457,16 @@ export class ProductsComponent implements OnInit {
    const dialogRef = this.dialog.open(SignUpComponent,{
      width: '25pc'
    }); 
+ }
+
+ averageRating(item:any){
+  const list :number[] = []
+  item.rating.forEach((ratingItem:any) => {
+    list.push(ratingItem.rating)
+  });
+  const sum = list.reduce((acc, item) => acc + item, 0);
+  const total = Math.floor(sum / list.length);
+  return total
  }
 
  ngOnInit(): void {
@@ -480,14 +491,20 @@ export class ProductsComponent implements OnInit {
      console.log("No token")
    }
 
-   this.productData.forEach((a:any) => {
-    Object.assign(a,{quantity:1, total:a.newPrice});
+   this.product.getProcessedProducts().subscribe((res:any)=>{
+    this.products = res
+    console.log(this.products)
+    this.products.forEach((product:any) => {
+      product.rating.forEach((ratingItem: any) => {
+        this.ratings.push(ratingItem.rating)
+      });
+    });
+    const sum = this.ratings.reduce((acc, item) => acc + item, 0);
+    this.total = Math.floor(sum / this.ratings.length);
    })
 
-   this.totalProduct = this.productData.length;
+ 
   }
-
-  //product form tab index
   tabChange(tabIndex: number) {
     this.activatedTabIndex = tabIndex;
   }
@@ -540,3 +557,4 @@ export class ProductsComponent implements OnInit {
     }
   }
 }
+

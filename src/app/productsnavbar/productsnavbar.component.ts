@@ -7,21 +7,23 @@ import { CartService } from '../Service/Cart/cart.service';
   styleUrls: ['./productsnavbar.component.css']
 })
 export class ProductsnavbarComponent implements OnInit {
-
-  public totalItem : number = 0;
-  
-  myScriptElement: HTMLScriptElement;
-  constructor(private cartService : CartService){
+  constructor(private cart: CartService){
     this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
-
+  userCart:any
+  public totalItem : number = 0;
+  myScriptElement: HTMLScriptElement;
   ngOnInit(): void {
-    this.cartService.getProducts()
-    .subscribe(res=> {
-     this.totalItem = res.length;
-    })
+    if(sessionStorage.getItem('Token')){
+      this.cart.getCart().subscribe((res:any)=>{
+        this.userCart = res['products'].length
+      })
+     }
+     else{
+       console.log("No token")
+     }
    }
 
 }
