@@ -2388,6 +2388,7 @@ opacity: .2;
 
   .shop-component .sidebar .widget-title {
     cursor: pointer;
+    border: 2px solid #0000001c;
   }
   
   .shop-component .sidebar h2 {
@@ -2580,7 +2581,11 @@ opacity: .2;
   
       .shop-component .products .sidebar > * {
         margin-bottom: 0rem;
+      }
+
+      .shop-component .products .sidebar > * ul {
         border: 2px solid #0000001c;
+        border-top: none;
       }
   
       .shop-component .sidebar > * {
