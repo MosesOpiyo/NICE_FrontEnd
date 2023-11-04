@@ -1,8 +1,9 @@
 import { Component,Output, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../AuthService/authentication.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../Auth/auth.service';
+import { SignUpComponent } from '../sign-up/sign-up.component';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent {
 
 constructor(
   public dialogRef: MatDialogRef<LoginComponent>,
+  private dialog:MatDialog,
   public service: AuthenticationService,
 ){}
 email: any;
@@ -29,5 +31,11 @@ profile:any;
   
   closeDialog() {
     this.dialogRef.close();
+  }
+  showSignUpDialog(){
+    this.dialogRef.close()
+    const dialogRef = this.dialog.open(SignUpComponent,{
+      width: '25pc'
+    });
   }
 }
