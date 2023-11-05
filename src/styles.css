@@ -244,7 +244,11 @@ opacity: .2;
     left: -5px;
     top:-10px;
     opacity:0.9;
-}
+  }
+
+  .fa-bag-shopping.two::after {
+    display: none;
+  }
 
   .navbar .cart {
     margin-left: 5rem;
