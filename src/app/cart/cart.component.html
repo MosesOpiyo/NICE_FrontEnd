@@ -15,7 +15,7 @@
                 <ng-container matColumnDef="image">
                   <th mat-header-cell *matHeaderCellDef> Product </th>
                   <td mat-cell *matCellDef="let element">
-                    <img src="../../assets/img/packaging/coffee-bag-01.png" alt="Product Image">
+                    <img [src]="cloudinaryUrl+element.img" alt="Product Image">
                   </td>
                 </ng-container>
 
