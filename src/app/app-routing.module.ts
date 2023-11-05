@@ -15,6 +15,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 import { AboutComponent } from './informationPages/about/about.component';
+import { AttributionsComponent } from './informationPages/attributions/attributions.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'Products/:productId', component: ProductDetailsComponent },
   { path: '404', component: NotfoundComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'attributions', component: AttributionsComponent }
 
 ];
 

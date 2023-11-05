@@ -39,6 +39,7 @@ import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 import { AboutComponent } from './informationPages/about/about.component';
 import { PasswordToggleDirective } from './sign-up/password-toggle.directive';
 import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.component';
+import { AttributionsComponent } from './informationPages/attributions/attributions.component';
 
 
 
@@ -61,7 +62,8 @@ import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.c
     NotfoundComponent,
     AboutComponent,
     PasswordToggleDirective,
-    FarmerSignUpComponent
+    FarmerSignUpComponent,
+    AttributionsComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
