@@ -948,23 +948,23 @@
     display: none;
   }
   
-  .expo-container .form-control {
+  .expo-container .form-controls {
     margin-block: .5rem;
     padding: .5rem;
   }
   
-  .expo-container .form-control .block {
+  .expo-container .form-controls .block {
     display: block;
     padding-bottom: .3rem;
   }
   
-  .expo-container .form-control .inline {
+  .expo-container .form-controls .inline {
     font-weight: bold;
     display: inline;
   }
   
-  .expo-container .form-control input,
-  .expo-container .form-control textarea {
+  .expo-container .form-controls input,
+  .expo-container .form-controls textarea {
     border-top: none;
     border-inline: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0.521);
@@ -974,18 +974,18 @@
     color: #fff;
   }
   
-  .expo-container .form-control textarea {
+  .expo-container .form-controls textarea {
     border: 2px solid rgba(255, 255, 255, 0.521);
     height: 150px;
   }
   
-  .expo-container .form-control input:focus-visible,
-  .expo-container .form-control textarea:focus-visible {
+  .expo-container .form-controls input:focus-visible,
+  .expo-container .form-controls textarea:focus-visible {
     outline: 2px solid white;
     border: none;
   }
   
-  .expo-container .form-control button {
+  .expo-container .form-controls button {
     border: none;
     width: 70%;
     display: block;
@@ -996,7 +996,7 @@
     transition: all 350ms ease;
   }
   
-  .expo-container .form-control button:hover {
+  .expo-container .form-controls button:hover {
     cursor: pointer;
     background-color: #ddce2e;
   }
@@ -1332,11 +1332,11 @@
       margin-inline: auto;
     }
 
-    .expo-container .form-control input, .expo-container .form-control textarea {
+    .expo-container .form-controls input, .expo-container .form-controls textarea {
       width: 100%;
     }
 
-    .expo-container .form-control button {
+    .expo-container .form-controls button {
       width: 100%;
     }
   }
@@ -1365,7 +1365,7 @@
     .expo-container .contact-form {
         padding: .1rem;
     }
-    .expo-container .form-control input {
+    .expo-container .form-controls input {
         min-width: 100%;
         max-width: 100%;
     }

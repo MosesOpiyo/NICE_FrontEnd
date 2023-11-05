@@ -31,7 +31,7 @@ export class DashboardComponent {
       })
     }
     else{
-      this.route.navigate(['homepage'])
+      this.route.navigate([''])
     }
   }
 

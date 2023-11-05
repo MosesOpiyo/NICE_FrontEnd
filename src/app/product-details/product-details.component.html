@@ -90,38 +90,43 @@
                           </select>
                         </div>
 
-                            <div class="radio">
-                              <div class="radio1">
-                                <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2()>
-                                <label for="onetime">One time purchase</label><br>
-                              </div>
-  
-                              <div class="radio2">
-                                <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
-                                <label for="subscribe">Subscribe & save 10%</label><br>
-                              </div>
-                            
-                              <div *ngIf="isShowDiv2">
-                                <select id="greendelivery" name="delivery" title="delivery" required>
-                                  <option value="">Choose Delivery Period...</option>
-                                  <option value="2 weeks">Deliver every 2 weeks</option>
-                                  <option value="3 weeks">Deliver every 3 weeks</option>
-                                  <option value="month">Deliver every month</option>
-                                  <option value="6 weeks">Deliver every 6 weeks</option>
-                                  <option value="2 months">Deliver every 2 months</option>
-                                </select>
-                              </div>
+                        <div class="buttons-list">
+                          <div class="radio">
+                            <div class="radio1">
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2() checked>
+                              <label for="onetime">One time purchase</label><br>
                             </div>
 
-                            <div class="incrdecr">
-                              <div (click)=decrement() class="decrement">-</div>
-                              <span id="counting">{{num}}</span>
-                              <div (click)=increment() class="increment">+</div>
+                            <div class="radio2">
+                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
+                              <label for="subscribe">Subscribe & save 10%</label><br>
                             </div>
+                          
+                            <div *ngIf="isShowDiv2">
+                              <select id="greendelivery" name="delivery" title="delivery" required>
+                                <option value="">Choose Delivery Period...</option>
+                                <option value="2 weeks">Deliver every 2 weeks</option>
+                                <option value="3 weeks">Deliver every 3 weeks</option>
+                                <option value="month">Deliver every month</option>
+                                <option value="6 weeks">Deliver every 6 weeks</option>
+                                <option value="2 months">Deliver every 2 months</option>
+                              </select>
+                            </div>
+                          </div>
 
-                            <div class="submit-btn">
-                              <button (click)="addToCart(item.id)" type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                            </div>
+                          <div class="incrdecr">
+                            <div (click)=decrement() class="decrement">-</div>
+                            <input type="number" name="roasted-quantity" id="roasted-counting" [(ngModel)]="num" (change)="value($event)" title="input-count">
+                            <div (click)=increment() class="increment">+</div>
+                          </div>
+
+                          <div class="submit-btn">
+                            <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                            <a routerLink="/Checkout" class="buy">BUY NOW</a>
+                          </div>
+                        </div>
+
+                          
 
                       </form>
                   </div>
@@ -146,12 +151,12 @@
                         </div>
                       </div>
 
-                        <form action="/" method="post">
-                          <div class="radio">
-                            <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff()>
-                              <label for="onetime">One time purchase</label><br>
-                          </div>
+                      <form action="/" method="post">
+                        <div class="radio">
+                          <div class="radio1">
+                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff() checked>
+                            <label for="onetime">One time purchase</label><br>
+                        </div>
 
                         <div class="radio1">
                             <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
@@ -170,15 +175,16 @@
                           </div>
                         </div>
 
-                          <div class="incrdecr">
-                            <div (click)=decrement2() class="decrement">-</div>
-                            <span id="counting2">{{num2}}</span>
-                            <div (click)=increment2() class="increment">+</div>
-                          </div>
-
-                          <div class="submit-btn">
-                            <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                        <div class="incrdecr">
+                          <div (click)=decrement2() class="decrement">-</div>
+                          <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="num2" (change)="value2($event)" title="input-count">
+                          <div (click)=increment2() class="increment">+</div>
                         </div>
+
+                        <div class="submit-btn">
+                          <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                          <a routerLink="/Checkout" class="buy">BUY NOW</a>
+                      </div>
 
                       </form>
                       
@@ -426,7 +432,7 @@
                   <i class="fa-solid fa-star"></i>
                 </p>
 
-                <p style="color: green;">Verified Purchase</p>
+                <p class="verified">Verified Purchase</p>
               </div>
 
                 <div class="ratinginfo">
@@ -442,3 +448,4 @@
 
   <app-footer></app-footer>
 </section>
+

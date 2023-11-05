@@ -32,6 +32,9 @@
   border: 1px solid #0000004a;
 }
 
+.product-component .user-rating .verified {
+  color: green;
+}
 
 @media (max-width: 375px) {
   .product-container .incrdecr {

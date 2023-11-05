@@ -22,7 +22,7 @@ const routes: Routes = [
   {path:'homepage',component:NicehomepageComponent},
   {path:'Warehouse',component:WarehousedashboardComponent},
   {path:'Farmer',component:FarmersDashBoardComponent},
-  {path:'DashBoard',component:DashboardComponent},
+  {path:'dashboard',component:DashboardComponent},
   {path:'Expo',component:ExpoComponent},
   {path:'Origin-Trip',component:OriginTripComponent},
   {path: 'Cart', component:CartComponent},

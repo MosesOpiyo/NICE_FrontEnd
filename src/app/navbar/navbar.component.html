@@ -15,7 +15,7 @@
                         <i class="fa-solid fa-circle-user"></i>
                     </button>
                 </li>
-                <li *ngIf="user" class="dropdown user-case"><a href="#"><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
+                <li *ngIf="user" class="dropdown user-case"><a><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
                       <li><a href="" (click)="logout()">Log out</a></li><br>
                     </ul>
@@ -58,7 +58,7 @@
             <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" [attr.value]="userCart"></i></a></li>
             </ul>
             <ul *ngIf="!user" class="cart-icon">
-                <li class="cart"><a routerLink="/Cart"><i class="fas fa-shopping-bag"></i></a></li>
+                <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping"></i></a></li>
                 </ul>
 
             <span *ngIf="!isMenuOpen" class="burger" (click)="toggleMenu()">
@@ -125,7 +125,7 @@
               <li>
                 <div class="navbar">
                   <ul>
-                    <li class="dropdown user-case"><a href="#"><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
+                    <li class="dropdown user-case"><a><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
                       <ul>
                         <li><a href="" (click)="logout()">Log out</a></li><br>
                       </ul>

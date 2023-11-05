@@ -446,10 +446,10 @@
   <!-- End Latest Coffees Section -->
 
   <!-- modal -->
-  <div  *ngIf="isModalOpen" class="modal">
+  <div  *ngIf="isModalOpen" class="modals">
 
     <!-- Modal content -->
-    <div class="modal-content">
+    <div class="modal-contents">
       <span class="modal-close" (click)="toggleModal()">
           <i class="fa-solid fa-x"></i>
         </span>
@@ -841,11 +841,7 @@
                   <div id="cta-content1">
                       <h4><span class="white">Do you</span> own a <span class="white-responsive2">coffee </span><span class="white-responsive">farm?</span></h4>
                       <p>Become a seller and make your coffee available on the world's #1 coffee marketplace.</p>
-<<<<<<< HEAD
                       <div class="cta-btn"><a (click)="showFarmerSignUpDialog()">SELL NOW&nbsp; <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-=======
-                      <div class="cta-btn"><button type="button">SELL NOW&nbsp; <i class="fa-solid fa-arrow-up-right-from-square"></i></button></div>
->>>>>>> cc4e6c8a2fe5f20fbffba76ef50e7a6447cd0520
                   </div>
                   
               </div>
@@ -876,7 +872,7 @@
   <!-- services container -->
   <div class="services-container" data-aos="fade-up">
 
-      <div class="services-card one">
+      <div class="services-card one" data-aos="fade-up" data-aos-delay="100">
           <div class="service-icon">
               <i class="fa-solid fa-mug-hot"></i>
           </div>
@@ -890,7 +886,7 @@
           </div>
       </div>
 
-      <div class="services-card">
+      <div class="services-card" data-aos="fade-up" data-aos-delay="200">
           <div class="service-icon">
               <i class="fa-solid fa-fingerprint"></i>
           </div>
@@ -904,7 +900,7 @@
           </div>
       </div>
 
-      <div class="services-card last">
+      <div class="services-card last" data-aos="fade-up" data-aos-delay="300">
           <div class="service-icon">
               <i class="fa-solid fa-truck-fast"></i>
           </div>
