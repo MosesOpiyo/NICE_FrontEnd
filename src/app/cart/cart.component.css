@@ -50,6 +50,7 @@
     /* border: 2px solid red; */
     padding: .5rem;
     width: 75%;
+    box-shadow: 0 0 5px #ccc;
   }
 
   .cart-container .cart-contents .cart-table table {

@@ -48,24 +48,24 @@
             </table>
           </div>
 
-          <div class="cartcontents-mobile">
+          <div class="cartcontents-mobile" *ngFor="let element of userCart">
             <div class="image">
-              <img src="../../assets/img/packaging/coffee-bag-01.png" alt="Product Image">
+              <img src={{cloudinaryUrl+element.img}} alt="Product Image">
             </div>
 
             <div class="product-content">
               <div class="product-info">
                 <div class="product-name">
-                  <p>Mettle</p>
+                  <p>{{element.product.name}}</p>
                 </div>
   
                 <div class="product-price">
-                  <p>$150</p>
+                  <p>${{element.price}}</p>
                 </div>
               </div>
   
               <div class="product-quantity">
-                <p>200</p>
+                <p>{{element.quantity}}</p>
               </div>
   
               <div class="product-action">

@@ -1,0 +1,74 @@
+<div class="sidenav-container">
+    <div class="nav-menu">
+        <div class="user-image">
+            <div class="image">
+                <img class="rounded-circle" *ngIf="user.user.profile_pic" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="profile picture">
+                <img class="rounded-circle" *ngIf="!user.user.profile_pic" src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="profile picture">
+                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+            </div>
+            <div class="user-credentials">
+                <h4 class="mb-0">{{user['user']['username'] | titlecase}}</h4>
+                <span>{{user['user']['type'] | titlecase}}</span>
+            </div>
+        </div>
+        
+        <!-- *ngif username == warehouser-->
+        
+        <ul class="nav-list" *ngIf="user.user.type == 'FARMER'">
+
+            <li class="nav-list-item" *ngFor="let item of farmerList">
+                <a routerLink="/{{item.link}}" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                    <i class={{item.icon}}></i>
+                    <span>{{item.listName}}</span>
+                </a>
+            </li>
+
+        </ul> 
+
+        <ul class="nav-list" *ngIf="user.user.type == 'WAREHOUSER'">
+
+            <li class="nav-list-item" *ngFor="let item of warehouserList">
+                <a routerLink="/{{item.link}}" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                    <i class={{item.icon}}></i>
+                    <span>{{item.listName}}</span>
+                </a>
+            </li>
+
+        </ul> 
+
+        <ul class="nav-list" *ngIf="user.user.type == 'ORIGINWAREHOUSER'">
+
+            <li class="nav-list-item" *ngFor="let item of originWarehouserList">
+                <a routerLink="/{{item.link}}" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                    <i class={{item.icon}}></i>
+                    <span>{{item.listName}}</span>
+                </a>
+            </li>
+
+        </ul> 
+
+        <ul class="nav-list" *ngIf="user.user.type == 'ADMIN'">
+
+            <li class="nav-list-item" *ngFor="let item of adminList">
+                <a routerLink="/{{item.link}}" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                    <i class={{item.icon}}></i>
+                    <span>{{item.listName}}</span>
+                </a>
+            </li>
+
+        </ul>
+
+        <ul class="nav-list" *ngIf="user.user.type == 'BUYER'">
+
+            <li class="nav-list-item" *ngFor="let item of buyerList">
+                <a routerLink="/{{item.link}}" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                    <i class={{item.icon}}></i>
+                    <span>{{item.listName}}</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</div>
+

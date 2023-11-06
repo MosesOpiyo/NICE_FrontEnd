@@ -15,9 +15,10 @@
                         <i class="fa-solid fa-circle-user"></i>
                     </button>
                 </li>
-                <li *ngIf="user" class="dropdown user-case"><a><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
+                <li *ngIf="user" class="dropdown user-case"><a><span>Hello, {{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
-                      <li><a href="" (click)="logout()">Log out</a></li><br>
+                        <li><a routerLink="/dash-board">My Account</a></li>
+                        <li><a href="" (click)="logout()">Log out</a></li>
                     </ul>
                   </li>
             </ul>
@@ -125,9 +126,10 @@
               <li>
                 <div class="navbar">
                   <ul>
-                    <li class="dropdown user-case"><a><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
+                    <li class="dropdown user-case"><a><span>Hello, {{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
                       <ul>
-                        <li><a href="" (click)="logout()">Log out</a></li><br>
+                        <li><a routerLink="/dash-board">My Account</a></li>
+                        <li><a href="" (click)="logout()">Log out</a></li>
                       </ul>
                     </li>
                   </ul>

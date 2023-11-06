@@ -40,6 +40,7 @@ import { AboutComponent } from './informationPages/about/about.component';
 import { PasswordToggleDirective } from './sign-up/password-toggle.directive';
 import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.component';
 import { AttributionsComponent } from './informationPages/attributions/attributions.component';
+import { DashBoardModule } from './dash-board/dash-board.module';
 
 
 
@@ -84,7 +85,8 @@ import { AttributionsComponent } from './informationPages/attributions/attributi
     NgxPaginationModule,
     MatGridListModule,
     MatIconModule,
-    PasswordStrengthMeterModule.forRoot()
+    PasswordStrengthMeterModule.forRoot(),
+    DashBoardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

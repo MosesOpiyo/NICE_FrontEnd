@@ -359,7 +359,7 @@ opacity: .2;
     background-color: #fff;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
     transition: 0.3s;
-    height: 40px;
+    height: max-content;
   }
 
   .mobile-icons .dropdown.user-case:hover > ul {
@@ -369,7 +369,7 @@ opacity: .2;
 
   .navbar .dropdown.user-case ul {
     padding: 0;
-    height: 40px;
+    height: max-content;
   }
 
   .mobile-icons .dropdown.user-case a {
@@ -565,6 +565,7 @@ opacity: .2;
 
     .mobile-icons .dropdown.user-case a {
       padding-inline: 7px;
+      font-size: .8rem;
     }
   }
 
