@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MaindashboardComponent } from './components/maindashboard/maindashboard.component';
@@ -13,6 +14,7 @@ import { NewproductComponent } from './components/newproduct/newproduct.componen
 import { DetailsComponent } from './components/details/details.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -26,6 +28,7 @@ import { ManifestsComponent } from './components/manifests/manifests.component';
 import { NewManifestComponent } from './components/manifests/new-manifest/new-manifest.component';
 import { SearchPipe } from './components/manifests/new-manifest/search.pipe';
 import { ProcessedProductsComponent } from './components/processed-products/processed-products.component';
+import { ScanComponent } from './scan/scan.component';
 
 
 @NgModule({
@@ -43,7 +46,9 @@ import { ProcessedProductsComponent } from './components/processed-products/proc
     ManifestsComponent,
     NewManifestComponent,
     SearchPipe,
-    ProcessedProductsComponent
+    ProcessedProductsComponent,
+    ProfileComponent,
+    ScanComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +62,8 @@ import { ProcessedProductsComponent } from './components/processed-products/proc
     MatButtonModule,
     MatSelectModule,
     NgxMatSelectSearchModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    BarcodeScannerLivestreamModule
   ]
 })
 export class DashboardModule { }

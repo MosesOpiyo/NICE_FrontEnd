@@ -68,6 +68,14 @@ export class AuthenticationService implements OnInit {
     })
     return this.http.get(`${environment.BASE_URL}Authentication/Profile`,{'headers':headers})
   }
+
+  getFarmerProfile(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Farmers/FarmerProfile`,{'headers':headers})
+  }
+
   logout(){
     sessionStorage.removeItem('Token')
     this.authService.authentication(false)

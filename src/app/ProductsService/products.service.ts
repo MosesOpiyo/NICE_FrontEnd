@@ -41,6 +41,12 @@ export class ProductsService {
     })
     return this.http.get(`${environment.BASE_URL}Farmers/FarmerRequestedProduct`,{'headers':headers})
   }
+  makeProductRequest(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Farmers/ProductRequest`,{'headers':headers})
+  }
 
   getShippingProducts(){
     let headers = new HttpHeaders({
@@ -55,6 +61,7 @@ export class ProductsService {
     })
     return this.http.get(`${environment.BASE_URL}Warehouse/Warehouse`,{'headers':headers})
   }
+  
   getWarehouseOrders(){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
@@ -78,5 +85,12 @@ export class ProductsService {
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
     })
     return this.http.get(`${environment.BASE_URL}Orders&Cart/Product/${id}`,{'headers':headers})
+  }
+  
+  receiveManifest(number:number){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Warehouse/WarehouseManifest/${number}`,{'headers':headers})
   }
 }
