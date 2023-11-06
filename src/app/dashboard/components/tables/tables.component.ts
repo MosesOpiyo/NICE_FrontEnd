@@ -6,6 +6,8 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
 import { AdminService } from 'src/app/AdminService/admin.service';
 import { NewManifestComponent } from '../manifests/new-manifest/new-manifest.component';
 import { WarehouseService } from 'src/app/Service/Warehouse/warehouse.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ScanComponent } from '../../scan/scan.component';
 
 @Component({
   selector: 'app-tables',
@@ -13,7 +15,7 @@ import { WarehouseService } from 'src/app/Service/Warehouse/warehouse.service';
   styleUrls: ['./tables.component.css']
 })
 export class TablesComponent implements OnInit {
-  constructor(private products:ProductsService,private warehouse:WarehouseService,private service:AuthenticationService,private admin:AdminService,private dialog:MatDialog){}
+  constructor(private products:ProductsService,private warehouse:WarehouseService,private service:AuthenticationService,private admin:AdminService,private dialog:MatDialog,private snackbar:MatSnackBar){}
   displayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity','shipping'];
   farmerDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity'];
   warehouserDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity'];
@@ -36,12 +38,13 @@ export class TablesComponent implements OnInit {
       else if(this.user.type=='ORIGINWAREHOUSER'){
         this.products.getShippingProducts().subscribe((res:any)=>{
           this.farmerProducts = res
+          console.log(res)
         })
       }
       else if(this.user.type=='WAREHOUSER'){
         this.products.getinventoryProducts().subscribe((res:any)=>{
           this.inventoryProducts = res['warehoused_products']
-          console.log(res)
+          console.log(res['warehoused_products'])
         })
       }
       else if(this.user.type=='ADMIN'){
@@ -80,11 +83,27 @@ export class TablesComponent implements OnInit {
     }
   }
 
+  makeRequest(){
+    this.products.makeProductRequest().subscribe((res:any)=>{
+      this.snackbar.open('Request successful.Please wait for response', 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    })
+  }
+
   showProductDialog(){
     const dialogRef = this.dialog.open(NewproductComponent,{
       width: '40pc'
     });
   }
+
+  showScanDialog(){
+    const dialogRef = this.dialog.open(ScanComponent,{
+      width: '40pc'
+    });
+  }
+
   manifestDialog(object:any){
     const dialogRef = this.dialog.open(NewManifestComponent,{
       width: '40pc',
