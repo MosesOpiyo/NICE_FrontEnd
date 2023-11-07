@@ -10,11 +10,11 @@
               <table mat-table [dataSource]="userCart"  class="mat-elevation-z8 table table-responsive">
                 <ng-container matColumnDef="image">
                   <th mat-header-cell *matHeaderCellDef> Image </th>
-                  <td mat-cell *matCellDef="let element">  <img style="width: 80px;height: 80px;" [src]="cloudinaryUrl+element.img" alt="Product Image"> </td>
+                  <td mat-cell *matCellDef="let element">  <img style="width: 80px;height: 80px;" [src]="cloudinaryUrl+element.product.img" alt="Product Image"> </td>
                 </ng-container>
                 <ng-container matColumnDef="name">
                   <th mat-header-cell *matHeaderCellDef> Name </th>
-                  <td  mat-cell *matCellDef="let element"> {{element.product.name}} </td>
+                  <td  mat-cell *matCellDef="let element"> {{element.product.product.name}} </td>
                 </ng-container>
               
                 
@@ -47,7 +47,7 @@
             <h4>CART SUMMARY</h4>
             <h4>Sub Total: <span>{{subTotal(userCart) | currency:'USD'}}</span></h4>
             <div class="completion">
-              <button mat-raised-button>CHECKOUT ({{subTotal(userCart) | currency:'USD'}})</button>
+              <button (click)="Pay(subTotal(userCart))" mat-raised-button>CHECKOUT ({{subTotal(userCart) | currency:'USD'}})</button>
             </div>
           </div>
         </div>
