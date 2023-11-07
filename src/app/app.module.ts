@@ -11,7 +11,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
-import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -82,7 +81,6 @@ import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.c
     MatGridListModule,
     MatIconModule,
     PasswordStrengthMeterModule.forRoot(),
-    BarcodeScannerLivestreamModule
   ],
   providers: [],
   bootstrap: [AppComponent]
