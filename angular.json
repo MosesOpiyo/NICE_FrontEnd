@@ -30,7 +30,8 @@
             ],
             "scripts": [
               "src/assets/js/main.js"
-            ]
+            ],
+            "allowedCommonJsDependencies": ["lodash","@ericblade/quagga2"]
           },
           "configurations": {
             "production": {
