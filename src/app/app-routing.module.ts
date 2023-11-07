@@ -6,7 +6,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
 
 import { WarehousedashboardComponent } from './warehousedashboard/warehousedashboard.component';
-import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-board.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExpoComponent } from './informationPages/expo/expo.component';
 import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.component';
@@ -21,7 +20,6 @@ const routes: Routes = [
   {path:'',component:HomepageComponent},
   {path:'homepage',component:NicehomepageComponent},
   {path:'Warehouse',component:WarehousedashboardComponent},
-  {path:'Farmer',component:FarmersDashBoardComponent},
   {path:'DashBoard',component:DashboardComponent},
   {path:'Expo',component:ExpoComponent},
   {path:'Origin-Trip',component:OriginTripComponent},
