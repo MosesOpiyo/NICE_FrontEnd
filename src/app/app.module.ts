@@ -23,8 +23,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
 import { WarehousedashboardModule } from './warehousedashboard/warehousedashboard.module';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { FarmersDashBoardComponent } from './farmers-dash-board/farmers-dash-board.component';
-import { FarmersDashBoardModule } from './farmers-dash-board/farmers-dash-board.module';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ExpoComponent } from './informationPages/expo/expo.component';
@@ -79,7 +77,6 @@ import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.c
     MatSelectModule,
     FormsModule,
     WarehousedashboardModule,
-    FarmersDashBoardModule,
     DashboardModule,
     NgxPaginationModule,
     MatGridListModule,
