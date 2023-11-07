@@ -68,36 +68,34 @@ export class CartComponent implements OnInit {
    const sum = list.reduce((acc, item) => acc + item, 0);
    return sum
  }
+ Pay(amount:any){
+  this.cartService.makePayment(amount).subscribe((res:any)=>{
+    window.open(res)
+  })
+ }
 
  ngOnInit(): void {
-   if(sessionStorage.getItem('Token')){
+  this.service.getProfile().subscribe((res:any)=>{
+    this.user = res['user']
+    if(this.user.type == "FARMER"){
+      this.route.navigate(['DashBoard'])
+    }
+    else if(this.user.type == "WAREHOUSER"){
+      this.route.navigate(['DashBoard'])
+    }
+    else if(this.user.type == "ADMIN"){
+      this.route.navigate(['DashBoard'])
+    }
+    else{
+      false
+    }
     this.cart.getCart().subscribe((res:any)=>{
       this.userCart = res['products']
+      console.log(this.userCart)
     })
-     this.service.getProfile().subscribe((res:any)=>{
-       this.user = res['user']
-       if(this.user.type == "FARMER"){
-         this.route.navigate(['DashBoard'])
-       }
-       else if(this.user.type == "WAREHOUSER"){
-         this.route.navigate(['DashBoard'])
-       }
-       else if(this.user.type == "ADMIN"){
-         this.route.navigate(['DashBoard'])
-       }
-       else{
-         false
-       }
-     }
-     
-     )
-   }
-   else{
-     console.log("No token")
-   }
+  }
    
-
-  
+   ) 
  }
 
 }

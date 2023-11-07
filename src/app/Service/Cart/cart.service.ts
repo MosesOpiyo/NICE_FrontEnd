@@ -16,10 +16,17 @@ export class CartService {
     })
     return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart`,{'headers':headers})
   }
-  addToCart(id:number){
+  addToCart(id:number,cartItem:any){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
     })
-    return this.http.get(`${environment.BASE_URL}Orders&Cart/NewProductInCart/${id}`,{'headers':headers})
+    this.http.post(`${environment.BASE_URL}Orders&Cart/NewProductInCart/${id}`,cartItem,{'headers':headers}).subscribe((res:any)=>{
+    })
+  }
+  makePayment(amount:any){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Payment/paypal/create/${amount}`,{'headers':headers})
   }
 }

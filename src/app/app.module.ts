@@ -11,6 +11,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
+import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.c
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +63,7 @@ import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.c
     NotfoundComponent,
     AboutComponent,
     PasswordToggleDirective,
-    FarmerSignUpComponent
+    FarmerSignUpComponent,
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -82,7 +84,8 @@ import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.c
     NgxPaginationModule,
     MatGridListModule,
     MatIconModule,
-    PasswordStrengthMeterModule.forRoot()
+    PasswordStrengthMeterModule.forRoot(),
+    BarcodeScannerLivestreamModule
   ],
   providers: [],
   bootstrap: [AppComponent]
