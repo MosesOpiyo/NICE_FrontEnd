@@ -28,7 +28,7 @@
     "angular-password-strength-meter": "^6.0.0",
     "cloudinary": "^1.40.0",
     "glightbox": "^3.2.0",
-    "ngx-barcode-scanner": "^0.1.2",
+    "ngx-barcode-scanner": "^14.0.1",
     "ngx-mat-select-search": "^7.0.4",
     "ngx-pagination": "^6.0.3",
     "platform-browser": "^0.0.1-security",
