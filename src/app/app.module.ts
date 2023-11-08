@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA , NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
@@ -41,6 +41,11 @@ import { PasswordToggleDirective } from './sign-up/password-toggle.directive';
 import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.component';
 import { AttributionsComponent } from './informationPages/attributions/attributions.component';
 import { DashBoardModule } from './dash-board/dash-board.module';
+
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 
 
@@ -89,6 +94,7 @@ import { DashBoardModule } from './dash-board/dash-board.module';
     DashBoardModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

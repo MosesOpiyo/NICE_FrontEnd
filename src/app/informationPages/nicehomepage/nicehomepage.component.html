@@ -629,195 +629,807 @@
           <a routerLink="/Products">VIEW MORE&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
 
-      <div class="swiper popular-swiper" data-aos="fade-left">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
+      <div class="test-swiper" data-aos="fade-left">
 
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-01.png" alt="package">
-              </div>
+        <swiper-container
+        slides-per-view=1
+        navigation = "true"
+        pagination = "true"
+        pagination-clickable = "true"
+        loop="true"
+        autoplay="true"
+        autoplay-delay="3000"
+        autoplay-pause-on-mouse-enter="true"
+        autoplay-disable-on-interaction="false"
+        space-between="10"
+        class="mobile"
+        >
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/1'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-01.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$1 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/2'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$2 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/3'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$3 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/4'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-04.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$4 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/5'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/pkg1.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$5 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/6'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/pkg7.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$6 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+        </swiper-container>
+    
+        <swiper-container
+        slides-per-view=2
+        navigation = "true"
+        pagination = "true"
+        pagination-clickable = "true"
+        loop="true"
+        autoplay="true"
+        autoplay-delay="3000"
+        autoplay-pause-on-mouse-enter="true"
+        autoplay-disable-on-interaction="false"
+        space-between="10"
+        class="tablet"
+        >
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/1'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-01.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$1 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/2'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$2 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/3'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$3 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/4'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-04.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$4 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/5'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/pkg1.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$5 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/6'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/pkg7.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$6 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+        </swiper-container>
 
-              <div class="product-name">
-                  <div class="rating">
-                      <p><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                  </p>
-                  </div>
-
-                  <div class="name">
-                      <p>Mettle</p>
-                      
-                  </div> 
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-
-              <div class="popularadd-actions">
-                  <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
-                    Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                  </a>
-                  <a role="button" title="wishlist">
-                      <i class="fa-solid fa-heart"></i>
-                  </a>
-              </div>
-
-            </div>
-
-            <div class="swiper-slide">
-
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-02.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <div class="rating">
-                      <p><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                  </p>
-                  </div>
-
-                  <div class="name">
-                      <p>Mettle</p>
-                      
-                  </div> 
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-              
-            </div>
-
-            <div class="swiper-slide">
-
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-03.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <div class="rating">
-                      <p><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                  </p>
-                  </div>
-
-                  <div class="name">
-                      <p>Mettle</p>
-                      
-                  </div> 
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-              
-            </div>
-
-            <div class="swiper-slide">
-
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-01.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <div class="rating">
-                      <p><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                  </p>
-                  </div>
-
-                  <div class="name">
-                      <p>Mettle</p>
-                      
-                  </div> 
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-              
-            </div>
-
-            <div class="swiper-slide">
-
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-02.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <div class="rating">
-                      <p><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                  </p>
-                  </div>
-
-                  <div class="name">
-                      <p>Mettle</p>
-                      
-                  </div> 
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-              
-            </div>
-
-            <div class="swiper-slide">
-
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-03.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <div class="rating">
-                      <p><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                  </p>
-                  </div>
-
-                  <div class="name">
-                      <p>Mettle</p>
-                      
-                  </div> 
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-              
-            </div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <!-- <div class="swiper-pagination"></div> -->
-        </div>
+        <swiper-container
+        slides-per-view=3
+        navigation = "true"
+        pagination = "true"
+        pagination-clickable = "true"
+        loop="true"
+        autoplay="true"
+        autoplay-delay="3000"
+        autoplay-pause-on-mouse-enter="true"
+        autoplay-disable-on-interaction="false"        
+        space-between="10"
+        class="laptop"
+        >
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/1'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-01.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$1 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/2'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$2 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/3'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$3 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/4'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/coffee-bag-04.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$4 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/5'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/pkg1.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$5 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+    
+            <swiper-slide class="slide-content">
+                <div class="product-item product1">
+                    <a routerLink='/Products/6'>
+                        <div class="product-image">
+                            <img src='../../../assets/img/packaging/pkg7.png' alt="package">
+                        </div>
+                
+                        <div class="product-name">
+                            <p>Mettle</p>
+    
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Riakiania Coffee Factory</p>
+                        </div>
+                
+                        <div class="product-details">
+                            <p>Origin: Kenya</p>
+                            <p>$6 / 12oz</p>
+                        </div>
+                    </a>
+                
+                    <div class="latestadd-actions">
+                        <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                            Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                        <a role="button" title="wishlist">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                
+                </div>
+            </swiper-slide>
+        </swiper-container>
+    
+      </div>
 
       <div class="popular-header" data-aos="fade-right">
           <h2>Most Popular</h2>

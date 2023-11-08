@@ -1379,6 +1379,7 @@ opacity: .2;
   .popular-container .popularadd-actions a:hover,
   .productlist .productlist-content .product-addactions a:hover {
     word-spacing: 3px;
+    color: #fff;
   }
 
 
