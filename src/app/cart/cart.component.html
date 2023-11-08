@@ -80,7 +80,7 @@
             <h4>CART SUMMARY</h4>
             <h4>Sub Total: <span>{{subTotal(userCart) | currency:'USD'}}</span></h4>
             <div class="completion">
-              <button mat-raised-button>CHECKOUT ({{subTotal(userCart) | currency:'USD'}})</button>
+              <button (click)="Pay(subTotal(userCart))" mat-raised-button>CHECKOUT ({{subTotal(userCart) | currency:'USD'}})</button>
             </div>
           </div>
 

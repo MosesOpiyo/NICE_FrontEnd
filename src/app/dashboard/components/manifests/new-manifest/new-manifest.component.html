@@ -6,7 +6,7 @@
                 <mat-option >
                   <ngx-mat-select-search noEntriesFoundLabel="No Match Found"></ngx-mat-select-search>
                 </mat-option>
-                <mat-option *ngFor="let warehouse of warehousers | async" [value]="warehouse.email">
+                <mat-option *ngFor="let warehouse of warehousers" [value]="warehouse.email">
                   {{warehouse.username}}
                 </mat-option>
               </mat-select>

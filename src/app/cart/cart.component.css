@@ -132,9 +132,6 @@
   .card{
     padding: 10px;
   }
-  
-  
-
 
   /* when cart is empty */
   .cartempty-container {
@@ -144,7 +141,7 @@
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    height: 100vh;
+    height: auto;
   }
 
   .cartempty-container > * {

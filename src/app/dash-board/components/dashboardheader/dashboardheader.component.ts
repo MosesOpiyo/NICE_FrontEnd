@@ -26,6 +26,7 @@ export class DashboardheaderComponent implements OnInit {
     if(sessionStorage.getItem('Token')){
       this.service.getProfile().subscribe((res:any)=>{
         this.user = res
+        console.log(this.user)
       })
       this.notification.getNotifications().subscribe((res)=>{
         this.data = res

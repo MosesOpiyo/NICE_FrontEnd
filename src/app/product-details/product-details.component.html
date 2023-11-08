@@ -60,16 +60,16 @@
                       
                       <form action="" method="post">
                         <div class="option-list">
-                          <select id="packsize" name="packsize" title="packsize" required>
-                              <option value="">Choose Pack Size...</option>
-                              <option value="18.80|12oz">12oz ($18.80)</option>
-                              <option value="46.80|32oz">32oz ($46.80)</option>
-                              <option value="68.20|3lbs">3lbs ($68.20)</option>
-                              <option value="68.20|3lbs">5lbs ($113.00)</option>
-                          </select>
+                            <select id="packsize" [(ngModel)]="quantity" name="packsize" title="packsize" required>
+                              <option value="" disabled selected>Choose Pack Size...</option>
+                              <option value="12">12oz ($18.80)</option>
+                              <option value="32">32oz ($46.80)</option>
+                              <option value="48">48oz ($68.20)</option>
+                              <option value="80">80oz ($113.00)</option>
+                            </select>
           
-                          <select id="grind" name="grind" title="grind" required>
-                              <option value="">Choose Grind...</option>
+                            <select id="grind" [(ngModel)]="grind" name="grind" title="grind" required>
+                              <option value="" disabled selected>Choose Grind...</option>
                               <option value="Whole beans">Whole beans</option>
                               <option value="Extra coarse">Extra coarse (Cold brews)</option>
                               <option value="Coarse">Coarse (French press/percolators)</option>
@@ -78,16 +78,16 @@
                               <option value="Medium-fine">Medium-fine (Pour overs/siphon)</option>
                               <option value="Fine">Fine (Espresso)</option>
                               <option value="Super-fine">Super-fine (Turkish)</option>
-                          </select>
+                            </select>
           
-                          <select id="roast" name="roast" title="roast" required>
-                              <option value="">Choose Roast Type...</option>
+                            <select id="roast" [(ngModel)]="roast_type" name="roast" title="roast" required>
+                              <option value="" disabled selected>Choose Roast Type...</option>
                               <option value="Light">Light</option>
                               <option value="Medium/light">Medium/light</option>
                               <option value="Medium">Medium</option>
                               <option value="Medium/dark">Medium/dark</option>
                               <option value="Dark">Dark</option>
-                          </select>
+                            </select>
                         </div>
 
                         <div class="buttons-list">
@@ -121,7 +121,7 @@
                           </div>
 
                           <div class="submit-btn">
-                            <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                            <button (click)="cartItem(item.id)" type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
                             <a routerLink="/Checkout" class="buy">BUY NOW</a>
                           </div>
                         </div>
@@ -181,8 +181,9 @@
                           <div (click)=increment2() class="increment">+</div>
                         </div>
 
+
                         <div class="submit-btn">
-                          <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
+                          <button (click)="cartItem2(item.id)" type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
                           <a routerLink="/Checkout" class="buy">BUY NOW</a>
                       </div>
 

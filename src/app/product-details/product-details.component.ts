@@ -55,7 +55,31 @@ export class ProductDetailsComponent implements OnInit {
   ratings : number[] = [];
   total:any
   cloudinaryUrl = environment.CLOUDINARY_URL
-  quantity = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+
+  quantity:any = "";
+  grind:any = "";
+  roast_type:any = "";
+
+  cartItem(id:any){
+    let form = new FormData();
+    form.append('quantity',this.quantity),
+    form.append('grind',this.grind),
+    form.append('roast_type',this.roast_type),
+    this.cart.addToCart(id,form)
+    this.ngOnInit()
+  }
+
+  cartItem2(id:any){
+    this.quantity = 100
+    this.grind = 'None'
+    this.roast_type = 'None'
+    let form = new FormData();
+    form.append('quantity',this.quantity),
+    form.append('grind',this.grind),
+    form.append('roast_type',this.roast_type),
+    this.cart.addToCart(id,form)
+    this.ngOnInit()
+  }
 
   showLoginDialog(){
    const dialogRef = this.dialog.open(LoginComponent,{
@@ -83,15 +107,8 @@ export class ProductDetailsComponent implements OnInit {
      width: '25pc'
    }); 
  }
- addToCart(id:number){
-   this.cart.addToCart(id).subscribe((res:any)=>{
-    this.ngOnInit()
-    this.snackBar.open(res, 'Close', {
-      duration: 3000,
-      panelClass: ['blue-snackbar']
-    });
-    
-   })
+ addToCart(id:number,cartItem:any){
+   
  }
 
  ngOnInit(): void {
