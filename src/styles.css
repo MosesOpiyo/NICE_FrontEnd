@@ -2036,7 +2036,8 @@ opacity: .2;
   }
 
   .sellercafe-card .cta-content button, 
-  .sellercafe-card .cta-content a {
+  .sellercafe-card .cta-content a,
+  .short-btn .cta-btn a {
     border: none;
     background-color: #151915;
     color: #fff;
@@ -2045,7 +2046,8 @@ opacity: .2;
   }
 
   .sellercafe-card .cta-content button:hover,
-  .sellercafe-card .cta-content a:hover {
+  .sellercafe-card .cta-content a:hover,
+  .short-btn .cta-btn a:hover {
     background-color: #f7f7f7;
     cursor: pointer;
     color: #000000;
