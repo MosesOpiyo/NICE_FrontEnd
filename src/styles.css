@@ -772,6 +772,10 @@ opacity: .2;
     font-weight: 500;
   }
 
+  #hero .farmers-container p {
+    margin-bottom: 0;
+  }
+
   #hero .hero-btn {
     align-self: center;
     font-size: 17px;
@@ -1147,7 +1151,7 @@ opacity: .2;
 
   /* ROAST SECTION */
   .roast-container {
-    margin-block: 2rem;
+    margin: 2rem 0 3rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1213,7 +1217,7 @@ opacity: .2;
   }
 
   .lightmed2 .roast-img {
-    background-image: url("./assets/img/roast/cbeans3.jpg");
+    background-image: url("./assets/img/roast/cbeans5.avif");
   }
 
   .med2 {
@@ -1229,7 +1233,7 @@ opacity: .2;
   }
 
   .meddark2 .roast-img {
-    background-image: url("./assets/img/roast/cbeans5.avif");
+    background-image: url("./assets/img/roast/coffeebeans.jpg");
   }
 
   .dark2 {
@@ -1237,7 +1241,7 @@ opacity: .2;
   }
 
   .dark2 .roast-img {
-    background-image: url("./assets/img/roast/coffeebeans.jpg");
+    background-image: url("./assets/img/roast/dark.jpg");
   }
 
 
@@ -1704,7 +1708,8 @@ opacity: .2;
 
   .cta-container .cta-content p {
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.3rem;
+    font-weight: 300;
   }
 
   .product-form .submit-btn {
@@ -1845,16 +1850,30 @@ opacity: .2;
     width: 30%;
     height: 100%;
     color: #fff;
-
     display: flex;
     gap: 3rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .popular-header::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    position: absolute;
+    opacity: .3;
+    z-index: -1;
   }
 
   .popular-header h2 {
     color: #f0f7fa;
+    font-weight: 300;
   }
 
   .popular-header p {
@@ -1894,10 +1913,6 @@ opacity: .2;
       height: 500px;
     }
 
-    .popular-header {
-      background-image: none;
-    }
-
     .popular-header h2 {
       color: #000000;
       position: relative;
@@ -1931,6 +1946,11 @@ opacity: .2;
     .popular-header {
       height: 60px;
       width: 50%;
+      background-image: none;
+    }
+
+    .popular-header::after {
+      display: none;
     }
 
     .popular-container .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {

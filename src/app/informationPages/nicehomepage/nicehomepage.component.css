@@ -151,8 +151,7 @@
       background-image: url("../../../assets/img/short1.jpg");
       background-position: center;
       background-size: cover;
-      margin-bottom: 4rem;
-      gap: 3rem;
+      gap: 5rem;
       text-align: center;
       position: relative;
       z-index: 1;
@@ -171,16 +170,16 @@
     }
 
     .short-container .short-content h2 {
-      font-size: 4rem;
+      font-size: 4.5rem;
       color: #f7f8fa;
       line-height: 3.2rem;
-      font-weight: 400;
+      font-weight: 300;
     }
 
     .short-container .short-content p {
       font-size: 1.2rem;
       color: #f7f8fad1;
-      padding-top: 1rem;
+      padding-top: 2rem;
     }
 
     .short-btn .cta-btn a {
