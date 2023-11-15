@@ -58,12 +58,17 @@ export class ProductDetailsComponent implements OnInit {
 
   quantity:any
   grind:any
+  price:any
   roast_type:any
 
   cartItem(id:any){
+    Math.round
+    const amount = Math.round((this.quantity / this.item.price)) 
+    this.price = amount * this.item.price
     let form = new FormData();
     form.append('quantity',this.quantity),
     form.append('grind',this.grind),
+    form.append('price',this.price),
     form.append('roast_type',this.roast_type),
     this.cart.addToCart(id,form)
     this.ngOnInit()
@@ -73,9 +78,11 @@ export class ProductDetailsComponent implements OnInit {
     this.quantity = 100
     this.grind = 'None'
     this.roast_type = 'None'
+    this.price = 100
     let form = new FormData();
     form.append('quantity',this.quantity),
     form.append('grind',this.grind),
+    form.append('price',this.price),
     form.append('roast_type',this.roast_type),
     this.cart.addToCart(id,form)
     this.ngOnInit()
