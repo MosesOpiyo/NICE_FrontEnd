@@ -29,7 +29,7 @@ export class DetailsComponent implements OnInit {
   }
 
   showProfileDialog(){
-    const dialogRef = this.dialog.open(NewproductComponent,{
+    const dialogRef = this.dialog.open(ProfileComponent,{
       width: '40pc',
       maxHeight: '90vh'
     });
@@ -41,7 +41,7 @@ export class DetailsComponent implements OnInit {
       this.user = res
       if(this.user.user.type == "FARMER"){
         this.service.getFarmerProfile().subscribe((res:any)=>{
-          if(res.county == "" || res.society_name == "" || res.total_acreage == ""){
+          if(res == "" ){
             this.showProfileDialog()
           }
           else if(res.county != "" || res.society_name != "" || res.total_acreage != ""){
