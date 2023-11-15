@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-
+import { FarmerprofileService } from '../../FarmerProfile/farmerprofile.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,8 +9,8 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit { 
-constructor(private _formBuilder: FormBuilder,public dialog: MatDialogRef<ProfileComponent>,){}
-  title = 'Farmer Profile';
+constructor(private _formBuilder: FormBuilder,public dialog: MatDialogRef<ProfileComponent>,private farmer:FarmerprofileService){}
+  title = 'Farm Details';
   isLinear = true;
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
@@ -61,8 +61,8 @@ submit(){
     wet_mill_name: new FormControl(this.firstFormGroup.controls['wet_mill_name'].value),
     society_name: new FormControl(this.firstFormGroup.controls['society_name'].value),
     factory_chairman: new FormControl(this.firstFormGroup.controls['factory_chairman'].value),
-    factory_manager: new FormControl(this.secondFormGroup.controls['factory_manager'].value),
-    no_of_farmers:new FormControl(this.secondFormGroup.controls['no_of_farmers'].value),
+    factory_manager: new FormControl(this.firstFormGroup.controls['factory_manager'].value),
+    no_of_farmers:new FormControl(this.firstFormGroup.controls['no_of_farmers'].value),
     total_acreage: new FormControl(this.secondFormGroup.controls['total_acreage'].value),
     no_of_trees: new FormControl(this.secondFormGroup.controls['no_of_trees'].value),
     altitude: new FormControl(this.secondFormGroup.controls['altitude'].value),
@@ -75,6 +75,7 @@ submit(){
     farm_area: new FormControl(this.secondFormGroup.controls['farm_area'].value),
   });
   this.dialog.close()
+  this.farmer.addProfileDetails(form.value)
 }
 
 

@@ -1,5 +1,5 @@
 import { Dialog } from '@angular/cdk/dialog';
-import { Component,ViewChild, AfterViewInit } from '@angular/core';
+import { Component,ViewChild, AfterViewInit,OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BarcodeScannerLivestreamComponent } from "ngx-barcode-scanner";
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
@@ -39,5 +39,7 @@ export class ScanComponent implements AfterViewInit {
   onStarted(started:any) {
     console.log(started);
   }
+
+  
 
 }

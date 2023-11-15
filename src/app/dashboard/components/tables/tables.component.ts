@@ -98,10 +98,15 @@ export class TablesComponent implements OnInit {
     });
   }
 
+  async requestCameraPermissions() {
+    
+  }
+
   showScanDialog(){
     const dialogRef = this.dialog.open(ScanComponent,{
       width: '40pc'
     });
+   
   }
 
   manifestDialog(object:any){
