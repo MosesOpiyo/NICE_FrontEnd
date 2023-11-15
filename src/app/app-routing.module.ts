@@ -6,7 +6,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
 
 import { WarehousedashboardComponent } from './warehousedashboard/warehousedashboard.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExpoComponent } from './informationPages/expo/expo.component';
 import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.component';
 import { CartComponent } from './cart/cart.component';
