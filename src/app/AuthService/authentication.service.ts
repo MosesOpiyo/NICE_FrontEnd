@@ -53,6 +53,7 @@ export class AuthenticationService implements OnInit {
 
   login(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Login`,credentials).subscribe((response:any)=>{
+      console.log(response.tokens.access)
       sessionStorage.setItem('Token', response.tokens.access)
       this.authService.authentication(true);
       this.snackBar.open('Login successful.Welcome', 'Close', {

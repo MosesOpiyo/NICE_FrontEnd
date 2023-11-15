@@ -1,0 +1,95 @@
+<!-- Form Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light rounded h-100 p-4">
+                <div class="row g-0">
+                    <div class="col-lg-9">
+                        <h5 *ngIf="user.user.type=='FARMER'" class="mb-4">Farmer's Details</h5>
+                        <h5 *ngIf="user.user.type=='WAREHOUSER'" class="mb-4">Warehouser's Details</h5>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-primary">Edit Profile</button> 
+                    </div>
+                </div>
+                
+                <div class="details">
+                    <div class="mb-3">
+                        <img *ngIf="user.profile" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="">
+                        <img *ngIf="!user.profile" src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="">
+                    </div>
+                    <div class="mb-3">
+                        <h4>Name: <span>{{user.user.username | titlecase}}</span></h4>
+                    </div>
+                    <div class="mb-3">
+                        <h4>Contact: <span>+1 345678389</span></h4>
+                    </div>
+                    <div class="mb-3">
+                        <h4>Email Address: <span>{{user.user.email}}</span></h4>
+                    </div>
+                    <div class="mb-3">
+                        <h4>Role: <span>{{user.user.type}}</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="col-sm-12 col-xl-6" *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='FARMER' || user.user.type=='ORIGINWAREHOUSER'">
+            <div class="bg-light rounded h-100 p-4">
+                <h5 *ngIf="user.user.type=='FARMER'" class="mb-4">Farm Details</h5>
+                <h5 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'" class="mb-4">Warehouse Details</h5>
+                <div class="details">
+                    <div class="mb-3">
+                        <h4 *ngIf="user.user.type=='FARMER'">Society: <span></span></h4>
+                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Name: <span>{{warehouse.name}}</span></h4>
+                    </div>
+                    <div class="mb-3">
+                        <h4 *ngIf="user.user.type=='FARMER'">Farm Size: <span></span></h4>
+                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Capacity: <span></span></h4>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <h4 *ngIf="user.user.type=='FARMER'">Farm Contact info: <span></span></h4>
+                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Contact info: <span></span></h4>
+                    </div>
+                    <div class="mb-3">
+                        <h4 *ngIf="user.user.type=='FARMER'">Warehouse Location:</h4>
+                        <span *ngIf="user.user.type=='FARMER'"><div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=mirema&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:250px;width:250px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:250px;}</style></div></div></span>
+                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Location: <span>{{warehouse.location}}</span></h4>
+                        <span *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'"><div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" [src]="getSanitizedURL(warehouse.location)" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:250px;width:250px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:250px;}</style></div></div></span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light rounded h-100 p-4">
+                <h5 *ngIf="user.user.type=='FARMER'" class="mb-4">Farm Details</h5>
+                <h5 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'" class="mb-4">Warehouse Details</h5>
+                <div class="details">
+                    <div class="mb-3">
+                        <h4 *ngIf="user.user.type=='FARMER'">Society: <span *ngIf="profile">{{profile.society_name}}</span></h4>
+                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Name: <span>{{warehouse.name}}</span></h4>
+                    </div>
+                    <div class="mb-3">
+                        <h4 *ngIf="user.user.type=='FARMER'">Farm Size: <span *ngIf="profile">{{profile.farm_area}}sq meters</span></h4>
+                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Capacity: <span>{{warehouse.warehouse_area_storage}}</span></h4>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <h4 *ngIf="user.user.type=='FARMER'">Harvest Season: <span *ngIf="profile">{{profile.harvest_season}}</span></h4>
+                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Contact info: <span></span></h4>
+                    </div>
+                    <div class="mb-3">
+                        <h4 *ngIf="user.user.type=='FARMER'">Warehouse Location: <span *ngIf="profile">{{profile.location}}</span></h4>
+                        <span *ngIf="user.user.type=='FARMER'" || profile><div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" [src]="getSanitizedURL(profile.location)" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:250px;width:250px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:250px;}</style></div></div></span>
+                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Location: <span>{{warehouse.location}}</span></h4>
+                        <span *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'"><div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" [src]="getSanitizedURL(warehouse.location)" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:250px;width:250px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:250px;}</style></div></div></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form End -->

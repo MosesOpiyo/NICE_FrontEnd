@@ -1,0 +1,15 @@
+table{
+    background-color: white;
+}
+th,td{
+    color: black;
+}
+span{
+    padding: 10px;
+}
+select{
+    padding: 5px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}

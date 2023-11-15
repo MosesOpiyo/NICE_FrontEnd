@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 
 import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomepage.component';
 
 import { WarehousedashboardComponent } from './warehousedashboard/warehousedashboard.component';
+import { DashBoardComponent } from './dash-board/dash-board.component';
 import { ExpoComponent } from './informationPages/expo/expo.component';
 import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.component';
 import { CartComponent } from './cart/cart.component';
@@ -13,13 +13,14 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 import { AboutComponent } from './informationPages/about/about.component';
+import { AttributionsComponent } from './informationPages/attributions/attributions.component';
 
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
   {path:'homepage',component:NicehomepageComponent},
   {path:'Warehouse',component:WarehousedashboardComponent},
-  {path:'DashBoard',component:DashboardComponent},
+  {path:'DashBoard',component:DashBoardComponent},
   {path:'Expo',component:ExpoComponent},
   {path:'Origin-Trip',component:OriginTripComponent},
   {path: 'Cart', component:CartComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'Products/:productId', component: ProductDetailsComponent },
   { path: '404', component: NotfoundComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'attributions', component: AttributionsComponent }
 
 ];
 

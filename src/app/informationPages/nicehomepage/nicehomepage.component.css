@@ -1,18 +1,198 @@
-.modal-content input[type="number"] {
+.modal-contents input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
   }
   
-  .modal-content input[type=number]::-webkit-inner-spin-button,
-  .modal-content input[type=number]::-webkit-outer-spin-button {
+  .modal-contents input[type=number]::-webkit-inner-spin-button,
+  .modal-contents input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
   }
 
-  .modal-content .incrdecr input[type="number"] {
+  .modal-contents .incrdecr input[type="number"] {
     align-self: stretch;
     max-width: 100px;
     font-size: 1.5rem;
     text-align: center;
     border: 1px solid #0000004a;
   }
+
+  .test-swiper {
+    /* border: 2px solid black; */
+    padding: .5rem;
+    height: 100%;
+    width: 70%;
+  }
+  
+  .test-swiper .mobile {
+    display: none;
+  }
+  
+  .test-swiper .tablet {
+    display: none;
+  }
+  
+  .test-swiper .laptop {
+    display: none;
+  }
+  
+  @media (max-width: 575px) {
+    .test-swiper .mobile {
+      display: block;
+      height: 100%;
+    }
+  }
+  
+  @media (min-width: 576px) and (max-width: 768px) {
+    .test-swiper .tablet {
+      display: block;
+      height: 100%;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .test-swiper .laptop {
+      display: block;
+      height: 100%;
+    }
+  }
+  
+  
+  .test-swiper .slide-content {
+    height: 100%;
+    /* border: 2px solid red; */
+  }
+  
+  .test-swiper .slide-content .product-item {
+    width: 100%;
+    height: 90%;
+    box-shadow: 0 0 2px 1px #e6e6e6;
+    border-radius: 5px;
+    transition: all 500ms ease-in-out;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: .5rem;
+  }
+  
+  .slide-content .product-item .product-image {
+    background-color: #f7f8fa;
+    width: 100%;
+    height: 250px;
+  
+    position: relative;
+    z-index: 1;
+  
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  
+  .slide-content .product-item .product-image img {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease-in-out;
+  
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  
+  .slide-content .product-item .product-image img:hover {
+    transform: scale(1.2);
+  }
+  
+  .slide-content .product-item .latestadd-actions {
+    display: flex;
+    gap: .2rem;
+    justify-content: center;
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .slide-content .product-item .latestadd-actions a {
+      padding: 6px 10px;
+      transition: all 0.3s ease-in-out;
+      text-align: center;
+      background-color: #151915;
+      color: #fff;
+      cursor: pointer;
+    }
+  
+    .slide-content .product-item .latestadd-actions a:hover {
+      word-spacing: 3px;
+    }
+  
+    @media (max-width: 1024px) {
+      .test-swiper {
+        width: 100%;
+        height: 480px;
+      }
+      .test-swiper .slide-content .product-item {
+        height: 95%;
+      }
+    }
+  
+    @media (max-width: 425px) {
+      .test-swiper .slide-content .product-item {
+        text-align: center;
+      }
+    }
+  
+
+    /* short */
+    .short-container {
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: url("../../../assets/img/short1.jpg");
+      background-position: center;
+      background-size: cover;
+      gap: 5rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .short-container::after {
+      content: '';
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: #000000;
+      position: absolute;
+      opacity: .3;
+      z-index: -1;
+    }
+
+    .short-container .short-content h2 {
+      font-size: 4.5rem;
+      color: #f7f8fa;
+      line-height: 3.2rem;
+      font-weight: 300;
+    }
+
+    .short-container .short-content p {
+      font-size: 1.2rem;
+      color: #f7f8fad1;
+      padding-top: 2rem;
+    }
+
+    .short-btn .cta-btn a {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 320px) {
+      .short-container .short-content h2 {
+        font-size: 3.5rem;
+        line-height: 3rem;
+      }
+
+      .short-btn .cta-btn a {
+        font-size: 1rem;
+      }
+    }
