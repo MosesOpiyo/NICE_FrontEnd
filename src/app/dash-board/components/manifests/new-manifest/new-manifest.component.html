@@ -1,0 +1,22 @@
+<div class="container">
+    <h3 class="clo-lg-5 text-center">Manifest For {{data.object.name}}</h3>
+    <form [formGroup]="firstFormGroup">
+          <mat-form-field>
+            <mat-select  placeholder="Warehouser" formControlName="warehouser" #singleSelect>
+                <mat-option >
+                  <ngx-mat-select-search noEntriesFoundLabel="No Match Found"></ngx-mat-select-search>
+                </mat-option>
+                <mat-option *ngFor="let warehouse of warehousers" [value]="warehouse.email">
+                  {{warehouse.username}}
+                </mat-option>
+              </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Quantity</mat-label>
+            <input matInput placeholder="quantity" formControlName="quantity" required>
+        </mat-form-field>
+    </form>
+    <br>
+    <button (click)="postManifest()" mat-button>Submit</button>
+</div>

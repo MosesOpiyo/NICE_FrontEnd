@@ -12,3 +12,26 @@
 :host ::ng-deep #header .navbar-mobile .trip-link {
   background-color: rgb(216, 216, 216);
 }
+
+.farm-item {
+  height: 350px;
+}
+
+swiper-container {
+  height: 100%;
+}
+
+.trip-container .farm-story i {
+  color: orange;
+}
+
+@media (max-width: 768px) {
+  .trip-container .modal-contents {
+    padding: 5px;
+  }
+
+  .trip-container .farm-info .farmer-images,
+  .farm-item {
+    height: 300px;
+  }
+}

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA , NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
@@ -23,7 +23,6 @@ import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomep
 import { WarehousedashboardModule } from './warehousedashboard/warehousedashboard.module';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FooterComponent } from './footer/footer.component';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { ExpoComponent } from './informationPages/expo/expo.component';
 import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.component';
 import { CartComponent } from './cart/cart.component';
@@ -37,7 +36,13 @@ import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 import { AboutComponent } from './informationPages/about/about.component';
 import { PasswordToggleDirective } from './sign-up/password-toggle.directive';
 import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.component';
+import { AttributionsComponent } from './informationPages/attributions/attributions.component';
+import { DashBoardModule } from './dash-board/dash-board.module';
 
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 
 
@@ -61,6 +66,7 @@ import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.c
     AboutComponent,
     PasswordToggleDirective,
     FarmerSignUpComponent,
+    AttributionsComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
@@ -76,13 +82,14 @@ import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.c
     MatSelectModule,
     FormsModule,
     WarehousedashboardModule,
-    DashboardModule,
     NgxPaginationModule,
     MatGridListModule,
     MatIconModule,
     PasswordStrengthMeterModule.forRoot(),
+    DashBoardModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

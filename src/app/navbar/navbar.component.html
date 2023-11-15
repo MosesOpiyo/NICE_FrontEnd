@@ -15,9 +15,10 @@
                         <i class="fa-solid fa-circle-user"></i>
                     </button>
                 </li>
-                <li *ngIf="user" class="dropdown user-case"><a href="#"><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
+                <li *ngIf="user" class="dropdown user-case"><a><span>Hello, {{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
-                      <li><a href="" (click)="logout()">Log out</a></li><br>
+                        <li><a routerLink="/dash-board">My Account</a></li>
+                        <li><a href="" (click)="logout()">Log out</a></li>
                     </ul>
                   </li>
             </ul>
@@ -58,7 +59,7 @@
             <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" [attr.value]="userCart"></i></a></li>
             </ul>
             <ul *ngIf="!user" class="cart-icon">
-                <li class="cart"><a routerLink="/Cart"><i class="fas fa-shopping-bag"></i></a></li>
+                <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping two"></i></a></li>
                 </ul>
 
             <span *ngIf="!isMenuOpen" class="burger" (click)="toggleMenu()">
@@ -99,7 +100,7 @@
                 <li (click)=toggleDivOn3() class="about-link dropdown-header"><span>About Us</span><i class="fa-solid fa-chevron-down"></i></li>
                 <div *ngIf="isShowDiv3" class="dropdown">
                     <ul>
-                        <li><a href="#">About Us</a></li>
+                        <li><a routerLink="/about">About Us</a></li>
                         <li><a href="#">Partners</a></li>
                         <li><a href="#">Gallery</a></li>
                         <li><a href="#">How NiceDirect Works</a></li>
@@ -125,9 +126,10 @@
               <li>
                 <div class="navbar">
                   <ul>
-                    <li class="dropdown user-case"><a href="#"><span>{{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
+                    <li class="dropdown user-case"><a><span>Hello, {{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
                       <ul>
-                        <li><a href="" (click)="logout()">Log out</a></li><br>
+                        <li><a routerLink="/dash-board">My Account</a></li>
+                        <li><a href="" (click)="logout()">Log out</a></li>
                       </ul>
                     </li>
                   </ul>

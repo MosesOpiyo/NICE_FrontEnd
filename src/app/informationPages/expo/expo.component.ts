@@ -15,7 +15,7 @@ interface timeComponents {
   daysToDday: number;
 }
 
-function calcDateDiff(endDay: Date = new Date(2023, 10, 9)): timeComponents {
+function calcDateDiff(endDay: Date = new Date(2024, 10, 13)): timeComponents {
   const dDay = endDay.valueOf();
 
   const milliSecondsInASecond = 1000;
