@@ -1,95 +1,168 @@
 <!-- Form Start -->
 <div class="container-fluid pt-4 px-4">
-    <div class="row g-4">
-        <div class="col-sm-12 col-xl-6">
-            <div class="bg-light rounded h-100 p-4">
-                <div class="row g-0">
-                    <div class="col-lg-9">
-                        <h5 *ngIf="user.user.type=='FARMER'" class="mb-4">Farmer's Details</h5>
-                        <h5 *ngIf="user.user.type=='WAREHOUSER'" class="mb-4">Warehouser's Details</h5>
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-outline-primary">Edit Profile</button> 
-                    </div>
+    <div class="card-container row g-4">
+
+        <!-- 1ST CARD -->
+        <div class="dashboard-card">
+            <div class="card-header">
+                <div>
+                    <h5 *ngIf="user.user.type=='FARMER'" class="mb-4">Farmer's Details</h5>
+                    <h5 *ngIf="user.user.type=='WAREHOUSER'" class="mb-4">Warehouser's Details</h5>
                 </div>
-                
-                <div class="details">
-                    <div class="mb-3">
-                        <img *ngIf="user.profile" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="">
-                        <img *ngIf="!user.profile" src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="">
-                    </div>
-                    <div class="mb-3">
-                        <h4>Name: <span>{{user.user.username | titlecase}}</span></h4>
-                    </div>
-                    <div class="mb-3">
-                        <h4>Contact: <span>+1 345678389</span></h4>
-                    </div>
-                    <div class="mb-3">
-                        <h4>Email Address: <span>{{user.user.email}}</span></h4>
-                    </div>
-                    <div class="mb-3">
-                        <h4>Role: <span>{{user.user.type}}</span></h4>
-                    </div>
+
+                <div>
+                    <button class="btn btn-outline-primary">Edit Profile</button>
+                </div>
+            </div>
+        
+            <div class="details">
+                <div class="picture">
+                    <img *ngIf="user.profile" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="">
+                    <img *ngIf="!user.profile"
+                        src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg"
+                        alt="">
+                </div>
+        
+                <div class="user-addinfo">
+                    <p>Name: <span>{{user.user.username | titlecase}}</span></p>
+                    <p>Contact: <span>+1 345678389</span></p>
+                    <p>Email Address: <span>{{user.user.email}}</span></p>
+                    <p>Role: <span>{{user.user.type}}</span></p>
                 </div>
             </div>
         </div>
 
-
-        <!-- <div class="col-sm-12 col-xl-6" *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='FARMER' || user.user.type=='ORIGINWAREHOUSER'">
-            <div class="bg-light rounded h-100 p-4">
-                <h5 *ngIf="user.user.type=='FARMER'" class="mb-4">Farm Details</h5>
-                <h5 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'" class="mb-4">Warehouse Details</h5>
-                <div class="details">
-                    <div class="mb-3">
-                        <h4 *ngIf="user.user.type=='FARMER'">Society: <span></span></h4>
-                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Name: <span>{{warehouse.name}}</span></h4>
-                    </div>
-                    <div class="mb-3">
-                        <h4 *ngIf="user.user.type=='FARMER'">Farm Size: <span></span></h4>
-                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Capacity: <span></span></h4>
-                        
-                    </div>
-                    <div class="mb-3">
-                        <h4 *ngIf="user.user.type=='FARMER'">Farm Contact info: <span></span></h4>
-                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Contact info: <span></span></h4>
-                    </div>
-                    <div class="mb-3">
-                        <h4 *ngIf="user.user.type=='FARMER'">Warehouse Location:</h4>
-                        <span *ngIf="user.user.type=='FARMER'"><div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=mirema&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:250px;width:250px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:250px;}</style></div></div></span>
-                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Location: <span>{{warehouse.location}}</span></h4>
-                        <span *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'"><div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" [src]="getSanitizedURL(warehouse.location)" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:250px;width:250px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:250px;}</style></div></div></span>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="col-sm-12 col-xl-6">
-            <div class="bg-light rounded h-100 p-4">
-                <h5 *ngIf="user.user.type=='FARMER'" class="mb-4">Farm Details</h5>
-                <h5 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'" class="mb-4">Warehouse Details</h5>
-                <div class="details">
-                    <div class="mb-3">
-                        <h4 *ngIf="user.user.type=='FARMER'">Society: <span>{{profile.society_name}}</span></h4>
-                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Name: <span>{{warehouse.name}}</span></h4>
-                    </div>
-                    <div class="mb-3">
-                        <h4 *ngIf="user.user.type=='FARMER'">Farm Size: <span>{{profile.farm_area}}sq meters</span></h4>
-                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Capacity: <span>{{warehouse.warehouse_area_storage}}</span></h4>
-                        
-                    </div>
-                    <div class="mb-3">
-                        <h4 *ngIf="user.user.type=='FARMER'">Harvest Season: <span>{{profile.harvest_season}}</span></h4>
-                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Contact info: <span></span></h4>
-                    </div>
-                    <div class="mb-3">
-                        <h4 *ngIf="user.user.type=='FARMER'">Warehouse Location: <span>{{profile.location}}</span></h4>
-                        <span *ngIf="user.user.type=='FARMER'"><div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" [src]="getSanitizedURL(profile.location)" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:250px;width:250px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:250px;}</style></div></div></span>
-                        <h4 *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">Warehouse Location: <span>{{warehouse.location}}</span></h4>
-                        <span *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'"><div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" [src]="getSanitizedURL(warehouse.location)" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:250px;width:250px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:250px;}</style></div></div></span>
-                    </div>
-                </div>
+        <!-- 2ND CARD(FARMER) -->
+        <div class="dashboard-card" *ngIf="user.user.type=='FARMER'">
+            <h5 class="mb-4">Farm Details</h5>
+        
+            <div>
+                <ul class="farmer-info">
+                    <li>County: <br>
+                        <span>Kirinyaga</span>
+                        <i class="fa-solid fa-pencil" (click)="toggleModal()"></i>
+                    </li>
+                    <li>Estate Name:<br><span>{{profile.society_name}}Ngacha Coffe Estate</span><i class="fa-solid fa-pencil"></i>
+                    </li>
+                    <li>Owner:<br><span>{{user.user.username}}</span><i class="fa-solid fa-pencil"></i></li>
+                    <li>Total Acreage:<br><span>{{profile.farm_area}}6</span><i class="fa-solid fa-pencil"></i></li>
+                    <li>No. of Trees:<br><span>2800</span><i class="fa-solid fa-pencil"></i></li>
+                    <li>Altitude:<br><span>1864 AMSL</span><i class="fa-solid fa-pencil"></i></li>
+                    <li>Harvest Season:<br><span>{{profile.harvest_season}}May - December</span><i class="fa-solid fa-pencil"></i>
+                    </li>
+                    <li>Annual Rainfall Amt:<br><span>More than 900mm</span><i class="fa-solid fa-pencil"></i></li>
+                    <li>Annual Temp Amt:<br><span>A high of 24 degrees and a low of 13 degrees</span><i
+                            class="fa-solid fa-pencil"></i></li>
+                    <li>Coffe Varieties:<br><span>SL 28</span><i class="fa-solid fa-pencil"></i></li>
+                    <li>Farming Method:<br><span>Organic</span><i class="fa-solid fa-pencil"></i></li>
+                    <li>Cherry Production:<br><span></span><i class="fa-solid fa-pencil"></i></li>
+                    <li>Soil Type:<br><span>Deep red volcanic soils that are rich in phosphorus and well drained</span><i
+                            class="fa-solid fa-pencil"></i></li>
+                    <li>Processing Methods:<br><span>Anaerobic natural, anaerobic yellow, red and black honey</span><i
+                            class="fa-solid fa-pencil"></i></li>
+                    <li>Drying Method:<br><span>Sun dried</span><i class="fa-solid fa-pencil"></i></li>
+                    <li>Cupping Notes:<br><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, repellendus.
+                            Perferendis quas nisi veniam voluptatibus! Obcaecati aut non unde laborum, optio, officiis
+                            eveniet quia fugit similique praesentium illum nesciunt delectus! </span><i
+                            class="fa-solid fa-pencil"></i></li>
+                    <li>Availability:<br><span>Available from January-April every year</span><i class="fa-solid fa-pencil"></i></li>
+                    <li>Grower's History:<br><span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia aperiam
+                            asperiores incidunt optio, expedita molestias fuga sapiente, accusantium vitae sed voluptatibus
+                            atque assumenda quidem vero blanditiis, itaque fugit aliquid voluptate.
+                            Enim quasi dignissimos a eveniet animi ipsam, ipsum, repellat eius ullam perspiciatis earum.
+                            Quod optio quasi dignissimos magni porro labore corporis omnis aut suscipit dolorum voluptatem
+                            architecto mollitia, atque numquam.
+                            Consectetur necessitatibus repellendus ipsam adipisci. Id quasi vero ab quos ipsa. Natus totam
+                            nobis doloremque tempore nam similique exercitationem perspiciatis at cupiditate voluptatem!
+                            Assumenda nostrum aliquam deleniti qui illo architecto!
+                            Consequuntur natus saepe accusamus adipisci eaque dolores repellat culpa commodi aliquid quaerat
+                            error corporis ad, officia provident unde voluptas suscipit eos velit? Ipsum, repudiandae
+                            cupiditate vitae optio ab veritatis repellat. </span><i class="fa-solid fa-pencil"></i></li>
+                    <li class="location">Location:<br><span>{{profile.location}}</span>
+                        <div>
+                            <iframe
+                                [src]="getSanitizedURL(profile.location)"
+                                allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div><i class="fa-solid fa-pencil"></i>
+                    </li>
+                </ul>
             </div>
         </div>
+
+        <!-- 2ND CARD(WAREHOUSER / ORIGIN WAREHOUSER) -->
+        <div class="dashboard-card" *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">
+            <h5 class="mb-4">Warehouse Details</h5>
+
+            <div class="mb-3">
+                <h4>Warehouse Name: <span>{{warehouse.name}}</span></h4>
+            </div>
+        
+            <div class="mb-3">
+                <h4>Warehouse Capacity: <span>{{warehouse.warehouse_area_storage}}</span></h4>
+            </div>
+        
+            <div class="mb-3">
+                <h4>Warehouse Contact info: <span></span></h4>
+            </div>
+
+            <div class="mb-3">
+                <h4>Warehouse Location:<span>{{warehouse.location}}</span></h4>
+                <span>
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas"
+                                [src]="getSanitizedURL(warehouse.location)" frameborder="0" scrolling="no" marginheight="0"
+                                marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    height: 250px;
+                                    width: 250px;
+                                }
+                            </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                            <style>
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 250px;
+                                    width: 250px;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+<!-- county modal -->
+<div class="changes-content modals" *ngIf="isModalOpen">
+    <div class="modal-contents">
+        <span class="modal-close" (click)="toggleModal()">
+            <i class="fa-solid fa-x"></i>
+        </span>
+
+        <div class="changes">
+            <form class="form" id="form" action="" method="POST">
+                <!-- HONEYPOT(to catch spammers )  -->
+               <input type="text" name="_honey" class="honeypot" title="honeypot">
+   
+               <div class="form-controls name">
+                   <label for="county" class="block">County:</label><br>
+                   <input type="text" placeholder="Nyeri" id="county" name="county" required>
+               </div>
+   
+               <div class="form-controls form-btn form-submit">
+                   <button type="button" >Cancel</button>&nbsp;&nbsp;
+                   <button type="submit">Save Changes</button>
+               </div>
+           </form>
+        </div>
+
     </div>
 </div>
 <!-- Form End -->

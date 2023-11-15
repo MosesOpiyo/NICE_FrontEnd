@@ -13,6 +13,14 @@ import { NewproductComponent } from '../newproduct/newproduct.component';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
+  
+  // modal
+  isModalOpen = false;
+  toggleModal(): void {
+    this.isModalOpen = !this.isModalOpen;
+    console.log("im clicked")
+  }
+
   constructor(private service:AuthenticationService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
   user:any
   warehouse:any
