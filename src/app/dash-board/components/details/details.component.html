@@ -38,35 +38,114 @@
         
             <div>
                 <ul class="farmer-info">
-                    <li>County: <br>
+                    <li>
+                        County: <br>
                         <span>Kirinyaga</span>
-                        <i class="fa-solid fa-pencil" (click)="toggleModal()"></i>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(1)"></i>
                     </li>
-                    <li>Estate Name:<br><span>{{profile.society_name}}Ngacha Coffe Estate</span><i class="fa-solid fa-pencil"></i>
+
+                    <li>
+                        Estate Name:<br>
+                        <span>{{profile.society_name}}Ngacha Coffe Estate</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(2)"></i>
                     </li>
-                    <li>Owner:<br><span>{{user.user.username}}</span><i class="fa-solid fa-pencil"></i></li>
-                    <li>Total Acreage:<br><span>{{profile.farm_area}}6</span><i class="fa-solid fa-pencil"></i></li>
-                    <li>No. of Trees:<br><span>2800</span><i class="fa-solid fa-pencil"></i></li>
-                    <li>Altitude:<br><span>1864 AMSL</span><i class="fa-solid fa-pencil"></i></li>
-                    <li>Harvest Season:<br><span>{{profile.harvest_season}}May - December</span><i class="fa-solid fa-pencil"></i>
+
+                    <li>
+                        Owner:<br>
+                        <span>{{user.user.username}}</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(3)"></i>
                     </li>
-                    <li>Annual Rainfall Amt:<br><span>More than 900mm</span><i class="fa-solid fa-pencil"></i></li>
-                    <li>Annual Temp Amt:<br><span>A high of 24 degrees and a low of 13 degrees</span><i
-                            class="fa-solid fa-pencil"></i></li>
-                    <li>Coffe Varieties:<br><span>SL 28</span><i class="fa-solid fa-pencil"></i></li>
-                    <li>Farming Method:<br><span>Organic</span><i class="fa-solid fa-pencil"></i></li>
-                    <li>Cherry Production:<br><span></span><i class="fa-solid fa-pencil"></i></li>
-                    <li>Soil Type:<br><span>Deep red volcanic soils that are rich in phosphorus and well drained</span><i
-                            class="fa-solid fa-pencil"></i></li>
-                    <li>Processing Methods:<br><span>Anaerobic natural, anaerobic yellow, red and black honey</span><i
-                            class="fa-solid fa-pencil"></i></li>
-                    <li>Drying Method:<br><span>Sun dried</span><i class="fa-solid fa-pencil"></i></li>
-                    <li>Cupping Notes:<br><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, repellendus.
+
+                    <li>
+                        Total Acreage:<br>
+                        <span>{{profile.farm_area}}6</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                    </li>
+
+                    <li>
+                        No. of Trees:<br>
+                        <span>2800</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(5)"></i>
+                    </li>
+
+                    <li>
+                        Altitude:<br>
+                        <span>1864 AMSL</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(6)"></i>
+                    </li>
+
+                    <li>
+                        Harvest Season:<br>
+                        <span>{{profile.harvest_season}}May - December</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(7)"></i>
+                    </li>
+
+                    <li>
+                        Annual Rainfall Amt:<br>
+                        <span>More than 900mm</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(8)"></i>
+                    </li>
+
+                    <li>
+                        Annual Temp Amt:<br>
+                        <span>A high of 24 degrees and a low of 13 degrees</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(9)"></i>
+                    </li>
+
+                    <li>
+                        Coffe Varieties:<br>
+                        <span>SL 28</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(10)"></i>
+                    </li>
+
+                    <li>
+                        Farming Method:<br>
+                        <span>Organic</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(11)"></i>
+                    </li>
+
+                    <li>
+                        Cherry Production:<br>
+                        <span></span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(12)"></i>
+                    </li>
+
+                    <li>
+                        Soil Type:<br>
+                        <span>Deep red volcanic soils that are rich in phosphorus and well drained</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(13)"></i>
+                    </li>
+
+                    <li>
+                        Processing Methods:<br>
+                        <span>Anaerobic natural, anaerobic yellow, red and black honey</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(14)"></i>
+                    </li>
+
+                    <li>
+                        Drying Method:<br>
+                        <span>Sun dried</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(15)"></i>
+                    </li>
+
+                    <li>
+                        Cupping Notes:<br>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, repellendus.
                             Perferendis quas nisi veniam voluptatibus! Obcaecati aut non unde laborum, optio, officiis
-                            eveniet quia fugit similique praesentium illum nesciunt delectus! </span><i
-                            class="fa-solid fa-pencil"></i></li>
-                    <li>Availability:<br><span>Available from January-April every year</span><i class="fa-solid fa-pencil"></i></li>
-                    <li>Grower's History:<br><span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia aperiam
+                            eveniet quia fugit similique praesentium illum nesciunt delectus!
+                        </span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(16)"></i>
+                    </li>
+
+                    <li>
+                        Availability:<br>
+                        <span>Available from January-April every year</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(17)"></i>
+                    </li>
+
+                    <li>
+                        Grower's History:<br>
+                        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia aperiam
                             asperiores incidunt optio, expedita molestias fuga sapiente, accusantium vitae sed voluptatibus
                             atque assumenda quidem vero blanditiis, itaque fugit aliquid voluptate.
                             Enim quasi dignissimos a eveniet animi ipsam, ipsum, repellat eius ullam perspiciatis earum.
@@ -77,16 +156,24 @@
                             Assumenda nostrum aliquam deleniti qui illo architecto!
                             Consequuntur natus saepe accusamus adipisci eaque dolores repellat culpa commodi aliquid quaerat
                             error corporis ad, officia provident unde voluptas suscipit eos velit? Ipsum, repudiandae
-                            cupiditate vitae optio ab veritatis repellat. </span><i class="fa-solid fa-pencil"></i></li>
-                    <li class="location">Location:<br><span>{{profile.location}}</span>
+                            cupiditate vitae optio ab veritatis repellat.
+                        </span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(18)"></i>
+                    </li>
+
+                    <li class="location">
+                        Location:<br>
+                        <span>{{profile.location}}</span>
                         <div>
                             <iframe
                                 [src]="getSanitizedURL(profile.location)"
                                 allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
-                        </div><i class="fa-solid fa-pencil"></i>
+                        </div>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(19)"></i>
                     </li>
+                    
                 </ul>
             </div>
         </div>

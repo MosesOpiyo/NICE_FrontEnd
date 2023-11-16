@@ -3,7 +3,7 @@
     width: 100%;
     
     /* gap: 1rem; */
-    height: calc(100vh - 5rem);
+    /* height: calc(100vh - 5rem); */
     position: relative;
     top: 5rem;
     /* border: 2px solid red; */
@@ -14,7 +14,8 @@
     background-color: #ffffff;
     left: 20%;
     /* border: 2px solid black; */
-    height: max-content;
+    /* height: max-content; */
+    /* height: calc(100vh - 5rem); */
 }
 
 .side-nav {
@@ -24,8 +25,9 @@
     background-color: #f3f6f9;
     position: fixed;
     z-index: 2;
-    height: calc(100vh - 5rem);
+    top: 5rem;
     overflow: auto;
+    height: calc(100% - 5rem);
 }
 
 @media (max-width: 768px) {

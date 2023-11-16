@@ -1,0 +1,54 @@
+.changes {
+    background-color: #fff;
+    color: #000000;
+}
+
+.changes h2 {
+    color: #000000;
+    text-align: center;
+}
+
+.changes form {
+    text-align: center;
+}
+
+.changes .form-controls {
+    margin-block: .5rem;
+    padding: .5rem;
+}
+
+.changes .form-controls label {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.changes .form-controls input {
+    padding: .5rem;
+    margin-top: .5rem;
+    font-size: 1.1rem;
+}
+
+mat-dialog-actions {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.changes button {
+    border: none;
+    padding: .5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: #44f436;
+    transition: all 350ms ease;
+}
+
+.changes button.cancel {
+    background-color: rgb(189, 58, 58);
+}
+  
+  .changes button:hover {
+    cursor: pointer;
+    background-color: #ddce2e;
+  }
