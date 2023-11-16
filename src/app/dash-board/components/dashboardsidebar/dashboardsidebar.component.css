@@ -10,6 +10,7 @@
     text-align: center;
     padding: 2rem .5rem;
     gap: 1rem;
+    flex-direction: column;
 }
 
 .sidenav-container .nav-menu .user-image .image {
@@ -22,7 +23,7 @@
     height: 100%;
     width: 100%;
     object-position: center;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 /* .sidenav-container .nav-menu .user-image .user-credentials {

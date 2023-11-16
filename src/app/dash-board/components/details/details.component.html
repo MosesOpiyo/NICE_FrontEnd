@@ -17,8 +17,8 @@
         
             <div class="details">
                 <div class="picture">
-                    <img *ngIf="user.profile" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="">
-                    <img *ngIf="!user.profile"
+                    <img *ngIf="user.profile_pic" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="">
+                    <img *ngIf="!user.profile_pic"
                         src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg"
                         alt="">
                 </div>
@@ -40,7 +40,7 @@
                 <ul class="farmer-info">
                     <li>
                         County: <br>
-                        <span></span>
+                        <span>{{profile.county}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(1)"></i>
                     </li>
 
@@ -52,7 +52,7 @@
 
                     <li>
                         Owner:<br>
-                        <span>{{user.user.username}}</span>
+                        <span>{{profile.farmer.username}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(3)"></i>
                     </li>
 
@@ -64,13 +64,13 @@
 
                     <li>
                         No. of Trees:<br>
-                        <span></span>
+                        <span>{{profile.no_of_trees}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(5)"></i>
                     </li>
 
                     <li>
                         Altitude:<br>
-                        <span></span>
+                        <span>{{profile.altitude}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(6)"></i>
                     </li>
 
@@ -82,7 +82,7 @@
 
                     <li>
                         Annual Rainfall Amt:<br>
-                        <span></span>
+                        <span>{{profile.annual_rainfall_amount}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(8)"></i>
                     </li>
 
@@ -94,7 +94,7 @@
 
                     <li>
                         Coffe Varieties:<br>
-                        <span></span>
+                        <span>{{profile.coffee_variety}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(10)"></i>
                     </li>
 
@@ -137,7 +137,7 @@
 
                     <li>
                         Availability:<br>
-                        <span></span>
+                        <span>{{profile.availability}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(17)"></i>
                     </li>
 

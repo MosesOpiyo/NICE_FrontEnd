@@ -2,8 +2,8 @@
     <div class="nav-menu">
         <div class="user-image">
             <div class="image">
-                <img class="rounded-circle" *ngIf="user.user.profile_pic" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="profile picture">
-                <img class="rounded-circle" *ngIf="!user.user.profile_pic" src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="profile picture">
+                <img class="rounded-circle" *ngIf="user.profile_pic" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="profile picture">
+                <img class="rounded-circle" *ngIf="!user.profile_pic" src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="profile picture">
                 <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
             </div>
             <div class="user-credentials">

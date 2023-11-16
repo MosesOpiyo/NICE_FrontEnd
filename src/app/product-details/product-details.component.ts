@@ -56,10 +56,10 @@ export class ProductDetailsComponent implements OnInit {
   total:any
   cloudinaryUrl = environment.CLOUDINARY_URL
 
-  quantity:any
-  grind:any
+  quantity:any = "";
+  grind:any = "";
   price:any
-  roast_type:any
+  roast_type:any = "";
 
   cartItem(id:any){
     Math.round
