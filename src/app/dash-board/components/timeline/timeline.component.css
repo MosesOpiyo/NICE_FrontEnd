@@ -1,0 +1,225 @@
+.timeline-container {
+    /* border: 2px solid black; */
+    width: 100%;
+}
+
+.timeline-card {
+    background-color: #f3f6f9;
+    padding: 1rem;
+    border-radius: .375rem;
+    height: 100%;
+    margin-block: 1.5rem;
+    /* border: 2px solid red; */
+    width: 95%;
+    margin-inline: auto;
+}
+
+.create-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* .create-timeline > * {
+    border: 2px solid blue;
+} */
+
+.create-timeline form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 95%;
+}
+
+.create-timeline form > * {
+    /* border: 2px solid green; */
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.timeline h2 {
+    text-align: center;
+} 
+
+form .media-content {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    width: 100%;
+}
+
+form .media-content > * {
+    border: 2px solid #0000000d;
+    padding: .5rem;
+    flex-basis: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+form .media-content .video,
+form .media-content .image {
+    display: flex;
+    gap: .5rem;
+}
+
+form input#file {
+    cursor: pointer;
+}
+
+form .form-controls textarea {
+    border: 2px solid #0000000d;
+    min-width: 100%;
+    max-width: 100%;
+    padding: .5rem;
+    background-color: #ffffff59;
+    height: 150px;
+}
+
+form button {
+    padding: 0.6rem;
+    border: none;
+    background-color: #008000bf;
+    color: #fff;
+    font-size: 1.2rem;
+    width: 50%;
+    align-self: center;
+    transition: all 350ms ease-in-out;
+}
+
+form button:hover {
+    background-color: #356935;
+}
+
+.timeline-container .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.timeline .timeline-info {
+    display: grid;
+    width: 60%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 50px;
+}
+
+.timeline .timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 70%;
+    margin-inline: auto;
+    /* border: 2px solid #0000000d; */
+    /* margin-bottom: 1rem; */
+    background-color: #fff;
+    box-shadow: 3px 3px 2px 1px #e3e3e3;
+    border-radius: 10px;
+}
+
+/* .timeline .timeline-content > * {
+    border: 2px solid blue;
+} */
+
+.timeline .timeline-content .timeline-media {
+    height: 300px;
+    width: 100%;
+}
+
+.timeline .timeline-content .timeline-media img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.timeline .timeline-content .timeline-profile {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    align-items: center;
+}
+
+.timeline-profile .profile-pic {
+    height: 50px;
+    width: 50px;
+}
+
+.timeline-profile .profile-pic img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.timeline .timeline-content .timeline-text {
+    padding: 0 2rem 2rem 2rem;
+}
+
+.timeline .timeline-box {
+    display: flex;
+    gap: .5rem;
+}
+
+/* .timeline .timeline-box > * {
+    border: 2px solid red;
+} */
+
+.timeline .timeline-box .timeline-data {
+    width: 40%;
+}
+
+.timeline .timeline-box .timeline-data > * {
+    /* height: 200px; */
+    /* border: 2px  solid blue; */
+    width: 100%;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 3px 3px 2px 1px #e3e3e3;
+    border-radius: 10px;
+}
+
+.timeline-data .photos-collage {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: .5rem;
+}
+
+.timeline-data .photos-collage img {
+    height: 100px;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+/* @media (max-width: 1024px) {
+    .timeline .timeline-info {
+        width: 70%;
+        margin-inline: auto;
+        grid-template-columns: 1fr;
+    }
+} */
+
+@media (max-width: 768px) {
+    /* .timeline .timeline-info {
+        width: 90%;
+    } */
+
+    form .media-content .video,
+    form .media-content .image {
+        flex-direction: column;
+    }
+}

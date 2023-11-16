@@ -10,6 +10,7 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 import { ProcessedProductsComponent } from './components/processed-products/processed-products.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { ManifestsComponent } from './components/manifests/manifests.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
       // {path: 'table', component: TablesComponent},
       // {path: 'charts', component: ChartsComponent},
       { path: 'pending_accounts', component: AccountsComponent },
+      { path: 'timeline', component: TimelineComponent },
     ]
   }
 ];

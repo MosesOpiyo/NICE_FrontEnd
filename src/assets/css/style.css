@@ -1528,14 +1528,14 @@
     width: 90%;
     margin-inline: auto;
     height: max-content;
-    gap: .5rem;
+    /* gap: .5rem; */
   }
   
   .trip-container .trip-purpose .purpose-list > * {
     flex-basis: 100%;
     /* border: 2px solid #0000002b; */
     height: 350px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
   }
   
   .trip-container .purpose-list .purpose-card {
@@ -1573,7 +1573,7 @@
     width: 100%;
     object-fit: cover;
     object-position: right;
-    border-radius: 15px;
+    /* border-radius: 15px; */
   }
 
   .trip-container .purpose-list .purpose-card.process-image img,
@@ -1781,10 +1781,11 @@
     font-size: 1.5rem;
   }
   .trip-container .cupping-container .cupping-text p {
-    width: 90%;
+    width: 100%;
     font-weight: 300;
-    font-size: 2.5rem;
-    line-height: 2.2rem;
+    font-size: 1.8rem;
+    line-height: 1.5rem;
+    text-align: center;
   }
   
   .trip-container .cupping-container .cupping-text a {
@@ -1792,7 +1793,7 @@
     color: #fff;
     padding: 10px 60px;
     font-size: 1.2rem;
-    align-self: baseline;
+    align-self: center;
   }
   
   .trip-container .cupping-container .cupping-image {
@@ -1800,15 +1801,16 @@
     width: 100%;
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+    gap: 10px;
   }
 
   .cupping-container .cupping-image .cupping-card.image-one {
-    grid-area: 2 / 2 / 4 / 5;
+    grid-area: 1 / 1 / 3 / 4;
     z-index: 1;
   }
 
   .cupping-container .cupping-image .cupping-card.image-two {
-    grid-area: 3 / 1 / 5 / 3;
+    grid-area: 3 / 1 / 5 / 4;
   }
 
   .cupping-container .cupping-image .cupping-card.image-three {
@@ -2051,16 +2053,11 @@
     }
 
     .trip-container .cupping-container .cupping-image img {
-      width: 95%;
       margin-inline: auto;
     }
 
     .trip-container .cupping-container .cupping-text {
       gap: 2rem;
-    }
-
-    .trip-container .cupping-container .cupping-text p {
-      width: 90%;
     }
 
     .trip-container .places {

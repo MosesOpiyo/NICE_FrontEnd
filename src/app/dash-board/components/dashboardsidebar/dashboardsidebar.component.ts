@@ -48,9 +48,9 @@ export class DashboardsidebarComponent implements OnInit {
 
     {
       id: 7,
-      link: 'dash-board/table',
+      link: 'dash-board/timeline',
       listName: 'Timeline',
-      icon: 'fa-solid fa-clock-rotate-left'
+      icon: 'fa-solid fa-image'
     }
   ] 
   
