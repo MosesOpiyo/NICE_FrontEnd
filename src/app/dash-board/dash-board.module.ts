@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { BarcodeScannerLivestreamModule } from 'ngx-barcode-scanner';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { DashBoardRoutingModule } from './dash-board-routing.module';
 import { DashBoardComponent } from './dash-board.component';
@@ -29,6 +30,7 @@ import { NewManifestComponent } from './components/manifests/new-manifest/new-ma
 import { SearchPipe } from './components/manifests/new-manifest/search.pipe';
 import { ProcessedProductsComponent } from './components/processed-products/processed-products.component';
 import { ScanComponent } from './scan/scan.component';
+import { SavechangesComponent } from './components/savechanges/savechanges.component';
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { ScanComponent } from './scan/scan.component';
     SearchPipe,
     ProcessedProductsComponent,
     ProfileComponent,
-    ScanComponent
+    ScanComponent,
+    SavechangesComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +66,8 @@ import { ScanComponent } from './scan/scan.component';
     MatSelectModule,
     NgxMatSelectSearchModule,
     MatAutocompleteModule,
-    BarcodeScannerLivestreamModule
+    BarcodeScannerLivestreamModule,
+    MatDialogModule
   ]
 })
 export class DashBoardModule { }

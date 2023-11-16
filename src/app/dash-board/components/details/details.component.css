@@ -1,9 +1,116 @@
-span{
+h4,h5,p,li {
     font-weight: bold;
 }
+
+span {
+    font-weight: 300;
+}
+
 img{
     width: 100px;
     height: 100px;
     border-radius: 50px;
     background-color: black;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    padding-block: 1rem;
+}
+
+.card-container > * {
+    width: 95%;
+    margin-inline: auto;
+}
+
+.farmer-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    width: 100%;
+}
+
+.farmer-info li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+
+.dashboard-card .location {
+    grid-area: 10 / 1 / 11 / 3;
+}
+
+.farmer-info > * {
+    border: 2px solid #0000000d;
+    padding: 1rem;
+    position: relative;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.fa-pencil {
+    font-size: 1rem;
+    position: absolute;
+    top: 11px;
+    left: 93%;
+    color: #f68b1e;
+    cursor: pointer;
+}
+
+  .dashboard-card {
+    background-color: #f3f6f9;
+    padding: 1rem;
+    border-radius: .375rem;
+    height: 100%;
+    margin-block: 1.5rem;
+  }
+
+  .dashboard-card .card-header,
+  .dashboard-card .details {
+    display: flex;
+  }
+
+  .dashboard-card .card-header {
+    justify-content: space-between;
+  }
+
+  .dashboard-card .details {
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .dashboard-card .user-addinfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .dashboard-card iframe {
+    border: none;
+    height: 100%;
+    width: 100%;
+  }
+
+@media (max-width: 768px) {
+    .farmer-info {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card .location {
+        grid-area: auto;
+    }
+
+    .dashboard-card .details {
+        flex-direction: column;
+    }
+
+    .dashboard-card .user-addinfo {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
 }

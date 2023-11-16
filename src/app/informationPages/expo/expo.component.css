@@ -39,6 +39,10 @@
   color: #000000;
 }
 
+:host ::ng-deep #header .navbar .dropdown ul li:hover > a {
+  color: #67b0d1;
+}
+
 
 /* .expo-container {
   border: 2px solid black; 
