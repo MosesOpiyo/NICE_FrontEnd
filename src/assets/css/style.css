@@ -2280,7 +2280,7 @@
   }
   
   .about-component .our-mission .mission-content p {
-      width: 60%;
+      font-size: 2rem;
       margin-inline: auto;
   }
   
@@ -2721,7 +2721,7 @@
     }
 
     .about-component .whyus-container .whyus-content {
-      height: 350px;
+      height: 300px;
     } 
 
     .about-component .whyus-content .why-card {
