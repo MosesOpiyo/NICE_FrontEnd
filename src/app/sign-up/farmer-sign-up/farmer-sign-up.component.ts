@@ -29,7 +29,7 @@ export class FarmerSignUpComponent {
   isPasswordVisible = false;
   registerBuyer(){
     if(this.checker.score(this.password) < 2){
-      this.snackbar.open("Password is too weak. Try Another Password", 'Close', {
+      this.snackbar.open("Password is too weak. Try S Password", 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']
       });

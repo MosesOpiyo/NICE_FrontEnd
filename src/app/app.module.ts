@@ -23,7 +23,6 @@ import { NicehomepageComponent } from './informationPages/nicehomepage/nicehomep
 import { WarehousedashboardModule } from './warehousedashboard/warehousedashboard.module';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FooterComponent } from './footer/footer.component';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { ExpoComponent } from './informationPages/expo/expo.component';
 import { OriginTripComponent } from './informationPages/origin-trip/origin-trip.component';
 import { CartComponent } from './cart/cart.component';
@@ -83,7 +82,6 @@ register();
     MatSelectModule,
     FormsModule,
     WarehousedashboardModule,
-    DashboardModule,
     NgxPaginationModule,
     MatGridListModule,
     MatIconModule,

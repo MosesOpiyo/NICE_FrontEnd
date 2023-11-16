@@ -40,13 +40,13 @@
                 <ul class="farmer-info">
                     <li>
                         County: <br>
-                        <span>Kirinyaga</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(1)"></i>
                     </li>
 
                     <li>
                         Estate Name:<br>
-                        <span>{{profile.society_name}}Ngacha Coffe Estate</span>
+                        <span *ngIf="profile">{{profile.society_name}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(2)"></i>
                     </li>
 
@@ -58,49 +58,49 @@
 
                     <li>
                         Total Acreage:<br>
-                        <span>{{profile.farm_area}}6</span>
+                        <span *ngIf="profile">{{profile.farm_area}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
                     </li>
 
                     <li>
                         No. of Trees:<br>
-                        <span>2800</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(5)"></i>
                     </li>
 
                     <li>
                         Altitude:<br>
-                        <span>1864 AMSL</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(6)"></i>
                     </li>
 
                     <li>
                         Harvest Season:<br>
-                        <span>{{profile.harvest_season}}May - December</span>
+                        <span *ngIf="profile">{{profile.harvest_season}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(7)"></i>
                     </li>
 
                     <li>
                         Annual Rainfall Amt:<br>
-                        <span>More than 900mm</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(8)"></i>
                     </li>
 
                     <li>
                         Annual Temp Amt:<br>
-                        <span>A high of 24 degrees and a low of 13 degrees</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(9)"></i>
                     </li>
 
                     <li>
                         Coffe Varieties:<br>
-                        <span>SL 28</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(10)"></i>
                     </li>
 
                     <li>
                         Farming Method:<br>
-                        <span>Organic</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(11)"></i>
                     </li>
 
@@ -112,59 +112,46 @@
 
                     <li>
                         Soil Type:<br>
-                        <span>Deep red volcanic soils that are rich in phosphorus and well drained</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(13)"></i>
                     </li>
 
                     <li>
                         Processing Methods:<br>
-                        <span>Anaerobic natural, anaerobic yellow, red and black honey</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(14)"></i>
                     </li>
 
                     <li>
                         Drying Method:<br>
-                        <span>Sun dried</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(15)"></i>
                     </li>
 
                     <li>
                         Cupping Notes:<br>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, repellendus.
-                            Perferendis quas nisi veniam voluptatibus! Obcaecati aut non unde laborum, optio, officiis
-                            eveniet quia fugit similique praesentium illum nesciunt delectus!
+                        <span>
                         </span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(16)"></i>
                     </li>
 
                     <li>
                         Availability:<br>
-                        <span>Available from January-April every year</span>
+                        <span></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(17)"></i>
                     </li>
 
                     <li>
                         Grower's History:<br>
-                        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia aperiam
-                            asperiores incidunt optio, expedita molestias fuga sapiente, accusantium vitae sed voluptatibus
-                            atque assumenda quidem vero blanditiis, itaque fugit aliquid voluptate.
-                            Enim quasi dignissimos a eveniet animi ipsam, ipsum, repellat eius ullam perspiciatis earum.
-                            Quod optio quasi dignissimos magni porro labore corporis omnis aut suscipit dolorum voluptatem
-                            architecto mollitia, atque numquam.
-                            Consectetur necessitatibus repellendus ipsam adipisci. Id quasi vero ab quos ipsa. Natus totam
-                            nobis doloremque tempore nam similique exercitationem perspiciatis at cupiditate voluptatem!
-                            Assumenda nostrum aliquam deleniti qui illo architecto!
-                            Consequuntur natus saepe accusamus adipisci eaque dolores repellat culpa commodi aliquid quaerat
-                            error corporis ad, officia provident unde voluptas suscipit eos velit? Ipsum, repudiandae
-                            cupiditate vitae optio ab veritatis repellat.
+                        <span>
                         </span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(18)"></i>
                     </li>
 
                     <li class="location">
                         Location:<br>
-                        <span>{{profile.location}}</span>
-                        <div>
+                        <span *ngIf="profile">{{profile.location}}</span>
+                        <div *ngIf="profile">
                             <iframe
                                 [src]="getSanitizedURL(profile.location)"
                                 allowfullscreen="" loading="lazy"
@@ -185,69 +172,19 @@
             <div class="mb-3">
                 <h4>Warehouse Name: <span>{{warehouse.name}}</span></h4>
             </div>
-        
+
             <div class="mb-3">
-                <h4>Warehouse Capacity: <span>{{warehouse.warehouse_area_storage}}</span></h4>
+                <h4>Warehouse Capacity: <span>{{warehouse.warehouse_area_storage}}</span></h4>   
             </div>
-        
+
             <div class="mb-3">
                 <h4>Warehouse Contact info: <span></span></h4>
             </div>
 
             <div class="mb-3">
-                <h4>Warehouse Location:<span>{{warehouse.location}}</span></h4>
-                <span>
-                    <div class="mapouter">
-                        <div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas"
-                                [src]="getSanitizedURL(warehouse.location)" frameborder="0" scrolling="no" marginheight="0"
-                                marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br>
-                            <style>
-                                .mapouter {
-                                    position: relative;
-                                    text-align: right;
-                                    height: 250px;
-                                    width: 250px;
-                                }
-                            </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
-                            <style>
-                                .gmap_canvas {
-                                    overflow: hidden;
-                                    background: none !important;
-                                    height: 250px;
-                                    width: 250px;
-                                }
-                            </style>
-                        </div>
-                    </div>
-                </span>
+                <h4>Warehouse Location: <span>{{warehouse.location}}</span></h4>
+                <span><div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" [src]="getSanitizedURL(warehouse.location)" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:250px;width:250px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:250px;}</style></div></div></span>
             </div>
-        
-        </div>
-    </div>
-</div>
-
-<!-- county modal -->
-<div class="changes-content modals" *ngIf="isModalOpen">
-    <div class="modal-contents">
-        <span class="modal-close" (click)="toggleModal()">
-            <i class="fa-solid fa-x"></i>
-        </span>
-
-        <div class="changes">
-            <form class="form" id="form" action="" method="POST">
-                <!-- HONEYPOT(to catch spammers )  -->
-               <input type="text" name="_honey" class="honeypot" title="honeypot">
-   
-               <div class="form-controls name">
-                   <label for="county" class="block">County:</label><br>
-                   <input type="text" placeholder="Nyeri" id="county" name="county" required>
-               </div>
-   
-               <div class="form-controls form-btn form-submit">
-                   <button type="button" >Cancel</button>&nbsp;&nbsp;
-                   <button type="submit">Save Changes</button>
-               </div>
-           </form>
         </div>
 
     </div>
