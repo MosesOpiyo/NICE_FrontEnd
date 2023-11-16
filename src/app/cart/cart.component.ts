@@ -73,6 +73,11 @@ export class CartComponent implements OnInit {
     window.open(res)
   })
  }
+ removeItem(id:number){
+  this.cartService.removeFromCart(id).subscribe((res:any) => {
+    location.reload()
+  })
+ }
 
  ngOnInit(): void {
   this.service.getProfile().subscribe((res:any)=>{

@@ -23,6 +23,12 @@ export class CartService {
     this.http.post(`${environment.BASE_URL}Orders&Cart/NewProductInCart/${id}`,cartItem,{'headers':headers}).subscribe((res:any)=>{
     })
   }
+  removeFromCart(id:number){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/RemoveFromCart/${id}`,{'headers':headers})
+  }
   makePayment(amount:any){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
