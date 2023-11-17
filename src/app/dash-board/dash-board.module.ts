@@ -31,6 +31,7 @@ import { SearchPipe } from './components/manifests/new-manifest/search.pipe';
 import { ProcessedProductsComponent } from './components/processed-products/processed-products.component';
 import { ScanComponent } from './scan/scan.component';
 import { SavechangesComponent } from './components/savechanges/savechanges.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { SavechangesComponent } from './components/savechanges/savechanges.compo
     ProcessedProductsComponent,
     ProfileComponent,
     ScanComponent,
-    SavechangesComponent
+    SavechangesComponent,
+    TimelineComponent
   ],
   imports: [
     CommonModule,
