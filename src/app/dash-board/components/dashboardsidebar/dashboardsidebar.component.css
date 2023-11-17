@@ -30,6 +30,10 @@
 
 } */
 
+.sidenav-container .nav-menu .user-credentials h4 {
+    font-weight: 500;
+}
+
 .sidenav-container .nav-menu .nav-list {
     /* border: 2px solid red; */
     display: flex;
@@ -49,7 +53,7 @@
     display: flex;
     align-items: center;
     padding: 1rem .2rem;
-    transition: all 350ms ease-in-out;
+    transition: all 150ms ease-in-out;
 }
 
 .sidenav-container .nav-menu .nav-list > * a:hover,
