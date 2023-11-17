@@ -22,7 +22,7 @@
     /* border: 2px solid red; */
     min-width: 20%;
     max-width: 20%;
-    background-color: #f3f6f9;
+    background-color: #f2f2f2;
     position: fixed;
     z-index: 2;
     top: 5rem;
@@ -71,7 +71,7 @@
         min-width: 100%;
         max-width: 100%;
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         height: 6rem;
     }
 }

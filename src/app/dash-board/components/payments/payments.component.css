@@ -1,0 +1,214 @@
+.green {
+    color: green;
+}
+
+.orange {
+    color: orange;
+}
+
+.red {
+    color: red;
+}
+
+.payments-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+    /* border: 2px solid red; */
+    padding-block: 2.5rem;
+    height: max-content;
+    gap: 30px;
+    margin-inline: auto;
+}
+
+.payments-container .dashboard-card {
+    background-color: #f2f2f2;
+    padding: 1rem;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.payments-container .user-stats {
+    grid-area: 1 / 1 / 2 / 13;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    background-color: #fff;
+}
+
+.payments-container .user-stats .stats-card {
+    /* border: 2px solid black; */
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    height: 150px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.payments-container .user-stats .stats-card::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000009c;
+}
+
+.payments-container .user-stats .stats-card span {
+    font-size: 3.5rem;
+    font-weight: 300;
+}
+
+.payments-container .user-stats .stats-card p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.payments-container .user-stats .stats-card.sales {
+    background-image: url("https://img.freepik.com/free-vector/isometric-sales-representative-illustration_52683-83013.jpg?w=740&t=st=1700238315~exp=1700238915~hmac=d754ab4ff94a1005d4904a34815a85a26a60a5d47a0f9a66a3f63492049ad295");
+    background-position: center;
+    background-size: cover;
+}
+
+.payments-container .user-stats .stats-card.transactions {
+    background-image: url("https://img.freepik.com/free-vector/hand-holding-phone-with-digital-wallet-service-sending-money-payment-transaction-transfer-through-mobile-app-flat-illustration_74855-20589.jpg?size=626&ext=jpg&ga=GA1.1.1027520766.1700029308&semt=sph");
+    background-position: center;
+    background-size: cover;
+}
+
+.payments-container .user-stats .stats-card.received {
+    background-image: url("https://img.freepik.com/free-vector/man-paying-online-receiving-cashback-wallet_88138-692.jpg?size=626&ext=jpg&ga=GA1.1.1027520766.1700029308&semt=sph");
+    background-position: center;
+    background-size: cover;
+}
+
+.payments-container .user-stats .stats-card.refunds {
+    background-image: url("https://img.freepik.com/free-vector/cashback-concept-with-smartphone-store_23-2148458447.jpg?size=626&ext=jpg&ga=GA1.1.1027520766.1700029308&semt=sph");
+    background-position: center;
+    background-size: cover;
+}
+
+/* table */
+.payments-container .payments-table {
+    grid-area: 2 / 1 / 3 / 13;
+}
+
+.payments-table table {
+    width: 100%;
+    background-color: #fff;
+}
+
+th,
+td {
+    color: black;
+}
+
+.payments-table .table-container {
+    overflow: auto;
+}
+
+
+/* congrats */
+.payments-container .congrats {
+    grid-area: 3 / 1 / 4 / 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+    /* height: 350px; */
+}
+
+.payments-container .congrats .congrats-image {
+    width: 100%;
+    height: 200px;
+}
+
+.payments-container .congrats .congrats-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.payments-container .congrats h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.payments-container .congrats p {
+    font-size: 1.2rem;
+}
+
+.payments-container .congrats p span {
+    font-size: 1.5rem;
+    color: rgb(34, 5, 136);
+}
+
+
+/* HISTORY */
+.payments-container .history {
+    grid-area: 3 / 6 / 4 / 13;
+}
+
+.history .history-header p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.history .transaction-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history .transaction-card > * {
+    flex-basis: 100%;
+    /* border: 2px solid red; */
+}
+
+
+/* media queries */
+@media (max-width: 768px) {
+    .payments-container {
+        gap: 30px 10px;
+    }
+
+    .payments-container .congrats {
+        grid-area: 3 / 1 / 4 / 7;
+    } 
+
+    .payments-container .history {
+        grid-area: 3 / 7 / 4 / 13;
+    }
+
+    .payments-container .user-stats {
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .payments-container .user-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .payments-container .congrats {
+        grid-area: 3 / 1 / 4 / 13;
+    } 
+
+    .payments-container .history {
+        grid-area: 4 / 1 / 5 / 13;
+    }
+}
