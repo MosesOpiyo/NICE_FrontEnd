@@ -1,0 +1,53 @@
+<!-- Table Start -->
+<div>
+    <div class="message-container">
+
+        <!-- FIRST CARD -->
+        <div class="dashboard-card search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search messages" id="search" name="search">
+                <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+        </div>
+
+        <!-- 2ND CARD -->
+        <div class="messages-nav dashboard-card">
+            <ul>
+                <li class="link-card">
+                    <a routerLink="/dash-board/messages" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                        Inbox
+                        <span>2</span>
+                    </a>
+                </li>
+
+                <li class="link-card">
+                    <a routerLink="/dash-board/messages/important" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                        Important
+                        <span>2</span>
+                    </a>
+                </li>
+
+                <li class="link-card">
+                    <a routerLink="/dash-board/messages/unread" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                        Unread
+                        <span>2</span>
+                    </a>
+                </li>
+
+                <li class="link-card">
+                    <a routerLink="/dash-board/messages/trash" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                        Trash
+                        <span>2</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 3rd card -->
+        <div class="main-messages dashboard-card">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+</div>
+<!-- Table End -->
