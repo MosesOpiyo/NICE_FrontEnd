@@ -33,6 +33,11 @@ import { ScanComponent } from './scan/scan.component';
 import { SavechangesComponent } from './components/savechanges/savechanges.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { PaymentsComponent } from './components/payments/payments.component';
+import { MessagesComponent } from './components/message/messages/messages.component';
+import { ImportantComponent } from './components/message/important/important.component';
+import { UnreadComponent } from './components/message/unread/unread.component';
+import { TrashComponent } from './components/message/trash/trash.component';
+import { InboxComponent } from './components/message/inbox/inbox.component';
 
 
 @NgModule({
@@ -55,7 +60,12 @@ import { PaymentsComponent } from './components/payments/payments.component';
     ScanComponent,
     SavechangesComponent,
     TimelineComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    MessagesComponent,
+    ImportantComponent,
+    UnreadComponent,
+    TrashComponent,
+    InboxComponent
   ],
   imports: [
     CommonModule,
