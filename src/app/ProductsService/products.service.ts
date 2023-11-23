@@ -23,6 +23,19 @@ export class ProductsService {
       
     })
   }
+  addPRocessedProduct(input:any,id:any){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+     this.http.post(`${environment.BASE_URL}Farmers/NewProcessedProduct/${id}`,input,{"headers":headers}).subscribe((res:any)=>{
+      this.service.refreshPage()
+      this.snackBar.open(res, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      
+    })
+  }
   getProducts(){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`

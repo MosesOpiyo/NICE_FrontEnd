@@ -32,6 +32,7 @@ import { ProcessedProductsComponent } from './components/processed-products/proc
 import { ScanComponent } from './scan/scan.component';
 import { SavechangesComponent } from './components/savechanges/savechanges.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
+import { NewprocessedproductComponent } from './components/newprocessedproduct/newprocessedproduct.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { TimelineComponent } from './components/timeline/timeline.component';
     ProfileComponent,
     ScanComponent,
     SavechangesComponent,
-    TimelineComponent
+    TimelineComponent,
+    NewprocessedproductComponent
   ],
   imports: [
     CommonModule,
