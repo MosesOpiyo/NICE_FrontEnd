@@ -1,0 +1,141 @@
+<app-navbar></app-navbar>
+
+<section class="farmdetails-component">
+    <div class="farmdetails-name">
+        <p>Ndaroini Farm</p>
+    </div>
+
+    <div class="farm-details-content">
+        <div class="farm">
+            <div class="sidebar">
+              <div>
+                <div class="widget-title"  >
+                  <h2>Coffee Variety&nbsp;
+                    <i  class="fa-solid fa-chevron-down"></i>
+                    <i  class="fa-solid fa-chevron-up"></i>
+                  </h2>
+                </div>
+                <!-- <input type="hidden" id="previous_select"> -->
+                <ul >
+                  <li class="customRadio">
+                    <input type="radio" value="Variety1" id="Variety1" name="variety"  />
+                    <label for="Variety1"><span><span></span></span>Variety 1</label>
+                  </li>
+      
+                  <li class="customRadio">
+                    <input type="radio" value="Variety2" id="Variety2" name="variety"  />
+                    <label for="Variety2"><span><span></span></span>Variety 2</label>
+                  </li>
+      
+                  <li class="customRadio">
+                    <input type="radio" value="Variety2" id="Variety3" name="variety"  />
+                    <label for="Variety3"><span><span></span></span>Variety 3</label>
+                  </li>
+      
+                  <li class="customRadio">
+                    <input type="radio" value="Variety2" id="Variety4" name="variety"  />
+                    <label for="Variety4"><span><span></span></span>Variety 4</label>
+                  </li>
+      
+                  <li class="customRadio">
+                    <input type="radio" value="Variety2" id="Variety5" name="variety"  />
+                    <label for="Variety5"><span><span></span></span>Variety 5</label>
+                  </li>
+      
+                  <li class="customRadio">
+                    <input type="radio" value="Variety2" id="Variety6" name="variety"  />
+                    <label for="Variety6"><span><span></span></span>Variety 6</label>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="widget-title">
+                  <h2>Price&nbsp;
+                    <i  class="fa-solid fa-chevron-down"></i>
+                    <i  class="fa-solid fa-chevron-up"></i>
+                  </h2>
+                </div>
+                <!-- <input type="hidden" id="previous_select"> -->
+                <ul >
+                  <li class="customRadio">
+                    <input type="radio" value="farm1" id="price1" name="price"/>
+                    <label for="price1"><span><span></span></span>All</label>
+                  </li>
+      
+                <li class="customRadio">
+                  <input type="radio" value="farm1" id="price2" name="price" />
+                  <label for="price2" ><span><span></span></span> $1 - $50</label>
+                </li>
+      
+                <li class="customRadio">
+                  <input type="radio" value="farm2" id="price3" name="price" />
+                  <label for="price3"><span><span></span></span> $51 - $100</label>
+                </li>
+      
+                <li class="customRadio">
+                  <input type="radio" value="farm2" id="price4" name="price" />
+                  <label for="price4"><span><span></span></span>Price 5 - Price 6</label>
+                </li>
+                </ul>
+              </div>
+      
+            </div>
+      
+            <div class="productlist">
+      
+              <div class="productlist-content">
+                <div class="product-card"   data-aos="fade-up">
+      
+                  
+                  <a routerLink="/Products/1" class="product-item">
+                    <div class="product-image">
+                        <img src="../../assets/img/packaging/coffee-bag-03.png" alt="package">
+                    </div>
+      
+                    <div class="product-name">
+                      <div class="name">
+                        <p>Mettle</p>
+                      </div>
+                        
+                      <div class="rating">
+                        <p>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </p>
+                      </div>
+                    </div>
+      
+                    <div class="farm-name">
+                      <p>Kiaragana Coffee Factory</p>
+                    </div>
+      
+                    <div class="product-details">
+                        <p>Origin: Kenya</p>
+                        <p>18$ / 12oz</p>
+                    </div>
+      
+                  </a>
+      
+                  <div class="latestadd-actions product-addactions">
+                    <a role="button">
+                      Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                    </a>
+                    <a role="button" title="wishlist">
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="farm-pagination">
+                <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+              </div>
+                                   
+            </div>
+          </div>
+    </div>
+</section>

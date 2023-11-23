@@ -42,8 +42,8 @@ export class DashboardsidebarComponent implements OnInit {
     {
       id: 6,
       link: 'dash-board/messages',
-      listName: 'Messages',
-      icon: 'fa-solid fa-message'
+      listName: 'Notifications',
+      icon: 'fa-solid fa-bell'
     },
 
     {

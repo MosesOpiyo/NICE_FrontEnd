@@ -8,11 +8,11 @@
       effect: "fade",
       loop: true,
       loopFillGroupWithBlank: true,
-      autoplay: {
-        delay: 5000,
-        pauseOnMouseEnter: true,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 5000,
+      //   pauseOnMouseEnter: true,
+      //   disableOnInteraction: false,
+      // },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -209,7 +209,7 @@
    * Initiate GALLERY lightbox 
    */
    const portfolioLightbox = GLightbox({
-    selector: '.glightbox'
+    selector: '.gallery-lightbox'
   });
 
   /**
@@ -219,13 +219,41 @@
     let portfolioContainer = select('.gallery-images');
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.gallery-item',
+        itemSelector: '.glightbox',
         layoutMode: 'fitRows'
       });
 
       let portfolioFilters = select('#gallery-flters li', true);
 
       on('click', '#gallery-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function() {
+          AOS.refresh()
+        });
+      }, true);
+    }
+
+  });
+
+    window.addEventListener('load', () => {
+    let portfolioContainer = select('.expogallery-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.expogallery-item',
+        layoutMode: 'fitRows'
+      });
+
+      let portfolioFilters = select('#year-filters li', true);
+
+      on('click', '#year-filters li', function(e) {
         e.preventDefault();
         portfolioFilters.forEach(function(el) {
           el.classList.remove('filter-active');

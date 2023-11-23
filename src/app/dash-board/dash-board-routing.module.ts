@@ -17,6 +17,7 @@ import { ImportantComponent } from './components/message/important/important.com
 import { UnreadComponent } from './components/message/unread/unread.component';
 import { TrashComponent } from './components/message/trash/trash.component';
 import { InboxComponent } from './components/message/inbox/inbox.component';
+import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,12 @@ const routes: Routes = [
       { path: 'pending_accounts', component: AccountsComponent },
       { path: 'timeline', component: TimelineComponent },
       { path: 'payments', component: PaymentsComponent },
+      { 
+        path: 'settings', component: UserSettingsComponent,
+        children: [
+          // { path: '', component:  }
+        ]
+       },
       { 
         path: 'messages', component: MessagesComponent,
         children: [

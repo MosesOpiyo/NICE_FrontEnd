@@ -2,26 +2,47 @@
     font-weight: bold;
 }
 
-.fa-star {
-    color: orange;
+.inbox-container .check-all {
+    padding-block: 1rem;
+}
+
+.inbox-container .check-all .checkbox {
+    display: flex;
+    gap: 1rem;
 }
 
 .inbox-card {
     display: flex;
-    gap: .8rem;
+    gap: 1rem;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
+    padding-block: 1rem;
+    border-bottom: 2px solid #00000012;
 }
 
-.sender {
+.inbox-card .notification {
     display: flex;
-    gap: 0.2rem;
-    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    cursor: pointer;
 }
 
-.sender span {
-    padding: .5rem;
-    background-color: #000000;
-    color: #fff;
+.inbox-card .notification .notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inbox-card .notification .notification-header h2 {
+    font-size: 1.4rem;
+}
+
+.inbox-card .notification .notification-content p {
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    /* border: 1px solid #ddd; */
+    margin: 0;
 }

@@ -41,6 +41,8 @@ import { DashBoardModule } from './dash-board/dash-board.module';
 
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
+import { FarmComponent } from './farm/farm.component';
+import { FarmdetailsComponent } from './farmdetails/farmdetails.component';
 // register Swiper custom elements
 register();
 
@@ -66,7 +68,9 @@ register();
     AboutComponent,
     PasswordToggleDirective,
     FarmerSignUpComponent,
-    AttributionsComponent
+    AttributionsComponent,
+    FarmComponent,
+    FarmdetailsComponent
   ],
   entryComponents:[LoginComponent],
   imports: [

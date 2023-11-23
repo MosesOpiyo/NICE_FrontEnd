@@ -31,28 +31,29 @@
                 <li class="dropdown"><a class="expo-link" routerLink="/Expo"><span>Expo</span> <i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
                         <li><a routerLink="/Expo">NICE Expo</a></li>
-                        <li><a href="#">Sponsors</a></li>
-                        <li><a href="#">Exhibitors</a></li>
+                        <li><a href="Expo#sponsor">Sponsors</a></li>
+                        <li><a href="Expo#exhibitor">Exhibitors</a></li>
                         <li><a href="#">Register for NICE Expo</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a class="trip-link" routerLink="/Origin-Trip"><span>Origin Trip</span><i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
                         <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
-                        <li><a href="#">Origin Trip Tips</a></li>
-                        <li><a href="#">Itinerary</a></li>
+                        <li><a href="Origin-Trip#tips">Origin Trip Tips</a></li>
+                        <li><a href="Origin-Trip#itinerary">Itinerary</a></li>
                         <li><a href="#">Register for Origin Trip</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a routerLink="/about" class="about-link"><span>About Us</span><i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
                         <li><a routerLink="/about">About Us</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">How NiceDirect Works</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="about#how-it-works">How NiceDirect Works</a></li>
+                        <li><a href="about#partners">Partners</a></li>
+                        <li><a href="about#gallery">Gallery</a></li>
+                        <li><a href="about#faqs">FAQ</a></li>
                     </ul>
                 </li>
+                <li><a class="nav-link sell" (click)="showFarmerSignUpDialog()">Sell Coffee</a></li>
                 
             </ul>
             <ul *ngIf="user" class="cart-icon">

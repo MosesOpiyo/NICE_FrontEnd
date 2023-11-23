@@ -14,6 +14,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 import { AboutComponent } from './informationPages/about/about.component';
 import { AttributionsComponent } from './informationPages/attributions/attributions.component';
+import { FarmComponent } from './farm/farm.component';
+import { FarmdetailsComponent } from './farmdetails/farmdetails.component';
 
 
 const routes: Routes = [
@@ -29,12 +31,22 @@ const routes: Routes = [
   { path: 'Products/:productId', component: ProductDetailsComponent },
   { path: '404', component: NotfoundComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'attributions', component: AttributionsComponent }
+  { path: 'attributions', component: AttributionsComponent },
+  { path: 'farm', component: FarmComponent },
+  { path: 'farm/:farmId', component:FarmdetailsComponent }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
+  imports: [
+    RouterModule.forRoot(
+      routes, {
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled',
+        scrollOffset: [0, 150]
+      }
+    )
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

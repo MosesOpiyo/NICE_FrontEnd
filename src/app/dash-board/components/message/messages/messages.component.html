@@ -14,31 +14,18 @@
         <div class="messages-nav dashboard-card">
             <ul>
                 <li class="link-card">
-                    <a routerLink="/dash-board/messages" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                        Inbox
-                        <span>2</span>
-                    </a>
+                    Unread
+                    <span>(2)</span>
+                </li>
+            </ul>
+
+            <ul>
+                <li class="link-card">
+                    <i class="fa-solid fa-trash-can"></i>
                 </li>
 
-                <li class="link-card">
-                    <a routerLink="/dash-board/messages/important" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                        Important
-                        <span>2</span>
-                    </a>
-                </li>
-
-                <li class="link-card">
-                    <a routerLink="/dash-board/messages/unread" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                        Unread
-                        <span>2</span>
-                    </a>
-                </li>
-
-                <li class="link-card">
-                    <a routerLink="/dash-board/messages/trash" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-                        Trash
-                        <span>2</span>
-                    </a>
+                <li class="link-card delete">
+                    Delete All
                 </li>
             </ul>
         </div>

@@ -1,201 +1,39 @@
 <div class="inbox-container">
-    <div class="inbox-card">
+    <div class="check-all">
         <div class="checkbox">
-            <input type="checkbox" id="read" name="read" value="checked" title="read">
-        </div>
-    
-        <div class="star">
-            <i class="fa-solid fa-star"></i>
-        </div>
-    
-        <div class="sender">
-            <span>M</span>
-            <p class="bold">Moses Ngondi</p>
-        </div>
-    
-        <div class="message">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis a consectetur reprehenderit officiis,
-                voluptatibus dolorem ratione facere itaque optio veniam, non eaque laboriosam soluta nisi cupiditate numquam
-                possimus, voluptas animi?</p>
-        </div>
-    
-        <div class="date">
-            <p>3:30pm, 15 Nov 2023</p>
+            <input type="checkbox" id="select-all" name="select-all" title="read"
+             [checked]="masterSelected" (change)="checkUncheckAll($event)"
+            >
+            <label for="select-all">Select All</label>
         </div>
     </div>
 
-    <div class="inbox-card">
-        <div class="checkbox">
-            <input type="checkbox" id="read" name="read" value="checked" title="read">
-        </div>
-    
-        <div class="star">
-            <i class="fa-solid fa-star"></i>
-        </div>
-    
-        <div class="sender">
-            <span>M</span>
-            <p class="bold">Moses Ngondi</p>
-        </div>
-    
-        <div class="message">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis a consectetur reprehenderit officiis,
-                voluptatibus dolorem ratione facere itaque optio veniam, non eaque laboriosam soluta nisi cupiditate numquam
-                possimus, voluptas animi?</p>
-        </div>
-    
-        <div class="date">
-            <p>3:30pm, 15 Nov 2023</p>
-        </div>
-    </div>
 
-    <div class="inbox-card">
+    <div class="inbox-card" *ngFor="let item of checklist">
         <div class="checkbox">
-            <input type="checkbox" id="read" name="read" value="checked" title="read">
+            <input
+              type="checkbox"
+              id="read"
+              name="read"
+              title="read"
+              [checked]="item.isSelected"
+              value="{{item.id}}"
+              (change)="isAllSelected($event, index)"
+            >
         </div>
     
-        <div class="star">
-            <i class="fa-solid fa-star"></i>
-        </div>
-    
-        <div class="sender">
-            <span>M</span>
-            <p class="bold">Moses Ngondi</p>
-        </div>
-    
-        <div class="message">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis a consectetur reprehenderit officiis,
-                voluptatibus dolorem ratione facere itaque optio veniam, non eaque laboriosam soluta nisi cupiditate numquam
-                possimus, voluptas animi?</p>
-        </div>
-    
-        <div class="date">
-            <p>3:30pm, 15 Nov 2023</p>
-        </div>
-    </div>
+        <div class="notification" (click)="showNotification()">
+            <div class="notification-header">
+                <h2>Coffee Received</h2>
 
-    <div class="inbox-card">
-        <div class="checkbox">
-            <input type="checkbox" id="read" name="read" value="checked" title="read">
-        </div>
-    
-        <div class="star">
-            <i class="fa-solid fa-star"></i>
-        </div>
-    
-        <div class="sender">
-            <span>M</span>
-            <p class="bold">Moses Ngondi</p>
-        </div>
-    
-        <div class="message">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis a consectetur reprehenderit officiis,
-                voluptatibus dolorem ratione facere itaque optio veniam, non eaque laboriosam soluta nisi cupiditate numquam
-                possimus, voluptas animi?</p>
-        </div>
-    
-        <div class="date">
-            <p>3:30pm, 15 Nov 2023</p>
-        </div>
-    </div>
+                <div class="date">
+                    <p>3:30pm, 15 Nov 2023</p>
+                </div>
+            </div>
 
-    <div class="inbox-card">
-        <div class="checkbox">
-            <input type="checkbox" id="read" name="read" value="checked" title="read">
-        </div>
-    
-        <div class="star">
-            <i class="fa-solid fa-star"></i>
-        </div>
-    
-        <div class="sender">
-            <span>M</span>
-            <p class="bold">Moses Ngondi</p>
-        </div>
-    
-        <div class="message">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis a consectetur reprehenderit officiis,
-                voluptatibus dolorem ratione facere itaque optio veniam, non eaque laboriosam soluta nisi cupiditate numquam
-                possimus, voluptas animi?</p>
-        </div>
-    
-        <div class="date">
-            <p>3:30pm, 15 Nov 2023</p>
-        </div>
-    </div>
-
-    <div class="inbox-card">
-        <div class="checkbox">
-            <input type="checkbox" id="read" name="read" value="checked" title="read">
-        </div>
-    
-        <div class="star">
-            <i class="fa-solid fa-star"></i>
-        </div>
-    
-        <div class="sender">
-            <span>M</span>
-            <p class="bold">Moses Ngondi</p>
-        </div>
-    
-        <div class="message">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis a consectetur reprehenderit officiis,
-                voluptatibus dolorem ratione facere itaque optio veniam, non eaque laboriosam soluta nisi cupiditate numquam
-                possimus, voluptas animi?</p>
-        </div>
-    
-        <div class="date">
-            <p>3:30pm, 15 Nov 2023</p>
-        </div>
-    </div>
-
-    <div class="inbox-card">
-        <div class="checkbox">
-            <input type="checkbox" id="read" name="read" value="checked" title="read">
-        </div>
-    
-        <div class="star">
-            <i class="fa-solid fa-star"></i>
-        </div>
-    
-        <div class="sender">
-            <span>M</span>
-            <p class="bold">Moses Ngondi</p>
-        </div>
-    
-        <div class="message">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis a consectetur reprehenderit officiis,
-                voluptatibus dolorem ratione facere itaque optio veniam, non eaque laboriosam soluta nisi cupiditate numquam
-                possimus, voluptas animi?</p>
-        </div>
-    
-        <div class="date">
-            <p>3:30pm, 15 Nov 2023</p>
-        </div>
-    </div>
-
-    <div class="inbox-card">
-        <div class="checkbox">
-            <input type="checkbox" id="read" name="read" value="checked" title="read">
-        </div>
-    
-        <div class="star">
-            <i class="fa-solid fa-star"></i>
-        </div>
-    
-        <div class="sender">
-            <span>M</span>
-            <p class="bold">Moses Ngondi</p>
-        </div>
-    
-        <div class="message">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis a consectetur reprehenderit officiis,
-                voluptatibus dolorem ratione facere itaque optio veniam, non eaque laboriosam soluta nisi cupiditate numquam
-                possimus, voluptas animi?</p>
-        </div>
-    
-        <div class="date">
-            <p>3:30pm, 15 Nov 2023</p>
+            <div class="notification-content">
+                <p>{{item.notification}}</p>
+            </div>
         </div>
     </div>
 </div>

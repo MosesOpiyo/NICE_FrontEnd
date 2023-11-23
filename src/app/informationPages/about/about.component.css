@@ -33,3 +33,59 @@
   :host ::ng-deep #header .navbar .dropdown ul li:hover > a {
     color: #67b0d1;
   }
+
+  /* .filter-container {
+    border: 2px solid red;
+  } */
+
+  .filter-container ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+  }
+
+  .filter-container ul li {
+    border: 2px solid #0000002e;
+    cursor: pointer;
+    padding: .5rem 1rem;
+  }
+
+  .expogallery-container {
+    display: flex;
+    /* grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto; */
+    width: 87%;
+    margin-inline: auto;
+    /* border: 2px solid red; */
+  }
+
+  .expogallery-item,
+  .expogallery-links,
+  .expogallery-links a {
+    height: 200px;
+    width: 300px;
+    /* border: 2px solid red; */
+  }
+
+  /* @media (max-width: 1460px) {
+    .expogallery-item,
+  .expogallery-links,
+  .expogallery-links a {
+    width: 290px;
+  }
+  } */
+
+  .expogallery-links a {
+    display: block;
+  }
+
+  .expogallery-links a img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .gallery-lightbox img {
+    object-fit: cover;
+    object-position: center;
+  }
