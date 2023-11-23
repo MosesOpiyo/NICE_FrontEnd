@@ -34,10 +34,6 @@ import { SavechangesComponent } from './components/savechanges/savechanges.compo
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { MessagesComponent } from './components/message/messages/messages.component';
-import { ImportantComponent } from './components/message/important/important.component';
-import { UnreadComponent } from './components/message/unread/unread.component';
-import { TrashComponent } from './components/message/trash/trash.component';
-import { InboxComponent } from './components/message/inbox/inbox.component';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { NotificationMsgComponent } from './components/message/notification-msg/notification-msg.component';
 
@@ -64,10 +60,6 @@ import { NotificationMsgComponent } from './components/message/notification-msg/
     TimelineComponent,
     PaymentsComponent,
     MessagesComponent,
-    ImportantComponent,
-    UnreadComponent,
-    TrashComponent,
-    InboxComponent,
     UserSettingsComponent,
     NotificationMsgComponent
   ],

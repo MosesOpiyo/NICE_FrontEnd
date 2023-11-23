@@ -32,7 +32,46 @@
 
         <!-- 3rd card -->
         <div class="main-messages dashboard-card">
-            <router-outlet></router-outlet>
+            <div class="notification-container">
+                <div class="check-all">
+                    <div class="checkbox">
+                        <input type="checkbox" id="select-all" name="select-all" title="read"
+                         [checked]="masterSelected" (change)="checkUncheckAll($event)"
+                        >
+                        <label for="select-all">Select All</label>
+                    </div>
+                </div>
+            
+            
+                <div class="notification-card" *ngFor="let item of checklist">
+                    <div class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="read"
+                          name="read"
+                          title="read"
+                          [checked]="item.isSelected"
+                          value="{{item.id}}"
+                          (change)="isAllSelected($event, index)"
+                        >
+                    </div>
+                
+                    <div class="notification" (click)="showNotification()">
+                        <div class="notification-header">
+                            <h2>Coffee Received</h2>
+            
+                            <div class="date">
+                                <p>3:30pm, 15 Nov 2023</p>
+                            </div>
+                        </div>
+            
+                        <div class="notification-content">
+                            <p>{{item.notification}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
 
     </div>

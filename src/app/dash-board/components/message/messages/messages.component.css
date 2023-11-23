@@ -96,4 +96,75 @@
     grid-area: 3 / 1 / 4 / 13;
     /* border: 2px solid blue; */
   }
+
+  .bold {
+    font-weight: bold;
+}
+
+.notification-container .check-all {
+    padding-block: 1rem;
+}
+
+.notification-container .check-all .checkbox {
+    display: flex;
+    gap: 1rem;
+}
+
+.notification-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-block: 1rem;
+    border-bottom: 2px solid #00000012;
+    transition: all 250ms ease-in-out;
+}
+
+.notification-card:hover {
+  background-color: #fff;
+}
+
+.notification-card .notification {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.notification-card .notification .notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification-card .notification .notification-header h2 {
+    font-size: 1.4rem;
+}
+
+.notification-card .notification .notification-content p {
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    /* border: 1px solid #ddd; */
+    margin: 0;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+  .message-container {
+    gap: 10px;
+  }
+
+  .notification-card .notification .notification-content p {
+    width: 250px;
+  }
+}
+
+@media (max-width: 425px) {
+  .notification-card .notification .notification-content p {
+    width: 190px;
+  }
+}
   
