@@ -1,18 +1,17 @@
 <div class="container">
     <h3 class="clo-lg-5 text-center">Manifest For {{data.object.name}}</h3>
     <form [formGroup]="firstFormGroup">
-      <mat-form-field>
-        <mat-label>Select a Warehouser</mat-label>
-        <mat-select #countrySelect>
-          <mat-select-trigger>{{countrySelect.value}}</mat-select-trigger>
-          <mat-option *ngFor="let warehouser of warehouserFilter" [value]="warehouser.username">
-            <div class="country-container">
-              <span>{{warehouser.username}}</span>
-            </div>
-          </mat-option>
-    
-        </mat-select>
-      </mat-form-field>
+        <mat-form-field>
+          <mat-label>
+            Search a Warehouser
+          </mat-label>
+          <input formControlName="warehouser" matInput type="text" [matAutocomplete]="auto" />
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let warehouser of filteredOptions" [value]="warehouser.email">
+              {{warehouser.username}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>Quantity</mat-label>
