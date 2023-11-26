@@ -34,16 +34,16 @@ export class DashboardsidebarComponent implements OnInit {
 
     {
       id: 5,
-      link: 'dash-board/table',
+      link: 'dash-board/payments',
       listName: 'Payments',
       icon: 'fa-solid fa-money-check-dollar'
     },
 
     {
       id: 6,
-      link: 'dash-board/form',
-      listName: 'Notifications',
-      icon: 'fa-solid fa-bell'
+      link: 'dash-board/messages',
+      listName: 'Messages',
+      icon: 'fa-solid fa-message'
     },
 
     {
@@ -157,6 +157,13 @@ export class DashboardsidebarComponent implements OnInit {
       link: 'dash-board/table',
       listName: 'Cart',
       icon: 'fa-solid fa-bag-shopping'
+    },
+
+    {
+      id: 5,
+      link: 'dash-board/table',
+      listName: 'Events',
+      icon: 'fa-solid fa-calendar'
     }
 
   ]

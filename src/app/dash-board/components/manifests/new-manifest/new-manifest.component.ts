@@ -16,11 +16,14 @@ export class NewManifestComponent implements OnInit {
   public warehouserCtrl: FormControl = new FormControl();
   public warehouserFilterCtrl: FormControl = new FormControl();
   warehousers:any
+  warehouserFilter:any = []
   warehouser:any
   quantity:any
   product:any
   isLinear = true;
   firstFormGroup!: FormGroup;
+
+  selectedOption: string;
   constructor(private warehouse:WarehouseService,public form:FormBuilder,public dialogRef: MatDialogRef<NewManifestComponent>,@Inject(MAT_DIALOG_DATA) public data: any){}
 
   ngOnInit() {

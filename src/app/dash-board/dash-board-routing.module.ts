@@ -11,6 +11,12 @@ import { ProcessedProductsComponent } from './components/processed-products/proc
 import { FormsComponent } from './components/forms/forms.component';
 import { ManifestsComponent } from './components/manifests/manifests.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { MessagesComponent } from './components/message/messages/messages.component';
+import { ImportantComponent } from './components/message/important/important.component';
+import { UnreadComponent } from './components/message/unread/unread.component';
+import { TrashComponent } from './components/message/trash/trash.component';
+import { InboxComponent } from './components/message/inbox/inbox.component';
 
 const routes: Routes = [
   {
@@ -26,6 +32,16 @@ const routes: Routes = [
       // {path: 'charts', component: ChartsComponent},
       { path: 'pending_accounts', component: AccountsComponent },
       { path: 'timeline', component: TimelineComponent },
+      { path: 'payments', component: PaymentsComponent },
+      { 
+        path: 'messages', component: MessagesComponent,
+        children: [
+          { path: '', component: InboxComponent },
+          {path: 'important', component: ImportantComponent},
+          {path: 'unread', component: UnreadComponent},
+          {path: 'trash', component: TrashComponent}
+        ]
+      }
     ]
   }
 ];

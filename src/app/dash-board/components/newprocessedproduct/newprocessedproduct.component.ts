@@ -12,6 +12,8 @@ import { ProductsService } from 'src/app/ProductsService/products.service';
 export class NewprocessedproductComponent {
   @Input() id:number = 0;
   firstFormGroup!: FormGroup;
+  img: any;
+  quantity: any;
   constructor(public form:FormBuilder,private product:ProductsService,public dialogRef: MatDialogRef<NewprocessedproductComponent>,@Inject(MAT_DIALOG_DATA) public data: any){}
   ngOnInit() {
     this.firstFormGroup = this.form.group({
@@ -19,8 +21,6 @@ export class NewprocessedproductComponent {
       quantity: ['', Validators.required],
     });
   }
-  img: any;
-  quantity: any;
 
   onImageChange(event:any){
     this.img = event.target.files[0]

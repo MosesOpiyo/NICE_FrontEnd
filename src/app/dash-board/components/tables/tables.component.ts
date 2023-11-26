@@ -117,10 +117,17 @@ export class TablesComponent implements OnInit {
 
       // Convert the worksheet to JSON
       const jsonData: any[] = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-      const dataRows: any[] = jsonData.filter(row => row.length > 0);
-      const header = jsonData[0].length
+      const dataRows: any[] = jsonData.filter(row => row.length > 0).slice(1);
+      const header = jsonData[0]
       // Now you can use jsonData to access the data from the Excel file
-      console.log(dataRows);
+      const jsonDataObjects: any[] = dataRows.map(row => {
+        const obj: any = {};
+        header.forEach((key:any, index:any) => {
+          obj[key] = row[index];
+        });
+        return obj
+      });
+      console.log('Processed Data:', jsonDataObjects);
     };
 
     reader.readAsBinaryString(file);

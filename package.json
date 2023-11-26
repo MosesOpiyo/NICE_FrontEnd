@@ -27,7 +27,6 @@
     "@zxcvbn-ts/language-en": "^2.1.0",
     "angular-password-strength-meter": "^6.0.0",
     "cloudinary": "^1.40.0",
-    "file-saver": "^2.0.5",
     "glightbox": "^3.2.0",
     "lodash-es": "^4.17.21",
     "ng2-img-max": "^2.2.9",
@@ -38,14 +37,12 @@
     "rxjs": "~7.8.0",
     "swiper": "^11.0.4",
     "tslib": "^2.3.0",
-    "xlsx": "^0.18.5",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.1.4",
     "@angular/cli": "^15.2.9",
     "@angular/compiler-cli": "^15.1.0",
-    "@types/file-saver": "^2.0.7",
     "@types/jasmine": "~4.3.0",
     "@types/node": "^20.8.10",
     "@types/swiper": "^6.0.0",

@@ -1,6 +1,239 @@
+.popularproduct-header p,
+.tracker-header p {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.order-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+    /* border: 2px solid red; */
+    padding-block: 2.5rem;
+    height: max-content;
+    gap: 30px;
+    margin-inline: auto;
+}
+
+.order-container .dashboard-card {
+    background-color: #f2f2f2;
+    padding: 1rem;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.order-container .user-stats {
+    grid-area: 1 / 1 / 2 / 13;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    background-color: #fff;
+}
+
+.order-container .user-stats .stats-card {
+    /* border: 2px solid black; */
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    height: 150px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.order-container .user-stats .stats-card::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000009c;
+}
+
+.order-container .user-stats .stats-card i {
+    font-size: 2rem;
+}
+
+.order-container .user-stats .stats-card span {
+    font-size: 3.5rem;
+    font-weight: 300;
+}
+
+.order-container .user-stats .stats-card p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.order-container .user-stats .stats-card.orders {
+    background-image: url("https://img.freepik.com/free-vector/woman-working-laptop-desk-isometric-vector_1441-699.jpg?size=626&ext=jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.order-container .user-stats .stats-card.deliveries {
+    background-image: url("https://img.freepik.com/free-psd/3d-illustration-delivery-man-character-holding-bag-with-scooter_23-2149507164.jpg?size=626&ext=jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.order-container .user-stats .stats-card.cancelled {
+    background-image: url("https://img.freepik.com/free-photo/3d-render-red-paper-clipboard-with-cross-mark_107791-15856.jpg?size=626&ext=jpg&ga=GA1.1.1027520766.1700029308&semt=sph");
+    background-position: center;
+    background-size: cover;
+}
+
+/* table */
+.order-container .orders-table {
+    grid-area: 2 / 1 / 3 / 13;
+}
+
+/* popular */
+.order-container .popular {
+    grid-area: 3 / 1 / 4 / 8;
+} 
+
+.order-container .popular .popular-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.order-container .popular .popular-items > *,
+.tracker-content .tracker-card > * {
+    flex-basis: 100%;
+    /* border: 2px solid red; */
+}
+
+.order-container .popular-items .product-image,
+.tracker-content .tracker-card .product-image {
+    height: 100px;
+    width: 100%;
+}
+
+.order-container .popular-items .product-image img,
+.tracker-content .tracker-card .product-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* congrats */
+.order-container .congrats {
+    grid-area: 3 / 8 / 4 / 13;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.order-container .congrats .congrats-image {
+    width: 100%;
+    height: 200px;
+}
+
+.order-container .congrats .congrats-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.order-container .congrats h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.order-container .congrats p {
+    font-size: 1.2rem;
+}
+
+.order-container .congrats p span {
+    font-size: 1.5rem;
+    color: rgb(34, 5, 136);
+}
+
+
+/* tracker */
+.order-container .tracker {
+    grid-area: 4 / 1 / 5 / 13;
+} 
+
+.tracker-content .tracker-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.fa-circle-check {
+    color: green;
+    font-size: .7rem;
+}
+
+.fa-circle-xmark {
+    color: red;
+    font-size: .7rem;
+}
+
+.product-tracker ul li {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+
+
+
+
+
+
 table{
     background-color: white;
 }
 th,td{
     color: black;
+}
+
+@media (max-width: 768px) {
+    .order-container {
+        gap: 30px 10px;
+    }
+
+    .order-container .user-stats {
+        padding: 0;
+    }
+
+    .order-container .popular {
+        grid-area: 3 / 1 / 4 / 13;
+    }
+
+    .order-container .congrats {
+        grid-area: 4 / 1 / 5 / 13;
+    }
+
+    .order-container .tracker {
+        grid-area: 5 / 1 / 6 / 13;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .order-container .user-stats {
+        grid-template-columns: 1fr;
+    }
 }

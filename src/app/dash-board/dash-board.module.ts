@@ -18,6 +18,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NewproductComponent } from './components/newproduct/newproduct.component';
 
 import {MatStepperModule} from '@angular/material/stepper';
+import { MatListModule } from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
@@ -32,7 +33,13 @@ import { ProcessedProductsComponent } from './components/processed-products/proc
 import { ScanComponent } from './scan/scan.component';
 import { SavechangesComponent } from './components/savechanges/savechanges.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
-import { NewprocessedproductComponent } from './components/newprocessedproduct/newprocessedproduct.component';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { MessagesComponent } from './components/message/messages/messages.component';
+import { ImportantComponent } from './components/message/important/important.component';
+import { UnreadComponent } from './components/message/unread/unread.component';
+import { TrashComponent } from './components/message/trash/trash.component';
+import { InboxComponent } from './components/message/inbox/inbox.component';
+import { FilterPipe } from './components/manifests/filter.pipe';
 
 
 @NgModule({
@@ -55,7 +62,13 @@ import { NewprocessedproductComponent } from './components/newprocessedproduct/n
     ScanComponent,
     SavechangesComponent,
     TimelineComponent,
-    NewprocessedproductComponent
+    PaymentsComponent,
+    MessagesComponent,
+    ImportantComponent,
+    UnreadComponent,
+    TrashComponent,
+    InboxComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -71,7 +84,8 @@ import { NewprocessedproductComponent } from './components/newprocessedproduct/n
     NgxMatSelectSearchModule,
     MatAutocompleteModule,
     BarcodeScannerLivestreamModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
   ]
 })
 export class DashBoardModule { }

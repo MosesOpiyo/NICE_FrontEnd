@@ -16,6 +16,7 @@ export class OrdersComponent {
   ngOnInit(): void {
     this.products.getWarehouseOrders().subscribe((res:any)=>{
       this.Orders = res
+      console.log(this.Orders)
     })
     this.service.getProfile().subscribe((res:any)=>{
       this.user = res['user']

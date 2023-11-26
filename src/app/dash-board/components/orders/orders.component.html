@@ -1,13 +1,41 @@
 <!-- Table Start -->
-<div class="container-fluid pt-4 px-4">
-    <div class="row g-4">
-        <div class="col-12">
+<div>
+    <div class="order-container">
+        <!-- FIRST CARD -->
+        <div class="dashboard-card user-stats">
+            <div class="orders stats-card">
+                <div>
+                    <span>0</span>
+                    <p>Orders</p>
+                </div>
+            </div>
+
+            <div class="deliveries stats-card">
+                <div>
+                    <span>0</span>
+                    <p>Deliveries</p>
+                </div>
+            </div>
+
+            <div class="cancelled stats-card">
+                <div>
+                    <span>0</span>
+                    <p>Cancelled</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 2ND CARD -->
+        <div class="dashboard-card orders-table">
+
             <div class="bg-light rounded h-100 p-4">
                 <div class="row g-0" style="width: 100%;">
                     <div class="col-lg-10">
                         <h4 class="mb-4">Orders</h4>
                     </div>
                 </div>
+
                 <div class="table-responsive">
                     <table mat-table [dataSource]="Orders" class="mat-elevation-z8 demo-table table-light">
                         <ng-container matColumnDef="name">
@@ -41,8 +69,139 @@
                           ></tr>
                       </table>
                 </div>
+
+            </div>
+            
+        </div>
+
+        <!-- 3RD CARD -->
+        <div class="dashboard-card popular">
+            <div class="popularproduct-header">
+                <p>Popular products</p>
+            </div>
+
+            <div class="popular-items">
+                <div class="product-image">
+                    <img src="../../../../assets/img/packaging/coffee-bag-01.png" alt="">
+                </div>
+
+                <div class="product-details">
+                    <p>Mettle</p>
+                </div>
+
+                <div class="product-quantity">
+                    <p>400 bought</p>
+                </div>
+            </div>
+
+            <div class="popular-items">
+                <div class="product-image">
+                    <img src="../../../../assets/img/packaging/coffee-bag-02.png" alt="">
+                </div>
+
+                <div class="product-details">
+                    <p>Mettle</p>
+                </div>
+
+                <div class="product-quantity">
+                    <p>350 bought</p>
+                </div>
+            </div>
+
+            <div class="popular-items">
+                <div class="product-image">
+                    <img src="../../../../assets/img/packaging/pkg7.png" alt="">
+                </div>
+
+                <div class="product-details">
+                    <p>Mettle</p>
+                </div>
+
+                <div class="product-quantity">
+                    <p>300 bought</p>
+                </div>
             </div>
         </div>
+
+        <!-- 4TH CARD -->
+        <div class="congrats dashboard-card">
+            <div class="congrats-image">
+                <img src="../../../../assets/img/delivery.jpg" alt="">
+            </div>
+
+            <h2>Congratulations  {{user.username}}</h2>
+            <p><span>100</span> kilos of your coffee has been successfully delivered overseas</p>
+        </div>
+
+        <!-- 5TH CARD -->
+        <div class="dashboard-card tracker">
+            <div class="tracker-header">
+                <p>Shipped and Delivery tracker</p>
+            </div>
+
+            <div class="tracker-content">
+                <div class="tracker-card">
+                    <div class="product-image">
+                        <img src="../../../../assets/img/packaging/coffee-bag-01.png" alt="">
+                    </div>
+
+                    <div class="product-details">
+                        <p>Mettle</p>
+                        <p>#234ONM</p>
+                        <p>11/17/2023</p>
+                    </div>
+
+                    <div class="product-tracker">
+                        <ul>
+                            <li>Ordered<i class="fa-solid fa-circle-check"></i></li>
+                            <li>Shipped<i class="fa-solid fa-circle-check"></i></li>
+                            <li>Delivered<i class="fa-solid fa-circle-check"></i></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tracker-card">
+                    <div class="product-image">
+                        <img src="../../../../assets/img/packaging/coffee-bag-02.png" alt="">
+                    </div>
+
+                    <div class="product-details">
+                        <p>Mettle</p>
+                        <p>#234ONM</p>
+                        <p>11/17/2023</p>
+                    </div>
+
+                    <div class="product-tracker">
+                        <ul>
+                            <li>Ordered<i class="fa-solid fa-circle-check"></i></li>
+                            <li>Shipped<i class="fa-solid fa-circle-check"></i></li>
+                            <li>Delivered<i class="fa-solid fa-circle-xmark"></i></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tracker-card">
+                    <div class="product-image">
+                        <img src="../../../../assets/img/packaging/pkg1.png" alt="">
+                    </div>
+
+                    <div class="product-details">
+                        <p>Mettle</p>
+                        <p>#234ONM</p>
+                        <p>11/17/2023</p>
+                    </div>
+
+                    <div class="product-tracker">
+                        <ul>
+                            <li>Ordered<i class="fa-solid fa-circle-check"></i></li>
+                            <li>Shipped<i class="fa-solid fa-circle-xmark"></i></li>
+                            <li>Delivered<i class="fa-solid fa-circle-xmark"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 <!-- Table End -->

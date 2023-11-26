@@ -1,13 +1,13 @@
 <!-- Form Start -->
-<div class="container-fluid pt-4 px-4">
-    <div class="card-container row g-4">
+<div>
+    <div class="card-container">
 
         <!-- 1ST CARD -->
-        <div class="dashboard-card">
+        <div class="dashboard-card info">
             <div class="card-header">
                 <div>
-                    <h5 *ngIf="user.user.type=='FARMER'" class="mb-4">Farmer's Details</h5>
-                    <h5 *ngIf="user.user.type=='WAREHOUSER'" class="mb-4">Warehouser's Details</h5>
+                    <h5 *ngIf="user.user.type=='FARMER'">Farmer's Details</h5>
+                    <h5 *ngIf="user.user.type=='WAREHOUSER'">Warehouser's Details</h5>
                 </div>
 
                 <div>
@@ -33,14 +33,14 @@
         </div>
 
         <!-- 2ND CARD(FARMER) -->
-        <div class="dashboard-card" *ngIf="user.user.type=='FARMER'">
+        <div class="dashboard-card user-info" *ngIf="user.user.type=='FARMER'">
             <h5 class="mb-4">Farm Details</h5>
         
             <div>
                 <ul class="farmer-info">
                     <li>
                         County: <br>
-                        <span>{{profile.county}}</span>
+                        <span *ngIf="profile">{{profile.county}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(1)"></i>
                     </li>
 
@@ -52,7 +52,7 @@
 
                     <li>
                         Owner:<br>
-                        <span>{{profile.farmer.username}}</span>
+                        <span *ngIf="profile">{{profile.farmer.username}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(3)"></i>
                     </li>
 
@@ -64,13 +64,13 @@
 
                     <li>
                         No. of Trees:<br>
-                        <span>{{profile.no_of_trees}}</span>
+                        <span *ngIf="profile">{{profile.no_of_trees}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(5)"></i>
                     </li>
 
                     <li>
                         Altitude:<br>
-                        <span>{{profile.altitude}}</span>
+                        <span *ngIf="profile">{{profile.altitude}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(6)"></i>
                     </li>
 
@@ -82,25 +82,25 @@
 
                     <li>
                         Annual Rainfall Amt:<br>
-                        <span>{{profile.annual_rainfall_amount}}</span>
+                        <span *ngIf="profile">{{profile.annual_rainfall_amount}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(8)"></i>
                     </li>
 
                     <li>
                         Annual Temp Amt:<br>
-                        <span></span>
+                        <span *ngIf="profile"></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(9)"></i>
                     </li>
 
                     <li>
                         Coffe Varieties:<br>
-                        <span>{{profile.coffee_variety}}</span>
+                        <span *ngIf="profile">{{profile.coffee_variety}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(10)"></i>
                     </li>
 
                     <li>
                         Farming Method:<br>
-                        <span></span>
+                        <span *ngIf="profile"></span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(11)"></i>
                     </li>
 
@@ -130,21 +130,19 @@
 
                     <li>
                         Cupping Notes:<br>
-                        <span>
-                        </span>
+                        <span *ngIf="profile"> </span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(16)"></i>
                     </li>
 
                     <li>
                         Availability:<br>
-                        <span>{{profile.availability}}</span>
+                        <span *ngIf="profile">{{profile.availability}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(17)"></i>
                     </li>
 
                     <li>
                         Grower's History:<br>
-                        <span>
-                        </span>
+                        <span *ngIf="profile">   </span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(18)"></i>
                     </li>
 
@@ -166,7 +164,7 @@
         </div>
 
         <!-- 2ND CARD(WAREHOUSER / ORIGIN WAREHOUSER) -->
-        <div class="dashboard-card" *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">
+        <div class="dashboard-card user-info" *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">
             <h5 class="mb-4">Warehouse Details</h5>
 
             <div class="mb-3">

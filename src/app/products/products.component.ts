@@ -474,13 +474,13 @@ export class ProductsComponent implements OnInit {
      this.service.getProfile().subscribe((res:any)=>{
        this.user = res['user']
        if(this.user.type == "FARMER"){
-         this.route.navigate(['DashBoard'])
+         this.route.navigate(['dash-board'])
        }
        else if(this.user.type == "WAREHOUSER"){
-         this.route.navigate(['DashBoard'])
+         this.route.navigate(['dash-board'])
        }
        else if(this.user.type == "ADMIN"){
-         this.route.navigate(['DashBoard'])
+         this.route.navigate(['dash-board'])
        }
        else{
          false
