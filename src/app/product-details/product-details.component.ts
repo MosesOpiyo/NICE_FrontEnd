@@ -55,21 +55,24 @@ export class ProductDetailsComponent implements OnInit {
   ratings : number[] = [];
   total:any
   cloudinaryUrl = environment.CLOUDINARY_URL
-
+  quantityPrice:any = ""
   quantity:any = ""
   grind:any = ""
   price:any = ""
   roast_type:any = ""
+  code:any = 0
 
   cartItem(id:any){
-    Math.round
-    const amount = Math.round((this.quantity / this.item.price)) 
-    this.price = amount * this.item.price
+    const parts = this.quantityPrice.split('-');
+    this.quantity = parseInt(parts[0],10)
+    this.price = parseFloat(parts[1])
     let form = new FormData();
     form.append('quantity',this.quantity),
     form.append('grind',this.grind),
     form.append('price',this.price),
     form.append('roast_type',this.roast_type),
+    form.append('code',this.item.code)
+    console.log(form)
     this.cart.addToCart(id,form)
     this.ngOnInit()
   }
@@ -145,8 +148,6 @@ export class ProductDetailsComponent implements OnInit {
      this.item.rating.forEach((ratingItem:any) => {
       this.ratings.push(ratingItem.rating)
     });
-    
-
    })
    }
    else{

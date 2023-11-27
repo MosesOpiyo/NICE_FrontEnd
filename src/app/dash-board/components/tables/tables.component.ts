@@ -22,7 +22,7 @@ export class TablesComponent implements OnInit {
   constructor(private products:ProductsService,private warehouse:WarehouseService,private service:AuthenticationService,private admin:AdminService,private dialog:MatDialog,private snackbar:MatSnackBar){}
   displayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity','shipping'];
   farmerDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity'];
-  warehouserDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity','processed'];
+  warehouserDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity'];
   adminDisplayedColumns: string[] = ['email','username','type','date_joined','last_login','terminate'];
   farmerProducts:any
   users:any
@@ -159,15 +159,6 @@ export class TablesComponent implements OnInit {
       width: '40pc',
       data:{ object: object,
         name:object.name
-      }
-    });
-  }
-
-  ProcessedProductDialog(id:any){
-    const dialogRef = this.dialog.open(NewprocessedproductComponent,{
-      width: '40pc',
-      data:{ 
-        id:id
       }
     });
   }

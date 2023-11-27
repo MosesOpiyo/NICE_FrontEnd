@@ -131,10 +131,6 @@
                         <th mat-header-cell *matHeaderCellDef> Quantity </th>
                         <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
                     </ng-container>
-                    <ng-container matColumnDef="processed">
-                      <th mat-header-cell *matHeaderCellDef>  </th>
-                      <td mat-cell *matCellDef="let element"> <button class="btn btn-outline-dark" (click)="ProcessedProductDialog(element.id)">Create Processed</button> </td>
-                  </ng-container>
                         <tr mat-header-row *matHeaderRowDef="warehouserDisplayedColumns"></tr>
                         <tr
                             mat-row

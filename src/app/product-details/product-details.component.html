@@ -46,7 +46,6 @@
                         
                       </p>
                       <p>In stock</p>
-                      <p>{{item.price | currency:'USD'}} / 12oz</p>
                       <p>Shipping: Free (Continental US only)</p>
                   </div> 
               </div>
@@ -60,12 +59,12 @@
                       
                       <form action="" method="post">
                         <div class="option-list">
-                            <select id="packsize" [(ngModel)]="quantity" name="packsize" title="packsize" required>
+                            <select id="packsize" [(ngModel)]="quantityPrice" name="packsize" title="packsize" required>
                               <option value="" disabled selected>Choose Pack Size...</option>
-                              <option value="12">12oz ($18.80)</option>
-                              <option value="32">32oz ($46.80)</option>
-                              <option value="48">48oz ($68.20)</option>
-                              <option value="80">80oz ($113.00)</option>
+                              <option value="12-18.80">12oz ($18.80)</option>
+                              <option value="32-46.80">32oz ($46.80)</option>
+                              <option value="48-68.20">48oz ($68.20)</option>
+                              <option value="80-113.00">80oz ($113.00)</option>
                             </select>
           
                             <select id="grind" [(ngModel)]="grind" name="grind" title="grind" required>
