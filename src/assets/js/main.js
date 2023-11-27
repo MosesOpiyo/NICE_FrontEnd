@@ -210,65 +210,6 @@
    */
    const portfolioLightbox = GLightbox({
     selector: '.gallery-lightbox'
-  });
-
-  /**
-   * Gallery isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.gallery-images');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.glightbox',
-        layoutMode: 'fitRows'
-      });
-
-      let portfolioFilters = select('#gallery-flters li', true);
-
-      on('click', '#gallery-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
-
-  });
-
-    window.addEventListener('load', () => {
-    let portfolioContainer = select('.expogallery-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.expogallery-item',
-        layoutMode: 'fitRows'
-      });
-
-      let portfolioFilters = select('#year-filters li', true);
-
-      on('click', '#year-filters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
-
-  });
+  });  
 
 })()

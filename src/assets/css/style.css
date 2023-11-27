@@ -1351,13 +1351,24 @@
     height: 650px;
     display: flex;
     align-items: center;
-    justify-content: left;
-    background-image: url("../img/Trip/hero1.jpg");
+    justify-content: center;
+    background-image: url("../img/Trip/trip1.3.jpg");
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
+  }
+
+  .trip-container .triphero-container::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000057;
   }
   
   .trip-container .trip-content {
@@ -1366,7 +1377,8 @@
     flex-direction: column;
     gap: 3rem;
     width: 50%;
-    padding-left: 4rem;
+    color: #fff;
+    text-align: center;
   }
   
   .trip-container .trip-content h2 {
@@ -1376,6 +1388,8 @@
   .trip-container .trip-content .trip-text {
     display: flex;
     gap: 1rem;
+    align-items: center;
+    justify-content: center;
   }
   
   .trip-container .trip-content .trip-text p {
@@ -1384,7 +1398,6 @@
   
   .trip-container .register-btn a {
     align-self: center;
-    border: 2px solid black;
     font-size: 17px;
     font-weight: bold;
     padding: 10px 50px;
@@ -1481,7 +1494,7 @@
   .trip-container .trip-purpose .purpose-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     width: 90%;
     margin-inline: auto;
     height: max-content;
@@ -1497,33 +1510,54 @@
   
   .trip-container .purpose-list .purpose-card {
     display: flex;
-    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
     padding: 1rem;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+  }
+
+  .trip-container .purpose-list .purpose-card::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000006e;
   }
 
   .trip-container .purpose-list .purpose-card.meetfarmer {
-    background-color: #d0e957;
+    /* background-color: #d0e957; */
+    background-image: url("https://img.freepik.com/premium-photo/portrait-female-african-farmer_216356-738.jpg?w=740");
   }
 
   .trip-container .purpose-list .purpose-card.process {
-    background-color: #e0e0e0;
+    /* background-color: #e0e0e0; */
+    background-image: url("https://img.freepik.com/free-photo/colorful-cogwheels-arrangement-top-view_23-2149382397.jpg?size=626&ext=jpg&ga=GA1.1.771609611.1699605036&semt=sph");
   }
 
   .trip-container .purpose-list .purpose-card.taste {
-    background-color: #b3a0ce;
+    /* background-color: #b3a0ce; */
+    background-image: url("https://img.freepik.com/free-photo/girl-having-cup-coffee-enjoying-taste_144627-67507.jpg?w=740&t=st=1699609828~exp=1699610428~hmac=c7d52240b13a9fc96e1feeb0fb0f5de11496eaf2053da30139dac5bf6cf6a57d");
   }
 
   .trip-container .purpose-list .purpose-card.relations {
-    background-color: #fdc5c6;
+    /* background-color: #fdc5c6; */
+    background-image: url("https://img.freepik.com/free-photo/business-collaboration-success-by-handshake_23-2148339368.jpg?w=740&t=st=1699611729~exp=1699612329~hmac=23a2f2ac220a2b29b3ad23bf2e1e01e8b4d176af43cd8a637812f5b375dbede4");
   }
 
-  .trip-container .purpose-list .purpose-card.farmer-image,
+  /* .trip-container .purpose-list .purpose-card.farmer-image,
   .trip-container .purpose-list .purpose-card.process-image,
   .trip-container .purpose-list .purpose-card.relations-image,
   .trip-container .purpose-list .purpose-card.tasting-image {
     padding: 0;
-  }
+  } */
 
   .trip-container .purpose-list .purpose-card img {
     height: 100%;
@@ -1533,11 +1567,11 @@
     /* border-radius: 15px; */
   }
 
-  .trip-container .purpose-list .purpose-card.process-image img,
+  /* .trip-container .purpose-list .purpose-card.process-image img,
   .trip-container .purpose-list .purpose-card.relations-image img,
   .trip-container .purpose-list .purpose-card.tasting-image img {
     object-position: center;
-  }
+  } */
   
   .trip-container .purpose-list .purpose-card .purpose-icon {
     display: flex;
@@ -1558,7 +1592,8 @@
   
   .trip-container .purpose-list .purpose-card .purpose-content h2 {
     margin-bottom: .5rem;
-    font-size: 1.4rem;
+    font-size: 2.4rem;
+    font-weight: 300;
   }
 
   .trip-container .purpose-list .purpose-card .purpose-content p {
@@ -1942,26 +1977,6 @@
   }
 
   @media (max-width: 768px) {
-    .trip-container .triphero-container {
-      background-position: right;
-      justify-content: center;
-      background-image: url("../img/Trip/hero1.jpg");
-      position: relative;
-      z-index: 1;
-    }
-
-    .trip-container .triphero-container::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #fff6f1;
-      opacity: .2;
-    }
-
     .trip-container .trip-content {
       align-items: center;
       text-align: center;
@@ -2051,40 +2066,40 @@
   @media (max-width: 600px) {
     .trip-container .trip-purpose .purpose-list {
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(8, 1fr);
+      grid-template-rows: auto;
     }
 
-    .trip-container .purpose-list .purpose-card.farmer-image {
+    /* .trip-container .purpose-list .purpose-card.farmer-image {
       grid-area: 1 / 1 / 2 / 2;
-    }
+    } */
 
-    .trip-container .purpose-list .purpose-card.meetfarmer {
+    /* .trip-container .purpose-list .purpose-card.meetfarmer {
       grid-area: 2 / 1 / 3 / 2;
-    }
+    } */
 
-    .trip-container .purpose-list .purpose-card.process-image {
+    /* .trip-container .purpose-list .purpose-card.process-image {
       grid-area: 3 / 1 / 4 / 2;
-    }
+    } */
 
-    .trip-container .purpose-list .purpose-card.process {
+    /* .trip-container .purpose-list .purpose-card.process {
       grid-area: 4 / 1 / 5 / 2;
-    }
+    } */
 
-    .trip-container .purpose-list .purpose-card.tasting-image {
+    /* .trip-container .purpose-list .purpose-card.tasting-image {
       grid-area: 5 / 1 / 6 / 2;
-    }
+    } */
 
-    .trip-container .purpose-list .purpose-card.taste {
+    /* .trip-container .purpose-list .purpose-card.taste {
       grid-area: 6 / 1 / 7 / 2;
-    }
+    } */
 
-    .trip-container .purpose-list .purpose-card.relations-image {
+    /* .trip-container .purpose-list .purpose-card.relations-image {
       grid-area: 7 / 1 / 8 / 2;
-    }
+    } */
 
-    .trip-container .purpose-list .purpose-card.relations {
+    /* .trip-container .purpose-list .purpose-card.relations {
       grid-area: 8 / 1 / 9 / 2;
-    }
+    } */
 
     .trip-container .trip-purpose .purpose-list > * {
       height: 200px;
@@ -2168,10 +2183,10 @@
   
   /* ABOUT HEADER */
   .about-component .about-header {
-      background-image: url("../img/about/aboutbg.jpg");
+      background-image: url("../img/about/about.png");
       background-position: center;
       background-size: cover;
-      height: 450px;
+      height: 350px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2216,7 +2231,7 @@
   /* OUR MISSION */
   .about-component .our-mission {
       display: flex;
-      margin-bottom: 4rem;
+      margin-block: 4rem;
       width: 70%;
       margin-inline: auto;
       text-align: center;
@@ -2231,6 +2246,7 @@
       background-color: #95aad3;
       border-radius: .5rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
   }

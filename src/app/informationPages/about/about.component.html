@@ -7,7 +7,7 @@
     </div>
 
     <!-- OUR STORY -->
-    <div class="our-story">
+    <!-- <div class="our-story">
         <div class="story-header">
             <h2>How it started</h2>
         </div>
@@ -23,12 +23,13 @@
                 Impedit saepe dolores laboriosam cupiditate ab quas, dolorem blanditiis aut, maxime esse rerum recusandae ratione pariatur corrupti omnis atque eaque minus dicta architecto mollitia ut sunt nulla. Maiores, adipisci architecto?</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- MISSION -->
     <div class="our-mission">
         <div class="mission-content">
-            <p>Get coffee hassle free, no middlemen. 100% traceable, 100% direct</p>
+            <h2>Our Mission</h2>
+            <p>Buy coffee hassle free, no middlemen. 100% traceable, 100% direct</p>
         </div>
 
         <div class="mission-image">
@@ -285,199 +286,448 @@
 
     <!-- GALLERY SECTION -->
     <div class="gallery-container" data-aos="fade-up" id="gallery">
-        <div class="gallery-header">
-            <h2>Gallery</h2>
+      <div class="gallery-header">
+        <h2>Gallery</h2>
+      </div>
+    
+      <div class="gallery-filtered" data-aos="fade-up">
+        <div class="filters" (click)="onLabelGroupClick($event)">
+          <label for="forall" class="filter-label active">ALL</label>
+          <label for="for22" class="filter-label">2022</label>
+          <label for="for19" class="filter-label">2019</label>
+          <label for="for18" class="filter-label">2018</label>
+          <label for="for17" class="filter-label">2017</label>
         </div>
-
-        <div class="filter-container" data-aos="fade-in">
-              <ul id="year-filters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-22">2022</li>
-                <li data-filter=".filter-19">2019</li>
-                <li data-filter=".filter-18">2018</li>
-                <li data-filter=".filter-17">2017</li>
-              </ul>
-        </div>
-
-        <div class="expogallery-container" data-aos="fade-up">
-        
-            <div class="expogallery-item filter-17">
-                <div class="expogallery-links">
-                    <a href="../../../assets/img/expo/expo1.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                        <img src="../../../assets/img/expo/expo1.jpg" class="img-fluid" alt="">
-                    </a>
-                </div>
+    
+        <div class="filter-card">
+          <input type="radio" checked name="year-filter" id="forall" class="filter-input">
+          <div class="filter-content">
+    
+            <!-- 2022 -->
+            <div class="expogallery-item filter-22">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo4.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo4.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-18">
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo2.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo2.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-22">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo5.png" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo5.png" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-22">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo6.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo6.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-22">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo7.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo7.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-22">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo8.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo8.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <!-- 2019 -->
+            <div class="expogallery-item filter-19">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo3.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo3.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="expogallery-item filter-19">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo18.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo18.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
             <div class="expogallery-item filter-19">
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo3.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo3.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo19.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo19.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-22">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo4.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo4.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-19">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo20.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo20.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-22">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo5.png" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo5.png" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-19">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo21.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo21.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-22">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo6.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo6.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <!-- 2018 -->
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo2.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo2.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-22">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo7.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo7.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo13.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo13.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-22">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo8.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo8.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo14.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo14.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-17">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo9.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo9.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo15.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo15.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-17">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo10.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo10.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo16.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo16.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-17">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo11.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo11.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo17.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo17.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-17">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo12.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo12.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo22.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo22.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-18">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo13.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo13.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <!-- 2017 -->
+            <div class="expogallery-item filter-17">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo1.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo1.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-18">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo14.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo14.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-17">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo9.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo9.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-18">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo15.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo15.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-17">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo10.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo10.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-18">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo16.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo16.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-17">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo11.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo11.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
     
-            <div class="expogallery-item filter-18">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo17.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo17.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
+            <div class="expogallery-item filter-17">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo12.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo12.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
             </div>
-    
-            <div class="expogallery-item filter-19">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo18.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo18.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
-            </div>
-    
-            <div class="expogallery-item filter-19">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo19.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo19.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
-            </div>
-    
-            <div class="expogallery-item filter-19">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo20.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo20.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
-            </div>
-    
-            <div class="expogallery-item filter-19">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo21.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo21.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
-            </div>
-    
-            <div class="expogallery-item filter-18">  
-                <div class="expogallery-links">
-                  <a href="../../../assets/img/expo/expo22.jpg" data-gallery="expoGallery" class="gallery-lightbox" title="NICE 2017">
-                    <img src="../../../assets/img/expo/expo22.jpg" class="img-fluid" alt="">
-                  </a>
-                </div>
-            </div>
+          </div>
         </div>
+    
+        <div class="filter-card">
+          <input type="radio" name="year-filter" id="for22" class="filter-input">
+          <div class="filter-content">
+            <div class="expogallery-item filter-22">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo4.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo4.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-22">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo5.png" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo5.png" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-22">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo6.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo6.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-22">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo7.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo7.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-22">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo8.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo8.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="filter-card">
+          <input type="radio" name="year-filter" id="for19" class="filter-input">
+          <div class="filter-content">
+            <div class="expogallery-item filter-19">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo3.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo3.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="expogallery-item filter-19">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo18.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo18.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-19">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo19.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo19.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-19">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo20.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo20.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-19">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo21.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo21.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="filter-card">
+          <input type="radio" name="year-filter" id="for18" class="filter-input">
+          <div class="filter-content">
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo2.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo2.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo13.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo13.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo14.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo14.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo15.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo15.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo16.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo16.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo17.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo17.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-18">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo22.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo22.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="filter-card">
+          <input type="radio" name="year-filter" id="for17" class="filter-input">
+          <div class="filter-content">
+            <div class="expogallery-item filter-17">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo1.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo1.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-17">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo9.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo9.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-17">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo10.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo10.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-17">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo11.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo11.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+    
+            <div class="expogallery-item filter-17">
+              <div class="expogallery-links" data-aos="fade-up">
+                <a href="../../../assets/img/expo/expo12.jpg" data-gallery="expoGallery" class="gallery-lightbox"
+                  title="NICE 2017">
+                  <img src="../../../assets/img/expo/expo12.jpg" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
     </div>
+
+    
+    
 
 
 </section>

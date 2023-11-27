@@ -6,6 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
+  onLabelGroupClick($event: any){
+    let clickedElement = $event.target || $event.srcElement;
+
+    if( clickedElement.nodeName === "LABEL" ) {
+
+      let isCertainLabelAlreadyActive = clickedElement.parentElement.querySelector(".active");
+      // if a Button already has Class: .active
+      if( isCertainLabelAlreadyActive ) {
+        isCertainLabelAlreadyActive.classList.remove("active");
+      }
+
+      clickedElement.className += " active";
+    }
+
+  }
 
   partnerData = [ 
     {
