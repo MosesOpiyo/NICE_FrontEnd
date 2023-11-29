@@ -212,4 +212,7 @@
     selector: '.gallery-lightbox'
   });  
 
+  // region-country selector
+  window.crs.init()
+
 })()

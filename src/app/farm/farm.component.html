@@ -1,6 +1,32 @@
 <app-navbar></app-navbar>
 
 <section class="farm-component">
+    <!-- farm navbar -->
+    <div class="farm-navbar">
+
+        <div class="navbar-input">
+      
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search farm" id="search" name="search">
+            <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+          </div>
+      
+        </div>
+      
+    </div>
+
+    <!-- farm seclection by -->
+    <div class="selection">
+        <div class="country-selector">
+            <select class="crs-country" title="country" data-region-id="region" data-default-option="Select a country"></select>
+        </div>
+
+        <div class="region-selector">
+            <select id="region" title="region" data-blank-option="No country selected" data-default-option="Select a region"></select>
+        </div>
+        
+    </div>
+
     <div class="farm-list">
         <a class="places-card geralds-place"  routerLink="/farm/1">
             <div class="places-header">

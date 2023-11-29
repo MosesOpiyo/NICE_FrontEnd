@@ -5,18 +5,21 @@
         <p>Ndaroini Farm</p>
     </div>
 
+    <!--  farm products section  -->
     <div class="farm-details-content">
-        <div class="farm">
+        <div class="farm-products">
+          <!-- sidebar -->
             <div class="sidebar">
-              <div>
-                <div class="widget-title"  >
+              <div class="coffee-variety">
+
+                <div class="widget-title" (click)=toggleVarietyOn()>
                   <h2>Coffee Variety&nbsp;
-                    <i  class="fa-solid fa-chevron-down"></i>
-                    <i  class="fa-solid fa-chevron-up"></i>
+                    <i *ngIf="!isShowVariety" class="fa-solid fa-chevron-down"></i>
+                    <i *ngIf="isShowVariety" class="fa-solid fa-chevron-up"></i>
                   </h2>
                 </div>
-                <!-- <input type="hidden" id="previous_select"> -->
-                <ul >
+
+                <ul *ngIf="isShowVariety">
                   <li class="customRadio">
                     <input type="radio" value="Variety1" id="Variety1" name="variety"  />
                     <label for="Variety1"><span><span></span></span>Variety 1</label>
@@ -49,15 +52,15 @@
                 </ul>
               </div>
 
-              <div>
-                <div class="widget-title">
+              <div class="coffee-price">
+                <div class="widget-title" (click)=togglePriceOn()>
                   <h2>Price&nbsp;
-                    <i  class="fa-solid fa-chevron-down"></i>
-                    <i  class="fa-solid fa-chevron-up"></i>
+                    <i *ngIf="!isShowPrice" class="fa-solid fa-chevron-down"></i>
+                    <i *ngIf="isShowPrice" class="fa-solid fa-chevron-up"></i>
                   </h2>
                 </div>
-                <!-- <input type="hidden" id="previous_select"> -->
-                <ul >
+                
+                <ul *ngIf="isShowPrice">
                   <li class="customRadio">
                     <input type="radio" value="farm1" id="price1" name="price"/>
                     <label for="price1"><span><span></span></span>All</label>
@@ -82,15 +85,15 @@
       
             </div>
       
-            <div class="productlist">
-      
+          <!-- product list -->
+            <div class="productlist">    
               <div class="productlist-content">
-                <div class="product-card"   data-aos="fade-up">
-      
-                  
+                <!-- *ngFor="let item of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" -->
+                <div class="product-card" data-aos="fade-up">
+                  <!-- product -->
                   <a routerLink="/Products/1" class="product-item">
                     <div class="product-image">
-                        <img src="../../assets/img/packaging/coffee-bag-03.png" alt="package">
+                        <img src="../../assets/img/packaging/coffee-bag-02.png" alt="package">
                     </div>
       
                     <div class="product-name">
@@ -98,15 +101,36 @@
                         <p>Mettle</p>
                       </div>
                         
-                      <div class="rating">
-                        <p>
+                      <!-- <div class="rating">
+                        <p *ngIf=" averageRating(item) == 5">
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-solid fa-star"></i>
                           <i class="fa-solid fa-star"></i>
                         </p>
-                      </div>
+                        <p *ngIf="averageRating(item) == 4">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </p>
+                        <p *ngIf="averageRating(item) == 3">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </p>
+                        <p *ngIf="averageRating(item) == 2">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </p>
+                        <p *ngIf="averageRating(item) == 1">
+                          <i class="fa-solid fa-star"></i>
+                        </p>
+                        <p *ngIf="averageRating(item) == 0">
+                          
+                        </p>
+                      </div> -->
                     </div>
       
                     <div class="farm-name">
@@ -115,11 +139,12 @@
       
                     <div class="product-details">
                         <p>Origin: Kenya</p>
-                        <p>18$ / 12oz</p>
+                        <p>18$  / 12oz</p>
                     </div>
       
                   </a>
       
+                  <!-- add-actions -->
                   <div class="latestadd-actions product-addactions">
                     <a role="button">
                       Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
@@ -131,8 +156,8 @@
                 </div>
               </div>
       
-              <div class="farm-pagination">
-                <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+              <div class="products-pagination">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </div>
                                    
             </div>

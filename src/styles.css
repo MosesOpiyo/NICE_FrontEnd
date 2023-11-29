@@ -903,7 +903,7 @@ opacity: .2;
   }
 
   .hero .two .slide-header {
-    background-image: url("./assets/img/hero/hero2origin3.png");
+    background-image: url("./assets/img/hero/hero2.5.png");
     background-position: center;
     background-size: cover;
   }
@@ -914,13 +914,13 @@ opacity: .2;
   }
 
   .hero .three .slide-header {
-    background-image: url("./assets/img/hero/hero3.jpg");
-    background-position: top;
+    background-image: url("./assets/img/hero/hero3.4.png");
+    background-position: center;
     background-size: cover;
   }
 
   .hero .three .swiper-content::after {
-    background-color: #d8c4ac;
+    background-color: #f1e7db;
   }
 
   .three .hero-btn {
@@ -2569,11 +2569,13 @@ opacity: .2;
     overflow: hidden;
   }
 
-  .shop-component .sidebar .widget-title {
+  .shop-component .sidebar .widget-title,
+  .farmdetails-component .sidebar .widget-title {
     cursor: pointer;
   }
   
-  .shop-component .sidebar h2 {
+  .shop-component .sidebar h2,
+  .farmdetails-component .sidebar h2 {
     font-size: 1.1rem;
     display: flex;
     align-items: center;
@@ -2601,7 +2603,8 @@ opacity: .2;
     height: calc(100vh - 140px);
   }
   
-  .shop-component .products .sidebar > * {
+  .shop-component .products .sidebar > *,
+  .farmdetails-component .sidebar > *  {
     margin-bottom: 2rem;
   }
   
@@ -2638,10 +2641,10 @@ opacity: .2;
   }
   
     /* PRODUCTS STYLING */
-    .shop-component .productlist-content {
+    .shop-component .productlist-content,
+    .farmdetails-component .productlist-content {
       /* border: 2px solid black; */
       padding: .5rem;
-  
       display: grid;
       width: 100%;
       grid: repeat(7, 1fr) / repeat(4, 1fr);
@@ -2649,33 +2652,40 @@ opacity: .2;
       gap: .5rem;
     }
   
-    .shop-component .product-card {
+    .shop-component .product-card,
+    .farmdetails-component .product-card {
       height: 370px;
       width: 100%;
       margin-bottom: 1rem;
       box-shadow: 0 0 2px 1px #e6e6e6;
     }
   
-    .shop-component .product-card .product-item > * {
+    .shop-component .product-card .product-item > *,
+    .farmdetails-component .product-card .product-item > * {
       /* border: 2px solid green; */
       margin-bottom: .7rem;
     }
   
-    .shop-component .product-card p {
+    .shop-component .product-card p,
+    .farmdetails-component .product-card p {
       line-height: 1rem;
     }
     
-    .shop-component .product-item {
+    .shop-component .product-item,
+    .farmdetails-component .product-item {
       text-align: center;
       /* border: 2px solid grey; */
     }
   
     .shop-component .product-item .product-name,
-    .shop-component .product-item .farm-name {
+    .shop-component .product-item .farm-name,
+    .farmdetails-component .product-item .product-name,
+    .farmdetails-component .product-item .farm-name {
       padding-inline: .5rem;
     }
     
-    .shop-component .product-image {
+    .shop-component .product-image,
+    .farmdetails-component .product-image {
       /* border: 2px solid red; */
       height: 200px;
       width: 100%;
@@ -2684,7 +2694,8 @@ opacity: .2;
       background-color: #f7f8fa;
     }
   
-    .shop-component .product-image img {
+    .shop-component .product-image img,
+    .farmdetails-component .product-image img {
       /* border: 2px solid black; */
       height: 100%;
       width: 100%;
@@ -2693,21 +2704,25 @@ opacity: .2;
       transition: all 500ms ease-in-out;
     }
   
-    .shop-component .product-image img:hover {
+    .shop-component .product-image img:hover,
+    .farmdetails-component .product-image img:hover {
       transform: scale(1.2);
     }
   
-    .shop-component .product-name {
+    .shop-component .product-name,
+    .farmdetails-component .product-name {
       display: flex;
       justify-content: space-between;
       /* border: 2px solid black; */
     }
   
-    .shop-component .product-item .rating i {
+    .shop-component .product-item .rating i,
+    .farmdetails-component .product-item .rating i {
       color: orange;
     }
   
-    .shop-component .productlist .productlist-content  .product-addactions {
+    .shop-component .productlist .productlist-content  .product-addactions,
+    .farmdetails-component .productlist .productlist-content  .product-addactions {
       text-align: center;
       font-size: .9rem;
       display: flex;
@@ -2715,18 +2730,21 @@ opacity: .2;
       justify-content: center;
     }
   
-    .shop-component .productlist .productlist-content .product-addactions a {
+    .shop-component .productlist .productlist-content .product-addactions a,
+    .farmdetails-component .productlist .productlist-content .product-addactions a {
       padding: 3px 5px;
     }
   
-    .shop-component .products-pagination {
+    .shop-component .products-pagination,
+    .farmdetails-component .products-pagination {
       display: flex;
       justify-content: center;
     }
   
     /* media-queries */
     @media (max-width: 1024px) {
-      .shop-component .productlist-content {
+      .shop-component .productlist-content,
+      .farmdetails-component .productlist-content {
         grid-template-columns: repeat(3, 1fr);
       }
     }
@@ -2780,7 +2798,8 @@ opacity: .2;
     }
   
     @media (max-width: 600px) {
-      .shop-component .productlist-content {
+      .shop-component .productlist-content,
+      .farmdetails-component .productlist-content {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -2803,7 +2822,8 @@ opacity: .2;
     }
   
     @media (max-width: 375px) {
-      .shop-component .productlist-content {
+      .shop-component .productlist-content,
+      .farmdetails-component .productlist-content {
         grid-template-columns: repeat(1, 1fr);
       }
   
