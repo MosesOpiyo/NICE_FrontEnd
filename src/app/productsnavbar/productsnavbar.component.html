@@ -3,7 +3,7 @@
   <div class="navbar-input">
 
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search products" id="search" name="search">
+      <input (input)="onChange($event)" type="text" class="form-control" placeholder="Search products" id="search" name="search">
       <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
     </div>
 
