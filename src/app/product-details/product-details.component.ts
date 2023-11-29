@@ -55,21 +55,24 @@ export class ProductDetailsComponent implements OnInit {
   ratings : number[] = [];
   total:any
   cloudinaryUrl = environment.CLOUDINARY_URL
-
+  quantityPrice:any = ""
   quantity:any = ""
   grind:any = ""
   price:any = ""
   roast_type:any = ""
+  code:any = 0
 
   cartItem(id:any){
-    Math.round
-    const amount = Math.round((this.quantity / this.item.price)) 
-    this.price = amount * this.item.price
+    const parts = this.quantityPrice.split('-');
+    this.quantity = parseInt(parts[0],10)
+    this.price = parseFloat(parts[1])
     let form = new FormData();
     form.append('quantity',this.quantity),
     form.append('grind',this.grind),
     form.append('price',this.price),
     form.append('roast_type',this.roast_type),
+    form.append('code',this.item.code)
+    console.log(form)
     this.cart.addToCart(id,form)
     this.ngOnInit()
   }
@@ -119,39 +122,38 @@ export class ProductDetailsComponent implements OnInit {
  }
 
  ngOnInit(): void {
-   if(sessionStorage.getItem('Token')){
-     this.cart.getCart().subscribe((res:any)=>{
-      this.userCart = res
-     })
-     this.service.getProfile().subscribe((res:any)=>{
-       this.user = res['user']
-       if(this.user.type == "FARMER"){
-         this.route.navigate(['dash-board'])
-       }
-       else if(this.user.type == "WAREHOUSER"){
-         this.route.navigate(['dash-board'])
-       }
-       else if(this.user.type == "ADMIN"){
-         this.route.navigate(['dash-board'])
-       }
-       else{
-         false
-       }
-     })
-     this.id = this.idRouter.snapshot.paramMap.get('id');
-     this.product.getProcessedProduct(this.id).subscribe((res:any)=>{
-     this.item = res
-     console.log(this.item)
-     this.item.rating.forEach((ratingItem:any) => {
-      this.ratings.push(ratingItem.rating)
+  this.id = this.idRouter.snapshot.paramMap.get('id');
+  this.product.getProcessedProduct(this.id).subscribe((res:any)=>{
+  this.item = res
+  console.log(this.item)
+  this.item.rating.forEach((ratingItem:any) => {
+  this.ratings.push(ratingItem.rating)
     });
+  })
+  if(sessionStorage.getItem('Token')){
+    this.cart.getCart().subscribe((res:any)=>{
+    this.userCart = res
+    })
+    this.service.getProfile().subscribe((res:any)=>{
+      this.user = res['user']
+      if(this.user.type == "FARMER"){
+        this.route.navigate(['dash-board'])
+      }
+      else if(this.user.type == "WAREHOUSER"){
+        this.route.navigate(['dash-board'])
+      }
+      else if(this.user.type == "ADMIN"){
+        this.route.navigate(['dash-board'])
+      }
+      else{
+        false
+      }
+    })
     
-
-   })
-   }
-   else{
-     console.log("No token")
-   }
+  }
+  else{
+    console.log("No token")
+  }
    
 
    

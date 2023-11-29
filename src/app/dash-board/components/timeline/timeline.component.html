@@ -4,7 +4,7 @@
             <h2>Create Post</h2>
         </div>
 
-        <form class="create-content">
+        <form enctype="multipart/form-data"  class="create-content">
             <div class="media">
                 <div class="media-content">
                     <div class="video">
@@ -14,7 +14,7 @@
 
                     <div class="image">
                         <label for="file"><i class="fa-solid fa-image"></i>&nbsp;&nbsp;Add image</label>
-                        <input type="file" id="file" name="file">
+                        <input type="file" enctype="multipart/form-data" (change)="onFileSelected($event)" [(ngModel)]="media" id="file" name="file">
                     </div>    
                 </div>  
             </div>
@@ -22,13 +22,13 @@
             <div class="text">
                 <div class="text-content">
                     <div class="form-controls message">
-                        <textarea placeholder="Write your Post Here" id="comment" name="comment" required></textarea>
+                        <textarea placeholder="Write your Post Here" [(ngModel)]="caption" id="comment" name="comment" required></textarea>
                     </div>   
                 </div>  
             </div>
 
             <div class="form-controls form-btn form-submit">
-                <button type="submit">Create Post</button>
+                <button (click)="PostStories()" type="submit">Create Post</button>
             </div>
         </form>
     </div>
@@ -39,10 +39,10 @@
         </div>
 
         <div class="timeline-box">
-            <div class="timeline-info">
+            <div *ngFor="let post of posts" class="timeline-info">
                 <div class="timeline-content">
                     <div class="timeline-media">
-                        <img src="../../../assets/img/Trip/ragis2.jpg" alt="coffee plant">
+                        <img src="{{cloudinaryUrl}}{{post.media}}" alt="coffee plant">
                     </div>
         
                     <div class="timeline-profile">
@@ -56,82 +56,7 @@
                     </div>
         
                     <div class="timeline-text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ad, ipsum aliquam deserunt placeat quam quaerat
-                            laboriosam voluptates est nostrum similique asperiores reprehenderit tempora sapiente dolorum odit nobis at fuga.
-                            Tempore qui ea aliquid. Atque nihil ipsam cumque unde ea quam ex corporis minus ipsum quia optio odit natus
-                            voluptatibus ut, aliquam molestiae est laborum facilis explicabo porro voluptates recusandae.
-                        </p>
-                    </div>
-                </div>
-        
-                <div class="timeline-content">
-                    <div class="timeline-media">
-                        <img src="../../../assets/img/Trip/ragis2.jpg" alt="coffee plant">
-                    </div>
-        
-                    <div class="timeline-profile">
-                        <div class="profile-pic">
-                            <img src="../../../assets/img/coffee_logo2.png" alt="user profile pic">
-                        </div>
-        
-                        <div class="profile-time">
-                            <p>2 days ago</p>
-                        </div>
-                    </div>
-        
-                    <div class="timeline-text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ad, ipsum aliquam deserunt placeat quam quaerat
-                            laboriosam voluptates est nostrum similique asperiores reprehenderit tempora sapiente dolorum odit nobis at fuga.
-                            Tempore qui ea aliquid. Atque nihil ipsam cumque unde ea quam ex corporis minus ipsum quia optio odit natus
-                            voluptatibus ut, aliquam molestiae est laborum facilis explicabo porro voluptates recusandae.
-                        </p>
-                    </div>
-                </div>
-        
-                <div class="timeline-content">
-                    <div class="timeline-media">
-                        <img src="../../../assets/img/Trip/ragis2.jpg" alt="coffee plant">
-                    </div>
-        
-                    <div class="timeline-profile">
-                        <div class="profile-pic">
-                            <img src="../../../assets/img/coffee_logo2.png" alt="user profile pic">
-                        </div>
-        
-                        <div class="profile-time">
-                            <p>2 days ago</p>
-                        </div>
-                    </div>
-        
-                    <div class="timeline-text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ad, ipsum aliquam deserunt placeat quam quaerat
-                            laboriosam voluptates est nostrum similique asperiores reprehenderit tempora sapiente dolorum odit nobis at fuga.
-                            Tempore qui ea aliquid. Atque nihil ipsam cumque unde ea quam ex corporis minus ipsum quia optio odit natus
-                            voluptatibus ut, aliquam molestiae est laborum facilis explicabo porro voluptates recusandae.
-                        </p>
-                    </div>
-                </div>
-        
-                <div class="timeline-content">
-                    <div class="timeline-media">
-                        <img src="../../../assets/img/Trip/ragis2.jpg" alt="coffee plant">
-                    </div>
-        
-                    <div class="timeline-profile">
-                        <div class="profile-pic">
-                            <img src="../../../assets/img/coffee_logo2.png" alt="user profile pic">
-                        </div>
-        
-                        <div class="profile-time">
-                            <p>2 days ago</p>
-                        </div>
-                    </div>
-        
-                    <div class="timeline-text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ad, ipsum aliquam deserunt placeat quam quaerat
-                            laboriosam voluptates est nostrum similique asperiores reprehenderit tempora sapiente dolorum odit nobis at fuga.
-                            Tempore qui ea aliquid. Atque nihil ipsam cumque unde ea quam ex corporis minus ipsum quia optio odit natus
-                            voluptatibus ut, aliquam molestiae est laborum facilis explicabo porro voluptates recusandae.
+                        <p>{{post.caption}}
                         </p>
                     </div>
                 </div>

@@ -8,6 +8,10 @@ import { NewManifestComponent } from '../manifests/new-manifest/new-manifest.com
 import { WarehouseService } from 'src/app/Service/Warehouse/warehouse.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ScanComponent } from '../../scan/scan.component';
+import { saveAs } from 'file-saver';
+import * as XLSX from 'xlsx';
+import { ProcessedProductsComponent } from '../processed-products/processed-products.component';
+import { NewprocessedproductComponent } from '../newprocessedproduct/newprocessedproduct.component';
 
 @Component({
   selector: 'app-tables',
@@ -25,6 +29,12 @@ export class TablesComponent implements OnInit {
   filter:any
   inventoryProducts:any
   user:any
+  fileSelector:boolean = false
+  processed:boolean = false
+
+  selectFile(){
+    this.fileSelector = true
+  }
 
   ngOnInit(): void {
     this.service.getProfile().subscribe((res:any)=>{
@@ -81,6 +91,46 @@ export class TablesComponent implements OnInit {
         this.users = res
       })
     }
+  }
+
+  onFileChange(event: any): void {
+    const file = event.target.files[0];
+
+    if (file) {
+      this.fileSelector = false
+      this.readXlsxFile(file);
+    }
+  }
+
+  private readXlsxFile(file: File): void {
+    const reader: FileReader = new FileReader();
+
+    reader.onload = (e: any) => {
+      const data: string = e.target.result;
+
+      // Read the XLSX file
+      const workbook: XLSX.WorkBook = XLSX.read(data, { type: 'binary' });
+
+      // Assuming you have only one sheet in your Excel file
+      const sheetName: string = workbook.SheetNames[0];
+      const worksheet: XLSX.WorkSheet = workbook.Sheets[sheetName];
+
+      // Convert the worksheet to JSON
+      const jsonData: any[] = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+      const dataRows: any[] = jsonData.filter(row => row.length > 0).slice(1);
+      const header = jsonData[0]
+      // Now you can use jsonData to access the data from the Excel file
+      const jsonDataObjects: any[] = dataRows.map(row => {
+        const obj: any = {};
+        header.forEach((key:any, index:any) => {
+          obj[key] = row[index];
+        });
+        return obj
+      });
+      console.log('Processed Data:', jsonDataObjects);
+    };
+
+    reader.readAsBinaryString(file);
   }
 
   makeRequest(){

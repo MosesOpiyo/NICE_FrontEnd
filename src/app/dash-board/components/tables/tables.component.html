@@ -131,7 +131,6 @@
                         <th mat-header-cell *matHeaderCellDef> Quantity </th>
                         <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
                     </ng-container>
-                      
                         <tr mat-header-row *matHeaderRowDef="warehouserDisplayedColumns"></tr>
                         <tr
                             mat-row
@@ -150,6 +149,8 @@
                           <button *ngIf="filter!='Warehousers'" style="margin: 5px;" class="btn btn-outline-primary" (click)="initUserFilter('Warehousers')"> Warehousers</button>
                           <button *ngIf="filter=='Admins'" style="margin: 5px;" class="btn btn-primary"> Admins</button>
                           <button *ngIf="filter!='Admins'" style="margin: 5px;" class="btn btn-outline-primary" (click)="initUserFilter('Admins')"> Admins</button>
+                          <button *ngIf="filter=='Farmers' || fileSelector == false" style="margin: 5px;float: right;" class="btn btn-primary" (click)="selectFile()"> Add Farmers In Bulk</button>
+                          <input *ngIf="fileSelector == true"  style="float: right;" type="file" (change)="onFileChange($event)" />
                         </div>
                       
                   </div>

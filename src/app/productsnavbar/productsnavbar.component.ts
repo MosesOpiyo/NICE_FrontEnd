@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 import { CartService } from '../Service/Cart/cart.service';
 
 @Component({
@@ -13,8 +13,14 @@ export class ProductsnavbarComponent implements OnInit {
      document.body.appendChild(this.myScriptElement);
   }
   userCart:any
+  data:any
   public totalItem : number = 0;
   myScriptElement: HTMLScriptElement;
+  filteredProducts:any
+  
+
+  @Output() dataToParent = new EventEmitter<string>();
+  
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
       this.cart.getCart().subscribe((res:any)=>{
@@ -24,6 +30,10 @@ export class ProductsnavbarComponent implements OnInit {
      else{
        console.log("No token")
      }
+   }
+   onChange(event:any){
+    const dataToSend = event.target.value;;
+    this.dataToParent.emit(dataToSend);
    }
 
 }

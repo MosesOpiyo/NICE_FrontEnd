@@ -24,6 +24,10 @@
   -webkit-appearance: none;
 }
 
+.product-detail .fa-star{
+  color: orange;
+}
+
 .product-component .incrdecr input[type="number"] {
   align-self: stretch;
   max-width: 100px;

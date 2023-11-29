@@ -18,6 +18,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NewproductComponent } from './components/newproduct/newproduct.component';
 
 import {MatStepperModule} from '@angular/material/stepper';
+import { MatListModule } from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
@@ -38,6 +39,7 @@ import { ImportantComponent } from './components/message/important/important.com
 import { UnreadComponent } from './components/message/unread/unread.component';
 import { TrashComponent } from './components/message/trash/trash.component';
 import { InboxComponent } from './components/message/inbox/inbox.component';
+import { FilterPipe } from './components/manifests/filter.pipe';
 
 
 @NgModule({
@@ -65,7 +67,8 @@ import { InboxComponent } from './components/message/inbox/inbox.component';
     ImportantComponent,
     UnreadComponent,
     TrashComponent,
-    InboxComponent
+    InboxComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -81,7 +84,8 @@ import { InboxComponent } from './components/message/inbox/inbox.component';
     NgxMatSelectSearchModule,
     MatAutocompleteModule,
     BarcodeScannerLivestreamModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
   ]
 })
 export class DashBoardModule { }
