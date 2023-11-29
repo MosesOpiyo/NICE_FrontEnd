@@ -3,6 +3,10 @@
     padding: .5rem;
 }
 
+.sidenav-container .fa-bag-shopping::after {
+    display: none;
+}
+
 .sidenav-container .nav-menu .user-image {
     display: flex;
     align-items: center;
