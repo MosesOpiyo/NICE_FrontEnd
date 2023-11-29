@@ -122,37 +122,38 @@ export class ProductDetailsComponent implements OnInit {
  }
 
  ngOnInit(): void {
-   if(sessionStorage.getItem('Token')){
-     this.cart.getCart().subscribe((res:any)=>{
-      this.userCart = res
-     })
-     this.service.getProfile().subscribe((res:any)=>{
-       this.user = res['user']
-       if(this.user.type == "FARMER"){
-         this.route.navigate(['dash-board'])
-       }
-       else if(this.user.type == "WAREHOUSER"){
-         this.route.navigate(['dash-board'])
-       }
-       else if(this.user.type == "ADMIN"){
-         this.route.navigate(['dash-board'])
-       }
-       else{
-         false
-       }
-     })
-     this.id = this.idRouter.snapshot.paramMap.get('id');
-     this.product.getProcessedProduct(this.id).subscribe((res:any)=>{
-     this.item = res
-     console.log(this.item)
-     this.item.rating.forEach((ratingItem:any) => {
-      this.ratings.push(ratingItem.rating)
+  this.id = this.idRouter.snapshot.paramMap.get('id');
+  this.product.getProcessedProduct(this.id).subscribe((res:any)=>{
+  this.item = res
+  console.log(this.item)
+  this.item.rating.forEach((ratingItem:any) => {
+  this.ratings.push(ratingItem.rating)
     });
-   })
-   }
-   else{
-     console.log("No token")
-   }
+  })
+  if(sessionStorage.getItem('Token')){
+    this.cart.getCart().subscribe((res:any)=>{
+    this.userCart = res
+    })
+    this.service.getProfile().subscribe((res:any)=>{
+      this.user = res['user']
+      if(this.user.type == "FARMER"){
+        this.route.navigate(['dash-board'])
+      }
+      else if(this.user.type == "WAREHOUSER"){
+        this.route.navigate(['dash-board'])
+      }
+      else if(this.user.type == "ADMIN"){
+        this.route.navigate(['dash-board'])
+      }
+      else{
+        false
+      }
+    })
+    
+  }
+  else{
+    console.log("No token")
+  }
    
 
    
