@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProductsService } from 'src/app/ProductsService/products.service';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { NotificationMsgComponent } from '../notification-msg/notification-msg.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,33 +11,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent {
-
-  constructor(private products:ProductsService, private notification:NotificationsService, private service:AuthenticationService,private dialog:MatDialog, private route:Router){}
-
+  constructor(private service:AuthenticationService,private dialog:MatDialog){}
   user:any
-  data:any;
   masterSelected = false;
   index: any;
+  unreaded: any[] = [];
 
 checkUncheckAll(evt: any) {
-  this.data.forEach((c) => c.isSelected = evt.target.checked)
+  this.user.notifications.forEach((c) => c.isSelected = evt.target.checked)
 }
 
 isAllSelected(evt: any, index: any) {
-    this.data[index].isSelected = evt.target.checked;
-    this.masterSelected = this.data.every((item) => item.isSelected == true);
+    this.user.notifications[index].isSelected = evt.target.checked
+    this.masterSelected = this.user.notifications.every((item) => item.isSelected == true);
 }
-
-checklist = [
-  {id:1,isSelected:false,notification:'Your coffee #1234RT4 has arrived at warehouse #1'},
-  {id:2,isSelected:false,notification:'Your coffee #1234RT4 has arrived at warehouse #1'},
-  {id:3,isSelected:false,notification:'Your coffee #1234RT4 has arrived at warehouse #1'},
-  {id:4,isSelected:false,notification:'Your coffee #1234RT4 has arrived at warehouse #1'},
-  {id:5,isSelected:false,notification:'Your coffee #1234RT4 has arrived at warehouse #1'},
-  {id:6,isSelected:false,notification:'Your coffee #1234RT4 has arrived at warehouse #1'},
-  {id:7,isSelected:false,notification:'Your coffee #1234RT4 has arrived at warehouse #1'},
-  {id:8,isSelected:false,notification:'Your coffee #1234RT4 has arrived at warehouse #1'}
-];
 
 showNotification() {
   this.dialog.open(NotificationMsgComponent)
@@ -46,19 +32,16 @@ showNotification() {
 
 
   ngOnInit(): void {
-    if(sessionStorage.getItem('Token')){
-      this.service.getProfile().subscribe((res:any)=>{
-        this.user = res['user']
-      })
-      this.notification.getNotifications().subscribe((res)=>{
-        this.data = res
-        console.log(this.data)
-        console.log(this.data[0].message)
-      })
-    }
-    else{
-      this.route.navigate([''])
-    }
+    this.service.getProfile().subscribe((res:any)=>{
+      this.user = res['user']
+      for(let message of this.user.notifications){
+        if(message.seen == false){
+          this.unreaded.push(message)
+          console.log(this.unreaded)
+        }
+      }
+    })
+    
   }
 
 }
