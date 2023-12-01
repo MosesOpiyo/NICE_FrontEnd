@@ -30,10 +30,11 @@ img{
 } */
 
 .card-container .dashboard-card {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
     padding: 1rem;
-    border-radius: 15px;
+    border-radius: 4px;
     height: 100%;
+    box-shadow: 3px 3px 2px 1px #e3e3e3;
     /* margin-block: 1.5rem; */
 }
 
@@ -48,7 +49,9 @@ img{
     grid-area: 2 / 1 / auto / 13 ;
 }
 
-.farmer-info {
+.farmer-info,
+.warehouse-info,
+.buyer-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -56,7 +59,9 @@ img{
     width: 100%;
 }
 
-.farmer-info li {
+.farmer-info li,
+.warehouse-info li,
+.buyer-info li {
     display: flex;
     flex-direction: column;
     gap: 0.5rem
@@ -66,7 +71,13 @@ img{
     grid-area: 10 / 1 / 11 / 3;
 }
 
-.farmer-info > * {
+.dashboard-card .warehouse-info .location {
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+.farmer-info > *,
+.warehouse-info > *,
+.buyer-info > * {
     border: 2px solid #0000000d;
     padding: 1rem;
     position: relative;
@@ -119,11 +130,14 @@ img{
         gap: 30px 10px;
     }
         
-    .farmer-info {
+    .farmer-info,
+    .warehouse-info,
+    .buyer-info {
         grid-template-columns: 1fr;
     }
 
-    .dashboard-card .location {
+    .dashboard-card .location,
+    .dashboard-card .warehouse-info .location {
         grid-area: auto;
     }
 

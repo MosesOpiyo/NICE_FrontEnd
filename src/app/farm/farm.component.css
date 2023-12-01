@@ -1,0 +1,205 @@
+.fa-star {
+  color: orange;
+}
+
+:host ::ng-deep #header {
+  background-color: #f6f6f6;
+}
+
+:host ::ng-deep #header .navbar .dropdown ul a,
+:host ::ng-deep #header .navbar ul li i.fa-chevron-down {
+  color: #000000;
+}
+
+:host ::ng-deep #header .navbar .active,
+:host ::ng-deep #header .navbar-mobile .active {
+  background-color: transparent;
+}
+
+/* :host ::ng-deep #header .navbar .about-link,
+:host ::ng-deep #header .navbar-mobile .about-link {
+  background-color: rgb(165, 165, 165);
+  color: #000000;
+} */
+
+:host ::ng-deep #header.header-scrolled .navbar a,
+:host ::ng-deep #header.header-scrolled .navbar ul li i.fa-chevron-down,
+:host ::ng-deep #header.header-scrolled .navbar ul li i.fa-bag-shopping {
+  color: #000000;
+}
+
+:host ::ng-deep #header.header-scrolled .navbar .active {
+  background-color: transparent;
+  color: #000000;
+}
+
+:host ::ng-deep #header .navbar .dropdown ul li:hover > a {
+  color: #67b0d1;
+}
+
+.farm-component {
+  position: relative;
+  top: 140px;
+  overflow: hidden;
+}
+
+/* farm navbar */
+.farm-navbar {
+  background-color: #f6f6f6;
+  position: fixed;
+  width: 100%;
+  top: 68px;
+  z-index: 996;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.farm-navbar > * {
+padding: .5rem;
+}
+
+.farm-navbar .navbar-input {
+width: 50%;
+}
+
+.farm-navbar .navbar-input .form-group {
+width: 100%;
+display: flex;
+align-items: center;
+gap: .5rem;
+}
+
+.farm-navbar .navbar-input .form-group .form-control {
+border-radius: 3px;
+width: 100%;
+padding: .5rem;
+border: 2px solid #0000004f;
+}
+
+.farm-navbar .search-icon {
+cursor: pointer;
+}
+
+.farm-navbar .search-icon i,
+.farm-navbar .cart-link i {
+font-size: 26px;
+}
+
+/* country-region selector */
+.selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 70%;
+  margin-inline: auto;
+}
+
+.selection > * {
+  flex-basis: 100%;
+}
+
+.selection select {
+  padding: .5rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* FARM LIST */
+.farm-list {
+  display: grid;
+  width: 95%;
+  margin-inline: auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .5rem;
+}
+
+.places-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.places-card::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0000006e;
+}
+
+.places-card .places-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.places-card.geralds-place {
+  background-image: url("https://images.pexels.com/photos/51947/tuscany-grape-field-nature-51947.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+.places-card.ragis-place {
+  background-image: url("https://img.freepik.com/free-photo/one-farmer-working-tranquil-autumn-meadow-generated-by-ai_188544-33340.jpg?w=826&t=st=1699616731~exp=1699617331~hmac=97e6ecf148c14a01254a983501dacab49482f1eebf47e31e856e758c194bf9f3");
+}
+
+.places-card.ndaroini-place {
+  background-image: url("https://img.freepik.com/free-photo/india-woods-hill-station-fog-coffee_1376-22.jpg?w=900&t=st=1699616912~exp=1699617512~hmac=2ef68f213cf1ca4ecf744cc01b0f7f5051aef3dd37143efbf21404b5f5df5524");
+}
+
+/* media queries */
+@media (max-width: 1024px) {
+  .farm-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .farm-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .farm-navbar .navbar-input {
+    width: 70%;
+  }
+
+  .selection {
+    width: 90%;
+  }
+}
+
+@media (max-width: 425px) {
+  .farm-navbar .navbar-input {
+    width: 90%;
+  }
+
+  @media (max-width: 600px) {
+    .farm-navbar .navbar-input {
+      width: 70%;
+    }
+  
+    .selection {
+      flex-direction: column;
+    }
+  }
+
+  .farm-list {
+    grid-template-columns: 1fr;
+  }
+}

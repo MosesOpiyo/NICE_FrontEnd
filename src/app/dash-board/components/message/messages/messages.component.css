@@ -21,15 +21,17 @@
 }
 
 .message-container .dashboard-card {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
     padding: 1rem;
-    border-radius: 15px;
+    border-radius: 4px;
     height: 100%;
+    box-shadow: 3px 3px 2px 1px #e3e3e3;
 }
 
 .message-container .search {
     grid-area: 1 / 1 / 2 / 13;
     background-color: #fff;
+    box-shadow: none;
 }
 
 .search .form-group {
@@ -57,51 +59,112 @@
 
   /* MESSAGES NAV */
   .message-container .messages-nav {
-    grid-area: 2 / 1 / 3 / 4;
-  }
-
-  .message-container .messages-nav ul li a {
+    grid-area: 2 / 1 / 3 / 13;
+    overflow: auto;
     display: flex;
-    justify-content: space-between;
-    padding: .5rem;
     align-items: center;
-    font-weight: bold;
+    justify-content: space-between;
   }
 
-  .messages-nav ul li a span {
-    background-color: #008000ba;
-    padding: 0.5rem;
-    color: #fff;
+  .message-container .messages-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .messages-nav ul li span {
+    font-weight: bold;
+}
+
+  .messages-nav ul li,
+  .messages-nav ul li i {
+    font-size: 1.1rem;
+  }
+
+  .messages-nav ul li.delete {
+    cursor: pointer;
+  }
+
+  .messages-nav ul li i {
+    font-size: 1.2rem;
+    color: red;
+    cursor: pointer;
   }
 
   .message-container .main-messages {
-    grid-area: 2 / 4 / 3 / 13;
+    grid-area: 3 / 1 / 4 / 13;
     /* border: 2px solid blue; */
   }
 
-  @media (max-width: 1024px) {
-    .message-container .messages-nav ul {
-      display: flex;
-      gap: .5rem;
-      align-items: center;
-      justify-content: center;
-    }
+  .bold {
+    font-weight: bold;
+}
 
-    .message-container .messages-nav ul li {
-      border: 2px solid #00000014;
-    }
+.notification-container .check-all {
+    padding-block: 1rem;
+}
 
-    .message-container .messages-nav ul > * {
-      flex-basis: 100%;
-    }
+.notification-container .check-all .checkbox {
+    display: flex;
+    gap: 1rem;
+}
 
-    .message-container .messages-nav {
-      grid-area: 2 / 1 / 3 / 13;
-      overflow: auto;
-    }
+.notification-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-block: 1rem;
+    border-bottom: 2px solid #00000012;
+    transition: all 250ms ease-in-out;
+}
 
-    .message-container .main-messages {
-      grid-area: 3 / 1 / 4 / 13;
-    }
+.notification-card:hover {
+  background-color: #fff;
+}
+
+.notification-card .notification {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.notification-card .notification .notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification-card .notification .notification-header h2 {
+    font-size: 1.4rem;
+}
+
+.notification-card .notification .notification-content p {
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    /* border: 1px solid #ddd; */
+    margin: 0;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+  .message-container {
+    gap: 10px;
   }
+
+  .notification-card .notification .notification-content p {
+    width: 250px;
+  }
+}
+
+@media (max-width: 425px) {
+  .notification-card .notification .notification-content p {
+    width: 190px;
+  }
+}
   

@@ -75,7 +75,7 @@
         </div>
 
         <!-- 3RD CARD -->
-        <div class="dashboard-card popular">
+        <div class="dashboard-card popular" *ngIf="user.user.type=='FARMER'">
             <div class="popularproduct-header">
                 <p>Popular products</p>
             </div>
@@ -124,13 +124,23 @@
         </div>
 
         <!-- 4TH CARD -->
-        <div class="congrats dashboard-card">
+        <div class="congrats cfarmer dashboard-card" *ngIf="user.user.type=='FARMER'">
             <div class="congrats-image">
                 <img src="../../../../assets/img/delivery.jpg" alt="">
             </div>
 
-            <h2>Congratulations  {{user.username}}</h2>
+            <h2>Congratulations {{user.user.username}}</h2>
             <p><span>100</span> kilos of your coffee has been successfully delivered overseas</p>
+        </div>
+
+        <!-- 4TH CARD -->
+        <div class="congrats cwarehouser dashboard-card" *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">
+            <div class="congrats-image">
+                <img src="../../../../assets/img/delivery.jpg" alt="">
+            </div>
+
+            <h2>Congratulations {{user.user.username}}</h2>
+            <p><span>100</span> kilos of coffee have been shipped from your warehouse!</p>
         </div>
 
         <!-- 5TH CARD -->

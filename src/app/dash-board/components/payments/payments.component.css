@@ -23,10 +23,11 @@
 }
 
 .payments-container .dashboard-card {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
     padding: 1rem;
     border-radius: 15px;
     height: 100%;
+    box-shadow: 3px 3px 2px 1px #e3e3e3;
 }
 
 .payments-container .user-stats {
@@ -38,6 +39,7 @@
     height: 100%;
     gap: 1rem;
     background-color: #fff;
+    box-shadow: none;
 }
 
 .payments-container .user-stats .stats-card {

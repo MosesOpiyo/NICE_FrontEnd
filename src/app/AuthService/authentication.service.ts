@@ -35,10 +35,12 @@ export class AuthenticationService implements OnInit {
 
   Register(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Registration`,credentials).subscribe((response:any)=>{
-      this.snackBar.open(response, 'Close', {
+      sessionStorage.setItem('Token', response.tokens.access)
+      this.snackBar.open("Sign Up SuccessFul", 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']
       });
+      this.refreshPage()
     },(error:any) =>{
       console.log(error.error)
       this.snackBar.open(error.error, 'Close', {
