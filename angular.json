@@ -16,6 +16,9 @@
             "outputPath": "dist/nice",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "allowedCommonJsDependencies": [
+              "lodash"
+           ],
             "polyfills": [
               "zone.js"
             ],
@@ -37,13 +40,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "3000kb",
-                  "maximumError": "3mb"
+                  "maximumWarning": "4000kb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "5kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "8kb",
+                  "maximumError": "16kb"
                 }
               ],
               "outputHashing": "all"

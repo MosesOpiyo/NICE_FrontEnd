@@ -18,6 +18,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NewproductComponent } from './components/newproduct/newproduct.component';
 
 import {MatStepperModule} from '@angular/material/stepper';
+import { MatListModule } from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
@@ -34,6 +35,7 @@ import { SavechangesComponent } from './components/savechanges/savechanges.compo
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { MessagesComponent } from './components/message/messages/messages.component';
+import { FilterPipe } from './components/manifests/filter.pipe';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { NotificationMsgComponent } from './components/message/notification-msg/notification-msg.component';
 
@@ -60,6 +62,7 @@ import { NotificationMsgComponent } from './components/message/notification-msg/
     TimelineComponent,
     PaymentsComponent,
     MessagesComponent,
+    FilterPipe,
     UserSettingsComponent,
     NotificationMsgComponent
   ],
@@ -77,7 +80,8 @@ import { NotificationMsgComponent } from './components/message/notification-msg/
     NgxMatSelectSearchModule,
     MatAutocompleteModule,
     BarcodeScannerLivestreamModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
   ]
 })
 export class DashBoardModule { }

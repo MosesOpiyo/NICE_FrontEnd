@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<app-productsnavbar></app-productsnavbar>
+<app-productsnavbar (dataToParent)="handleDataFromChild($event)"></app-productsnavbar>
 
 <section class="shop-component">
     <div class="products">
@@ -118,11 +118,77 @@
         </div>
 
       </div>
-
       <div class="productlist">
 
-        <div class="productlist-content">
+        <div *ngIf="filteredProducts == null" class="productlist-content">
           <div class="product-card"  *ngFor="let item of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
+
+            
+            <a routerLink="/Products/{{item.id}}" class="product-item">
+              <div class="product-image">
+                  <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
+              </div>
+
+              <div class="product-name">
+                <div class="name">
+                  <p>{{item.product.name}}</p>
+                </div>
+                  
+                <div class="rating">
+                  <p *ngIf=" averageRating(item) == 5">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="averageRating(item) == 4">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="averageRating(item) == 3">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="averageRating(item) == 2">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="averageRating(item) == 1">
+                    <i class="fa-solid fa-star"></i>
+                  </p>
+                  <p *ngIf="averageRating(item) == 0">
+                    
+                  </p>
+                </div>
+              </div>
+
+              <div class="farm-name">
+                <p>Kiaragana Coffee Factory</p>
+              </div>
+
+              <div class="product-details">
+                  <p>Origin: {{item.product.origin | titlecase}}</p>
+                  <p>{{item.price | currency:'USD'}} / 12oz</p>
+              </div>
+
+            </a>
+
+            <div class="latestadd-actions product-addactions">
+              <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+              </a>
+              <a role="button" title="wishlist">
+                  <i class="fa-solid fa-heart"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="filteredProducts != null" class="productlist-content">
+          <div class="product-card"  *ngFor="let item of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
 
             
             <a routerLink="/Products/{{item.id}}" class="product-item">

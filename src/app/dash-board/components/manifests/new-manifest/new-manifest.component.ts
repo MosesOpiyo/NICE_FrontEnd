@@ -1,11 +1,9 @@
 import { Component,OnInit,Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AsyncPipe } from '@angular/common';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { ReplaySubject, Subject } from 'rxjs';
 import { WarehouseService } from 'src/app/Service/Warehouse/warehouse.service';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 
 @Component({
   selector: 'app-new-manifest',
@@ -13,9 +11,10 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
   styleUrls: ['./new-manifest.component.css']
 })
 export class NewManifestComponent implements OnInit {
-  public warehouserCtrl: FormControl = new FormControl();
-  public warehouserFilterCtrl: FormControl = new FormControl();
+  selectedOption: FormGroup;
+  filteredOptions;
   warehousers:any
+  warehouserFilter:any = []
   warehouser:any
   quantity:any
   product:any
@@ -30,6 +29,15 @@ export class NewManifestComponent implements OnInit {
     });
     this.warehouse.getWarehousers().subscribe((res:any)=>{
       this.warehousers = res
+    })
+    this.firstFormGroup.get('warehouser').valueChanges.subscribe(response => {
+      this.filterData(response);
+    })
+  }
+
+  filterData(enteredData){
+    this.filteredOptions = this.warehousers.filter(item => {
+      return item.username.toLowerCase().indexOf(enteredData.toLowerCase()) > -1
     })
   }
 

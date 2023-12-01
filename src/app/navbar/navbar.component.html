@@ -9,7 +9,7 @@
 
         <div class="mobile-icons">
             <ul>
-                <li class="mobile-cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" value=0></i></a></li>
+                <li class="mobile-cart"><a routerLink="/Cart"><i class="fa-solid fa-bag-shopping" [attr.value]="userCart"></i></a></li>
                 <li *ngIf="!user">
                     <button (click)="showLoginDialog()" type="button" class="mobilelogin-btn" title="login">
                         <i class="fa-solid fa-circle-user"></i>
@@ -108,6 +108,7 @@
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
+                <li><a class="nav-link sell" (click)="showFarmerSignUpDialog()">Sell Coffee</a></li>
                 
             </ul>
             

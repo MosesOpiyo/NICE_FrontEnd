@@ -216,7 +216,6 @@ export class DashboardsidebarComponent implements OnInit {
     if(sessionStorage.getItem('Token')){
       this.service.getProfile().subscribe((res:any)=>{
         this.user = res
-        console.log(this.user)
       })
     }
     else{

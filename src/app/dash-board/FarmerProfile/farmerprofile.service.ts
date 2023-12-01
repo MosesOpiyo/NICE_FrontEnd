@@ -23,4 +23,23 @@ export class FarmerprofileService {
       
     })
   }
+  getStories(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Farmers/Story`,{'headers':headers})
+  }
+  postStories(input:any){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+     this.http.post(`${environment.BASE_URL}Farmers/Story`,input,{"headers":headers}).subscribe((res:any)=>{
+      this.service.refreshPage()
+      this.snackBar.open(res, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      
+    })
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog'
 import { LoginComponent } from 'src/app/login/login.component';
@@ -14,7 +15,7 @@ import { ProductsService } from '../ProductsService/products.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  selectedOption: FormGroup;
   p:number = 1;
   itemsPerPage:number = 10;
   num: number = 1;
@@ -32,7 +33,13 @@ export class ProductsComponent implements OnInit {
   }
   isShowDiv = false;
   isShowDiv2 = false;
-
+  dataFromChild: string;
+  
+  handleDataFromChild(data: string) {
+      this.filteredProducts = this.products.filter(item => {
+        return item.product.name.indexOf(data.toUpperCase()) > -1
+      })
+  }
   //Variety sidenav
   isShowVariety = true;
    toggleVarietyOn() {
@@ -78,6 +85,7 @@ export class ProductsComponent implements OnInit {
   isLoggedIn:any
   ratings : number[] = [];
   total:any
+  filteredProducts:any
 
   productData = [ 
     {
@@ -469,6 +477,12 @@ export class ProductsComponent implements OnInit {
   return total
  }
 
+ filterData(enteredData){
+  this.filteredProducts = this.products.filter(item => {
+    return item.username.toLowerCase().indexOf(enteredData.toLowerCase()) > -1
+  })
+}
+
  ngOnInit(): void {
    if(sessionStorage.getItem('Token')){
      this.service.getProfile().subscribe((res:any)=>{
@@ -502,7 +516,8 @@ export class ProductsComponent implements OnInit {
     const sum = this.ratings.reduce((acc, item) => acc + item, 0);
     this.total = Math.floor(sum / this.ratings.length);
    })
-
+   this.dataFromChild = ''
+   this.handleDataFromChild(this.dataFromChild)
  
   }
   tabChange(tabIndex: number) {

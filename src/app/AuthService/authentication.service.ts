@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment.development';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { error } from 'console';
 
 @Injectable({
   providedIn: 'root'
@@ -34,10 +35,12 @@ export class AuthenticationService implements OnInit {
 
   Register(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Registration`,credentials).subscribe((response:any)=>{
-      this.snackBar.open(response, 'Close', {
+      sessionStorage.setItem('Token', response.tokens.access)
+      this.snackBar.open("Sign Up SuccessFul", 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']
       });
+      this.refreshPage()
     },(error:any) =>{
       console.log(error.error)
       this.snackBar.open(error.error, 'Close', {
@@ -53,7 +56,7 @@ export class AuthenticationService implements OnInit {
 
   login(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Login`,credentials).subscribe((response:any)=>{
-      console.log(response.tokens.access)
+      try{
       sessionStorage.setItem('Token', response.tokens.access)
       this.authService.authentication(true);
       this.snackBar.open('Login successful.Welcome', 'Close', {
@@ -61,7 +64,19 @@ export class AuthenticationService implements OnInit {
         panelClass: ['blue-snackbar']
       });
       this.refreshPage()
-    })
+      }catch{
+        this.snackBar.open('Incorrect credentials, Please try again.', 'Close', {
+          duration: 3000,
+          panelClass: ['blue-snackbar']
+        });
+      }
+    }),(error:any) =>{
+      console.log(error.error)
+      this.snackBar.open(error.error, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    }
   }
   getProfile(){
     let headers = new HttpHeaders({
