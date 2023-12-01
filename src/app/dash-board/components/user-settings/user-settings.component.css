@@ -1,0 +1,39 @@
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.settings-card {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 4px;
+    height: 100%;
+    box-shadow: 3px 3px 2px 1px #e3e3e3;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.settings-card span {
+    color: blue;
+}
+
+.email-edit,
+.phone-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.email-edit .email-input form,
+.phone-edit .phone-input form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+}
