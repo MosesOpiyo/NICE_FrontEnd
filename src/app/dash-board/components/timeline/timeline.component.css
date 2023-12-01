@@ -48,7 +48,7 @@
 
 form .media-content {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: .5rem;
     justify-content: center;
     width: 100%;
@@ -58,14 +58,22 @@ form .media-content > * {
     border: 2px solid #0000000d;
     padding: .5rem;
     flex-basis: 100%;
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 50%;
+    max-width: 50%;
 }
 
 form .media-content .video,
 form .media-content .image {
     display: flex;
     gap: .5rem;
+}
+
+form .media-content .video label,
+form .media-content .image label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 form input#file {
@@ -104,18 +112,17 @@ form button:hover {
 
 .timeline .timeline-info {
     display: grid;
-    width: 60%;
+    width: 80%;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 50px;
+    margin-inline: auto;
 }
 
 .timeline .timeline-content {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    width: 70%;
-    margin-inline: auto;
     /* border: 2px solid #0000000d; */
     /* margin-bottom: 1rem; */
     background-color: #fff;
@@ -137,14 +144,14 @@ form button:hover {
     object-position: center;
     height: 100%;
     width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
 }
 
 .timeline .timeline-content .timeline-profile {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem;
     align-items: center;
 }
 
@@ -162,12 +169,13 @@ form button:hover {
 }
 
 .timeline .timeline-content .timeline-text {
-    padding: 0 2rem 2rem 2rem;
+    padding: .5rem;
 }
 
 .timeline .timeline-box {
     display: flex;
-    gap: .5rem;
+    flex-direction: column-reverse;
+    gap: 2rem;
 }
 
 /* .timeline .timeline-box > * {
@@ -175,7 +183,8 @@ form button:hover {
 } */
 
 .timeline .timeline-box .timeline-data {
-    width: 40%;
+    width: 95%;
+    margin-inline: auto;
 }
 
 .timeline .timeline-box .timeline-data > * {
@@ -183,11 +192,11 @@ form button:hover {
     /* border: 2px  solid blue; */
     width: 100%;
     margin-inline: auto;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     padding: 1rem;
     background-color: #fff;
     box-shadow: 3px 3px 2px 1px #e3e3e3;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .timeline-data .photos-collage {
@@ -214,12 +223,27 @@ form button:hover {
 } */
 
 @media (max-width: 768px) {
-    /* .timeline .timeline-info {
-        width: 90%;
-    } */
-
     form .media-content .video,
     form .media-content .image {
         flex-direction: column;
+    }
+
+    .timeline .timeline-info {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    form .media-content .video,
+    form .media-content .image {
+        flex-direction: column;
+    }
+
+    .timeline .timeline-box .timeline-data {
+        width: 100%;
+    }
+
+    .timeline .timeline-info {
+        width: 100%;
     }
 }

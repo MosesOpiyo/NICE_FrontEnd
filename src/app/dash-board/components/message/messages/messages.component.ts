@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { NotificationMsgComponent } from '../notification-msg/notification-msg.component';
 import { MatDialog } from '@angular/material/dialog';
+import { NotificationsService } from 'src/app/Notifications/notifications.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-messages',
@@ -41,4 +43,5 @@ showNotification() {
     })
     
   }
+
 }
