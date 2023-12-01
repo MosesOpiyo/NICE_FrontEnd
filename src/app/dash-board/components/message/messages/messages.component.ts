@@ -3,6 +3,8 @@ import { ProductsService } from 'src/app/ProductsService/products.service';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { NotificationMsgComponent } from '../notification-msg/notification-msg.component';
 import { MatDialog } from '@angular/material/dialog';
+import { NotificationsService } from 'src/app/Notifications/notifications.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-messages',
@@ -10,19 +12,21 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent {
-  constructor(private products:ProductsService,private service:AuthenticationService,private dialog:MatDialog){}
-  user:any
 
+  constructor(private products:ProductsService, private notification:NotificationsService, private service:AuthenticationService,private dialog:MatDialog, private route:Router){}
+
+  user:any
+  data:any;
   masterSelected = false;
   index: any;
 
 checkUncheckAll(evt: any) {
-  this.checklist.forEach((c) => c.isSelected = evt.target.checked)
+  this.data.forEach((c) => c.isSelected = evt.target.checked)
 }
 
 isAllSelected(evt: any, index: any) {
-    this.checklist[index].isSelected = evt.target.checked
-    this.masterSelected = this.checklist.every((item) => item.isSelected == true);
+    this.data[index].isSelected = evt.target.checked;
+    this.masterSelected = this.data.every((item) => item.isSelected == true);
 }
 
 checklist = [
@@ -42,8 +46,19 @@ showNotification() {
 
 
   ngOnInit(): void {
-    this.service.getProfile().subscribe((res:any)=>{
-      this.user = res['user']
-    })
+    if(sessionStorage.getItem('Token')){
+      this.service.getProfile().subscribe((res:any)=>{
+        this.user = res['user']
+      })
+      this.notification.getNotifications().subscribe((res)=>{
+        this.data = res
+        console.log(this.data)
+        console.log(this.data[0].message)
+      })
+    }
+    else{
+      this.route.navigate([''])
+    }
   }
+
 }

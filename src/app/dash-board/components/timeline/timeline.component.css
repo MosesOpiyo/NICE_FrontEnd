@@ -48,7 +48,7 @@
 
 form .media-content {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: .5rem;
     justify-content: center;
     width: 100%;
@@ -58,14 +58,22 @@ form .media-content > * {
     border: 2px solid #0000000d;
     padding: .5rem;
     flex-basis: 100%;
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 50%;
+    max-width: 50%;
 }
 
 form .media-content .video,
 form .media-content .image {
     display: flex;
     gap: .5rem;
+}
+
+form .media-content .video label,
+form .media-content .image label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 form input#file {
