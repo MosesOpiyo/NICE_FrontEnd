@@ -43,15 +43,15 @@
                 </div>
             
             
-                <div class="notification-card" *ngFor="let item of checklist">
+                <div class="notification-card" *ngFor="let object of data">
                     <div class="checkbox">
                         <input
                           type="checkbox"
                           id="read"
                           name="read"
                           title="read"
-                          [checked]="item.isSelected"
-                          value="{{item.id}}"
+                          [checked]="object.isSelected"
+                          value="{{object.id}}"
                           (change)="isAllSelected($event, index)"
                         >
                     </div>
@@ -66,7 +66,9 @@
                         </div>
             
                         <div class="notification-content">
-                            <p>{{item.notification}}</p>
+                            <p>
+                                {{object.message}}
+                            </p>
                         </div>
                     </div>
                 </div>

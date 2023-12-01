@@ -109,11 +109,7 @@ export class DetailsComponent implements OnInit {
    
     this.service.getProfile().subscribe((res:any)=>{
       this.user = res
-<<<<<<< HEAD
-      console.log(this.user)
-=======
       console.log(this.user);
->>>>>>> 3b9a3d5659e3d96e267c28bd925d8a35e24295f5
       if(this.user.user.type == "FARMER"){
         this.service.getFarmerProfile().subscribe((res:any)=>{
           if(res == "" ){
