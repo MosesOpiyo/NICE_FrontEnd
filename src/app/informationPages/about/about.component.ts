@@ -6,6 +6,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
+
+  //1st accordion input
+  isShowContent = false;
+  showContent() {
+    this.isShowContent = !this.isShowContent
+  }
+
+  //2nd accordion input
+  isShowContent2 = false;
+  showContent2() {
+    this.isShowContent2 = !this.isShowContent2
+  }
+
+  //3rd accordion input
+  isShowContent3 = false;
+  showContent3() {
+    this.isShowContent3 = !this.isShowContent3
+  }
+
+  //4th accordion input
+  isShowContent4 = false;
+  showContent4() {
+    this.isShowContent4 = !this.isShowContent4
+  }
+
+  //5th accordion input
+  isShowContent5 = false;
+  showContent5() {
+    this.isShowContent5 = !this.isShowContent5
+  }
+
   onLabelGroupClick($event: any){
     let clickedElement = $event.target || $event.srcElement;
 

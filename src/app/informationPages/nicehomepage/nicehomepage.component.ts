@@ -241,7 +241,8 @@ export class NicehomepageComponent implements OnInit {
 
    showLoginDialog(){
     const dialogRef = this.dialog.open(LoginComponent,{
-      width: '25pc'
+      width: '25pc',
+      maxHeight: '90vh'
     });
   }
 
@@ -252,12 +253,14 @@ export class NicehomepageComponent implements OnInit {
 
   showSignUpDialog(){
     const dialogRef = this.dialog.open(SignUpComponent,{
-      width: '25pc'
+      width: '25pc',
+      maxHeight: '100vh'
     }); 
   }
   showFarmerSignUpDialog(){
     const dialogRef = this.dialog.open(FarmerSignUpComponent,{
-      width: '25pc'
+      width: '25pc',
+      maxHeight: '100vh'
     }); 
   }
 

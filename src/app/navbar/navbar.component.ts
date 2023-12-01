@@ -49,13 +49,16 @@ export class NavbarComponent implements OnInit {
 
   showLoginDialog(){
     const dialogRef = this.dialog.open(LoginComponent,{
-      width: '25pc'
+      width: '25pc',
+      // autoFocus: false,
+      maxHeight: '90vh'
     });
   }
 
   showFarmerSignUpDialog(){
     const dialogRef = this.dialog.open(FarmerSignUpComponent,{
-      width: '25pc'
+      width: '25pc',
+      maxHeight: '100vh'
     }); 
   }
 
@@ -66,7 +69,8 @@ export class NavbarComponent implements OnInit {
 
   showSignUpDialog(){
     const dialogRef = this.dialog.open(SignUpComponent,{
-      width: '25pc'
+      width: '25pc',
+      maxHeight: '100vh'
     }); 
   }
 

@@ -726,9 +726,86 @@
     
     </div>
 
-    
-    
+    <!-- FAQ SECTION -->
+    <div class="faq-container" id="faqs">
+      <div class="faq-header" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-image">
+          <img src="../../../assets/img/about/faq.jpg" alt="a confused lady filled with questions">
+        </div>
+      </div>
 
+      <div class="faqs-accordion" data-aos="fade-up">
+        <div>
+            <input type="checkbox" name="faq-accordion" id="question1" class="accordion-input" checked (click)="showContent()">
+            <label for="question1" class="accordion-label">
+              What exactly is NiceDirect?
+              <i *ngIf="isShowContent" class="fa-solid fa-caret-down"></i>
+              <i *ngIf="!isShowContent" class="fa-solid fa-caret-up"></i>
+            </label>
+            <div class="accordion-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat suscipit magnam reiciendis quam? Reiciendis asperiores fugit itaque optio sapiente earum eveniet eaque commodi, iusto aspernatur unde non delectus minus assumenda?
+                Doloribus, magni ullam debitis rem impedit ipsam ut. Quo repellat at autem atque accusamus laboriosam ducimus reiciendis consequatur sint distinctio, possimus obcaecati nostrum quae laborum? Unde ullam necessitatibus assumenda eveniet..
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <input type="checkbox" name="faq-accordion" id="question2" class="accordion-input" (click)="showContent2()">
+            <label for="question2" class="accordion-label">
+              How transparent are you?
+              <i *ngIf="isShowContent2" class="fa-solid fa-caret-up"></i>
+              <i *ngIf="!isShowContent2" class="fa-solid fa-caret-down"></i>
+            </label>
+            <div class="accordion-content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam natus est, quas at, ut, eum officiis architecto beatae aspernatur nostrum quisquam deserunt voluptate quam eius sequi repellat. Provident, veniam repellendus.
+                Reprehenderit repudiandae, dignissimos sapiente eos ipsum numquam optio repellendus quidem voluptas non fuga in perferendis aliquid iste, exercitationem rem dolore, ut nam unde quia explicabo error sequi quis quaerat? Dolorem?</p>
+            </div>
+        </div>
+
+        <div>
+            <input type="checkbox" name="faq-accordion" id="question3" class="accordion-input" (click)="showContent3()">
+            <label for="question3" class="accordion-label">
+              Where do I start?
+              <i *ngIf="isShowContent3" class="fa-solid fa-caret-up"></i>
+              <i *ngIf="!isShowContent3" class="fa-solid fa-caret-down"></i>
+            </label>
+            <div class="accordion-content">
+                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus, dolorum consequuntur? Harum excepturi cupiditate eius fugit nam dolorem? Recusandae tenetur vero earum eum molestias harum excepturi illo mollitia eligendi voluptate!
+                Quidem a nemo in libero quibusdam aliquam, sapiente numquam est itaque perspiciatis, accusamus placeat unde. Consequatur vel non modi animi iure excepturi officia pariatur illum, vero, quas natus id rerum?</p>
+            </div>
+        </div>
+
+        <div>
+            <input type="checkbox" name="faq-accordion" id="question4" class="accordion-input" (click)="showContent4()">
+            <label for="question4" class="accordion-label">
+              Is my data safe?
+              <i *ngIf="isShowContent4" class="fa-solid fa-caret-up"></i>
+              <i *ngIf="!isShowContent4" class="fa-solid fa-caret-down"></i>
+            </label>
+            <div class="accordion-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nulla fuga libero, pariatur voluptatem in, corporis vero quam necessitatibus repudiandae, suscipit reiciendis exercitationem quos eaque quidem recusandae! Doloremque, commodi ut!
+                Aperiam vero quo, quae repudiandae soluta natus quod voluptate minus? Modi error, quisquam voluptate dolorem dignissimos illum reprehenderit animi pariatur quibusdam illo ducimus porro repudiandae voluptas, libero quis veritatis asperiores?</p>
+            </div>
+        </div>
+
+        <div>
+          <input type="checkbox" name="faq-accordion" id="question5" class="accordion-input" (click)="showContent5()">
+          <label for="question5" class="accordion-label last">
+            I have more questions, can you help me?
+            <i *ngIf="isShowContent5" class="fa-solid fa-caret-up"></i>
+            <i *ngIf="!isShowContent5" class="fa-solid fa-caret-down"></i>
+          </label>
+          <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, molestiae perspiciatis. Vitae provident rem
+              voluptatibus ipsum corporis eveniet dolore harum fugit aut, eum eius sit eos quos? Numquam, impedit praesentium.
+              Odit, dolores! Deleniti veritatis ut earum dolores aut debitis molestias recusandae unde eveniet expedita et ea
+              culpa pariatur, numquam labore blanditiis magnam error doloremque voluptas. Iure reprehenderit illum minus
+              similique</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </section>
 
