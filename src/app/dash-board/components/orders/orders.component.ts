@@ -19,7 +19,8 @@ export class OrdersComponent {
       console.log(this.Orders)
     })
     this.service.getProfile().subscribe((res:any)=>{
-      this.user = res['user']
+      this.user = res
+      console.log(this.user)
     })
   }
 

@@ -8,6 +8,7 @@
                 <div>
                     <h5 *ngIf="user.user.type=='FARMER'">Farmer's Details</h5>
                     <h5 *ngIf="user.user.type=='WAREHOUSER'">Warehouser's Details</h5>
+                    <h5 *ngIf="user.user.type=='BUYER'">My Details</h5>
                 </div>
 
                 <div>
@@ -167,22 +168,82 @@
         <div class="dashboard-card user-info" *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">
             <h5 class="mb-4">Warehouse Details</h5>
 
-            <div class="mb-3">
-                <h4>Warehouse Name: <span>{{warehouse.name}}</span></h4>
-            </div>
+            <div>
+                <ul class="warehouse-info">
+                    <li>
+                        Warehouse Name:<br>
+                        <span>{{warehouse.name}}</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(2)"></i>
+                    </li>
 
-            <div class="mb-3">
-                <h4>Warehouse Capacity: <span>{{warehouse.warehouse_area_storage}}</span></h4>   
-            </div>
+                    <li>
+                        Warehouse Capacity:<br>
+                        <span>{{warehouse.warehouse_area_storage}}</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(3)"></i>
+                    </li>
 
-            <div class="mb-3">
-                <h4>Warehouse Contact info: <span></span></h4>
-            </div>
+                    <li>
+                        Warehouse Contact info:<br>
+                        <span></span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                    </li>
 
-            <div class="mb-3">
-                <h4>Warehouse Location: <span>{{warehouse.location}}</span></h4>
-                <span><div class="mapouter"><div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" [src]="getSanitizedURL(warehouse.location)" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:250px;width:250px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:250px;}</style></div></div></span>
-            </div>
+                    <li>
+                        Warehoused Products:<br>
+                        <span>{{warehouse.warehoused_products}}</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                    </li>
+
+                    <li class="location">
+                        Warehouse Location:<br>
+                        <span>{{warehouse.location}}</span>
+                        <div>
+                            <iframe
+                                [src]="getSanitizedURL(warehouse.location)"
+                                allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(19)"></i>
+                    </li>
+                    
+                </ul>
+            </div>            
+        </div>
+
+        <!-- 2ND CARD(BUYER) -->
+        <div class="dashboard-card user-info" *ngIf="user.user.type=='BUYER'">
+            <h5 class="mb-4">My Details</h5>
+
+            <div>
+                <ul class="buyer-info">
+                    <li>
+                        Name:<br>
+                        <span>{{user.user.username}}</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(2)"></i>
+                    </li>
+
+                    <li>
+                        Phone Number:<br>
+                        <span></span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(3)"></i>
+                    </li>
+
+                    <li>
+                        Email Address:<br>
+                        <span>{{user.user.email}}</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                    </li>
+
+                    <li>
+                        Shipping Address:<br>
+                        <span>1234 Deliver Str</span>
+                        <span>Denver, Colorado</span>
+                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                    </li>
+                    
+                </ul>
+            </div>            
         </div>
 
     </div>

@@ -1,0 +1,185 @@
+:host ::ng-deep #header {
+  background-color: #f6f6f6;
+}
+
+:host ::ng-deep #header .navbar .dropdown ul a,
+:host ::ng-deep #header .navbar ul li i.fa-chevron-down {
+  color: #000000;
+}
+
+:host ::ng-deep #header .navbar .active,
+:host ::ng-deep #header .navbar-mobile .active {
+  background-color: transparent;
+}
+
+/* :host ::ng-deep #header .navbar .about-link,
+:host ::ng-deep #header .navbar-mobile .about-link {
+  background-color: rgb(165, 165, 165);
+  color: #000000;
+} */
+
+:host ::ng-deep #header.header-scrolled .navbar a,
+:host ::ng-deep #header.header-scrolled .navbar ul li i.fa-chevron-down,
+:host ::ng-deep #header.header-scrolled .navbar ul li i.fa-bag-shopping {
+  color: #000000;
+}
+
+:host ::ng-deep #header.header-scrolled .navbar .active {
+  background-color: transparent;
+  color: #000000;
+}
+
+:host ::ng-deep #header .navbar .dropdown ul li:hover > a {
+  color: #67b0d1;
+}
+
+/* farm details component */
+.farmdetails-component {
+  position: relative;
+  top: 76px;
+  overflow: hidden;
+}
+
+/* farm name header */
+.farmdetails-name {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://img.freepik.com/free-photo/india-woods-hill-station-fog-coffee_1376-22.jpg?w=900&t=st=1699616912~exp=1699617512~hmac=2ef68f213cf1ca4ecf744cc01b0f7f5051aef3dd37143efbf21404b5f5df5524");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  margin-left: auto;
+}
+
+.farmdetails-name::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0000006e;
+}
+
+.farmdetails-name p {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+
+/* farm products section */
+.farmdetails-component .farm-products {
+  display: flex;
+}
+
+     /* sidebar */
+.farmdetails-component .farm-products .sidebar {
+  border-right: 2px solid #00000040;
+  padding: 1rem;
+  width: 20%;
+  padding: 2rem 1rem;
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 76px;
+  bottom: 0;
+  height: calc(100vh - 76px);
+}
+
+.farm-products .productlist {
+  padding: 1rem;
+  width: 80%;
+  position: relative;
+  left: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+  .farmdetails-component .farm-products {
+    flex-direction: column;
+  }
+
+  .farmdetails-component .farm-products .sidebar {
+    width: 100%;
+    border-right: none;
+    top: 0;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    gap: .2rem;
+  }
+
+  .farmdetails-component .sidebar .widget-title {
+    border: 2px solid #0000001c;
+  }
+
+  .farmdetails-component .farm-products .productlist {
+    width: 100%;
+    padding: .3rem;
+    left: 0;
+  }
+
+  .farmdetails-component .sidebar {
+    display: flex;
+  }
+
+  .farmdetails-component .sidebar h2 {
+    justify-content: space-between;
+    font-size: .9rem;
+  }
+
+  .farmdetails-component .farm-products .sidebar > * {
+    margin-bottom: 0rem;
+  }
+
+  .farmdetails-component .farm-products .sidebar > * ul {
+    border: 2px solid #0000001c;
+    border-top: none;
+  }
+
+  .farmdetails-component .sidebar > * {
+    flex-basis: 100%;
+  }
+
+  .farmdetails-name {
+    width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .farmdetails-component .farm-products .sidebar {
+    flex-direction: column;
+    margin-inline: auto;
+    width: max-content;
+    gap: .5rem;
+  }
+
+  .farmdetails-component .sidebar .widget-title {
+    width: 150px;
+  }
+
+  .farmdetails-component .sidebar h2 {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 375px) {
+  .farmdetails-component .product-card {
+    width: 90%;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 300px) {
+  .farmdetails-component .product-card {
+    width: 100%;
+  }
+}

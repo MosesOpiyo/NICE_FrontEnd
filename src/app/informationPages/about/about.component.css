@@ -33,3 +33,92 @@
   :host ::ng-deep #header .navbar .dropdown ul li:hover > a {
     color: #67b0d1;
   }
+
+  .expogallery-item,
+  .expogallery-links,
+  .expogallery-links a {
+    height: 200px;
+    width: 100%;
+  }
+
+  .expogallery-links a {
+    display: block;
+  }
+
+  .expogallery-links a img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .gallery-lightbox img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .filter-input {
+    display: none;
+  }
+    
+  .filter-content {
+      display: none;
+  }
+
+  .filter-input:checked ~ .filter-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+  }
+
+  .gallery-filtered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-filtered .filters {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background-color: #f6f6f6;
+  }
+
+  .gallery-filtered .filters label {
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+  }
+
+  .filter-label.active, .filter-label:hover {
+    color: #353cff;
+  }
+
+  /* media queries */
+  @media (max-width: 1024px) {
+    .filter-input:checked ~ .filter-content {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .gallery-filtered .filters label {
+      padding: 0.5rem;
+    }
+
+    .filter-input:checked ~ .filter-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .gallery-filtered .filters label {
+      padding: 0;
+    }
+
+    .filter-input:checked ~ .filter-content {
+      grid-template-columns: 1fr;
+    }
+  }
