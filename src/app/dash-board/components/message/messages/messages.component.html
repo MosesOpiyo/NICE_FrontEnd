@@ -15,7 +15,7 @@
             <ul>
                 <li class="link-card">
                     Unread
-                    <span>(2)</span>
+                    <span>({{unreaded.length}})</span>
                 </li>
             </ul>
 
@@ -43,7 +43,7 @@
                 </div>
             
             
-                <div class="notification-card" *ngFor="let item of checklist">
+                <div class="notification-card" *ngFor="let item of user.notifications">
                     <div class="checkbox">
                         <input
                           type="checkbox"
@@ -61,12 +61,12 @@
                             <h2>Coffee Received</h2>
             
                             <div class="date">
-                                <p>3:30pm, 15 Nov 2023</p>
+                                <p>{{item.date_added | date:'hh:mm a'}} {{item.date_added | date}}</p>
                             </div>
                         </div>
             
                         <div class="notification-content">
-                            <p>{{item.notification}}</p>
+                            <p>{{item.message}}</p>
                         </div>
                     </div>
                 </div>
