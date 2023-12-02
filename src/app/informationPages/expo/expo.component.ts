@@ -7,6 +7,9 @@ import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
 import { interval, Observable } from "rxjs";
 import { map, shareReplay } from "rxjs/operators";
+import { SponsorshipComponent } from '../sponsorship/sponsorship.component';
+import { ExhibitorsComponent } from '../exhibitors/exhibitors.component';
+import { ExhibitorsponsorComponent } from '../exhibitorsponsor/exhibitorsponsor.component';
 
 interface timeComponents {
   secondsToDday: number;
@@ -75,7 +78,7 @@ export class ExpoComponent implements OnInit {
    const dialogRef = this.dialog.open(LoginComponent,{
      width: '25pc'
    });
- }
+  }
 
  logout(){
    this.service.logout()
@@ -86,6 +89,60 @@ export class ExpoComponent implements OnInit {
    const dialogRef = this.dialog.open(SignUpComponent,{
      width: '25pc'
    }); 
+ }
+
+ showSponsorDialog(sponsorType: any){
+  if (sponsorType == 'platinum') {
+    let dialogRef = this.dialog.open(SponsorshipComponent,{
+      width: '25pc',
+      maxHeight: '90vh',
+      data: {
+        sponsor: sponsorType
+      }
+    })
+  }
+  else if (sponsorType == 'gold') {
+    let dialogRef = this.dialog.open(SponsorshipComponent,{
+      width: '25pc',
+      maxHeight: '90vh',
+      data: {
+        sponsor: sponsorType
+      }
+    })
+  }
+  else if (sponsorType == 'silver') {
+    let dialogRef = this.dialog.open(SponsorshipComponent,{
+      width: '25pc',
+      maxHeight: '90vh',
+      data: {
+        sponsor: sponsorType
+      }
+    })
+  }
+  else {
+    sponsorType == 'prize'
+    let dialogRef = this.dialog.open(SponsorshipComponent,{
+      width: '25pc',
+      maxHeight: '100vh',
+      data: {
+        sponsor: sponsorType
+      }
+    })
+  }
+ }
+
+ showExhibitorDialog() {
+  let dialogRef = this.dialog.open(ExhibitorsComponent,{
+    width: '25pc',
+    maxHeight: '100vh',
+  })
+ }
+
+ showRegisterDialog() {
+  let dialogRef = this.dialog.open(ExhibitorsponsorComponent,{
+    width: '25pc',
+    maxHeight: '100vh',
+  })
  }
 
  ngOnInit(): void {

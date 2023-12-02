@@ -7,6 +7,8 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 import { AuthService } from '../Auth/auth.service';
 import { CartService } from '../Service/Cart/cart.service';
 import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.component';
+import { ExhibitorsponsorComponent } from '../informationPages/exhibitorsponsor/exhibitorsponsor.component';
+import { TripdialogueComponent } from '../informationPages/tripdialogue/tripdialogue.component';
 
 
 @Component({
@@ -72,6 +74,20 @@ export class NavbarComponent implements OnInit {
       width: '25pc',
       maxHeight: '100vh'
     }); 
+  }
+
+  showRegisterDialog() {
+    let dialogRef = this.dialog.open(ExhibitorsponsorComponent,{
+      width: '25pc',
+      maxHeight: '100vh',
+    })
+  }
+
+  showTripRegisterDialog() {
+    let dialogRef = this.dialog.open(TripdialogueComponent,{
+      width: '25pc',
+      maxHeight: '100vh',
+    })
   }
 
   ngOnInit(): void {

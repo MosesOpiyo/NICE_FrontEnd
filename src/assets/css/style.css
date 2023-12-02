@@ -341,7 +341,7 @@
     font-size: 1.2rem;
   }
   
-  .expo-container .register-btn a {
+  .expo-container .register-btn button {
     align-self: center;
     font-size: 17px;
     font-weight: bold;
@@ -351,6 +351,7 @@
     cursor: pointer;
     background-color: #fcff48;
     color: #000000;
+    border: none;
   }
   
   .expo-container .video-container .pure-counter {
@@ -632,12 +633,20 @@
   .expo-container .sponsor-card .sponsor-perks li i {
     color: #008000;
   }
-  
-  .expo-container .sponsor-card .sponsor-btn {
+
+  .expo-container .sponsor-card .sponsor-btn button {
     background-color: black;
     color: #fff;
     width: 70%;
     margin-inline: auto;
+    border: none;
+    padding: .5rem;
+    transition: all 250ms ease-in-out;
+  }
+
+  .expo-container .sponsor-card .sponsor-btn button:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
   }
   
   .expo-container .expo-header h2,
@@ -741,15 +750,22 @@
   
   .expo-container .exhibitors-container .exhibition-btn {
     align-self: center;
-    padding: 15px 100px;
-    margin-top: 4rem;
+    width: 25%;
   }
   
-  .expo-container .exhibitors-container .exhibition-btn a {
-    /* border: 2px solid black; */
+  .expo-container .exhibitors-container .exhibition-btn button {
+    border: none;
     background-color: #15305b;
     color: #fff;
-    padding: 15px 100px;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 250ms ease-in-out;
+  }
+
+  .expo-container .exhibitors-container .exhibition-btn button:hover {
+    background-color: #ecc55e;
+    color: #000000;
   }
 
  
@@ -795,7 +811,6 @@
   
   /* REGISTER */
   .expo-container .register-cta {
-    margin-bottom: 4rem;
     height: 500px;
     display: flex;
     text-align: center;
@@ -832,12 +847,15 @@
     font-size: 2rem;
   }
   
-  .expo-container .register-cta .register-content a {
+  .expo-container .register-cta .register-content button {
     background-color: #ecc55e;
+    border: none;
     width: 50%;
     padding: 10px 20px;
     margin-inline: auto;
     color: #000000;
+    transition: all 0.6s ease-in-out;
+    font-size: 1rem;
   }
   
    /* GALLERY STYLING */
@@ -1021,7 +1039,7 @@
       gap: .2rem;
     }
 
-    .expo-container .register-btn a {
+    .expo-container .register-btn button {
       font-size: 15px;
       padding: 9px 40px;
     }
@@ -1212,33 +1230,17 @@
     }
 
     .expo-container .exhibitors-container .exhibition-btn {
-      padding: 15px 50px;
-    }
-
-    .expo-container .exhibitors-container .exhibition-btn a {
-      padding: 15px 50px;
+      width: 50%;
     }
   }
 
   @media (max-width: 425px) {
     .expo-container .exhibitors-container .exhibition-btn {
-      padding: 15px 30px;
-    }
-
-    .expo-container .exhibitors-container .exhibition-btn a {
-      padding: 15px 30px;
+      width: 80%;
     }
   }
 
   @media (max-width: 375px) {
-    .expo-container .exhibitors-container .exhibition-btn {
-      padding: 15px 10px;
-    }
-
-    .expo-container .exhibitors-container .exhibition-btn a {
-      padding: 15px 10px;
-    }
-
     .expo-container .exhibitor-fplan .rates-table th, .expo-container .exhibitor-fplan .rates-table td {
       font-size: .8rem;
     }
@@ -1781,12 +1783,14 @@
     text-align: center;
   }
   
-  .trip-container .cupping-container .cupping-text a {
+  .trip-container .cupping-container .cupping-text button {
     background-color: #000000;
     color: #fff;
     padding: 10px 60px;
     font-size: 1.2rem;
     align-self: center;
+    border: none;
+    transition: all 0.6s ease-in-out;
   }
   
   .trip-container .cupping-container .cupping-image {
@@ -2009,7 +2013,7 @@
       text-align: center;
     }
 
-    .trip-container .cupping-container .cupping-text a {
+    .trip-container .cupping-container .cupping-text button {
       align-self: center;
     }
 
@@ -2177,8 +2181,8 @@
   .about-component .whyus-header h2,
   .about-component .how-header h2,
   .about-component .team-header h2 {
-      font-size: 2.5rem;
-      line-height: 2rem;
+      font-size: 3rem;
+      line-height: 2.5rem;
   }
   
   /* ABOUT HEADER */
@@ -2475,19 +2479,30 @@
   }
   
   .about-component .team-container .team-list {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 100%;
+      /* border: 2px solid red; */
       gap: 1rem;
   }
   
   .about-component .team-list .team-card {
-      display: flex;
-      gap: 1rem;
+      height: 450px;
+      /* border: 2px solid black; */
+      transition: all 350ms ease-in-out;
+  }
+
+  .about-component .team-list .team-card:hover {
+    height: max-content;
+  }
+
+  .team-card:hover .member-details .member-info {
+    display: block;
   }
   
   .about-component .team-list .team-card .member-image {
-      height: 240px;
-      width: 30%;
+      height: 350px;
+      width: 100%;
   }
   
   .about-component .team-list .team-card .member-image img {
@@ -2495,18 +2510,16 @@
       width: 100%;
       object-fit: cover;
       object-position: center;
-      border-radius: .5rem;
   }
   
   .about-component .team-list .team-card .member-details {
-      width: 70%;
+      width: 90%;
+      margin-inline: auto;
       background-color: #ffe6e2;
       padding: 1rem;
-      border-radius: 0.5rem;
-  }
-  
-  .about-component .team-list .team-card.md {
-      flex-direction: row-reverse;
+      text-align: center;
+      position: relative;
+      top: -50px;
   }
   
   .about-component .team-list .team-card.md .member-details {
@@ -2515,6 +2528,10 @@
 
   .about-component .team-list .team-card.tech .member-details {
     background-color: #f1daa7;
+  }
+
+  .team-card .member-details .member-info {
+    display: none;
   }
 
   .about-component .team-list .team-card .member-name p {
@@ -2582,11 +2599,18 @@
 
     .about-component .team-list .team-card .member-image {
       height: 300px;
-      width: 50%;
     }
 
-    .about-component .team-list .team-card .member-details {
-      width: 50%;
+    .about-component .team-container .team-list {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-component .team-list .team-card {
+      height: max-content;
+    }
+
+    .team-card .member-details .member-info {
+      display: block;
     }
 
     .about-component .how-container .how-content .how-card {
@@ -2633,17 +2657,8 @@
       grid-template-columns: 1fr;
     }
 
-    .about-component .team-list .team-card {
-      flex-direction: column;
-    }
-
-    .about-component .team-list .team-card.md {
-      flex-direction: column;
-    }
-
-    .about-component .team-list .team-card .member-image,
-    .about-component .team-list .team-card .member-details {
-      width: 100%;
+    .about-component .team-container .team-list {
+      grid-template-columns: 1fr;
     }
   }
 
