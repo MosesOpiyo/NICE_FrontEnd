@@ -40,10 +40,15 @@ checklist = [
   {id:8,isSelected:false,notification:'Your coffee #1234RT4 has arrived at warehouse #1'}
 ];
 
-showNotification() {
-  this.dialog.open(NotificationMsgComponent)
+showNotification(info: any) {
+  this.dialog.open(NotificationMsgComponent, {
+    width: '25pc',
+    maxHeight: '90vh',
+    data: {
+      message: info
+    }
+  })
 }
-
 
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){

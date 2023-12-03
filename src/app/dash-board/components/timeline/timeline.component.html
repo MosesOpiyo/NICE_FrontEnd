@@ -1,94 +1,124 @@
 <div class="timeline-container">
-    <div class="create-timeline timeline-card">
-        <div class="create-header">
-            <h2>Create Post</h2>
+    <div class="timeline-card general-info">
+        <div class="farmer-profile">
+            <div class="farmer-image">
+                <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?size=626&ext=jpg&ga=GA1.1.826953802.1698382478&semt=sph" alt="">
+            </div>
+
+            <div class="farmer-name">
+                <p>{{user.user.username}}</p>
+            </div>            
         </div>
 
-        <form enctype="multipart/form-data"  class="create-content">
-            <div class="media">
-                <div class="media-content">
-                    <div class="video">
-                        <label for="file"><i class="fa-solid fa-video"></i>&nbsp;&nbsp;Add video</label>
-                        <input type="file" id="file" name="file">
-                    </div>
+        <div class="stats">
+            <div class="views">
+                <div class="icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
 
-                    <div class="image">
-                        <label for="file"><i class="fa-solid fa-image"></i>&nbsp;&nbsp;Add image</label>
-                        <input type="file" enctype="multipart/form-data" (change)="onFileSelected($event)" [(ngModel)]="media" id="file" name="file">
-                    </div>    
-                </div>  
+                <div class="stats-content">
+                    <span>200</span>
+                    <p>Views</p>
+                </div>
             </div>
 
-            <div class="text">
-                <div class="text-content">
-                    <div class="form-controls message">
-                        <textarea placeholder="Write your Post Here" [(ngModel)]="caption" id="comment" name="comment" required></textarea>
-                    </div>   
-                </div>  
+            <div class="pictures">
+                <div class="icon">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+
+                <div class="stats-content">
+                    <span>200</span>
+                    <p>Pictures</p>
+                </div>
             </div>
 
-            <div class="form-controls form-btn form-submit">
-                <button (click)="PostStories()" type="submit">Create Post</button>
+            <div class="videos">
+                <div class="icon">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+
+                <div class="stats-content">
+                    <span>4</span>
+                    <p>Videos</p>
+                </div>
             </div>
-        </form>
+
+            <div class="rating">
+                <div class="icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div class="stats-content">
+                    <span>5(200)</span>
+                    <p>Average rating</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="timeline timeline-card">
-        <div class="timeline-header">
-            <h2>My Timeline</h2>
-        </div>
-
-        <div class="timeline-box">       
-            <div *ngFor="let post of posts" class="timeline-info">
-                <div class="timeline-content">        
-                    <div class="timeline-profile">
-                        <div class="profile-pic">
-                            <img src="../../../assets/img/coffee_logo2.png" alt="user profile pic">
-                        </div>
-        
-                        <div class="profile-time">
-                            <p>2 days ago</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-media">
-                        <img src="{{cloudinaryUrl}}{{post.media}}" alt="coffee plant">
-                    </div>
-        
-                    <div class="timeline-text">
-                        <p>{{post.caption}}
-                        </p>
-                    </div>
-                </div>
+    <div class="timeline-editing">
+        <div class="create-timeline timeline-card">
+            <div class="create-header">
+                <h2>Create Post</h2>
             </div>
     
-            <div class="timeline-data">
-                <div class="timelinedata-header">
-                    <h2>General Info</h2>
+            <form enctype="multipart/form-data"  class="create-content">
+                <div class="media">
+                    <div class="media-content">
+                        <div class="video">
+                            <label for="file"><i class="fa-solid fa-video"></i>&nbsp;&nbsp;Add video</label>
+                            <input type="file" id="file" name="file">
+                        </div>
+    
+                        <div class="image">
+                            <label for="file"><i class="fa-solid fa-image"></i>&nbsp;&nbsp;Add image</label>
+                            <input type="file" enctype="multipart/form-data" (change)="onFileSelected($event)" [(ngModel)]="media" id="file" name="file">
+                        </div>    
+                    </div>  
                 </div>
-                
-                <div class="views">
-                    <p>
-                        <i class="fa-solid fa-eye"></i>
-                        &nbsp;&nbsp;200 views
-                    </p>
+    
+                <div class="text">
+                    <div class="text-content">
+                        <div class="form-controls message">
+                            <textarea placeholder="Write your Post Here" [(ngModel)]="caption" id="comment" name="comment" required></textarea>
+                        </div>   
+                    </div>  
                 </div>
-
-                <div class="photos">
-                    <p>Photos posted:</p>
-
-                    <div class="photos-collage">
-                        <img src="../../../assets/img/Trip/ragis2.jpg" alt="coffee plant">
-                        <img src="../../../assets/img/Trip/ragis2.jpg" alt="coffee plant">
-                        <img src="../../../assets/img/Trip/ragis2.jpg" alt="coffee plant">
-                        <img src="../../../assets/img/Trip/ragis2.jpg" alt="coffee plant">
-                        <img src="../../../assets/img/Trip/ragis2.jpg" alt="coffee plant">
-                        <img src="../../../assets/img/Trip/ragis2.jpg" alt="coffee plant">
+    
+                <div class="form-controls form-btn form-submit">
+                    <button (click)="PostStories()" type="submit">Create Post&nbsp;&nbsp;<i class="fa-solid fa-circle-down"></i></button>
+                </div>
+            </form>
+        </div>
+    
+        <div class="timeline timeline-card">
+            <div class="timeline-header">
+                <h2>My Timeline</h2>
+            </div>
+    
+            <div class="timeline-box">       
+                <div *ngFor="let post of posts" class="timeline-info">
+                    <div class="timeline-content">        
+                        <div class="timeline-profile">
+                            <div class="profile-pic">
+                                <img src="../../../assets/img/coffee_logo2.png" alt="user profile pic">
+                            </div>
+            
+                            <div class="profile-time">
+                                <p>2 days ago</p>
+                            </div>
+                        </div>
+    
+                        <div class="timeline-media">
+                            <img src="{{cloudinaryUrl}}{{post.media}}" alt="coffee plant">
+                        </div>
+            
+                        <div class="timeline-text">
+                            <p>{{post.caption}}
+                            </p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="recent">
-                    <p>recent activity</p>
                 </div>
             </div>
         </div>
