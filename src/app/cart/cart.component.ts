@@ -6,6 +6,7 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { environment } from 'src/environments/environment.development';
 import { CartService } from '../Service/Cart/cart.service';
+import { CartStoreService } from '../Store/Cart/cart-store.service';
 
 @Component({
   selector: 'app-cart',
@@ -21,7 +22,7 @@ export class CartComponent implements OnInit {
 
 
   myScriptElement: HTMLScriptElement;
-  constructor(private cart:CartService, private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService){
+  constructor(private cart:CartStoreService, private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService,private cartStore:CartStoreService){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
@@ -75,32 +76,16 @@ export class CartComponent implements OnInit {
  }
  removeItem(id:number){
   this.cartService.removeFromCart(id).subscribe((res:any) => {
-    location.reload()
+    this.cartService.getCart().subscribe((res:any) => {
+      this.cartStore.updateData(res)
+    })
   })
  }
 
  ngOnInit(): void {
-  this.service.getProfile().subscribe((res:any)=>{
-    this.user = res['user']
-    if(this.user.type == "FARMER"){
-      this.route.navigate(['dash-board'])
-    }
-    else if(this.user.type == "WAREHOUSER"){
-      this.route.navigate(['dash-board'])
-    }
-    else if(this.user.type == "ADMIN"){
-      this.route.navigate(['dash-board'])
-    }
-    else{
-      false
-    }
-    this.cart.getCart().subscribe((res:any)=>{
-      this.userCart = res['products']
-      console.log(this.userCart)
-    })
-  }
-   
-   ) 
+  this.cart.data$.subscribe((data:any) =>{
+    this.userCart = data['products']
+  })
  }
 
 }

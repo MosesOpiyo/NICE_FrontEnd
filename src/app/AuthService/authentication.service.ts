@@ -92,6 +92,25 @@ export class AuthenticationService implements OnInit {
     return this.http.get(`${environment.BASE_URL}Farmers/FarmerProfile`,{'headers':headers})
   }
 
+  updateFarmerProfile(key,credentials:any){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    this.http.put(`${environment.BASE_URL}Farmers/ProfileUpdate/${key}`,credentials,{'headers':headers}).subscribe((response:any)=>{
+      this.snackBar.open("Update SuccessFul", 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      this.refreshPage()
+    },(error:any) =>{
+      console.log(error.error)
+      this.snackBar.open(error.error, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    })
+  }
+
   logout(){
     sessionStorage.removeItem('Token')
     this.authService.authentication(false)

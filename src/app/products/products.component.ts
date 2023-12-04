@@ -484,27 +484,6 @@ export class ProductsComponent implements OnInit {
 }
 
  ngOnInit(): void {
-   if(sessionStorage.getItem('Token')){
-     this.service.getProfile().subscribe((res:any)=>{
-       this.user = res['user']
-       if(this.user.type == "FARMER"){
-         this.route.navigate(['dash-board'])
-       }
-       else if(this.user.type == "WAREHOUSER"){
-         this.route.navigate(['dash-board'])
-       }
-       else if(this.user.type == "ADMIN"){
-         this.route.navigate(['dash-board'])
-       }
-       else{
-         false
-       }
-     })
-   }
-   else{
-     console.log("No token")
-   }
-
    this.product.getProcessedProducts().subscribe((res:any)=>{
     this.products = res
     console.log(this.products)

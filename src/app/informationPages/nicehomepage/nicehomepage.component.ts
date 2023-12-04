@@ -262,29 +262,6 @@ export class NicehomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(sessionStorage.getItem('Token')){
-      this.service.getProfile().subscribe((res:any)=>{
-        this.user = res['user']
-        if(this.user.type == "FARMER"){
-          this.route.navigate(['dash-board'])
-        }
-        else if(this.user.type == "ORIGINWAREHOUSER"){
-          this.route.navigate(['dash-board'])
-        }
-        else if(this.user.type == "WAREHOUSER"){
-          this.route.navigate(['dash-board'])
-        }
-        else if(this.user.type == "ADMIN"){
-          this.route.navigate(['dash-board'])
-        }
-        else{
-          false
-        }
-      })
-    }
-    else{
-      console.log("No token")
-    }
    }
 
    //product form tab index

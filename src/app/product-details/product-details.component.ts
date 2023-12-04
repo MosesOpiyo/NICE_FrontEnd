@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment.development';
 import { ProductsService } from '../ProductsService/products.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from '../Service/Cart/cart.service';
+import { CartStoreService } from '../Store/Cart/cart-store.service';
 
 
 @Component({
@@ -41,7 +42,7 @@ export class ProductDetailsComponent implements OnInit {
   activatedTabIndex2: number = 0;
 
   myScriptElement: HTMLScriptElement;
-  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private cart:CartService){
+  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private cart:CartService,private cartStore:CartStoreService){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "./assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
@@ -74,7 +75,9 @@ export class ProductDetailsComponent implements OnInit {
     form.append('code',this.item.code)
     console.log(form)
     this.cart.addToCart(id,form)
-    this.ngOnInit()
+    this.cart.getCart().subscribe((res:any) => {
+      this.cartStore.updateData(res)
+    })
   }
 
   cartItem2(id:any){
@@ -117,46 +120,15 @@ export class ProductDetailsComponent implements OnInit {
      width: '25pc'
    }); 
  }
- addToCart(id:number,cartItem:any){
-   
- }
 
  ngOnInit(): void {
   this.id = this.idRouter.snapshot.paramMap.get('id');
   this.product.getProcessedProduct(this.id).subscribe((res:any)=>{
   this.item = res
-  console.log(this.item)
   this.item.rating.forEach((ratingItem:any) => {
   this.ratings.push(ratingItem.rating)
     });
   })
-  if(sessionStorage.getItem('Token')){
-    this.cart.getCart().subscribe((res:any)=>{
-    this.userCart = res
-    })
-    this.service.getProfile().subscribe((res:any)=>{
-      this.user = res['user']
-      if(this.user.type == "FARMER"){
-        this.route.navigate(['dash-board'])
-      }
-      else if(this.user.type == "WAREHOUSER"){
-        this.route.navigate(['dash-board'])
-      }
-      else if(this.user.type == "ADMIN"){
-        this.route.navigate(['dash-board'])
-      }
-      else{
-        false
-      }
-    })
-    
-  }
-  else{
-    console.log("No token")
-  }
-   
-
-   
   }
 
   //product form tab index

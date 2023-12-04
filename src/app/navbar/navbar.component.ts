@@ -7,6 +7,8 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 import { AuthService } from '../Auth/auth.service';
 import { CartService } from '../Service/Cart/cart.service';
 import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.component';
+import { AuthenticationStoreService } from '../AuthServiceStore/authentication-store.service';
+import { CartStoreService } from '../Store/Cart/cart-store.service';
 
 
 @Component({
@@ -17,7 +19,7 @@ import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.
 export class NavbarComponent implements OnInit {
 
   myScriptElement: HTMLScriptElement;
-   constructor(private dialog: MatDialog,private cart:CartService,private service:AuthenticationService,private route:Router){
+   constructor(private authStore:AuthenticationStoreService,private dialog: MatDialog,private cart:CartService,private cartStore:CartStoreService,private service:AuthenticationService,private route:Router){
       this.myScriptElement = document.createElement("script");
       this.myScriptElement.src = "./assets/js/main.js";
       document.body.appendChild(this.myScriptElement);
@@ -72,24 +74,24 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
-      this.cart.getCart().subscribe((res:any)=>{
-        this.userCart = res['products'].length
-      })
-      this.service.getProfile().subscribe((res:any)=>{
-        this.user = res['user']
-        if(this.user.type == "FARMER"){
-          this.route.navigate(['dash-board'])
-        }
-        else if(this.user.type == "WAREHOUSER"){
-          this.route.navigate(['dash-board'])
-        }
-        else if(this.user.type == "ADMIN"){
-          this.route.navigate(['dash-board'])
-        }
-        else{
-          false
-        }
-      })
+        this.cartStore.data$.subscribe((data:any) =>{
+          this.userCart = data['products'].length
+        })
+        this.authStore.data$.subscribe((data:any)=>{
+          this.user = data['user']
+          if(this.user.type == "FARMER"){
+            this.route.navigate(['dash-board'])
+          }
+          else if(this.user.type == "WAREHOUSER"){
+            this.route.navigate(['dash-board'])
+          }
+          else if(this.user.type == "ADMIN"){
+            this.route.navigate(['dash-board'])
+          }
+          else{
+            false
+          }
+        })
     }
     else{
       console.log("No token")

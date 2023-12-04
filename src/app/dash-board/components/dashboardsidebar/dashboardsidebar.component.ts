@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
+import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 
 @Component({
   selector: 'app-dashboardsidebar',
@@ -206,7 +207,7 @@ export class DashboardsidebarComponent implements OnInit {
 
   ]
 
-  constructor(private service:AuthenticationService, private route:Router){}
+  constructor(private service:AuthenticationService,private store:AuthenticationStoreService, private route:Router){}
   user:any
   cloudinaryUrl = environment.CLOUDINARY_URL
   pic:any
@@ -214,9 +215,9 @@ export class DashboardsidebarComponent implements OnInit {
 
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
-      this.service.getProfile().subscribe((res:any)=>{
-        this.user = res
-      })
+        this.store.data$.subscribe((data:any) => {
+          this.user = data
+        })
     }
     else{
       this.route.navigate([''])
