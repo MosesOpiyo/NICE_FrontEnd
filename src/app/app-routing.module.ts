@@ -16,6 +16,7 @@ import { AboutComponent } from './informationPages/about/about.component';
 import { AttributionsComponent } from './informationPages/attributions/attributions.component';
 import { FarmComponent } from './farm/farm.component';
 import { FarmdetailsComponent } from './farmdetails/farmdetails.component';
+import { TripdetailsComponent } from './informationPages/tripdetails/tripdetails.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'attributions', component: AttributionsComponent },
   { path: 'farm', component: FarmComponent },
-  { path: 'farm/:farmId', component:FarmdetailsComponent }
+  { path: 'farm/:farmId', component:FarmdetailsComponent },
+  { path: 'trip-details', component: TripdetailsComponent }
 
 ];
 

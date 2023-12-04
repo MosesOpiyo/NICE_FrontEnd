@@ -14,6 +14,7 @@
                       <button *ngIf="user.type=='FARMER'" (click)="makeRequest()" class="btn btn-dark">New Product</button>
                   </div>
               </div>
+
               <div *ngIf="user.type=='ORIGINWAREHOUSER'" class="table-responsive">
                   <table mat-table [dataSource]="farmerProducts" class="mat-elevation-z8 demo-table table-light">
                       <ng-container matColumnDef="name">
@@ -55,6 +56,7 @@
                         ></tr>
                     </table>
               </div>
+
               <div *ngIf=" user.type=='FARMER'" class="table-responsive">
                 <table mat-table [dataSource]="farmerProducts" class="mat-elevation-z8 demo-table table-light">
                     <ng-container matColumnDef="name">
@@ -96,7 +98,13 @@
                           *matRowDef="let row; columns: farmerDisplayedColumns;"
                       ></tr>
                 </table>
+
+                <mat-paginator
+                  [pageSizeOptions]="[5, 10, 25, 100]"
+                  showFirstLastButtons
+                ></mat-paginator>
             </div>
+
               <div *ngIf=" user.type=='WAREHOUSER'" class="table-responsive">
                   <table mat-table [dataSource]="inventoryProducts" class="mat-elevation-z8 demo-table table-light">
                       <ng-container matColumnDef="name">
@@ -138,6 +146,7 @@
                         ></tr>
                   </table>
               </div>
+
               <div *ngIf="user.type=='ADMIN'" class="table-responsive">
                   <div class="row g-0">
                       <div id="myBtnContainer">

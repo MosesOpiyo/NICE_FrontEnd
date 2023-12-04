@@ -38,6 +38,7 @@ import { MessagesComponent } from './components/message/messages/messages.compon
 import { FilterPipe } from './components/manifests/filter.pipe';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { NotificationMsgComponent } from './components/message/notification-msg/notification-msg.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { NotificationMsgComponent } from './components/message/notification-msg/
     BarcodeScannerLivestreamModule,
     MatDialogModule,
     MatListModule,
+    MatPaginatorModule
   ]
 })
 export class DashBoardModule { }

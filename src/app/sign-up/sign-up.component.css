@@ -28,7 +28,7 @@
     width: 100%;
     border: 2px solid gray;
     border-radius: 10px;
-    height: 3pc;
+    height: 40px;
     padding-inline: .5rem;
 }
 
@@ -45,7 +45,7 @@
     width: 100%;
     background-color: black;
     color: white;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 .signup-container form .signup-extras {
@@ -60,6 +60,10 @@
     color: blue;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 .2rem #0d6efd1a;
 }
 
 @media (max-width: 375px) {

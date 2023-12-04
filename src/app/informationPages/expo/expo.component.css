@@ -10,9 +10,9 @@
   color: #2f4d5a;
 }
 
-:host ::ng-deep #header .navbar ul li i.fa-chevron-down {
+/* :host ::ng-deep #header .navbar ul li i.fa-chevron-down {
   color: #000000;
-}
+} */
 
 :host ::ng-deep #header .navbar ul li i {
   color: #fff;
@@ -29,10 +29,15 @@
   background-color: transparent;
 }
 
+:host ::ng-deep #header .navbar-mobile .active:hover,
+:host ::ng-deep #header .navbar .active:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 :host ::ng-deep #header .navbar .expo-link,
 :host ::ng-deep #header .navbar-mobile .expo {
-  background-color: rgb(216, 216, 216);
-  color: #000000;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* color: #000000; */
 }
 
 :host ::ng-deep #header.header-scrolled .navbar a,
@@ -50,6 +55,21 @@
   color: #67b0d1;
 }
 
+:host ::ng-deep #header.header-scrolled .navbar li:hover>a,
+:host ::ng-deep #header.header-scrolled .navbar .expo,
+:host ::ng-deep #header.header-scrolled .navbar .active:hover,
+:host ::ng-deep #header.header-scrolled .navbar .expo-link {
+  background-color: #eccece;
+}
+
+:host ::ng-deep #header .navbar .dropdown ul a:hover {
+  background-color: transparent;
+}
+
+:host ::ng-deep #header .navbar .cart a:hover,
+:host ::ng-deep #header.header-scrolled .navbar .cart a:hover {
+  background-color: transparent;
+}
 
 /* .expo-container {
   border: 2px solid black; 

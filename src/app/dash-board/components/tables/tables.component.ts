@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from 'src/app/ProductsService/products.service';
 import { MatDialog } from '@angular/material/dialog';
 import { NewproductComponent } from '../newproduct/newproduct.component';
@@ -12,6 +12,8 @@ import { saveAs } from 'file-saver';
 import * as XLSX from 'xlsx';
 import { ProcessedProductsComponent } from '../processed-products/processed-products.component';
 import { NewprocessedproductComponent } from '../newprocessedproduct/newprocessedproduct.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-tables',
@@ -19,7 +21,12 @@ import { NewprocessedproductComponent } from '../newprocessedproduct/newprocesse
   styleUrls: ['./tables.component.css']
 })
 export class TablesComponent implements OnInit {
+
+  dataSource = new MatTableDataSource<any>();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   constructor(private products:ProductsService,private warehouse:WarehouseService,private service:AuthenticationService,private admin:AdminService,private dialog:MatDialog,private snackbar:MatSnackBar){}
+
   displayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity','shipping'];
   farmerDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity'];
   warehouserDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity'];
@@ -43,6 +50,9 @@ export class TablesComponent implements OnInit {
         this.products.getFarmerProducts().subscribe((res:any)=>{
           this.farmerProducts = res
           console.log(this.farmerProducts)
+
+          this.dataSource = new MatTableDataSource<any>(this.farmerProducts)
+          this.dataSource.paginator = this.paginator
         })
       }
       else if(this.user.type=='ORIGINWAREHOUSER'){
@@ -63,6 +73,7 @@ export class TablesComponent implements OnInit {
     })
     
   }
+
   initUserFilter(filter:any){
     if(filter == "Warehousers"){
       this.filter = "Warehousers"

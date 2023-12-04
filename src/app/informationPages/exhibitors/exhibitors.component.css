@@ -18,6 +18,10 @@ sup {
     color: green;
 }
 
+.form-control:focus {
+    box-shadow: 0 0 0 .2rem #0d6efd1a;
+}
+
 h3 span {
     color: green;
 }
@@ -25,7 +29,7 @@ h3 span {
 .exhibitor-container form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: .5rem;
 }
 
 .exhibitor-container form select {
@@ -37,7 +41,7 @@ h3 span {
     width: 100%;
     border: 2px solid gray;
     border-radius: 10px;
-    height: 3pc;
+    height: 40px;
     padding-inline: .5rem;
 }
 
@@ -45,7 +49,7 @@ h3 span {
     width: 100%;
     background-color: black;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 .exhibitor-container form .form-extras {
