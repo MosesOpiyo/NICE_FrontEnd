@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProfileComponent } from '../profile/profile.component';
 import { NewproductComponent } from '../newproduct/newproduct.component';
 import { SavechangesComponent } from '../savechanges/savechanges.component';
+import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 
 @Component({
   selector: 'app-details',
@@ -22,7 +23,7 @@ export class DetailsComponent implements OnInit {
     console.log("im clicked")
   }
 
-  constructor(private service:AuthenticationService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
+  constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
   user:any
   warehouse:any
   cloudinaryUrl = environment.CLOUDINARY_URL
@@ -121,17 +122,22 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
-    this.service.getProfile().subscribe((res:any)=>{
+    this.service.getProfile().subscribe((res:any) => {
+      this.store.updateData(res)
+    })
+    this.store.data$.subscribe((res:any)=>{
       this.user = res
       if(this.user.user.type == "FARMER"){
         this.service.getFarmerProfile().subscribe((res:any)=>{
-          if(res == "" ){
-            this.showProfileDialog()
-          }
-          else if(res.county != "" || res.society_name != "" || res.total_acreage != ""){
-            this.profile = res
-          }
+          this.store.updateFarmerData(res)
+          this.store.farmerData$.subscribe((res:any) => {
+            if(res == "" ){
+              this.showProfileDialog()
+            }
+            else if(res.county != "" || res.society_name != "" || res.total_acreage != ""){
+              this.profile = res
+            }
+          })
         })
       }
       else if(this.user.user.type == "WAREHOUSER" || this.user.user.type == "ORIGINWAREHOUSER"){
