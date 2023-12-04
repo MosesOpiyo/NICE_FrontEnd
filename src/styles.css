@@ -811,7 +811,9 @@ opacity: .2;
   #hero .one .hero-btn:hover,
   .mobilehero-btn:hover,
   .error-container .error-link a:hover,
-  .register-btn a:hover,
+  .register-btn button:hover,
+  .register-cta .register-content button:hover,
+  .trip-container .cupping-container .cupping-text button:hover,
   .two .hero-btn:hover {
     background-color: #f7f7f7;
     color: #000000;

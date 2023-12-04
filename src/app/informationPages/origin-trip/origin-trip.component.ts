@@ -5,6 +5,7 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service'; 
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
+import { TripdialogueComponent } from '../tripdialogue/tripdialogue.component';
 
 @Component({
   selector: 'app-origin-trip',
@@ -130,6 +131,13 @@ export class OriginTripComponent implements OnInit {
    const dialogRef = this.dialog.open(SignUpComponent,{
      width: '25pc'
    }); 
+ }
+
+ showTripRegisterDialog() {
+  let dialogRef = this.dialog.open(TripdialogueComponent,{
+    width: '25pc',
+    maxHeight: '100vh',
+  })
  }
 
  ngOnInit(): void {

@@ -57,7 +57,7 @@
 
                   <div *ngIf="activatedTabIndex == 0" class="roasted">
                       
-                      <form action="" method="post">
+                      <form action="" method="post" ngNativeValidate>
                         <div class="option-list">
                             <select id="packsize" [(ngModel)]="quantityPrice" name="packsize" title="packsize" required>
                               <option value="" disabled selected>Choose Pack Size...</option>
@@ -150,7 +150,7 @@
                         </div>
                       </div>
 
-                      <form action="/" method="post">
+                      <form action="/" method="post" ngNativeValidate>
                         <div class="radio">
                           <div class="radio1">
                             <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff() checked>

@@ -17,7 +17,7 @@
             </div>
 
             <div class="register-btn">
-                <a href="">REGISTER NOW</a>
+                <button type="button" (click)="showRegisterDialog()">REGISTER NOW</button>
             </div>
         </div>
 
@@ -124,7 +124,7 @@
                     </ul> 
                 </div>
                 <div class="sponsor-btn">
-                    <a href="">Choose Sponsorship</a>
+                    <button type="button" (click)="showSponsorDialog('Platinum')">Choose Sponsorship</button>
                 </div>
             </div>
             
@@ -143,7 +143,7 @@
                     </ul> 
                 </div>
                 <div class="sponsor-btn">
-                    <a href="">Choose Sponsorship</a>
+                    <button type="button" (click)="showSponsorDialog('Gold')">Choose Sponsorship</button>
                 </div>
             </div>
 
@@ -161,7 +161,7 @@
                     </ul> 
                 </div>
                 <div class="sponsor-btn">
-                    <a href="">Choose Sponsorship</a>
+                    <button type="button" (click)="showSponsorDialog('Silver')">Choose Sponsorship</button>
                 </div>
             </div>
 
@@ -177,7 +177,7 @@
                     </ul> 
                 </div>
                 <div class="sponsor-btn">
-                    <a href="">Choose Sponsorship</a>
+                    <button type="button" (click)="showSponsorDialog('Prize')">Choose Sponsorship</button>
                 </div>
             </div>  
         </div>
@@ -233,7 +233,7 @@
         </div>
 
         <div class="exhibition-btn" data-aos="fade-up">
-            <a href="">Reserve your space</a>
+            <button type="button" (click)="showExhibitorDialog()">Reserve your space</button>
         </div>
     </div>
 
@@ -241,12 +241,12 @@
     <div class="register-cta" data-aos="fade-up">
         <div class="register-content">
             <p>Join us at the ultimate coffee experience</p>
-            <a href="">REGISTER NOW</a>
+            <button type="button" (click)="showRegisterDialog()">REGISTER NOW</button>
         </div>
     </div>
 
     <!-- CONTACT -->
-    <div class="contact-container" data-aos="fade-up">
+    <div class="contact-container">
         <div class="contact-header">
             <div class="contact-h2" data-aos="fade-up">
                 <h2>We would love <br> to hear from you</h2>
@@ -269,7 +269,7 @@
                 </iframe>
             </div>
 
-            <form class="form" id="form" action="" method="POST" data-aos="fade-up">
+            <form class="form" id="form" action="" method="POST" ngNativeValidate data-aos="fade-up">
                  <!-- HONEYPOT(to catch spammers )  -->
                 <input type="text" name="_honey" class="honeypot" title="honeypot">
     

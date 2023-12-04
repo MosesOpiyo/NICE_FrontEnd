@@ -60,7 +60,8 @@ export class SignUpComponent {
   showLoginDialog(){
     this.dialogRef.close()
     const dialogRef = this.dialog.open(LoginComponent,{
-      width: '25pc'
+      width: '25pc',
+      maxHeight: '90vh'
     });
   }
 
