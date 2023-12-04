@@ -7,13 +7,10 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 import { AuthService } from '../Auth/auth.service';
 import { CartService } from '../Service/Cart/cart.service';
 import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.component';
-<<<<<<< HEAD
 import { AuthenticationStoreService } from '../AuthServiceStore/authentication-store.service';
 import { CartStoreService } from '../Store/Cart/cart-store.service';
-=======
 import { ExhibitorsponsorComponent } from '../informationPages/exhibitorsponsor/exhibitorsponsor.component';
 import { TripdialogueComponent } from '../informationPages/tripdialogue/tripdialogue.component';
->>>>>>> 159d3567fb1b1fe8240d6b03dc7a0cd22d31a69f
 
 
 @Component({
