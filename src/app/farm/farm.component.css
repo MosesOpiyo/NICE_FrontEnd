@@ -37,19 +37,42 @@
   color: #67b0d1;
 }
 
-.farm-component {
+:host ::ng-deep footer {
   position: relative;
-  top: 140px;
-  overflow: hidden;
+  top: 76px;
+  /* bottom: 0; */
 }
 
+/* farm component container */
+.farm-component {
+  position: relative;
+  top: 76px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-bottom: 76px;
+}
+
+/* FARM ORIGIN HERO */
+.farmorigin-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  background-image: url("https://images.pexels.com/photos/51947/tuscany-grape-field-nature-51947.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+
 /* farm navbar */
-.farm-navbar {
-  background-color: #f6f6f6;
-  position: fixed;
+.farm-searchbar {
   width: 100%;
-  top: 68px;
-  z-index: 996;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -57,56 +80,35 @@
   gap: 2rem;
 }
 
-.farm-navbar > * {
+.farm-searchbar > * {
 padding: .5rem;
 }
 
-.farm-navbar .navbar-input {
+.farm-searchbar .navbar-input {
 width: 50%;
 }
 
-.farm-navbar .navbar-input .form-group {
+.farm-searchbar .navbar-input .form-group {
 width: 100%;
 display: flex;
 align-items: center;
 gap: .5rem;
 }
 
-.farm-navbar .navbar-input .form-group .form-control {
+.farm-searchbar .navbar-input .form-group .form-control {
 border-radius: 3px;
 width: 100%;
 padding: .5rem;
 border: 2px solid #0000004f;
 }
 
-.farm-navbar .search-icon {
+.farm-searchbar .search-icon {
 cursor: pointer;
 }
 
-.farm-navbar .search-icon i,
-.farm-navbar .cart-link i {
+.farm-searchbar .search-icon i,
+.farm-searchbar .cart-link i {
 font-size: 26px;
-}
-
-/* country-region selector */
-.selection {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  width: 70%;
-  margin-inline: auto;
-}
-
-.selection > * {
-  flex-basis: 100%;
-}
-
-.selection select {
-  padding: .5rem;
-  width: 100%;
-  cursor: pointer;
 }
 
 /* FARM LIST */
@@ -131,7 +133,8 @@ font-size: 26px;
   z-index: 1;
 }
 
-.places-card::after {
+.places-card::after,
+.farmorigin-hero::after {
   position: absolute;
   z-index: -1;
   content: "";
@@ -175,7 +178,7 @@ font-size: 26px;
 }
 
 @media (max-width: 600px) {
-  .farm-navbar .navbar-input {
+  .farm-searchbar .navbar-input {
     width: 70%;
   }
 
@@ -185,12 +188,12 @@ font-size: 26px;
 }
 
 @media (max-width: 425px) {
-  .farm-navbar .navbar-input {
+  .farm-searchbar .navbar-input {
     width: 90%;
   }
 
   @media (max-width: 600px) {
-    .farm-navbar .navbar-input {
+    .farm-searchbar .navbar-input {
       width: 70%;
     }
   

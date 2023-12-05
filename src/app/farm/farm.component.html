@@ -1,8 +1,19 @@
 <app-navbar></app-navbar>
 
 <section class="farm-component">
-    <!-- farm navbar -->
-    <div class="farm-navbar">
+    <!-- farm origin hero -->
+    <div class="farmorigin-hero">
+        <h2>
+            <i class="fa-solid fa-location-dot"></i>
+            KIAMBU,
+        </h2>
+        <p>
+            KENYA
+        </p>
+    </div>
+
+     <!-- farm searchbar -->
+     <div class="farm-searchbar">
 
         <div class="navbar-input">
       
@@ -15,18 +26,7 @@
       
     </div>
 
-    <!-- farm seclection by -->
-    <div class="selection">
-        <div class="country-selector">
-            <select class="crs-country" title="country" data-region-id="region" data-default-option="Select a country"></select>
-        </div>
-
-        <div class="region-selector">
-            <select id="region" title="region" data-blank-option="No country selected" data-default-option="Select a region"></select>
-        </div>
-        
-    </div>
-
+    <!-- farm-list -->
     <div class="farm-list">
         <a class="places-card geralds-place"  routerLink="/farm/1">
             <div class="places-header">
@@ -68,3 +68,5 @@
         </a>
     </div>
 </section>
+
+<app-footer></app-footer>

@@ -1733,32 +1733,27 @@ opacity: .2;
 
   /* CTA SECTION */
   .cta-container {
-    padding: 0rem 2rem;
     margin-bottom: 4rem;
-    display: flex;
-    gap: 2rem;
-  }
-
-  .cta-container > * {
-    flex-basis: 100%;
-    height: 550px;
+    display: grid;
+    width: 95%;
+    margin-inline: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 10px;
   }
 
   .cta-card {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
   }
 
-  .cta-card:hover{
-    cursor: pointer;
-  }
-
-  .cta-card:hover .cta-content::after {
+  .cta-card::after {
     content: '';
     height: 100%;
     width: 100%;
@@ -1772,29 +1767,17 @@ opacity: .2;
 
   .cta-card.one {
     background-image: url("https://images.pexels.com/photos/7506967/pexels-photo-7506967.jpeg?auto=compress&cs=tinysrgb&w=600");
-  }
-
-  .cta-card.one,
-  .cta-card.two {
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta-card.one::after,
-  .cta-card.two::after {
-    content: '';
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: #000000;
-    position: absolute;
-    opacity: .3;
-    z-index: -1;
+    grid-area: 1 / 1 / 3 / 2;
   }
 
   .cta-card.two {
     background-image: url("https://images.pexels.com/photos/4226867/pexels-photo-4226867.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .cta-card.three {
+    background-image: url("https://img.freepik.com/free-photo/closeup-glass-cold-coffee-with-bottle-background_181624-59418.jpg?w=900&t=st=1701761976~exp=1701762576~hmac=7996a4c62a08746cd63c05b2d8ff1bc24c900e19d750e3ee5373a5b954ffb35c");
+    grid-area: 2 / 2 / 3 / 3;
   }
 
   .cta-container .cta-content {
@@ -1807,8 +1790,9 @@ opacity: .2;
 
   .cta-container .cta-content p {
     color: #fff;
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 300;
+    line-height: 1.8rem;
   }
 
   .product-form .submit-btn {
@@ -1844,22 +1828,24 @@ opacity: .2;
   }
 
   /* CTA-CONTAINER MEDIA QUERIES */
-  @media (max-width: 768px) {
-    .cta-container {
-      padding-inline: .5rem;
-      gap: .5rem;
-    }
-  }
-
   @media (max-width: 600px) {
     .cta-container {
-      flex-wrap: wrap;
+      grid-template-columns: 1fr;
+      grid-template-rows: 350px 350px 350px;
     }
 
-    .cta-container > * {
-      height: 350px;
+    .cta-card.one {
+      grid-area: 1 / 1 / 2 / 2;
     }
-  }
+
+    .cta-card.two {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .cta-card.three {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+  } 
 
 
   /* MOST POPULAR SECTION */
@@ -2177,7 +2163,7 @@ opacity: .2;
   }
 
   /* media queries */  
-  @media (max-width: 1090px) {
+  @media (max-width: 1074px) {
     .white-responsive {
       color: white;
     }
@@ -2190,16 +2176,6 @@ opacity: .2;
 
     .sellercafe-container .seller .cta-image img {
       float: none;
-    }
-  }
-
-  @media (max-width: 827px) {
-    .white-responsive {
-      color: black;
-    }
-
-    .white-responsive2 {
-      color: white;
     }
   }
 
@@ -2239,7 +2215,7 @@ opacity: .2;
     .white,
     .white-responsive,
     .white-responsive2 {
-      color: black;
+      color: #212529;
     }
 
     .sellercafe-card .cta-content .cta-btn {
@@ -2265,7 +2241,7 @@ opacity: .2;
     }
   }
 
-  @media (min-width: 601px) {
+  @media (min-width: 901px) {
     .cafe #cta-content2 {
       display: flex;
       flex-direction: column;
@@ -2279,7 +2255,12 @@ opacity: .2;
   
     .cafe #cta-content2 p,
     .cafe #cta-content2 .cta-btn {
-      padding-right: 1rem;
+      padding-right: 3rem;
+    }
+
+    .cafe #cta-content2 p {
+      padding-left: 0;
+      text-align: end;
     }
   
     .cafe .cta-content .cta-btn {
@@ -2968,12 +2949,14 @@ opacity: .2;
   }
 
   /* TABBED INFO SECTION */
-  .product-component .farm-tab {
+  .product-component .farm-tab,
+  .farmdetails-component .farm-tab {
     border: 2px solid #0000003b;
     padding-block: .5rem;
   }
 
-  .product-component .farm-tab > * {
+  .product-component .farm-tab > *,
+  .farmdetails-component .farm-tab > * {
     margin-bottom: 1rem;
     /* border-block: 2px solid #0000003b; */
     height: 400px;
@@ -2988,7 +2971,10 @@ opacity: .2;
 
   .product-component .farm-tab .owners > *,
   .product-component .farm-tab .farmdetails > *,
-  .product-component .farm-tab .morefarmdetails > * {
+  .product-component .farm-tab .morefarmdetails > *,
+  .farmdetails-component .farm-tab .owners > *,
+  .farmdetails-component .farm-tab .farmdetails > *,
+  .farmdetails-component .farm-tab .morefarmdetails > * {
     /* border: 2px solid black; */
     flex-basis: 100%;
     padding: .5rem;
@@ -2996,13 +2982,18 @@ opacity: .2;
 
   .product-component .farm-tab .owners .owner-image,
   .product-component .farm-tab .farmdetails .farm-image,
-  .product-component .farm-tab .morefarmdetails .map {
+  .product-component .farm-tab .morefarmdetails .map,
+  .farmdetails-component .farm-tab .owners .owner-image,
+  .farmdetails-component .farm-tab .farmdetails .farm-image,
+  .farmdetails-component .farm-tab .morefarmdetails .map {
     width: 100%;
     height: 100%;
   }
 
   .product-component .farm-tab .owners .owner-image img,
-  .product-component .farm-tab .farmdetails .farm-image img {
+  .product-component .farm-tab .farmdetails .farm-image img,
+  .farmdetails-component .farm-tab .owners .owner-image img,
+  .farmdetails-component .farm-tab .farmdetails .farm-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -3011,56 +3002,69 @@ opacity: .2;
 
   .product-component .farm-tab .owners .owner-bio > *,
   .product-component .farm-tab .farmdetails .farm-bio > *,
-  .product-component .farm-tab .farmdetails .farm-origin > * {
+  .product-component .farm-tab .farmdetails .farm-origin > *,
+  .farmdetails-component .owners .owner-bio > *,
+  .farmdetails-component .farmdetails .farm-bio > *,
+  .farmdetails-component .farmdetails .farm-origin > * {
     margin-bottom: 1rem;
   }
 
-  .product-component .farm-tab .morefarmdetails {
+  .product-component .farm-tab .morefarmdetails,
+  .farmdetails-component .farm-tab .morefarmdetails {
     height: 450px;
   }
 
-  .product-component .farm-tab .morefarmdetails .map iframe {
+  .product-component .farm-tab .morefarmdetails .map iframe,
+  .farmdetails-component .farm-tab .morefarmdetails .map iframe {
     height: 100%;
     width: 100%;
     border: none;
   }
 
-  .product-component .morefarmdetails .history {
+  .product-component .morefarmdetails .history,
+  .farmdetails-component .morefarmdetails .history {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
   .product-component .reviews-tab > *,
-  .product-component .reviews-tab .rating-card > * {
+  .product-component .reviews-tab .rating-card > *,
+  .farmdetails-component .reviews-tab > *,
+  .farmdetails-component .reviews-tab .rating-card > * {
     /* border: 2px solid #000000; */
     margin-bottom: 1rem;
     padding: .5rem;
   }
 
-  .product-component .reviews-tab i {
+  .product-component .reviews-tab i,
+  .farmdetails-component .reviews-tab i {
     color: orange;
   }
 
-  .product-component .reviews-tab .rating-card {
+  .product-component .reviews-tab .rating-card,
+  .farmdetails-component .reviews-tab .rating-card {
     padding: .5rem;
     border: 1px solid rgba(0, 0, 0, 0.349);
   }
 
-  .product-component .reviews-tab .rating-card .user-icon {
+  .product-component .reviews-tab .rating-card .user-icon,
+  .farmdetails-component .reviews-tab .rating-card .user-icon {
     width: 200px;
     display: flex;
     align-items: center;
     gap: .5rem;
   }
 
-  .product-component .reviews-tab .rating-card .user-icon .icon {
+  .product-component .reviews-tab .rating-card .user-icon .icon,
+  .farmdetails-component.reviews-tab .rating-card .user-icon .icon {
     padding: .5rem;
     background-color: #000000;
     color: #fff;
   }
 
-  .product-component .reviews-tab .rating-card .user-rating {
+  .product-component .reviews-tab .rating-card .user-rating,
+  .farmdetails-component .reviews-tab .rating-card .user-rating {
     display: flex;
     gap: .5rem;
   }
@@ -3128,23 +3132,29 @@ opacity: .2;
       object-fit: contain;
     }
 
-    .product-component .farm-tab > * {
+    .product-component .farm-tab > *,
+    .farmdetails-component .farm-tab > * {
       border-block: 2px solid #0000003b;
       height: auto;
       flex-direction: column;
     }
 
-    .product-component .farm-tab .owners {
+    .product-component .farm-tab .owners,
+    .farmdetails-component .farm-tab .owners {
       border-top: none;
     }
 
     .product-component .farm-tab .owners .owner-image img,
-    .product-component .farm-tab .farmdetails .farm-image img {
+    .product-component .farm-tab .farmdetails .farm-image img,
+    .farmdetails-component .farm-tab .owners .owner-image img,
+    .farmdetails-component .farm-tab .farmdetails .farm-image img  {
       height: 250px;
     }
 
     .product-component .farm-tab .farmdetails,
-    .product-component .farm-tab .morefarmdetails {
+    .product-component .farm-tab .morefarmdetails,
+    .farmdetails-component .farm-tab .farmdetails,
+    .farmdetails-component .farm-tab .morefarmdetails {
       height: auto;
     }
   }
@@ -3157,7 +3167,8 @@ opacity: .2;
   }
 
   @media (max-width: 375px) {
-    .product-component .reviews-tab .rating-card .user-rating {
+    .product-component .reviews-tab .rating-card .user-rating,
+    .farmdetails-component .reviews-tab .rating-card .user-rating {
       flex-direction: column;
       gap: 0.1rem;
     }

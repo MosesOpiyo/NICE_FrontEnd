@@ -48,6 +48,8 @@ import { ExhibitorsComponent } from './informationPages/exhibitors/exhibitors.co
 import { ExhibitorsponsorComponent } from './informationPages/exhibitorsponsor/exhibitorsponsor.component';
 import { TripdialogueComponent } from './informationPages/tripdialogue/tripdialogue.component';
 import { TripdetailsComponent } from './informationPages/tripdetails/tripdetails.component';
+import { OriginsComponent } from './origins/origins.component';
+import { OrigindetailsComponent } from './origindetails/origindetails.component';
 // register Swiper custom elements
 register();
 
@@ -80,7 +82,9 @@ register();
     ExhibitorsComponent,
     ExhibitorsponsorComponent,
     TripdialogueComponent,
-    TripdetailsComponent
+    TripdetailsComponent,
+    OriginsComponent,
+    OrigindetailsComponent
   ],
   entryComponents:[LoginComponent],
   imports: [

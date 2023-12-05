@@ -20,6 +20,15 @@ export class FarmdetailsComponent {
   cloudinaryUrl = environment.CLOUDINARY_URL;
   total:any;
 
+  // tabbed-info tabs
+  tabs2: string [] = ['Seller Info', 'Reviews'];
+  activatedTabIndex2: number = 0;
+ 
+  // detailedtabs tab index
+  tabChange2(tabIndex: number) {
+    this.activatedTabIndex2 = tabIndex;
+  }
+
   constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router, private product:ProductsService){}
 
   //Variety sidenav
