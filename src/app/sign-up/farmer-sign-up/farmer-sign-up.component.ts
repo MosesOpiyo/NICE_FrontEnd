@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IPasswordStrengthMeterService } from 'angular-password-strength-meter';
+import { VerificationComponent } from 'src/app/verification/verification.component';
 
 @Component({
   selector: 'app-farmer-sign-up',
@@ -24,6 +25,7 @@ export class FarmerSignUpComponent {
   email: any;
   password: any;
   confirm_password:any
+  is_estate:any
   is_producer:any;
   is_warehouser:any;
   isPasswordVisible = false;
@@ -46,15 +48,20 @@ export class FarmerSignUpComponent {
       form.append('username',this.username),
       form.append('email',this.email),
       form.append('password',this.password),
-      this.service.farmerRegister(form)
+      form.append('is_estate',this.is_estate)
+      this.service.farmerRegister(form,this.email)
       this.dialogRef.close()
     }
    
   }
   
+  
 
   togglePasswordVisibility() {
   this.isPasswordVisible = !this.isPasswordVisible;
   }
+  toggleIsEstateFarmer() {
+    this.is_estate = !this.is_estate;
+    }
 
 }
