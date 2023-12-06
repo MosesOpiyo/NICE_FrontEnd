@@ -1,0 +1,14 @@
+<div class="login-container">
+    <h1><img src="../../assets/images/d90a1c41c1294e9ebd3e6cba576ae35f.png" alt=""></h1>
+    <h2>Verification</h2>
+    <p>A code has been sent to {{data.email}}.</p>
+
+    <form (ngSubmit)="verifyCode()">
+        <div class="email-input">
+            <label for="email">Code</label>
+            <input id="email" name="code" placeholder="code" [(ngModel)]="code" class="form-control form-control"
+                type="text" required pattern="\d{5}">
+        </div>
+        <button mat-raised-button type="submit">Verify</button>    
+    </form>
+</div>
