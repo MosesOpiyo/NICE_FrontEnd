@@ -1739,7 +1739,7 @@ opacity: .2;
     margin-inline: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 300px 300px;
-    gap: 10px;
+    /* gap: 10px; */
   }
 
   .cta-card {
@@ -2607,6 +2607,11 @@ opacity: .2;
   .shop-component .products .sidebar label {
     cursor: pointer;
     color: #000000c7;
+    transition: all 350ms ease-in-out;
+  }
+
+  .shop-component .products .sidebar label:hover {
+    color: #b9850b;
   }
   
   .shop-component .products .sidebar > *,
@@ -2664,30 +2669,46 @@ opacity: .2;
       width: 100%;
       margin-bottom: 1rem;
       box-shadow: 0 0 2px 1px #e6e6e6;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
   
-    .shop-component .product-card .product-item > *,
+    /* .shop-component .product-card .product-item > *,
     .farmdetails-component .product-card .product-item > * {
-      /* border: 2px solid green; */
+      border: 2px solid green;
       margin-bottom: .7rem;
-    }
+    } */
   
     .shop-component .product-card p,
     .farmdetails-component .product-card p {
       line-height: 1rem;
+      color: #000000d1;
     }
     
     .shop-component .product-item,
     .farmdetails-component .product-item {
-      text-align: center;
+      /* text-align: center; */
       /* border: 2px solid grey; */
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
   
     .shop-component .product-item .product-name,
     .shop-component .product-item .farm-name,
+    .shop-component .product-item .product-details,
     .farmdetails-component .product-item .product-name,
-    .farmdetails-component .product-item .farm-name {
+    .farmdetails-component .product-item .farm-name,
+    .farmdetails-component .product-item .product-details {
       padding-inline: .5rem;
+    }
+
+    .shop-component .product-item .product-name .name p,
+    .farmdetails-component .product-item .product-name .name p {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.5rem;
     }
     
     .shop-component .product-image,
@@ -2738,7 +2759,17 @@ opacity: .2;
   
     .shop-component .productlist .productlist-content .product-addactions a,
     .farmdetails-component .productlist .productlist-content .product-addactions a {
-      padding: 3px 5px;
+      padding: 10px;
+      color: #000000;
+      background-color: #93c572;
+      font-size: 1rem;
+      transition: all 250ms ease-in-out;
+    }
+
+    .shop-component .productlist .productlist-content .product-addactions a:hover,
+    .farmdetails-component .productlist .productlist-content .product-addactions a:hover {
+      color: #fff;
+      background-color: #0c052b;
     }
   
     .shop-component .products-pagination,
@@ -2873,6 +2904,11 @@ opacity: .2;
   .product-details > * {
     /* border: 2px solid black; */
     flex-basis: 100%;
+  }
+
+  .shop-component .product-item .product-details > *,
+  .farmdetails-component .product-item .product-details > *{
+    flex-basis: auto;
   }
 
   .product-component .product-image {
