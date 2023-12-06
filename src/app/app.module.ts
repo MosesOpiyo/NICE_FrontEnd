@@ -47,6 +47,7 @@ import { SponsorshipComponent } from './informationPages/sponsorship/sponsorship
 import { ExhibitorsComponent } from './informationPages/exhibitors/exhibitors.component';
 import { ExhibitorsponsorComponent } from './informationPages/exhibitorsponsor/exhibitorsponsor.component';
 import { TripdialogueComponent } from './informationPages/tripdialogue/tripdialogue.component';
+import { VerificationComponent } from './verification/verification.component';
 // register Swiper custom elements
 register();
 
@@ -78,7 +79,8 @@ register();
     SponsorshipComponent,
     ExhibitorsComponent,
     ExhibitorsponsorComponent,
-    TripdialogueComponent
+    TripdialogueComponent,
+    VerificationComponent
   ],
   entryComponents:[LoginComponent],
   imports: [
