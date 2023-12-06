@@ -1,12 +1,10 @@
 <div *ngIf="!is_producer && !is_warehouser" class="signup-container">
-    <!-- <h1><img src="../../assets/images/d90a1c41c1294e9ebd3e6cba576ae35f.png" alt=""></h1> -->
     <h2>Register As A Farmer</h2>
-    <h4>Produce and Sell with us.</h4>
 
     <form (ngSubmit)="registerBuyer()">
         <div class="signup-username">
-            <label for="username">Username</label>
-            <input id="username" name="username" [(ngModel)]="username" placeholder="username" class="form-control form-control"
+            <label for="username">Full Name</label>
+            <input id="username" name="username" [(ngModel)]="username" placeholder="Full Name" class="form-control form-control"
                 type="username" required>
         </div>
 
@@ -36,7 +34,7 @@
                 <input type="checkbox"(click)="togglePasswordVisibility()" id="myInput" title="visibility">
             </div>
             <div>
-                <span>Show Password</span>
+                <label for="myInput">&nbsp;Show Password</label>
             </div>
         </div>
         

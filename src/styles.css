@@ -814,7 +814,11 @@ opacity: .2;
   .register-btn button:hover,
   .register-cta .register-content button:hover,
   .trip-container .cupping-container .cupping-text button:hover,
-  .two .hero-btn:hover {
+  .two .hero-btn:hover,
+  .cta-container .cta-content a:hover,
+  .popular-header a:hover,
+  .sellercafe-card .cta-content a:hover,
+  .short-btn .cta-btn a:hover {
     background-color: #f7f7f7;
     color: #000000;
     letter-spacing: 3px;
@@ -1244,11 +1248,12 @@ opacity: .2;
     display: grid;
     width: 95%;
     margin: auto;
-    grid-template-areas: "light lightmed dark"
-                         "med    meddark dark";
+    grid-template-areas: "light   lightmed med"
+                         "meddark  dark fruity"
+                         ;
     grid-template-rows: 250px 250px;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px 10px;
+    gap: 10px;
     padding-top: .5rem;
   }
 
@@ -1274,15 +1279,18 @@ opacity: .2;
     background-position: center;
     background-repeat: no-repeat;
     transition: all .7s ease;
-  }
-
-  .roast-card:hover .roast-img {
     transform: scale(1.3) rotate(3deg);
     background-color: #888;
     background-blend-mode: multiply;
   }
 
-  .roast-card:hover p {
+  .roast-card:hover .roast-img {
+    transform: scale(1) rotate(0deg);
+    background-color: #888;
+    background-blend-mode: multiply;
+  }
+
+  .roast-card p {
     letter-spacing: 3px;
   }
 
@@ -1291,15 +1299,15 @@ opacity: .2;
   }
 
   .light2 .roast-img {
-    background-image: url("./assets/img/roast/cbeans2.jpg");
+    background-image: url("https://img.freepik.com/free-photo/top-view-raspberries-with-leaves-bowl-cup-tea-with-raspberries-green-surface_141793-16225.jpg?w=740&t=st=1701698392~exp=1701698992~hmac=a36c26991f63dae1f3b39688468a14a1c372f430898f9e0e9f3b7bf7612fedb2");
   }
 
   .lightmed2 {
     grid-area: lightmed;
   }
-
+  
   .lightmed2 .roast-img {
-    background-image: url("./assets/img/roast/cbeans5.avif");
+    background-image: url("https://img.freepik.com/free-photo/front-view-mokachino-with-whipped-cream-chocolate-table_141793-4644.jpg?w=740&t=st=1701698022~exp=1701698622~hmac=882e0c9257ddb84937f6ba410327af541d66319955c0b045c97f808a70db9b56");
   }
 
   .med2 {
@@ -1307,7 +1315,7 @@ opacity: .2;
   }
 
   .med2 .roast-img {
-    background-image: url("./assets/img/roast/cbeans4.jpg");
+    background-image: url("https://img.freepik.com/free-photo/blackcurrant-confiture-with-glass-juice-white_114579-23281.jpg?w=740&t=st=1701697742~exp=1701698342~hmac=ade319e8a96095fe6534e1e482aefd1b5732a7d285f281fe36d574c72ee541c3");
   }
 
   .meddark2 {
@@ -1315,15 +1323,23 @@ opacity: .2;
   }
 
   .meddark2 .roast-img {
-    background-image: url("./assets/img/roast/coffeebeans.jpg");
+    background-image: url("https://img.freepik.com/free-photo/delicious-red-apples-studio_23-2150811033.jpg?t=st=1701700925~exp=1701704525~hmac=34df08909152c472a98fa96e35a817208706804a3be9c6e2324e38c9e794f6b9&w=740");
   }
 
   .dark2 {
     grid-area: dark;
   }
-
+  
   .dark2 .roast-img {
-    background-image: url("./assets/img/roast/dark2.jpg");
+    background-image: url("https://img.freepik.com/free-photo/half-top-view-cup-tea-with-fresh-lemons-white-desk-fruit-fresh-citrus-exotic_140725-39951.jpg?w=360&t=st=1701697580~exp=1701698180~hmac=251e549a6f985367beec08cba34e1eaf3699d6181f6e24f2c9d4089ca03dc50f");
+  }
+
+  .fruity {
+    grid-area: fruity;
+  }
+  
+  .fruity .roast-img { 
+    background-image: url("https://img.freepik.com/free-photo/office-desktop-with-coffee-cup-cookies_23-2148166782.jpg?w=360&t=st=1701698986~exp=1701699586~hmac=1e7413796b992bd0db1fb00a29adedd0dfa182d846f956728adf217bfcf8e330");
   }
 
 
@@ -1331,21 +1347,22 @@ opacity: .2;
   @media (max-width: 768px) {
    .roast-details {
      grid-template-areas: "light lightmed"
-                          "dark  dark"
-                          "med   meddark";
+                          "med  meddark"
+                          "dark   fruity";
      grid-template-rows: repeat(3, 250px);
      grid-template-columns: 1fr 1fr;
    }
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 425px) {
     .roast-details {
       grid-template-areas: "light"
                            "lightmed"
                            "med"
                            "meddark"
-                           "dark";
-      grid-template-rows: repeat(5, 250px);
+                           "dark"
+                           "fruity";
+      grid-template-rows: repeat(6, 250px);
       grid-template-columns: 1fr;
     }
    }
@@ -1716,32 +1733,27 @@ opacity: .2;
 
   /* CTA SECTION */
   .cta-container {
-    padding: 0rem 2rem;
     margin-bottom: 4rem;
-    display: flex;
-    gap: 2rem;
-  }
-
-  .cta-container > * {
-    flex-basis: 100%;
-    height: 550px;
+    display: grid;
+    width: 95%;
+    margin-inline: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 10px;
   }
 
   .cta-card {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
   }
 
-  .cta-card:hover{
-    cursor: pointer;
-  }
-
-  .cta-card:hover .cta-content::after {
+  .cta-card::after {
     content: '';
     height: 100%;
     width: 100%;
@@ -1755,29 +1767,17 @@ opacity: .2;
 
   .cta-card.one {
     background-image: url("https://images.pexels.com/photos/7506967/pexels-photo-7506967.jpeg?auto=compress&cs=tinysrgb&w=600");
-  }
-
-  .cta-card.one,
-  .cta-card.two {
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta-card.one::after,
-  .cta-card.two::after {
-    content: '';
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: #000000;
-    position: absolute;
-    opacity: .3;
-    z-index: -1;
+    grid-area: 1 / 1 / 3 / 2;
   }
 
   .cta-card.two {
     background-image: url("https://images.pexels.com/photos/4226867/pexels-photo-4226867.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .cta-card.three {
+    background-image: url("https://img.freepik.com/free-photo/closeup-glass-cold-coffee-with-bottle-background_181624-59418.jpg?w=900&t=st=1701761976~exp=1701762576~hmac=7996a4c62a08746cd63c05b2d8ff1bc24c900e19d750e3ee5373a5b954ffb35c");
+    grid-area: 2 / 2 / 3 / 3;
   }
 
   .cta-container .cta-content {
@@ -1790,8 +1790,9 @@ opacity: .2;
 
   .cta-container .cta-content p {
     color: #fff;
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 300;
+    line-height: 1.8rem;
   }
 
   .product-form .submit-btn {
@@ -1827,22 +1828,24 @@ opacity: .2;
   }
 
   /* CTA-CONTAINER MEDIA QUERIES */
-  @media (max-width: 768px) {
-    .cta-container {
-      padding-inline: .5rem;
-      gap: .5rem;
-    }
-  }
-
   @media (max-width: 600px) {
     .cta-container {
-      flex-wrap: wrap;
+      grid-template-columns: 1fr;
+      grid-template-rows: 350px 350px 350px;
     }
 
-    .cta-container > * {
-      height: 350px;
+    .cta-card.one {
+      grid-area: 1 / 1 / 2 / 2;
     }
-  }
+
+    .cta-card.two {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .cta-card.three {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+  } 
 
 
   /* MOST POPULAR SECTION */
@@ -2160,7 +2163,7 @@ opacity: .2;
   }
 
   /* media queries */  
-  @media (max-width: 1090px) {
+  @media (max-width: 1074px) {
     .white-responsive {
       color: white;
     }
@@ -2173,16 +2176,6 @@ opacity: .2;
 
     .sellercafe-container .seller .cta-image img {
       float: none;
-    }
-  }
-
-  @media (max-width: 827px) {
-    .white-responsive {
-      color: black;
-    }
-
-    .white-responsive2 {
-      color: white;
     }
   }
 
@@ -2222,7 +2215,7 @@ opacity: .2;
     .white,
     .white-responsive,
     .white-responsive2 {
-      color: black;
+      color: #212529;
     }
 
     .sellercafe-card .cta-content .cta-btn {
@@ -2248,7 +2241,7 @@ opacity: .2;
     }
   }
 
-  @media (min-width: 601px) {
+  @media (min-width: 901px) {
     .cafe #cta-content2 {
       display: flex;
       flex-direction: column;
@@ -2262,7 +2255,12 @@ opacity: .2;
   
     .cafe #cta-content2 p,
     .cafe #cta-content2 .cta-btn {
-      padding-right: 1rem;
+      padding-right: 3rem;
+    }
+
+    .cafe #cta-content2 p {
+      padding-left: 0;
+      text-align: end;
     }
   
     .cafe .cta-content .cta-btn {
@@ -2533,7 +2531,7 @@ opacity: .2;
     flex-direction: column;
     gap: .5rem;
     align-items: center;
-    border-top: 2px solid #55596d78;
+    /* border-top: 2px solid #55596d78; */
     padding-block: 2rem;
     text-align: center;
   }
@@ -2588,21 +2586,27 @@ opacity: .2;
     /* border: 2px solid black; */
     position: relative;
     display: flex;
-    top: 140px;
-    margin-bottom: 200px;
+    /* top: 140px; */
+    top: 76px;
+    margin-bottom: 152px;
   }
   
   /* sidebar */
   .shop-component .products .sidebar {
-    border-right: 2px solid #0000003d;
+    /* border-right: 2px solid #0000003d; */
     width: 20%;
-    padding: 2rem 1rem;
+    padding: .2rem 1rem;
     position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
-    top: 140px;
+    top: 76px;
     bottom: 0;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 76px);
+  }
+
+  .shop-component .products .sidebar label {
+    cursor: pointer;
+    color: #000000c7;
   }
   
   .shop-component .products .sidebar > *,
@@ -2649,7 +2653,7 @@ opacity: .2;
       padding: .5rem;
       display: grid;
       width: 100%;
-      grid: repeat(7, 1fr) / repeat(4, 1fr);
+      grid: auto / repeat(4, 1fr);
       justify-content: center;
       gap: .5rem;
     }
@@ -2945,12 +2949,14 @@ opacity: .2;
   }
 
   /* TABBED INFO SECTION */
-  .product-component .farm-tab {
+  .product-component .farm-tab,
+  .farmdetails-component .farm-tab {
     border: 2px solid #0000003b;
     padding-block: .5rem;
   }
 
-  .product-component .farm-tab > * {
+  .product-component .farm-tab > *,
+  .farmdetails-component .farm-tab > * {
     margin-bottom: 1rem;
     /* border-block: 2px solid #0000003b; */
     height: 400px;
@@ -2965,7 +2971,10 @@ opacity: .2;
 
   .product-component .farm-tab .owners > *,
   .product-component .farm-tab .farmdetails > *,
-  .product-component .farm-tab .morefarmdetails > * {
+  .product-component .farm-tab .morefarmdetails > *,
+  .farmdetails-component .farm-tab .owners > *,
+  .farmdetails-component .farm-tab .farmdetails > *,
+  .farmdetails-component .farm-tab .morefarmdetails > * {
     /* border: 2px solid black; */
     flex-basis: 100%;
     padding: .5rem;
@@ -2973,13 +2982,18 @@ opacity: .2;
 
   .product-component .farm-tab .owners .owner-image,
   .product-component .farm-tab .farmdetails .farm-image,
-  .product-component .farm-tab .morefarmdetails .map {
+  .product-component .farm-tab .morefarmdetails .map,
+  .farmdetails-component .farm-tab .owners .owner-image,
+  .farmdetails-component .farm-tab .farmdetails .farm-image,
+  .farmdetails-component .farm-tab .morefarmdetails .map {
     width: 100%;
     height: 100%;
   }
 
   .product-component .farm-tab .owners .owner-image img,
-  .product-component .farm-tab .farmdetails .farm-image img {
+  .product-component .farm-tab .farmdetails .farm-image img,
+  .farmdetails-component .farm-tab .owners .owner-image img,
+  .farmdetails-component .farm-tab .farmdetails .farm-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -2988,56 +3002,69 @@ opacity: .2;
 
   .product-component .farm-tab .owners .owner-bio > *,
   .product-component .farm-tab .farmdetails .farm-bio > *,
-  .product-component .farm-tab .farmdetails .farm-origin > * {
+  .product-component .farm-tab .farmdetails .farm-origin > *,
+  .farmdetails-component .owners .owner-bio > *,
+  .farmdetails-component .farmdetails .farm-bio > *,
+  .farmdetails-component .farmdetails .farm-origin > * {
     margin-bottom: 1rem;
   }
 
-  .product-component .farm-tab .morefarmdetails {
+  .product-component .farm-tab .morefarmdetails,
+  .farmdetails-component .farm-tab .morefarmdetails {
     height: 450px;
   }
 
-  .product-component .farm-tab .morefarmdetails .map iframe {
+  .product-component .farm-tab .morefarmdetails .map iframe,
+  .farmdetails-component .farm-tab .morefarmdetails .map iframe {
     height: 100%;
     width: 100%;
     border: none;
   }
 
-  .product-component .morefarmdetails .history {
+  .product-component .morefarmdetails .history,
+  .farmdetails-component .morefarmdetails .history {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
   .product-component .reviews-tab > *,
-  .product-component .reviews-tab .rating-card > * {
+  .product-component .reviews-tab .rating-card > *,
+  .farmdetails-component .reviews-tab > *,
+  .farmdetails-component .reviews-tab .rating-card > * {
     /* border: 2px solid #000000; */
     margin-bottom: 1rem;
     padding: .5rem;
   }
 
-  .product-component .reviews-tab i {
+  .product-component .reviews-tab i,
+  .farmdetails-component .reviews-tab i {
     color: orange;
   }
 
-  .product-component .reviews-tab .rating-card {
+  .product-component .reviews-tab .rating-card,
+  .farmdetails-component .reviews-tab .rating-card {
     padding: .5rem;
     border: 1px solid rgba(0, 0, 0, 0.349);
   }
 
-  .product-component .reviews-tab .rating-card .user-icon {
+  .product-component .reviews-tab .rating-card .user-icon,
+  .farmdetails-component .reviews-tab .rating-card .user-icon {
     width: 200px;
     display: flex;
     align-items: center;
     gap: .5rem;
   }
 
-  .product-component .reviews-tab .rating-card .user-icon .icon {
+  .product-component .reviews-tab .rating-card .user-icon .icon,
+  .farmdetails-component.reviews-tab .rating-card .user-icon .icon {
     padding: .5rem;
     background-color: #000000;
     color: #fff;
   }
 
-  .product-component .reviews-tab .rating-card .user-rating {
+  .product-component .reviews-tab .rating-card .user-rating,
+  .farmdetails-component .reviews-tab .rating-card .user-rating {
     display: flex;
     gap: .5rem;
   }
@@ -3105,23 +3132,29 @@ opacity: .2;
       object-fit: contain;
     }
 
-    .product-component .farm-tab > * {
+    .product-component .farm-tab > *,
+    .farmdetails-component .farm-tab > * {
       border-block: 2px solid #0000003b;
       height: auto;
       flex-direction: column;
     }
 
-    .product-component .farm-tab .owners {
+    .product-component .farm-tab .owners,
+    .farmdetails-component .farm-tab .owners {
       border-top: none;
     }
 
     .product-component .farm-tab .owners .owner-image img,
-    .product-component .farm-tab .farmdetails .farm-image img {
+    .product-component .farm-tab .farmdetails .farm-image img,
+    .farmdetails-component .farm-tab .owners .owner-image img,
+    .farmdetails-component .farm-tab .farmdetails .farm-image img  {
       height: 250px;
     }
 
     .product-component .farm-tab .farmdetails,
-    .product-component .farm-tab .morefarmdetails {
+    .product-component .farm-tab .morefarmdetails,
+    .farmdetails-component .farm-tab .farmdetails,
+    .farmdetails-component .farm-tab .morefarmdetails {
       height: auto;
     }
   }
@@ -3134,7 +3167,8 @@ opacity: .2;
   }
 
   @media (max-width: 375px) {
-    .product-component .reviews-tab .rating-card .user-rating {
+    .product-component .reviews-tab .rating-card .user-rating,
+    .farmdetails-component .reviews-tab .rating-card .user-rating {
       flex-direction: column;
       gap: 0.1rem;
     }

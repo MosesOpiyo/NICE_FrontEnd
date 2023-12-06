@@ -155,6 +155,8 @@
       text-align: center;
       position: relative;
       z-index: 1;
+      margin-bottom: 2.5rem;
+      background-attachment: fixed;
     }
 
     .short-container::after {
@@ -167,10 +169,11 @@
       position: absolute;
       opacity: .3;
       z-index: -1;
+      background-attachment: fixed;
     }
 
     .short-container .short-content h2 {
-      font-size: 4.5rem;
+      font-size: 4rem;
       color: #f7f8fa;
       line-height: 3.2rem;
       font-weight: 300;
@@ -184,6 +187,101 @@
 
     .short-btn .cta-btn a {
       font-size: 1.2rem;
+    }
+
+    @media (min-width: 1319px) {
+      .cafe span.roastwhite {
+        color: #ffffff;
+      }
+    }
+
+    @media (min-width:917px) and (max-width: 1200px) {
+      .cafe span.awhite {
+        color: #ffffff;
+      }
+    }
+
+    @media (min-width: 901px) and (max-width: 1135px) {
+      .cafe span.orwhite {
+        color: #ffffff;
+      }
+    }
+
+    @media (min-width: 901px) and (max-width: 1025px) {
+      .cafe span.cafewhite {
+        color: #ffffff;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .white,
+      .white-responsive {
+        color: #212529;
+      }
+
+      .sellercafe-card .cta-content h4 {
+        right: 0;
+      }
+
+      .sellercafe-card.cafe .cta-content h4 {
+        padding-right: 1rem;
+      }
+
+      .sellercafe-card.seller .cta-content h4 {
+        padding-left: 1rem;
+      }
+
+      .sellercafe-card.cafe #cta-content2 {
+        text-align: end;
+      }
+
+      .sellercafe-card.cafe .cta-content p {
+        margin-left: auto;
+        padding: 0 3rem 0 0;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .sellercafe-card.cafe .cta-content a:hover {
+        letter-spacing: 0px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sellercafe-card .cta-content .cta-btn {
+        padding: 1rem;
+      }
+
+      .sellercafe-card .cta-content p {
+        padding-left: 1rem;
+      }
+
+      .sellercafe-card.cafe .cta-content p {
+        padding: 0 1rem 0 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sellercafe-card.seller .cta-content h4,
+      .sellercafe-card .cta-content p {
+        padding-left: 0;
+      }
+  
+      .sellercafe-card .cta-content .cta-btn {
+        padding: 1rem 0;
+      }
+  
+      .sellercafe-card.cafe .cta-content h4 {
+        padding-right: 0;
+      }
+  
+      .sellercafe-card.cafe #cta-content2 {
+        text-align: center;
+      }
+  
+      .sellercafe-card.cafe .cta-content p {
+        padding: 0;
+      }
     }
 
     @media (max-width: 320px) {

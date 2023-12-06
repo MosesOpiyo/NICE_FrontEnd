@@ -16,6 +16,9 @@ import { AboutComponent } from './informationPages/about/about.component';
 import { AttributionsComponent } from './informationPages/attributions/attributions.component';
 import { FarmComponent } from './farm/farm.component';
 import { FarmdetailsComponent } from './farmdetails/farmdetails.component';
+import { TripdetailsComponent } from './informationPages/tripdetails/tripdetails.component';
+import { OriginsComponent } from './origins/origins.component';
+import { OrigindetailsComponent } from './origindetails/origindetails.component';
 
 
 const routes: Routes = [
@@ -27,13 +30,16 @@ const routes: Routes = [
   {path:'Origin-Trip',component:OriginTripComponent},
   {path: 'Cart', component:CartComponent},
   {path: 'Products', component:ProductsComponent},
-  {path: 'Products/:id', component: ProductDetailsComponent },
-  { path: 'Products/:productId', component: ProductDetailsComponent },
-  { path: '404', component: NotfoundComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'attributions', component: AttributionsComponent },
-  { path: 'farm', component: FarmComponent },
-  { path: 'farm/:farmId', component:FarmdetailsComponent }
+  {path: 'Products/:id', component: ProductDetailsComponent},
+  {path: 'Products/:productId', component: ProductDetailsComponent},
+  {path: '404', component: NotfoundComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'attributions', component: AttributionsComponent},
+  {path: 'farms/:originId', component: FarmComponent},
+  {path: 'farm/:farmId', component:FarmdetailsComponent},
+  {path: 'trip-details', component: TripdetailsComponent},
+  {path: 'origins', component: OriginsComponent},
+  {path: 'origin/:originId', component: OrigindetailsComponent}
 
 ];
 

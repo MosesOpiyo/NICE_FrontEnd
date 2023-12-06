@@ -9,6 +9,10 @@
     font-size: 1.6rem;
 }
 
+.footer-section a:hover {
+    color: #00d1ff;
+}
+
 @media (max-width: 320px) {
     .footer-section .payment {
         flex-wrap: wrap;

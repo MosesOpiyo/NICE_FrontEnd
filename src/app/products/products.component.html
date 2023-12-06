@@ -1,12 +1,14 @@
 <app-navbar></app-navbar>
-<app-productsnavbar (dataToParent)="handleDataFromChild($event)"></app-productsnavbar>
 
 <section class="shop-component">
     <div class="products">
+      <!-- sidebar -->
       <div class="sidebar">
+        <app-productsnavbar (dataToParent)="handleDataFromChild($event)"></app-productsnavbar>
+        
         <div>
           <div class="widget-title" (click)=toggleVarietyOn() >
-            <h2>Coffee Variety&nbsp;
+            <h2>Coffee Profile&nbsp;
               <i *ngIf="!isShowVariety" class="fa-solid fa-chevron-down"></i>
               <i *ngIf="isShowVariety" class="fa-solid fa-chevron-up"></i>
             </h2>
@@ -15,39 +17,39 @@
           <ul *ngIf="isShowVariety">
             <li class="customRadio">
               <input type="radio" value="Variety1" id="Variety1" name="variety"  />
-              <label for="Variety1"><span><span></span></span>Variety 1</label>
+              <label for="Variety1"><span><span></span></span>Bright acidity</label>
             </li>
 
             <li class="customRadio">
               <input type="radio" value="Variety2" id="Variety2" name="variety"  />
-              <label for="Variety2"><span><span></span></span>Variety 2</label>
+              <label for="Variety2"><span><span></span></span>Lemon</label>
             </li>
 
             <li class="customRadio">
               <input type="radio" value="Variety2" id="Variety3" name="variety"  />
-              <label for="Variety3"><span><span></span></span>Variety 3</label>
+              <label for="Variety3"><span><span></span></span>Blackcurrant</label>
             </li>
 
             <li class="customRadio">
               <input type="radio" value="Variety2" id="Variety4" name="variety"  />
-              <label for="Variety4"><span><span></span></span>Variety 4</label>
+              <label for="Variety4"><span><span></span></span>Chocolatey</label>
             </li>
 
             <li class="customRadio">
               <input type="radio" value="Variety2" id="Variety5" name="variety"  />
-              <label for="Variety5"><span><span></span></span>Variety 5</label>
+              <label for="Variety5"><span><span></span></span>Raspberry</label>
             </li>
 
             <li class="customRadio">
               <input type="radio" value="Variety2" id="Variety6" name="variety"  />
-              <label for="Variety6"><span><span></span></span>Variety 6</label>
+              <label for="Variety6"><span><span></span></span>Fruity</label>
             </li>
           </ul>
         </div>
 
         <div>
           <div class="widget-title" (click)=toggleFarmsOn()>
-            <h2>Coffee Farms&nbsp;
+            <h2>Coffee Origin&nbsp;
               <i *ngIf="!isShowFarms" class="fa-solid fa-chevron-down"></i>
               <i *ngIf="isShowFarms" class="fa-solid fa-chevron-up"></i>
             </h2>
@@ -56,39 +58,39 @@
           <ul *ngIf="isShowFarms">
             <li class="customRadio">
               <input type="radio" value="farm1" id="farm1"  name="farm" />
-              <label for="farm1"><span><span></span></span>Farm 1</label>
+              <label for="farm1"><span><span></span></span>Kiambu</label>
             </li>
 
             <li class="customRadio">
               <input type="radio" value="farm2" id="farm2" name="farm" />
-              <label for="farm2"><span><span></span></span>Farm 2</label>
+              <label for="farm2"><span><span></span></span>Nyeri</label>
             </li>
 
             <li class="customRadio">
               <input type="radio" value="farm2" id="farm3" name="farm" />
-              <label for="farm3"><span><span></span></span>Farm 3</label>
+              <label for="farm3"><span><span></span></span>Kirinyaga</label>
             </li>
 
             <li class="customRadio">
               <input type="radio" value="farm2" id="farm4" name="farm"  />
-              <label for="farm4"><span><span></span></span>Farm 4</label>
+              <label for="farm4"><span><span></span></span>Meru</label>
             </li>
 
             <li class="customRadio">
               <input type="radio" value="farm2" id="farm5" name="farm" />
-              <label for="farm5"><span><span></span></span>Farm 5</label>
+              <label for="farm5"><span><span></span></span>Murang'a</label>
             </li>
 
             <li class="customRadio">
               <input type="radio" value="farm2" id="farm6" name="farm"  />
-              <label for="farm6"><span><span></span></span>Farm 6</label>
+              <label for="farm6"><span><span></span></span>Rift Valley</label>
             </li>
           </ul>
         </div>
 
         <div>
           <div class="widget-title"(click)=togglePriceOn()>
-            <h2>Price&nbsp;
+            <h2>Special Products&nbsp;
               <i *ngIf="!isShowPrice" class="fa-solid fa-chevron-down"></i>
               <i *ngIf="isShowPrice" class="fa-solid fa-chevron-up"></i>
             </h2>
@@ -97,31 +99,29 @@
           <ul *ngIf="isShowPrice">
             <li class="customRadio">
               <input type="radio" value="farm1" id="price1" name="price"/>
-              <label for="price1"><span><span></span></span>All</label>
+              <label for="price1"><span><span></span></span>Pods</label>
             </li>
 
           <li class="customRadio">
             <input type="radio" value="farm1" id="price2" name="price" />
-            <label for="price2" ><span><span></span></span> $1 - $50</label>
+            <label for="price2" ><span><span></span></span>Decaf</label>
           </li>
 
           <li class="customRadio">
             <input type="radio" value="farm2" id="price3" name="price" />
-            <label for="price3"><span><span></span></span> $51 - $100</label>
-          </li>
-
-          <li class="customRadio">
-            <input type="radio" value="farm2" id="price4" name="price" />
-            <label for="price4"><span><span></span></span>Price 5 - Price 6</label>
+            <label for="price3"><span><span></span></span>Cold brew</label>
           </li>
           </ul>
         </div>
 
       </div>
+
+      <!-- products grid list -->
       <div class="productlist">
 
         <div *ngIf="filteredProducts == null" class="productlist-content">
-          <div class="product-card"  *ngFor="let item of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
+          <!-- paginate: { itemsPerPage: itemsPerPage, currentPage: p } -->
+          <div class="product-card"  *ngFor="let item of products" data-aos="fade-up">
 
             
             <a routerLink="/Products/{{item.id}}" class="product-item">
@@ -188,7 +188,8 @@
           </div>
         </div>
         <div *ngIf="filteredProducts != null" class="productlist-content">
-          <div class="product-card"  *ngFor="let item of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
+          <!-- paginate: { itemsPerPage: itemsPerPage, currentPage: p } -->
+          <div class="product-card"  *ngFor="let item of filteredProducts" data-aos="fade-up">
 
             
             <a routerLink="/Products/{{item.id}}" class="product-item">
@@ -255,9 +256,9 @@
           </div>
         </div>
 
-        <div class="products-pagination">
+        <!-- <div class="products-pagination">
           <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        </div>
+        </div> -->
                              
       </div>
     </div>
