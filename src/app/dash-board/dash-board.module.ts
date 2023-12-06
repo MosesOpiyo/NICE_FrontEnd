@@ -39,7 +39,7 @@ import { MessagesComponent } from './components/message/messages/messages.compon
 import { FilterPipe } from './components/manifests/filter.pipe';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { NotificationMsgComponent } from './components/message/notification-msg/notification-msg.component';
-import { LongPressDirective } from './components/details/long-press/long-press.directive';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -67,7 +67,6 @@ import { LongPressDirective } from './components/details/long-press/long-press.d
     FilterPipe,
     UserSettingsComponent,
     NotificationMsgComponent,
-    LongPressDirective
   ],
   imports: [
     CommonModule,
@@ -85,7 +84,8 @@ import { LongPressDirective } from './components/details/long-press/long-press.d
     BarcodeScannerLivestreamModule,
     MatDialogModule,
     MatListModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatPaginatorModule
   ]
 })
 export class DashBoardModule { }

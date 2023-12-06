@@ -9,8 +9,26 @@
 }
 
 :host ::ng-deep #header .navbar .trip-link,
-:host ::ng-deep #header .navbar-mobile .trip-link {
-  background-color: rgb(216, 216, 216);
+:host ::ng-deep #header .navbar-mobile .trip-link,
+:host ::ng-deep #header .navbar .active:hover,
+:host ::ng-deep #header .navbar-mobile .active:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+:host ::ng-deep #header.header-scrolled .navbar li:hover>a,
+:host ::ng-deep #header.header-scrolled .navbar .trip-link,
+:host ::ng-deep #header.header-scrolled .navbar .active:hover,
+:host ::ng-deep #header.header-scrolled .navbar .trip-link {
+  background-color: #eccece;
+}
+
+:host ::ng-deep #header .navbar .dropdown ul a:hover {
+  background-color: transparent;
+}
+
+:host ::ng-deep #header .navbar .cart a:hover,
+:host ::ng-deep #header.header-scrolled .navbar .cart a:hover {
+  background-color: transparent;
 }
 
 .farm-item {

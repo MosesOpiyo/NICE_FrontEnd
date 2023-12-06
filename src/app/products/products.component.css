@@ -10,7 +10,7 @@
 
 :host ::ng-deep #header .navbar .shop,
 :host ::ng-deep #header .navbar-mobile .shop {
-  background-color: rgb(216, 216, 216);
+  background-color: rgb(216 216 216 / 68%);
 }
 
 :host ::ng-deep #header.header-scrolled .navbar .active {
@@ -18,9 +18,36 @@
   color: #000000;
 }
 
+:host ::ng-deep #header.header-scrolled .navbar li:hover>a,
+:host ::ng-deep #header.header-scrolled .navbar .shop,
+:host ::ng-deep #header.header-scrolled .navbar .active:hover {
+  background-color: #eccece;
+}
+
+:host ::ng-deep #header .navbar a:hover {
+  background-color: rgb(216 216 216 / 68%);
+}
+
+:host ::ng-deep #header .navbar .dropdown ul a:hover {
+  background-color: transparent;
+}
+
+:host ::ng-deep #header .navbar .cart a:hover,
+:host ::ng-deep #header.header-scrolled .navbar .cart a:hover {
+  background-color: transparent;
+}
+
 :host ::ng-deep footer {
   position: relative;
   /* top: 140px; */
+}
+
+.sidebar input[type="radio"] {
+  display: none;
+}
+
+.sidebar ul {
+  padding-left: .5rem;
 }
 
 @media (max-width: 600px) {

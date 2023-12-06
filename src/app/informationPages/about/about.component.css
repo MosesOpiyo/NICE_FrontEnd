@@ -15,15 +15,19 @@
   
   :host ::ng-deep #header .navbar .about-link,
   :host ::ng-deep #header .navbar-mobile .about-link {
-    background-color: rgb(165, 165, 165);
+    background-color: rgb(216 216 216 / 68%);
     color: #000000;
   }
+
+  :host ::ng-deep #header .navbar a:hover {
+    background-color: rgb(216 216 216 / 68%);
+  }
   
-  :host ::ng-deep #header.header-scrolled .navbar a,
+  /* :host ::ng-deep #header.header-scrolled .navbar a,
   :host ::ng-deep #header.header-scrolled .navbar ul li i.fa-chevron-down,
   :host ::ng-deep #header.header-scrolled .navbar ul li i.fa-bag-shopping {
     color: #000000;
-  }
+  } */
   
   :host ::ng-deep #header.header-scrolled .navbar .active {
     background-color: transparent;
@@ -32,6 +36,22 @@
 
   :host ::ng-deep #header .navbar .dropdown ul li:hover > a {
     color: #67b0d1;
+  }
+
+  :host ::ng-deep #header.header-scrolled .navbar li:hover>a,
+  :host ::ng-deep #header.header-scrolled .navbar .about-link,
+  :host ::ng-deep #header.header-scrolled .navbar .active:hover,
+  :host ::ng-deep #header.header-scrolled .navbar .about-link {
+    background-color: #eccece;
+  }
+
+  :host ::ng-deep #header .navbar .cart a:hover,
+  :host ::ng-deep #header.header-scrolled .navbar .cart a:hover {
+    background-color: transparent;
+  }
+
+  :host ::ng-deep #header .navbar .dropdown ul a:hover {
+    background-color: transparent;
   }
 
   .expogallery-item,
