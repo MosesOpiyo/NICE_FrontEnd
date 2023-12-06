@@ -4,6 +4,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { BarcodeScannerLivestreamModule } from 'ngx-barcode-scanner';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { DashBoardRoutingModule } from './dash-board-routing.module';
 import { DashBoardComponent } from './dash-board.component';
@@ -38,6 +39,7 @@ import { MessagesComponent } from './components/message/messages/messages.compon
 import { FilterPipe } from './components/manifests/filter.pipe';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { NotificationMsgComponent } from './components/message/notification-msg/notification-msg.component';
+import { LongPressDirective } from './components/details/long-press/long-press.directive';
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import { NotificationMsgComponent } from './components/message/notification-msg/
     MessagesComponent,
     FilterPipe,
     UserSettingsComponent,
-    NotificationMsgComponent
+    NotificationMsgComponent,
+    LongPressDirective
   ],
   imports: [
     CommonModule,
@@ -82,6 +85,7 @@ import { NotificationMsgComponent } from './components/message/notification-msg/
     BarcodeScannerLivestreamModule,
     MatDialogModule,
     MatListModule,
+    MatSlideToggleModule
   ]
 })
 export class DashBoardModule { }

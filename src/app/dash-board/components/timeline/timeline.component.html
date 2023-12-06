@@ -2,7 +2,7 @@
     <div class="timeline-card general-info">
         <div class="farmer-profile">
             <div class="farmer-image">
-                <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?size=626&ext=jpg&ga=GA1.1.826953802.1698382478&semt=sph" alt="">
+                <img src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="">
             </div>
 
             <div class="farmer-name">
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="stats-content">
-                    <span>200</span>
+                    <span>{{posts.length}}</span>
                     <p>Pictures</p>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="stats-content">
-                    <span>4</span>
+                    <span>{{posts.length}}</span>
                     <p>Videos</p>
                 </div>
             </div>
