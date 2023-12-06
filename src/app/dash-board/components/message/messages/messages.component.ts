@@ -26,10 +26,15 @@ isAllSelected(evt: any, index: any) {
     this.masterSelected = this.user.notifications.every((item) => item.isSelected == true);
 }
 
-showNotification() {
-  this.dialog.open(NotificationMsgComponent)
+showNotification(info: any) {
+  this.dialog.open(NotificationMsgComponent, {
+    width: '25pc',
+    maxHeight: '90vh',
+    data: {
+      message: info
+    }
+  })
 }
-
 
   ngOnInit(): void {
     this.service.getProfile().subscribe((res:any)=>{

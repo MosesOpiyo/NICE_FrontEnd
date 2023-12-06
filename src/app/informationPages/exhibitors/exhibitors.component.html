@@ -1,0 +1,63 @@
+<div class="exhibitor-container">
+    <h3>Complete your <span>Exhibitor</span> form below to continue.</h3>
+
+    <form ngNativeValidate>
+        <div class="exhibitor-input">
+            <select title="exhibitor-package" id="exhibitor-package" class="selection" name="exhibitor-package" required>
+                <option value="" disabled selected>Choose Exhibitor Package...<sup>*</sup></option>
+                <option value="A1-A10">A1 - A10 - Sh250,000</option>
+                <option value="B1-B10">B1-B10 - Sh170,000</option>
+                <option value="C1-C10">C1 - C10 - Sh120,000</option>
+                <option value="D1-D12">D1 - D12 - Sh120,000</option>
+                <option value="E1-E8">E1 - E8 - Sh120,000</option>
+                <option value="F1-F8">F1 - F8 - Sh120,000</option>
+                <option value="G1-G16">G1 - G16 - Sh12,500</option>
+                <option value="Basic">Basic</option>
+            </select>
+        </div>
+
+        <div class="fname-input">
+            <label for="fname">First Name<sup>*</sup></label>
+            <input id="fname" name="fname" placeholder="John" class="form-control"
+                type="text" required>
+        </div>
+
+        <div class="lname-input">
+            <label for="lname">Last Name<sup>*</sup></label>
+            <input id="lname" name="lname" placeholder="Doe" class="form-control"
+                type="text" required>
+        </div>
+
+        <div class="company-input">
+            <label for="company">Company Name<sup>*</sup></label>
+            <input id="company" name="company" placeholder="ABCD Ltd" class="form-control"
+                type="text" required>
+        </div>
+
+        <div class="designation-input">
+            <label for="designation">Your Designation<sup>*</sup></label>
+            <input id="designation" name="designation" placeholder="CEO" class="form-control"
+                type="text" required>
+        </div>
+
+
+        <div class="email-input">
+            <label for="email">Email<sup>*</sup></label>
+            <input id="email" name="email" placeholder="johndoe@gmail.com" class="form-control"
+                type="email" required>
+        </div>
+
+        <div class="phone-input">
+            <label for="phone">Phone Number<sup>*</sup></label>
+            <input id="phone" name="phone" placeholder="+254 000000000" class="form-control"
+                type="tel" required>
+        </div>
+
+        <button mat-raised-button type="submit">SUBMIT</button>
+
+        <div class="form-extras">
+            <p>By continuing, you agree to Our Business Terms of Service; and acknowledge you've read our
+                Privacy Policy;</p>
+        </div>        
+    </form>
+</div>

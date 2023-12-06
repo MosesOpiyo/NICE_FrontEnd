@@ -1,0 +1,64 @@
+.sponsorship-container{
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+sup {
+    color: green;
+}
+
+h3 span {
+    color: green;
+}
+
+.sponsorship-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sponsorship-container form input {
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    height: 3pc;
+    padding-inline: .5rem;
+}
+
+.sponsorship-container form button {
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.sponsorship-container form .form-extras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.sponsorship-container form .form-extras p a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 375px) {
+    .sponsorship-container {
+        padding: 5px;
+    }
+}

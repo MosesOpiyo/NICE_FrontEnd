@@ -21,6 +21,7 @@ county:any
 country:any
 wet_mill_name:any
 society_name:any
+estate_name:any
 factory_chairman:any
 factory_manager:any
 no_of_farmers:any
@@ -42,12 +43,15 @@ grower_history:any
 location:any
 farm_area:any
 
+isEstateFarmer: boolean
+
 ngOnInit(): void {
   this.firstFormGroup = this._formBuilder.group({
     county: ['', Validators.required],
     country:['',Validators.required],
     wet_mill_name: ['', Validators.required],
     society_name: ['', Validators.required],
+    estate_name: ['', Validators.required],
     factory_chairman: ['', Validators.required],
     factory_manager: ['', Validators.required],
     no_of_farmers: ['', Validators.required],
@@ -102,6 +106,10 @@ submit(){
   this.dialog.close()
   this.farmer.addProfileDetails(form.value)
 }
+
+toggleIsEstateFarmer() {
+  this.isEstateFarmer = !this.isEstateFarmer;
+  }
 
 
 }

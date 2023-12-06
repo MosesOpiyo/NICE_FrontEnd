@@ -1,0 +1,88 @@
+.sponsorexhibitor-container {
+    background-color: #fff;
+    padding-top: .5rem;
+}
+
+:host ::ng-deep ul.navs-tabs {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.exhibitor-container, 
+.sponsorship-container {
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+sup {
+    color: green;
+}
+
+h3 span {
+    color: green;
+}
+
+.exhibitor-container form,
+.sponsorship-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.exhibitor-container form select,
+.sponsorship-container form select {
+    font-size: 1rem;
+}
+
+.exhibitor-container form input,
+.exhibitor-container form select,
+.sponsorship-container form input,
+.sponsorship-container form select {
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    height: 3pc;
+    padding-inline: .5rem;
+}
+
+.exhibitor-container form button,
+.sponsorship-container form button {
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.exhibitor-container form .form-extras,
+.sponsorship-container form .form-extras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.exhibitor-container form .form-extras p a,
+.sponsorship-container form .form-extras p a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 375px) {
+    .exhibitor-container,
+    .sponsorship-container {
+        padding: 5px;
+    }
+}

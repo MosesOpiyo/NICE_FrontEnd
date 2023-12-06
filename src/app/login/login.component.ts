@@ -35,7 +35,8 @@ profile:any;
   showSignUpDialog(){
     this.dialogRef.close()
     const dialogRef = this.dialog.open(SignUpComponent,{
-      width: '25pc'
+      width: '25pc',
+      maxHeight: '100vh'
     });
   }
 }

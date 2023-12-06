@@ -9,6 +9,8 @@ import { CartService } from '../Service/Cart/cart.service';
 import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.component';
 import { AuthenticationStoreService } from '../AuthServiceStore/authentication-store.service';
 import { CartStoreService } from '../Store/Cart/cart-store.service';
+import { ExhibitorsponsorComponent } from '../informationPages/exhibitorsponsor/exhibitorsponsor.component';
+import { TripdialogueComponent } from '../informationPages/tripdialogue/tripdialogue.component';
 
 
 @Component({
@@ -51,13 +53,16 @@ export class NavbarComponent implements OnInit {
 
   showLoginDialog(){
     const dialogRef = this.dialog.open(LoginComponent,{
-      width: '25pc'
+      width: '25pc',
+      // autoFocus: false,
+      maxHeight: '90vh'
     });
   }
 
   showFarmerSignUpDialog(){
     const dialogRef = this.dialog.open(FarmerSignUpComponent,{
-      width: '25pc'
+      width: '25pc',
+      maxHeight: '100vh'
     }); 
   }
 
@@ -68,8 +73,23 @@ export class NavbarComponent implements OnInit {
 
   showSignUpDialog(){
     const dialogRef = this.dialog.open(SignUpComponent,{
-      width: '25pc'
+      width: '25pc',
+      maxHeight: '100vh'
     }); 
+  }
+
+  showRegisterDialog() {
+    let dialogRef = this.dialog.open(ExhibitorsponsorComponent,{
+      width: '25pc',
+      maxHeight: '100vh',
+    })
+  }
+
+  showTripRegisterDialog() {
+    let dialogRef = this.dialog.open(TripdialogueComponent,{
+      width: '25pc',
+      maxHeight: '100vh',
+    })
   }
 
   ngOnInit(): void {

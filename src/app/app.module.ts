@@ -43,6 +43,11 @@ import { DashBoardModule } from './dash-board/dash-board.module';
 import { register } from 'swiper/element/bundle';
 import { FarmComponent } from './farm/farm.component';
 import { FarmdetailsComponent } from './farmdetails/farmdetails.component';
+import { SponsorshipComponent } from './informationPages/sponsorship/sponsorship.component';
+import { ExhibitorsComponent } from './informationPages/exhibitors/exhibitors.component';
+import { ExhibitorsponsorComponent } from './informationPages/exhibitorsponsor/exhibitorsponsor.component';
+import { TripdialogueComponent } from './informationPages/tripdialogue/tripdialogue.component';
+import { VerificationComponent } from './verification/verification.component';
 // register Swiper custom elements
 register();
 
@@ -70,7 +75,12 @@ register();
     FarmerSignUpComponent,
     AttributionsComponent,
     FarmComponent,
-    FarmdetailsComponent
+    FarmdetailsComponent,
+    SponsorshipComponent,
+    ExhibitorsComponent,
+    ExhibitorsponsorComponent,
+    TripdialogueComponent,
+    VerificationComponent
   ],
   entryComponents:[LoginComponent],
   imports: [

@@ -1,0 +1,99 @@
+.tripregister-container{
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+sup {
+    color: green;
+}
+
+h3 span {
+    color: green;
+}
+
+.tripregister-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tripregister-container form input,
+.tripregister-container form select {
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    height: 3pc;
+    padding-inline: .5rem;
+}
+
+.tripregister-container form select {
+    font-size: 1rem;
+}
+
+.tripregister-container form .relationship-input,
+.tripregister-container form .bought-input {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.tripregister-container form .relationship-input input,
+.tripregister-container form .bought-input input {
+    width: auto;
+    height: max-content;
+}
+
+.tripregister-container form .relationship-content,
+.tripregister-container form .bought-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.tripregister-container form button {
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.tripregister-container form .form-extras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.tripregister-container form .form-extras p a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* media queries */
+@media (max-width: 425px) {
+    .tripregister-container form .relationship-content,
+    .tripregister-container form .bought-content {
+        width: 50%;
+    }
+}
+
+@media (max-width: 375px) {
+    .tripregister-container {
+        padding: 5px;
+    }
+}

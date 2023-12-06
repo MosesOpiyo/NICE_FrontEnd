@@ -10,3 +10,8 @@
 .sell {
   cursor: pointer;
 }
+
+.register-expo,
+.register-trip {
+  cursor: pointer;
+}

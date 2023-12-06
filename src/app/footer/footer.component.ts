@@ -13,7 +13,8 @@ export class FooterComponent {
 
   showFarmerSignUpDialog(){
     const dialogRef = this.dialog.open(FarmerSignUpComponent,{
-      width: '25pc'
+      width: '25pc',
+      maxHeight: '100vh'
     }); 
   }
 }
