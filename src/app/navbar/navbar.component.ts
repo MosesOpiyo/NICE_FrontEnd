@@ -52,7 +52,7 @@ export class NavbarComponent implements OnInit {
   showLoginDialog(){
     const dialogRef = this.dialog.open(LoginComponent,{
       width: '25pc',
-      // autoFocus: false,
+      autoFocus: false,
       maxHeight: '90vh'
     });
   }
@@ -60,6 +60,7 @@ export class NavbarComponent implements OnInit {
   showFarmerSignUpDialog(){
     const dialogRef = this.dialog.open(FarmerSignUpComponent,{
       width: '25pc',
+      autoFocus: false,
       maxHeight: '100vh'
     }); 
   }
@@ -72,6 +73,7 @@ export class NavbarComponent implements OnInit {
   showSignUpDialog(){
     const dialogRef = this.dialog.open(SignUpComponent,{
       width: '25pc',
+      autoFocus: false,
       maxHeight: '100vh'
     }); 
   }
@@ -79,6 +81,7 @@ export class NavbarComponent implements OnInit {
   showRegisterDialog() {
     let dialogRef = this.dialog.open(ExhibitorsponsorComponent,{
       width: '25pc',
+      autoFocus: false,
       maxHeight: '100vh',
     })
   }
@@ -86,6 +89,7 @@ export class NavbarComponent implements OnInit {
   showTripRegisterDialog() {
     let dialogRef = this.dialog.open(TripdialogueComponent,{
       width: '25pc',
+      autoFocus: false,
       maxHeight: '100vh',
     })
   }

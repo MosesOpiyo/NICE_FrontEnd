@@ -36,6 +36,7 @@ profile:any;
     this.dialogRef.close()
     const dialogRef = this.dialog.open(SignUpComponent,{
       width: '25pc',
+      autoFocus: false,
       maxHeight: '100vh'
     });
   }
