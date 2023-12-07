@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { FarmerprofileService } from '../../FarmerProfile/farmerprofile.service';
 import { environment } from 'src/environments/environment.development';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
+import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
@@ -14,17 +15,16 @@ export class TimelineComponent implements OnInit {
   caption:any
   user: any
 
-  constructor(private stories:FarmerprofileService, private service:AuthenticationService){}
+  constructor(private stories:FarmerprofileService, private service:AuthenticationStoreService){}
 
   ngOnInit() {
     this.stories.getStories().subscribe((response:any)=>{
       this.posts = response
-      console.log(this.posts)
     })
 
-    this.service.getProfile().subscribe((res:any)=>{
+    this.service.data$.subscribe((res:any)=>{
       this.user = res
-      console.log(this.user);
+      console.log(res);
     })
   }
 

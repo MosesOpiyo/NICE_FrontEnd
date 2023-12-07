@@ -3,6 +3,7 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
 import { NotificationsService } from 'src/app/Notifications/notifications.service';
+import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 
 @Component({
   selector: 'app-dashboardheader',
@@ -11,7 +12,7 @@ import { NotificationsService } from 'src/app/Notifications/notifications.servic
 })
 export class DashboardheaderComponent implements OnInit {
 
-  constructor(private service:AuthenticationService,private notification:NotificationsService,private route:Router){}
+  constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private notification:NotificationsService,private route:Router){}
   user:any
   cloudinaryUrl = environment.CLOUDINARY_URL
   pic:any
@@ -24,14 +25,11 @@ export class DashboardheaderComponent implements OnInit {
 
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
-      this.service.getProfile().subscribe((res:any)=>{
+      this.store.data$.subscribe((res:any)=>{
         this.user = res
-        console.log(this.user)
+        this.data = res['user']['notifications']
       })
-      this.notification.getNotifications().subscribe((res)=>{
-        this.data = res
-        console.log(this.data)
-      })
+      
     }
     else{
       this.route.navigate([''])

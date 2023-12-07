@@ -8,98 +8,123 @@
                 <input type="text" name="_honey" class="honeypot" title="honeypot">
 
                 <div class="form-controls name" *ngIf="data.id == 1">
-                    <label for="county" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="Nyeri" id="county" name="county" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change"  id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 2">
-                    <label for="estate" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="Abcd Coffee Estate" id="estate" name="estate" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 3">
-                    <label for="owner" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="Mkulima Murimi" id="owner" name="owner" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 4">
-                    <label for="acreage" class="block">{{data.value}}:</label><br>
-                    <input type="number" placeholder="1" id="acreage" name="acreage" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 5">
-                    <label for="trees" class="block">{{data.value}}:</label><br>
-                    <input type="number" placeholder="2800" id="trees" name="trees" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 6">
-                    <label for="altitude" class="block">{{data.value}}:</label><br>
-                    <input type="number" placeholder="1864" id="altitude" name="altitude" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 7">
-                    <label for="season" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="May-December" id="season" name="season" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 8">
-                    <label for="rainfall" class="block">{{data.value}}:</label><br>
-                    <input type="number" placeholder="900mm" id="rainfall" name="rainfall" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 9">
-                    <label for="temperature" class="block">{{data.value}}:</label><br>
-                    <input type="number" placeholder="13-24" id="temperature" name="temperature" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 10">
-                    <label for="variety" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="SL28" id="variety" name="variety" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 11">
-                    <label for="farming" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="Organic" id="farming" name="farming" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 12">
-                    <label for="cherry" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="" id="cherry" name="cherry" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 13">
-                    <label for="soil" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="Deep red volcanic soils" id="soil" name="soil" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 14">
-                    <label for="processing" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="Anaerobic natural..." id="processing" name="processing" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 15">
-                    <label for="drying" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="Sun dried" id="drying" name="drying" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 16">
-                    <label for="cupping" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="" id="cupping" name="cupping" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 17">
-                    <label for="availability" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="January-April..." id="availability" name="availability" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 18">
-                    <label for="history" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="" id="history" name="history" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 19">
-                    <label for="location" class="block">{{data.value}}:</label><br>
-                    <input type="text" placeholder="" id="location" name="location" required>
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 20">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 21">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 22">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 23">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 24">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
             </form>
         </div>
@@ -107,7 +132,7 @@
 
     <mat-dialog-actions>
         <button type="button" mat-dialog-close class="cancel">Cancel</button>
-        <button type="submit" mat-dialog-close>Save Changes</button>
+        <button type="submit" (click)="checkData()" mat-dialog-close>Save Changes</button>
     </mat-dialog-actions>
 </div>
 

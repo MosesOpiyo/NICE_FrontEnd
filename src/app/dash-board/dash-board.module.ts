@@ -4,6 +4,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { BarcodeScannerLivestreamModule } from 'ngx-barcode-scanner';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { DashBoardRoutingModule } from './dash-board-routing.module';
 import { DashBoardComponent } from './dash-board.component';
@@ -65,7 +66,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MessagesComponent,
     FilterPipe,
     UserSettingsComponent,
-    NotificationMsgComponent
+    NotificationMsgComponent,
   ],
   imports: [
     CommonModule,
@@ -83,6 +84,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     BarcodeScannerLivestreamModule,
     MatDialogModule,
     MatListModule,
+    MatSlideToggleModule,
     MatPaginatorModule
   ]
 })

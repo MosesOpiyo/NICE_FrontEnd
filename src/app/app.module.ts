@@ -47,6 +47,7 @@ import { SponsorshipComponent } from './informationPages/sponsorship/sponsorship
 import { ExhibitorsComponent } from './informationPages/exhibitors/exhibitors.component';
 import { ExhibitorsponsorComponent } from './informationPages/exhibitorsponsor/exhibitorsponsor.component';
 import { TripdialogueComponent } from './informationPages/tripdialogue/tripdialogue.component';
+import { VerificationComponent } from './verification/verification.component';
 import { TripdetailsComponent } from './informationPages/tripdetails/tripdetails.component';
 import { OriginsComponent } from './origins/origins.component';
 import { OrigindetailsComponent } from './origindetails/origindetails.component';
@@ -82,6 +83,7 @@ register();
     ExhibitorsComponent,
     ExhibitorsponsorComponent,
     TripdialogueComponent,
+    VerificationComponent,
     TripdetailsComponent,
     OriginsComponent,
     OrigindetailsComponent

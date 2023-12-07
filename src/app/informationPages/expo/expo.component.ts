@@ -146,25 +146,5 @@ export class ExpoComponent implements OnInit {
  }
 
  ngOnInit(): void {
-   if(sessionStorage.getItem('Token')){
-     this.service.getProfile().subscribe((res:any)=>{
-       this.user = res['user']
-       if(this.user.type == "FARMER"){
-         this.route.navigate(['DashBoard'])
-       }
-       else if(this.user.type == "WAREHOUSER"){
-         this.route.navigate(['DashBoard'])
-       }
-       else if(this.user.type == "ADMIN"){
-         this.route.navigate(['DashBoard'])
-       }
-       else{
-         false
-       }
-     })
-   }
-   else{
-     console.log("No token")
-   }
   }
 }

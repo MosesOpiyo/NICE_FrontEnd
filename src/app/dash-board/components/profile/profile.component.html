@@ -2,33 +2,51 @@
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Society Details</ng-template>
+          <mat-slide-toggle (change)="toggleIsEstateFarmer()">Estate Farmer</mat-slide-toggle>
+          <ng-template matStepLabel>Society Details</ng-template>  
+              <br>
               <mat-form-field>
                   <mat-label>County</mat-label>
                   <input matInput placeholder="County" formControlName="county" required>
                 </mat-form-field>
                 <mat-form-field>
-                  <mat-label>Wet Mill Name</mat-label>
-                  <input matInput placeholder="Wet Mill Name" formControlName="wet_mill_name" required>
+                  <mat-label>Country</mat-label>
+                  <input matInput placeholder="Country" formControlName="country" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                  <mat-label *ngIf="!isEstateFarmer">Wet Mill Name</mat-label>
+                  <mat-label *ngIf="isEstateFarmer">Estate Name</mat-label>
+                  <input *ngIf="!isEstateFarmer" matInput placeholder="Wet Mill Name" formControlName="wet_mill_name" required>
+                  <input *ngIf="isEstateFarmer" matInput placeholder="Estate Name" formControlName="estate_name" required>
               </mat-form-field>
-              <br>
               <mat-form-field>
-                  <mat-label>Society Name</mat-label>
-                  <input matInput placeholder="Society Name" formControlName="society_name" required>
-              </mat-form-field>
+                <mat-label>Society Name</mat-label>
+                <input matInput placeholder="Society Name" formControlName="society_name" required>
+            </mat-form-field>
+              <br>
               <mat-form-field>
                   <mat-label>Factory Chairman</mat-label>
                   <input matInput placeholder="Factory Chairman" formControlName="factory_chairman" required>
               </mat-form-field>
-              <br>
               <mat-form-field>
-                  <mat-label>Factory Manager</mat-label>
-                  <input matInput placeholder="Factory Manager" formControlName="factory_manager" required>
-              </mat-form-field>
+                <mat-label>Factory Manager</mat-label>
+                <input matInput placeholder="Factory Manager" formControlName="factory_manager" required>
+            </mat-form-field>
+              <br>
               <mat-form-field>
                   <mat-label>Number Of Farmers</mat-label>
                   <input matInput placeholder="Number Of Farmers" formControlName="no_of_farmers" required>
               </mat-form-field>
+              <mat-form-field>
+                <mat-label>Number Of Male Farmers</mat-label>
+                <input matInput placeholder="Number Of Male Farmers" formControlName="men" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <mat-label>Number Of Female Farmers</mat-label>
+              <input matInput placeholder="Number Of Female Farmers" formControlName="women" required>
+          </mat-form-field>
           <div>
             <button mat-button matStepperNext>Next</button>
           </div>
@@ -60,26 +78,49 @@
             <input matInput placeholder="Annual Rainfall Season" formControlName="annual_rainfall_amount" required>
           </mat-form-field>
           <mat-form-field>
+            <mat-label>Variety</mat-label>
+            <input matInput placeholder="Coffee Variety" formControlName="coffee_variety" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Farming Method</mat-label>
+            <input matInput placeholder="Farming Method" formControlName="farming_method" required>
+          </mat-form-field>
+          <mat-form-field>
             <mat-label>Certification Type</mat-label>
             <input matInput placeholder="Certification Type" formControlName="certification_type" required>
           </mat-form-field>
           <br>
           <mat-form-field>
+            <mat-label>Soil Type</mat-label>
+            <input matInput placeholder="Soil Type" formControlName="soil_type" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Processing Method</mat-label>
+            <input matInput placeholder="Processing Method" formControlName="processing_method" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Cupping Notes</mat-label>
+            <input matInput placeholder="Cupping Notes" formControlName="cupping_notes" required>
+          </mat-form-field>
+          <mat-form-field>
             <mat-label>Availability</mat-label>
             <input matInput placeholder="Availability" formControlName="availability" required>
           </mat-form-field>
+          <br>
           <mat-form-field>
             <mat-label>Location</mat-label>
             <input matInput placeholder="Location" formControlName="location" required>
           </mat-form-field>
-          <br>
           <mat-form-field>
             <mat-label>Farm Area</mat-label>
             <input matInput placeholder="Farm Area" formControlName="farm_area" required>
           </mat-form-field>
+          <br>
           <mat-form-field>
-            <mat-label>Variety</mat-label>
-            <input matInput placeholder="Coffee Variety" formControlName="coffee_variety" required>
+            <mat-label>Grower'S History</mat-label>
+            <input matInput placeholder="Grower'S History" formControlName="grower_history" required>
           </mat-form-field>
           <div>
             <button (click)="submit()" mat-button>Submit</button>
