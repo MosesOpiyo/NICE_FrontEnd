@@ -18,9 +18,7 @@ export class HomepageComponent implements OnInit {
      document.body.appendChild(this.myScriptElement);
   }
   ngOnInit(): void {
-    this.service.getProfile().subscribe((res:any)=>{
-      this.authStore.updateData(res)
-    })
+    this.authStore.storeProfileData()
     this.cart.getCart().subscribe((res:any)=>{
       this.cartStore.updateData(res)
       this.cartStore.data$.subscribe((data:any) =>{

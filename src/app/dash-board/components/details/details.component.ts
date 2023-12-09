@@ -122,9 +122,7 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getProfile().subscribe((res:any) => {
-      this.store.updateData(res)
-    })
+    this.store.storeProfileData()
     this.store.data$.subscribe((res:any)=>{
       this.user = res
       if(this.user.user.type == "FARMER"){
