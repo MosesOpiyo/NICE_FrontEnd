@@ -6,7 +6,7 @@ import { AuthenticationService } from '../AuthService/authentication.service';
   providedIn: 'root'
 })
 export class AuthenticationStoreService {
-  private auth:AuthenticationService
+  constructor(private auth:AuthenticationService){}
   private dataSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   private farmerDataSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   data$: Observable<any[]> = this.dataSubject.asObservable();
@@ -19,7 +19,7 @@ export class AuthenticationStoreService {
   }
   storeProfileData(){
     this.auth.getProfile().subscribe((res:any) => {
-      this.data$ = res
+      this.updateData(res)
     })
   }
 }
