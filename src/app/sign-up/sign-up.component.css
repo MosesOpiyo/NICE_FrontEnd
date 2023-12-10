@@ -138,8 +138,12 @@
 
 .signup-container form .signup-extras p a {
     color: blue;
-    text-decoration: underline;
     cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.signup-container form .signup-extras p a:hover {
+    text-decoration: underline;
 }
 
 .signup-container form input:focus {

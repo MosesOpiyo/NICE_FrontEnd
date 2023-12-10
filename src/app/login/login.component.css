@@ -26,10 +26,22 @@ h3 {
 .login-container form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    /* gap: 1.5rem; */
     position: relative;
     overflow: hidden;
     padding-top: 20px;
+}
+
+.login-container form .input-card {
+    margin-bottom: 30px;
+}
+
+.login-container form .password-input {
+    margin-bottom: 10px;
+}
+
+.login-container form .signup-visibility {
+    margin-bottom: 20px;
 }
 
 .login-container form input {
@@ -118,8 +130,22 @@ h3 {
 .login-container form .password-input p,
 .login-container form .form-extras p a {
     color: blue;
-    text-decoration: underline;
     cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.login-container form .password-input p:hover,
+.login-container form .form-extras p a:hover {
+    text-decoration: underline;
+}
+
+.login-container .signup-visibility {
+    display: flex;
+}
+
+.login-container #myInput {
+    width: 20px;
+    height: 20px;
 }
 
 @media (max-width: 375px) {

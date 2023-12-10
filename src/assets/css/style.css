@@ -2422,7 +2422,7 @@
       left: 60%;
       width: 40%;
       height: 100%;
-      background-color: #ff3800;
+      /* background-color: #ff3800; */
       opacity: .5;
   }
   
@@ -2433,13 +2433,13 @@
       right: 50%;
   }
   
-  .about-component .how-card.prefinancing .how-image::after {
+  /* .about-component .how-card.prefinancing .how-image::after {
       background-color: #fac344;
-  }
+  } */
   
-  .about-component .how-card.logistics .how-image::after {
+  /* .about-component .how-card.logistics .how-image::after {
       background-color: #4446e9c4;
-  }
+  } */
   
   .about-component .how-card.marketing .how-image::after {
       background-color: #ffcdce;
@@ -2453,7 +2453,8 @@
       background-color: #ff735c;
   }
   
-  .about-component .how-card .how-image img {
+  .about-component .how-card .how-image img,
+  .about-component .how-card .how-image dotlottie-player {
       object-fit: cover;
       object-position: center;
       height: 80%;

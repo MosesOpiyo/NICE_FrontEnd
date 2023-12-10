@@ -20,6 +20,7 @@ constructor(
 email: any;
 password: any;
 profile:any;
+isPasswordVisible = false;
 
   loginUser(){
     let form = new FormData();
@@ -32,6 +33,11 @@ profile:any;
   closeDialog() {
     this.dialogRef.close();
   }
+
+  togglePasswordVisibility() {
+    this.isPasswordVisible = !this.isPasswordVisible;
+  }
+  
   showSignUpDialog(){
     this.dialogRef.close()
     const dialogRef = this.dialog.open(SignUpComponent,{

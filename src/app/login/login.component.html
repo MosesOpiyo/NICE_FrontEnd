@@ -3,7 +3,7 @@
     <h3>Sign in into your Account.</h3>
 
     <form (ngSubmit)="loginUser()" ngNativeValidate>
-        <div class="email-input">
+        <div class="email-input input-card">
             <input id="email" name="email" [(ngModel)]="email" class="form-control"
                 type="email" required>
             <label for="email" class="label-name">
@@ -11,21 +11,29 @@
             </label>
         </div>
 
-        <div class="password-input">
+        <div class="password-input input-card">
             <input input id="password" name="password" [(ngModel)]="password"
-                class="form-control" type="password" required>
+                class="form-control" type="{{ isPasswordVisible ? 'text' : 'password' }}" required>
             <label for="password" class="label-name">
                 <span class="content-name">Password</span>
             </label>
             <p class="forgotten">Forgotten Password?</p>
         </div>
 
+        <div class="signup-visibility input-card">
+            <div>
+                <input type="checkbox" (click)="togglePasswordVisibility()" id="myInput" title="visibility">
+            </div>
+            <div>
+                <label for="myInput">Show Password</label>
+            </div>
+        </div>
+
         <button mat-raised-button type="submit">Login</button>
 
         <div class="form-extras">
             <p>Dont have an account?<br><a (click)="showSignUpDialog()">Sign up</a></p>
-            <p>By continuing, you agree to Our Business Terms of Service; Opens a new tab and acknowledge you've read our
-                Privacy Policy;</p>
+            <p>By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Business Terms of Service</a></p>
         </div>        
     </form>
 </div>

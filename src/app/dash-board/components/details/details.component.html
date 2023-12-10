@@ -10,10 +10,6 @@
                     <h5 *ngIf="user.user.type=='WAREHOUSER'">Warehouser's Details</h5>
                     <h5 *ngIf="user.user.type=='BUYER'">My Details</h5>
                 </div>
-
-                <div>
-                    <button class="btn btn-outline-primary">Edit Profile</button>
-                </div>
             </div>
         
             <div class="details">
@@ -22,6 +18,8 @@
                     <img *ngIf="!user.profile_pic"
                         src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                         alt="">
+                    <input type="file" enctype="multipart/form-data" id="file" name="file" title="file" class="file"  data-multiple-caption="{count} files selected" multiple>
+                    <label for="file"><i class="fa-solid fa-camera"></i></label>
                 </div>
         
                 <div class="user-addinfo">

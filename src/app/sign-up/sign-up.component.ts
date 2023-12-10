@@ -28,6 +28,7 @@ export class SignUpComponent {
   is_producer:any;
   is_warehouser:any;
   isPasswordVisible = false;
+  
   registerBuyer(){
     if(this.checker.score(this.password) < 2){
       this.snackbar.open("Password is too weak. Try Another Password", 'Close', {
