@@ -45,11 +45,11 @@
     align-items: center;
     padding: 1rem .2rem;
     transition: all 150ms ease-in-out;
-    border-left: 3px solid #0a649d;
+    border-left: 3px solid #f2f2f2;
 }
 
 .sidenav-container .nav-menu .nav-list > * a:hover,
-.active-link {
+.sidenav-container .nav-menu .nav-list .nav-list-item .active-link {
     background-color: #ffffff;
     color: #0a649d;
     border-left: 3px solid #0a649d;

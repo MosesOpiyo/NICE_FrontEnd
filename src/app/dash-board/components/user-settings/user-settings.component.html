@@ -6,25 +6,19 @@
         </div>
     
         <div class="phone-edit">
-            <p>This is the phone number associated with your account: <span>+254 734567891</span></p>
-            <p>Change the phone number below</p>
-            <div class="phone-input">
-                <form action="">
-                    <label for="phone">Change Phone Number:</label>
-                    <input type="tel" name="phone" id="phone" title="phone" required>
-    
-                    <button type="submit">SUBMIT</button>
-                </form>
+            <p>This is the phone number associated with your account:<br> <span>+254 734567891</span></p>
 
-                <p>
-                    <mat-form-field appearance="outline">
-                      <mat-label>Phone Number:</mat-label>
-                      <input matInput placeholder="Placeholder">
-                      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-                      <mat-hint>Hint</mat-hint>
-                    </mat-form-field>
-                  </p>
-            </div>
+            <form ngNativeValidate>
+                <div class="phone-input input-card">
+                    <input id="phone" name="phone" class="form-control"
+                        type="tel" required>
+                    <label for="phone" class="label-name">
+                        <span class="content-name">Change Phone Number:</span>
+                    </label>
+                </div>
+
+                <button type="submit">SUBMIT</button>
+            </form>
         </div>
     </div>
     
@@ -35,16 +29,19 @@
         </div>
     
         <div class="email-edit">
-            <p>This is the email address associated with your account: <span>mkulima@gmail.com</span></p>
-            <p>Change the email address below</p>
-            <div class="email-input">
-                <form action="">
-                    <label for="email">Change Email Address:</label>
-                    <input type="email" name="email" id="email" title="email" required>
-    
-                    <button type="submit">SUBMIT</button>
-                </form>
-            </div>
+            <p>This is the email address associated with your account:<br> <span>mkulima@gmail.com</span></p>
+
+            <form ngNativeValidate>
+                <div class="email-input input-card">
+                    <input id="email" name="email" class="form-control"
+                        type="email" required>
+                    <label for="email" class="label-name">
+                        <span class="content-name">Change Email Address:</span>
+                    </label>
+                </div>
+
+                <button type="submit">SUBMIT</button>
+            </form>
         </div>
     </div>
 </div>

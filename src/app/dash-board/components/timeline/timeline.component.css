@@ -15,7 +15,7 @@
 }
 
 .timeline-card {
-    background-color: #f3f6f9;
+    background-color: #f2f2f2;
     border-radius: 4px;
     height: max-content;
     margin-inline: auto;
@@ -149,38 +149,23 @@ form .media-content {
 }
 
 form .media-content > * {
-    border: 2px solid #0000000d;
     padding: .2rem;
-    flex-basis: 100%;
-    min-width: 50%;
-    max-width: 50%;
 }
 
-form .media-content .video,
 form .media-content .image {
     display: flex;
     gap: .5rem;
-    /* align-items: center; */
-}
-
-form .media-content .video i {
-    color: red;
-}
-
-form .media-content .image i {
-    color: green;
-}
-
-form .media-content .video label,
-form .media-content .image label {
-    display: flex;
     align-items: center;
-    /* justify-content: center; */
-    text-align: center;
+    justify-content: center;
 }
 
 form input#file {
     cursor: pointer;
+}
+
+.fa-image {
+    font-size: 3rem;
+    color: green;
 }
 
 form .form-controls textarea {
@@ -190,6 +175,7 @@ form .form-controls textarea {
     padding: .5rem;
     background-color: #ffffff59;
     height: 70px;
+    outline-color: #2551da61;
 }
 
 form button {
@@ -297,6 +283,35 @@ form button:hover {
         grid-template-columns: 1fr;
     }
 } */
+
+input[type="file"]::file-selector-button {
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+    background: #ffd740;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    /* min-width: 64px; */
+    /* line-height: 36px; */
+    padding: 16px;
+    border-radius: 4px;
+    overflow: visible;
+    transform: translate3d(0, 0, 0);
+    transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 1rem;
+  }
 
 /* media queries */
 @media (max-width: 1024px) {
