@@ -4,6 +4,7 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IPasswordStrengthMeterService } from 'angular-password-strength-meter';
 import { VerificationComponent } from 'src/app/verification/verification.component';
+import { LoginComponent } from 'src/app/login/login.component';
 
 @Component({
   selector: 'app-farmer-sign-up',
@@ -60,8 +61,18 @@ export class FarmerSignUpComponent {
   togglePasswordVisibility() {
   this.isPasswordVisible = !this.isPasswordVisible;
   }
+
   toggleIsEstateFarmer() {
     this.is_estate = !this.is_estate;
-    }
+  }
+
+  showLoginDialog(){
+    this.dialogRef.close()
+    const dialogRef = this.dialog.open(LoginComponent,{
+      width: '25pc',
+      autoFocus: false,
+      maxHeight: '90vh'
+    });
+  }
 
 }
