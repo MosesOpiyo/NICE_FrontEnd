@@ -37,6 +37,18 @@ export class AboutComponent {
     this.isShowContent5 = !this.isShowContent5
   }
 
+  //6th accordion input
+  isShowContent6 = false;
+  showContent6() {
+    this.isShowContent6 = !this.isShowContent6
+  }
+
+  //7th accordion input
+  isShowContent7 = false;
+  showContent7() {
+    this.isShowContent7 = !this.isShowContent7
+  }
+
   onLabelGroupClick($event: any){
     let clickedElement = $event.target || $event.srcElement;
 

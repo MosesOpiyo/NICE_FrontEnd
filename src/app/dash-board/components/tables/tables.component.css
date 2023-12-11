@@ -1,12 +1,50 @@
+.tables-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+    /* border: 2px solid red; */
+    height: max-content;
+    gap: 30px;
+    margin-inline: auto;
+}
+
+.tables-container .dashboard-card {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    height: 100%;
+    box-shadow: 0 0 5px #ccc;
+}
+
+/* table */
+.tables-container .all-tables {
+    grid-area: 1 / 1 / 2 / 13;
+}
+
+.tables-container #myBtnContainer button {
+    margin: 5px;
+}
+
+.tables-container #myBtnContainer .farmers-bulk {
+    float: right;
+}
+
+.tables-container .users-table {
+    margin-top: 5px;
+}
+
 table{
     background-color: white;
 }
+
 th,td{
     color: black;
 }
+
 span{
     padding: 10px;
 }
+
 select{
     padding: 5px;
     border: 2px solid blue;

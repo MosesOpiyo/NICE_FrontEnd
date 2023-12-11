@@ -2,39 +2,46 @@
     <h2>Register</h2>
     <h4>Create an account with us.</h4>
 
-    <form (ngSubmit)="registerBuyer()">
-        <div class="signup-username">
-            <label for="username">Username</label>
-            <input id="username" name="username" [(ngModel)]="username" placeholder="username" class="form-control form-control"
+    <form (ngSubmit)="registerBuyer()" ngNativeValidate>
+        <div class="signup-username input-card">
+            <input id="username" name="username" [(ngModel)]="username" class="form-control"
                 type="username" required>
+            <label for="username" class="label-name">
+                <span class="content-name">Full Name</span>
+            </label>
         </div>
 
-        <div class="signup-email">
-            <label for="email">Email</label>
-            <input id="email" name="email" placeholder="email" [(ngModel)]="email" class="form-control form-control"
+        <div class="signup-email input-card">
+            <input id="email" name="email" [(ngModel)]="email" class="form-control"
                 type="email" required>
+            <label for="email" class="label-name">
+                <span class="content-name">Email</span>
+            </label>
         </div>
         
-        <div class="signup-password">
-            <label for="password">Password</label>
-            <input input id="password" name="password" [(ngModel)]="password" placeholder="enter your password"
-                class="form-control" type="{{ isPasswordVisible ? 'text' : 'password' }}" required appPasswordToggle>
+        <div class="signup-password input-card">
+            <input input id="password" name="password" [(ngModel)]="password"  class="form-control" type="{{ isPasswordVisible ? 'text' : 'password' }}" required appPasswordToggle>
+            <label for="password" class="label-name">
+                <span class="content-name">Password</span>
+            </label>
             <password-strength-meter [password]="password"></password-strength-meter>
         </div>
 
-        <div class="signup-confirmpass">
-            <label for="password">Confirm Password</label>
+        <div class="signup-confirmpass input-card">
             <input input id="confirm_password" name="confirm_password" [(ngModel)]="confirm_password"
-                placeholder="Confirm password" class="form-control" type="{{ isPasswordVisible ? 'text' : 'password' }}"
+                class="form-control" type="{{ isPasswordVisible ? 'text' : 'password' }}"
                 required appPasswordToggle>
+            <label for="confirm_password" class="label-name">
+                <span class="content-name">Confirm Password</span>
+            </label>
         </div>
         
-        <div class="signup-visibility">
+        <div class="signup-visibility input-card">
             <div>
-                <input type="checkbox"(click)="togglePasswordVisibility()" id="myInput" title="visibility">
+                <input type="checkbox" (click)="togglePasswordVisibility()" id="myInput" title="visibility">
             </div>
             <div>
-                <span>Show Password</span>
+                <label for="myInput">Show Password</label>
             </div>
         </div>
         
@@ -43,8 +50,7 @@
 
         <div class="signup-extras">
             <p class="clo-lg-5 text-center py-2">Have an account?<br><a (click)="showLoginDialog()">Log In</a></p>
-            <p class="clo-lg-5 text-center py-2">By continuing, you agree to Our Business Terms of Service; Opens a new tab and
-                acknowledge you've read our Privacy Policy;</p>
+            <p>By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Business Terms of Service</a></p>
         </div>
         
     </form>

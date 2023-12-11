@@ -18,8 +18,6 @@ img{
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     width: 95%;
-    /* border: 2px solid red; */
-    padding-block: 3rem;
     height: max-content;
     gap: 30px;
     margin-inline: auto;
@@ -34,7 +32,7 @@ img{
     padding: 1rem;
     border-radius: 4px;
     height: 100%;
-    box-shadow: 3px 3px 2px 1px #e3e3e3;
+    box-shadow: 0 0 5px #ccc;
     /* margin-block: 1.5rem; */
 }
 
@@ -124,6 +122,47 @@ img{
     width: 100%;
   }
 
+  .details .file {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+  }
+
+  .file + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  .file:focus + label,
+  .file + label:hover {
+    color: red;
+  }
+
+  .picture {
+    position: relative;
+  }
+
+  .file + label {
+	cursor: pointer; /* "hand" cursor */
+    position: absolute;
+    left: 78px;
+    bottom: -9px;
+    z-index: 1;
+  }
+
+  .file:focus + label {
+	outline: -webkit-focus-ring-color auto 5px;
+    outline: 1px dotted #000;
+   }
+
+   .file + label * {
+	pointer-events: none;
+   }
+
   /* media queries */
 @media (max-width: 768px) {
     .card-container {
@@ -148,5 +187,6 @@ img{
     .dashboard-card .user-addinfo {
         grid-template-columns: 1fr;
         justify-items: center;
+        text-align: center;
     }
 }

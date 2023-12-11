@@ -17,19 +17,6 @@
     flex-direction: column;
 }
 
-.sidenav-container .nav-menu .user-image .image {
-    position: relative;
-    height: 50px;
-    width: 50px;
-}
-
-.sidenav-container .nav-menu .user-image .image img {
-    height: 100%;
-    width: 100%;
-    object-position: center;
-    object-fit: cover;
-}
-
 /* .sidenav-container .nav-menu .user-image .user-credentials {
 
 } */
@@ -58,6 +45,7 @@
     align-items: center;
     padding: 1rem .2rem;
     transition: all 150ms ease-in-out;
+    border-left: 3px solid #0a649d;
 }
 
 .sidenav-container .nav-menu .nav-list > * a:hover,
