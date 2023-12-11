@@ -58,10 +58,12 @@ export class SignUpComponent {
   togglePasswordVisibility() {
   this.isPasswordVisible = !this.isPasswordVisible;
   }
+  
   showLoginDialog(){
     this.dialogRef.close()
     const dialogRef = this.dialog.open(LoginComponent,{
       width: '25pc',
+      autoFocus: false,
       maxHeight: '90vh'
     });
   }

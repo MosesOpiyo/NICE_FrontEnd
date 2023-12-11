@@ -10,7 +10,7 @@
 }
 
 .tables-container .dashboard-card {
-    background-color: #f9f9f9;
+    background-color: #f2f2f2;
     border-radius: 4px;
     height: 100%;
     box-shadow: 0 0 5px #ccc;
@@ -50,4 +50,28 @@ select{
     border: 2px solid blue;
     border-radius: 10px;
     margin-bottom: 5px;
+}
+
+/* paginator */
+mat-paginator {
+    background-color: #fff;
+    color: #000000;
+}
+
+-outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,
+mat-paginator .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
+mat-paginator .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+    border-color: #000000;
+}
+
+mat-paginator .mat-mdc-select-value {
+    color: rgb(0 0 0 / 87%);
+}
+
+.mat-mdc-select-arrow {
+    color: rgb(0 0 0 / 54%);
+}
+
+.mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon {
+    fill: rgb(0 0 0 / 66%);
 }

@@ -3,13 +3,13 @@
     display: flex;
     justify-content: space-between;
     padding: .5rem;
-
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 3;
     height: 5rem;
     background-color: #f2f2f2;
+    border-bottom: 2px solid #cccccc1a;
 }
 
 .dashheader-container > * {

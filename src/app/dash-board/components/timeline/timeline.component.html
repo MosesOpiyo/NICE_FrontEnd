@@ -65,15 +65,10 @@
     
             <form enctype="multipart/form-data"  class="create-content">
                 <div class="media">
-                    <div class="media-content">
-                        <div class="video">
-                            <label for="file"><i class="fa-solid fa-video"></i>&nbsp;&nbsp;Video</label>
-                            <input type="file" id="file" name="file">
-                        </div>
-    
+                    <div class="media-content">    
                         <div class="image">
-                            <label for="file"><i class="fa-solid fa-image"></i>&nbsp;&nbsp;Image</label>
-                            <input type="file" enctype="multipart/form-data" (change)="onFileSelected($event)" [(ngModel)]="media" id="file" name="file">
+                            <label for="file"><i class="fa-solid fa-image"></i></label>
+                            <input title="file" type="file" enctype="multipart/form-data" (change)="onFileSelected($event)" [(ngModel)]="media" id="file" name="file" multiple>
                         </div>    
                     </div>  
                 </div>

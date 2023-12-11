@@ -215,7 +215,7 @@
   // region-country selector
   window.crs.init()
 
-  var inputs = document.querySelectorAll( '.file' );
+  var inputs = document.querySelectorAll( '.inputmedia' );
   Array.prototype.forEach.call( inputs, function( input ) {
     var label	 = input.nextElementSibling,
     labelVal = label.innerHTML;

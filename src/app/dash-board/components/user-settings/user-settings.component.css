@@ -1,14 +1,14 @@
 .settings-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: center; */
     gap: 1rem;
     width: 95%;
     margin-inline: auto;
 }
 
 .settings-card {
-    background-color: #f9f9f9;
+    background-color: #f2f2f2;
     padding: 1rem;
     border-radius: 4px;
     height: 100%;
@@ -30,11 +30,121 @@
     justify-content: center;
 }
 
-.email-edit .email-input form,
-.phone-edit .phone-input form {
-    margin-top: 1rem;
+.email-edit form,
+.phone-edit form {
+    /* border: 2px solid red; */
+    width: 70%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 20%;
+    /* gap: 1.5rem; */
+    position: relative;
+    overflow: hidden;
+    padding-top: 30px;
+}
+
+.settings-container form .input-card {
+    margin-bottom: 20px;
+}
+
+.settings-container form input {
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    height: 40px;
+    padding-inline: .5rem;
+}
+
+/* input animations */
+.settings-container .email-input,
+.settings-container .phone-input {
+    position: relative;
+}
+
+.settings-container .email-input label,
+.settings-container .phone-input label {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.settings-container .email-input label::after,
+.settings-container .phone-input::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s  ease;
+}
+
+.settings-container .email-input .content-name,
+.settings-container .phone-input .content-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    transition: all .3s ease;
+}
+
+.settings-container .input-card .content-name {
+    color: #000000ba;
+}
+
+.settings-container .email-input input:focus + .label-name .content-name,
+.settings-container .email-input input:valid + .label-name .content-name,
+.settings-container .phone-input input:focus + .label-name .content-name,
+.settings-container .phone-input input:valid + .label-name .content-name {
+    transform: translateY(-150%);
+}
+
+.settings-container .email-input input:focus + .label-name::after,
+.settings-container .email-input input:valid + .label-name::after,
+.settings-container .phone-input input:focus + .label-name::after,
+.settings-container .phone-input input:valid + .label-name::after  {
+    transform: translateX(0%);
+}
+/* end of input animations */
+
+.phone-edit button,
+.email-edit button {
+    padding: .8rem;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    transition: all 350ms ease-in-out;
+    border: 2px solid black;
+}
+
+.phone-edit button:hover,
+.email-edit button:hover {
+    letter-spacing: 3px;
+    background-color: #fff;
+    color: #000000;
+}
+
+.settings-container form input:focus {
+    border: 2px solid #b7b7cf;
+    box-shadow: none;
+}
+
+/* media queries */
+@media (max-width: 900px) {
+    .settings-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 375px) {
+    .email-edit form,
+    .phone-edit form {
+        width: 100%;
+    }
+
+    .settings-card {
+        padding: .5rem;
+    }
 }
