@@ -25,13 +25,13 @@ export class DetailsComponent implements OnInit {
 
   constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
   user:any
-  isOpened:boolean = false
   warehouse:any
+  isOpened:boolean = false
   cloudinaryUrl = environment.CLOUDINARY_URL
   default = environment.DEFAULT_URL
   location:any
   profile:any
-  isEstate:boolean = false
+  picture:any
 
   Url(location:any){
     return this.sanitizer.bypassSecurityTrustUrl(this.location);
@@ -52,9 +52,7 @@ export class DetailsComponent implements OnInit {
       this.dialog.open(SavechangesComponent, {data: {id:3, value: 'Wet Mill Name',key:'wet_mill_name',data:this.profile.wet_mill_name}})
     }
     else if (num == 4) {
-      if(this.isEstate){
-        this.dialog.open(SavechangesComponent, {data: {id:4, value: 'Estate Name',key:'estate_name',data:this.profile.estate_name}})
-      }
+      this.dialog.open(SavechangesComponent, {data: {id:4, value: 'Society Name',key:'society_name',data:this.profile.society_name}})
     }
     else if (num == 5) {
       this.dialog.open(SavechangesComponent, {data: {id:5, value: 'Factory Chairman',key:'factory_chairman',data:this.profile.factory_chairman}})
@@ -119,14 +117,24 @@ export class DetailsComponent implements OnInit {
   }
 
   showProfileDialog(){
-    this.isOpened = true
     const dialogRef = this.dialog.open(ProfileComponent,{
       width: '40pc',
       maxHeight: '90vh'
     });
   }
-
-
+  postProfilePicture(event: any){
+    if(this.picture > 0){
+    }else{
+      this.picture = event.target.files[0];
+      let form = new FormData();
+      form.append('image',this.picture),
+      this.service.profilePicture(form)
+      this.store.storeProfileData()
+      this.store.data$.subscribe((res:any) => {
+        this.profile = res
+      })
+    }
+  }
 
   ngOnInit(): void {
     this.store.storeProfileData()
@@ -136,15 +144,15 @@ export class DetailsComponent implements OnInit {
         this.service.getFarmerProfile().subscribe((res:any)=>{
           this.store.updateFarmerData(res)
           this.store.farmerData$.subscribe((res:any) => {
-            if(res == "" ){
-              if(!this.isOpened){
+            if(res){
+              this.profile = res
+            }else{
+              if(this.isOpened == false){
+                this.isOpened = true
                 this.showProfileDialog()
               }
-            }
-            else if(res.county != "" || res.grower_history != "" || res.farm_area != ""){
-              this.profile = res
-              if(res.estate_name != ""){
-                this.isEstate = true
+              else{
+                false
               }
             }
           })

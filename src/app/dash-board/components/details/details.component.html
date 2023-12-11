@@ -6,9 +6,9 @@
         <div class="dashboard-card info">
             <div class="card-header">
                 <div>
-                    <h5 *ngIf="user.user.type=='FARMER'">Farmer's Details</h5>
-                    <h5 *ngIf="user.user.type=='WAREHOUSER'">Warehouser's Details</h5>
-                    <h5 *ngIf="user.user.type=='BUYER'">My Details</h5>
+                    <h5 *ngIf="user['user']['type']=='FARMER'">Farmer's Details</h5>
+                    <h5 *ngIf="user['user']['type']=='WAREHOUSER'">Warehouser's Details</h5>
+                    <h5 *ngIf="user['user']['type']=='BUYER'">My Details</h5>
                 </div>
             </div>
         
@@ -18,7 +18,7 @@
                     <img *ngIf="!user.profile_pic"
                         src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                         alt="">
-                    <input type="file" enctype="multipart/form-data" id="file" name="file" title="file" class="file"  data-multiple-caption="{count} files selected" multiple>
+                    <input type="file" [(ngModel)]="picture" (change)="postProfilePicture($event)" enctype="multipart/form-data" id="file" name="file" title="file" class="file"  data-multiple-caption="{count} files selected" multiple>
                     <label for="file"><i class="fa-solid fa-camera"></i></label>
                 </div>
         
@@ -36,7 +36,7 @@
             <h5 class="mb-4">Farm Details</h5>
         
             <div>
-                <ul class="farmer-info">
+                <ul *ngIf="profile" class="farmer-info">
                     <li>
                         County: <br>
                         <span *ngIf="profile">{{profile.county}}</span>

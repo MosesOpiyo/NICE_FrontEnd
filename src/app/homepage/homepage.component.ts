@@ -19,10 +19,13 @@ export class HomepageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.authStore.storeProfileData()
-    this.cart.getCart().subscribe((res:any)=>{
-      this.cartStore.updateData(res)
-      this.cartStore.data$.subscribe((data:any) =>{
+    if(sessionStorage.getItem('Token')){
+      this.cart.getCart().subscribe((res:any)=>{
+        this.cartStore.updateData(res)
+        this.cartStore.data$.subscribe((data:any) =>{
+        })
       })
-    })
+    }
+    
   }
 }
