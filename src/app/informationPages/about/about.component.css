@@ -118,7 +118,7 @@
 
   /* FAQ SECTION */
   .faq-container {
-    background-color: #e2e2e2;
+    background-color: #f6f6f6;
     display: flex;
     gap: 1rem;
     padding: 8rem 1rem;
@@ -153,7 +153,7 @@
   }
 
   .faq-container .faqs-accordion > * {
-    border-bottom: 1px solid #bf8f3b59;
+    border-bottom: 1px solid #e5e5e5;
   }
 
   .accordion-label,
@@ -173,7 +173,7 @@
   }
 
   .accordion-label:hover {
-    background-color: #bf8f3b29;
+    background-color: #e5e5e5;
   }
 
   .accordion-content {

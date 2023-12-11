@@ -42,24 +42,17 @@
   /* top: 140px; */
 }
 
+.shop-component .product-item .product-details {
+  display: flex;
+  justify-content: space-between;
+}
+
 .sidebar input[type="radio"] {
   display: none;
 }
 
 .sidebar ul {
   padding-left: .5rem;
-}
-
-@media (max-width: 600px) {
-  :host ::ng-deep .products-navbar .navbar-input {
-    width: 70%;
-  }
-}
-
-@media (max-width: 375px) {
-  :host ::ng-deep .products-navbar .navbar-input {
-    width: 100%;
-  }
 }
 
 .modal-contents input[type="number"] {
@@ -81,7 +74,18 @@
   border: 1px solid #0000004a;
 }
 
+/* media queries */
+@media (max-width: 600px) {
+  :host ::ng-deep .products-navbar .navbar-input {
+    width: 70%;
+  }
+}
+
 @media (max-width: 375px) {
+  :host ::ng-deep .products-navbar .navbar-input {
+    width: 100%;
+  }
+
   .modal-contents .incrdecr {
     flex-direction: column;
     gap: 0.5rem;

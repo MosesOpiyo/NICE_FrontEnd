@@ -19,6 +19,7 @@ import { FarmdetailsComponent } from './farmdetails/farmdetails.component';
 import { TripdetailsComponent } from './informationPages/tripdetails/tripdetails.component';
 import { OriginsComponent } from './origins/origins.component';
 import { OrigindetailsComponent } from './origindetails/origindetails.component';
+import { TermsComponent } from './informationPages/terms/terms.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path: 'farm/:farmId', component:FarmdetailsComponent},
   {path: 'trip-details', component: TripdetailsComponent},
   {path: 'origins', component: OriginsComponent},
-  {path: 'origin/:originId', component: OrigindetailsComponent}
+  {path: 'origin/:originId', component: OrigindetailsComponent},
+  {path: 'terms and conditions', component: TermsComponent}
 
 ];
 

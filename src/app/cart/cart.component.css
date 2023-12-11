@@ -23,11 +23,11 @@
 .cart-container {
   position: relative;
   top: 75px;
-  margin-bottom: 100px;
-  padding: 3rem .5rem;
+  margin-bottom: 75px;
+  padding: 1rem .5rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   min-height: 500px;
 }
 
@@ -160,6 +160,14 @@
     object-fit: contain;
   }
 
+  .cartempty-container .cart-image lottie-player {
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: contain;
+    /* width: 300px; */
+  }
+
   .cartempty-container .cart-contents {
     display: flex;
     flex-direction: column;
@@ -172,6 +180,15 @@
     background-color: #000000;
     color: #fff;
     padding: .3rem .5rem;
+    transition: all .3s ease-in-out;
+    border: 2px solid #000000;
+  }
+
+  .cartempty-container .cart-contents a:hover {
+    background-color: #f7f7f7;
+    color: #000000;
+    letter-spacing: 3px;
+    border: 2px solid #000000;
   }
 
 /* CART media queries */
