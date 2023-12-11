@@ -25,11 +25,13 @@ export class DetailsComponent implements OnInit {
 
   constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
   user:any
+  isOpened:boolean = false
   warehouse:any
   cloudinaryUrl = environment.CLOUDINARY_URL
   default = environment.DEFAULT_URL
   location:any
   profile:any
+  isEstate:boolean = false
 
   Url(location:any){
     return this.sanitizer.bypassSecurityTrustUrl(this.location);
@@ -50,7 +52,9 @@ export class DetailsComponent implements OnInit {
       this.dialog.open(SavechangesComponent, {data: {id:3, value: 'Wet Mill Name',key:'wet_mill_name',data:this.profile.wet_mill_name}})
     }
     else if (num == 4) {
-      this.dialog.open(SavechangesComponent, {data: {id:4, value: 'Society Name',key:'society_name',data:this.profile.society_name}})
+      if(this.isEstate){
+        this.dialog.open(SavechangesComponent, {data: {id:4, value: 'Estate Name',key:'estate_name',data:this.profile.estate_name}})
+      }
     }
     else if (num == 5) {
       this.dialog.open(SavechangesComponent, {data: {id:5, value: 'Factory Chairman',key:'factory_chairman',data:this.profile.factory_chairman}})
@@ -115,11 +119,14 @@ export class DetailsComponent implements OnInit {
   }
 
   showProfileDialog(){
+    this.isOpened = true
     const dialogRef = this.dialog.open(ProfileComponent,{
       width: '40pc',
       maxHeight: '90vh'
     });
   }
+
+
 
   ngOnInit(): void {
     this.store.storeProfileData()
@@ -130,10 +137,15 @@ export class DetailsComponent implements OnInit {
           this.store.updateFarmerData(res)
           this.store.farmerData$.subscribe((res:any) => {
             if(res == "" ){
-              this.showProfileDialog()
+              if(!this.isOpened){
+                this.showProfileDialog()
+              }
             }
-            else if(res.county != "" || res.society_name != "" || res.total_acreage != ""){
+            else if(res.county != "" || res.grower_history != "" || res.farm_area != ""){
               this.profile = res
+              if(res.estate_name != ""){
+                this.isEstate = true
+              }
             }
           })
         })
