@@ -4,6 +4,7 @@ import { AuthenticationService } from '../AuthService/authentication.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../Auth/auth.service';
 import { SignUpComponent } from '../sign-up/sign-up.component';
+import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.component';
 
 @Component({
   selector: 'app-login',
@@ -41,6 +42,15 @@ isPasswordVisible = false;
   showSignUpDialog(){
     this.dialogRef.close()
     const dialogRef = this.dialog.open(SignUpComponent,{
+      width: '25pc',
+      autoFocus: false,
+      maxHeight: '100vh'
+    });
+  }
+
+  showFarmerSignUpDialog(){
+    this.dialogRef.close()
+    const dialogRef = this.dialog.open(FarmerSignUpComponent,{
       width: '25pc',
       autoFocus: false,
       maxHeight: '100vh'

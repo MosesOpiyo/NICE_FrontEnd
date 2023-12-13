@@ -51,7 +51,7 @@
     }
 
     .main { 
-        width: calc(100vw - 100px);
+        width: calc(100vw - 110px);
         left: 100px;
     }
 }

@@ -67,7 +67,10 @@
                 <div class="media">
                     <div class="media-content">    
                         <div class="image">
-                            <label for="file"><i class="fa-solid fa-image"></i></label>
+                            <label for="file">
+                                <!-- <i class="fa-solid fa-image"></i> -->
+                                Add Media &nbsp; &rarr;
+                            </label>
                             <input title="file" type="file" enctype="multipart/form-data" (change)="onFileSelected($event)" [(ngModel)]="media" id="file" name="file" multiple>
                         </div>    
                     </div>  
@@ -106,7 +109,7 @@
                         </div>
     
                         <div class="timeline-media">
-                            <img src="{{cloudinaryUrl}}{{post.media}}" alt="coffee plant">
+                            <img src="{{cloudinaryUrl}}{{post.media}}" alt="coffee activity">
                         </div>
             
                         <div class="timeline-text">

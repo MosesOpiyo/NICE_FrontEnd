@@ -8,6 +8,7 @@ import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { environment } from 'src/environments/environment.development';
 import { CartService } from '../Service/Cart/cart.service';
 import { ProductsService } from '../ProductsService/products.service';
+import { AddtocartComponent } from '../addtocart/addtocart.component';
 
 @Component({
   selector: 'app-products',
@@ -466,6 +467,15 @@ export class ProductsComponent implements OnInit {
      width: '25pc'
    }); 
  }
+
+ showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string){
+  const dialogRef = this.dialog.open(AddtocartComponent,{
+    minWidth: '250px',
+    maxHeight: '100vh',
+    enterAnimationDuration,
+    exitAnimationDuration
+  });
+}
 
  averageRating(item:any){
   const list :number[] = []

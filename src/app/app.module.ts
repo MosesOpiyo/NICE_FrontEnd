@@ -52,6 +52,7 @@ import { TripdetailsComponent } from './informationPages/tripdetails/tripdetails
 import { OriginsComponent } from './origins/origins.component';
 import { OrigindetailsComponent } from './origindetails/origindetails.component';
 import { TermsComponent } from './informationPages/terms/terms.component';
+import { AddtocartComponent } from './addtocart/addtocart.component';
 // register Swiper custom elements
 register();
 
@@ -88,7 +89,8 @@ register();
     TripdetailsComponent,
     OriginsComponent,
     OrigindetailsComponent,
-    TermsComponent
+    TermsComponent,
+    AddtocartComponent
   ],
   entryComponents:[LoginComponent],
   imports: [

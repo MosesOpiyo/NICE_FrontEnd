@@ -76,7 +76,7 @@ img{
 .farmer-info > *,
 .warehouse-info > *,
 .buyer-info > * {
-    border: 2px solid #0000000d;
+    border: 1px solid #0000000d;
     padding: 1rem;
     position: relative;
     max-width: 100%;

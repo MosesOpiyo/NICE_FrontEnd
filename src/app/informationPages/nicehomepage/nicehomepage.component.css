@@ -1,3 +1,20 @@
+ /* ::ng-deep .cdk-overlay-pane .mat-mdc-dialog-container,
+.mat-mdc-dialog-container .mdc-dialog__container,
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  height: 80vh;
+} */
+
+/*::ng-deep .cdk-overlay-pane .mat-dialog-container {
+  background-color: lightgreen;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+::ng-deep .cdk-overlay-pane .mat-dialog-container .mat-dialog-content {
+  max-height: 100%;
+} */
+
+
 .modal-contents input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;

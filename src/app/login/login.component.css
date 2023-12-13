@@ -46,8 +46,8 @@ h3 {
 
 .login-container form input {
     width: 100%;
-    border: 2px solid gray;
-    border-radius: 10px;
+    border: 1px solid #8080807a;
+    border-radius: 4px;
     height: 40px;
     padding-inline: .5rem;
 }
@@ -108,7 +108,7 @@ h3 {
 /* end of input animations */
 
 .login-container form input:focus {
-    border: 2px solid #b7b7cf;
+    border: 1px solid #0000ff85;
     box-shadow: none;
 }
 
