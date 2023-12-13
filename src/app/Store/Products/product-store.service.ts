@@ -9,6 +9,12 @@ export class ProductStoreService {
   constructor(private product:ProductsService){}
   private dataSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   data$: Observable<any[]> = this.dataSubject.asObservable();
+  private singelDataSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  singleData$: Observable<any[]> = this.dataSubject.asObservable();
+
+  updateSingleData(data: any[]): void {
+    this.singelDataSubject.next(data);
+  }
 
   updateData(data: any[]): void {
     this.dataSubject.next(data);

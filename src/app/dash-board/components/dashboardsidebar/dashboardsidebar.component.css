@@ -81,6 +81,19 @@
 
     .sidenav-container .nav-menu .nav-list > * a {
         flex-direction: column;
+        border-left: none;
+        border-bottom: 3px solid #f2f2f2;
+    }
+
+    .sidenav-container .nav-menu .nav-list > * a:hover,
+    .sidenav-container .nav-menu .nav-list .nav-list-item .active-link {
+       /* background-color: #ffffff;
+       color: #0a649d; */
+       border-bottom: 3px solid #0a649d;
+       border-left: none;
+       border-top-right-radius: 0rem;
+       border-bottom-right-radius: 0rem;
+       font-weight: normal;
     }
 
     .sidenav-container .nav-menu .nav-list > * a i {

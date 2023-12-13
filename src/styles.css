@@ -236,7 +236,7 @@ opacity: .2;
     height: 45px;
   }
 
-  .fa-bag-shopping::after {
+  .fa-cart-shopping::after {
     content:attr(value);
     font-size:12px;
     color: #000000;
@@ -249,7 +249,7 @@ opacity: .2;
     opacity:0.9;
   }
 
-  .fa-bag-shopping.two::after {
+  .fa-cart-shopping.two::after {
     display: none;
   }
 
@@ -257,7 +257,8 @@ opacity: .2;
     margin-left: 1rem;
   }
 
-  .navbar ul li i {
+  .navbar ul li i,
+  .dashboard-container .nav-links li i {
     color: #000000;
     font-size: 1rem;
   }
@@ -284,12 +285,16 @@ opacity: .2;
     align-items: center;
   }
 
-  .navbar li {
+  .navbar li,
+  .dashboard-container .nav-links li {
     position: relative;
   }
 
   .navbar a,
-  .navbar a:focus {
+  .navbar a:focus,
+  .navbar ul li button,
+  .navbar ul li button:focus,
+  .dashboard-container .nav-links li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -302,7 +307,8 @@ opacity: .2;
     text-transform: uppercase;
   }
 
-  .navbar .user-case a {
+  .navbar .user-case a,
+  .dashboard-container .nav-links li a {
     text-transform: capitalize;
     cursor: pointer;
     color: #000000;
@@ -319,7 +325,9 @@ opacity: .2;
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a,
-  .mobile-icons li.user-case:hover>a {
+  .mobile-icons li.user-case:hover>a,
+  .navbar ul li button:hover,
+  .dashboard-container .nav-links li:hover > a {
     background-color: rgba(255, 255, 255, 0.2);
   }
 
@@ -335,7 +343,8 @@ opacity: .2;
     font-size: 1.4rem;
   }
 
-  .navbar .dropdown ul {
+  .navbar .dropdown ul,
+  .dashboard-container .nav-links .dropdown ul {
     display: block;
     position: absolute;
     left: 10px;
@@ -371,7 +380,8 @@ opacity: .2;
     visibility: visible;
   }
 
-  .navbar .dropdown.user-case ul {
+  .navbar .dropdown.user-case ul,
+  .dashboard-container .nav-links .dropdown ul {
     padding: 0;
     height: max-content;
   }
@@ -393,11 +403,13 @@ opacity: .2;
     min-width: 200px;
   }
 
-  .navbar .dropdown.user-case ul li {
+  .navbar .dropdown.user-case ul li,
+  .dashboard-container .nav-links .dropdown ul li {
     min-width: 0;
   }
 
-  .navbar .dropdown ul a {
+  .navbar .dropdown ul a,
+  .dashboard-container .nav-links .dropdown ul a {
     padding: 10px 20px;
     font-size: 15px;
     text-transform: none;
@@ -412,7 +424,8 @@ opacity: .2;
 
   .navbar .dropdown ul a:hover,
   .navbar .dropdown ul .active:hover,
-  .navbar .dropdown ul li:hover>a {
+  .navbar .dropdown ul li:hover>a,
+  .dashboard-container .nav-links .dropdown ul a:hover {
     color: #67b0d1;
   }
 
@@ -435,24 +448,26 @@ opacity: .2;
     visibility: visible;
   }
 
-  .credentials-nonmobile ul {
+  .credentials-nonmobile ul,
+  .dashboard-container .nav-links ul {
     display: flex;
     gap: .5rem;
   }
 
-  .credentials-nonmobile ul li button {
-    background-color: #000000;
+  .credentials-nonmobile ul li button,
+  .navbar ul li button {
+    background-color: transparent;
     border: none;
-    padding: .6rem 1rem;
-    color: #ffffff;
-    transition: all 500ms ease-in-out;
+    /* padding: .6rem 1rem; */
   }
 
-  .credentials-nonmobile ul li button:hover {
-    background-color: #f7f7f7;
-    cursor: pointer;
-    color: #000000;
+  .credentials-nonmobile ul li button i {
+    font-size: 1.6rem;
   }
+
+  /* .credentials-nonmobile ul li button i:hover {
+    font-size: 1.5rem;
+  } */
 
 
   /* navbar media queries */
@@ -1566,14 +1581,15 @@ opacity: .2;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 100%;
+    height: 100%;
   }
 
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     .modal-contents {
       width: 60%;
     }
-  }
+  } 
 
   @media (max-width: 640px) {
     .modal-contents {
@@ -1591,7 +1607,7 @@ opacity: .2;
     .modal-contents {
       width: 95%;
     }
-  }
+  }*/
 
   .modal-contents .product-form,
   .product-component .product-alldetails .product-form {
@@ -1811,6 +1827,8 @@ opacity: .2;
     background-color: #000000;
     color: #f0f7fa;
     padding: .5rem 1rem;
+    font-size: 15px;
+    font-weight: 300;
     transition: all 400ms ease-in-out;
   }
 
@@ -1818,7 +1836,14 @@ opacity: .2;
     .modal-contents .product-form .submit-btn button,
     .submit-btn .buy {
       padding: .5rem;
-      font-size: .7rem;
+      font-size: .8rem;
+    }
+  }
+
+  @media (max-width: 468px) {
+    .product-form .submit-btn {
+      flex-direction: column;
+      text-align: center;
     }
   }
 
@@ -2635,13 +2660,13 @@ opacity: .2;
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #b59e9e; 
+    background: #8080807a; 
     border-radius: 10px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #443939; 
+    background: #4439398c; 
   }
   
   /* products list */
@@ -2653,6 +2678,7 @@ opacity: .2;
     left: 20%;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
   }
   
     /* PRODUCTS STYLING */
@@ -2765,7 +2791,7 @@ opacity: .2;
     .farmdetails-component .productlist .productlist-content .product-addactions a {
       padding: 10px;
       color: #fff;
-      background-color: #0c052b;
+      background-color: #000000;
       font-size: 1rem;
       transition: all 250ms ease-in-out;
     }
@@ -2953,7 +2979,6 @@ opacity: .2;
     .product-component .product-form .submit-btn button,
     .submit-btn .buy {
       padding: .5rem;
-      font-size: .6rem;
     }
   }
 

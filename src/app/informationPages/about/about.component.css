@@ -1,5 +1,5 @@
   :host ::ng-deep #header .navbar ul li i.fa-chevron-down,
-  :host ::ng-deep #header .navbar ul li i.fa-bag-shopping {
+  :host ::ng-deep #header .navbar ul li i.fa-cart-shopping {
     color: #000000;
   }
   

@@ -178,7 +178,7 @@
             </a>
 
             <div class="latestadd-actions product-addactions">
-              <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+              <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
                 Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
               </a>
               <a role="button" title="wishlist">
@@ -187,6 +187,7 @@
             </div>
           </div>
         </div>
+        
         <div *ngIf="filteredProducts != null" class="productlist-content">
           <!-- paginate: { itemsPerPage: itemsPerPage, currentPage: p } -->
           <div class="product-card"  *ngFor="let item of filteredProducts" data-aos="fade-up">
@@ -246,7 +247,7 @@
             </a>
 
             <div class="latestadd-actions product-addactions">
-              <a role="button" *ngIf="!isModalOpen" (click)="toggleModal()">
+              <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
                 Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
               </a>
               <a role="button" title="wishlist">
@@ -281,7 +282,7 @@
       
               <div *ngIf="activatedTabIndex == 0" class="roasted">
       
-                  <form action="" method="post">
+                  <form action="" method="post" ngNativeValidate>
                       <div class="option-list">
                           <select id="packsize" name="packsize" title="packsize" required>
                               <option value="">Choose Pack Size...</option>
@@ -374,7 +375,7 @@
                       </div>
                   </div>
       
-                  <form action="/" method="post">
+                  <form action="/" method="post" ngNativeValidate>
                       <div class="radio">
                           <div class="radio1">
                               <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff() checked>
