@@ -85,7 +85,10 @@
                 </div>
     
                 <div class="form-controls form-btn form-submit">
-                    <button (click)="PostStories()" type="submit">Create Post&nbsp;&nbsp;<i class="fa-solid fa-circle-down"></i></button>
+                    <button *ngIf="isLoading == false" (click)="PostStories()" type="submit">Create Post&nbsp;&nbsp;<i class="fa-solid fa-circle-down"></i></button>
+                    <button *ngIf="isLoading == true"><div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div></button>
                 </div>
             </form>
         </div>

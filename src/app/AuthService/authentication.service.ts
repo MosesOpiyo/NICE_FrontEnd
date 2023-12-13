@@ -9,6 +9,7 @@ import { Location } from '@angular/common';
 import { error } from 'console';
 import { MatDialog } from '@angular/material/dialog';
 import { VerificationComponent } from '../verification/verification.component';
+import { AuthenticationStoreService } from '../AuthServiceStore/authentication-store.service';
 
 @Injectable({
   providedIn: 'root'
@@ -140,6 +141,25 @@ export class AuthenticationService implements OnInit {
     })
     this.http.put(`${environment.BASE_URL}Farmers/ProfileUpdate/${key}`,credentials,{'headers':headers}).subscribe((response:any)=>{
       this.snackBar.open("Update SuccessFul", 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      this.refreshPage()
+    },(error:any) =>{
+      console.log(error.error)
+      this.snackBar.open(error.error, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    })
+  }
+
+  profilePicture(input:any){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    this.http.post(`${environment.BASE_URL}Authentication/ProfilePicture`,input,{'headers':headers}).subscribe((response:any)=>{
+      this.snackBar.open("Profile Picture Updated.", 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']
       });

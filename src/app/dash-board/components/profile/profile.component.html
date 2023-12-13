@@ -1,62 +1,103 @@
 <div class="container">
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
       <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
+        <form *ngIf="!isEstateFarmer" [formGroup]="firstFormGroup">
           <mat-slide-toggle (change)="toggleIsEstateFarmer()">Estate Farmer</mat-slide-toggle>
-          <ng-template matStepLabel>Society Details</ng-template>
-          <br>
-      
-          <mat-form-field>
-            <mat-label>County</mat-label>
-            <input matInput placeholder="County" formControlName="county" required>
+          <ng-template  matStepLabel>Society Details</ng-template>  
+              <br>
+              <mat-form-field>
+                  <mat-label>County</mat-label>
+                  <input matInput placeholder="County" formControlName="county" required>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Country</mat-label>
+                  <input matInput placeholder="Country" formControlName="country" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                  <mat-label *ngIf="!isEstateFarmer">Wet Mill Name</mat-label>
+                  <input *ngIf="!isEstateFarmer" matInput placeholder="Wet Mill Name" formControlName="wet_mill_name" required>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Society Name</mat-label>
+                <input matInput placeholder="Society Name" formControlName="society_name" required>
+            </mat-form-field>
+              <br>
+              <mat-form-field>
+                  <mat-label>Factory Chairman</mat-label>
+                  <input matInput placeholder="Factory Chairman" formControlName="factory_chairman" required>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Factory Manager</mat-label>
+                <input matInput placeholder="Factory Manager" formControlName="factory_manager" required>
+            </mat-form-field>
+              <br>
+              <mat-form-field>
+                  <mat-label>Number Of Farmers</mat-label>
+                  <input matInput placeholder="Number Of Farmers" formControlName="no_of_farmers" required>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Number Of Male Farmers</mat-label>
+                <input matInput placeholder="Number Of Male Farmers" formControlName="men" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <mat-label>Number Of Female Farmers</mat-label>
+              <input matInput placeholder="Number Of Female Farmers" formControlName="women" required>
           </mat-form-field>
       
-          <mat-form-field>
-            <mat-label>Country</mat-label>
-            <input matInput placeholder="Country" formControlName="country" required>
-          </mat-form-field>
-      
-          <br>
-          <mat-form-field>
-            <mat-label *ngIf="!isEstateFarmer">Wet Mill Name</mat-label>
-            <mat-label *ngIf="isEstateFarmer">Estate Name</mat-label>
-            <input *ngIf="!isEstateFarmer" matInput placeholder="Wet Mill Name" formControlName="wet_mill_name" required>
-            <input *ngIf="isEstateFarmer" matInput placeholder="Estate Name" formControlName="estate_name" required>
-          </mat-form-field>
-      
-          <mat-form-field>
-            <mat-label>Society Name</mat-label>
-            <input matInput placeholder="Society Name" formControlName="society_name" required>
-          </mat-form-field>
-      
-          <br>
-          <mat-form-field>
-            <mat-label>Factory Chairman</mat-label>
-            <input matInput placeholder="Factory Chairman" formControlName="factory_chairman" required>
-          </mat-form-field>
-      
-          <mat-form-field>
-            <mat-label>Factory Manager</mat-label>
-            <input matInput placeholder="Factory Manager" formControlName="factory_manager" required>
-          </mat-form-field>
-      
-          <br>
-          <mat-form-field>
-            <mat-label>Number Of Farmers</mat-label>
-            <input matInput placeholder="Number Of Farmers" formControlName="no_of_farmers" required>
-          </mat-form-field>
-      
-          <mat-form-field>
-            <mat-label>Number Of Male Farmers</mat-label>
-            <input matInput placeholder="Number Of Male Farmers" formControlName="men" required>
-          </mat-form-field>
-      
-          <br>
-          <mat-form-field>
-            <mat-label>Number Of Female Farmers</mat-label>
-            <input matInput placeholder="Number Of Female Farmers" formControlName="women" required>
-          </mat-form-field>
-      
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+        <form *ngIf="isEstateFarmer" [formGroup]="firstFormGroup">
+          <mat-slide-toggle (change)="toggleIsEstateFarmer()">Estate Farmer</mat-slide-toggle>
+          <ng-template  matStepLabel>Estate Details</ng-template>  
+              <br>
+              <mat-form-field>
+                  <mat-label>County</mat-label>
+                  <input matInput placeholder="County" formControlName="county" required>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Country</mat-label>
+                  <input matInput placeholder="Country" formControlName="country" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                  <mat-label >Estate Name</mat-label>
+                  <input matInput placeholder="Estate Name" formControlName="estate_name" required>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Manager</mat-label>
+                <input matInput placeholder="Factory Manager" formControlName="factory_manager" required>
+            </mat-form-field>
+              <br>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+        <form *ngIf="isEstateFarmer" [formGroup]="firstFormGroup">
+          <mat-slide-toggle (change)="toggleIsEstateFarmer()">Estate Farmer</mat-slide-toggle>
+          <ng-template  matStepLabel>Estate Details</ng-template>  
+              <br>
+              <mat-form-field>
+                  <mat-label>County</mat-label>
+                  <input matInput placeholder="County" formControlName="county" required>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Country</mat-label>
+                  <input matInput placeholder="Country" formControlName="country" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                  <mat-label >Estate Name</mat-label>
+                  <input matInput placeholder="Estate Name" formControlName="estate_name" required>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Manager</mat-label>
+                <input matInput placeholder="Factory Manager" formControlName="factory_manager" required>
+            </mat-form-field>
+              <br>
           <div>
             <button mat-button matStepperNext>Next</button>
           </div>

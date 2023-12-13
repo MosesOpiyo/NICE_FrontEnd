@@ -26,10 +26,12 @@ export class DetailsComponent implements OnInit {
   constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
   user:any
   warehouse:any
+  isOpened:boolean = false
   cloudinaryUrl = environment.CLOUDINARY_URL
   default = environment.DEFAULT_URL
   location:any
   profile:any
+  picture:any
 
   Url(location:any){
     return this.sanitizer.bypassSecurityTrustUrl(this.location);
@@ -240,22 +242,35 @@ export class DetailsComponent implements OnInit {
       maxHeight: '90vh'
     });
   }
+  postProfilePicture(event: any){
+    if(this.picture > 0){
+    }else{
+      this.picture = event.target.files[0];
+      let form = new FormData();
+      form.append('image',this.picture),
+      this.service.profilePicture(form)
+      
+    }
+  }
 
   ngOnInit(): void {
-    this.service.getProfile().subscribe((res:any) => {
-      this.store.updateData(res)
-    })
+    this.store.storeProfileData()
     this.store.data$.subscribe((res:any)=>{
       this.user = res
       if(this.user.user.type == "FARMER"){
         this.service.getFarmerProfile().subscribe((res:any)=>{
           this.store.updateFarmerData(res)
           this.store.farmerData$.subscribe((res:any) => {
-            if(res == "" ){
-              this.showProfileDialog()
-            }
-            else if(res.county != "" || res.society_name != "" || res.total_acreage != ""){
+            if(res){
               this.profile = res
+            }else{
+              if(this.isOpened == false){
+                this.isOpened = true
+                this.showProfileDialog()
+              }
+              else{
+                false
+              }
               console.log(this.profile)
             }
           })

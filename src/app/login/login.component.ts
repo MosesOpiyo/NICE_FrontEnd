@@ -1,8 +1,7 @@
-import { Component,Output, Inject, OnInit } from '@angular/core';
+import { Component,Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../AuthService/authentication.service';
-import { Router } from '@angular/router';
-import { AuthService } from '../Auth/auth.service';
+
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.component';
 
@@ -17,6 +16,7 @@ constructor(
   public dialogRef: MatDialogRef<LoginComponent>,
   private dialog:MatDialog,
   public service: AuthenticationService,
+  @Inject(MAT_DIALOG_DATA) public data: any
 ){}
 email: any;
 password: any;
@@ -41,19 +41,28 @@ isPasswordVisible = false;
   
   showSignUpDialog(){
     this.dialogRef.close()
-    const dialogRef = this.dialog.open(SignUpComponent,{
-      width: '25pc',
-      autoFocus: false,
-      maxHeight: '100vh'
-    });
+    if(this.data.isBuyer){
+      const dialogRef = this.dialog.open(SignUpComponent,{
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '100vh'
+      });
+    }
+    else{
+      const dialogRef = this.dialog.open(FarmerSignUpComponent,{
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '100vh'
+      });
+    }
   }
 
-  showFarmerSignUpDialog(){
-    this.dialogRef.close()
-    const dialogRef = this.dialog.open(FarmerSignUpComponent,{
-      width: '25pc',
-      autoFocus: false,
-      maxHeight: '100vh'
-    });
-  }
+  // showFarmerSignUpDialog(){
+  //   this.dialogRef.close()
+  //   const dialogRef = this.dialog.open(FarmerSignUpComponent,{
+  //     width: '25pc',
+  //     autoFocus: false,
+  //     maxHeight: '100vh'
+  //   });
+  // }
 }
