@@ -10,6 +10,17 @@ import { FarmerprofileService } from '../../FarmerProfile/farmerprofile.service'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit { 
+
+  // farmer type tabs
+  tabs: string [] = ['Estate Farmer', 'Cooperative Society'];
+  activatedTabIndex: number = 0;
+
+   // farmer type tab index
+   tabChange(tabIndex: any) {
+    this.activatedTabIndex = tabIndex;
+  }
+
+
 constructor(private _formBuilder: FormBuilder,private farmer:FarmerprofileService,public dialog: MatDialogRef<ProfileComponent>,){}
   title = 'Farmer Profile';
   isLinear = true;
