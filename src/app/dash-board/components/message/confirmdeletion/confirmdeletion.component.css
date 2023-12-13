@@ -1,0 +1,62 @@
+.confirm-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.confirm-container .confirm-icon {
+    height: 200px;
+    width: 200px;
+}
+
+.confirm-container .dotlottie-player {
+    width: 100%;
+    height: 100%;
+}
+
+.confirm-container .confirm-text {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.confirm-container mat-dialog-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-container mat-dialog-actions button {
+    border: none;
+    padding: 0.5rem 2rem;
+    font-size: 1.1rem;
+    transition: all 350ms ease-in-out;
+}
+
+.confirm-container mat-dialog-actions button:focus-visible {
+    outline-color: #0000ff1c;
+}
+
+.confirm-container mat-dialog-actions button.cancel {
+    background-color: #808080bf;
+}
+
+.confirm-container mat-dialog-actions button.cancel:hover {
+    background-color: #808080e7;
+    letter-spacing: 3px;
+}
+
+.confirm-container mat-dialog-actions button.delete {
+    background-color: #ff0044c9;
+}
+
+.confirm-container mat-dialog-actions button.delete:hover {
+    background-color: #ff0044e5;
+    letter-spacing: 3px;
+}

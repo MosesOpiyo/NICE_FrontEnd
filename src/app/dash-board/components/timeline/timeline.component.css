@@ -229,12 +229,12 @@ form button:hover {
 } */
 
 .timeline .timeline-content .timeline-media {
-    height: 400px;
+    height: auto;
     width: 100%;
 }
 
 .timeline .timeline-content .timeline-media img {
-    object-fit: contain;
+    object-fit: fill;
     object-position: top;
     height: 100%;
     width: 100%;

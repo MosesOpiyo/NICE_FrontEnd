@@ -4,6 +4,7 @@ import { NotificationMsgComponent } from '../notification-msg/notification-msg.c
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationsService } from 'src/app/Notifications/notifications.service';
 import { Router } from '@angular/router';
+import { ConfirmdeletionComponent } from '../confirmdeletion/confirmdeletion.component';
 
 @Component({
   selector: 'app-messages',
@@ -33,6 +34,13 @@ showNotification(info: any) {
     data: {
       message: info
     }
+  })
+}
+
+showConfirmdelete() {
+  this.dialog.open(ConfirmdeletionComponent, {
+    width: '25pc',
+    maxHeight: '90vh',
   })
 }
 

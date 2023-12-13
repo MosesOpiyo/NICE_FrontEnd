@@ -43,17 +43,11 @@
 }
 
 /* input animations */
-.signup-container .signup-username,
-.signup-container .signup-email,
-.signup-container .signup-password,
-.signup-container .signup-confirmpass {
+.signup-container .input-card {
     position: relative;
 }
 
-.signup-container .signup-username label,
-.signup-container .signup-email label,
-.signup-container .signup-password label,
-.signup-container .signup-confirmpass label {
+.signup-container .input-card label {
     position: absolute;
     bottom: 0px;
     left: 0;
@@ -62,10 +56,12 @@
     pointer-events: none;
 }
 
-.signup-container .signup-username label::after,
-.signup-container .signup-email::after,
-.signup-container .signup-password label::after,
-.signup-container .signup-confirmpass label::after {
+.signup-container .input-card label.show-pass {
+    position: relative;
+    pointer-events: all;
+}
+
+.signup-container .input-card label::after {
     content: "";
     position: absolute;
     height: 100%;
@@ -76,10 +72,7 @@
     transition: all 0.3s  ease;
 }
 
-.signup-container .signup-username .content-name,
-.signup-container .signup-email .content-name,
-.signup-container .signup-password .content-name,
-.signup-container .signup-confirmpass .content-name {
+.signup-container .input-card .content-name {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -90,30 +83,18 @@
     bottom: 34px;
 }
 
-.signup-container .signup-username input:focus + .label-name .content-name,
-.signup-container .signup-username input:valid + .label-name .content-name,
-.signup-container .signup-email input:focus + .label-name .content-name,
-.signup-container .signup-email input:valid + .label-name .content-name,
-.signup-container .signup-password input:focus + .label-name .content-name,
-.signup-container .signup-password input:valid + .label-name .content-name,
-.signup-container .signup-confirmpass input:focus + .label-name .content-name,
-.signup-container .signup-confirmpass input:valid + .label-name .content-name {
+.signup-container .input-card input:focus + .label-name .content-name,
+.signup-container .input-card input:valid + .label-name .content-name {
     transform: translateY(-150%);
 }
 
-.signup-container .signup-username input:focus + .label-name::after,
-.signup-container .signup-username input:valid + .label-name::after,
-.signup-container .signup-email input:focus + .label-name::after,
-.signup-container .signup-email input:valid + .label-name::after,
-.signup-container .signup-password input:focus + .label-name::after,
-.signup-container .signup-password input:valid + .label-name::after,
-.signup-container .signup-confirmpass input:focus + .label-name::after,
-.signup-container .signup-confirmpass input:valid + .label-name::after  {
+.signup-container .input-card input:focus + .label-name::after,
+.signup-container .input-card input:valid + .label-name::after {
     transform: translateX(0%);
 }
 /* end of input animations */
 
-.signup-container #myInput{
+.signup-container #myInput {
     width: 20px;
     height: 20px;
 }

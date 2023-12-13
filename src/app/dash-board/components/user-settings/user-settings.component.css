@@ -19,19 +19,27 @@
     gap: 2rem;
 }
 
+.settings-card.password {
+    height: auto;
+}
+
 .settings-card span {
     color: blue;
 }
 
 .email-edit,
-.phone-edit {
+.phone-edit,
+.password-edit,
+.oldpassword-edit {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .email-edit form,
-.phone-edit form {
+.phone-edit form,
+.password-edit form,
+.oldpassword-edit form  {
     /* border: 2px solid red; */
     width: 70%;
     display: flex;
@@ -55,13 +63,11 @@
 }
 
 /* input animations */
-.settings-container .email-input,
-.settings-container .phone-input {
+.settings-container .input-card {
     position: relative;
 }
 
-.settings-container .email-input label,
-.settings-container .phone-input label {
+.settings-container .input-card label {
     position: absolute;
     bottom: 0px;
     left: 0;
@@ -70,8 +76,7 @@
     pointer-events: none;
 }
 
-.settings-container .email-input label::after,
-.settings-container .phone-input::after {
+.settings-container .input-card label::after {
     content: "";
     position: absolute;
     height: 100%;
@@ -82,8 +87,7 @@
     transition: all 0.3s  ease;
 }
 
-.settings-container .email-input .content-name,
-.settings-container .phone-input .content-name {
+.settings-container .input-card .content-name {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -94,23 +98,21 @@
     color: #000000ba;
 }
 
-.settings-container .email-input input:focus + .label-name .content-name,
-.settings-container .email-input input:valid + .label-name .content-name,
-.settings-container .phone-input input:focus + .label-name .content-name,
-.settings-container .phone-input input:valid + .label-name .content-name {
+.settings-container .input-card input:focus + .label-name .content-name,
+.settings-container .input-card input:valid + .label-name .content-name {
     transform: translateY(-150%);
 }
 
-.settings-container .email-input input:focus + .label-name::after,
-.settings-container .email-input input:valid + .label-name::after,
-.settings-container .phone-input input:focus + .label-name::after,
-.settings-container .phone-input input:valid + .label-name::after  {
+.settings-container .input-card input:focus + .label-name::after,
+.settings-container .input-card input:valid + .label-name::after  {
     transform: translateX(0%);
 }
 /* end of input animations */
 
 .phone-edit button,
-.email-edit button {
+.email-edit button,
+.password-edit button,
+.oldpassword-edit button  {
     padding: .5rem;
     border: none;
     background-color: #000000;
@@ -120,7 +122,9 @@
 }
 
 .phone-edit button:hover,
-.email-edit button:hover {
+.email-edit button:hover,
+.password-edit button:hover,
+.oldpassword-edit button:hover  {
     letter-spacing: 3px;
     background-color: #fff;
     color: #000000;
@@ -140,7 +144,9 @@
 
 @media (max-width: 375px) {
     .email-edit form,
-    .phone-edit form {
+    .phone-edit form,
+    .password-edit form,
+    .oldpassword-edit form {
         width: 100%;
     }
 

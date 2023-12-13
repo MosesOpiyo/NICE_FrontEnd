@@ -6,11 +6,13 @@ span {
     font-weight: 300;
 }
 
-img{
+img {
     width: 100px;
     height: 100px;
     border-radius: 50px;
     background-color: black;
+    object-position: center;
+    object-fit: cover
 }
 
 .card-container {
@@ -138,8 +140,13 @@ img{
   }
 
   .file:focus + label,
+  .file + label {
+    color: #0000007a;
+  }
+
+  .file:focus + label,
   .file + label:hover {
-    color: red;
+    color: #000000c4;
   }
 
   .picture {

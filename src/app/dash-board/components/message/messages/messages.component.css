@@ -8,6 +8,11 @@
   border-radius: 10px;
 }
 
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
+
 .message-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -24,6 +29,10 @@
     border-radius: 4px;
     height: 100%;
     box-shadow: 0 0 5px #ccc;
+}
+
+.message-container .dashboard-card.main-messages {
+  padding-top: 0rem;
 }
 
   /* MESSAGES NAV */
@@ -44,6 +53,7 @@
 
   .messages-nav ul li span {
     font-weight: bold;
+    color: #008000;
 }
 
   .messages-nav ul li,
@@ -57,8 +67,13 @@
 
   .messages-nav ul li i {
     font-size: 1.2rem;
-    color: red;
+    color: #000000a1;
     cursor: pointer;
+    transition: all 350ms ease-in-out;
+  }
+
+  .messages-nav ul li i:hover {
+    color: #000000ce;
   }
 
   .message-container .main-messages {
@@ -68,15 +83,17 @@
 
   .bold {
     font-weight: bold;
-}
+  }
 
-.notification-container .check-all {
+.message-container .check-all {
     padding-block: 1rem;
 }
 
-.notification-container .check-all .checkbox {
+.message-container .check-all .checkbox {
     display: flex;
-    gap: 1rem;
+    gap: .2rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .notification-card {
@@ -84,7 +101,7 @@
     gap: 1rem;
     align-items: center;
     padding: 1rem .2rem;
-    border-bottom: 2px solid #00000012;
+    border-top: 1px solid #00000012;
     transition: all 250ms ease-in-out;
 }
 

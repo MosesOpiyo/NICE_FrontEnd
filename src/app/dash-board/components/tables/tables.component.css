@@ -75,7 +75,7 @@ select{
 /* paginator */
 mat-paginator {
     background-color: #fff;
-    color: #000000;
+    color: #000000c9;
     /* border-top: 1px solid #80808066; */
     padding-block: 0.5rem;
 }
@@ -83,11 +83,11 @@ mat-paginator {
 :host ::ng-deep -outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,
 :host ::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
 :host ::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
-    border-color: #000000;
+    border-color: #0000007a;
 }
 
 :host ::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading {
-    border-color: #000000;
+    border-color: #0000007a;
 }
 
 :host ::ng-deep .mat-mdc-select-value {
