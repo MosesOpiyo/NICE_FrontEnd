@@ -2,7 +2,8 @@
   background-color: #f6f6f6;
 } */
 
-:host ::ng-deep #header .navbar a {
+:host ::ng-deep #header .navbar a,
+:host ::ng-deep #header .navbar button {
   color: #fff;
 }
 
@@ -41,9 +42,15 @@
 }
 
 :host ::ng-deep #header.header-scrolled .navbar a,
+:host ::ng-deep #header.header-scrolled .navbar button,
 :host ::ng-deep #header.header-scrolled .navbar ul li i.fa-chevron-down,
-:host ::ng-deep #header.header-scrolled .navbar ul li i.fa-bag-shopping {
+:host ::ng-deep #header.header-scrolled .navbar ul li i.fa-cart-shopping,
+:host ::ng-deep #header.header-scrolled .fa-circle-user {
   color: #000000;
+}
+
+:host ::ng-deep #header .fa-circle-user {
+  color: #ffffff;
 }
 
 :host ::ng-deep #header.header-scrolled .navbar .active {

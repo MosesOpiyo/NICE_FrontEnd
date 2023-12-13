@@ -6,6 +6,7 @@ import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
 import { Router } from '@angular/router';
 import { FarmerSignUpComponent } from 'src/app/sign-up/farmer-sign-up/farmer-sign-up.component';
+import { AddtocartComponent } from 'src/app/addtocart/addtocart.component';
 
 
 @Component({
@@ -262,6 +263,15 @@ export class NicehomepageComponent implements OnInit {
       width: '25pc',
       maxHeight: '100vh'
     }); 
+  }
+
+  showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string){
+    const dialogRef = this.dialog.open(AddtocartComponent,{
+      minWidth: '250px',
+      maxHeight: '100vh',
+      enterAnimationDuration,
+      exitAnimationDuration
+    });
   }
 
   ngOnInit(): void {

@@ -3,13 +3,15 @@
 
     <mat-dialog-content>
         <div class="changes">
-            <form class="form" id="form" action="" method="POST">
+            <form class="form" id="form" action="" method="POST" ngNativeValidate>
                 <!-- HONEYPOT(to catch spammers )  -->
                 <input type="text" name="_honey" class="honeypot" title="honeypot">
 
                 <div class="form-controls name" *ngIf="data.id == 1">
-                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
-                    <input type="text" [(ngModel)]="change"  id="{{data.key}}" name="{{data.key}}" required>
+                    <input id="{{data.key}}" name="{{data.key}}" [(ngModel)]="change" type="text" required>
+                    <label for="{{data.key}}" class="label-name">
+                        <span class="content-name">{{data.value}}:</span>
+                    </label>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 2">

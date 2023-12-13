@@ -108,6 +108,10 @@
   flex-direction: column;
 }
 
+.farmdetails-component .tabbed-info {
+  padding-inline: .5rem;
+}
+
 /* media queries */
 @media (max-width: 768px) {
   /* .farmdetails-component .farm-products {

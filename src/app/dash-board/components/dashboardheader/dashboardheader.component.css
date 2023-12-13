@@ -9,7 +9,7 @@
     z-index: 3;
     height: 5rem;
     background-color: #f2f2f2;
-    border-bottom: 2px solid #cccccc1a;
+    border-bottom: 2px solid #cccccc47;
 }
 
 .dashheader-container > * {
@@ -37,30 +37,71 @@
     object-position: center;
 }
 
+.dashheader-container .notifs-dropdown {
+    background-color: #fff;
+}
+
+.dashheader-container .multiple-notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dashheader-container .notifs,
+.dashheader-container .nav-links .dropdown .user-link  {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.fa-chevron-down {
+    color: #000000;
+    font-size: 1rem;
+}
+
 .dashheader-container .nav-links {
     display: flex;
     align-items: center;
     gap: .5rem;
+    font-size: 16px;
 }
 
-.nav-links .nav-items li {
+.nav-links li a {
+    font-size: 16px;
+}
+
+.nav-links .dropdown ul {
+    padding-top: 0.5rem;
+}
+
+.nav-links li:hover > a {
+    background-color: rgb(91 87 87 / 11%);
+}
+
+.nav-links .dropdown-links li:hover > a {
+    background-color: transparent;
+}
+/* .nav-links .nav-items li {
     padding: .5rem 1rem;
-}
+} */
 
-.nav-links .nav-items li:hover {
+/* .nav-links .nav-items li:hover {
     background-color: #5050502b;
-}
+} */
 
 /* .dashheader-container .nav-links .nav-items > * {
     border: 2px solid blue;
 } */
 
-.dashheader-container .nav-links .dropdown a {
+/* .dashheader-container .nav-links .dropdown a {
     color: #000000;
     cursor: pointer;
-}
+    width: 100%;
+    display: flex;
+    align-items: center;
+} */
 
-.dashheader-container .nav-links .dropdown ul {
+/* .dashheader-container .nav-links .dropdown ul {
     display: block;
     position: absolute;
     left: 0px;
@@ -74,28 +115,35 @@
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
     transition: 0.3s;
     width: 100%;
-}
+} */
 
-.nav-links .nav-items .dropdown ul li {
+/* .nav-links .nav-items .dropdown ul li {
     padding: .2rem;
-}
+} */
 
 
 .dashheader-container .nav-links .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
+    width: 90%;
 }
 
-.dashheader-container .nav-links .dropdown .user-link {
+.nav-links .dropdown ul a {
+    padding: 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* .dashheader-container .nav-links .dropdown .user-link {
     display: flex;
     align-items: center;
     gap: .5rem;
-}
+} */
 
 @media (max-width: 375px) {
     .nav-links .nav-items li {
-        padding: .5rem;
+        padding: 0rem;
     }
 
     .dashheader-container .nav-links .dropdown .user-link {

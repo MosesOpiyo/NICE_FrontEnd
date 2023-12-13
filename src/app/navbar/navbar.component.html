@@ -9,9 +9,14 @@
 
         <div class="mobile-icons">
             <ul>
-                <li class="mobile-cart"><a routerLink="/Cart"><i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i></a></li>
+                <li *ngIf="user" class="mobile-cart">
+                    <a routerLink="/Cart"><i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i></a>
+                </li>
+                <li *ngIf="!user" class="mobile-cart">
+                    <a routerLink="/Cart"><i class="fa-solid fa-cart-shopping two"></i></a>
+                </li>
                 <li *ngIf="!user">
-                    <button (click)="showLoginDialog()" type="button" class="mobilelogin-btn" title="login">
+                    <button (click)="showLoginDialog()" type="button" class="mobilelogin-btn" title="Log In">
                         <i class="fa-solid fa-circle-user"></i>
                     </button>
                 </li>
@@ -53,15 +58,17 @@
                         <li><a href="about#faqs">FAQ</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link sell" (click)="showFarmerSignUpDialog()">Sell Coffee</a></li>
+                <li>
+                    <button type="button" title="sell coffee" class="nav-link sell" (click)="showFarmerSignUpDialog()">Sell Coffee</button>
+                </li>
                 
             </ul>
             <ul *ngIf="user" class="cart-icon">
-            <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i></a></li>
+                <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i></a></li>
             </ul>
             <ul *ngIf="!user" class="cart-icon">
                 <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-cart-shopping two"></i></a></li>
-                </ul>
+            </ul>
 
             <span *ngIf="!isMenuOpen" class="burger" (click)="toggleMenu()">
                 <i class="fa-solid fa-bars"></i>
@@ -117,11 +124,13 @@
         <div class="credentials-nonmobile">
             <ul class="navbar-login" *ngIf="!user">
                 <li>
-                    <button (click)="showLoginDialog()" type="button"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Log In</button>
+                    <button title="Log In" (click)="showLoginDialog()" type="button">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </button>
                 </li>
-                <li>
+                <!-- <li>
                     <button (click)="showSignUpDialog()" type="button"><i class="fa-solid fa-arrow-right-to-bracket"></i>&nbsp;&nbsp;Sign Up</button>
-                </li>
+                </li> -->
             </ul>
 
             <ul *ngIf="user">

@@ -56,4 +56,13 @@ isPasswordVisible = false;
       });
     }
   }
+
+  showFarmerSignUpDialog(){
+    this.dialogRef.close()
+    const dialogRef = this.dialog.open(FarmerSignUpComponent,{
+      width: '25pc',
+      autoFocus: false,
+      maxHeight: '100vh'
+    });
+  }
 }
