@@ -23,10 +23,6 @@ export class TimelineComponent implements OnInit {
     this.stories.getStories().subscribe((response:any)=>{
       this.posts = response
     })
-    this.service.storeProfileData()
-    this.service.data$.subscribe((res:any)=>{
-      this.user = res
-    })
   }
 
   onFileSelected(event: any) {
