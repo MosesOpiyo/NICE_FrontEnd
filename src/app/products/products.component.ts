@@ -8,6 +8,7 @@ import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { environment } from 'src/environments/environment.development';
 import { CartService } from '../Service/Cart/cart.service';
 import { ProductsService } from '../ProductsService/products.service';
+import { ProductStoreService } from '../Store/Products/product-store.service';
 
 @Component({
   selector: 'app-products',
@@ -26,7 +27,7 @@ export class ProductsComponent implements OnInit {
 
 
   myScriptElement: HTMLScriptElement;
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService,private product:ProductsService){
+  constructor(private dialog: MatDialog,private service:AuthenticationService,private product:ProductStoreService){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
@@ -484,9 +485,8 @@ export class ProductsComponent implements OnInit {
 }
 
  ngOnInit(): void {
-   this.product.getProcessedProducts().subscribe((res:any)=>{
+   this.product.data$.subscribe((res:any)=>{
     this.products = res
-    console.log(this.products)
     this.products.forEach((product:any) => {
       product.rating.forEach((ratingItem: any) => {
         this.ratings.push(ratingItem.rating)

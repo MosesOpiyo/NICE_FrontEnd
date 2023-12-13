@@ -55,7 +55,10 @@ export class NavbarComponent implements OnInit {
     const dialogRef = this.dialog.open(LoginComponent,{
       width: '25pc',
       autoFocus: false,
-      maxHeight: '90vh'
+      maxHeight: '90vh',
+      data: {
+        isBuyer: true
+      }
     });
   }
 

@@ -129,10 +129,7 @@ export class DetailsComponent implements OnInit {
       let form = new FormData();
       form.append('image',this.picture),
       this.service.profilePicture(form)
-      this.store.storeProfileData()
-      this.store.data$.subscribe((res:any) => {
-        this.profile = res
-      })
+      
     }
   }
 
