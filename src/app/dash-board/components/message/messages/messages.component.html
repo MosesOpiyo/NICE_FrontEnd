@@ -12,7 +12,7 @@
 
             <ul>
                 <li class="link-card">
-                    <i class="fa-solid fa-trash-can"></i>
+                    <i class="fa-solid fa-trash-can" (click)="deleteNotifications()"></i>
                 </li>
 
                 <li class="link-card delete">
@@ -43,7 +43,7 @@
                           title="read"
                           [checked]="item.isSelected"
                           value="{{item.id}}"
-                          (change)="isAllSelected($event, index)"
+                          (change)="isAllSelected(item)"
                         >
                     </div>
                 

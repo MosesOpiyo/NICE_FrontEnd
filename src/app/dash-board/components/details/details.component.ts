@@ -263,7 +263,6 @@ export class DetailsComponent implements OnInit {
           this.store.farmerData$.subscribe((res:any) => {
             if(res){
               this.profile = res
-<<<<<<< HEAD
             }else{
               if(this.isOpened == false){
                 this.isOpened = true
@@ -272,9 +271,6 @@ export class DetailsComponent implements OnInit {
               else{
                 false
               }
-=======
-              console.log(this.profile)
->>>>>>> f68a3e0f55371a4cf876c559d2c3079d568fc338
             }
           })
         })

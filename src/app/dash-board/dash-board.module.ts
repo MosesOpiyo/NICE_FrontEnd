@@ -42,6 +42,7 @@ import { NotificationMsgComponent } from './components/message/notification-msg/
 import { MatPaginatorModule } from '@angular/material/paginator';
 
 
+
 @NgModule({
   declarations: [
     DashBoardComponent,
@@ -85,7 +86,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDialogModule,
     MatListModule,
     MatSlideToggleModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ]
 })
 export class DashBoardModule { }
