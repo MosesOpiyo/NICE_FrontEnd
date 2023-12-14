@@ -44,11 +44,15 @@ input[type=checkbox] {
     justify-content: space-between;
   }
 
+  .message-container .messages-nav > * {
+    flex-basis: 100%;
+  }
+
   .message-container .messages-nav ul {
     display: flex;
     gap: 1.5rem;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
   }
 
   .messages-nav ul li span {

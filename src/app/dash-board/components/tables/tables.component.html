@@ -17,7 +17,11 @@
         </div>
 
         <div *ngIf="user.type=='ORIGINWAREHOUSER'" class="table-responsive">
-            <table mat-table [dataSource]="farmerProducts" class="mat-elevation-z8 demo-table table-light">
+          <div  *ngIf="!farmerProducts" class="empty">
+            <p>Products will appear here</p>
+          </div>
+
+            <table *ngIf="farmerProducts" mat-table [dataSource]="farmerProducts" class="mat-elevation-z8 demo-table table-light">
                 <ng-container matColumnDef="name">
                   <th mat-header-cell *matHeaderCellDef> Name </th>
                   <td mat-cell *matCellDef="let element"> {{element.name | uppercase}} </td>
@@ -59,7 +63,11 @@
         </div>
 
         <div *ngIf=" user.type=='FARMER'" class="table-responsive">
-          <table mat-table [dataSource]="farmerProducts" class="mat-elevation-z8 demo-table table-light">
+          <div  *ngIf="!farmerProducts" class="empty">
+            <p>Products will appear here</p>
+          </div>
+
+          <table  *ngIf="farmerProducts" mat-table [dataSource]="farmerProducts" class="mat-elevation-z8 demo-table table-light">
               <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef> Name </th>
                 <td mat-cell *matCellDef="let element"> {{element.name | uppercase}} </td>
@@ -107,7 +115,11 @@
       </div>
 
         <div *ngIf=" user.type=='WAREHOUSER'" class="table-responsive">
-            <table mat-table [dataSource]="inventoryProducts" class="mat-elevation-z8 demo-table table-light">
+          <div  *ngIf="!farmerProducts" class="empty">
+            <p>Products will appear here</p>
+          </div>
+
+            <table *ngIf="farmerProducts" mat-table [dataSource]="inventoryProducts" class="mat-elevation-z8 demo-table table-light">
                 <ng-container matColumnDef="name">
                   <th mat-header-cell *matHeaderCellDef> Name </th>
                   <td mat-cell *matCellDef="let element"> {{element.product.name | uppercase}} </td>
