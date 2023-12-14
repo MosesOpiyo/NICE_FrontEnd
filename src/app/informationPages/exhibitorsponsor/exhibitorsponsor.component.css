@@ -30,7 +30,8 @@ sup {
 }
 
 .form-control:focus {
-    box-shadow: 0 0 0 .2rem #0d6efd1a;
+    border: 2px solid #0000ff85;
+    box-shadow: none;
 }
 
 h3 span {
@@ -41,7 +42,9 @@ h3 span {
 .sponsorship-container form {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
 }
 
 .exhibitor-container form select,
@@ -54,11 +57,62 @@ h3 span {
 .sponsorship-container form input,
 .sponsorship-container form select {
     width: 100%;
-    border: 2px solid gray;
-    border-radius: 10px;
+    border: 1px solid #8080807a;
+    border-radius: 4px;
     height: 40px;
     padding-inline: .5rem;
 }
+
+/* input animations */
+.exhibitor-container .input-card,
+.sponsorship-container .input-card {
+    position: relative;
+}
+
+.exhibitor-container .input-card label,
+.sponsorship-container .input-card label {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.exhibitor-container .input-card label::after,
+.sponsorship-container .input-card label::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s  ease;
+}
+
+.exhibitor-container .input-card .content-name,
+.sponsorship-container .input-card .content-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    transition: all .3s ease;
+}
+
+.exhibitor-container .input-card input:focus + .label-name .content-name,
+.exhibitor-container .input-card input:valid + .label-name .content-name,
+.sponsorship-container .input-card input:focus + .label-name .content-name,
+.sponsorship-container .input-card input:valid + .label-name .content-name {
+    transform: translateY(-150%);
+}
+
+.exhibitor-container .input-card input:focus + .label-name::after,
+.exhibitor-container .input-card input:valid + .label-name::after,
+.sponsorship-container .input-card input:focus + .label-name::after,
+.sponsorship-container .input-card input:valid + .label-name::after {
+    transform: translateX(0%);
+}
+/* end of input animations */
 
 .exhibitor-container form button,
 .sponsorship-container form button {

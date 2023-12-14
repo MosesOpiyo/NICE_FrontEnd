@@ -222,24 +222,26 @@ form button:hover {
     gap: 1rem;
     width: 100%;
     padding-block: 1rem;
+    background-color: #fff;
+    box-shadow: none;
 }
 
 .timeline .timeline-info {
     display: grid;
-    width: 80%;
+    width: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 50px;
     margin-inline: auto;
+    justify-items: center;
 }
 
 .timeline .timeline-content {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    /* border: 2px solid #0000000d; */
-    /* margin-bottom: 1rem; */
-    background-color: #fff;
+    width: 550px;
+    background-color: #f2f2f2;
     box-shadow: 0 0 5px #ccc;
     border-radius: 10px;
 }
@@ -359,10 +361,6 @@ input[type="file"]::file-selector-button {
 }
 
 @media (max-width: 768px) {
-    .timeline .timeline-info {
-        width: 90%;
-    }
-
     .general-info {
         flex-direction: column;
     }
@@ -385,6 +383,10 @@ input[type="file"]::file-selector-button {
     form button {
         width: 60%;
     }
+
+    .timeline .timeline-content {
+        width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
@@ -395,10 +397,6 @@ input[type="file"]::file-selector-button {
 
     form input#file {
         width: 80%;
-    }
-
-    .timeline .timeline-info {
-        width: 100%;
     }
 
     form button {

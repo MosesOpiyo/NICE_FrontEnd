@@ -1,6 +1,5 @@
 .sidenav-container {
-    /* border: 2px solid blue; */
-    padding: .5rem;
+    padding: .5rem .1rem;
 }
 
 .sidenav-container .fa-bag-shopping::after {
