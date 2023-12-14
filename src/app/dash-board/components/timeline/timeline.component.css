@@ -109,9 +109,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: .2rem;
+    /* gap: .2rem; */
     width: 100%;
-    padding-block: 1rem;
+    padding-block: .2rem;
 }
 
 /* .create-timeline > * {
@@ -127,7 +127,7 @@
 .create-timeline form {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .2rem;
     width: 95%;
 }
 
@@ -148,15 +148,34 @@ form .media-content {
     width: 100%;
 }
 
-form .media-content > * {
+/* form .media-content > * {
     padding: .2rem;
-}
+} */
 
 form .media-content .image {
     display: flex;
     gap: .5rem;
     align-items: center;
     justify-content: center;
+}
+
+form .media-content .image label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form .media-content .image label .addmedia {
+    padding-top: .5rem;
+}
+
+form .media-content .image label img {
+    height: 35px;
+    width: 40px;
+}
+
+form .media-content .image input {
+    height: 50px;
 }
 
 form input#file {
@@ -169,13 +188,14 @@ form input#file {
 }
 
 form .form-controls textarea {
-    border: 2px solid #0000000d;
+    border: 1px solid #0000000d;
     min-width: 100%;
     max-width: 100%;
     padding: .5rem;
     background-color: #ffffff59;
-    height: 70px;
-    outline-color: #2551da61;
+    height: 50px;
+    outline-color: #2551da2e;
+    outline-width: 1px;
 }
 
 form button {
@@ -221,7 +241,7 @@ form button:hover {
     /* margin-bottom: 1rem; */
     background-color: #fff;
     box-shadow: 0 0 5px #ccc;
-    /* border-radius: 10px; */
+    border-radius: 10px;
 }
 
 /* .timeline .timeline-content > * {
@@ -286,7 +306,7 @@ form button:hover {
 
 input[type="file"]::file-selector-button {
     box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-    background: #ffd740;
+    background-color: #ffd740;
     box-sizing: border-box;
     position: relative;
     -webkit-user-select: none;
@@ -305,12 +325,16 @@ input[type="file"]::file-selector-button {
     margin: 0;
     /* min-width: 64px; */
     /* line-height: 36px; */
-    padding: 16px;
+    padding: 8px;
     border-radius: 4px;
     overflow: visible;
     transform: translate3d(0, 0, 0);
-    transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
     margin: 1rem;
+  }
+
+  input[type="file"]::file-selector-button:hover {
+    background-color: #ffd640b7;
   }
 
 /* media queries */
@@ -335,11 +359,6 @@ input[type="file"]::file-selector-button {
 }
 
 @media (max-width: 768px) {
-    form .media-content .video,
-    form .media-content .image {
-        flex-direction: column;
-    }
-
     .timeline .timeline-info {
         width: 90%;
     }
@@ -360,16 +379,7 @@ input[type="file"]::file-selector-button {
     }
 
     form input#file {
-        width: 100%;
-    }
-
-    form .media-content {
-        flex-direction: column;
-    }
-
-    form .media-content > * {
-        min-width: 100%;
-        max-width: 100%;
+        width: 55%;
     }
 
     form button {
@@ -378,9 +388,13 @@ input[type="file"]::file-selector-button {
 }
 
 @media (max-width: 600px) {
-    form .media-content .video,
     form .media-content .image {
         flex-direction: column;
+        gap: 0;
+    }
+
+    form input#file {
+        width: 80%;
     }
 
     .timeline .timeline-info {
@@ -389,6 +403,10 @@ input[type="file"]::file-selector-button {
 
     form button {
         width: 70%;
+    }
+
+    .arrow {
+        display: none;
     }
 }
 
@@ -407,5 +425,9 @@ input[type="file"]::file-selector-button {
     .general-info .farmer-image {
         height: 150px;
         width: 150px;
+    }
+
+    form input#file {
+        width: 85%;
     }
 }
