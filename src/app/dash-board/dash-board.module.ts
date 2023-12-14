@@ -43,6 +43,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ConfirmdeletionComponent } from './components/message/confirmdeletion/confirmdeletion.component';
 
 
+
 @NgModule({
   declarations: [
     DashBoardComponent,
@@ -87,7 +88,7 @@ import { ConfirmdeletionComponent } from './components/message/confirmdeletion/c
     MatDialogModule,
     MatListModule,
     MatSlideToggleModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

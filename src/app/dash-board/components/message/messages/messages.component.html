@@ -26,8 +26,14 @@
                     <span>({{unreaded.length}})</span>
                 </li>
 
+<<<<<<< HEAD
                 <li class="link-card" (click)="showConfirmdelete()">
                     <i class="fa-solid fa-trash-can"></i>
+=======
+            <ul>
+                <li class="link-card">
+                    <i class="fa-solid fa-trash-can" (click)="deleteNotifications()"></i>
+>>>>>>> 3e34f25720edfe23dac10fcf6b5accc92651c1ba
                 </li>
             </ul>
 
@@ -41,6 +47,7 @@
         <!-- 3rd card -->
         <div class="main-messages dashboard-card">
             <div class="notification-container">
+<<<<<<< HEAD
                 <div  *ngIf="user.notifications .length == 0" class="empty">
                     <p>Notifications will appear here</p>
                   </div>
@@ -63,6 +70,20 @@
                         <div class="notification">
                             <div class="notification-header">
                                 <h2>Coffee Received</h2>
+=======
+                <div class="notification-card" *ngFor="let item of user.notifications">
+                    <div class="checkbox">
+                        <input
+                          type="checkbox"
+                          id="read"
+                          name="read"
+                          title="read"
+                          [checked]="item.isSelected"
+                          value="{{item.id}}"
+                          (change)="isAllSelected(item)"
+                        >
+                    </div>
+>>>>>>> 3e34f25720edfe23dac10fcf6b5accc92651c1ba
                 
                                 <div class="date">
                                     <p>{{item.date_added | date:'hh:mm a'}} {{item.date_added | date}}</p>
