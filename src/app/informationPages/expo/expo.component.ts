@@ -123,7 +123,7 @@ export class ExpoComponent implements OnInit {
     sponsorType == 'prize'
     let dialogRef = this.dialog.open(SponsorshipComponent,{
       width: '25pc',
-      maxHeight: '100vh',
+      maxHeight: '90vh',
       data: {
         sponsor: sponsorType
       }
@@ -134,14 +134,14 @@ export class ExpoComponent implements OnInit {
  showExhibitorDialog() {
   let dialogRef = this.dialog.open(ExhibitorsComponent,{
     width: '25pc',
-    maxHeight: '100vh',
+    maxHeight: '90vh',
   })
  }
 
  showRegisterDialog() {
   let dialogRef = this.dialog.open(ExhibitorsponsorComponent,{
     width: '25pc',
-    maxHeight: '100vh',
+    maxHeight: '90vh',
   })
  }
 

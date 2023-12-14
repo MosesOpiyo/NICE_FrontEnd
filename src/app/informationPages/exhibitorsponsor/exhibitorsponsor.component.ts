@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./exhibitorsponsor.component.css']
 })
 export class ExhibitorsponsorComponent {
+  name:any;
+  email: any;
+  phone: any;
+  company: any;
+  designation: any;
+
+
   // exhibitorsponsor form tabs
   tabs: string [] = ['Sponsor', 'Exhibitor'];
   activatedTabIndex: number = 0;
