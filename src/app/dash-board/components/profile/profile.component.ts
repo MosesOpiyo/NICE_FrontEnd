@@ -10,6 +10,17 @@ import { FarmerprofileService } from '../../FarmerProfile/farmerprofile.service'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit { 
+
+  // farmer type tabs
+  tabs: string [] = ['Estate Farmer', 'Cooperative Society'];
+  activatedTabIndex: number = 0;
+
+   // farmer type tab index
+   tabChange(tabIndex: any) {
+    this.activatedTabIndex = tabIndex;
+  }
+
+
 constructor(private _formBuilder: FormBuilder,private farmer:FarmerprofileService,public dialog: MatDialogRef<ProfileComponent>,){}
   title = 'Farmer Profile';
   isLinear = true;
@@ -81,6 +92,7 @@ submit(){
     let form = new FormGroup({
       county:new FormControl(this.firstFormGroup.controls['county'].value),
       country:new FormControl(this.firstFormGroup.controls['country'].value),
+      estate_name:new FormControl("None"),
       wet_mill_name: new FormControl(this.firstFormGroup.controls['wet_mill_name'].value),
       society_name: new FormControl(this.firstFormGroup.controls['society_name'].value),
       factory_chairman: new FormControl(this.firstFormGroup.controls['factory_chairman'].value),

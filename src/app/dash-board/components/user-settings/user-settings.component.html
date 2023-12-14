@@ -44,4 +44,39 @@
             </form>
         </div>
     </div>
+
+    <!-- PASSWORD EDIT -->
+    <div class="password settings-card">
+        <div class="password-header">
+            <h2>Edit Password</h2>
+        </div>
+
+        <div class="oldpassword-edit">
+            <form ngNativeValidate>
+                <div class="oldpassword-input input-card">
+                    <input id="oldpassword" name="oldpassword" class="form-control"
+                        type="password" required>
+                    <label for="oldpassword" class="label-name">
+                        <span class="content-name">Old Password:</span>
+                    </label>
+                </div>
+
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+    
+        <div class="password-edit">
+            <form ngNativeValidate>
+                <div class="password-input input-card">
+                    <input id="password" name="password" class="form-control"
+                        type="password" required>
+                    <label for="password" class="label-name">
+                        <span class="content-name">New Password:</span>
+                    </label>
+                </div>
+
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div>
 </div>

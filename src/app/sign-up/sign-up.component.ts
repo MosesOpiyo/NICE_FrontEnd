@@ -23,6 +23,7 @@ export class SignUpComponent {
   }
   username:any;
   email: any;
+  phone: any;
   password: any;
   confirm_password:any
   is_producer:any;
@@ -47,6 +48,7 @@ export class SignUpComponent {
       let form = new FormData();
       form.append('username',this.username),
       form.append('email',this.email),
+      form.append('phone',this.phone),
       form.append('password',this.password),
       this.service.Register(form)
       this.dialogRef.close()
