@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -40,6 +40,7 @@ import { FilterPipe } from './components/manifests/filter.pipe';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { NotificationMsgComponent } from './components/message/notification-msg/notification-msg.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ConfirmdeletionComponent } from './components/message/confirmdeletion/confirmdeletion.component';
 
 
 
@@ -68,6 +69,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FilterPipe,
     UserSettingsComponent,
     NotificationMsgComponent,
+    ConfirmdeletionComponent,
   ],
   imports: [
     CommonModule,
@@ -87,6 +89,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatListModule,
     MatSlideToggleModule,
     MatPaginatorModule,
-  ]
+  ],
+
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashBoardModule { }

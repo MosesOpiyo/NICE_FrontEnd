@@ -24,6 +24,7 @@ export class FarmerSignUpComponent {
   }
   username:any;
   email: any;
+  phone: any;
   password: any;
   confirm_password:any
   is_estate:any
@@ -48,6 +49,7 @@ export class FarmerSignUpComponent {
       let form = new FormData();
       form.append('username',this.username),
       form.append('email',this.email),
+      form.append('phone',this.phone),
       form.append('password',this.password),
       form.append('is_estate',this.is_estate)
       this.service.farmerRegister(form,this.email)

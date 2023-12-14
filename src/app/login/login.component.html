@@ -1,8 +1,6 @@
 <div class="login-container">
-    <h2 *ngIf="data.isBuyer">Welcome</h2>
-    <h2 *ngIf="!data.isBuyer">Welcome Dear Farmer</h2>
-    <h3 *ngIf="data.isBuyer">Sign in into your Account.</h3>
-    <h3 *ngIf="!data.isBuyer">Sign in to Access Farmer's Dashboard.</h3>
+    <h2>Welcome</h2>
+    <h3>Sign in into your Account.</h3>
 
     <form (ngSubmit)="loginUser()" ngNativeValidate>
         <div class="email-input input-card">

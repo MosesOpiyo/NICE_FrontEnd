@@ -18,6 +18,14 @@
                 <span class="content-name">Email</span>
             </label>
         </div>
+
+        <div class="signup-phone input-card">
+            <input id="phone" name="phone" [(ngModel)]="phone" class="form-control"
+                type="tel" required>
+            <label for="phone" class="label-name">
+                <span class="content-name">Phone Number</span>
+            </label>
+        </div>
         
         <div class="signup-password input-card">
             <input input id="password" name="password" [(ngModel)]="password"  class="form-control" type="{{ isPasswordVisible ? 'text' : 'password' }}" required appPasswordToggle>
@@ -41,7 +49,7 @@
                 <input type="checkbox" (click)="togglePasswordVisibility()" id="myInput" title="visibility">
             </div>
             <div>
-                <label for="myInput">Show Password</label>
+                <label for="myInput" class="show-pass">Show Password</label>
             </div>
         </div>
         

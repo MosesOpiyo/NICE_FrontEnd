@@ -4,6 +4,17 @@
         <!-- 2ND CARD -->
         <div class="messages-nav dashboard-card">
             <ul>
+                <li>
+                    <div class="check-all">
+                        <div class="checkbox">
+                            <input type="checkbox" id="select-all" name="select-all" title="read"
+                             [checked]="masterSelected" (change)="checkUncheckAll($event)"
+                            >
+                            <label for="select-all">Select All</label>
+                        </div>
+                    </div>
+                </li>
+
                 <li class="link-card">
                     Unread
                     <span>({{unreaded.length}})</span>
@@ -14,26 +25,12 @@
                 <li class="link-card">
                     <i class="fa-solid fa-trash-can" (click)="deleteNotifications()"></i>
                 </li>
-
-                <li class="link-card delete">
-                    Delete All
-                </li>
             </ul>
         </div>
 
         <!-- 3rd card -->
         <div class="main-messages dashboard-card">
             <div class="notification-container">
-                <div class="check-all">
-                    <div class="checkbox">
-                        <input type="checkbox" id="select-all" name="select-all" title="read"
-                         [checked]="masterSelected" (change)="checkUncheckAll($event)"
-                        >
-                        <label for="select-all">Select All</label>
-                    </div>
-                </div>
-            
-            
                 <div class="notification-card" *ngFor="let item of user.notifications">
                     <div class="checkbox">
                         <input

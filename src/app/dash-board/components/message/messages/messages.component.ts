@@ -3,7 +3,6 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
 import { NotificationMsgComponent } from '../notification-msg/notification-msg.component';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationsService } from 'src/app/Notifications/notifications.service';
-import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -70,6 +69,7 @@ showNotification(info: any) {
     }
   })
 }
+
 
   ngOnInit(): void {
     this.service.getProfile().subscribe((res:any)=>{
