@@ -271,7 +271,6 @@ export class DetailsComponent implements OnInit {
               else{
                 false
               }
-              console.log(this.profile)
             }
           })
         })

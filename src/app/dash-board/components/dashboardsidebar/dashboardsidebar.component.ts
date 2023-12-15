@@ -215,9 +215,10 @@ export class DashboardsidebarComponent implements OnInit {
 
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
+        this.store.storeProfileData()
         this.store.data$.subscribe((data:any) => {
           this.user = data
-        })
+      })
     }
     else{
       this.route.navigate([''])

@@ -15,7 +15,7 @@
     </div>
 
     <mat-dialog-actions>
-        <button type="button" class="cancel" mat-dialog-close class="cancel">Cancel</button>
-        <button type="submit" class="delete">Delete</button>
+        <button type="button" (click)="dialog.closeAll" class="cancel" mat-dialog-close class="cancel">Cancel</button>
+        <button type="submit" (click)="deleteNotifications()" class="delete">Delete</button>
     </mat-dialog-actions>
 </div>

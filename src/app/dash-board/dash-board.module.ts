@@ -41,6 +41,7 @@ import { UserSettingsComponent } from './components/user-settings/user-settings.
 import { NotificationMsgComponent } from './components/message/notification-msg/notification-msg.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ConfirmdeletionComponent } from './components/message/confirmdeletion/confirmdeletion.component';
+import { ConfirmPasswordComponent } from './components/user-settings/confirm-password/confirm-password.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 
 
@@ -70,6 +71,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
     UserSettingsComponent,
     NotificationMsgComponent,
     ConfirmdeletionComponent,
+    ConfirmPasswordComponent,
     TabsComponent
   ],
   imports: [
@@ -89,7 +91,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
     MatDialogModule,
     MatListModule,
     MatSlideToggleModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

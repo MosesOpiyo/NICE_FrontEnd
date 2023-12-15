@@ -94,6 +94,7 @@ submit(){
     let form = new FormGroup({
       county:new FormControl(this.firstFormGroup.controls['county'].value),
       country:new FormControl(this.firstFormGroup.controls['country'].value),
+      estate_name:new FormControl("None"),
       wet_mill_name: new FormControl(this.firstFormGroup.controls['wet_mill_name'].value),
       society_name: new FormControl(this.firstFormGroup.controls['society_name'].value),
       factory_chairman: new FormControl(this.firstFormGroup.controls['factory_chairman'].value),

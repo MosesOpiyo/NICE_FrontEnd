@@ -106,10 +106,10 @@
                             </div>
             
                             <div class="profile-time">
-                                <div class="delete" (click)="showConfirmdelete()">
+                                <div class="delete">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </div>
-                                <p>2 days ago</p>
+                                <p>{{post.date_added | timeAgo}}</p>
                             </div>
                         </div>
     
