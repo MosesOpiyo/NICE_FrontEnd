@@ -26,7 +26,7 @@
 }
 
 .signup-container form .input-card.signup-confirmpass {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 .signup-container form input {
@@ -67,15 +67,15 @@
     transition: all 0.3s  ease;
 }
 
+.signup-container .input-card label.show-pass::after {
+    display: none;
+}
+
 .signup-container .input-card .content-name {
     position: absolute;
     bottom: 10px;
     left: 10px;
     transition: all .3s ease;
-}
-
-.signup-container .signup-password .content-name {
-    bottom: 34px;
 }
 
 .signup-container .input-card input:focus + .label-name .content-name,
@@ -94,8 +94,9 @@
     height: 20px;
 }
 
-.signup-container .signup-visibility {
+.signup-container form .input-card.signup-visibility {
     display: flex;
+    margin-bottom: 10px;
 }
 
 .signup-container form button {

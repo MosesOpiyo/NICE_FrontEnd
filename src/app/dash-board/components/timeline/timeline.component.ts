@@ -4,6 +4,9 @@ import { environment } from 'src/environments/environment.development';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ConfirmdeletionComponent } from '../message/confirmdeletion/confirmdeletion.component';
+import { MatDialog } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
@@ -17,9 +20,15 @@ export class TimelineComponent implements OnInit {
   user: any
   isLoading:boolean = false
 
-  constructor(private stories:FarmerprofileService, private snackBar:MatSnackBar,private service:AuthenticationStoreService){}
+  constructor(private dialog:MatDialog, private stories:FarmerprofileService, private store:AuthenticationStoreService, private snackBar:MatSnackBar,private service:AuthenticationStoreService){}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.store.storeProfileData()
+    this.store.data$.subscribe((res:any)=>{
+      this.user = res
+      console.log(this.user)
+    });
+
     this.stories.getStories().subscribe((response:any)=>{
       this.posts = response
     })
@@ -48,6 +57,13 @@ export class TimelineComponent implements OnInit {
       form.append('caption',this.caption),
       this.stories.postStories(form)
     }
-    }
+  }
+
+  showConfirmdelete() {
+    this.dialog.open(ConfirmdeletionComponent, {
+      width: '25pc',
+      maxHeight: '90vh',
+    })
+  }
 
 }

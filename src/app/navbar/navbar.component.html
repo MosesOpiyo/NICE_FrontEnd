@@ -10,14 +10,14 @@
         <div class="mobile-icons">
             <ul>
                 <li *ngIf="user" class="mobile-cart">
-                    <a routerLink="/Cart"><i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i></a>
+                    <a routerLink="/Cart" title="Cart"><i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i></a>
                 </li>
                 <li *ngIf="!user" class="mobile-cart">
-                    <a routerLink="/Cart"><i class="fa-solid fa-cart-shopping two"></i></a>
+                    <a routerLink="/Cart" title="Cart"><i class="fa-solid fa-cart-shopping two"></i></a>
                 </li>
                 <li *ngIf="!user">
                     <button (click)="showLoginDialog()" type="button" class="mobilelogin-btn" title="Log In">
-                        <i class="fa-solid fa-circle-user"></i>
+                        <i class="fa-solid fa-user"></i>
                     </button>
                 </li>
                 <li *ngIf="user" class="dropdown user-case"><a><span>Hello, {{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
@@ -115,28 +115,32 @@
                         <li (click)="toggleMenu()"><a href="about#faqs">FAQ</a></li>
                     </ul>
                 </div>
-                <li><a class="nav-link sell" (click)="showFarmerSignUpDialog()">Sell Coffee</a></li>
+                <li (click)="toggleMenu()"><a class="nav-link sell" (click)="showFarmerSignUpDialog()">Sell Coffee</a></li>
                 
             </ul>
             
         </nav>
         
-        <div class="credentials-nonmobile" style="display: flex; gap: 1rem; align-items: center; justify-content: center;">
+        <div class="credentials-nonmobile">
             <ul *ngIf="user" class="cart-icon">
                 <li class="cart">
-                    <a routerLink="/Cart">
-                        <i class="fa-solid fa-cart-shopping" [attr.value]="userCart" style="font-size: 1.5rem; border-right: 1px solid black; padding-right: 1rem;"></i>
+                    <a routerLink="/Cart" title="Cart">
+                        <i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i>
                     </a>
                 </li>
             </ul>
             <ul *ngIf="!user" class="cart-icon">
-                <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-cart-shopping two" style="font-size: 1.5rem; border-right: 1px solid black; padding-right: 1rem;"></i></a></li>
+                <li class="cart">
+                    <a routerLink="/Cart" title="Cart">
+                        <i class="fa-solid fa-cart-shopping two"></i>
+                    </a>
+                </li>
             </ul>
 
             <ul class="navbar-login" *ngIf="!user">
                 <li>
                     <button title="Log In" (click)="showLoginDialog()" type="button">
-                        <i class="fa-solid fa-circle-user"></i>
+                        <i class="fa-solid fa-user"></i>
                     </button>
                 </li>
                 <!-- <li>
