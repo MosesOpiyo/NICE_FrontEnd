@@ -43,6 +43,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ConfirmdeletionComponent } from './components/message/confirmdeletion/confirmdeletion.component';
 import { ConfirmPasswordComponent } from './components/user-settings/confirm-password/confirm-password.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { TimeAgoPipe } from './components/timeline/time/time-ago.pipe';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
     NotificationMsgComponent,
     ConfirmdeletionComponent,
     ConfirmPasswordComponent,
-    TabsComponent
+    TabsComponent,
+    TimeAgoPipe
   ],
   imports: [
     CommonModule,
