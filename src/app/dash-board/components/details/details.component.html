@@ -6,7 +6,7 @@
         <div class="dashboard-card info">
             <div class="card-header">
                 <div>
-                    <h5 *ngIf="user['user']['type']=='FARMER'">Farmer's Details</h5>
+                    <h5 *ngIf="user['user']['type']=='FARMER'">Manager's Details</h5>
                     <h5 *ngIf="user['user']['type']=='WAREHOUSER'">Warehouser's Details</h5>
                     <h5 *ngIf="user['user']['type']=='BUYER'">My Details</h5>
                 </div>
@@ -34,7 +34,8 @@
 
         <!-- 2ND CARD(FARMER) -->
         <div class="dashboard-card user-info" *ngIf="user.user.type=='FARMER'">
-            <h5 class="mb-4">Farm Details</h5>
+            <h5 class="mb-4" *ngIf="profile.estate_name != 'None'">Estate Details</h5>
+            <h5 class="mb-4" *ngIf="profile.estate_name == 'None'">Society Details</h5>
         
             <div>
                 <ul *ngIf="profile" class="farmer-info">
