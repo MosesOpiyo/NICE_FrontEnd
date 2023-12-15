@@ -33,14 +33,14 @@
 
             <form ngNativeValidate>
                 <div class="email-input input-card">
-                    <input id="email" name="email" class="form-control"
+                    <input id="email" name="email" [(ngModel)]="newEmail" class="form-control"
                         type="email" required>
                     <label for="email" class="label-name">
                         <span class="content-name">Change Email Address:</span>
                     </label>
                 </div>
 
-                <button type="submit">SUBMIT</button>
+                <button (click)="showConfirmPasswordDialog()" type="submit">SUBMIT</button>
             </form>
         </div>
     </div>
@@ -52,26 +52,26 @@
         </div>
 
         <div class="oldpassword-edit">
-            <form ngNativeValidate>
+            <form (ngSubmit)="changePassword()">
                 <div class="oldpassword-input input-card">
-                    <input id="oldpassword" name="oldpassword" class="form-control"
+                    <input id="oldpassword" [(ngModel)]="password" name="oldpassword" class="form-control"
                         type="password" required>
                     <label for="oldpassword" class="label-name">
                         <span class="content-name">Old Password:</span>
                     </label>
                 </div>
-
-                <button type="submit">SUBMIT</button>
-            </form>
-        </div>
-    
-        <div class="password-edit">
-            <form ngNativeValidate>
                 <div class="password-input input-card">
-                    <input id="password" name="password" class="form-control"
+                    <input id="password" name="password" [(ngModel)]="newPassword" class="form-control"
                         type="password" required>
                     <label for="password" class="label-name">
                         <span class="content-name">New Password:</span>
+                    </label>
+                </div>
+                <div class="password-input input-card">
+                    <input id="password" name="password" [(ngModel)]="confirmNewPassword" class="form-control"
+                        type="password" required>
+                    <label for="password" class="label-name">
+                        <span class="content-name">Confirm New Password:</span>
                     </label>
                 </div>
 

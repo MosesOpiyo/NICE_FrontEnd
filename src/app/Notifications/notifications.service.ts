@@ -3,13 +3,14 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from 'src/environments/environment.development';
 import { AuthenticationStoreService } from '../AuthServiceStore/authentication-store.service';
+import { AuthenticationService } from '../AuthService/authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationsService {
 
-  constructor(private http:HttpClient,private store:AuthenticationStoreService) { }
+  constructor(private http:HttpClient,private store:AuthenticationStoreService,private auth:AuthenticationService) { }
   getNotifications(){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
@@ -22,6 +23,7 @@ export class NotificationsService {
     })
     this.http.post(`${environment.BASE_URL}Authentication/DeleteNotifications`,input,{'headers':headers}).subscribe((response:any)=>{
       this.store.storeProfileData()
+      this.auth.refreshPage()
     })
   }
 

@@ -49,25 +49,25 @@
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(2)"></i>
                     </li>
 
-                    <li *ngIf="!profile.estate_name">
+                    <li *ngIf="profile.estate_name == 'None'">
                         Wet Mill Name:<br>
                         <span *ngIf="profile">{{profile.wet_mill_name}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(3)"></i>
                     </li>
 
-                    <li *ngIf="!profile.estate_name">
+                    <li *ngIf="profile.estate_name == 'None'">
                         Society Name:<br>
                         <span *ngIf="profile">{{profile.society_name}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
                     </li>
 
-                    <li *ngIf="profile.estate_name">
+                    <li *ngIf="profile.estate_name != 'None'">
                         Estate Name:<br>
                         <span *ngIf="profile">{{profile.estate_name}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
                     </li>
 
-                    <li *ngIf="!profile.estate_name">
+                    <li *ngIf="profile.estate_name == 'None'">
                         Factory Chairman:<br>
                         <span *ngIf="profile">{{profile.factory_chairman}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(5)"></i>
@@ -79,19 +79,19 @@
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(6)"></i>
                     </li>
 
-                    <li *ngIf="!profile.estate_name">
+                    <li *ngIf="profile.estate_name == 'None'">
                         Number Of Farmers:<br>
                         <span *ngIf="profile">{{profile.no_of_farmers}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(7)"></i>
                     </li>
 
-                    <li *ngIf="!profile.estate_name">
+                    <li *ngIf="profile.estate_name == 'None'">
                         Male Farmers:<br>
                         <span *ngIf="profile">{{profile.men}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(8)"></i>
                     </li>
 
-                    <li *ngIf="!profile.estate_name">
+                    <li *ngIf="profile.estate_name == 'None'">
                         Female Farmers:<br>
                         <span *ngIf="profile">{{profile.women}}</span>
                         <i class="fa-solid fa-pencil" (click)="showEditDialog(9)"></i>

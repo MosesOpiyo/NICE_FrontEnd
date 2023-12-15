@@ -154,6 +154,44 @@ export class AuthenticationService implements OnInit {
     })
   }
 
+  updateUserEmail(credentials:any){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    this.http.post(`${environment.BASE_URL}Authentication/EditEmail`,credentials,{'headers':headers}).subscribe((response:any)=>{
+      this.snackBar.open("Update SuccessFul", 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      this.refreshPage()
+    },(error:any) =>{
+      console.log(error.error)
+      this.snackBar.open(error.error, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    })
+  }
+
+  changePassword(credentials:any){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    this.http.post(`${environment.BASE_URL}Authentication/ChangePassword`,credentials,{'headers':headers}).subscribe((response:any)=>{
+      this.snackBar.open("Update SuccessFul", 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      this.refreshPage()
+    },(error:any) =>{
+      console.log(error.error)
+      this.snackBar.open(error.error, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    })
+  }
+
   profilePicture(input:any){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
