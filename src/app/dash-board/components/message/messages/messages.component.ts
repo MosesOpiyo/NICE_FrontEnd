@@ -4,6 +4,7 @@ import { NotificationMsgComponent } from '../notification-msg/notification-msg.c
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationsService } from 'src/app/Notifications/notifications.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ConfirmdeletionComponent } from '../confirmdeletion/confirmdeletion.component';
 
 @Component({
   selector: 'app-messages',
@@ -44,30 +45,22 @@ isAllSelected(item:any) {
   }
 }
 
-deleteNotifications(){
+showDeletionDialog() {
   if(this.notificationsList.length > 0){
-    let form = new FormData
-    for (let i = 0; i < this.notificationsList.length; i++) {   
-    form.append(`notificationsList[]`, this.notificationsList[i]);
-    }
-    this.notifications.deleteNotifications(form)
-  }else if(this.notificationsList.length == 0){
+    this.dialog.open(ConfirmdeletionComponent, {
+      width: '25pc',
+      maxHeight: '90vh',
+      data: {
+        data: this.notificationsList
+      }
+    })
+  }
+  else if(this.notificationsList.length == 0){
     this.snackbar.open("No Notifications Selected", 'Close', {
       duration: 3000,
       panelClass: ['blue-snackbar']
     });
   }
-  
-}
-
-showNotification(info: any) {
-  this.dialog.open(NotificationMsgComponent, {
-    width: '25pc',
-    maxHeight: '90vh',
-    data: {
-      message: info
-    }
-  })
 }
 
 
