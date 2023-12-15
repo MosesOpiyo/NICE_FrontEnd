@@ -10,6 +10,7 @@
 .signup-container h3 {
     font-weight: 500;
     text-align: center;
+    padding-bottom: 1rem;
 }
 
 .signup-container form {
@@ -75,6 +76,7 @@
     bottom: 10px;
     left: 10px;
     transition: all .3s ease;
+    color: #000000bd;
 }
 
 .signup-container .input-card input:focus + .label-name .content-name,
