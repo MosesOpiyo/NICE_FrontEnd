@@ -25,6 +25,7 @@ export class DashboardheaderComponent implements OnInit {
 
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
+      this.store.storeProfileData()
       this.store.data$.subscribe((res:any)=>{
         this.user = res
         this.data = res['user']['notifications']

@@ -8,6 +8,7 @@ import { ProfileComponent } from '../profile/profile.component';
 import { NewproductComponent } from '../newproduct/newproduct.component';
 import { SavechangesComponent } from '../savechanges/savechanges.component';
 import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-details',
