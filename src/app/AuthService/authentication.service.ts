@@ -23,7 +23,7 @@ export class AuthenticationService implements OnInit {
   }
   farmerRegister(credentials:any,email:any){
     this.http.post(`${environment.BASE_URL}Authentication/FarmerRegistration`,credentials).subscribe((response:any)=>{
-      console.log(credentials.value)
+
       this.snackBar.open("Account Created Successfully, Please verify via email.", 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']
