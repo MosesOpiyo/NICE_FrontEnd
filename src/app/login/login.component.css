@@ -3,25 +3,14 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
     align-items: center;
     justify-content: center;
 }
 
-/* h1 {
-    font-weight: 500;
-    font-style: italic;
-    color: rgb(255, 192, 1);
-    font-size:xx-large;
-} */
-
-h2 {
-    font-size: 30px;
-}
 h3 {
     font-weight: 500;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 8px;
 }
 
 .login-container form {
@@ -30,7 +19,6 @@ h3 {
     /* gap: 1.5rem; */
     position: relative;
     overflow: hidden;
-    padding-top: 20px;
 }
 
 .login-container form .input-card {
@@ -42,75 +30,68 @@ h3 {
 }
 
 .login-container form .signup-visibility {
-    margin-bottom: 10px;
+    margin-block: 10px;
 }
 
 .login-container form input {
     width: 100%;
     border: 1px solid #8080807a;
     border-radius: 4px;
-    height: 40px;
+    height: 35px;
     padding-inline: .5rem;
 }
 
 /* input animations */
-.login-container .email-input,
-.login-container .password-input {
+.label-float{
     position: relative;
-}
+    padding-top: 13px;
+  }
+  
+  .label-float input{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 16px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -webkit-appearance:none;
+    transition: all .1s linear;
+  }
 
-.login-container .email-input label,
-.login-container .password-input label {
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  
+  .label-float input::placeholder{
+    color:transparent;
+  }
+  
+  .label-float label{
     pointer-events: none;
-}
-
-.login-container .email-input label::after,
-.login-container .password-input::after {
-    content: "";
     position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    transform: translateX(-100%);
-    transition: all 0.3s  ease;
-}
+    top: calc(50% - 8px);
+    left: 15px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    background-color: white;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    transition: all .1s linear;
+  }
+  
+  .label-float input:required:invalid + label {
+    color: #000000b7;
+  }
 
-.login-container .email-input .content-name,
-.login-container .password-input .content-name {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    transition: all .3s ease;
-    color: #000000bd;
-}
-
-.login-container .password-input .content-name {
-    bottom: 30px;
-}
-
-.login-container .email-input input:focus + .label-name .content-name,
-.login-container .email-input input:valid + .label-name .content-name,
-.login-container .password-input input:focus + .label-name .content-name,
-.login-container .password-input input:valid + .label-name .content-name {
-    transform: translateY(-150%);
-}
-
-.login-container .email-input input:focus + .label-name::after,
-.login-container .email-input input:valid + .label-name::after,
-.login-container .password-input input:focus + .label-name::after,
-.login-container .password-input input:valid + .label-name::after  {
-    transform: translateX(0%);
-}
+  .label-float input:focus + label,
+  .label-float input:not(:placeholder-shown) + label{
+    font-size: 13px;
+    top: 0;
+    color: #000000b7;
+  }
 /* end of input animations */
 
 .login-container form input:focus {
-    border: 1px solid #0000ff85;
+    border: 1px solid #0000ff59;
     box-shadow: none;
 }
 
@@ -119,6 +100,8 @@ h3 {
     background-color: black;
     color: #fff;
     border-radius: 0;
+    height: 45px;
+    font-size: 1.2rem;
 }
 
 .login-container form .form-extras {
@@ -128,16 +111,26 @@ h3 {
     text-align: center;
 }
 
+.login-container form .form-extras p.terms-text {
+    font-size: 15px;
+}
+
 .login-container form .password-input p,
-.login-container form .form-extras p a {
+.login-container form .form-extras p a,
+.login-container form p.forgotten {
     color: blue;
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
 
 .login-container form .password-input p:hover,
-.login-container form .form-extras p a:hover {
+.login-container form .form-extras p a:hover,
+.login-container form p.forgotten:hover {
     text-decoration: underline;
+}
+
+.login-container form .form-extras p a.signup-link {
+    font-weight: bold;
 }
 
 .login-container .signup-visibility {

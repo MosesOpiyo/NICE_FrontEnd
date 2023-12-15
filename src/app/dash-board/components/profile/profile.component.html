@@ -63,7 +63,7 @@
           </div>
         
           <div>
-            <button type="button" mat-button matStepperNext>Next</button>
+            <button type="button" mat-button matStepperNext>Next <i class="fa-solid fa-greater-than"></i></button>
           </div>
         </form>
 
@@ -108,28 +108,28 @@
             <ng-template matStepLabel>Farm Details</ng-template>
             <mat-form-field>
               <mat-label>Total Acreage</mat-label>
-              <input matInput placeholder="Total Acreage" formControlName="total_acreage" required>
+              <input type="number" matInput placeholder="Total Acreage" formControlName="total_acreage" required>
             </mat-form-field>
           
             <mat-form-field>
               <mat-label>Number Of Trees</mat-label>
-              <input matInput placeholder="Number Of Trees" formControlName="no_of_trees" required>
+              <input type="number" matInput placeholder="Number Of Trees" formControlName="no_of_trees" required>
             </mat-form-field>
           
           
             <mat-form-field>
-              <mat-label>Altitude</mat-label>
+              <mat-label>Altitude (masl)</mat-label>
               <input matInput placeholder="Altitude" formControlName="altitude" required>
             </mat-form-field>
           
             <mat-form-field>
-              <mat-label>Harvest Season</mat-label>
+              <mat-label>Harvest Season e.g July - Dec </mat-label>
               <input matInput placeholder="Harvest Season" formControlName="harvest_season" required>
             </mat-form-field>
           
           
             <mat-form-field>
-              <mat-label>Annual Rainfall Season</mat-label>
+              <mat-label>Annual Rainfall in Ml</mat-label>
               <input matInput placeholder="Annual Rainfall Season" formControlName="annual_rainfall_amount" required>
             </mat-form-field>
           
@@ -140,7 +140,7 @@
           
           
             <mat-form-field>
-              <mat-label>Farming Method</mat-label>
+              <mat-label>Farming Method (Organic or Inorganic)</mat-label>
               <input matInput placeholder="Farming Method" formControlName="farming_method" required>
             </mat-form-field>
           
@@ -167,7 +167,7 @@
             </mat-form-field>
           
             <mat-form-field>
-              <mat-label>Availability</mat-label>
+              <mat-label>Availability e.g February - April</mat-label>
               <input matInput placeholder="Availability" formControlName="availability" required>
             </mat-form-field>
           
@@ -184,14 +184,14 @@
           
           
             <mat-form-field>
-              <mat-label>Grower'S History</mat-label>
+              <mat-label>Grower's History</mat-label>
               <input matInput placeholder="Grower'S History" formControlName="grower_history" required>
             </mat-form-field>
           </div>
       
           <div>
-            <button type="button" mat-button matStepperPrevious>Back</button>
-            <button type="submit" (click)="submit()" mat-button>Submit</button>
+            <button type="button" mat-button matStepperPrevious><i class="fa-solid fa-less-than"></i> Back</button>
+            <button type="submit" class="submitbtn" (click)="submit()" mat-button>Submit</button>
           </div>
         </form>
       </mat-step>
