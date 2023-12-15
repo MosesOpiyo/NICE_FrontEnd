@@ -12,12 +12,14 @@ import { FarmerprofileService } from '../../FarmerProfile/farmerprofile.service'
 export class ProfileComponent implements OnInit { 
 
   // farmer type tabs
-  tabs: string [] = ['Estate Farmer', 'Cooperative Society'];
+  tabs: string [] = ['Cooperative Society', 'Estate Farmer'];
   activatedTabIndex: number = 0;
 
    // farmer type tab index
-   tabChange(tabIndex: any) {
+   tabChange(tabIndex: number) {
     this.activatedTabIndex = tabIndex;
+    console.log(this.activatedTabIndex)
+    this.toggleIsEstateFarmer() 
   }
 
 
@@ -152,7 +154,14 @@ submit(){
 }
 
 toggleIsEstateFarmer() {
-  this.isEstateFarmer = !this.isEstateFarmer;
+  if (this.activatedTabIndex == 0) {
+    this.isEstateFarmer = false;
+  }
+  else {
+    this.isEstateFarmer = true;
+  }
+  
+  console.log(this.isEstateFarmer)
   if(!this.isEstateFarmer){
     this.firstFormGroup = this._formBuilder.group({
       county: ['', Validators.required],

@@ -2,11 +2,43 @@ mat-slide-toggle{
     width: 100%;
     align-self: center;
 }
-mat-form-field{
-    margin: 10px;
-    width: 45%;
-    
+
+form .form-content {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
 }
+
 input{
     border-radius: 10px;
+}
+
+.farmerdetails-container {
+    width: 100%;
+}
+
+:host ::ng-deep ul.navs-tabs {
+    width: 100%;
+    margin-inline: auto;
+}
+
+:host ::ng-deep ul.navs-tabs li.navs-item a.navs-link {
+    padding: .8rem 1rem;
+}
+
+:host ::ng-deep ul.navs-tabs li.navs-item a:hover {
+    color: #0c0d46f0;
+}
+
+@media (max-width: 600px) {
+    form .form-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 425px) {
+    :host ::ng-deep ul.navs-tabs li.navs-item a.navs-link {
+        padding: .2rem;
+    }
 }

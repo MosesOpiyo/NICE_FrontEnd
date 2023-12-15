@@ -58,11 +58,7 @@
     </div> -->
 
     <div class="timeline-editing">
-        <div class="create-timeline timeline-card">
-            <div class="create-header">
-                <h2>Create Post</h2>
-            </div>
-    
+        <div class="create-timeline timeline-card">    
             <form enctype="multipart/form-data"  class="create-content">
                 <div class="media">
                     <div class="media-content">    
@@ -104,10 +100,15 @@
                     <div class="timeline-content">        
                         <div class="timeline-profile">
                             <div class="profile-pic">
-                                <img src="../../../assets/img/coffee_logo2.png" alt="user profile pic">
+                                <img *ngIf="user.profile_pic" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="">
+                                <img *ngIf="!user.profile_pic"
+                                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
                             </div>
             
                             <div class="profile-time">
+                                <div class="delete" (click)="showConfirmdelete()">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </div>
                                 <p>2 days ago</p>
                             </div>
                         </div>

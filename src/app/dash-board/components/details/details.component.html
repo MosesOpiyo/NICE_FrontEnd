@@ -24,9 +24,10 @@
         
                 <div class="user-addinfo">
                     <p>Name: <span>{{user.user.username | titlecase}}</span></p>
-                    <p>Contact: <span>+1 345678389</span></p>
+                    <p>Phone Number: <span>+1 345678389</span></p>
                     <p>Email Address: <span>{{user.user.email}}</span></p>
-                    <p>Role: <span>{{user.user.type}}</span></p>
+                    <p *ngIf="profile.estate_name != 'None'">Farmer Type: <span>Estate Farmer</span></p>
+                    <p *ngIf="profile.estate_name == 'None'">Farmer Type: <span>Society Farmer</span></p>
                 </div>
             </div>
         </div>
@@ -40,145 +41,145 @@
                     <li>
                         County: <br>
                         <span *ngIf="profile">{{profile.county}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(1)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(1)"></i>
                     </li>
 
                     <li>
                         Country:<br>
                         <span *ngIf="profile">{{profile.country}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(2)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(2)"></i>
                     </li>
 
                     <li *ngIf="!profile.estate_name">
                         Wet Mill Name:<br>
                         <span *ngIf="profile">{{profile.wet_mill_name}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(3)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(3)"></i>
                     </li>
 
                     <li *ngIf="!profile.estate_name">
                         Society Name:<br>
                         <span *ngIf="profile">{{profile.society_name}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
                     </li>
 
                     <li *ngIf="profile.estate_name">
                         Estate Name:<br>
                         <span *ngIf="profile">{{profile.estate_name}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
                     </li>
 
                     <li *ngIf="!profile.estate_name">
                         Factory Chairman:<br>
                         <span *ngIf="profile">{{profile.factory_chairman}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(5)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(5)"></i>
                     </li>
 
                     <li>
                         Factory Manager:<br>
                         <span *ngIf="profile">{{profile.factory_manager}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(6)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(6)"></i>
                     </li>
 
                     <li *ngIf="!profile.estate_name">
                         Number Of Farmers:<br>
                         <span *ngIf="profile">{{profile.no_of_farmers}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(7)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(7)"></i>
                     </li>
 
                     <li *ngIf="!profile.estate_name">
                         Male Farmers:<br>
                         <span *ngIf="profile">{{profile.men}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(8)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(8)"></i>
                     </li>
 
                     <li *ngIf="!profile.estate_name">
                         Female Farmers:<br>
                         <span *ngIf="profile">{{profile.women}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(9)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(9)"></i>
                     </li>
 
                     <li>
                         Total Acreage:<br>
                         <span *ngIf="profile">{{profile.total_acreage}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(10)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(10)"></i>
                     </li>
 
                     <li>
                         Number of Trees:<br>
                         <span *ngIf="profile">{{profile.no_of_trees}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(11)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(11)"></i>
                     </li>
 
                     <li>
                         Altitude:<br>
                         <span *ngIf="profile">{{profile.altitude}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(12)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(12)"></i>
                     </li>
 
                     <li>
                         Harvest Season:<br>
                         <span *ngIf="profile">{{profile.harvest_season}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(13)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(13)"></i>
                     </li>
 
                     <li>
                         Annual Rainfall Amt:<br>
                         <span *ngIf="profile">{{profile.annual_rainfall_amount}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(14)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(14)"></i>
                     </li>
 
                     <li>
                         Coffee Variety:<br>
                         <span *ngIf="profile">{{profile.coffee_variety}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(15)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(15)"></i>
                     </li>
 
                     <li>
                         Farming Method:<br>
                         <span *ngIf="profile">{{profile.farming_method}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(16)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(16)"></i>
                     </li>
 
                     <li>
                         Certification Type:<br>
                         <span *ngIf="profile">{{profile.certification_type}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(17)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(17)"></i>
                     </li>
 
                     <li>
                         Soil Type:<br>
                         <span *ngIf="profile">{{profile.soil_type}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(18)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(18)"></i>
                     </li>
 
                     <li>
                         Processing Method:<br>
                         <span *ngIf="profile">{{profile.processing_method}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(19)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(19)"></i>
                     </li>
 
                     <li>
                         Cupping Notes:<br>
                         <span *ngIf="profile">{{profile.cupping_notes}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(20)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(20)"></i>
                     </li>
 
                     <li>
                         Availability:<br>
                         <span *ngIf="profile">{{profile.availability}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(21)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(21)"></i>
                     </li>
 
                     <li>
                         Farm Area:<br>
                         <span *ngIf="profile">{{profile.farm_area}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(24)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(24)"></i>
                     </li>
 
                     <li>
                         Grower's History:<br>
                         <span *ngIf="profile">{{profile.grower_history}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(22)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(22)"></i>
                     </li>
 
                     <li class="location">
@@ -191,7 +192,7 @@
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(23)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(23)"></i>
                     </li>
                     
                 </ul>
@@ -207,25 +208,25 @@
                     <li>
                         Warehouse Name:<br>
                         <span>{{warehouse.name}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(2)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(2)"></i>
                     </li>
 
                     <li>
                         Warehouse Capacity:<br>
                         <span>{{warehouse.warehouse_area_storage}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(3)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(3)"></i>
                     </li>
 
                     <li>
                         Warehouse Contact info:<br>
                         <span></span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
                     </li>
 
                     <li>
                         Warehoused Products:<br>
                         <span>{{warehouse.warehoused_products}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
                     </li>
 
                     <li class="location">
@@ -238,7 +239,7 @@
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(19)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(19)"></i>
                     </li>
                     
                 </ul>
@@ -254,26 +255,26 @@
                     <li>
                         Name:<br>
                         <span>{{user.user.username}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(2)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(2)"></i>
                     </li>
 
                     <li>
                         Phone Number:<br>
                         <span></span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(3)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(3)"></i>
                     </li>
 
                     <li>
                         Email Address:<br>
                         <span>{{user.user.email}}</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
                     </li>
 
                     <li>
                         Shipping Address:<br>
                         <span>1234 Deliver Str</span>
                         <span>Denver, Colorado</span>
-                        <i class="fa-solid fa-pencil" (click)="showEditDialog(4)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
                     </li>
                     
                 </ul>

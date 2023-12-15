@@ -91,8 +91,13 @@ img {
     position: absolute;
     top: 11px;
     left: 93%;
-    color: #f68b1e;
+    color: #f68b1ede;
     cursor: pointer;
+    transition: all 350ms ease-in-out;
+}
+
+.fa-pencil:hover {
+  color: #f68a1e;
 }
 
   .dashboard-card .card-header,
