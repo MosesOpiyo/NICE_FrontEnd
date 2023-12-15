@@ -42,7 +42,7 @@ import { NotificationMsgComponent } from './components/message/notification-msg/
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ConfirmdeletionComponent } from './components/message/confirmdeletion/confirmdeletion.component';
 import { ConfirmPasswordComponent } from './components/user-settings/confirm-password/confirm-password.component';
-
+import { TabsComponent } from './components/tabs/tabs.component';
 
 
 @NgModule({
@@ -72,6 +72,7 @@ import { ConfirmPasswordComponent } from './components/user-settings/confirm-pas
     NotificationMsgComponent,
     ConfirmdeletionComponent,
     ConfirmPasswordComponent,
+    TabsComponent
   ],
   imports: [
     CommonModule,

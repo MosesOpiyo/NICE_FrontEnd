@@ -31,7 +31,6 @@
             <label for="password" class="label-name">
                 <span class="content-name">Password</span>
             </label>
-            <password-strength-meter [password]="password"></password-strength-meter>
         </div>
 
         <div class="signup-confirmpass input-card">
@@ -42,13 +41,15 @@
                 <span class="content-name">Confirm Password</span>
             </label>
         </div>
+
+        <password-strength-meter [password]="password"></password-strength-meter>
         
         <div class="signup-visibility input-card">
             <div>
                 <input type="checkbox" (click)="togglePasswordVisibility()" id="myInput" title="visibility">
             </div>
             <div>
-                <label for="myInput" class="show-pass">Show Password</label>
+                <label for="myInput" class="show-pass">&nbsp;Show Password</label>
             </div>
         </div>
         
@@ -57,7 +58,7 @@
 
         <div class="signup-extras">
             <p class="clo-lg-5 text-center py-2">Have an account?<br><a (click)="showLoginDialog()">Log In</a></p>
-            <p>By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Business Terms of Service</a></p>
+            <p>By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Terms of Service</a></p>
         </div>
         
     </form>
