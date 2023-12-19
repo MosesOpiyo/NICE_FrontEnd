@@ -4,6 +4,7 @@ import { AuthenticationService } from '../AuthService/authentication.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginComponent } from '../login/login.component';
 import { IPasswordStrengthMeterService } from 'angular-password-strength-meter';
+import { countryCodes } from './farmer-sign-up/country-dial-codes';
 
 @Component({
   selector: 'app-sign-up',
@@ -23,12 +24,40 @@ export class SignUpComponent {
   }
   username:any;
   email: any;
-  phone: any;
+  phone_number: any;
+  dialCode:any
+  fullPhoneNumber:any
   password: any;
   confirm_password:any
   is_producer:any;
   is_warehouser:any;
   isPasswordVisible = false;
+  countries:any;
+  showDropdown: boolean = false;
+  filteredCountryCodes: any[] = [];
+  countryInput:any
+
+  ngOnInit(): void {
+    this.countries = countryCodes
+  }
+
+  filterCountryCodes(): void {
+    this.filteredCountryCodes = this.countries.filter(country =>
+      country.name.toLowerCase().includes((this.countryInput.toLowerCase())) ||
+      country.code.includes(this.countryInput)
+    );
+    this.showDropdown = this.filteredCountryCodes.length > 0;
+  }
+
+  clearCodeField(){
+    this.countryInput = ""
+  }
+  
+  selectCountryCode(country: any): void {
+    this.countryInput = country.code + ' (' + country.dial_code + ')';
+    this.dialCode = country.dial_code
+    this.showDropdown = false;
+  }
   
   registerBuyer(){
     if(this.checker.score(this.password) < 2){
@@ -45,10 +74,11 @@ export class SignUpComponent {
     }
     
     if(this.checker.score(this.password) >= 3 && this.password == this.confirm_password){
+      this.fullPhoneNumber = this.dialCode + this.phone_number
       let form = new FormData();
       form.append('username',this.username),
       form.append('email',this.email),
-      form.append('phone',this.phone),
+      form.append('phone_number',this.fullPhoneNumber),
       form.append('password',this.password),
       this.service.Register(form)
       this.dialogRef.close()

@@ -68,12 +68,10 @@ img {
     gap: 0.5rem
 }
 
-.dashboard-card .location {
-    grid-area: 10 / 1 / 11 / 3;
-}
-
-.dashboard-card .warehouse-info .location {
-    grid-area: 3 / 1 / 4 / 3;
+.dashboard-card .history,
+.dashboard-card .location,
+.dashboard-card .farm-area {
+  grid-area: auto / 1 / auto / 3;
 }
 
 .farmer-info > *,
@@ -94,6 +92,12 @@ img {
     color: #f68b1ede;
     cursor: pointer;
     transition: all 350ms ease-in-out;
+}
+
+.farm-area .fa-pencil,
+.history .fa-pencil,
+.location .fa-pencil {
+  left: 98%;
 }
 
 .fa-pencil:hover {
@@ -187,10 +191,12 @@ img {
     .buyer-info {
         grid-template-columns: 1fr;
     }
-
+    
+    .dashboard-card .history,
     .dashboard-card .location,
+    .dashboard-card .farm-area,
     .dashboard-card .warehouse-info .location {
-        grid-area: auto;
+        grid-area: auto / 1 / auto / 2;
     }
 
     .dashboard-card .details {

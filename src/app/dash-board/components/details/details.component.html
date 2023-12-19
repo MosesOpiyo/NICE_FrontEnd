@@ -24,7 +24,7 @@
         
                 <div class="user-addinfo">
                     <p>Name: <span>{{user.user.username | titlecase}}</span></p>
-                    <p>Phone Number: <span>+1 345678389</span></p>
+                    <p>Phone Number: <span>{{user.user.phone_number}}</span></p>
                     <p>Email Address: <span>{{user.user.email}}</span></p>
                     <p *ngIf="profile && profile.estate_name != 'None'">Farmer Type: <span>Estate Farmer</span></p>
                     <p *ngIf="profile && profile.estate_name == 'None'">Farmer Type: <span>Society Farmer</span></p>
@@ -172,13 +172,13 @@
                         <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(21)"></i>
                     </li>
 
-                    <li>
+                    <li class="farm-area">
                         Farm Area:<br>
                         <span *ngIf="profile">{{profile.farm_area}}</span>
                         <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(24)"></i>
                     </li>
 
-                    <li>
+                    <li class="history">
                         Grower's History:<br>
                         <span *ngIf="profile">{{profile.grower_history}}</span>
                         <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(22)"></i>

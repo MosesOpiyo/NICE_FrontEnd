@@ -90,7 +90,7 @@ register();
     OriginsComponent,
     OrigindetailsComponent,
     TermsComponent,
-    AddtocartComponent
+    AddtocartComponent,
   ],
   entryComponents:[LoginComponent],
   imports: [
