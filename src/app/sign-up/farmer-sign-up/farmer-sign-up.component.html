@@ -19,12 +19,18 @@
         </div>
 
         <div class="signup-phone input-card">
-            <input id="phone" name="phone" [(ngModel)]="phone" class="form-control"
-                type="tel" required>
-            <label for="phone" class="label-name">
+            <input id="code" [(ngModel)]="countryInput" placeholder="Country" (input)="filterCountryCodes()" (click)="clearCodeField()" type="text" autocomplete="off" name="phone">
+            <label for="code" class="label-name">
                 <span class="content-name">Phone Number</span>
             </label>
+            <input id="phone_number" name="phone_number" [(ngModel)]="phone_number" class="form-control"
+                type="tel" required>
         </div>
+        <div class="dropdown" *ngIf="showDropdown">
+            <div *ngFor="let country of filteredCountryCodes" (click)="selectCountryCode(country)" class="countries">
+                <span><img src="../../../assets/flags/1x1/{{country.code.toLowerCase()}}.svg" alt=""></span><p>{{country.name}} - {{country.dial_code}}</p>
+            </div>
+          </div>
         
         <div class="signup-password input-card">
             <input input id="password" name="password" [(ngModel)]="password"  class="form-control" type="{{ isPasswordVisible ? 'text' : 'password' }}" required appPasswordToggle>
@@ -59,6 +65,8 @@
             <p class="clo-lg-5 text-center py-2">Have an account?<br><a (click)="showLoginDialog()">Log In</a></p>
             <p>By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Terms of Service</a></p>
         </div>
+
+        
         
     </form>
 </div>
