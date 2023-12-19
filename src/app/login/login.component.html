@@ -1,23 +1,20 @@
 <div class="login-container">
-    <h3>Sign in into your Account</h3>
+    <h3>Sign in</h3>
 
     <form (ngSubmit)="loginUser()" ngNativeValidate>
-        <div class="email-input input-card">
+        <div class="label-float">
             <input id="email" name="email" [(ngModel)]="email" class="form-control"
-                type="email" required>
-            <label for="email" class="label-name">
-                <span class="content-name">Name</span>
-            </label>
+                type="email" placeholder=" " required>
+            <label for="email">Email</label>
         </div>
 
-        <div class="password-input input-card">
-            <input input id="password" name="password" [(ngModel)]="password"
-                class="form-control" type="{{ isPasswordVisible ? 'text' : 'password' }}" required>
-            <label for="password" class="label-name">
-                <span class="content-name">Password</span>
-            </label>
-            <p class="forgotten">Forgotten Password?</p>
+        <div class="label-float">
+            <input id="password" name="password" [(ngModel)]="password" class="form-control"
+            type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
+            <label for="password">Password</label>
         </div>
+
+        <p class="forgotten">Forgotten Password?</p>
 
         <div class="signup-visibility input-card">
             <div>
@@ -31,8 +28,8 @@
         <button mat-raised-button type="submit">Log In</button>
 
         <div class="form-extras">
-            <p class="py-2">Dont have an account?<br><a (click)="showSignUpDialog()">Sign up</a></p>
-            <p>By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Terms of Service</a></p>
+            <p class="py-2">Dont have an account?<br><a class="signup-link" (click)="showSignUpDialog()">Sign up</a></p>
+            <p  class="terms-text">By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Terms of Service</a></p>
         </div>        
     </form>
 </div>

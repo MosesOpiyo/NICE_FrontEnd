@@ -3,11 +3,24 @@ mat-slide-toggle{
     align-self: center;
 }
 
+form {
+    padding: 10px;
+}
+
 form .form-content {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr;
     gap: .5rem;
+}
+
+form button {
+    background-color: #838283;
+    width: 100px;
+}
+
+form button.submitbtn {
+    margin-left: 10px;
 }
 
 input{
@@ -25,10 +38,22 @@ input{
 
 :host ::ng-deep ul.navs-tabs li.navs-item a.navs-link {
     padding: .8rem 1rem;
+    font-size: 1.4rem;
 }
 
 :host ::ng-deep ul.navs-tabs li.navs-item a:hover {
     color: #0c0d46f0;
+}
+
+:host ::ng-deep ul.navs-tabs li.navs-item a.navs-link.active {
+    background-color: #424242;
+    color: #fff;
+    text-decoration: none;
+}
+
+:host ::ng-deep ul.navs.navs-tabs li.navs-item {
+    border: none;
+    border-bottom: 1px solid #737373;
 }
 
 @media (max-width: 600px) {

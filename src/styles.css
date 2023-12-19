@@ -571,7 +571,7 @@ opacity: .2;
     .mobile-icons ul {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 3rem;
     }
 
     .mobile-icons button {

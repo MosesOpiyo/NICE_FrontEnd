@@ -1,21 +1,18 @@
 <div *ngIf="!is_producer && !is_warehouser" class="signup-container">
-    <h3>Create an account with us</h3>
+    <h3>Create an account</h3>
 
     <form (ngSubmit)="registerBuyer()" ngNativeValidate>
-        <div class="signup-username input-card">
+
+        <div class="label-float">
             <input id="username" name="username" [(ngModel)]="username" class="form-control"
-                type="username" required>
-            <label for="username" class="label-name">
-                <span class="content-name">Full Name</span>
-            </label>
+                type="username" placeholder=" " required>
+            <label for="username">Full Name</label>
         </div>
 
-        <div class="signup-email input-card">
+        <div class="label-float">
             <input id="email" name="email" [(ngModel)]="email" class="form-control"
-                type="email" required>
-            <label for="email" class="label-name">
-                <span class="content-name">Email</span>
-            </label>
+                type="email" placeholder=" " required>
+            <label for="email">Email</label>
         </div>
 
         <div class="signup-phone input-card">
@@ -39,13 +36,16 @@
             </label>
         </div>
 
-        <div class="signup-confirmpass input-card">
-            <input input id="confirm_password" name="confirm_password" [(ngModel)]="confirm_password"
-                class="form-control" type="{{ isPasswordVisible ? 'text' : 'password' }}"
-                required appPasswordToggle>
-            <label for="confirm_password" class="label-name">
-                <span class="content-name">Confirm Password</span>
-            </label>
+        <div class="label-float">
+            <input id="confirm_password" name="confirm_password" [(ngModel)]="confirm_password" class="form-control"
+            type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
+            <label for="confirm_password">Confirm Password</label>
+        </div>
+
+        <div class="label-float">
+            <input id="password" name="password" [(ngModel)]="password" class="form-control"
+            type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
+            <label for="password">Password</label>
         </div>
 
         <password-strength-meter [password]="password"></password-strength-meter>
@@ -63,8 +63,8 @@
         <button mat-raised-button type="submit">Register</button>
 
         <div class="signup-extras">
-            <p class="clo-lg-5 text-center py-2">Have an account?<br><a (click)="showLoginDialog()">Log In</a></p>
-            <p>By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Terms of Service</a></p>
+            <p class="clo-lg-5 text-center py-2">Have an account?<br><a class="login-link" (click)="showLoginDialog()">Log In</a></p>
+            <p class="terms-text">By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Terms of Service</a></p>
         </div>
         
     </form>

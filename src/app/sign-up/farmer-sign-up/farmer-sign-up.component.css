@@ -10,6 +10,7 @@
 .signup-container h3 {
     font-weight: 500;
     text-align: center;
+    padding-bottom: 5px;
 }
 
 .signup-container form {
@@ -17,7 +18,6 @@
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    padding-top: 20px;
 }
 
 .signup-container form .input-card {
@@ -32,64 +32,61 @@
     width: 100%;
     border: 1px solid #8080807a;
     border-radius: 4px;
-    height: 40px;
+    height: 35px;
     padding-inline: .5rem;
 }
 
 /* input animations */
-.signup-container .input-card {
+.label-float{
     position: relative;
-}
+    padding-top: 13px;
+  }
+  
+  .label-float input{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 16px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -webkit-appearance:none;
+    transition: all .1s linear;
+  }
 
-.signup-container .input-card label {
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  
+  .label-float input::placeholder{
+    color:transparent;
+  }
+  
+  .label-float label{
     pointer-events: none;
-}
-
-.signup-container .input-card label.show-pass {
-    position: relative;
-    pointer-events: all;
-}
-
-.signup-container .input-card label::after {
-    content: "";
     position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    transform: translateX(-100%);
-    transition: all 0.3s  ease;
-}
+    top: calc(50% - 8px);
+    left: 15px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    background-color: white;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    transition: all .1s linear;
+  }
+  
+  .label-float input:required:invalid + label {
+    color: #000000b7;
+  }
 
-.signup-container .input-card label.show-pass::after {
-    display: none;
-}
-
-.signup-container .input-card .content-name {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    transition: all .3s ease;
-}
-
-.signup-container .input-card input:focus + .label-name .content-name,
-.signup-container .input-card input:valid + .label-name .content-name {
-    transform: translateY(-150%);
-}
-
-.signup-container .input-card input:focus + .label-name::after,
-.signup-container .input-card input:valid + .label-name::after  {
-    transform: translateX(0%);
-}
+  .label-float input:focus + label,
+  .label-float input:not(:placeholder-shown) + label{
+    font-size: 13px;
+    top: 0;
+    color: #000000b7;
+  }
 /* end of input animations */
  
 .signup-container form input:focus {
-    border: 1px solid #0000ff85;
+    border: 1px solid #0000ff59;
     box-shadow: none;
 }
 
@@ -106,22 +103,31 @@
 .signup-container form button {
     width: 100%;
     background-color: black;
-    color: white;
+    color: #ffff;
     border-radius: 0;
+    height: 45px;
+    font-size: 1.2rem;
 }
 
 .signup-container form .signup-extras {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: .5rem; */
     text-align: center;
+}
+
+.signup-container form .signup-extras p.terms-text {
+    font-size: 15px;
 }
 
 .signup-container form .signup-extras p a {
     color: blue;
     cursor: pointer;
     transition: all .3s ease-in-out;
+}
+
+.signup-container form .signup-extras p a.login-link {
+    font-weight: bold;
 }
 
 .signup-container form .signup-extras p a:hover {
