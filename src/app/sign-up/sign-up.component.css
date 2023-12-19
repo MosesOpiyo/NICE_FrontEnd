@@ -137,6 +137,7 @@
 
 .signup-phone{
     display: flex;
+    padding-top: 13px;
 }
 #code {
     flex-basis: 30%;

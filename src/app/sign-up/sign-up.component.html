@@ -15,12 +15,10 @@
             <label for="email">Email</label>
         </div>
 
-        <div class="signup-phone input-card">
+        <div class="signup-phone">
             <input id="code" [(ngModel)]="countryInput" placeholder="Country" (input)="filterCountryCodes()" (click)="clearCodeField()" type="text" autocomplete="off" name="phone">
-            <label for="code" class="label-name">
-                <span class="content-name">Phone Number</span>
-            </label>
-            <input id="phone_number" name="phone_number" [(ngModel)]="phone_number" class="form-control"
+           
+            <input id="phone_number" name="phone_number" placeholder="Number" [(ngModel)]="phone_number" class="form-control"
                 type="tel" required>
         </div>
         <div class="dropdown" *ngIf="showDropdown">
@@ -29,23 +27,16 @@
             </div>
           </div>
         
-        <div class="signup-password input-card">
-            <input input id="password" name="password" [(ngModel)]="password"  class="form-control" type="{{ isPasswordVisible ? 'text' : 'password' }}" required appPasswordToggle>
-            <label for="password" class="label-name">
-                <span class="content-name">Password</span>
-            </label>
+          <div class="label-float">
+            <input id="password" name="password" [(ngModel)]="password" class="form-control"
+            type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
+            <label for="password">Password</label>
         </div>
 
         <div class="label-float">
             <input id="confirm_password" name="confirm_password" [(ngModel)]="confirm_password" class="form-control"
             type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
             <label for="confirm_password">Confirm Password</label>
-        </div>
-
-        <div class="label-float">
-            <input id="password" name="password" [(ngModel)]="password" class="form-control"
-            type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
-            <label for="password">Password</label>
         </div>
 
         <password-strength-meter [password]="password"></password-strength-meter>
