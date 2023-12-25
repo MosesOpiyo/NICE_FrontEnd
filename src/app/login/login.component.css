@@ -102,6 +102,11 @@ h3 {
     border-radius: 0;
     height: 45px;
     font-size: 1.2rem;
+    transition: all 250ms ease-in-out;
+}
+
+.login-container form button:hover {
+    letter-spacing: 3px;
 }
 
 .login-container form .form-extras {
