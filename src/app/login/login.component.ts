@@ -1,4 +1,5 @@
 import { Component,Inject } from '@angular/core';
+import { SocialUser,SocialAuthService, } from '@abacritt/angularx-social-login';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../AuthService/authentication.service';
 
@@ -16,6 +17,7 @@ constructor(
   public dialogRef: MatDialogRef<LoginComponent>,
   private dialog:MatDialog,
   public service: AuthenticationService,
+  private socialService: SocialAuthService,
   @Inject(MAT_DIALOG_DATA) public data: any
 ){}
 email: any;
@@ -23,12 +25,32 @@ password: any;
 profile:any;
 isPasswordVisible = false;
 
+socialUser: SocialUser
+isLoggedIn: boolean;
+
   loginUser(){
     let form = new FormData();
     form.append('email',this.email),
     form.append('password',this.password),
     this.service.login(form)
     this.dialogRef.close();
+  }
+
+  signInWithGoogle(){
+    this.socialService.authState.subscribe((user:any)=>{
+    this.isLoggedIn = (user != null)
+    if(this.isLoggedIn){
+      this.socialUser = user
+      let username = `${this.socialUser.firstName} ${this.socialUser.lastName}`
+      console.log(this.socialUser.idToken.slice(0,50))
+      let form = new FormData();
+      form.append('username',username),
+      form.append('email',this.socialUser.email),
+      form.append('password',this.socialUser.idToken.slice(0,50)),
+      this.service.googleRegistration(form)
+      this.dialogRef.close();
+    }
+    })
   }
   
   closeDialog() {

@@ -109,6 +109,9 @@ export class NavbarComponent implements OnInit {
           if(this.user.type == "FARMER"){
             this.route.navigate(['dash-board'])
           }
+          else if(this.user.type == "ORIGINWAREHOUSER"){
+            this.route.navigate(['dash-board'])
+          }
           else if(this.user.type == "WAREHOUSER"){
             this.route.navigate(['dash-board'])
           }
