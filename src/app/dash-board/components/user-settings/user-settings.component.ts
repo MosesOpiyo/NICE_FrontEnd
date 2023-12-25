@@ -14,6 +14,8 @@ export class UserSettingsComponent {
   password:any
   newPassword:any
   confirmNewPassword:any
+  isPasswordVisible = false;
+  
 constructor(private dialog:MatDialog,private snackbar:MatSnackBar,private service:AuthenticationService){}
 
 changePassword(){
@@ -48,4 +50,9 @@ showConfirmPasswordDialog(){
     });
   }
 }
+
+togglePasswordVisibility() {
+  this.isPasswordVisible = !this.isPasswordVisible;
+}
+
 }

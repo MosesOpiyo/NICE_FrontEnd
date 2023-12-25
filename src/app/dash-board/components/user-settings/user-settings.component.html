@@ -51,20 +51,29 @@
             <form (ngSubmit)="changePassword()">
                 <div class="label-float">
                     <input id="oldpassword" name="oldpassword" [(ngModel)]="password" class="form-control"
-                        type="password" placeholder=" " required>
+                    type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
                     <label for="oldpassword">Old Password</label>
                 </div>
 
                 <div class="label-float">
                     <input id="newpassword" name="newpassword" [(ngModel)]="newPassword" class="form-control"
-                        type="password" placeholder=" " required>
+                    type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
                     <label for="newpassword">New Password</label>
                 </div>
 
                 <div class="label-float">
                     <input id="confirmpassword" name="confirmpassword" [(ngModel)]="confirmNewPassword" class="form-control"
-                        type="password" placeholder=" " required>
+                    type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
                     <label for="confirmpassword">Confirm New Password</label>
+                </div>
+
+                <div class="signup-visibility">
+                    <div>
+                        <input type="checkbox" (click)="togglePasswordVisibility()" id="myInput" title="visibility">
+                    </div>
+                    <div>
+                        <label for="myInput">&nbsp;Show Password</label>
+                    </div>
                 </div>
 
                 <button type="submit">SUBMIT</button>

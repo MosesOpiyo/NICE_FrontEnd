@@ -53,10 +53,6 @@
     padding-top: 13px;
 }
 
-.settings-container form .input-card {
-    margin-bottom: 20px;
-}
-
 .settings-container form input {
     min-width: 100%;
     max-width: 100%;
@@ -154,6 +150,19 @@
 .settings-container form input:focus {
     border: 1px solid #0000ff85;
     box-shadow: none;
+}
+
+.settings-container form .signup-visibility {
+    margin-bottom: 10px;
+}
+
+.settings-container .signup-visibility {
+    display: flex;
+}
+
+.settings-container #myInput {
+    width: 20px;
+    height: 20px;
 }
 
 /* media queries */
