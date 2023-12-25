@@ -11,12 +11,11 @@
     background-color: #f2f2f2;
     padding: 1rem;
     border-radius: 4px;
-    height: 100%;
     box-shadow: 0 0 5px #ccc;
-    height: 300px;
+    height: 250px;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .settings-card.password {
@@ -30,7 +29,8 @@
 .email-edit,
 .phone-edit,
 .password-edit,
-.oldpassword-edit {
+.oldpassword-edit,
+.name-edit {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,15 +39,18 @@
 .email-edit form,
 .phone-edit form,
 .password-edit form,
-.oldpassword-edit form  {
+.oldpassword-edit form,
+.name-edit form  {
     /* border: 2px solid red; */
     width: 70%;
     display: flex;
     flex-direction: column;
-    /* gap: 1.5rem; */
     position: relative;
     overflow: hidden;
-    padding-top: 30px;
+}
+
+.oldpassword-edit form  {
+    padding-top: 13px;
 }
 
 .settings-container form .input-card {
@@ -55,64 +58,81 @@
 }
 
 .settings-container form input {
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     border: 1px solid #8080807a;
     border-radius: 4px;
-    height: 40px;
+    height: 35px;
     padding-inline: .5rem;
 }
 
 /* input animations */
-.settings-container .input-card {
+.label-float{
     position: relative;
-}
+    padding-block: 13px;
+  }
 
-.settings-container .input-card label {
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .oldpassword-edit .label-float {
+    padding: 0 0 13px 0;
+  }
+
+  .label-float input{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 16px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -webkit-appearance:none;
+    transition: all .1s linear;
+  }
+
+  
+  .label-float input::placeholder{
+    color:transparent;
+  }
+  
+  .label-float label{
     pointer-events: none;
-}
-
-.settings-container .input-card label::after {
-    content: "";
     position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    transform: translateX(-100%);
-    transition: all 0.3s  ease;
-}
+    top: calc(50% - 13px);
+    left: 15px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    background-color: white;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    transition: all .1s linear;
+  }
 
-.settings-container .input-card .content-name {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    transition: all .3s ease;
-}
+  .oldpassword-edit .label-float label {
+    top: calc(50% - 18px);
+  }
+  
+  .label-float input:required:invalid + label {
+    color: #000000b7;
+  }
 
-.settings-container .input-card .content-name {
-    color: #000000ba;
-}
+  .label-float input:focus + label,
+  .label-float input:not(:placeholder-shown) + label{
+    font-size: 13px;
+    top: 3px;
+    color: #000000b7;
+  }
 
-.settings-container .input-card input:focus + .label-name .content-name,
-.settings-container .input-card input:valid + .label-name .content-name {
-    transform: translateY(-150%);
-}
-
-.settings-container .input-card input:focus + .label-name::after,
-.settings-container .input-card input:valid + .label-name::after  {
-    transform: translateX(0%);
-}
+  .oldpassword-edit  .label-float input:focus + label,
+  .oldpassword-edit  .label-float input:not(:placeholder-shown) + label{
+    top: -10px;
+  }
 /* end of input animations */
 
 .phone-edit button,
 .email-edit button,
 .password-edit button,
-.oldpassword-edit button  {
+.oldpassword-edit button,
+.name-edit button  {
     padding: .5rem;
     border: none;
     background-color: #000000;
@@ -124,7 +144,8 @@
 .phone-edit button:hover,
 .email-edit button:hover,
 .password-edit button:hover,
-.oldpassword-edit button:hover  {
+.oldpassword-edit button:hover,
+.name-edit button:hover  {
     letter-spacing: 3px;
     background-color: #fff;
     color: #000000;
@@ -140,13 +161,18 @@
     .settings-container {
         grid-template-columns: 1fr;
     }
+
+    .settings-card {
+        height: auto;
+    }
 }
 
 @media (max-width: 375px) {
     .email-edit form,
     .phone-edit form,
     .password-edit form,
-    .oldpassword-edit form {
+    .oldpassword-edit form,
+    .name-edit form {
         width: 100%;
     }
 
