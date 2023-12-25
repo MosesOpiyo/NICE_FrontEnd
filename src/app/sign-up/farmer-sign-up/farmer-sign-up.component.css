@@ -29,11 +29,22 @@
 }
 
 .signup-container form input {
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     border: 1px solid #8080807a;
     border-radius: 4px;
     height: 35px;
     padding-inline: .5rem;
+}
+
+.signup-container form input#code {
+    min-width: 30%;
+    max-width: 30%;
+}
+
+.signup-container form input#phone_number {
+    min-width: 100%;
+    max-width: 100%;
 }
 
 /* input animations */
@@ -49,6 +60,10 @@
   
   .signup-phone .label-float {
     padding-top: 0;
+  }
+
+  .signup-phone .label-float.phone-signup {
+    width: 70%;
   }
   
   .label-float input{
@@ -159,17 +174,15 @@
 .signup-phone{
     display: flex;
 }
-#code {
-    flex-basis: 30%;
-  }
+
 
 .dropdown{
     border: 2px solid #0000001f;
     position: absolute;
-    top: 140px;
+    top: 143px;
     background-color: #fff;
     z-index: 2;
-    height: 300px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
@@ -184,6 +197,28 @@
 img{
     width: 20px;
     margin-right: 2px;
+}
+
+
+@media (max-width: 450px) {
+    .signup-phone {
+        flex-direction: column;
+    }
+
+    .signup-container form input#code {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .signup-phone .label-float.phone-signup {
+        width: 100%;
+      }
+    
+    .signup-container form input#phone_number {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
 }
 
 @media (max-width: 375px) {

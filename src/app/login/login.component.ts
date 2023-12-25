@@ -44,6 +44,7 @@ isPasswordVisible = false;
     if(this.data.isBuyer){
       const dialogRef = this.dialog.open(SignUpComponent,{
         width: '25pc',
+        maxWidth: '90vw',
         autoFocus: false,
         maxHeight: '100vh'
       });
@@ -51,6 +52,7 @@ isPasswordVisible = false;
     else{
       const dialogRef = this.dialog.open(FarmerSignUpComponent,{
         width: '25pc',
+        maxWidth: '90vw',
         autoFocus: false,
         maxHeight: '100vh'
       });
