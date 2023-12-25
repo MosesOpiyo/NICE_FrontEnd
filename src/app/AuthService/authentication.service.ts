@@ -45,6 +45,19 @@ export class AuthenticationService implements OnInit {
     })
   }
 
+  googleRegistration(credentials:any){
+    this.http.post(`${environment.BASE_URL}Authentication/GoogleSignIn`,credentials).subscribe((response:any)=>{
+      sessionStorage.setItem('Token', response.tokens.access)
+      this.snackBar.open("Sign Up SuccessFul", 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      this.refreshPage()
+    },(error:any) =>{
+      console.log(error.error)
+    })
+  }
+
   Register(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Registration`,credentials).subscribe((response:any)=>{
       sessionStorage.setItem('Token', response.tokens.access)
