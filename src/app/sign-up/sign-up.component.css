@@ -41,7 +41,16 @@
     position: relative;
     padding-top: 13px;
   }
+
+  .signup-phone {
+    position: relative;
+    padding-top: 13px;
+  }
   
+  .signup-phone .label-float {
+    padding-top: 0;
+  }
+
   .label-float input{
     border: 1px solid lightgrey;
     border-radius: 5px;
@@ -72,6 +81,10 @@
     box-sizing: border-box;
     transition: all .1s linear;
   }
+
+  .signup-phone .label-float label {
+    top: calc(50% - 12px);
+  }
   
   .label-float input:required:invalid + label {
     color: #000000b7;
@@ -82,6 +95,11 @@
     font-size: 13px;
     top: 0;
     color: #000000b7;
+  }
+
+  .signup-phone .label-float input:focus + label,
+  .signup-phone .label-float input:not(:placeholder-shown) + label{
+    top: -10px;
   }
   
   .signup-container form .input-card.signup-visibility {

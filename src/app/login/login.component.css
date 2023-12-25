@@ -123,6 +123,10 @@ h3 {
     transition: all .3s ease-in-out;
 }
 
+.login-container form p.forgotten {
+    padding-top: 7px;
+}
+
 .login-container form .password-input p:hover,
 .login-container form .form-extras p a:hover,
 .login-container form p.forgotten:hover {
