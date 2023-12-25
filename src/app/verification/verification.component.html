@@ -1,13 +1,12 @@
-<div class="login-container">
-    <h1><img src="../../assets/images/d90a1c41c1294e9ebd3e6cba576ae35f.png" alt=""></h1>
-    <h2>Verification</h2>
-    <p>A code has been sent to {{data.email}}.</p>
+<div class="verification-container">
+    <h3>Verification</h3>
+    <p>To confirm your account, please enter the verification code sent to {{data.email}} below.</p>
 
-    <form (ngSubmit)="verifyCode()">
-        <div class="email-input">
-            <label for="email">Code</label>
-            <input id="email" name="code" placeholder="code" [(ngModel)]="code" class="form-control form-control"
+    <form (ngSubmit)="verifyCode()" ngNativeValidate>
+        <div class="label-float">
+            <input id="emailcode" name="emailcode" placeholder=" " [(ngModel)]="code" class="form-control"
                 type="text" required pattern="\d{5}">
+            <label for="emailcode">Code</label>
         </div>
         <button mat-raised-button type="submit">Verify</button>    
     </form>

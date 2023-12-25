@@ -1,4 +1,4 @@
-.login-container{
+.verification-container{
     padding: 20px;
     background-color: #fff;
     display: flex;
@@ -8,70 +8,105 @@
     justify-content: center;
 }
 
-/* h1 {
+.verification-container h3 {
     font-weight: 500;
-    font-style: italic;
-    color: rgb(255, 192, 1);
-    font-size:xx-large;
-} */
-
-h2 {
-    font-size: 30px;
+    text-align: center;
+    padding-bottom: 5px;
 }
-h3 {
-    font-weight: 500;
+
+.verification-container p {
     text-align: center;
 }
 
-/* .banner {
-    width: 100%;
-}
-
-img {
-    margin: 0;
-    padding: 0;
-    width: auto;
-    height: 50px;
-} */
-
-.login-container form {
+.verification-container form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.login-container form input {
-    width: 100%;
-    border: 2px solid gray;
-    border-radius: 10px;
-    height: 3pc;
+.verification-container form .input-card {
+    margin-bottom: 20px;
+}
+
+.verification-container form input {
+    min-width: 100%;
+    max-width: 100%;
+    border: 1px solid #8080807a;
+    border-radius: 4px;
+    height: 35px;
     padding-inline: .5rem;
 }
 
-.login-container form button {
+/* input animations */
+.label-float{
+    position: relative;
+    padding-block: 13px;
+  }
+
+  .label-float input{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 16px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -webkit-appearance:none;
+    transition: all .1s linear;
+  }
+
+  
+  .label-float input::placeholder{
+    color:transparent;
+  }
+  
+  .label-float label{
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 14px);
+    left: 15px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    background-color: white;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    transition: all .1s linear;
+  }
+  
+  .label-float input:required:invalid + label {
+    color: #000000b7;
+  }
+
+  .label-float input:focus + label,
+  .label-float input:not(:placeholder-shown) + label{
+    font-size: 13px;
+    top: 3px;
+    color: #000000b7;
+  }
+
+.verification-container form button {
     width: 100%;
     background-color: black;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 0;
+    height: 45px;
+    font-size: 1.2rem;
+    transition: all 250ms ease-in-out;
 }
 
-.login-container form .form-extras {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
+.verification-container form button:hover {
+    letter-spacing: 3px;
 }
 
-.login-container form .password-input p,
-.login-container form .form-extras p a {
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
+.verification-container form input:focus {
+    border: 1px solid #0000ff59;
+    box-shadow: none;
 }
 
 @media (max-width: 375px) {
-    .login-container {
-        padding: 5px;
+    .verification-container {
+        padding: 20px 5px;
     }
 }
