@@ -2388,11 +2388,12 @@ opacity: .2;
 
   /* SUBSCRIBE SECTION */
   .subscribe-container {
-    background-color: #daebef;
-    padding: 5rem .5rem;
-
+    /* background-color: #daebef; */
+    padding-bottom: 4rem;
     display: flex;
     align-items: center;
+    width: 95%;
+    margin-inline: auto;
   }
 
   .subscribe-container > * {

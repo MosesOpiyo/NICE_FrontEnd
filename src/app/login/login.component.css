@@ -7,6 +7,10 @@
     justify-content: center;
 }
 
+.google-button {
+    max-width: 328px;
+}
+
 .googlelogin {
     padding-block: 8px;
 }
