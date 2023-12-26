@@ -14,7 +14,7 @@
             <label for="password">Password</label>
         </div>
 
-        <p class="forgotten">Forgotten Password?</p>
+        <button type="button" title="forgot password" class="forgotten" (click)="showForgotDialog()">Forgotten Password?</button>
 
         <div class="signup-visibility input-card">
             <div>
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <button mat-raised-button type="submit">Log In</button>
+        <button mat-raised-button type="submit" class="login">Log In</button>
 
         <div class="form-extras">
             <p class="googlelogin"><strong>Or</strong></p>

@@ -101,7 +101,7 @@ h3 {
     box-shadow: none;
 }
 
-.login-container form button {
+.login-container form button.login {
     width: 100%;
     background-color: black;
     color: #fff;
@@ -111,7 +111,7 @@ h3 {
     transition: all 250ms ease-in-out;
 }
 
-.login-container form button:hover {
+.login-container form button.login:hover {
     letter-spacing: 3px;
 }
 
@@ -128,19 +128,23 @@ h3 {
 
 .login-container form .password-input p,
 .login-container form .form-extras p a,
-.login-container form p.forgotten {
+.login-container form button.forgotten {
     color: blue;
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
 
-.login-container form p.forgotten {
+.login-container form button.forgotten {
     padding-top: 7px;
+    border: none;
+    background-color: transparent;
+    text-align: start;
+    width: max-content;
 }
 
 .login-container form .password-input p:hover,
 .login-container form .form-extras p a:hover,
-.login-container form p.forgotten:hover {
+.login-container form button.forgotten:hover {
     text-decoration: underline;
 }
 

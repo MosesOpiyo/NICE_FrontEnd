@@ -5,6 +5,7 @@ import { AuthenticationService } from '../AuthService/authentication.service';
 
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.component';
+import { ForgotpasswordComponent } from '../forgotpassword/forgotpassword.component';
 
 @Component({
   selector: 'app-login',
@@ -55,6 +56,16 @@ isLoggedIn: boolean;
   
   closeDialog() {
     this.dialogRef.close();
+  }
+
+  showForgotDialog() {
+    this.dialogRef.close()
+    let dialogRef = this.dialog.open(ForgotpasswordComponent,{
+      width: '25pc',
+      maxWidth: '90vw',
+      autoFocus: false,
+      maxHeight: '90vh',
+    })
   }
 
   togglePasswordVisibility() {
