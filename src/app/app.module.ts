@@ -93,7 +93,7 @@ register();
     TermsComponent,
     AddtocartComponent,
   ],
-  entryComponents:[LoginComponent],
+  // entryComponents:[LoginComponent],
   imports: [
     BrowserModule,
     GoogleSigninButtonModule,

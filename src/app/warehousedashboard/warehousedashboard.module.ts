@@ -20,7 +20,7 @@ import { RequestsComponent } from './components/requests/requests.component';
     WarehousedashboardComponent,
     RequestsComponent
   ],
-  entryComponents:[InventoryComponent],
+  // entryComponents:[InventoryComponent],
   imports: [
     CommonModule,
     MatTableModule,
