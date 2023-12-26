@@ -1,3 +1,4 @@
+import { GoogleSigninButtonModule,SocialLoginModule,SocialAuthServiceConfig,GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { CUSTOM_ELEMENTS_SCHEMA , NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -95,6 +96,8 @@ register();
   entryComponents:[LoginComponent],
   imports: [
     BrowserModule,
+    GoogleSigninButtonModule,
+    SocialLoginModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -112,7 +115,25 @@ register();
     PasswordStrengthMeterModule.forRoot(),
     DashBoardModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id:GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '1004580228614-c94anmvia83hp8n2q8tb97hojn3flsnl.apps.googleusercontent.com'
+            )
+          }
+        ],
+        onError: (err) =>{
+          console.error(err)
+        }
+      } as SocialAuthServiceConfig
+    }
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

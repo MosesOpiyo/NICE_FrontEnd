@@ -82,6 +82,7 @@ export class FarmerSignUpComponent implements OnInit {
       form.append('phone_number',this.fullPhoneNumber),
       form.append('password',this.password),
       form.append('is_estate',this.is_estate)
+      console.log(form)
       this.service.farmerRegister(form,this.email)
       this.dialogRef.close()
     }

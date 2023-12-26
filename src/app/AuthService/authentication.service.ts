@@ -23,16 +23,18 @@ export class AuthenticationService implements OnInit {
   }
   farmerRegister(credentials:any,email:any){
     this.http.post(`${environment.BASE_URL}Authentication/FarmerRegistration`,credentials).subscribe((response:any)=>{
-
+      this.dialog.open(VerificationComponent,{
+        width: '25pc',
+        autoFocus: false,
+        data:{
+          email:email
+        }
+      })
       this.snackBar.open("Account Created Successfully, Please verify via email.", 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']
-      });
-        const dialogRef = this.dialog.open(VerificationComponent,{
-          data:{email:email},
-          width: '25pc',
-          maxHeight: '100vh'
-        });
+      })
+      
     },(error:any) =>{
       console.log(error.error)
       if(error.error.email != null){}
@@ -40,6 +42,19 @@ export class AuthenticationService implements OnInit {
         duration: 3000,
         panelClass: ['blue-snackbar']
       });
+    })
+  }
+
+  googleRegistration(credentials:any){
+    this.http.post(`${environment.BASE_URL}Authentication/GoogleSignIn`,credentials).subscribe((response:any)=>{
+      sessionStorage.setItem('Token', response.tokens.access)
+      this.snackBar.open("Sign Up SuccessFul", 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      this.refreshPage()
+    },(error:any) =>{
+      console.log(error.error)
     })
   }
 

@@ -75,7 +75,8 @@
     font-size: 16px;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
-    -webkit-appearance:none;
+    /* -webkit-appearance:none; */
+    appearance:none;
     transition: all .1s linear;
   }
 
@@ -175,6 +176,7 @@
 
 .signup-phone{
     display: flex;
+    padding-top: 13px;
 }
 
 .dropdown{
