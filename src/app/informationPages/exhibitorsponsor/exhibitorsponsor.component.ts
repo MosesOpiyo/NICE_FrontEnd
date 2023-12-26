@@ -9,8 +9,8 @@ export class ExhibitorsponsorComponent {
   name:any;
   email: any;
   phone: any;
-  company: any;
-  designation: any;
+  companyName:any;
+  designation:any;
 
 
   // exhibitorsponsor form tabs

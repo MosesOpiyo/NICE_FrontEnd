@@ -9,7 +9,7 @@
                 <div class="sponsorship-input">
                     <select title="sponsorship-package" id="sponsorship-package" class="selection"
                         name="sponsorship-package" required>
-                        <option value="" disabled selected>Choose Sponsorship Package...<sup>*</sup></option>
+                        <option value="" disabled selected>Choose Sponsorship Package...</option>
                         <option value="Platinum">Platinum - Sh2m</option>
                         <option value="Gold">Gold - Sh600k</option>
                         <option value="Silver">Silver - Sh300k</option>
@@ -17,49 +17,41 @@
                     </select>
                 </div>
 
-                <div class="name-input input-card">
-                    <input id="name" name="name" [(ngModel)]="name" class="form-control" type="text" required>
-                    <label for="name" class="label-name">
-                        <span class="content-name">Full Name<sup>*</sup></span>
-                    </label>
+                <div class="label-float">
+                    <input id="name" name="name" [(ngModel)]="name" class="form-control"
+                        type="text" placeholder=" " required>
+                    <label for="name">Name</label>
                 </div>
-
-                <div class="company-input input-card">
-                    <input id="company" name="company" [(ngModel)]="company" class="form-control" type="text" required>
-                    <label for="company" class="label-name">
-                        <span class="content-name">Company Name<sup>*</sup></span>
-                    </label>
+        
+                <div class="label-float">
+                    <input id="companyname" name="companyname" [(ngModel)]="companyName" class="form-control"
+                        type="text" placeholder=" " required>
+                    <label for="companyname">Company Name</label>
                 </div>
-
-                <div class="designation-input input-card">
-                    <input id="designation" name="designation" [(ngModel)]="designation" class="form-control" type="text" required>
-                    <label for="designation" class="label-name">
-                        <span class="content-name">Your Designation<sup>*</sup></span>
-                    </label>
+        
+                <div class="label-float">
+                    <input id="designation" name="designation" [(ngModel)]="designation" class="form-control"
+                        type="text" placeholder=" " required>
+                    <label for="designation">Your Designation</label>
                 </div>
-
-
-                <div class="email-input input-card">
-                    <input id="email" name="email" [(ngModel)]="email" class="form-control" type="email" required>
-                    <label for="email" class="label-name">
-                        <span class="content-name">Email<sup>*</sup></span>
-                    </label>
+        
+                <div class="label-float">
+                    <input id="email" name="email" [(ngModel)]="email" class="form-control"
+                        type="email" placeholder=" " required>
+                    <label for="email">Email</label>
                 </div>
-
-                <div class="phone-input input-card">
-                    <input id="phone" name="phone" [(ngModel)]="phone" class="form-control" type="tel" required>
-                    <label for="phone" class="label-name">
-                        <span class="content-name">Phone Number<sup>*</sup></span>
-                    </label>
+        
+                <div class="label-float">
+                    <input id="phone" name="phone" [(ngModel)]="phone" class="form-control"
+                        type="tel" placeholder=" " required>
+                    <label for="phone">Phone Number</label>
                 </div>
 
                 <button mat-raised-button type="submit">SUBMIT</button>
 
                 <div class="form-extras">
-                    <p>By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy
-                            Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Business Terms of Service</a>
-                    </p>
-                </div>
+                    <p  class="terms-text">By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Terms of Service</a></p>
+                </div> 
             </form>
         </div>
     </div>
@@ -72,7 +64,7 @@
                 <div class="exhibitor-input">
                     <select title="exhibitor-package" id="exhibitor-package" class="selection" name="exhibitor-package"
                         required>
-                        <option value="" disabled selected>Choose Exhibitor Package...<sup>*</sup></option>
+                        <option value="" disabled selected>Choose Exhibitor Package...</option>
                         <option value="A1-A10">A1 - A10 - Sh250,000</option>
                         <option value="B1-B10">B1-B10 - Sh170,000</option>
                         <option value="C1-C10">C1 - C10 - Sh120,000</option>
@@ -84,49 +76,41 @@
                     </select>
                 </div>
 
-                <div class="name-input input-card">
-                    <input id="name" name="name" [(ngModel)]="name" class="form-control" type="text" required>
-                    <label for="name" class="label-name">
-                        <span class="content-name">Full Name<sup>*</sup></span>
-                    </label>
+                <div class="label-float">
+                    <input id="name" name="name" [(ngModel)]="name" class="form-control"
+                        type="text" placeholder=" " required>
+                    <label for="name">Name</label>
                 </div>
-
-                <div class="company-input input-card">
-                    <input id="company" name="company" [(ngModel)]="company" class="form-control" type="text" required>
-                    <label for="company" class="label-name">
-                        <span class="content-name">Company Name<sup>*</sup></span>
-                    </label>
+        
+                <div class="label-float">
+                    <input id="companyname" name="companyname" [(ngModel)]="companyName" class="form-control"
+                        type="text" placeholder=" " required>
+                    <label for="companyname">Company Name</label>
                 </div>
-
-                <div class="designation-input input-card">
-                    <input id="designation" name="designation" [(ngModel)]="designation" class="form-control" type="text" required>
-                    <label for="designation" class="label-name">
-                        <span class="content-name">Your Designation<sup>*</sup></span>
-                    </label>
+        
+                <div class="label-float">
+                    <input id="designation" name="designation" [(ngModel)]="designation" class="form-control"
+                        type="text" placeholder=" " required>
+                    <label for="designation">Your Designation</label>
                 </div>
-
-
-                <div class="email-input input-card">
-                    <input id="email" name="email" [(ngModel)]="email" class="form-control" type="email" required>
-                    <label for="email" class="label-name">
-                        <span class="content-name">Email<sup>*</sup></span>
-                    </label>
+        
+                <div class="label-float">
+                    <input id="email" name="email" [(ngModel)]="email" class="form-control"
+                        type="email" placeholder=" " required>
+                    <label for="email">Email</label>
                 </div>
-
-                <div class="phone-input input-card">
-                    <input id="phone" name="phone" [(ngModel)]="phone" class="form-control" type="tel" required>
-                    <label for="phone" class="label-name">
-                        <span class="content-name">Phone Number<sup>*</sup></span>
-                    </label>
+        
+                <div class="label-float">
+                    <input id="phone" name="phone" [(ngModel)]="phone" class="form-control"
+                        type="tel" placeholder=" " required>
+                    <label for="phone">Phone Number</label>
                 </div>
 
                 <button mat-raised-button type="submit">SUBMIT</button>
 
                 <div class="form-extras">
-                    <p>By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy
-                        Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Business Terms of Service</a>
-                    </p>
-                </div>
+                    <p  class="terms-text">By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Terms of Service</a></p>
+                </div> 
             </form>
         </div>
     </div>

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ExhibitorsComponent {
 
+  name:any;
+  email: any;
+  phone: any;
+  companyName:any;
+  designation:any;
+
 }
