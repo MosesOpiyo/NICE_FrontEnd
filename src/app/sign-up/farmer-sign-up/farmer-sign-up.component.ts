@@ -103,6 +103,7 @@ export class FarmerSignUpComponent implements OnInit {
     this.dialogRef.close()
     const dialogRef = this.dialog.open(LoginComponent,{
       width: '25pc',
+      maxWidth: '90vw',
       autoFocus: false,
       maxHeight: '90vh',
       data: {

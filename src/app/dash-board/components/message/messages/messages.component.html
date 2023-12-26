@@ -39,7 +39,11 @@
         </div>
 
         <!-- 3rd card -->
-        <div class="main-messages dashboard-card">
+        <div  *ngIf="user.notifications .length == 0" class="empty">
+            <p>Notifications will appear here</p>
+        </div>
+
+        <div *ngIf="user.notifications.length > 0" class="main-messages dashboard-card">
             <div class="notification-container">
                 <div class="notification-card" *ngFor="let item of user.notifications">
                     <div class="checkbox">

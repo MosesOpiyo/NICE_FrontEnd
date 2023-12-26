@@ -17,17 +17,19 @@
 
         <div class="signup-phone">
             <input id="code" [(ngModel)]="countryInput" placeholder="Country" (input)="filterCountryCodes()" (click)="clearCodeField()" type="text" autocomplete="off" name="phone">
-           
-            <input id="phone_number" name="phone_number" placeholder="Number" [(ngModel)]="phone_number" class="form-control"
-                type="tel" required>
+            <div class="label-float phone-signup">
+                <input id="phone_number" name="phone_number" [(ngModel)]="phone_number" class="form-control"
+                type="tel"  placeholder=" " required>
+                <label for="phone_number">Phone Number</label>
+            </div>            
         </div>
         <div class="dropdown" *ngIf="showDropdown">
             <div *ngFor="let country of filteredCountryCodes" (click)="selectCountryCode(country)" class="countries">
                 <span><img src="../../../assets/flags/1x1/{{country.code.toLowerCase()}}.svg" alt=""></span><p>{{country.name}} - {{country.dial_code}}</p>
             </div>
-          </div>
-        
-          <div class="label-float">
+        </div>
+
+        <div class="label-float">
             <input id="password" name="password" [(ngModel)]="password" class="form-control"
             type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
             <label for="password">Password</label>
