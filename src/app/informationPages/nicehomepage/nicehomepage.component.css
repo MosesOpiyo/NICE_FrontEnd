@@ -279,6 +279,7 @@
     }
 
     @media (max-width: 600px) {
+      .short-container,
       .short-container::after {
         background-attachment: scroll;
       }
