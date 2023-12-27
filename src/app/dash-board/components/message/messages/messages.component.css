@@ -44,11 +44,16 @@ input[type=checkbox] {
     grid-area: 1 / 1 / 2 / 13;
     overflow: auto;
     display: flex;
+    flex-direction: column;
+  }
+
+  .message-container .messages-nav .nav-content {
+    display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .message-container .messages-nav > * {
+  .message-container .messages-nav .nav-content > * {
     flex-basis: 100%;
   }
 
@@ -88,7 +93,7 @@ input[type=checkbox] {
 
   /* NO NOTIFS */
   .empty {
-    grid-area: 2 / 1 / 3 / 13;
+    padding-block: 15px;
   }
   /* END OF NO NOTIFS */
 
