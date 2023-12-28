@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class TripdialogueComponent {
 
+  name:any;
+  companyName: any;
+  designation: any;
+  email:any
+  phone:any
+  address: any;
+  website:any
+  purchase:any;
+
 }
