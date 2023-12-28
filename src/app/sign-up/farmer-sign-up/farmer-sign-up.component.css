@@ -43,6 +43,12 @@
     max-width: 30%;
 }
 
+.signup-container form input#code::placeholder {
+    color: #000000c2;
+    font-size: 14px;
+    opacity: 1;
+}
+
 .signup-container form input#phone_number {
     min-width: 100%;
     max-width: 100%;
@@ -89,14 +95,15 @@
   .label-float label{
     pointer-events: none;
     position: absolute;
-    top: calc(50% - 8px);
-    left: 15px;
+    top: calc(50% - 6px);
+    left: .26rem;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
     background-color: white;
     padding: 2px 5px;
     box-sizing: border-box;
     transition: all .1s linear;
+    font-size: 14.5px;
   }
 
   .signup-phone .label-float label {
@@ -104,7 +111,7 @@
   }
   
   .label-float input:required:invalid + label {
-    color: #000000b7;
+    color: #000000a8;
   }
 
   .label-float input:focus + label,
@@ -126,14 +133,24 @@
 }
 
 .signup-container #myInput{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+}
+
+.show-pass {
+    font-size: 14.5px;
 }
 
 .signup-container form .input-card.signup-visibility {
     display: flex;
     margin-bottom: 10px;
 }
+
+.signup-container form .input-card.signup-visibility > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 .signup-container form button {
     width: 100%;
@@ -187,6 +204,7 @@
     z-index: 2;
     max-height: 290px;
     overflow-y: auto;
+    width: 100%;
 }
 
 .countries{

@@ -987,7 +987,7 @@ opacity: .2;
   .hero .two .slide-header {
     background-position: center;
     /* background-size: cover; */
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(0, 0, 0, 0.51)), url("./assets/img/hero/hero2.jpg") top center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.47), rgba(0, 0, 0, 0.51)), url("./assets/img/hero/hero2.jpg") top center;
   }
 
   /* HERO SLIDE THREE */
