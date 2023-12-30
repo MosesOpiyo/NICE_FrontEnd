@@ -17,7 +17,7 @@ export class DashboardheaderComponent implements OnInit {
   cloudinaryUrl = environment.CLOUDINARY_URL
   pic:any
   data:any;
-  unread:any[] = []
+  unreaded: any[] = [];
 
   logOut(){
     this.service.logout()
@@ -35,6 +35,15 @@ export class DashboardheaderComponent implements OnInit {
     else{
       this.route.navigate([''])
     }
+
+    this.service.getProfile().subscribe((res:any)=>{
+      this.user = res['user']
+      for(let message of this.user.notifications){
+        if(message.seen == false){
+          this.unreaded.push(message)
+        }
+      }
+    })
   }
 
 }

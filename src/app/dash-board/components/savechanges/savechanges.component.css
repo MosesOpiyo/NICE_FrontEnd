@@ -110,6 +110,7 @@ mat-dialog-actions {
     color: #fff;
     transition: all 350ms ease-in-out;
     border: 2px solid black;
+    width: 140px;
 }
 
 .changes button:hover {

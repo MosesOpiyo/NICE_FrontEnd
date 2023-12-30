@@ -54,6 +54,7 @@ import { OriginsComponent } from './origins/origins.component';
 import { OrigindetailsComponent } from './origindetails/origindetails.component';
 import { TermsComponent } from './informationPages/terms/terms.component';
 import { AddtocartComponent } from './addtocart/addtocart.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 // register Swiper custom elements
 register();
 
@@ -92,8 +93,9 @@ register();
     OrigindetailsComponent,
     TermsComponent,
     AddtocartComponent,
+    ForgotpasswordComponent,
   ],
-  entryComponents:[LoginComponent],
+  // entryComponents:[LoginComponent],
   imports: [
     BrowserModule,
     GoogleSigninButtonModule,

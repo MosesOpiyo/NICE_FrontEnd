@@ -3,7 +3,6 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
     align-items: center;
     justify-content: center;
 }
@@ -11,38 +10,39 @@
 h3 {
     font-weight: 500;
     text-align: center;
-    line-height: 1.5rem;
-}
-
-sup {
-    color: green;
+    padding-bottom: 5px;
 }
 
 h3 span {
     color: green;
 }
 
-.form-control:focus {
-    box-shadow: 0 0 0 .2rem #0d6efd1a;
-}
-
 .tripregister-container form {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.businesstype-input {
+    padding-top: 13px;
 }
 
 .tripregister-container form input,
 .tripregister-container form select {
-    width: 100%;
-    border: 2px solid gray;
-    border-radius: 10px;
-    height: 40px;
+    min-width: 100%;
+    max-width: 100%;
+    border: 1px solid #8080807a;
+    border-radius: 4px;
+    height: 35px;
     padding-inline: .5rem;
 }
 
 .tripregister-container form select {
-    font-size: 1rem;
+    font-size: 14.5px;
+    color: #000000a8;
+    padding-left: 4.6px;
 }
 
 .tripregister-container form .relationship-input,
@@ -50,12 +50,20 @@ h3 span {
     display: flex;
     flex-direction: column;
     gap: .2rem;
+    padding-top: 13px;
+}
+
+.tripregister-container form .relationship-radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tripregister-container form .relationship-input input,
 .tripregister-container form .bought-input input {
-    width: auto;
-    height: max-content;
+    min-width: 15px;
+    max-width: 15px;
+    height: 15px;
 }
 
 .tripregister-container form .relationship-content,
@@ -66,25 +74,104 @@ h3 span {
     width: 30%;
 }
 
+/* input animations */
+.label-float{
+    position: relative;
+    padding-top: 13px;
+  }
+
+  .label-float input{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 16px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    /* -webkit-appearance:none; */
+    appearance:none;
+    transition: all .1s linear;
+  }
+
+  
+  .label-float input::placeholder{
+    color:transparent;
+  }
+  
+  .label-float label{
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 6px);
+    left: .26rem;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    background-color: white;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    transition: all .1s linear;
+    font-size: 14.5px;
+  }
+
+  .signup-phone .label-float label {
+    top: calc(50% - 12px);
+  }
+  
+  .label-float input:required:invalid + label {
+    color: #000000a8;
+  }
+
+  .label-float input:focus + label,
+  .label-float input:not(:placeholder-shown) + label{
+    font-size: 13px;
+    top: 0;
+    color: #000000a8;
+  }
+  /* end of animations */
+
 .tripregister-container form button {
     width: 100%;
     background-color: black;
     color: #fff;
     border-radius: 0;
+    height: 45px;
+    font-size: 1.2rem;
+    transition: all 250ms ease-in-out;
+    margin-block: 13px;
+}
+
+.tripregister-container form button:hover {
+    letter-spacing: 3px;
 }
 
 .tripregister-container form .form-extras {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
     text-align: center;
+}
+
+.tripregister-container form .form-extras p.terms-text {
+    font-size: 15px;
 }
 
 .tripregister-container form .form-extras p a {
     color: blue;
-    text-decoration: underline;
+    transition: all .3s ease-in-out;
     cursor: pointer;
+}
+
+.tripregister-container form .form-extras p a.login-link {
+    font-weight: bold;
+}
+
+.tripregister-container form .form-extras p a:hover {
+    text-decoration: underline;
+}
+
+.tripregister-container form input:focus {
+    border: 1px solid #0000ff59;
+    box-shadow: none;
 }
 
 
