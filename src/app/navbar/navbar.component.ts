@@ -11,6 +11,7 @@ import { AuthenticationStoreService } from '../AuthServiceStore/authentication-s
 import { CartStoreService } from '../Store/Cart/cart-store.service';
 import { ExhibitorsponsorComponent } from '../informationPages/exhibitorsponsor/exhibitorsponsor.component';
 import { TripdialogueComponent } from '../informationPages/tripdialogue/tripdialogue.component';
+import { StoriesStoreService } from '../dash-board/Stores/Stories/stories-store.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ import { TripdialogueComponent } from '../informationPages/tripdialogue/tripdial
 export class NavbarComponent implements OnInit {
 
   myScriptElement: HTMLScriptElement;
-   constructor(private authStore:AuthenticationStoreService,private dialog: MatDialog,private cart:CartService,private cartStore:CartStoreService,private service:AuthenticationService,private route:Router){
+   constructor(private authStore:AuthenticationStoreService,private dialog: MatDialog,private cart:CartService,private cartStore:CartStoreService,private service:AuthenticationService,private route:Router,private stories:StoriesStoreService){
       this.myScriptElement = document.createElement("script");
       this.myScriptElement.src = "./assets/js/main.js";
       document.body.appendChild(this.myScriptElement);
@@ -113,6 +114,7 @@ export class NavbarComponent implements OnInit {
           this.user = data['user']
           if(this.user.type == "FARMER"){
             this.route.navigate(['dash-board'])
+            this.stories.storeStoriesData()
           }
           else if(this.user.type == "ORIGINWAREHOUSER"){
             this.route.navigate(['dash-board'])

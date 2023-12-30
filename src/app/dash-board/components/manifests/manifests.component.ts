@@ -22,6 +22,10 @@ export class ManifestsComponent {
       this.user = res['user']
     })
   }
+  extractUsername(email: string): string {
+    return email.replace(/@.*$/, '');
+  }
+
   approveShipping(id:number){
     this.shipping.approveManifest(id).subscribe((res:any)=>{
       this.snackbar.open(res, 'Close', {

@@ -169,11 +169,11 @@ export class AuthenticationService implements OnInit {
     })
   }
 
-  updateUserEmail(credentials:any){
+  updateUserData(key,credentials:any){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
     })
-    this.http.post(`${environment.BASE_URL}Authentication/EditEmail`,credentials,{'headers':headers}).subscribe((response:any)=>{
+    this.http.post(`${environment.BASE_URL}Authentication/EditData/${key}`,credentials,{'headers':headers}).subscribe((response:any)=>{
       this.snackBar.open("Update SuccessFul", 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']

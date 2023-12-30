@@ -210,25 +210,25 @@
                     <li>
                         Warehouse Name:<br>
                         <span>{{warehouse.name}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(2)"></i>
+                        <i *ngIf="user['user']['type']=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(2)"></i>
                     </li>
 
                     <li>
                         Warehouse Capacity:<br>
                         <span>{{warehouse.warehouse_area_storage}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(3)"></i>
+                        <i *ngIf="user['user']['type']=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(3)"></i>
                     </li>
 
                     <li>
                         Warehouse Contact info:<br>
                         <span></span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
+                        <i *ngIf="user['user']['type']=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
                     </li>
 
                     <li>
                         Warehoused Products:<br>
-                        <span>{{warehouse.warehoused_products}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
+                        <span>{{warehouse.warehoused_products.length}}</span>
+                        <i *ngIf="user['user']['type']=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
                     </li>
 
                     <li class="location">
@@ -241,7 +241,7 @@
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(19)"></i>
+                        <i *ngIf="user['user']['type']=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(19)"></i>
                     </li>
                     
                 </ul>

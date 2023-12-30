@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from 'src/app/AuthService/authentication.service';
-import { NotificationMsgComponent } from '../notification-msg/notification-msg.component';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationsService } from 'src/app/Notifications/notifications.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConfirmdeletionComponent } from '../confirmdeletion/confirmdeletion.component';
+import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 
 @Component({
   selector: 'app-messages',
@@ -12,7 +11,7 @@ import { ConfirmdeletionComponent } from '../confirmdeletion/confirmdeletion.com
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent {
-  constructor(private service:AuthenticationService,private dialog:MatDialog,private notifications:NotificationsService,private snackbar:MatSnackBar){}
+  constructor(private service:AuthenticationStoreService,private dialog:MatDialog,private notifications:NotificationsService,private snackbar:MatSnackBar){}
   user:any
   isSeleted:boolean
   masterSelected = false;
@@ -65,7 +64,7 @@ showDeletionDialog() {
 
 
   ngOnInit(): void {
-    this.service.getProfile().subscribe((res:any)=>{
+    this.service.data$.subscribe((res:any)=>{
       this.user = res['user']
       for(let message of this.user.notifications){
         if(message.seen == false){

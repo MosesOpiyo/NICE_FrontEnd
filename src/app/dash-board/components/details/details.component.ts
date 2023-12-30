@@ -9,6 +9,7 @@ import { NewproductComponent } from '../newproduct/newproduct.component';
 import { SavechangesComponent } from '../savechanges/savechanges.component';
 import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 import { error } from 'console';
+import { ProductStoreService } from 'src/app/Store/Products/product-store.service';
 
 @Component({
   selector: 'app-details',
@@ -24,7 +25,7 @@ export class DetailsComponent implements OnInit {
     console.log("im clicked")
   }
 
-  constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
+  constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private productsStore:ProductStoreService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
   user:any
   warehouse:any
   isOpened:boolean = false
@@ -230,6 +231,14 @@ export class DetailsComponent implements OnInit {
     else if (num == 24) {
       this.dialog.open(SavechangesComponent, {
         data: {id:24, value: 'Farm Area',key:'farm_area',data:this.profile.farm_area},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 25) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id: 25, value: 'County',key:'county',data:this.profile.county},
         width: '25pc',
         autoFocus: false,
         maxHeight: '90vh'

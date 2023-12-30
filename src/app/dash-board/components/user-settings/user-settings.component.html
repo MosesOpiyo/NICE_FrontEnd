@@ -6,16 +6,16 @@
         </div>
     
         <div class="phone-edit">
-            <p>This is the phone number associated with your account:<br> <span>+254 734567891</span></p>
+            <p>This is the phone number associated with your account:<br> <span>{{user.user.phone_number}}</span></p>
 
             <form ngNativeValidate>
                 <div class="label-float">
-                    <input id="phone" name="phone" class="form-control"
+                    <input id="phone" name="phone" [(ngModel)]="newNumber" class="form-control"
                         type="tel" placeholder=" " required>
                     <label for="phone">Change Phone Number</label>
                 </div>
 
-                <button type="submit">SUBMIT</button>
+                <button (click)="showConfirmPasswordDialog('phone_number')" type="submit">SUBMIT</button>
             </form>
         </div>
     </div>
@@ -27,7 +27,7 @@
         </div>
     
         <div class="email-edit">
-            <p>This is the email address associated with your account:<br> <span>mkulima@gmail.com</span></p>
+            <p>This is the email address associated with your account:<br> <span>{{user.user.email}}</span></p>
 
             <form ngNativeValidate>
                 <div class="label-float">
@@ -36,7 +36,7 @@
                     <label for="email">Change Email Address</label>
                 </div>
 
-                <button (click)="showConfirmPasswordDialog()" type="submit">SUBMIT</button>
+                <button (click)="showConfirmPasswordDialog('email')" type="submit">SUBMIT</button>
             </form>
         </div>
     </div>
@@ -88,16 +88,16 @@
         </div>
     
         <div class="name-edit">
-            <p>This is the name associated with your account:<br> <span>Mkulima</span></p>
+            <p>This is the name associated with your account:<br> <span>{{user.user.username | titlecase}}</span></p>
 
             <form ngNativeValidate>
                 <div class="label-float">
-                    <input id="name" name="name" class="form-control"
+                    <input id="name" name="name" [(ngModel)]="newUsername" class="form-control"
                         type="text" placeholder=" " required>
                     <label for="name">Change Name</label>
                 </div>
 
-                <button type="submit">SUBMIT</button>
+                <button (click)="showConfirmPasswordDialog('username')" type="submit">SUBMIT</button>
             </form>
         </div>
     </div>

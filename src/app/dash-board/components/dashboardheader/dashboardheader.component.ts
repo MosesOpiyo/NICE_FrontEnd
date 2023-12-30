@@ -17,6 +17,7 @@ export class DashboardheaderComponent implements OnInit {
   cloudinaryUrl = environment.CLOUDINARY_URL
   pic:any
   data:any;
+  unread:any[] = []
 
   logOut(){
     this.service.logout()
@@ -30,7 +31,6 @@ export class DashboardheaderComponent implements OnInit {
         this.user = res
         this.data = res['user']['notifications']
       })
-      
     }
     else{
       this.route.navigate([''])
