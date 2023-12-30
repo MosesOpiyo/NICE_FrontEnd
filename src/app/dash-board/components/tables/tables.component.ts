@@ -27,20 +27,28 @@ export class TablesComponent implements OnInit {
 
   constructor(private products:ProductsService,private warehouse:WarehouseService,private service:AuthenticationService,private admin:AdminService,private dialog:MatDialog,private snackbar:MatSnackBar){}
 
-  displayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity','shipping'];
+  displayedColumns: string[] = ['name','producer','grade','lot_type','cup_score','caffeine','acidity','quantity','shipping'];
   farmerDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity'];
   warehouserDisplayedColumns: string[] = ['name','grade','lot_type','cup_score','caffeine','acidity','quantity'];
   adminDisplayedColumns: string[] = ['email','username','type','date_joined','last_login','terminate'];
   farmerProducts:any
   users:any
   filter:any
+  showDropdown:boolean
   inventoryProducts:any
   user:any
   fileSelector:boolean = false
   processed:boolean = false
+  set: any = new Set();
+  farmerCount: any[] = []
+  productsCount:any[] = []
 
   selectFile(){
     this.fileSelector = true
+  }
+  
+  extractUsername(email: string): string {
+    return email.replace(/@.*$/, '');
   }
 
   ngOnInit(): void {
@@ -49,8 +57,6 @@ export class TablesComponent implements OnInit {
       if(this.user.type=='FARMER'){
         this.products.getFarmerProducts().subscribe((res:any)=>{
           this.farmerProducts = res
-          console.log(this.farmerProducts)
-
           this.dataSource = new MatTableDataSource<any>(this.farmerProducts)
           this.dataSource.paginator = this.paginator
         })
@@ -58,7 +64,13 @@ export class TablesComponent implements OnInit {
       else if(this.user.type=='ORIGINWAREHOUSER'){
         this.products.getShippingProducts().subscribe((res:any)=>{
           this.farmerProducts = res
-          console.log(res)
+          this.productsCount = res
+          this.productsCount.forEach(item =>{
+            if (!this.set.has(item.email)) {
+              this.set.add(item.email);
+              this.farmerCount.push(item);
+            }
+          })
         })
       }
       else if(this.user.type=='WAREHOUSER'){

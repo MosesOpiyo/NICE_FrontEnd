@@ -9,15 +9,20 @@ export class ProductStoreService {
   constructor(private product:ProductsService){}
   private dataSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   data$: Observable<any[]> = this.dataSubject.asObservable();
-  private singelDataSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
-  singleData$: Observable<any[]> = this.dataSubject.asObservable();
+  private farmerDataSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  farmerData$: Observable<any[]> = this.farmerDataSubject.asObservable();
 
-  updateSingleData(data: any[]): void {
-    this.singelDataSubject.next(data);
+  updateFarmerData(data: any[]): void {
+    this.farmerDataSubject.next(data);
   }
 
   updateData(data: any[]): void {
     this.dataSubject.next(data);
+  }
+  farmerData(){
+    this.product.getFarmerProducts().subscribe((res:any) => {
+      this.updateData(res)
+    })
   }
   productData(){
     this.product.getProcessedProducts().subscribe((res:any) => {

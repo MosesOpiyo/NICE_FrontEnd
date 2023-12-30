@@ -7,6 +7,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./sponsorship.component.css']
 })
 export class SponsorshipComponent {
+  name:any;
+  email: any;
+  phone: any;
+  companyName:any;
+  designation:any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: {sponsor: string}) { }
 

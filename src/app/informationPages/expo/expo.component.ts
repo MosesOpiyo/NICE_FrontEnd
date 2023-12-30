@@ -76,7 +76,10 @@ export class ExpoComponent implements OnInit {
 
   showLoginDialog(){
    const dialogRef = this.dialog.open(LoginComponent,{
-     width: '25pc'
+    width: '25pc',
+    maxWidth: '90vw',
+    autoFocus: false,
+    maxHeight: '90vh',
    });
   }
 
@@ -87,7 +90,10 @@ export class ExpoComponent implements OnInit {
 
  showSignUpDialog(){
    const dialogRef = this.dialog.open(SignUpComponent,{
-     width: '25pc'
+    width: '25pc',
+    maxWidth: '90vw',
+    autoFocus: false,
+    maxHeight: '90vh',
    }); 
  }
 
@@ -95,6 +101,8 @@ export class ExpoComponent implements OnInit {
   if (sponsorType == 'platinum') {
     let dialogRef = this.dialog.open(SponsorshipComponent,{
       width: '25pc',
+      maxWidth: '90vw',
+      autoFocus: false,
       maxHeight: '90vh',
       data: {
         sponsor: sponsorType
@@ -104,6 +112,8 @@ export class ExpoComponent implements OnInit {
   else if (sponsorType == 'gold') {
     let dialogRef = this.dialog.open(SponsorshipComponent,{
       width: '25pc',
+      maxWidth: '90vw',
+      autoFocus: false,
       maxHeight: '90vh',
       data: {
         sponsor: sponsorType
@@ -113,6 +123,8 @@ export class ExpoComponent implements OnInit {
   else if (sponsorType == 'silver') {
     let dialogRef = this.dialog.open(SponsorshipComponent,{
       width: '25pc',
+      maxWidth: '90vw',
+      autoFocus: false,
       maxHeight: '90vh',
       data: {
         sponsor: sponsorType
@@ -123,6 +135,8 @@ export class ExpoComponent implements OnInit {
     sponsorType == 'prize'
     let dialogRef = this.dialog.open(SponsorshipComponent,{
       width: '25pc',
+      maxWidth: '90vw',
+      autoFocus: false,
       maxHeight: '90vh',
       data: {
         sponsor: sponsorType
@@ -134,6 +148,8 @@ export class ExpoComponent implements OnInit {
  showExhibitorDialog() {
   let dialogRef = this.dialog.open(ExhibitorsComponent,{
     width: '25pc',
+    maxWidth: '90vw',
+    autoFocus: false,
     maxHeight: '90vh',
   })
  }
@@ -141,6 +157,8 @@ export class ExpoComponent implements OnInit {
  showRegisterDialog() {
   let dialogRef = this.dialog.open(ExhibitorsponsorComponent,{
     width: '25pc',
+    maxWidth: '90vw',
+    autoFocus: false,
     maxHeight: '90vh',
   })
  }

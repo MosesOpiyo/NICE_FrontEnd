@@ -1,28 +1,22 @@
 <div class="tripregister-container">
-    <h3>Complete the <span>Registration</span> form below to continue.</h3>
+    <h3>Registration form</h3>
 
     <form ngNativeValidate>
-        <div class="fname-input">
-            <label for="fname">First Name<sup>*</sup></label>
-            <input id="fname" name="fname" placeholder="John" class="form-control"
-                type="text" required>
+        <div class="label-float">
+            <input id="name" name="name" [(ngModel)]="name" class="form-control"
+                type="text" placeholder=" " required>
+            <label for="name">Name</label>
         </div>
 
-        <div class="lname-input">
-            <label for="lname">Last Name<sup>*</sup></label>
-            <input id="lname" name="lname" placeholder="Doe" class="form-control"
-                type="text" required>
-        </div>
-
-        <div class="company-input">
-            <label for="company">Company Name<sup>*</sup></label>
-            <input id="company" name="company" placeholder="ABCD Ltd" class="form-control"
-                type="text" required>
+        <div class="label-float">
+            <input id="companyname" name="companyname" [(ngModel)]="companyName" class="form-control"
+                type="text" placeholder=" " required>
+            <label for="companyname">Company Name</label>
         </div>
 
         <div class="businesstype-input">
             <select title="business-type" id="business-type" class="selection" name="Business-Type" required>
-                <option value="" disabled selected>Choose Business Type...<sup>*</sup></option>
+                <option value="" disabled selected>Choose Business Type...</option>
                 <option value="Importer">Importer</option>
                 <option value="Roaster">Roaster</option>
                 <option value="Cafe">Cafe</option>
@@ -32,35 +26,40 @@
             </select>
         </div>
 
-        <div class="designation-input">
-            <label for="designation">Your Designation<sup>*</sup></label>
-            <input id="designation" name="designation" placeholder="CEO" class="form-control"
-                type="text" required>
+        <div class="label-float">
+            <input id="designation" name="designation" [(ngModel)]="designation" class="form-control"
+                type="text" placeholder=" " required>
+            <label for="designation">Your Designation</label>
         </div>
 
-
-        <div class="email-input">
-            <label for="email">Email<sup>*</sup></label>
-            <input id="email" name="email" placeholder="johndoe@gmail.com" class="form-control"
-                type="email" required>
+        <div class="label-float">
+            <input id="email" name="email" [(ngModel)]="email" class="form-control"
+                type="email" placeholder=" " required>
+            <label for="email">Email</label>
         </div>
 
-        <div class="phone-input">
-            <label for="phone">Phone Number<sup>*</sup></label>
-            <input id="phone" name="phone" placeholder="+254 000000000" class="form-control"
-                type="tel" required>
+        <div class="label-float">
+            <input id="phone" name="phone" [(ngModel)]="phone" class="form-control"
+                type="tel" placeholder=" " required>
+            <label for="phone">Phone Number</label>
         </div>
 
-        <div class="address-input">
-            <label for="address">Full Address<sup>*</sup></label>
-            <input id="address" name="address" placeholder="495 Grove Str, New York, NY, USA" class="form-control"
-                type="text" required>
+        <div class="label-float">
+            <input id="address" name="address" [(ngModel)]="address" class="form-control"
+                type="text" placeholder=" " required>
+            <label for="address">Full Address</label>
         </div>
 
-        <div class="website-input">
-            <label for="website">Your Website Address</label>
-            <input id="website" name="website" placeholder="coffeeroasters.com" class="form-control"
-                type="url" required>
+        <div class="label-float">
+            <input id="website" name="website" [(ngModel)]="website" class="form-control"
+                type="url" placeholder=" " required>
+            <label for="website">Website</label>
+        </div>
+
+        <div class="label-float">
+            <input id="purchase" name="purchase" [(ngModel)]="purchase" class="form-control"
+                type="number" placeholder=" " required>
+            <label for="purchase">Projected annual purchase of Kenyan coffee (Kgs)</label>
         </div>
 
         <div class="relationship-input">
@@ -95,17 +94,10 @@
             </div>
         </div>
 
-        <div class="purchase-input">
-            <label for="purchase">Projected annual purchase of Kenyan coffee (Kgs)</label>
-            <input id="purchase" name="purchase" placeholder="300kgs" class="form-control"
-                type="number" required>
-        </div>
-
         <button mat-raised-button type="submit">SUBMIT</button>
 
         <div class="form-extras">
-            <p>By continuing, you agree to Our Business Terms of Service; and acknowledge you've read our
-                Privacy Policy;</p>
+            <p  class="terms-text">By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Terms of Service</a></p>
         </div>        
     </form>
 </div>
