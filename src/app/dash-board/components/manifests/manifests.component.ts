@@ -17,6 +17,7 @@ export class ManifestsComponent {
   ngOnInit(): void {
     this.shipping.getManifest().subscribe((res:any)=>{
       this.manifests = res
+      console.log(this.manifests)
     })
     this.service.getProfile().subscribe((res:any)=>{
       this.user = res['user']

@@ -4,3 +4,25 @@ table{
 th,td{
     color: black;
 }
+
+.manifests-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+    /* border: 2px solid red; */
+    height: max-content;
+    gap: 30px;
+    margin-inline: auto;
+}
+
+.manifests-container .dashboard-card {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    height: 100%;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.manifests-container .all-tables {
+    grid-area: 1 / 1 / 2 / 13;
+}

@@ -1,5 +1,6 @@
 <div class="changes">
-    <h2 mat-dialog-title>Edit farm details</h2>
+    <h2 *ngIf="data.id < 25" mat-dialog-title>Edit farm details</h2>
+    <h2 *ngIf="data.id > 24  || data.id < 30" mat-dialog-title>Edit warehouse details</h2>    
 
     <mat-dialog-content>
         <div class="changes">
@@ -125,6 +126,31 @@
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 24">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 25">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 26">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 27">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 28">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 29">
                     <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
                     <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>

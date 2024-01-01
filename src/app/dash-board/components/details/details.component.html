@@ -203,37 +203,37 @@
 
         <!-- 2ND CARD(WAREHOUSER / ORIGIN WAREHOUSER) -->
         <div class="dashboard-card user-info" *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">
-            <h5 class="mb-4">Warehouse Details</h5>
+            <h5 *ngIf="warehouse" class="mb-4">Warehouse Details</h5>
 
-            <div>
-                <ul class="warehouse-info">
+            <div *ngIf="warehouse">
+                <ul *ngIf="warehouse" class="warehouse-info">
                     <li>
                         Warehouse Name:<br>
-                        <span>{{warehouse.name}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(2)"></i>
+                        <span *ngIf="warehouse">{{warehouse.name}}</span>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(25)"></i>
                     </li>
 
                     <li>
                         Warehouse Capacity:<br>
-                        <span>{{warehouse.warehouse_area_storage}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(3)"></i>
+                        <span *ngIf="warehouse">{{warehouse.warehouse_area_storage}}</span>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(26)"></i>
                     </li>
 
                     <li>
                         Warehouse Contact info:<br>
-                        <span></span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
+                        <span *ngIf="warehouse"></span>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(27)"></i>
                     </li>
 
                     <li>
                         Warehoused Products:<br>
-                        <span>{{warehouse.warehoused_products}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
+                        <span *ngIf="warehouse">{{warehouse.warehoused_products}}</span>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(28)"></i>
                     </li>
 
                     <li class="location">
                         Warehouse Location:<br>
-                        <span>{{warehouse.location}}</span>
+                        <span *ngIf="warehouse">{{warehouse.location}}</span>
                         <div>
                             <iframe
                                 [src]="getSanitizedURL(warehouse.location)"
@@ -241,7 +241,7 @@
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(19)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(29)"></i>
                     </li>
                     
                 </ul>
@@ -257,26 +257,26 @@
                     <li>
                         Name:<br>
                         <span>{{user.user.username}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(2)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(30)"></i>
                     </li>
 
                     <li>
                         Phone Number:<br>
                         <span></span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(3)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(31)"></i>
                     </li>
 
                     <li>
                         Email Address:<br>
                         <span>{{user.user.email}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(32)"></i>
                     </li>
 
                     <li>
                         Shipping Address:<br>
                         <span>1234 Deliver Str</span>
                         <span>Denver, Colorado</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(4)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(33)"></i>
                     </li>
                     
                 </ul>
