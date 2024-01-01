@@ -275,6 +275,38 @@ export class DetailsComponent implements OnInit {
         maxHeight: '90vh'
       })
     }
+    else if (num == 30) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:30, value: 'Name',key:'buyer_name',data:this.user.user.username},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 31) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:31, value: 'Phone Number',key:'buyer_phone',data:this.user.phone},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 32) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:32, value: 'Email',key:'buyer_email',data:this.user.user.email},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 33) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:33, value: 'Shipping Address',key:'buyer_name',data:this.user.shippingaddress},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
   }
 
   showProfileDialog(){
@@ -298,6 +330,7 @@ export class DetailsComponent implements OnInit {
     this.store.storeProfileData()
     this.store.data$.subscribe((res:any)=>{
       this.user = res
+      console.log(this.user)
       if(this.user.user.type == "FARMER"){
         this.service.getFarmerProfile().subscribe((res:any)=>{
           this.store.updateFarmerData(res)
