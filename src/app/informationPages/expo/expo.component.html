@@ -248,14 +248,40 @@
     <!-- CONTACT -->
     <div class="contact-container">
         <div class="contact-header">
-            <div class="contact-h2" data-aos="fade-up">
-                <h2>We would love <br> to hear from you</h2>
+            <div class="contact-content">
+                <div class="contact-h2" data-aos="fade-up">
+                    <h2>We would love <br> to hear from you</h2>
+                </div>
+                <div class="contact-list" data-aos="fade-up">
+                    <a href="tel:+254 724 553437"><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;+254 724 553437</a>
+                    <a href="mailto:nicecoffeeexpo@gmail.com"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;nicecoffeeexpo&#64;gmail.com</a>
+                    <a href="https://www.google.com/maps/place/DEDAN+KIMATHI+UNIVERSITY/@-0.4081078,36.9357836,14z/data=!4m10!1m2!2m1!1skimathi+university!3m6!1s0x1828677a4955ff13:0x7ae4dae9615396a6!8m2!3d-0.3978314!4d36.9609217!15sChJraW1hdGhpIHVuaXZlcnNpdHmSAQp1bml2ZXJzaXR54AEA!16s%2Fm%2F04q3glb?entry=ttu"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Dedan Kimathi University, Kiganjo, Nyeri</a>
+                </div>
             </div>
-            <div class="contact-list" data-aos="fade-up">
-                <a href="tel:+254 724 553437"><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;+254 724 553437</a>
-                <a href="mailto:nicecoffeeexpo@gmail.com"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;nicecoffeeexpo&#64;gmail.com</a>
-                <a href="https://www.google.com/maps/place/DEDAN+KIMATHI+UNIVERSITY/@-0.4081078,36.9357836,14z/data=!4m10!1m2!2m1!1skimathi+university!3m6!1s0x1828677a4955ff13:0x7ae4dae9615396a6!8m2!3d-0.3978314!4d36.9609217!15sChJraW1hdGhpIHVuaXZlcnNpdHmSAQp1bml2ZXJzaXR54AEA!16s%2Fm%2F04q3glb?entry=ttu"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Dedan Kimathi University, Kiganjo, Nyeri</a>
-            </div>
+
+            <form class="form" id="form" action="" method="POST" ngNativeValidate data-aos="fade-up">
+                <!-- HONEYPOT(to catch spammers )  -->
+               <input type="text" name="_honey" class="honeypot" title="honeypot">
+
+                <div class="label-float form-controls">
+                  <input id="name" name="name" type="text" placeholder=" " required>
+                  <label for="name">Name</label>
+                </div>
+
+                <div class="label-float form-controls">
+                  <input id="email" name="email" type="email" placeholder=" " required>
+                  <label for="email">Email</label>
+                </div>
+
+                <div class="label-float textarea form-controls">
+                    <textarea id="message" name="message" type="t" placeholder=" " required></textarea>
+                    <label for="message">Message / Question</label>
+                </div>
+   
+               <div class="form-controls form-btn form-submit">
+                   <button type="submit">Submit</button>
+               </div>
+           </form>
         </div>
 
         <div class="contact-form">
@@ -269,8 +295,8 @@
                 </iframe>
             </div>
 
-            <form class="form" id="form" action="" method="POST" ngNativeValidate data-aos="fade-up">
-                 <!-- HONEYPOT(to catch spammers )  -->
+            <!-- <form class="form" id="form" action="" method="POST" ngNativeValidate data-aos="fade-up">
+               
                 <input type="text" name="_honey" class="honeypot" title="honeypot">
     
                 <div class="form-controls name">
@@ -291,7 +317,7 @@
                 <div class="form-controls form-btn form-submit">
                     <button type="submit">Submit</button>
                 </div>
-            </form>
+            </form> -->
         </div>
     </div>
 
