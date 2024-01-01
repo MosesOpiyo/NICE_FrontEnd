@@ -331,6 +331,18 @@ opacity: .2;
     background-color: rgba(255, 255, 255, 0.2);
   }
 
+  /* .navbar li:hover > a {
+    background-color: transparent;
+  } */
+
+  #header.header-scrolled .navbar li.dropdown ul li:hover > a {
+    background-color: transparent;
+  }
+
+  #header.header-scrolled .navbar ul li button:hover {
+    background-color: #eccece;
+  }
+
   .navbar li.cart:hover>a {
     background-color: transparent;
   }
