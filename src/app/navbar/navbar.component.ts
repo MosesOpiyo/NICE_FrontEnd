@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { LoginComponent } from '../login/login.component';
 import { AuthenticationService } from '../AuthService/authentication.service';
 import { SignUpComponent } from '../sign-up/sign-up.component';
-import { AuthService } from '../Auth/auth.service';
+import { User } from '../Classes/AuthClass/user';
 import { CartService } from '../Service/Cart/cart.service';
 import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.component';
 import { AuthenticationStoreService } from '../AuthServiceStore/authentication-store.service';
@@ -12,6 +12,7 @@ import { CartStoreService } from '../Store/Cart/cart-store.service';
 import { ExhibitorsponsorComponent } from '../informationPages/exhibitorsponsor/exhibitorsponsor.component';
 import { TripdialogueComponent } from '../informationPages/tripdialogue/tripdialogue.component';
 import { StoriesStoreService } from '../dash-board/Stores/Stories/stories-store.service';
+import { ProductStoreService } from '../Store/Products/product-store.service';
 
 
 @Component({
@@ -22,7 +23,7 @@ import { StoriesStoreService } from '../dash-board/Stores/Stories/stories-store.
 export class NavbarComponent implements OnInit {
 
   myScriptElement: HTMLScriptElement;
-   constructor(private authStore:AuthenticationStoreService,private dialog: MatDialog,private cart:CartService,private cartStore:CartStoreService,private service:AuthenticationService,private route:Router,private stories:StoriesStoreService){
+   constructor(private authStore:AuthenticationStoreService,private dialog: MatDialog,private cart:CartService,private cartStore:CartStoreService,private productStore:ProductStoreService,private service:AuthenticationService,private route:Router,private stories:StoriesStoreService){
       this.myScriptElement = document.createElement("script");
       this.myScriptElement.src = "./assets/js/main.js";
       document.body.appendChild(this.myScriptElement);
@@ -48,7 +49,7 @@ export class NavbarComponent implements OnInit {
     this.isShowDiv3 = !this.isShowDiv3;
    }
 
-   user:any | null = null;
+   user:User
    isLoggedIn:any
    userCart:any
 
@@ -107,22 +108,23 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
+        this.productStore.productData()
         this.cartStore.data$.subscribe((data:any) =>{
-          this.userCart = data['products'].length
+          this.userCart = data['products']?.length
         })
         this.authStore.data$.subscribe((data:any)=>{
           this.user = data['user']
-          if(this.user.type == "FARMER"){
+          if(this.user?.type == "FARMER"){
             this.route.navigate(['dash-board'])
             this.stories.storeStoriesData()
           }
-          else if(this.user.type == "ORIGINWAREHOUSER"){
+          else if(this.user?.type == "ORIGINWAREHOUSER"){
             this.route.navigate(['dash-board'])
           }
-          else if(this.user.type == "WAREHOUSER"){
+          else if(this.user?.type == "WAREHOUSER"){
             this.route.navigate(['dash-board'])
           }
-          else if(this.user.type == "ADMIN"){
+          else if(this.user?.type == "ADMIN"){
             this.route.navigate(['dash-board'])
           }
           else{

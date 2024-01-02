@@ -10,8 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ScanComponent } from '../../scan/scan.component';
 import { saveAs } from 'file-saver';
 import * as XLSX from 'xlsx';
-import { ProcessedProductsComponent } from '../processed-products/processed-products.component';
-import { NewprocessedproductComponent } from '../newprocessedproduct/newprocessedproduct.component';
+import { User } from 'src/app/Classes/AuthClass/user';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -36,7 +35,7 @@ export class TablesComponent implements OnInit {
   filter:any
   showDropdown:boolean
   inventoryProducts:any
-  user:any
+  user:User
   fileSelector:boolean = false
   processed:boolean = false
   set: any = new Set();
@@ -49,6 +48,9 @@ export class TablesComponent implements OnInit {
   
   extractUsername(email: string): string {
     return email.replace(/@.*$/, '');
+  }
+  getSum(arr){
+    return arr.reduce((accumulator, currentItem) => accumulator + currentItem.amount, 0)
   }
 
   ngOnInit(): void {

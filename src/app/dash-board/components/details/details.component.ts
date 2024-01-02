@@ -10,6 +10,7 @@ import { SavechangesComponent } from '../savechanges/savechanges.component';
 import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 import { error } from 'console';
 import { ProductStoreService } from 'src/app/Store/Products/product-store.service';
+import { Profile } from 'src/app/Classes/ProfileClass/profile';
 
 @Component({
   selector: 'app-details',
@@ -22,11 +23,10 @@ export class DetailsComponent implements OnInit {
   isModalOpen = false;
   toggleModal(): void {
     this.isModalOpen = !this.isModalOpen;
-    console.log("im clicked")
   }
 
   constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private productsStore:ProductStoreService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
-  user:any
+  user:Profile
   warehouse:any
   isOpened:boolean = false
   cloudinaryUrl = environment.CLOUDINARY_URL
@@ -238,7 +238,39 @@ export class DetailsComponent implements OnInit {
     }
     else if (num == 25) {
       this.dialog.open(SavechangesComponent, {
-        data: {id: 25, value: 'County',key:'county',data:this.profile.county},
+        data: {id:25, value: 'Warehouse Name',key:'name',data:this.warehouse.name},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 26) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:26, value: 'Warehouse Capacity',key:'warehouse_area_storage',data:this.warehouse.warehouse_area_storage},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 27) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:27, value: 'Warehouse Contact Info',key:'warehouse_contact',data:this.warehouse.warehouse_contact},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 28) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:28, value: 'Warehouse Products',key:'warehouse_products',data:this.warehouse.warehoused_products},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 29) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:29, value: 'Warehouse Location',key:'location',data:this.warehouse.location},
         width: '25pc',
         autoFocus: false,
         maxHeight: '90vh'
@@ -267,6 +299,7 @@ export class DetailsComponent implements OnInit {
     this.store.storeProfileData()
     this.store.data$.subscribe((res:any)=>{
       this.user = res
+      console.log(this.user)
       if(this.user.user.type == "FARMER"){
         this.service.getFarmerProfile().subscribe((res:any)=>{
           this.store.updateFarmerData(res)
@@ -288,6 +321,7 @@ export class DetailsComponent implements OnInit {
       else if(this.user.user.type == "WAREHOUSER" || this.user.user.type == "ORIGINWAREHOUSER"){
         this.products.getinventoryProducts().subscribe((res:any)=>{
           this.warehouse = res;
+          console.log(this.warehouse)
         })
       }
       

@@ -80,8 +80,6 @@ export class ProductsComponent implements OnInit {
   // product form tabs
   tabs: string [] = ['Roasted', 'Green'];
   activatedTabIndex: number = 0;
-
-  user:any | null = null;
   isLoggedIn:any
   ratings : number[] = [];
   total:any
@@ -134,7 +132,14 @@ export class ProductsComponent implements OnInit {
 
  ngOnInit(): void {
    this.product.data$.subscribe((res:any)=>{
-    this.products = res
+    if(res == ""){
+      this.product.productData()
+      this.product.data$.subscribe((res:any)=>{
+      })
+    }
+    else{
+      this.products = res
+    }
     this.products.forEach((product:any) => {
       product.rating.forEach((ratingItem: any) => {
         this.ratings.push(ratingItem.rating)

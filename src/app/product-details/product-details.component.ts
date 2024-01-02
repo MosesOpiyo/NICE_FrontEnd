@@ -9,6 +9,7 @@ import { ProductsService } from '../ProductsService/products.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from '../Service/Cart/cart.service';
 import { CartStoreService } from '../Store/Cart/cart-store.service';
+import { ProductStoreService } from '../Store/Products/product-store.service';
 
 
 @Component({
@@ -42,13 +43,12 @@ export class ProductDetailsComponent implements OnInit {
   activatedTabIndex2: number = 0;
 
   myScriptElement: HTMLScriptElement;
-  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private cart:CartService,private cartStore:CartStoreService){
+  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private store:ProductStoreService,private cart:CartService,private cartStore:CartStoreService){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "./assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
 
-  user:any | null = null;
   isLoggedIn:any
   id:any
   item:any
@@ -123,11 +123,12 @@ export class ProductDetailsComponent implements OnInit {
 
  ngOnInit(): void {
   this.id = this.idRouter.snapshot.paramMap.get('id');
-  this.product.getProcessedProduct(this.id).subscribe((res:any)=>{
-  this.item = res
-  this.item.rating.forEach((ratingItem:any) => {
-  this.ratings.push(ratingItem.rating)
-    });
+  this.store.data$.subscribe((res:any)=>{
+    console.log()
+    this.item = res[parseInt(this.id) - 1]
+    this.item.rating.forEach((ratingItem:any) => {
+      this.ratings.push(ratingItem.rating)
+        });
   })
   }
 

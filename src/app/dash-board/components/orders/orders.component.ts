@@ -11,16 +11,10 @@ export class OrdersComponent {
   constructor(private products:ProductsService,private service:AuthenticationService){}
   displayedColumns: string[] = ['name','buyer','quantity','country','marker','is_fulfilled'];
   Orders:any
-  user:any
 
   ngOnInit(): void {
     this.products.getWarehouseOrders().subscribe((res:any)=>{
       this.Orders = res
-      console.log(this.Orders)
-    })
-    this.service.getProfile().subscribe((res:any)=>{
-      this.user = res
-      console.log(this.user)
     })
   }
 
