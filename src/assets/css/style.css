@@ -1383,7 +1383,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("../img/Trip/trip1.3.jpg");
+    background-image: url("../img/Trip/trip1.1.jpg");
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1565,22 +1565,22 @@
 
   .trip-container .purpose-list .purpose-card.meetfarmer {
     /* background-color: #d0e957; */
-    background-image: url("https://img.freepik.com/premium-photo/portrait-female-african-farmer_216356-738.jpg?w=740");
+    background-image: url("../img/Trip/farmer.jpg");
   }
 
   .trip-container .purpose-list .purpose-card.process {
     /* background-color: #e0e0e0; */
-    background-image: url("https://img.freepik.com/free-photo/colorful-cogwheels-arrangement-top-view_23-2149382397.jpg?size=626&ext=jpg&ga=GA1.1.771609611.1699605036&semt=sph");
+    background-image: url("../img/Trip/process.jpg");
   }
 
   .trip-container .purpose-list .purpose-card.taste {
     /* background-color: #b3a0ce; */
-    background-image: url("https://img.freepik.com/free-photo/girl-having-cup-coffee-enjoying-taste_144627-67507.jpg?w=740&t=st=1699609828~exp=1699610428~hmac=c7d52240b13a9fc96e1feeb0fb0f5de11496eaf2053da30139dac5bf6cf6a57d");
+    background-image: url("../img/Trip/cupping2.jpg");
   }
 
   .trip-container .purpose-list .purpose-card.relations {
     /* background-color: #fdc5c6; */
-    background-image: url("https://img.freepik.com/free-photo/business-collaboration-success-by-handshake_23-2148339368.jpg?w=740&t=st=1699611729~exp=1699612329~hmac=23a2f2ac220a2b29b3ad23bf2e1e01e8b4d176af43cd8a637812f5b375dbede4");
+    background-image: url("../img/Trip/relationships2.jpg");
   }
 
   /* .trip-container .purpose-list .purpose-card.farmer-image,
@@ -1641,33 +1641,48 @@
     text-align: center;
   }
   
-  .trip-container .expenses .expenses-content {
-    /* border: 2px solid blue; */
-    display: flex;
-    gap: .5rem;
-  }
-  
-  .trip-container .expenses .expenses-content > * {
-    flex-basis: 100%;
-    /* border: 2px solid red; */
-  }
-  
-  .trip-container .expenses .expenses-content .expenses-image {
-    height: 500px;
-  }
-  
-  .trip-container .expenses .expenses-content .expenses-image img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    object-position: center;
-  }
-  
   .trip-container .expenses .expenses-content .expenses-info {
     display: flex;
-    flex-direction: column;
     gap: 1.5rem;
     text-align: start;
+  }
+
+  .trip-container .expenses .expenses-content .expenses-info > * {
+    flex-basis: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .trip-container .expenses .expenses-content .expenses-info > * ul {
+    text-align: start;
+  }
+
+  .costs-header {
+    text-align: center;
+  }
+
+  .costs-icons .fa-dollar-sign {
+    font-size: 9rem;
+  }
+
+  .covered .costs-icons i {
+    color: green;
+  }
+
+  .not-covered .costs-icons i {
+    color: red;
+  }
+
+  .costs-icons sup {
+    position: relative;
+    top: -4.5rem;
+  }
+
+  .costs-icons sup i {
+    font-size: 4.5rem;
   }
   
   .trip-container .expenses-info .covered ul li i {
@@ -1977,14 +1992,6 @@
   }
 
   @media (max-width: 950px) {
-    .trip-container .expenses .expenses-content {
-      flex-direction: column;
-    }
-
-    .trip-container .expenses .expenses-content > * {
-      flex-basis: auto;
-    }
-
     .trip-container .expenses .expenses-content .expenses-info {
       flex-direction: row;
       padding-inline: 1rem;
@@ -2005,10 +2012,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    .trip-container .expenses .expenses-content .expenses-image {
-      height: 400px;
     }
   }
 
@@ -2167,10 +2170,6 @@
 
     .trip-container .register-btn a {
       padding: 10px 20px;
-    }
-
-    .trip-container .expenses .expenses-content .expenses-image img {
-      object-fit: cover;
     }
 
     .trip-container .trip-purpose .purpose-header h2,

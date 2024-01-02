@@ -3,8 +3,6 @@
 <section class="trip-container">
     <!-- HERO SECTION -->
     <div class="triphero-container">
-        <!-- <video src="../../../assets/Video/trip2.mp4" autoplay loop playsinline muted [disablePictureInPicture]="true" preload="auto"></video> -->
-
         <div class="trip-content">
             <div class="trip-header">
                 <h2>Embark on a journey to the Coffee Cradle!</h2>
@@ -125,13 +123,15 @@
         </div>
 
         <div class="expenses-content">
-            <div class="expenses-image">
-                <img src="https://img.freepik.com/free-vector/tropical-vacation-air-travel-service-composition_98292-6990.jpg?size=626&ext=jpg&ga=GA1.1.47500303.1698056812&semt=sph" alt="travel bag">
-            </div>
-
             <div class="expenses-info">
                 <div class="covered">
-                    <h2>Costs covered</h2>
+                    <div class="costs-header">
+                        <div class="costs-icons">
+                            <i class="fa-regular fa-dollar-sign"></i>
+                            <sup><i class="fa-solid fa-check"></i></sup>
+                        </div>
+                        <h2>Costs covered</h2>
+                    </div>
                     <ul>
                         <li><i class="fa-solid fa-check"></i>&nbsp;Arrival and departure airport transfers</li>
                         <li><i class="fa-solid fa-check"></i>&nbsp;Seven days full board accommodation</li>
@@ -146,7 +146,13 @@
                 </div>
         
                 <div class="not-covered">
-                    <h2>Costs not covered</h2>
+                    <div class="costs-header">
+                        <div class="costs-icons">
+                            <i class="fa-regular fa-dollar-sign"></i>
+                            <sup><i class="fa-solid fa-xmark"></i></sup>
+                        </div>
+                        <h2>Costs not covered</h2>
+                    </div>
                     <ul>
                         <li><i class="fa-solid fa-xmark"></i>&nbsp;International Airfares</li>
                         <li><i class="fa-solid fa-xmark"></i>&nbsp;Tourist entry Visa to Kenya</li>
