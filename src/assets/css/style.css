@@ -1520,30 +1520,26 @@
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
+    width: 95%;
+    margin-inline: auto;
   }
   
   .trip-container .trip-purpose .purpose-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    width: 90%;
-    margin-inline: auto;
+    grid-template-rows: auto;
+    width: 100%;
     height: max-content;
-    /* gap: .5rem; */
   }
   
   .trip-container .trip-purpose .purpose-list > * {
-    flex-basis: 100%;
-    /* border: 2px solid #0000002b; */
     height: 350px;
-    /* border-radius: 15px; */
   }
   
   .trip-container .purpose-list .purpose-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
     padding: 1rem;
     background-position: center;
     background-size: cover;
@@ -1564,65 +1560,22 @@
   }
 
   .trip-container .purpose-list .purpose-card.meetfarmer {
-    /* background-color: #d0e957; */
     background-image: url("../img/Trip/farmer.jpg");
   }
 
   .trip-container .purpose-list .purpose-card.process {
-    /* background-color: #e0e0e0; */
     background-image: url("../img/Trip/process.jpg");
   }
 
   .trip-container .purpose-list .purpose-card.taste {
-    /* background-color: #b3a0ce; */
     background-image: url("../img/Trip/cupping2.jpg");
   }
 
   .trip-container .purpose-list .purpose-card.relations {
-    /* background-color: #fdc5c6; */
     background-image: url("../img/Trip/relationships2.jpg");
-  }
-
-  /* .trip-container .purpose-list .purpose-card.farmer-image,
-  .trip-container .purpose-list .purpose-card.process-image,
-  .trip-container .purpose-list .purpose-card.relations-image,
-  .trip-container .purpose-list .purpose-card.tasting-image {
-    padding: 0;
-  } */
-
-  .trip-container .purpose-list .purpose-card img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: right;
-    /* border-radius: 15px; */
-  }
-
-  /* .trip-container .purpose-list .purpose-card.process-image img,
-  .trip-container .purpose-list .purpose-card.relations-image img,
-  .trip-container .purpose-list .purpose-card.tasting-image img {
-    object-position: center;
-  } */
-  
-  .trip-container .purpose-list .purpose-card .purpose-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .trip-container .purpose-list .purpose-card .purpose-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .trip-container .purpose-list .purpose-card .purpose-icon i {
-    font-size: 3rem;
   }
   
   .trip-container .purpose-list .purpose-card .purpose-content h2 {
-    margin-bottom: .5rem;
     font-size: 2.4rem;
     font-weight: 300;
   }
@@ -1645,6 +1598,7 @@
     display: flex;
     gap: 1.5rem;
     text-align: start;
+    padding-inline: 1rem;
   }
 
   .trip-container .expenses .expenses-content .expenses-info > * {
@@ -1847,27 +1801,6 @@
     background-size: cover;
     background-position: center;
   }
-
-  /* .cupping-container .cupping-image .cupping-card.image-one {
-    grid-area: 1 / 1 / 3 / 4;
-    z-index: 1;
-  }
-
-  .cupping-container .cupping-image .cupping-card.image-two {
-    grid-area: 3 / 1 / 5 / 4;
-  }
-
-  .cupping-container .cupping-image .cupping-card.image-three {
-    grid-area: 1 / 4 / 5 / 7;
-  } 
-  
- .trip-container .cupping-container .cupping-image img {
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-  } */
   
   /* TIPS CONTAINER */
   .trip-container .tips-container {
@@ -1885,12 +1818,14 @@
   }
   
   .trip-container .tips-container .tips-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    width: 100%;
     gap: .5rem;
   }
   
   .trip-container .tips-container .tips-content > * {
-    flex-basis: 100%;
     border: 1px solid #00000014;
     padding: 1rem;
     height: 400px;
@@ -1953,65 +1888,75 @@
   
   /* CHECKLIST */
   .trip-container .checklist-container {
-    /* border: 2px solid red; */
     margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
     align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding-block: 3rem;
   }
   
+  .trip-container .checklist-container::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #f5a692;
+  }
+
+  .trip-container .checklist-container::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 50%;
+    width: 100%;
+    height: 50%;
+    background-color: #f5f5f5;
+  }
+
   .trip-container .checklist-container .checklist-list {
-    text-align: start;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+    margin-inline: auto;
+    gap: .5rem;
   }
-  
-  .trip-container .checklist-container .checklist-list ul li {
-    padding-block: .5rem;
+
+  .trip-container .checklist-list .checklist-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    background-color: #efd7b1;
   }
-  
-  .trip-container .checklist-container .checklist-list ul li i {
-    font-size: 2rem;
-    color: green;
+
+  .trip-container .checklist-list .checklist-card .checklist-icon {
+    height: 100px;
+    width: 100px;
+  }
+
+  .trip-container .checklist-list .checklist-card .checklist-icon img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   /* ALL ORIGIN TRIP MEDIA QUERIES */
   /* TRIP HERO media queries */
   @media (max-width: 1024px) {
     .trip-container .tips-container .tips-content {
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .trip-container .tips-container .tips-content > * {
-      max-width: 400px;
-      min-width: 300px;
-    }
-  }
-
-  @media (max-width: 950px) {
-    .trip-container .expenses .expenses-content .expenses-info {
-      flex-direction: row;
-      padding-inline: 1rem;
-    }
-
-    .trip-container .expenses .expenses-content .expenses-info > * {
-      flex-basis: 100%;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .trip-container .expenses .expenses-content .expenses-info {
-      flex-direction: column;
-      padding-inline: 1rem;
-    }
-
-    .trip-container .expenses .expenses-content .expenses-info > * {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -2026,10 +1971,6 @@
     .trip-container .trip-content .trip-text {
       gap: 0.2rem;
       flex-direction: column;
-    }
-
-    .trip-container .trip-purpose .purpose-list {
-      width: 95%;
     }
 
     .trip-container .farm-info .farmer-images {
@@ -2100,45 +2041,20 @@
     .trip-container .places .places-card {
       height: 300px;
     }
+
+    .trip-container .checklist-container .checklist-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 600px) {
     .trip-container .trip-purpose .purpose-list {
       grid-template-columns: 1fr;
-      grid-template-rows: auto;
     }
 
-    /* .trip-container .purpose-list .purpose-card.farmer-image {
-      grid-area: 1 / 1 / 2 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.meetfarmer {
-      grid-area: 2 / 1 / 3 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.process-image {
-      grid-area: 3 / 1 / 4 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.process {
-      grid-area: 4 / 1 / 5 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.tasting-image {
-      grid-area: 5 / 1 / 6 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.taste {
-      grid-area: 6 / 1 / 7 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.relations-image {
-      grid-area: 7 / 1 / 8 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.relations {
-      grid-area: 8 / 1 / 9 / 2;
-    } */
+    .trip-container .expenses .expenses-content .expenses-info {
+      flex-direction: column;
+    }
 
     .trip-container .trip-purpose .purpose-list > * {
       height: 200px;
@@ -2146,12 +2062,10 @@
 
     .trip-container .purpose-list .purpose-card {
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
-    .trip-container .purpose-list .purpose-card .purpose-icon {
-      display: none;
+    .trip-container .tips-container .tips-content {
+      grid-template-columns: 1fr;
     }
 
     .trip-container .cupping-container {
@@ -2181,11 +2095,6 @@
       line-height: 2rem;
     }
 
-    .trip-container .tips-container .tips-content > * {
-      max-width: 300px;
-      min-width: 200px;
-    }
-
     .trip-container .places {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
@@ -2201,6 +2110,10 @@
 
     .trip-container .places .places-card {
       height: 250px;
+    }
+
+    .trip-container .checklist-container .checklist-list {
+      grid-template-columns: 1fr;
     }
   }
   
