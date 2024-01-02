@@ -238,38 +238,6 @@
         margin-left: 15px;
     }
   }
-  
-  
-  /*** Testimonial ***/
-  .dashboard-container .progress .progress-bar {
-    width: 0px;
-    transition: 2s;
-  }
-  
-  
-  /*** Testimonial ***/
-  .dashboard-container .testimonial-carousel .owl-dots {
-    margin-top: 24px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
-  
-  .dashboard-container .testimonial-carousel .owl-dot {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    width: 15px;
-    height: 15px;
-    border: 5px solid #009CFF;
-    border-radius: 15px;
-    transition: .5s;
-  }
-  
-  .dashboard-container .testimonial-carousel .owl-dot.active {
-    background: #191C24;
-    border-color: #009CFF;
-  }
     
   
   /* EXPO COMPONENT STYLING */
@@ -651,15 +619,17 @@
   
   .expo-container .expo-header h2,
   .expo-container .sponsor-header h2,
-  .expo-container .exhibitor-header h2,
-  .partners-header h2,
-  .gallery-header h2 {
+  .expo-container .exhibitor-header h2 {
     font-size: 3rem;
     position: relative;
   }
   
   .expo-container .sponsor-header h2::after,
   .expo-container .exhibitor-header h2::after,
+  .about-component .story-header h2::after,
+  .about-component .whyus-header h2::after,
+  .about-component .how-header h2::after,
+  .about-component .team-header h2::after,
   .partners-header h2::after,
   .gallery-header h2::after {
     content: "";
@@ -1075,6 +1045,7 @@
   .expo-container .form-controls textarea:focus {
     border: 1px solid #0000ff38;
     box-shadow: none;
+    border-radius: 4px;
 }
 
   /* ALL EXPO PAGE COMPONENT STYLING */
@@ -1082,9 +1053,7 @@
   @media (max-width: 600px) {
     .expo-container .expo-header h2,
     .expo-container .sponsor-header h2,
-    .expo-container .exhibitor-header h2,
-    .partners-header h2,
-    .gallery-header h2 {
+    .expo-container .exhibitor-header h2 {
       font-size: 2.5rem;
     }
 
@@ -1109,9 +1078,7 @@
 
     .expo-container .expo-header h2,
     .expo-container .sponsor-header h2,
-    .expo-container .exhibitor-header h2,
-    .partners-header h2,
-    .gallery-header h2 {
+    .expo-container .exhibitor-header h2 {
       font-size: 2rem;
     }
 
@@ -1146,9 +1113,7 @@
   @media (max-width: 280px) {
     .expo-container .expo-header h2,
     .expo-container .sponsor-header h2,
-    .expo-container .exhibitor-header h2,
-    .partners-header h2,
-    .gallery-header h2 {
+    .expo-container .exhibitor-header h2 {
       font-size: 1.5rem;
     }
   }
@@ -2247,9 +2212,12 @@
   .about-component .story-header h2,
   .about-component .whyus-header h2,
   .about-component .how-header h2,
-  .about-component .team-header h2 {
+  .about-component .team-header h2,
+  .partners-header h2,
+  .gallery-header h2 {
       font-size: 3rem;
       line-height: 2.5rem;
+      position: relative;
   }
   
   /* ABOUT HEADER */
@@ -2465,10 +2433,12 @@
   
   .about-component .how-details .how-info h4 {
       text-transform: uppercase;
+      font-size: 2.2rem;
   }
   
   .about-component .how-details .how-info p {
       width: 70%;
+      font-size: 1.2rem;
   }
   
   .about-component .how-card .how-image {
@@ -2486,7 +2456,7 @@
       left: 60%;
       width: 40%;
       height: 100%;
-      /* background-color: #ff3800; */
+      background-color: #ff3800;
       opacity: .5;
   }
   
@@ -2497,16 +2467,16 @@
       right: 50%;
   }
   
-  /* .about-component .how-card.prefinancing .how-image::after {
-      background-color: #fac344;
-  } */
+  .about-component .how-card.prefinancing .how-image::after {
+      background-color: #2b97d8;
+  }
   
-  /* .about-component .how-card.logistics .how-image::after {
-      background-color: #4446e9c4;
-  } */
+  .about-component .how-card.logistics .how-image::after {
+      background-color: #fec343;
+  }
   
   .about-component .how-card.marketing .how-image::after {
-      background-color: #ffcdce;
+      background-color: #385a647a;
   }
   
   .about-component .how-card.transparency .how-image::after {
@@ -2517,8 +2487,7 @@
       background-color: #ff735c;
   }
   
-  .about-component .how-card .how-image img,
-  .about-component .how-card .how-image dotlottie-player {
+  .about-component .how-card .how-image img {
       object-fit: cover;
       object-position: center;
       height: 80%;
@@ -2741,6 +2710,20 @@
 
     .about-component .how-card .how-image {
       height: 300px;
+    }
+
+    .about-component .how-details .how-info h4 {
+      font-size: 1.5rem;
+    }
+
+    .about-component .about-header h2,
+    .about-component .story-header h2,
+    .about-component .whyus-header h2,
+    .about-component .how-header h2,
+    .about-component .team-header h2,
+    .partners-header h2,
+    .gallery-header h2 {
+      font-size: 2.7rem;
     }
   }
 

@@ -222,6 +222,12 @@
     }
   }
 
+  @media (max-width: 425px) {
+    .faq-container .faq-header h2 {
+      font-size: 2.7rem;
+    }
+  }
+
   @media (max-width: 375px) {
     .gallery-filtered .filters label {
       padding: 0;
