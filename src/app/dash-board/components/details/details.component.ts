@@ -238,7 +238,7 @@ export class DetailsComponent implements OnInit {
     }
     else if (num == 25) {
       this.dialog.open(SavechangesComponent, {
-        data: {id:25, value: 'Warehouse Name',key:'warehouse_name',data:this.warehouse.name},
+        data: {id:25, value: 'Warehouse Name',key:'name',data:this.warehouse.name},
         width: '25pc',
         autoFocus: false,
         maxHeight: '90vh'
@@ -246,7 +246,7 @@ export class DetailsComponent implements OnInit {
     }
     else if (num == 26) {
       this.dialog.open(SavechangesComponent, {
-        data: {id:26, value: 'Warehouse Capacity',key:'warehouse_capacity',data:this.warehouse.warehouse_area_storage},
+        data: {id:26, value: 'Warehouse Capacity',key:'warehouse_area_storage',data:this.warehouse.warehouse_area_storage},
         width: '25pc',
         autoFocus: false,
         maxHeight: '90vh'
@@ -270,15 +270,7 @@ export class DetailsComponent implements OnInit {
     }
     else if (num == 29) {
       this.dialog.open(SavechangesComponent, {
-        data: {id:29, value: 'Warehouse Location',key:'warehouse_location',data:this.warehouse.location},
-        width: '25pc',
-        autoFocus: false,
-        maxHeight: '90vh'
-      })
-    }
-    else if (num == 30) {
-      this.dialog.open(SavechangesComponent, {
-        data: {id:30, value: 'Name',key:'buyer_name',data:this.user.user.username},
+        data: {id:29, value: 'Warehouse Location',key:'location',data:this.warehouse.location},
         width: '25pc',
         autoFocus: false,
         maxHeight: '90vh'
