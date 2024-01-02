@@ -16,6 +16,7 @@ export class ManifestsComponent {
   ngOnInit(): void {
     this.shipping.getManifest().subscribe((res:any)=>{
       this.manifests = res
+      console.log(this.manifests)
     })
   }
   extractUsername(email: string): string {

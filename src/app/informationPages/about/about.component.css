@@ -130,6 +130,7 @@
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+    justify-content: center;
   }
 
   .faq-container .faq-header h2 {
@@ -217,8 +218,18 @@
       width: 100%;
     }
 
+    .faq-container .faq-header .faq-image {
+      height: auto;
+    }
+
     .faq-container .faqs-accordion {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .faq-container .faq-header h2 {
+      font-size: 2.7rem;
     }
   }
 

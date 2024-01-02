@@ -238,7 +238,47 @@ export class DetailsComponent implements OnInit {
     }
     else if (num == 25) {
       this.dialog.open(SavechangesComponent, {
-        data: {id: 25, value: 'County',key:'county',data:this.profile.county},
+        data: {id:25, value: 'Warehouse Name',key:'warehouse_name',data:this.warehouse.name},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 26) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:26, value: 'Warehouse Capacity',key:'warehouse_capacity',data:this.warehouse.warehouse_area_storage},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 27) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:27, value: 'Warehouse Contact Info',key:'warehouse_contact',data:this.warehouse.warehouse_contact},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 28) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:28, value: 'Warehouse Products',key:'warehouse_products',data:this.warehouse.warehoused_products},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 29) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:29, value: 'Warehouse Location',key:'warehouse_location',data:this.warehouse.location},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 30) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:30, value: 'Name',key:'buyer_name',data:this.user.user.username},
         width: '25pc',
         autoFocus: false,
         maxHeight: '90vh'
@@ -267,6 +307,7 @@ export class DetailsComponent implements OnInit {
     this.store.storeProfileData()
     this.store.data$.subscribe((res:any)=>{
       this.user = res
+      console.log(this.user)
       if(this.user.user.type == "FARMER"){
         this.service.getFarmerProfile().subscribe((res:any)=>{
           this.store.updateFarmerData(res)
@@ -288,6 +329,7 @@ export class DetailsComponent implements OnInit {
       else if(this.user.user.type == "WAREHOUSER" || this.user.user.type == "ORIGINWAREHOUSER"){
         this.products.getinventoryProducts().subscribe((res:any)=>{
           this.warehouse = res;
+          console.log(this.warehouse)
         })
       }
       
