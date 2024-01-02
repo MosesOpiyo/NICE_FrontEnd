@@ -768,11 +768,11 @@
 
       <div class="faqs-accordion" data-aos="fade-up">
         <div>
-            <input type="radio" name="faq-accordion" id="question1" class="accordion-input" checked (click)="showContent()">
+            <input type="radio" name="faq-accordion" id="question1" class="accordion-input" checked (change)="checkStatus1($event);">
             <label for="question1" class="accordion-label">
               What exactly is NiceDirect?
-              <i *ngIf="isShowContent" class="fa-solid fa-caret-down"></i>
-              <i *ngIf="!isShowContent" class="fa-solid fa-caret-up"></i>
+              <i *ngIf="isShowContent" class="fa-solid fa-caret-up"></i>
+              <i *ngIf="!isShowContent" class="fa-solid fa-caret-down"></i>
             </label>
             <div class="accordion-content">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat suscipit magnam reiciendis quam? Reiciendis asperiores fugit itaque optio sapiente earum eveniet eaque commodi, iusto aspernatur unde non delectus minus assumenda?
@@ -782,7 +782,7 @@
         </div>
 
         <div>
-            <input type="radio" name="faq-accordion" id="question2" class="accordion-input" (click)="showContent2()">
+            <input type="radio" name="faq-accordion" id="question2" class="accordion-input" (change)="checkStatus2($event);">
             <label for="question2" class="accordion-label">
               How transparent are you?
               <i *ngIf="isShowContent2" class="fa-solid fa-caret-up"></i>
@@ -795,7 +795,7 @@
         </div>
 
         <div>
-          <input type="radio" name="faq-accordion" id="question3" class="accordion-input" (click)="showContent3()">
+          <input type="radio" name="faq-accordion" id="question3" class="accordion-input" (change)="checkStatus3($event);">
           <label for="question3" class="accordion-label last">
             How is the freshness of the coffee maintained during shipping?
             <i *ngIf="isShowContent3" class="fa-solid fa-caret-up"></i>
@@ -811,7 +811,7 @@
         </div>
 
         <div>
-          <input type="radio" name="faq-accordion" id="question4" class="accordion-input" (click)="showContent4()">
+          <input type="radio" name="faq-accordion" id="question4" class="accordion-input" (change)="checkStatus4($event);">
           <label for="question4" class="accordion-label last">
             Are your coffee beans ethically sourced and sustainably produced?
             <i *ngIf="isShowContent4" class="fa-solid fa-caret-up"></i>
@@ -827,7 +827,7 @@
         </div>
 
         <div>
-          <input type="radio" name="faq-accordion" id="question5" class="accordion-input" (click)="showContent5()">
+          <input type="radio" name="faq-accordion" id="question5" class="accordion-input" (change)="checkStatus5($event);">
           <label for="question5" class="accordion-label last">
             What is your return policy if I am not satisfied with the coffee I receive?
             <i *ngIf="isShowContent5" class="fa-solid fa-caret-up"></i>
@@ -843,7 +843,7 @@
         </div>
 
         <div>
-          <input type="radio" name="faq-accordion" id="question6" class="accordion-input" (click)="showContent6()">
+          <input type="radio" name="faq-accordion" id="question6" class="accordion-input" (change)="checkStatus6($event);">
           <label for="question6" class="accordion-label">
             Is my data safe?
             <i *ngIf="isShowContent6" class="fa-solid fa-caret-up"></i>
@@ -856,7 +856,7 @@
       </div>
 
         <div>
-          <input type="radio" name="faq-accordion" id="question7" class="accordion-input" (click)="showContent7()">
+          <input type="radio" name="faq-accordion" id="question7" class="accordion-input" (change)="checkStatus7($event);">
           <label for="question7" class="accordion-label last">
             I have more questions, can you help me?
             <i *ngIf="isShowContent7" class="fa-solid fa-caret-up"></i>

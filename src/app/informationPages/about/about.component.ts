@@ -6,47 +6,110 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-
-  //1st accordion input
-  isShowContent = false;
-  showContent() {
-    this.isShowContent = !this.isShowContent
+  
+  isShowContent: boolean = true;
+  checkStatus1(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowContent = true
+      this.isShowContent2 = false
+      this.isShowContent3 = false
+      this.isShowContent4 = false
+      this.isShowContent5 = false
+      this.isShowContent6 = false
+      this.isShowContent7 = false
+      console.log(event.target.checked + " im clicked")
+    }
   }
 
-  //2nd accordion input
-  isShowContent2 = false;
-  showContent2() {
-    this.isShowContent2 = !this.isShowContent2
+  isShowContent2: boolean;
+  checkStatus2(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowContent2 = true
+      this.isShowContent = false
+      this.isShowContent3 = false
+      this.isShowContent4 = false
+      this.isShowContent5 = false
+      this.isShowContent6 = false
+      this.isShowContent7 = false
+      console.log("im clicked")
+    }
   }
 
-  //3rd accordion input
-  isShowContent3 = false;
-  showContent3() {
-    this.isShowContent3 = !this.isShowContent3
+  isShowContent3: boolean;
+  checkStatus3(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowContent3 = true
+      this.isShowContent = false
+      this.isShowContent2 = false
+      this.isShowContent4 = false
+      this.isShowContent5 = false
+      this.isShowContent6 = false
+      this.isShowContent7 = false
+      console.log("im clicked")
+    }
   }
 
-  //4th accordion input
-  isShowContent4 = false;
-  showContent4() {
-    this.isShowContent4 = !this.isShowContent4
+  isShowContent4: boolean;
+  checkStatus4(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowContent4 = true
+      this.isShowContent = false
+      this.isShowContent2 = false
+      this.isShowContent3 = false
+      this.isShowContent5 = false
+      this.isShowContent6 = false
+      this.isShowContent7 = false
+      console.log("im clicked")
+    }
   }
 
-  //5th accordion input
-  isShowContent5 = false;
-  showContent5() {
-    this.isShowContent5 = !this.isShowContent5
+  isShowContent5: boolean;
+  checkStatus5(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowContent5 = true
+      this.isShowContent = false
+      this.isShowContent2 = false
+      this.isShowContent3 = false
+      this.isShowContent4 = false
+      this.isShowContent6 = false
+      this.isShowContent7 = false
+      console.log("im clicked")
+    }
   }
 
-  //6th accordion input
-  isShowContent6 = false;
-  showContent6() {
-    this.isShowContent6 = !this.isShowContent6
+  isShowContent6: boolean;
+  checkStatus6(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowContent6 = true
+      this.isShowContent = false
+      this.isShowContent2 = false
+      this.isShowContent3 = false
+      this.isShowContent5 = false
+      this.isShowContent4 = false
+      this.isShowContent7 = false
+      console.log("im clicked")
+    }
   }
 
-  //7th accordion input
-  isShowContent7 = false;
-  showContent7() {
-    this.isShowContent7 = !this.isShowContent7
+  isShowContent7: boolean;
+  checkStatus7(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowContent7 = true
+      this.isShowContent = false
+      this.isShowContent2 = false
+      this.isShowContent3 = false
+      this.isShowContent5 = false
+      this.isShowContent6 = false
+      this.isShowContent4 = false
+      console.log("im clicked")
+    }
   }
 
   onLabelGroupClick($event: any){

@@ -2277,7 +2277,7 @@
 
   .about-component .our-mission .mission-card {
       display: flex;
-      width: 90%;
+      width: 95%;
       margin-inline: auto;
       text-align: center;
   }
@@ -2291,7 +2291,7 @@
   }
   
   .about-component .our-mission .mission-content {
-      background-color: #95aad3;
+      background-color: #eceaeb;
       border-radius: .5rem;
       display: flex;
       flex-direction: column;
@@ -2493,7 +2493,7 @@
   }
   
   .about-component .how-card.prefinancing .how-image::after {
-      background-color: #2b97d8;
+      background-color: #bebfc1;
   }
   
   .about-component .how-card.logistics .how-image::after {
@@ -2759,11 +2759,7 @@
     .about-component .about-header {
       height: 300px;
     }
-
-    .about-component .our-mission .mission-card {
-      width: 95%;
-    }
-
+    
     .about-component .how-card .how-image {
       height: 300px;
     }
