@@ -18,7 +18,6 @@ export class SavechangesComponent implements OnInit {
     let newData = {
        [`${key}`]:this.change
     }
-    console.log(newData)
     this.update.updateFarmerProfile(key,newData)
   }
   ngOnInit(): void {

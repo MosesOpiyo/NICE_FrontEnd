@@ -10,6 +10,7 @@ import { SavechangesComponent } from '../savechanges/savechanges.component';
 import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 import { error } from 'console';
 import { ProductStoreService } from 'src/app/Store/Products/product-store.service';
+import { Profile } from 'src/app/Classes/ProfileClass/profile';
 
 @Component({
   selector: 'app-details',
@@ -22,11 +23,10 @@ export class DetailsComponent implements OnInit {
   isModalOpen = false;
   toggleModal(): void {
     this.isModalOpen = !this.isModalOpen;
-    console.log("im clicked")
   }
 
   constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private productsStore:ProductStoreService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
-  user:any
+  user:Profile
   warehouse:any
   isOpened:boolean = false
   cloudinaryUrl = environment.CLOUDINARY_URL

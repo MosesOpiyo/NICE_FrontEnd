@@ -4,6 +4,7 @@ import { ConfirmPasswordComponent } from './confirm-password/confirm-password.co
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
+import { Profile } from 'src/app/Classes/ProfileClass/profile';
 
 @Component({
   selector: 'app-user-settings',
@@ -11,7 +12,7 @@ import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authenticat
   styleUrls: ['./user-settings.component.css']
 })
 export class UserSettingsComponent implements OnInit {
-  user:any
+  user:Profile
   newEmail:any
   newNumber:any
   newUsername:any
@@ -25,7 +26,6 @@ constructor(private dialog:MatDialog,private snackbar:MatSnackBar,private servic
 ngOnInit(): void {
   this.store.data$.subscribe((res:any) => {
     this.user = res
-    console.log(this.user)
   })
 }
 

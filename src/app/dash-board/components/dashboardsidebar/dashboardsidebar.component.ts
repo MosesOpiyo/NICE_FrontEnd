@@ -3,6 +3,7 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
 import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
+import { Profile } from 'src/app/Classes/ProfileClass/profile';
 
 @Component({
   selector: 'app-dashboardsidebar',
@@ -208,7 +209,7 @@ export class DashboardsidebarComponent implements OnInit {
   ]
 
   constructor(private service:AuthenticationService,private store:AuthenticationStoreService, private route:Router){}
-  user:any
+  user:Profile
   cloudinaryUrl = environment.CLOUDINARY_URL
   pic:any
   data:any;
