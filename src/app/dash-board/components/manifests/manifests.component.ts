@@ -12,17 +12,17 @@ export class ManifestsComponent {
   constructor(private shipping:ShippingService,private service:AuthenticationService,private snackbar:MatSnackBar){}
   displayedColumns: string[] = ['number','warehouser','quantity','created_date'];
   manifests:any
-  user:any
 
   ngOnInit(): void {
     this.shipping.getManifest().subscribe((res:any)=>{
       this.manifests = res
       console.log(this.manifests)
     })
-    this.service.getProfile().subscribe((res:any)=>{
-      this.user = res['user']
-    })
   }
+  extractUsername(email: string): string {
+    return email.replace(/@.*$/, '');
+  }
+
   approveShipping(id:number){
     this.shipping.approveManifest(id).subscribe((res:any)=>{
       this.snackbar.open(res, 'Close', {

@@ -7,7 +7,7 @@
       <div class="rounded h-100 p-4">
         <div>
             <div>
-                <h4 *ngIf="user.type=='FARMER' || user.type=='ORIGINWAREHOUSER'" class="mb-4">Products</h4>
+                <h4 *ngIf="user.type=='FARMER' || user.type=='ORIGINWAREHOUSER' " class="mb-4">Products <span *ngIf="user.type=='ORIGINWAREHOUSER' ">- Farmers({{farmerCount.length}})</span></h4>
                 <h4 *ngIf="user.type=='WAREHOUSER'" class="mb-4">Inventory</h4>
             </div>
             <div>
@@ -25,6 +25,10 @@
                 <ng-container matColumnDef="name">
                   <th mat-header-cell *matHeaderCellDef> Name </th>
                   <td mat-cell *matCellDef="let element"> {{element.name | uppercase}} </td>
+                </ng-container>
+                <ng-container matColumnDef="producer">
+                  <th mat-header-cell *matHeaderCellDef> Producer </th>
+                  <td mat-cell *matCellDef="let element"> {{extractUsername(element.email) | uppercase}} </td>
                 </ng-container>
                 <ng-container matColumnDef="grade">
                   <th mat-header-cell *matHeaderCellDef> Grade </th>

@@ -9,6 +9,8 @@ import { NewproductComponent } from '../newproduct/newproduct.component';
 import { SavechangesComponent } from '../savechanges/savechanges.component';
 import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 import { error } from 'console';
+import { ProductStoreService } from 'src/app/Store/Products/product-store.service';
+import { Profile } from 'src/app/Classes/ProfileClass/profile';
 
 @Component({
   selector: 'app-details',
@@ -21,11 +23,10 @@ export class DetailsComponent implements OnInit {
   isModalOpen = false;
   toggleModal(): void {
     this.isModalOpen = !this.isModalOpen;
-    console.log("im clicked")
   }
 
-  constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
-  user:any
+  constructor(private service:AuthenticationService,private store:AuthenticationStoreService,private productsStore:ProductStoreService,private dialog:MatDialog,private products:ProductsService,private sanitizer:DomSanitizer){}
+  user:Profile
   warehouse:any
   isOpened:boolean = false
   cloudinaryUrl = environment.CLOUDINARY_URL
@@ -237,7 +238,7 @@ export class DetailsComponent implements OnInit {
     }
     else if (num == 25) {
       this.dialog.open(SavechangesComponent, {
-        data: {id:25, value: 'Warehouse Name',key:'warehouse_name',data:this.warehouse.name},
+        data: {id:25, value: 'Warehouse Name',key:'name',data:this.warehouse.name},
         width: '25pc',
         autoFocus: false,
         maxHeight: '90vh'
@@ -245,7 +246,7 @@ export class DetailsComponent implements OnInit {
     }
     else if (num == 26) {
       this.dialog.open(SavechangesComponent, {
-        data: {id:26, value: 'Warehouse Capacity',key:'warehouse_capacity',data:this.warehouse.warehouse_area_storage},
+        data: {id:26, value: 'Warehouse Capacity',key:'warehouse_area_storage',data:this.warehouse.warehouse_area_storage},
         width: '25pc',
         autoFocus: false,
         maxHeight: '90vh'
@@ -269,39 +270,7 @@ export class DetailsComponent implements OnInit {
     }
     else if (num == 29) {
       this.dialog.open(SavechangesComponent, {
-        data: {id:29, value: 'Warehouse Location',key:'warehouse_location',data:this.warehouse.location},
-        width: '25pc',
-        autoFocus: false,
-        maxHeight: '90vh'
-      })
-    }
-    else if (num == 30) {
-      this.dialog.open(SavechangesComponent, {
-        data: {id:30, value: 'Name',key:'buyer_name',data:this.user.user.username},
-        width: '25pc',
-        autoFocus: false,
-        maxHeight: '90vh'
-      })
-    }
-    else if (num == 31) {
-      this.dialog.open(SavechangesComponent, {
-        data: {id:31, value: 'Phone Number',key:'buyer_phone',data:this.user.phone},
-        width: '25pc',
-        autoFocus: false,
-        maxHeight: '90vh'
-      })
-    }
-    else if (num == 32) {
-      this.dialog.open(SavechangesComponent, {
-        data: {id:32, value: 'Email',key:'buyer_email',data:this.user.user.email},
-        width: '25pc',
-        autoFocus: false,
-        maxHeight: '90vh'
-      })
-    }
-    else if (num == 33) {
-      this.dialog.open(SavechangesComponent, {
-        data: {id:33, value: 'Shipping Address',key:'buyer_name',data:this.user.shippingaddress},
+        data: {id:29, value: 'Warehouse Location',key:'location',data:this.warehouse.location},
         width: '25pc',
         autoFocus: false,
         maxHeight: '90vh'

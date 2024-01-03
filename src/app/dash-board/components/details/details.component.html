@@ -210,25 +210,24 @@
                     <li>
                         Warehouse Name:<br>
                         <span *ngIf="warehouse">{{warehouse.name}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(25)"></i>
+                        <i *ngIf="user.user.type=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(25)"></i>
                     </li>
 
                     <li>
                         Warehouse Capacity:<br>
                         <span *ngIf="warehouse">{{warehouse.warehouse_area_storage}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(26)"></i>
+                        <i *ngIf="user.user.type=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(26)"></i>
                     </li>
 
                     <li>
                         Warehouse Contact info:<br>
                         <span *ngIf="warehouse"></span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(27)"></i>
+                        <i *ngIf="user.user.type=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(27)"></i>
                     </li>
 
                     <li>
                         Warehoused Products:<br>
-                        <span *ngIf="warehouse">{{warehouse.warehoused_products}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(28)"></i>
+                        <span *ngIf="warehouse">{{warehouse.warehoused_products.length}}</span>
                     </li>
 
                     <li class="location">
@@ -241,7 +240,7 @@
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(29)"></i>
+                        <i *ngIf="user.user.type=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(29)"></i>
                     </li>
                     
                 </ul>

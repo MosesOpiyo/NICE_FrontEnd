@@ -22,7 +22,7 @@
 
                 <div *ngIf="data.length > 1" class="multiplie-notifications">
                     <a  *ngFor="let object of data" href="#" class="dropdown-item">
-                        <p class="fw-normal mb-0">{{object.message.slice(0,20)}}</p>
+                        <p *ngIf="object.seen == false" class="fw-normal mb-0">{{object.message.slice(0,20)}}</p>
                     </a>
                 </div>
 
@@ -37,7 +37,7 @@
         <ul class="nav-items">
             <li class="dropdown">
                 <a class="user-link">
-                    <span>Hello, {{user.user['username'] | titlecase}}</span>
+                    <span>Hello, {{user.username | titlecase}}</span>
                     <i class="fa-solid fa-chevron-down"></i>
                 </a>
                 <ul class="dropdown-links">

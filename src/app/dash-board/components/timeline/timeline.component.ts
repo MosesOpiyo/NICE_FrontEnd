@@ -6,6 +6,7 @@ import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authenticat
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConfirmdeletionComponent } from '../message/confirmdeletion/confirmdeletion.component';
 import { MatDialog } from '@angular/material/dialog';
+import { StoriesStoreService } from '../../Stores/Stories/stories-store.service';
 
 @Component({
   selector: 'app-timeline',
@@ -20,16 +21,14 @@ export class TimelineComponent implements OnInit {
   user: any
   isLoading:boolean = false
 
-  constructor(private dialog:MatDialog, private stories:FarmerprofileService, private store:AuthenticationStoreService, private snackBar:MatSnackBar,private service:AuthenticationStoreService){}
+  constructor(private dialog:MatDialog,private stories:FarmerprofileService, private storyStore:StoriesStoreService, private store:AuthenticationStoreService, private snackBar:MatSnackBar,private service:AuthenticationStoreService){}
 
   ngOnInit(): void {
-    this.store.storeProfileData()
     this.store.data$.subscribe((res:any)=>{
       this.user = res
-      console.log(this.user)
     });
-
-    this.stories.getStories().subscribe((response:any)=>{
+    this.storyStore.storeStoriesData()
+    this.storyStore.data$.subscribe((response:any)=>{
       this.posts = response
     })
   }

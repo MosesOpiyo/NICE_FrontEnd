@@ -57,7 +57,8 @@
                         <p>{{item.date_added | date:'hh:mm a'}} <br> {{item.date_added | date}}</p>
                     </div>
                     <div class="notification-content">
-                        <p>{{item.message}}</p>
+                        <p *ngIf="item.seen == false" style="font-weight: bold;">{{item.message}}</p>
+                        <p *ngIf="item.seen == true">{{item.message}}</p>
                     </div>
                             
             </div>

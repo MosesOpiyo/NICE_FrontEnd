@@ -20,7 +20,7 @@
                         <i class="fa-solid fa-user"></i>
                     </button>
                 </li>
-                <li *ngIf="user" class="dropdown user-case"><a><span>Hello, {{user['username'] |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
+                <li *ngIf="user" class="dropdown user-case"><a><span>Hello, {{user.username |titlecase}}</span><i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
                         <li><a routerLink="/dash-board">My Account</a></li>
                         <li><a href="" (click)="logout()">Log out</a></li>

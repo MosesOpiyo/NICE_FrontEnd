@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "NICE:build:production"
+              "browserTarget": "NICE:build:production"
             },
             "development": {
-              "buildTarget": "NICE:build:development"
+              "browserTarget": "NICE:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "NICE:build"
+            "browserTarget": "NICE:build"
           }
         },
         "test": {
@@ -166,10 +166,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "FarmersDashboard:build:production"
+              "browserTarget": "FarmersDashboard:build:production"
             },
             "development": {
-              "buildTarget": "FarmersDashboard:build:development"
+              "browserTarget": "FarmersDashboard:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -177,7 +177,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "FarmersDashboard:build"
+            "browserTarget": "FarmersDashboard:build"
           }
         },
         "test": {

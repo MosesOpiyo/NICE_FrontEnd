@@ -12,7 +12,7 @@ export class ProcessedProductsComponent {
   constructor(private admin:AdminService,private service:AuthenticationService){}
   displayedColumns: string[] = ['name','rating','price','quantity','producer'];
   products:any
-  user:any
+  
 
   averageRating(item:any){
     const list :number[] = []
@@ -27,9 +27,6 @@ export class ProcessedProductsComponent {
   ngOnInit(): void {
     this.admin.getProcessedProducts().subscribe((res:any)=>{
       this.products = res
-    })
-    this.service.getProfile().subscribe((res:any)=>{
-      this.user = res['user']
     })
   }
 
