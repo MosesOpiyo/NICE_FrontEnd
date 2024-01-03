@@ -6,6 +6,7 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
 import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { AuthService } from 'src/app/Auth/auth.service';
 import { TripdialogueComponent } from '../tripdialogue/tripdialogue.component';
+import { FarminfoComponent } from '../farminfo/farminfo.component';
 
 @Component({
   selector: 'app-origin-trip',
@@ -139,6 +140,15 @@ export class OriginTripComponent implements OnInit {
 
  showTripRegisterDialog() {
   let dialogRef = this.dialog.open(TripdialogueComponent,{
+    width: '25pc',
+    maxWidth: '90vw',
+    autoFocus: false,
+    maxHeight: '100vh',
+  })
+ }
+
+ openFarmDetails() {
+  let dialogRef = this.dialog.open(FarminfoComponent,{
     width: '25pc',
     maxWidth: '90vw',
     autoFocus: false,

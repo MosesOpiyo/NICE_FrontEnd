@@ -154,22 +154,22 @@
         <div class="farmers-list">
             <div class="farmerlist-card" *ngFor="let data of farmerData">
                 <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="toggleModal()">View Farm Details</button>
+                <button type="button" (click)="openFarmDetails()">View Farm Details</button>
             </div>
 
             <div class="farmerlist-card" *ngFor="let data of farmerData2">
                 <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="toggleModal2()">View Farm Details</button>
+                <button type="button" (click)="openFarmDetails()">View Farm Details</button>
             </div>
 
             <div class="farmerlist-card" *ngFor="let data of farmerData3">
                 <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="toggleModal3()">View Farm Details</button>
+                <button type="button" (click)="openFarmDetails()">View Farm Details</button>
             </div>
 
             <div class="farmerlist-card" *ngFor="let data of farmerData4">
                 <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="toggleModal4()">View Farm Details</button>
+                <button type="button" (click)="openFarmDetails()">View Farm Details</button>
             </div>
         </div>
     </div>
@@ -370,23 +370,32 @@
      <!-- CUPPING -->
      <div class="cupping-container">
         <div class="cupping-text">
+            <h2>Cuppers paradise</h2>
             <p>Get a chance to cup all of Nyeri's finest coffees. Order and purchase the coffees you like directly from farmers during the trip.</p>
+            <div class="cupping-icons">
+                <div class="visit cuppingicon-card">
+                    <div class="cupping-icon">
+                        <img src="../../../assets/img/Trip/location.png" alt="map pointer">
+                    </div>
+                    <p>visit</p>
+                </div>
+                <div class="cup cuppingicon-card">
+                    <div class="cupping-icon">
+                        <img src="../../../assets/img/Trip/mug.png" alt="a coffee mug">
+                    </div>
+                    <p>cup</p>
+                </div>
+                <div class="buy cuppingicon-card">
+                    <div class="cupping-icon">
+                        <img src="../../../assets/img/Trip/shopping-bag.png" alt="a shopping basket">
+                    </div>
+                    <p>buy</p>
+                </div>
+            </div>
             <button type="button" (click)="showTripRegisterDialog()">BOOK NOW</button>
         </div>
         
-        <div class="cupping-image">      
-                <!-- <div class="cupping-card image-one">
-                    <img src="https://images.pexels.com/photos/13806389/pexels-photo-13806389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="farm">
-                </div>
-      
-                <div class="cupping-card image-two">
-                    <img src="../../../assets/img/Trip/cupping2.webp" alt="coffee drinker">
-                </div>
-
-                <div class="cupping-card image-three">
-                    <img src="https://images.pexels.com/photos/9455933/pexels-photo-9455933.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="coffee drinker">
-                </div> -->
-        </div>     
+        <div class="cupping-image"></div>     
     </div>
 
     <!-- TIPS -->

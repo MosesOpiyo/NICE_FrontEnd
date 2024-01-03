@@ -1,0 +1,181 @@
+<!-- <div class="farmers-content" *ngIf="isModalOpen" class="modals">
+    <div class="farmer-card modal-contents" *ngFor="let data of farmerData">
+        <span class="modal-close" (click)="toggleModal()">
+            <i class="fa-solid fa-x"></i>
+        </span>
+
+        <div class="farm-name">
+            <h2>{{data.farmName}}</h2>
+        </div>
+
+        <div class="farm-info">
+
+            <div class="farmer-images ndaroini-images">
+                <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
+                    autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
+                    space-between="10" class="mobile">
+                    <swiper-slide class="slide-content">
+                        <div class="farm-item">
+                            <img src={{data.imageUrl1}} alt="farm">                    
+                        </div>
+                    </swiper-slide>
+                
+                    <swiper-slide class="slide-content">
+                        <div class="farm-item">
+                            <img src={{data.imageUrl2}} alt="farm">
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+
+             
+            
+            </div>
+            
+            <div class="farm-story">
+                <p>
+                    <i class={{data.rating[0]}}></i>
+                    <i class={{data.rating[1]}}></i>
+                    <i class={{data.rating[2]}}></i>
+                    <i class={{data.rating[3]}}></i>
+                    <i class={{data.rating[4]}}></i>
+                </p>
+                <p>{{data.story}}</p>
+            </div>
+        </div>      
+    </div>
+</div>
+
+
+<div class="farmers-content" *ngIf="isModalOpen2" class="modals">
+    <div class="farmer-card modal-contents" *ngFor="let data of farmerData2">
+        <span class="modal-close" (click)="toggleModal2()">
+            <i class="fa-solid fa-x"></i>
+        </span>
+
+        <div class="farm-name">
+            <h2>{{data.farmName}}</h2>
+        </div>
+
+        <div class="farm-info">
+
+            <div class="farmer-images geralds-images">
+                <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
+                    autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
+                    space-between="10" class="mobile">
+                    <swiper-slide class="slide-content">
+                        <div class="farm-item">
+                            <img src={{data.imageUrl1}} alt="farm">                    
+                        </div>
+                    </swiper-slide>
+                
+                    <swiper-slide class="slide-content">
+                        <div class="farm-item">
+                            <img src={{data.imageUrl2}} alt="farm">
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+            </div>
+            
+            <div class="farm-story">
+                <p>
+                    <i class={{data.rating[0]}}></i>
+                    <i class={{data.rating[1]}}></i>
+                    <i class={{data.rating[2]}}></i>
+                    <i class={{data.rating[3]}}></i>
+                    <i class={{data.rating[4]}}></i>
+                </p>
+                <p>{{data.story}}</p>
+            </div>
+        </div>      
+    </div>
+</div>
+
+
+<div class="farmers-content" *ngIf="isModalOpen3" class="modals">
+    <div class="farmer-card modal-contents" *ngFor="let data of farmerData3">
+        <span class="modal-close" (click)="toggleModal3()">
+            <i class="fa-solid fa-x"></i>
+        </span>
+
+        <div class="farm-name">
+            <h2>{{data.farmName}}</h2>
+        </div>
+
+        <div class="farm-info">
+
+            <div class="farmer-images ragis-images">
+                <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
+                    autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
+                    space-between="10" class="mobile">
+                    <swiper-slide class="slide-content">
+                        <div class="farm-item">
+                            <img src={{data.imageUrl1}} alt="farm">                    
+                        </div>
+                    </swiper-slide>
+                
+                    <swiper-slide class="slide-content">
+                        <div class="farm-item">
+                            <img src={{data.imageUrl2}} alt="farm">
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+            </div>
+            
+            <div class="farm-story">
+                <p>
+                    <i class={{data.rating[0]}}></i>
+                    <i class={{data.rating[1]}}></i>
+                    <i class={{data.rating[2]}}></i>
+                    <i class={{data.rating[3]}}></i>
+                    <i class={{data.rating[4]}}></i>
+                </p>
+                <p>{{data.story}}</p>
+            </div>
+        </div>      
+    </div>
+</div>
+
+
+<div class="farmers-content" *ngIf="isModalOpen4" class="modals">
+    <div class="farmer-card modal-contents" *ngFor="let data of farmerData4">
+        <span class="modal-close" (click)="toggleModal4()">
+            <i class="fa-solid fa-x"></i>
+        </span>
+        
+        <div class="farm-name">
+            <h2>{{data.farmName}}</h2>
+        </div>
+
+        <div class="farm-info">
+
+            <div class="farmer-images jungle-images">
+                <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
+                    autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
+                    space-between="10" class="mobile">
+                    <swiper-slide class="slide-content">
+                        <div class="farm-item">
+                            <img src={{data.imageUrl1}} alt="farm">                    
+                        </div>
+                    </swiper-slide>
+                
+                    <swiper-slide class="slide-content">
+                        <div class="farm-item">
+                            <img src={{data.imageUrl2}} alt="farm">
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+            </div>
+            
+            <div class="farm-story">
+                <p>
+                    <i class={{data.rating[0]}}></i>
+                    <i class={{data.rating[1]}}></i>
+                    <i class={{data.rating[2]}}></i>
+                    <i class={{data.rating[3]}}></i>
+                    <i class={{data.rating[4]}}></i>
+                </p>
+                <p>{{data.story}}</p>
+            </div>
+        </div>      
+    </div>
+</div> -->

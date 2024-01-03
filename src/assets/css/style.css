@@ -631,7 +631,12 @@
   .about-component .how-header h2::after,
   .about-component .team-header h2::after,
   .partners-header h2::after,
-  .gallery-header h2::after {
+  .gallery-header h2::after,
+  .trip-container .trip-purpose .purpose-header h2::after,
+  .trip-container .expenses .expenses-header h2::after,
+  .trip-container .meet-farmers .meetfarmers-header h2::after,
+  .trip-container .tips-container .tips-header h2::after,
+  .itinerary h2::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -1661,9 +1666,11 @@
   .trip-container .meet-farmers .meetfarmers-header h2,
   .trip-container .tips-container .tips-header h2,
   .itinerary h2,
-  .tripdetail-title h2 {
+  .tripdetail-title h2,
+  .checklist-header h2 {
     font-size: 3rem;
     margin-bottom: .5rem;
+    position: relative;
   }
 
   .trip-container .farmers-list .farmerlist-card {
@@ -1762,8 +1769,7 @@
     align-items: center;
     margin-bottom: 4rem;
     height: 550px;
-    width: 95%;
-    margin-inline: auto;
+    background-color: #ebebeb;
   }
   
   .trip-container .cupping-container > * {
@@ -1775,16 +1781,50 @@
     flex-direction: column;
     gap: 2rem;
     justify-content: center;
-    /* align-items: center; */
+    text-align: center;
     padding-inline: 10px;
     font-size: 1.5rem;
   }
+
+  .trip-container .cupping-container .cupping-text h2 {
+    font-weight: 400;
+    font-size: 3rem;
+  }
+
   .trip-container .cupping-container .cupping-text p {
     width: 100%;
-    font-weight: 300;
+    font-weight: 200;
     font-size: 1.8rem;
-    line-height: 1.5rem;
-    text-align: left;
+    line-height: 1.8rem;
+  }
+
+  .trip-container .cupping-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .trip-container .cupping-icons .cuppingicon-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .trip-container .cupping-icons .cuppingicon-card p {
+    font-size: 1.2rem;
+  }
+
+  .trip-container .cupping-icons .cuppingicon-card .cupping-icon {
+    height: 50px;
+    width: 50px;
+  }
+
+  .trip-container .cupping-icons .cuppingicon-card .cupping-icon img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   
   .trip-container .cupping-container .cupping-text button {
@@ -1792,9 +1832,9 @@
     color: #fff;
     padding: 10px 60px;
     font-size: 1.2rem;
-    align-self: flex-start;
     border: none;
     transition: all 0.6s ease-in-out;
+    align-self: center;
   }
   
   .trip-container .cupping-container .cupping-image {
@@ -1994,6 +2034,7 @@
       height: auto;
       gap: 1rem;
       text-align: center;
+      padding-bottom: 2rem;
     }
 
     .trip-container .cupping-container .cupping-text button {
@@ -2010,10 +2051,6 @@
 
     .trip-container .cupping-container .cupping-image {
       height: 300px;
-    }
-
-    .trip-container .cupping-container .cupping-image img {
-      margin-inline: auto;
     }
 
     .trip-container .cupping-container .cupping-text {
@@ -2074,10 +2111,6 @@
     .trip-container .tips-container .tips-content {
       grid-template-columns: 1fr;
     }
-
-    .trip-container .cupping-container {
-      padding: 3rem 0rem;
-    }
   }
 
   @media (max-width: 425px) {
@@ -2085,7 +2118,8 @@
       width: 100%;
     }
 
-    .trip-container .trip-content h2 {
+    .trip-container .trip-content h2,
+    .trip-container .cupping-container .cupping-text h2 {
       font-size: 2.3rem;
     }
 
@@ -2098,7 +2132,8 @@
     .trip-container .meet-farmers .meetfarmers-header h2,
     .trip-container .tips-container .tips-header h2,
     .itinerary h2,
-    .tripdetail-title h2 {
+    .tripdetail-title h2,
+    .checklist-header h2 {
       font-size: 2.2rem;
       line-height: 2rem;
     }
