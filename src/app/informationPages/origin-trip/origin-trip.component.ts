@@ -118,7 +118,9 @@ export class OriginTripComponent implements OnInit {
 
   showLoginDialog(){
    const dialogRef = this.dialog.open(LoginComponent,{
-     width: '25pc'
+      width: '25pc',
+      maxWidth: '90vw',
+      autoFocus: false,
    });
  }
 
@@ -129,13 +131,17 @@ export class OriginTripComponent implements OnInit {
 
  showSignUpDialog(){
    const dialogRef = this.dialog.open(SignUpComponent,{
-     width: '25pc'
+    width: '25pc',
+    maxWidth: '90vw',
+    autoFocus: false,
    }); 
  }
 
  showTripRegisterDialog() {
   let dialogRef = this.dialog.open(TripdialogueComponent,{
     width: '25pc',
+    maxWidth: '90vw',
+    autoFocus: false,
     maxHeight: '100vh',
   })
  }

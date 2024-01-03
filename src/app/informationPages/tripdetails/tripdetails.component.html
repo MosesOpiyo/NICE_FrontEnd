@@ -1,1 +1,33 @@
-<p>tripdetails works!</p>
+<app-navbar></app-navbar>
+
+<section class="tripdetails-container">
+    <div class="january">
+        <div class="tripdetail-title">
+            <h2>Kenya Origin Trip</h2>
+        </div>
+    
+        <div class="tripdetail-info">
+            <p><i class="fa-regular fa-calendar"></i> &nbsp; January 5th - 11th</p>
+            <p><i class="fa-solid fa-location-dot"></i> &nbsp; Nyeri, Kenya</p>
+        </div>
+    
+        <!-- ITINERARY -->
+        <div class="itinerary">
+            <h2>Origin Trip Itinerary</h2>
+            <a href="../../../assets/docs/itinerary/2023 Nyeri Origin Trip flier.pdf" download="Nyeri Origin Trip Itinerary"
+                id="itinerary">
+                Download Nyeri Origin Trip Itinerary
+                &nbsp;&nbsp;
+                <i class="fa fa-file-pdf"></i>
+            </a>
+        </div>
+
+        <!-- BOOK NOW BUTTON -->
+        <div class="booknow-btn">
+            <button type="button" (click)="showTripRegisterDialog()">BOOK NOW</button>
+        </div>
+        
+    </div>
+</section>
+
+<app-footer></app-footer>

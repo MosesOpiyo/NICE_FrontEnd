@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'attributions', component: AttributionsComponent},
   {path: 'farms/:originId', component: FarmComponent},
   {path: 'farm/:farmId', component:FarmdetailsComponent},
-  {path: 'trip-details', component: TripdetailsComponent},
+  {path: 'trip-details/:yearid', component: TripdetailsComponent},
   {path: 'origins', component: OriginsComponent},
   {path: 'origin/:originId', component: OrigindetailsComponent},
   {path: 'terms and conditions', component: TermsComponent}

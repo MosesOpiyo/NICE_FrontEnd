@@ -43,28 +43,6 @@ swiper-container {
   color: orange;
 }
 
-.itinerary {
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.itinerary a {
-  font-size: 1.5rem;
-  color: #0000ffba;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.fa-file-pdf {
-  color: red;
-}
-
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   .trip-container .modal-contents {

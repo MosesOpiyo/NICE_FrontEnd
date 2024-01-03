@@ -1660,7 +1660,8 @@
   .trip-container .expenses .expenses-header h2,
   .trip-container .meet-farmers .meetfarmers-header h2,
   .trip-container .tips-container .tips-header h2,
-  .itinerary h2 {
+  .itinerary h2,
+  .tripdetail-title h2 {
     font-size: 3rem;
     margin-bottom: .5rem;
   }
@@ -1691,7 +1692,8 @@
   }
 
   .trip-container .farmers-list .farmerlist-card button,
-  .places-card button {
+  .places-card button,
+  .booknow-btn button {
     padding: .7rem 3rem;
     border: none;
     background-color: #000000;
@@ -1701,7 +1703,8 @@
   }
 
   .trip-container .farmers-list .farmerlist-card button:hover,
-  .places-card button:hover {
+  .places-card button:hover,
+  .booknow-btn button:hover {
     background-color: #f7f7f7;
     color: #000000;
     letter-spacing: 3px;
@@ -1888,7 +1891,6 @@
   
   /* CHECKLIST */
   .trip-container .checklist-container {
-    margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -2095,7 +2097,8 @@
     .trip-container .expenses .expenses-header h2,
     .trip-container .meet-farmers .meetfarmers-header h2,
     .trip-container .tips-container .tips-header h2,
-    .itinerary h2 {
+    .itinerary h2,
+    .tripdetail-title h2 {
       font-size: 2.2rem;
       line-height: 2rem;
     }
