@@ -8,7 +8,7 @@ describe('FarminfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FarminfoComponent]
+      declarations: [FarminfoComponent]
     })
     .compileComponents();
     

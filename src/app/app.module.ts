@@ -55,6 +55,7 @@ import { OrigindetailsComponent } from './origindetails/origindetails.component'
 import { TermsComponent } from './informationPages/terms/terms.component';
 import { AddtocartComponent } from './addtocart/addtocart.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { FarminfoComponent } from './informationPages/farminfo/farminfo.component';
 // register Swiper custom elements
 register();
 
@@ -94,6 +95,7 @@ register();
     TermsComponent,
     AddtocartComponent,
     ForgotpasswordComponent,
+    FarminfoComponent,
   ],
   // entryComponents:[LoginComponent],
   imports: [

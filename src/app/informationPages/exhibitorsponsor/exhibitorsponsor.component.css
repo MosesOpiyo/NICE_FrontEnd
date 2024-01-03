@@ -36,7 +36,9 @@ h3 {
 
 .exhibitor-container form select,
 .sponsorship-container form select {
-    font-size: 1rem;
+    font-size: 14.5px;
+    color: #000000a8;
+    padding-left: 4.6px;
 }
 
 .exhibitor-container form input,
@@ -79,25 +81,26 @@ h3 {
   .label-float label{
     pointer-events: none;
     position: absolute;
-    top: calc(50% - 8px);
-    left: 15px;
+    top: calc(50% - 6px);
+    left: .26rem;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
     background-color: white;
     padding: 2px 5px;
     box-sizing: border-box;
     transition: all .1s linear;
+    font-size: 14.5px;
   }
 
   .label-float input:required:invalid + label {
-    color: #000000b7;
+    color: #000000a8;
   }
 
   .label-float input:focus + label,
   .label-float input:not(:placeholder-shown) + label{
     font-size: 13px;
     top: 0;
-    color: #000000b7;
+    color: #000000a8;
   }
 /* end of input animations */
 

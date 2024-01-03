@@ -14,7 +14,7 @@
             </div> -->
 
             <div class="register-btn">
-                <a href="">BOOKING CLOSED</a>
+                <a href="Origin-Trip#bookings">BOOK NOW</a>
             </div>
         </div>
     </div>
@@ -35,23 +35,15 @@
             </div>
         </div>
 
-        <a class="places-card geralds-place" routerLink="/trip-details/1">
+        <a
+          class="places-card"
+          *ngFor="let info of tripData"
+          routerLink="/trip-details/{{info.id}}"
+          ngClass={{info.shortheader}}
+          id="bookings"
+        >
             <div class="places-header">
-                <h2>JANUARY TRIP</h2>
-                <button type="button">BOOK NOW</button>
-            </div>
-        </a>
-
-        <a class="places-card ragis-place" routerLink="/trip-details/2">
-            <div class="places-header">
-                <h2>JULY TRIP</h2>
-                <button type="button">BOOK NOW</button>
-            </div>
-        </a>
-
-        <a class="places-card ndaroini-place" routerLink="/trip-details/3">
-            <div class="places-header">
-                <h2>NOVEMBER TRIP</h2>
+                <h2>{{info.header}}</h2>
                 <button type="button">BOOK NOW</button>
             </div>
         </a>
@@ -152,218 +144,10 @@
         </div>
         
         <div class="farmers-list">
-            <div class="farmerlist-card" *ngFor="let data of farmerData">
+            <div class="farmerlist-card" ngClass={{data.shortFarmName}} *ngFor="let data of farmerData">
                 <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="openFarmDetails()">View Farm Details</button>
+                <button type="button" (click)="openFarmDetails(data.id)">View Farm Details</button>
             </div>
-
-            <div class="farmerlist-card" *ngFor="let data of farmerData2">
-                <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="openFarmDetails()">View Farm Details</button>
-            </div>
-
-            <div class="farmerlist-card" *ngFor="let data of farmerData3">
-                <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="openFarmDetails()">View Farm Details</button>
-            </div>
-
-            <div class="farmerlist-card" *ngFor="let data of farmerData4">
-                <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="openFarmDetails()">View Farm Details</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- farmer modal -->
-    <div class="farmers-content" *ngIf="isModalOpen" class="modals">
-        <div class="farmer-card modal-contents" *ngFor="let data of farmerData">
-            <span class="modal-close" (click)="toggleModal()">
-                <i class="fa-solid fa-x"></i>
-            </span>
-
-            <div class="farm-name">
-                <h2>{{data.farmName}}</h2>
-            </div>
-
-            <div class="farm-info">
-
-                <div class="farmer-images ndaroini-images">
-                    <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
-                        autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
-                        space-between="10" class="mobile">
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl1}} alt="farm">                    
-                            </div>
-                        </swiper-slide>
-                    
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl2}} alt="farm">
-                            </div>
-                        </swiper-slide>
-                    </swiper-container>
-
-                    <!-- <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src={{data.imageUrl1}} alt="farm">
-                        </div>
-              
-                        <div class="swiper-slide">
-                            <img src={{data.imageUrl2}} alt="farm">
-                        </div>
-                    </div>
-              
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div> -->
-                </div>
-                
-                <div class="farm-story">
-                    <p>
-                        <i class={{data.rating[0]}}></i>
-                        <i class={{data.rating[1]}}></i>
-                        <i class={{data.rating[2]}}></i>
-                        <i class={{data.rating[3]}}></i>
-                        <i class={{data.rating[4]}}></i>
-                    </p>
-                    <p>{{data.story}}</p>
-                </div>
-            </div>      
-        </div>
-    </div>
-
-    <!-- farmer modal2 -->
-    <div class="farmers-content" *ngIf="isModalOpen2" class="modals">
-        <div class="farmer-card modal-contents" *ngFor="let data of farmerData2">
-            <span class="modal-close" (click)="toggleModal2()">
-                <i class="fa-solid fa-x"></i>
-            </span>
-
-            <div class="farm-name">
-                <h2>{{data.farmName}}</h2>
-            </div>
-
-            <div class="farm-info">
-
-                <div class="farmer-images geralds-images">
-                    <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
-                        autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
-                        space-between="10" class="mobile">
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl1}} alt="farm">                    
-                            </div>
-                        </swiper-slide>
-                    
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl2}} alt="farm">
-                            </div>
-                        </swiper-slide>
-                    </swiper-container>
-                </div>
-                
-                <div class="farm-story">
-                    <p>
-                        <i class={{data.rating[0]}}></i>
-                        <i class={{data.rating[1]}}></i>
-                        <i class={{data.rating[2]}}></i>
-                        <i class={{data.rating[3]}}></i>
-                        <i class={{data.rating[4]}}></i>
-                    </p>
-                    <p>{{data.story}}</p>
-                </div>
-            </div>      
-        </div>
-    </div>
-
-    <!-- farmer modal3 -->
-    <div class="farmers-content" *ngIf="isModalOpen3" class="modals">
-        <div class="farmer-card modal-contents" *ngFor="let data of farmerData3">
-            <span class="modal-close" (click)="toggleModal3()">
-                <i class="fa-solid fa-x"></i>
-            </span>
-
-            <div class="farm-name">
-                <h2>{{data.farmName}}</h2>
-            </div>
-
-            <div class="farm-info">
-
-                <div class="farmer-images ragis-images">
-                    <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
-                        autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
-                        space-between="10" class="mobile">
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl1}} alt="farm">                    
-                            </div>
-                        </swiper-slide>
-                    
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl2}} alt="farm">
-                            </div>
-                        </swiper-slide>
-                    </swiper-container>
-                </div>
-                
-                <div class="farm-story">
-                    <p>
-                        <i class={{data.rating[0]}}></i>
-                        <i class={{data.rating[1]}}></i>
-                        <i class={{data.rating[2]}}></i>
-                        <i class={{data.rating[3]}}></i>
-                        <i class={{data.rating[4]}}></i>
-                    </p>
-                    <p>{{data.story}}</p>
-                </div>
-            </div>      
-        </div>
-    </div>
-
-    <!-- farmer modal4 -->
-    <div class="farmers-content" *ngIf="isModalOpen4" class="modals">
-        <div class="farmer-card modal-contents" *ngFor="let data of farmerData4">
-            <span class="modal-close" (click)="toggleModal4()">
-                <i class="fa-solid fa-x"></i>
-            </span>
-            
-            <div class="farm-name">
-                <h2>{{data.farmName}}</h2>
-            </div>
-
-            <div class="farm-info">
-
-                <div class="farmer-images jungle-images">
-                    <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
-                        autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
-                        space-between="10" class="mobile">
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl1}} alt="farm">                    
-                            </div>
-                        </swiper-slide>
-                    
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl2}} alt="farm">
-                            </div>
-                        </swiper-slide>
-                    </swiper-container>
-                </div>
-                
-                <div class="farm-story">
-                    <p>
-                        <i class={{data.rating[0]}}></i>
-                        <i class={{data.rating[1]}}></i>
-                        <i class={{data.rating[2]}}></i>
-                        <i class={{data.rating[3]}}></i>
-                        <i class={{data.rating[4]}}></i>
-                    </p>
-                    <p>{{data.story}}</p>
-                </div>
-            </div>      
         </div>
     </div>
 
