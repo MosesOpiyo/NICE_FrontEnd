@@ -55,3 +55,17 @@
   border-color: #000000;
   box-shadow: none;
 }
+
+
+@media (max-width: 768px) {
+  .products-navbar {
+    width: 300%;
+  }
+}
+
+@media (max-width: 425px) {
+  .products-navbar {
+    width: 100%;
+  }
+}
+

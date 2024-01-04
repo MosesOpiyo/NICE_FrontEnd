@@ -6,7 +6,7 @@
       <div class="sidebar">
         <app-productsnavbar (dataToParent)="handleDataFromChild($event)"></app-productsnavbar>
         
-        <div>
+        <div class="profiletype">
           <div class="widget-title" (click)=toggleVarietyOn() >
             <h2>Coffee Profile&nbsp;
               <i *ngIf="!isShowVariety" class="fa-solid fa-chevron-down"></i>
@@ -47,7 +47,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="coffeeorigin">
           <div class="widget-title" (click)=toggleFarmsOn()>
             <h2>Coffee Origin&nbsp;
               <i *ngIf="!isShowFarms" class="fa-solid fa-chevron-down"></i>
@@ -88,7 +88,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="specialproducts">
           <div class="widget-title"(click)=togglePriceOn()>
             <h2>Special Products&nbsp;
               <i *ngIf="!isShowPrice" class="fa-solid fa-chevron-down"></i>
