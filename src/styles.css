@@ -79,9 +79,9 @@ text-decoration: none;
 color: inherit;
 }
 
-.logo img {
+/* .logo img {
 border-radius: 50px;
-}
+} */
 
 /* input,
 button,
@@ -1016,13 +1016,13 @@ opacity: .2;
   }
 
   .hero .three .slide-header {
-    background-image: url("./assets/img/hero/hero3.1.jpg");
-    background-position: top;
+    background-image: url("./assets/img/hero/hero3.jpg");
+    background-position: center;
     background-size: cover;
   }
 
   .hero .three .swiper-content::after {
-    background-color: #f8f8f7;
+    background-color: #f5e7da;
   }
 
   .three .hero-btn {
@@ -1193,7 +1193,7 @@ opacity: .2;
     }
 
     .hero .three .slide-header {
-      background-image: url("./assets/img/hero/hero3mobile.jpg");
+      background-image: url("./assets/img/hero/hero3mobile2.jpg");
       background-position: center;
     }
 
@@ -1408,7 +1408,7 @@ opacity: .2;
   }
 
   .light2 .roast-img {
-    background-image: url("https://img.freepik.com/free-photo/top-view-raspberries-with-leaves-bowl-cup-tea-with-raspberries-green-surface_141793-16225.jpg?w=740&t=st=1701698392~exp=1701698992~hmac=a36c26991f63dae1f3b39688468a14a1c372f430898f9e0e9f3b7bf7612fedb2");
+    background-image: url("./assets/img/profile/raspberries.jpg");
   }
 
   .lightmed2 {
@@ -1416,7 +1416,7 @@ opacity: .2;
   }
   
   .lightmed2 .roast-img {
-    background-image: url("https://img.freepik.com/free-photo/front-view-mokachino-with-whipped-cream-chocolate-table_141793-4644.jpg?w=740&t=st=1701698022~exp=1701698622~hmac=882e0c9257ddb84937f6ba410327af541d66319955c0b045c97f808a70db9b56");
+    background-image: url("./assets/img/profile/chocolatey.jpg");
   }
 
   .med2 {
@@ -1424,7 +1424,7 @@ opacity: .2;
   }
 
   .med2 .roast-img {
-    background-image: url("https://img.freepik.com/free-photo/blackcurrant-confiture-with-glass-juice-white_114579-23281.jpg?w=740&t=st=1701697742~exp=1701698342~hmac=ade319e8a96095fe6534e1e482aefd1b5732a7d285f281fe36d574c72ee541c3");
+    background-image: url("./assets/img/profile/blackcurrant.jpg");
   }
 
   .meddark2 {
@@ -1432,7 +1432,7 @@ opacity: .2;
   }
 
   .meddark2 .roast-img {
-    background-image: url("https://img.freepik.com/free-photo/delicious-red-apples-studio_23-2150811033.jpg?t=st=1701700925~exp=1701704525~hmac=34df08909152c472a98fa96e35a817208706804a3be9c6e2324e38c9e794f6b9&w=740");
+    background-image: url("./assets/img/profile/fruit.jpg");
   }
 
   .dark2 {
@@ -1440,7 +1440,7 @@ opacity: .2;
   }
   
   .dark2 .roast-img {
-    background-image: url("https://img.freepik.com/free-photo/half-top-view-cup-tea-with-fresh-lemons-white-desk-fruit-fresh-citrus-exotic_140725-39951.jpg?w=360&t=st=1701697580~exp=1701698180~hmac=251e549a6f985367beec08cba34e1eaf3699d6181f6e24f2c9d4089ca03dc50f");
+    background-image: url("./assets/img/profile/lemon.jpg");
   }
 
   .fruity {
@@ -1448,7 +1448,7 @@ opacity: .2;
   }
   
   .fruity .roast-img { 
-    background-image: url("https://img.freepik.com/free-photo/office-desktop-with-coffee-cup-cookies_23-2148166782.jpg?w=360&t=st=1701698986~exp=1701699586~hmac=1e7413796b992bd0db1fb00a29adedd0dfa182d846f956728adf217bfcf8e330");
+    background-image: url("./assets/img/profile/acidity.jpg");
   }
 
 
@@ -1491,7 +1491,7 @@ opacity: .2;
     width: 95%;
     margin-inline: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px 5px;
+    gap: 20px;
     padding-top: .5rem;
     justify-items: center;
   }
@@ -1614,6 +1614,12 @@ opacity: .2;
 
     .latest-container .latest-products .product-item {
       height: 400px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .latest-products {
+      gap: 20px 5px;
     }
   }
 
