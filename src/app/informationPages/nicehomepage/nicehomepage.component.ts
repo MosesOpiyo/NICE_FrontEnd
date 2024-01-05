@@ -20,6 +20,7 @@ export class NicehomepageComponent implements OnInit {
   number_value2:any;
   isShowDiv = false;
   isShowDiv2 = false;
+  email: any;
   
 
   //roasted

@@ -2330,13 +2330,13 @@ opacity: .2;
       text-align: center;
     }
 
+    .sellercafe-container .sellercafe-card .cta-image {
+      width: 100%;
+    }
+
     .sellercafe-container .sellercafe-card .cta-image img {
       width: 80%;
       margin-inline: auto;
-    }
-
-    .sellercafe-container .cafe .cta-image img {
-      width: 100%;
     }
 
     .sellercafe-card .cta-content h4 {
@@ -2369,16 +2369,15 @@ opacity: .2;
   }
 
   @media (max-width: 425px) {
-    .sellercafe-container .cafe .cta-image img {
-      width: 90%;
-    }
-
-    .sellercafe-container .seller .cta-image img {
-      width: 85%;
-    }
-
     .sellercafe-container .sellercafe-card .cta-image img {
       height: 450px;
+      width: 85%;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .sellercafe-container .sellercafe-card .cta-image img {
+      width: 95%;
     }
   }
 
@@ -2534,44 +2533,15 @@ opacity: .2;
     margin-bottom: 1rem;
   }
 
-  .subscribe-form form input {
-    border: 1px solid black;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-
-  .subscribe-form form .email-input {
-    background-color: #f0f7fa;
-    font-weight: bold;
-  }
-
-  .subscribe-form form .subscribe-btn {
-    border-top-right-radius: .5rem;
-    border-bottom-right-radius: .5rem;
-    background-color: rgb(5, 5, 90);
-    color: #fff;
-    width: 200px;
-    border: none;
-    transition: all 500ms ease-in-out;
-  }
-
-  .subscribe-form form .subscribe-btn:hover {
-    background-color: #e38c2b;
-    cursor: pointer;
-    color: #000000;
+  .subscribe-container .newsletter {
+    display: flex;
+    align-items: center;
   }
 
   /* media queries */
   @media (max-width: 1024px) {
     .subscribe-container .newsletter {
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .subscribe-form form .subscribe-btn {
-      border-radius: .5rem;
     }
   }
 
@@ -2600,10 +2570,6 @@ opacity: .2;
     }
 
     .subscribe-header {
-      width: 100%;
-    }
-
-    .subscribe-form form input {
       width: 100%;
     }
   }
@@ -3078,7 +3044,7 @@ opacity: .2;
   }
 
   .product-component .product-image {
-    height: 573px;
+    height: 595px;
     background-color: #f7f8fa;
     box-shadow: 0 0 2px 1px #e6e6e6;
     border-radius: .5rem;

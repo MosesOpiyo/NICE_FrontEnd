@@ -77,6 +77,16 @@
     },			
   }); 
 
+  //  Initialize individual product seller info timeline slide 
+  var swiper = new Swiper(".timeline-slide", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
 
   /**
    * Animation on scroll

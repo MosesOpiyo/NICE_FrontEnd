@@ -1724,13 +1724,15 @@
           </div>
       
           <div class="subscribe-form">
-              <form method="get" action="">
+              <form method="get" action="" ngNativeValidate>
                   <div class="newsletter">
-                      <input type="email" class="email-input" maxlength="256" name="Newsletter-Form-4"
-                          aria-label="Enter email address" placeholder="Enter email address" id="Newsletter-Form-4"
-                          required="" />
+                    <div class="label-float">
+                        <input id="email" name="email" [(ngModel)]="email" aria-label="Enter email address"
+                            type="email" placeholder=" " required>
+                        <label for="email">Enter email address</label>
+                    </div>
       
-                      <input type="submit" value="Subscribe" class="subscribe-btn" />
+                    <button mat-raised-button type="submit">Subscribe</button>
                   </div>
               </form>
           </div>
