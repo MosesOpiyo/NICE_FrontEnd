@@ -21,8 +21,50 @@ export class ProductDetailsComponent implements OnInit {
 
   num: number = 1;
   num2: number = 1;
-  isShowDiv = false;
-  isShowDiv2 = false;
+  isShowDiv: boolean  = false;
+  isShowDiv2: boolean  = false;
+
+  // for roasted
+  checkStatus1(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv = false
+    }
+    else {
+      this.isShowDiv = true
+    }
+  }
+
+  checkStatus2(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv = true
+    }
+    else {
+      this.isShowDiv = false
+    }
+  }
+
+  // for green
+  checkStatus3(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv2 = false
+    }
+    else {
+      this.isShowDiv2 = true
+    }
+  }
+
+  checkStatus4(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv2 = true
+    }
+    else {
+      this.isShowDiv2 = false
+    }
+  }
 
   //roasted
   value(value: any) {
@@ -135,29 +177,20 @@ export class ProductDetailsComponent implements OnInit {
   //product form tab index
   tabChange(tabIndex: number) {
     this.activatedTabIndex = tabIndex;
+    // console.log(this.isShowDiv);
+    // console.log(this.isShowDiv2);
+    this.isShowDiv = false;
+    this.isShowDiv2 = false;
+    this.quantityPrice = "";
+    this.grind = "";
+    this.roast_type = "";
+    // console.log(this.isShowDiv);
+    // console.log(this.isShowDiv2);
   }
 
   // detailedtabs tab index
   tabChange2(tabIndex: number) {
     this.activatedTabIndex2 = tabIndex;
-  }
-
-  // for roasted section
-  toggleDivOff() {
-    this.isShowDiv = false;
-  }
-
-  toggleDivOn() {
-    this.isShowDiv = true;
-  }
-
-  // for green tab section
-  toggleDivOff2() {
-    this.isShowDiv2 = false;
-  }
-
-  toggleDivOn2() {
-    this.isShowDiv2 = true;
   }
 
   // increment button for roasted section

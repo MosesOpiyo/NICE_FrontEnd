@@ -1744,7 +1744,7 @@ opacity: .2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .modal-contents .product-form .roasted .option-list,
@@ -1758,7 +1758,7 @@ opacity: .2;
   .buttons-list {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 1.5rem;
     align-items: center;
   }
 
@@ -1774,6 +1774,12 @@ opacity: .2;
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    text-align: start;
+  }
+
+  .radio .radio1 label,
+  .radio .radio2 label {
+    margin-left: .3rem;
   }
 
   .modal-contents .product-form .roasted .incrdecr,
@@ -1803,6 +1809,10 @@ opacity: .2;
     color: #fff;
   }
 
+  .submit-btn .buy {
+    text-align: center;
+  }
+
   .modal-contents .product-form .submit-btn button,
   .product-component .product-form .submit-btn button,
   .submit-btn .buy {
@@ -1816,8 +1826,7 @@ opacity: .2;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    border-radius: .5rem;
-    padding: 2rem;
+    padding: 1rem 2rem;
   }
 
   .modal-contents .product-form .green .packaging,
@@ -1826,6 +1835,15 @@ opacity: .2;
   .product-component .product-form .green .price-lb {
     display: flex;
     gap: 1rem;
+  }
+
+  .product-form .green .green-data {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   /* media queries */
@@ -1837,6 +1855,14 @@ opacity: .2;
     #delivery,
     #delivery2 {
       width: 100%;
+    }
+
+    .modal-contents .product-form .green .packaging,
+    .modal-contents .product-form .green .price-lb,
+    .product-component .product-form .green .packaging,
+    .product-component .product-form .green .price-lb {
+      flex-direction: column;
+      gap: 0rem;
     }
   }
   /* END OF MODAL STYLING */
@@ -1912,6 +1938,10 @@ opacity: .2;
     gap: .5rem;
   }
 
+  .product-form .submit-btn > * {
+    width: 157px;
+  }
+
   .cta-container .cta-content a,
   .modal-contents .product-form .submit-btn button,
   .product-component .product-form .submit-btn button,
@@ -1922,21 +1952,6 @@ opacity: .2;
     font-size: 15px;
     font-weight: 300;
     transition: all 400ms ease-in-out;
-  }
-
-  @media (max-width: 540px) {
-    .modal-contents .product-form .submit-btn button,
-    .submit-btn .buy {
-      padding: .5rem;
-      font-size: .8rem;
-    }
-  }
-
-  @media (max-width: 468px) {
-    .product-form .submit-btn {
-      flex-direction: column;
-      text-align: center;
-    }
   }
 
   .cta-container .cta-content a:hover,
@@ -2187,6 +2202,11 @@ opacity: .2;
     .latest-header h2,
     .roast-header h2 {
       font-size: 1.7rem;
+    }
+
+    .product-form .submit-btn {
+      flex-direction: column;
+      text-align: center;
     }
   }
 
@@ -3111,14 +3131,17 @@ opacity: .2;
     gap: 0;
   }
 
-  .product-component .product-alldetails .product-form .col {
-    margin-bottom: .5rem;
-  }
-
   .product-component .product-form .roasted,
   .product-component .product-form .green {
     padding-block: 2rem;
-    border: 2px solid #00000017;
+    border: 1px solid #00000017;
+    border-radius: .5rem;
+    height: 395px;
+  }
+
+  .product-component .product-form .green table td {
+    padding-inline: 10px;
+    font-size: 1.2rem;
   }
 
   .product-component .product-alldetails p {
@@ -3132,7 +3155,7 @@ opacity: .2;
   /* TABBED INFO SECTION */
   .product-component .farm-tab,
   .farmdetails-component .farm-tab {
-    border-top: 2px solid #00000017;
+    border-top: 1px solid #00000017;
     /* padding-block: .5rem; */
   }
 
@@ -3317,6 +3340,7 @@ opacity: .2;
 
     .product-component .product-alldetails {
       text-align: center;
+      padding: 1rem 0 1rem 0;
     }
 
     .product-component .product-image img {
@@ -3359,6 +3383,12 @@ opacity: .2;
     .product-component .product-image,
     .product-component .product-alldetails {
       width: 100%;
+    }
+
+    .product-component .product-form .roasted,
+    .product-component .product-form .green {
+      height: auto;
+      padding-inline: 0.5rem;
     }
   }
 

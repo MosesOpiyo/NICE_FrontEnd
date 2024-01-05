@@ -107,8 +107,13 @@ export class ProductsComponent implements OnInit {
 
  showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string){
   const dialogRef = this.dialog.open(AddtocartComponent,{
-    minWidth: '250px',
+    width: '30pc',
+    maxWidth: '90vw',
+    autoFocus: false,
     maxHeight: '100vh',
+
+    // minWidth: '250px',
+    // maxHeight: '100vh',
     enterAnimationDuration,
     exitAnimationDuration
   });
