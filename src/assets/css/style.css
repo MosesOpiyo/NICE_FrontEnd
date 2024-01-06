@@ -250,7 +250,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 650px;
+    height: 600px;
     z-index: 2;
   }
   
@@ -322,7 +322,7 @@
     border: none;
   }
   
-  .expo-container .video-container .pure-counter {
+  .expo-container .pure-counter {
     position: relative;
     z-index: 3;
     display: flex;
@@ -451,6 +451,7 @@
       margin-bottom: 2.5rem;
       padding-block: 2rem;
       text-align: center;
+      height: 500px;
     }
     
     .expo-container .timer-header p {
@@ -873,8 +874,8 @@
   }
   
   .expo-container .contact-container .contact-header .contact-h2 h2 {
-    font-size: 4rem;
-    line-height: 3.5rem;
+    font-size: 4.4rem;
+    line-height: 4.4rem;
   }
   
   .expo-container .contact-container .contact-header .contact-list {
@@ -1088,6 +1089,10 @@
       font-size: 2rem;
     }
 
+    .expo-container .timer {
+      height: auto;
+    }
+
     .expo-container .expo-content .expo-text {
       gap: .2rem;
     }
@@ -1097,7 +1102,7 @@
       padding: 9px 40px;
     }
 
-    .expo-container .video-container .pure-counter {
+    .expo-container .pure-counter {
       width: 99%;
     }
 
@@ -1111,7 +1116,7 @@
   }
 
   @media (max-width: 375px) {
-    .expo-container .video-container .pure-counter {
+    .expo-container .pure-counter {
       flex-direction: column;
     }
   }
@@ -1353,7 +1358,6 @@
 
     .expo-container .contact-container .contact-header .contact-h2 h2 {
       font-size: 2.5rem;
-      text-align: center;
       line-height: 2.1rem;
     }
 

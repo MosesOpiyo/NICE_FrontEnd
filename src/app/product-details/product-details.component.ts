@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from '../Service/Cart/cart.service';
 import { CartStoreService } from '../Store/Cart/cart-store.service';
 import { ProductStoreService } from '../Store/Products/product-store.service';
+import { TimelinecontentComponent } from '../timelinecontent/timelinecontent.component';
 
 
 @Component({
@@ -90,6 +91,44 @@ export class ProductDetailsComponent implements OnInit {
      this.myScriptElement.src = "./assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
+
+  timeline = [
+    {
+      id: 1,
+      imgSource: '../../assets/img/farm/farm1.jpg',
+      comment: 'flowering'
+    },
+    {
+      id: 2,
+      imgSource: '../../assets/img/farm/farm2.jpg',
+      comment: 'maturing'
+    },
+    {
+      id: 3,
+      imgSource: '../../assets/img/farm/farm3.jpg',
+      comment: 'harvesting'
+    },
+    {
+      id: 4,
+      imgSource: '../../assets/img/farm/farm4.jpg',
+      comment: 'processing'
+    },
+    {
+      id: 5,
+      imgSource: '../../assets/img/farm/farm5.jpg',
+      comment: 'sale'
+    },
+    {
+      id: 6,
+      imgSource: '../../assets/img/farm/farm6.jpg',
+      comment: 'flowering'
+    },
+    {
+      id: 7,
+      imgSource: '../../assets/img/farm/farm7.jpg',
+      comment: 'flowering'
+    },
+  ]
 
   isLoggedIn:any
   id:any
@@ -221,6 +260,15 @@ export class ProductDetailsComponent implements OnInit {
     else{
       this.num2 -= 1;
     }
+  }
+
+  openFarmDetails() {
+    let dialogRef = this.dialog.open(TimelinecontentComponent,{
+      width: '30pc',
+      maxWidth: '90vw',
+      autoFocus: false,
+      maxHeight: '100vh'
+    })
   }
 
 }
