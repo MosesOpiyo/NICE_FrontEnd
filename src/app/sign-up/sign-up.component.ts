@@ -80,6 +80,7 @@ export class SignUpComponent {
       form.append('email',this.email),
       form.append('phone_number',this.fullPhoneNumber),
       form.append('password',this.password),
+      form.append('session',localStorage.getItem('session'))
       this.service.Register(form)
       this.dialogRef.close()
     }

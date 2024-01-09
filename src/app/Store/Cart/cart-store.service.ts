@@ -14,10 +14,16 @@ export class CartStoreService {
     this.dataSubject.next(data);
   }
   cartData(){
-    this.cart.getCart().subscribe((res:any) => {
-      localStorage.setItem("session",res['session_id'])
-      this.updateData(res)
-    })
+    if(sessionStorage.getItem('Token')){
+      this.cart.getAuthCart().subscribe((res:any) => {
+        this.updateData(res)
+      })
+    }else{
+      this.cart.getCart().subscribe((res:any) => {
+        localStorage.setItem("session",res['session_id'])
+        this.updateData(res)
+      })
+    }
   }
   cartCheck(){
     this.data$.subscribe((res:any)=>{

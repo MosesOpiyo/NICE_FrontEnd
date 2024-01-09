@@ -13,6 +13,12 @@ export class CartService {
   getCart(){
     return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart`)
   }
+  getAuthCart(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart`,{'headers':headers})
+  }
   checkCart(session:any){
     return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart/${session}`)
   }
