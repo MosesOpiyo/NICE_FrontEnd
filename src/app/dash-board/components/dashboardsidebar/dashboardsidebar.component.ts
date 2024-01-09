@@ -142,27 +142,27 @@ export class DashboardsidebarComponent implements OnInit {
 
     {
       id: 2,
-      link: 'dash-board/orders',
+      link: 'dash-board/cart',
       listName: 'Orders',
       icon: 'fa-solid fa-clipboard-list'
     },
 
     {
       id: 3,
-      link: 'dash-board/table',
+      link: 'dash-board/cart',
       listName: 'Wishlist',
       icon: 'fa-solid fa-heart'
     },
 
-    {
-      id: 4,
-      link: 'dash-board/table',
-      listName: 'Cart',
-      icon: 'fa-solid fa-bag-shopping'
-    },
+    // {
+    //   id: 4,
+    //   link: 'dash-board/cart',
+    //   listName: 'Orders',
+    //   icon: 'fa-solid fa-bag-shopping'
+    // },
 
     {
-      id: 5,
+      id: 4,
       link: 'dash-board/table',
       listName: 'Events',
       icon: 'fa-solid fa-calendar'

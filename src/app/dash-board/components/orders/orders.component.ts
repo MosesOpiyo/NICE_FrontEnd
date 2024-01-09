@@ -7,7 +7,7 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
-export class OrdersComponent {
+export class OrdersComponent implements OnInit {
   constructor(private products:ProductsService,private service:AuthenticationService){}
   displayedColumns: string[] = ['name','buyer','quantity','country','marker','is_fulfilled'];
   Orders:any

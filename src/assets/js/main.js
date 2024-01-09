@@ -8,11 +8,11 @@
       effect: "fade",
       loop: true,
       loopFillGroupWithBlank: true,
-      // autoplay: {
-      //   delay: 5000,
-      //   pauseOnMouseEnter: true,
-      //   disableOnInteraction: false,
-      // },
+      autoplay: {
+      delay: 5000,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

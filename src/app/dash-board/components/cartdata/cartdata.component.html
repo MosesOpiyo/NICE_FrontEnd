@@ -1,0 +1,40 @@
+<div>
+    <div class="order-container">
+        <!-- FIRST CARD -->
+        <div class="dashboard-card orders-table">
+
+            <div class="rounded h-100 p-4">
+                <div class="row g-0" style="width: 100%;">
+                    <div class="col-lg-10">
+                        <h4 class="mb-4">Orders</h4>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="cartcontents-mobile" *ngFor="let element of userCart">
+                        <div class="image">
+                            <img src="{{cloudinaryUrl}}{{element['product']['img']}}" alt="Product Image">
+                        </div>
+                
+                        <div class="product-content">
+                            <div class="product-info">
+                                <div class="product-name">
+                                    <p>{{element.product.name}}</p>
+                                </div>
+                
+                                <div class="product-price">
+                                    <p>${{element.price}}</p>
+                                </div>
+                            </div>
+                
+                            <div class="product-quantity">
+                                <p>{{element.quantity}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

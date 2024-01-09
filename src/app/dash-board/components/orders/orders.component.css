@@ -41,3 +41,15 @@ th,td{
         gap: 30px 10px;
     }
 }
+
+@media (max-width: 600px) {
+    .order-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .order-container {
+        width: 95%;
+    }
+}
