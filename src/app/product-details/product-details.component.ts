@@ -43,7 +43,7 @@ export class ProductDetailsComponent implements OnInit {
   activatedTabIndex2: number = 0;
 
   myScriptElement: HTMLScriptElement;
-  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private store:ProductStoreService,private cart:CartService,private cartStore:CartStoreService){
+  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private snackbar:MatSnackBar,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private store:ProductStoreService,private cart:CartService,private cartStore:CartStoreService){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "./assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
@@ -62,8 +62,11 @@ export class ProductDetailsComponent implements OnInit {
   price:any = ""
   roast_type:any = ""
   code:any = 0
+  list:any
+  session:any
 
   cartItem(id:any){
+    const session = this.getSession()
     const parts = this.quantityPrice.split('-');
     this.quantity = parseInt(parts[0],10)
     this.price = parseFloat(parts[1])
@@ -73,10 +76,13 @@ export class ProductDetailsComponent implements OnInit {
     form.append('price',this.price),
     form.append('roast_type',this.roast_type),
     form.append('code',this.item.code)
-    console.log(form)
-    this.cart.addToCart(id,form)
-    this.cart.getCart().subscribe((res:any) => {
-      this.cartStore.updateData(res)
+    this.cart.addToCart(id,this.session,form).subscribe((res:any) => {
+      this.snackbar.open(`${this.item.product.name} has been added to your cart.`, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      this.cartStore.updateCart(this.session)
+
     })
   }
 
@@ -85,12 +91,15 @@ export class ProductDetailsComponent implements OnInit {
     this.grind = 'None'
     this.roast_type = 'None'
     this.price = 100
+    const session = this.getSession()
     let form = new FormData();
     form.append('quantity',this.quantity),
     form.append('grind',this.grind),
     form.append('price',this.price),
     form.append('roast_type',this.roast_type),
-    this.cart.addToCart(id,form)
+    this.cart.addToCart(id,this.session,form).subscribe((res:any) => {
+      this.cartStore.updateCart(this.session)
+    })
     this.ngOnInit()
   }
 
@@ -120,16 +129,36 @@ export class ProductDetailsComponent implements OnInit {
      width: '25pc'
    }); 
  }
-
- ngOnInit(): void {
-  this.id = this.idRouter.snapshot.paramMap.get('id');
+ 
+ getProduct(id:any){
   this.store.data$.subscribe((res:any)=>{
-    console.log()
-    this.item = res[parseInt(this.id) - 1]
-    this.item.rating.forEach((ratingItem:any) => {
-      this.ratings.push(ratingItem.rating)
-        });
-  })
+    if(res == ""){
+      this.store.productData()
+      this.store.data$.subscribe((res:any)=>{
+      })
+    }
+    else{
+      this.list = res
+    }
+    this.list.forEach((product:any) => {
+      if(product.id == id){
+        this.item = product
+      }
+    });
+ })}
+
+ getSession(){
+  this.cartStore.data$.subscribe((res:any) =>{
+     this.session = res['session_id']
+   })
+   
+ }
+ ngOnInit(): void {
+  
+  this.idRouter.params.subscribe(params => {
+   this.getProduct(params['id'])
+   this.getSession()
+  });
   }
 
   //product form tab index

@@ -124,7 +124,7 @@
           <div class="product-card"  *ngFor="let item of products" data-aos="fade-up">
 
             
-            <a routerLink="/Products/{{item.id}}" class="product-item">
+            <a (click)="navigateToChild(item)" class="product-item">
               <div class="product-image">
                   <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
               </div>

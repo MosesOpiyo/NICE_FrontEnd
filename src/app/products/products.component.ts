@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
 
 
   myScriptElement: HTMLScriptElement;
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private product:ProductStoreService){
+  constructor(private dialog: MatDialog,private service:AuthenticationService,private product:ProductStoreService,private route:Router){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
@@ -85,7 +85,10 @@ export class ProductsComponent implements OnInit {
   total:any
   filteredProducts:any
 
-  
+  navigateToChild(item:any) {
+    let data = item 
+    this.route.navigate([`/Products/${item.id}`]);
+  }
 
 
   showLoginDialog(){

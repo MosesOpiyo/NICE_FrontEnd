@@ -11,17 +11,13 @@ export class CartService {
 
   constructor(private http:HttpClient) { }
   getCart(){
-    let headers = new HttpHeaders({
-      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
-    })
-    return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart`,{'headers':headers})
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart`)
   }
-  addToCart(id:number,cartItem:any){
-    let headers = new HttpHeaders({
-      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
-    })
-    this.http.post(`${environment.BASE_URL}Orders&Cart/NewProductInCart/${id}`,cartItem,{'headers':headers}).subscribe((res:any)=>{
-    })
+  checkCart(session:any){
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart/${session}`)
+  }
+  addToCart(id:number,session:any,cartItem:any){
+    return this.http.post(`${environment.BASE_URL}Orders&Cart/NewProductInCart/${session}/${id}`,cartItem)
   }
   removeFromCart(id:number){
     let headers = new HttpHeaders({

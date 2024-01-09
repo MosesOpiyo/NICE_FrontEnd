@@ -56,11 +56,6 @@ export class CartComponent implements OnInit {
    this.ngOnInit()
  }
 
- showSignUpDialog(){
-   const dialogRef = this.dialog.open(SignUpComponent,{
-     width: '25pc'
-   }); 
- }
  subTotal(items:any){
   const list :number[] = []
    items.forEach((item:any)=>{
@@ -70,9 +65,13 @@ export class CartComponent implements OnInit {
    return sum
  }
  Pay(amount:any){
-  this.cartService.makePayment(amount).subscribe((res:any)=>{
-    window.open(res)
-  })
+  if(sessionStorage.getItem("Token")){
+    this.cartService.makePayment(amount).subscribe((res:any)=>{
+      window.open(res)
+    })
+  }else{
+    this.showLoginDialog()
+  }
  }
  removeItem(id:number){
   this.cartService.removeFromCart(id).subscribe((res:any) => {
@@ -84,6 +83,7 @@ export class CartComponent implements OnInit {
 
  ngOnInit(): void {
   this.cart.data$.subscribe((data:any) =>{
+    console.log(data)
     this.userCart = data['products']
   })
  }

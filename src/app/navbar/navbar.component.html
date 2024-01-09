@@ -122,14 +122,14 @@
         </nav>
         
         <div class="credentials-nonmobile">
-            <ul *ngIf="user" class="cart-icon">
+            <ul *ngIf="userCart" class="cart-icon">
                 <li class="cart">
                     <a routerLink="/Cart" title="Cart">
                         <i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i>
                     </a>
                 </li>
             </ul>
-            <ul *ngIf="!user" class="cart-icon">
+            <ul *ngIf="!userCart" class="cart-icon">
                 <li class="cart">
                     <a routerLink="/Cart" title="Cart">
                         <i class="fa-solid fa-cart-shopping two"></i>
