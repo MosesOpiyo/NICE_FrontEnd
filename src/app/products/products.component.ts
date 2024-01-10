@@ -16,8 +16,8 @@ import { AddtocartComponent } from '../addtocart/addtocart.component';
 })
 export class ProductsComponent implements OnInit {
   selectedOption: FormGroup;
-  // p:number = 1;
-  // itemsPerPage:number = 10;
+  p:number = 1;
+  itemsPerPage:number = 10;
   num: number = 1;
   num2: number = 1;
   totalProduct:any;

@@ -142,7 +142,7 @@ export class DashboardsidebarComponent implements OnInit {
 
     {
       id: 2,
-      link: 'dash-board/cart',
+      link: 'dash-board/buyer_orders',
       listName: 'Orders',
       icon: 'fa-solid fa-clipboard-list'
     },

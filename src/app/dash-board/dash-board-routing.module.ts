@@ -38,7 +38,7 @@ const routes: Routes = [
         ]
        },
       { path: 'messages', component: MessagesComponent },
-      { path: 'cart', component: CartdataComponent }
+      { path: 'buyer_orders', component: CartdataComponent }
     ]
   }
 ];

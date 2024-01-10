@@ -10,26 +10,70 @@
                     </div>
                 </div>
 
-                <div>
-                    <div class="cartcontents-mobile" *ngFor="let element of userCart">
+                <div class="col">
+                    <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)" ></app-tabs>
+                </div>
+
+                <div *ngIf="activatedTabIndex == 0">
+                    <div class="cartcontents-mobile">
                         <div class="image">
-                            <img src="{{cloudinaryUrl}}{{element['product']['img']}}" alt="Product Image">
+                            <img src="../../../../assets/img/packaging/coffee-bag-02.png" alt="Product Image">
                         </div>
                 
                         <div class="product-content">
                             <div class="product-info">
                                 <div class="product-name">
-                                    <p>{{element.product.name}}</p>
+                                    <p>Product Name: <span>Chim</span></p>
                                 </div>
+                            </div>
                 
+                            <div class="product-data">
+                                <div class="product-quantity">
+                                    <p>Quantity: <span>4</span></p>
+                                </div>
                                 <div class="product-price">
-                                    <p>${{element.price}}</p>
+                                    <p>$200</p>
+                                </div>
+                                <div class="product-number">
+                                    <p>Order: <span>ABC12345</span></p>
+                                </div>
+                                <div class="delivery-status">
+                                    <p class="delivered">DELIVERED</p>
+                                    <p>on 28-12-2023</p>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="activatedTabIndex == 1">
+                    <div class="cartcontents-mobile">
+                        <div class="image">
+                            <img src="../../../../assets/img/packaging/coffee-bag-01.png" alt="Product Image">
+                        </div>
+                
+                        <div class="product-content">
+                            <div class="product-info">
+                                <div class="product-name">
+                                    <p>Product Name: <span>Mettle</span></p>
                                 </div>
                             </div>
                 
-                            <div class="product-quantity">
-                                <p>{{element.quantity}}</p>
-                            </div>
+                            <div class="product-data">
+                                <div class="product-quantity">
+                                    <p>Quantity: <span>2</span></p>
+                                </div>
+                                <div class="product-price">
+                                    <p>$100</p>
+                                </div>
+                                <div class="product-number">
+                                    <p>Order No: <span>ABC12345</span></p>
+                                </div>
+                                <div class="delivery-status">
+                                    <p class="notdelivered">FAILED DELIVERY</p>
+                                    <p>on 28-12-2023</p>
+                                </div>
+                            </div>  
                         </div>
                     </div>
                 </div>

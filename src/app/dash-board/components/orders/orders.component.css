@@ -42,11 +42,11 @@ th,td{
     }
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .order-container {
         width: 100%;
     }
-}
+} */
 
 @media (max-width: 425px) {
     .order-container {

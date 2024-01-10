@@ -10,9 +10,17 @@ import { environment } from 'src/environments/environment.development';
   styleUrl: './cartdata.component.css'
 })
 export class CartdataComponent implements OnInit {
+  // order tabs
+  tabs: string [] = ['Orders', 'Cancelled Orders'];
+  activatedTabIndex: number = 0;
+
   user:Profile;
   userCart:any | null = null;
   cloudinaryUrl = environment.CLOUDINARY_URL
+
+  tabChange(tabIndex: number) {
+    this.activatedTabIndex = tabIndex;
+  }
 
    constructor(private cart:CartStoreService, private store:AuthenticationStoreService){}
 

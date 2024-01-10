@@ -2030,26 +2030,24 @@
   }
 
   .trip-container .checklist-list .checklist-card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
     align-items: center;
-    gap: 1rem;
     background-color: #ebebeb;
     height: 270px;
     border-radius: 4px;
-    padding-block: 1rem;
-    justify-content: center;
+    padding: 1rem;
   }
 
   .trip-container .checklist-list .checklist-card .checklist-icon {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 100%;
   }
 
   .trip-container .checklist-list .checklist-card .checklist-icon img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
 
@@ -2059,6 +2057,10 @@
     .trip-container .tips-container .tips-content,
     .trip-container .trip-purpose .purpose-list {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .trip-container .checklist-container .checklist-list {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -2175,6 +2177,10 @@
     .trip-container .tips-container .tips-content {
       grid-template-columns: 1fr;
     }
+
+    .trip-container .checklist-container .checklist-list {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 425px) {
@@ -2218,10 +2224,6 @@
 
     .trip-container .places .places-card {
       height: 250px;
-    }
-
-    .trip-container .checklist-container .checklist-list {
-      grid-template-columns: 1fr;
     }
   }
   

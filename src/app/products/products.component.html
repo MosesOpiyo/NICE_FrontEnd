@@ -121,7 +121,7 @@
 
         <div *ngIf="filteredProducts == null" class="productlist-content">
           <!-- paginate: { itemsPerPage: itemsPerPage, currentPage: p } -->
-          <div class="product-card"  *ngFor="let item of products" data-aos="fade-up">
+          <div class="product-card"  *ngFor="let item of products  | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
 
             
             <a routerLink="/Products/{{item.id}}" class="product-item">
@@ -190,7 +190,7 @@
         
         <div *ngIf="filteredProducts != null" class="productlist-content">
           <!-- paginate: { itemsPerPage: itemsPerPage, currentPage: p } -->
-          <div class="product-card"  *ngFor="let item of filteredProducts" data-aos="fade-up">
+          <div class="product-card"  *ngFor="let item of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
 
             
             <a routerLink="/Products/{{item.id}}" class="product-item">
@@ -256,9 +256,9 @@
           </div>
         </div>
 
-        <!-- <div class="products-pagination">
+        <div class="products-pagination">
           <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        </div> -->
+        </div>
                              
       </div>
     </div>
