@@ -37,8 +37,8 @@
                 <ng-container matColumnDef="delete">
                   <th mat-header-cell *matHeaderCellDef> Action </th>
                   <td mat-cell *matCellDef="let element">
-                    <button (click)="removeItem(element.id)" mat-fab color="warn" aria-label="Example icon button with a delete icon">
-                      <mat-icon>delete</mat-icon>
+                    <button (click)="removeItem(element.id)" aria-label="delete icon">
+                      <i class="fa-solid fa-trash-can"></i>
                     </button>
                   </td>
                 </ng-container>
@@ -69,8 +69,8 @@
               </div>
   
               <div class="product-action">
-                <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
-                  <mat-icon>delete</mat-icon>
+                <button (click)="removeItem(element.id)" aria-label="delete icon">
+                  <i class="fa-solid fa-trash-can"></i>
                 </button>
               </div>
             </div>
@@ -81,6 +81,9 @@
             <h4>Sub Total: <span>{{subTotal(userCart) | currency:'USD'}}</span></h4>
             <div class="completion">
               <button (click)="Pay(subTotal(userCart))" mat-raised-button>CHECKOUT ({{subTotal(userCart) | currency:'USD'}})</button>
+            </div>
+            <div class="backshop">
+              <a routerLink="/Products"><i class="fa-solid fa-chevron-left"></i>&nbsp;CONTINUE SHOPPING</a>
             </div>
           </div>
 

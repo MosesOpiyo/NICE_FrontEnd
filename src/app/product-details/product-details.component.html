@@ -92,16 +92,16 @@
                         <div class="buttons-list">
                           <div class="radio">
                             <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2() checked>
+                              <input type="radio" id="onetime" name="subscribe" value="one-time" checked (change)="checkStatus1($event)">
                               <label for="onetime">One time purchase</label><br>
                             </div>
 
                             <div class="radio2">
-                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
+                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (change)="checkStatus2($event)">
                               <label for="subscribe">Subscribe & save 10%</label><br>
                             </div>
                           
-                            <div *ngIf="isShowDiv2">
+                            <div *ngIf="isShowDiv">
                               <select id="greendelivery" name="delivery" title="delivery" required>
                                 <option value="">Choose Delivery Period...</option>
                                 <option value="2 weeks">Deliver every 2 weeks</option>
@@ -131,38 +131,41 @@
                   </div>
 
                   <div *ngIf="activatedTabIndex == 1" class="green">
+                    <div class="green-data">
                       <div class="packaging">
-                        <p>Packaging</p>
+                        <p>Packaging:</p>
                         <p>Grainpro & Outer Jutebag</p>
                       </div>
 
                       <div class="price-lb">
-                        <p>Price/Lb</p>
+                        <p>Price/Lb:</p>
 
-                        <div class="lb">
-                          <p>1 - 660 lbs</p>
-                          <p>660lbs +</p>
-                        </div>
-
-                        <div class="lb-price">
-                          <p>- $7.70</p>
-                          <p>- $6.93</p>
-                        </div>
+                        <table>
+                          <tr>
+                            <td>1 - 660 lbs</td>
+                            <td>$7.70</td>
+                          </tr>
+                          <tr>
+                            <td>660lbs +</td>
+                            <td>$6.93</td>
+                          </tr>
+                        </table>
                       </div>
+                    </div>
 
                       <form action="/" method="post" ngNativeValidate>
                         <div class="radio">
                           <div class="radio1">
-                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff() checked>
+                            <input type="radio" id="onetime" name="subscribe" value="one-time" checked (change)="checkStatus3($event)">
                             <label for="onetime">One time purchase</label><br>
                         </div>
 
                         <div class="radio1">
-                            <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
+                            <input type="radio" id="subscribe" name="subscribe" value="subscribed" (change)="checkStatus4($event)">
                             <label for="subscribe">Subscribe & save 10%</label><br>
                         </div>
                         
-                          <div *ngIf="isShowDiv">
+                          <div *ngIf="isShowDiv2">
                             <select id="delivery" name="delivery" title="delivery" required>
                               <option value="">Choose Delivery Period...</option>
                               <option value="2 weeks">Deliver every 2 weeks</option>
@@ -202,6 +205,19 @@
           </div>
 
           <div *ngIf="activatedTabIndex2 == 0" class="farm-tab">
+            <div class="swiper timeline-slide">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let data of timeline">
+                  <img src="{{data.imgSource}}" alt="timeline images">
+                  <p>{{data.comment}}</p>
+                </div>
+              </div>
+              <button type="button" (click)="openFarmDetails()">VIEW MORE TIMELINE PHOTOS</button>
+              <!-- <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div> -->
+              <!-- <div class="swiper-pagination"></div> -->
+            </div>
+          
 
             <div class="owners">
               <div class="owner-image">

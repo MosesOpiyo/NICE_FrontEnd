@@ -276,6 +276,38 @@ export class DetailsComponent implements OnInit {
         maxHeight: '90vh'
       })
     }
+    else if (num == 30) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:30, value: 'Name',key:'name',data:this.user.user.username},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 31) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:31, value: 'Phone Number',key:'phone_number',data:this.user.user.phone_number},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 32) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:32, value: 'Email',key:'email',data:this.user.user.email},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
+    else if (num == 33) {
+      this.dialog.open(SavechangesComponent, {
+        data: {id:33, value: 'Shipping Address',key:'shipping_address',data:this.user.user.type},
+        width: '25pc',
+        autoFocus: false,
+        maxHeight: '90vh'
+      })
+    }
   }
 
   showProfileDialog(){

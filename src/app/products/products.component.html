@@ -6,7 +6,7 @@
       <div class="sidebar">
         <app-productsnavbar (dataToParent)="handleDataFromChild($event)"></app-productsnavbar>
         
-        <div>
+        <div class="profiletype">
           <div class="widget-title" (click)=toggleVarietyOn() >
             <h2>Coffee Profile&nbsp;
               <i *ngIf="!isShowVariety" class="fa-solid fa-chevron-down"></i>
@@ -47,7 +47,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="coffeeorigin">
           <div class="widget-title" (click)=toggleFarmsOn()>
             <h2>Coffee Origin&nbsp;
               <i *ngIf="!isShowFarms" class="fa-solid fa-chevron-down"></i>
@@ -88,7 +88,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="specialproducts">
           <div class="widget-title"(click)=togglePriceOn()>
             <h2>Special Products&nbsp;
               <i *ngIf="!isShowPrice" class="fa-solid fa-chevron-down"></i>
@@ -121,7 +121,7 @@
 
         <div *ngIf="filteredProducts == null" class="productlist-content">
           <!-- paginate: { itemsPerPage: itemsPerPage, currentPage: p } -->
-          <div class="product-card"  *ngFor="let item of products" data-aos="fade-up">
+          <div class="product-card"  *ngFor="let item of products  | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
 
             
             <a (click)="navigateToChild(item)" class="product-item">
@@ -190,7 +190,7 @@
         
         <div *ngIf="filteredProducts != null" class="productlist-content">
           <!-- paginate: { itemsPerPage: itemsPerPage, currentPage: p } -->
-          <div class="product-card"  *ngFor="let item of filteredProducts" data-aos="fade-up">
+          <div class="product-card"  *ngFor="let item of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
 
             
             <a routerLink="/Products/{{item.id}}" class="product-item">
@@ -256,9 +256,9 @@
           </div>
         </div>
 
-        <!-- <div class="products-pagination">
+        <div class="products-pagination">
           <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        </div> -->
+        </div>
                              
       </div>
     </div>

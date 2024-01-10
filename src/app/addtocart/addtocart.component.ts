@@ -9,8 +9,53 @@ export class AddtocartComponent implements OnInit {
 
   number_value:number = 1;
   number_value2:number = 1;
-  isShowDiv = false;
-  isShowDiv2 = false;
+  isShowDiv: boolean  = false;
+  isShowDiv2: boolean  = false;
+  quantityPrice:any = "";
+  grind:any = "";
+  roast_type:any = "";
+
+  // for roasted
+  checkStatus1(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv = false
+    }
+    else {
+      this.isShowDiv = true
+    }
+  }
+
+  checkStatus2(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv = true
+    }
+    else {
+      this.isShowDiv = false
+    }
+  }
+
+  // for green
+  checkStatus3(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv2 = false
+    }
+    else {
+      this.isShowDiv2 = true
+    }
+  }
+
+  checkStatus4(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv2 = true
+    }
+    else {
+      this.isShowDiv2 = false
+    }
+  }
 
   constructor(){}
 
@@ -24,24 +69,11 @@ export class AddtocartComponent implements OnInit {
    // addtocart dialog tab index
    tabChange(tabIndex: number) {
     this.activatedTabIndex = tabIndex;
-  }
-
-  // for roasted section
-  toggleDivOff() {
     this.isShowDiv = false;
-  }
-
-  toggleDivOn() {
-    this.isShowDiv = true;
-  }
-
-  // for green tab section
-  toggleDivOff2() {
     this.isShowDiv2 = false;
-  }
-
-  toggleDivOn2() {
-    this.isShowDiv2 = true;
+    this.quantityPrice = "";
+    this.grind = "";
+    this.roast_type = "";
   }
 
   // increment button for roasted section

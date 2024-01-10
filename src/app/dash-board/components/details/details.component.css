@@ -209,3 +209,15 @@ img {
         text-align: center;
     }
 }
+
+/* @media (max-width: 600px) {
+  .card-container {
+      width: 100%;
+  }
+} */
+
+@media (max-width: 425px) {
+  .card-container {
+      width: 95%;
+  }
+}

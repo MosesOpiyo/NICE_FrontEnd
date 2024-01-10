@@ -250,7 +250,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 650px;
+    height: 600px;
     z-index: 2;
   }
   
@@ -322,7 +322,7 @@
     border: none;
   }
   
-  .expo-container .video-container .pure-counter {
+  .expo-container .pure-counter {
     position: relative;
     z-index: 3;
     display: flex;
@@ -451,6 +451,7 @@
       margin-bottom: 2.5rem;
       padding-block: 2rem;
       text-align: center;
+      height: 500px;
     }
     
     .expo-container .timer-header p {
@@ -631,7 +632,13 @@
   .about-component .how-header h2::after,
   .about-component .team-header h2::after,
   .partners-header h2::after,
-  .gallery-header h2::after {
+  .gallery-header h2::after,
+  .trip-container .trip-purpose .purpose-header h2::after,
+  .trip-container .expenses .expenses-header h2::after,
+  .trip-container .meet-farmers .meetfarmers-header h2::after,
+  .trip-container .tips-container .tips-header h2::after,
+  .itinerary h2::after,
+  .tripdetails-container .meet-farmers .meetfarmers-header h2::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -867,8 +874,8 @@
   }
   
   .expo-container .contact-container .contact-header .contact-h2 h2 {
-    font-size: 4rem;
-    line-height: 3.5rem;
+    font-size: 4.4rem;
+    line-height: 4.4rem;
   }
   
   .expo-container .contact-container .contact-header .contact-list {
@@ -1082,6 +1089,10 @@
       font-size: 2rem;
     }
 
+    .expo-container .timer {
+      height: auto;
+    }
+
     .expo-container .expo-content .expo-text {
       gap: .2rem;
     }
@@ -1091,7 +1102,7 @@
       padding: 9px 40px;
     }
 
-    .expo-container .video-container .pure-counter {
+    .expo-container .pure-counter {
       width: 99%;
     }
 
@@ -1105,7 +1116,7 @@
   }
 
   @media (max-width: 375px) {
-    .expo-container .video-container .pure-counter {
+    .expo-container .pure-counter {
       flex-direction: column;
     }
   }
@@ -1347,7 +1358,6 @@
 
     .expo-container .contact-container .contact-header .contact-h2 h2 {
       font-size: 2.5rem;
-      text-align: center;
       line-height: 2.1rem;
     }
 
@@ -1383,7 +1393,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("../img/Trip/trip1.3.jpg");
+    background-image: url("../img/Trip/trip1.1.jpg");
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1486,17 +1496,17 @@
     background-image: url("https://images.pexels.com/photos/13142739/pexels-photo-13142739.jpeg?auto=compress&cs=tinysrgb&w=600");
   }
   
-  .trip-container .places .places-card.geralds-place {
+  .trip-container .places .places-card.january {
     grid-area: 2 / 1 / 3 / 3;
     background-image: url("https://images.pexels.com/photos/51947/tuscany-grape-field-nature-51947.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   }
 
-  .trip-container .places .places-card.ragis-place {
+  .trip-container .places .places-card.july {
     grid-area: 2 / 3 / 3 / 5;
     background-image: url("https://img.freepik.com/free-photo/one-farmer-working-tranquil-autumn-meadow-generated-by-ai_188544-33340.jpg?w=826&t=st=1699616731~exp=1699617331~hmac=97e6ecf148c14a01254a983501dacab49482f1eebf47e31e856e758c194bf9f3");
   }
 
-  .trip-container .places .places-card.ndaroini-place {
+  .trip-container .places .places-card.november {
     grid-area: 2 / 5 / 3 / 7;
     background-image: url("https://img.freepik.com/free-photo/india-woods-hill-station-fog-coffee_1376-22.jpg?w=900&t=st=1699616912~exp=1699617512~hmac=2ef68f213cf1ca4ecf744cc01b0f7f5051aef3dd37143efbf21404b5f5df5524");
   }
@@ -1520,31 +1530,27 @@
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
+    width: 95%;
+    margin-inline: auto;
   }
   
   .trip-container .trip-purpose .purpose-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    width: 90%;
-    margin-inline: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    width: 100%;
     height: max-content;
-    /* gap: .5rem; */
+    gap: .5rem;
   }
   
   .trip-container .trip-purpose .purpose-list > * {
-    flex-basis: 100%;
-    /* border: 2px solid #0000002b; */
-    height: 350px;
-    /* border-radius: 15px; */
+    height: 500px;
   }
   
   .trip-container .purpose-list .purpose-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -1564,66 +1570,23 @@
   }
 
   .trip-container .purpose-list .purpose-card.meetfarmer {
-    /* background-color: #d0e957; */
-    background-image: url("https://img.freepik.com/premium-photo/portrait-female-african-farmer_216356-738.jpg?w=740");
+    background-image: url("../img/Trip/farmer.jpg");
   }
 
   .trip-container .purpose-list .purpose-card.process {
-    /* background-color: #e0e0e0; */
-    background-image: url("https://img.freepik.com/free-photo/colorful-cogwheels-arrangement-top-view_23-2149382397.jpg?size=626&ext=jpg&ga=GA1.1.771609611.1699605036&semt=sph");
+    background-image: url("../img/Trip/process.jpg");
   }
 
   .trip-container .purpose-list .purpose-card.taste {
-    /* background-color: #b3a0ce; */
-    background-image: url("https://img.freepik.com/free-photo/girl-having-cup-coffee-enjoying-taste_144627-67507.jpg?w=740&t=st=1699609828~exp=1699610428~hmac=c7d52240b13a9fc96e1feeb0fb0f5de11496eaf2053da30139dac5bf6cf6a57d");
+    background-image: url("../img/Trip/cupping2.jpg");
   }
 
   .trip-container .purpose-list .purpose-card.relations {
-    /* background-color: #fdc5c6; */
-    background-image: url("https://img.freepik.com/free-photo/business-collaboration-success-by-handshake_23-2148339368.jpg?w=740&t=st=1699611729~exp=1699612329~hmac=23a2f2ac220a2b29b3ad23bf2e1e01e8b4d176af43cd8a637812f5b375dbede4");
-  }
-
-  /* .trip-container .purpose-list .purpose-card.farmer-image,
-  .trip-container .purpose-list .purpose-card.process-image,
-  .trip-container .purpose-list .purpose-card.relations-image,
-  .trip-container .purpose-list .purpose-card.tasting-image {
-    padding: 0;
-  } */
-
-  .trip-container .purpose-list .purpose-card img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: right;
-    /* border-radius: 15px; */
-  }
-
-  /* .trip-container .purpose-list .purpose-card.process-image img,
-  .trip-container .purpose-list .purpose-card.relations-image img,
-  .trip-container .purpose-list .purpose-card.tasting-image img {
-    object-position: center;
-  } */
-  
-  .trip-container .purpose-list .purpose-card .purpose-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .trip-container .purpose-list .purpose-card .purpose-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .trip-container .purpose-list .purpose-card .purpose-icon i {
-    font-size: 3rem;
+    background-image: url("../img/Trip/relationships2.jpg");
   }
   
   .trip-container .purpose-list .purpose-card .purpose-content h2 {
-    margin-bottom: .5rem;
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     font-weight: 300;
   }
 
@@ -1641,33 +1604,49 @@
     text-align: center;
   }
   
-  .trip-container .expenses .expenses-content {
-    /* border: 2px solid blue; */
-    display: flex;
-    gap: .5rem;
-  }
-  
-  .trip-container .expenses .expenses-content > * {
-    flex-basis: 100%;
-    /* border: 2px solid red; */
-  }
-  
-  .trip-container .expenses .expenses-content .expenses-image {
-    height: 500px;
-  }
-  
-  .trip-container .expenses .expenses-content .expenses-image img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    object-position: center;
-  }
-  
   .trip-container .expenses .expenses-content .expenses-info {
     display: flex;
-    flex-direction: column;
     gap: 1.5rem;
     text-align: start;
+    padding-inline: 1rem;
+  }
+
+  .trip-container .expenses .expenses-content .expenses-info > * {
+    flex-basis: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .trip-container .expenses .expenses-content .expenses-info > * ul {
+    text-align: start;
+  }
+
+  .costs-header {
+    text-align: center;
+  }
+
+  .costs-icons .fa-dollar-sign {
+    font-size: 9rem;
+  }
+
+  .covered .costs-icons i {
+    color: green;
+  }
+
+  .not-covered .costs-icons i {
+    color: red;
+  }
+
+  .costs-icons sup {
+    position: relative;
+    top: -4.5rem;
+  }
+
+  .costs-icons sup i {
+    font-size: 4.5rem;
   }
   
   .trip-container .expenses-info .covered ul li i {
@@ -1679,7 +1658,8 @@
   }
   
   /* MEET FARMERS */
-  .trip-container .meet-farmers {
+  .trip-container .meet-farmers,
+  .tripdetails-container .meet-farmers {
     margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
@@ -1690,15 +1670,28 @@
   .trip-container .trip-purpose .purpose-header h2,
   .trip-container .expenses .expenses-header h2,
   .trip-container .meet-farmers .meetfarmers-header h2,
+  .tripdetails-container .meet-farmers .meetfarmers-header h2,
   .trip-container .tips-container .tips-header h2,
-  .itinerary h2 {
+  .itinerary h2,
+  .tripdetail-title h2,
+  .checklist-header h2 {
     font-size: 3rem;
     margin-bottom: .5rem;
+    position: relative;
   }
 
-  .trip-container .farmers-list .farmerlist-card {
+  .trip-container .farmers-list,
+  .tripdetails-container .farmers-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    width: 100%;
+  }
+
+  .trip-container .farmers-list .farmerlist-card,
+  .tripdetails-container .farmers-list .farmerlist-card {
     height: 250px;
-    background-image: url("../img/farm/farm8.jpg");
+    /* background-image: url("../img/farm/farm8.jpg"); */
     background-position: center;
     background-size: cover;
     display: flex;
@@ -1710,7 +1703,32 @@
     z-index: 1;
   }
 
-  .trip-container .farmers-list .farmerlist-card::after {
+  .trip-container .farmers-list .farmerlist-card.ndaroini,
+  .tripdetails-container .farmers-list .farmerlist-card.ndaroini {
+    height: 250px;
+    background-image: url("../../../assets/img/farm/farm2.jpg");
+  }
+  
+  .trip-container .farmers-list .farmerlist-card.geralds,
+  .tripdetails-container .farmers-list .farmerlist-card.geralds {
+    height: 250px;
+    background-image: url("../../../assets/img/farm/farm1.jpg");
+  }
+  
+  .trip-container .farmers-list .farmerlist-card.ragis,
+  .tripdetails-container .farmers-list .farmerlist-card.ragis {
+    height: 250px;
+    background-image: url("../../../assets/img/farm/farm3.jpg");
+  }
+  
+  .trip-container .farmers-list .farmerlist-card.jungle,
+  .tripdetails-container .farmers-list .farmerlist-card.jungle {
+    height: 250px;
+    background-image: url("../../../assets/img/farm/farm4.jpg");
+  }
+
+  .trip-container .farmers-list .farmerlist-card::after,
+  .tripdetails-container .farmers-list .farmerlist-card::after {
     position: absolute;
     z-index: -1;
     content: "";
@@ -1722,7 +1740,9 @@
   }
 
   .trip-container .farmers-list .farmerlist-card button,
-  .places-card button {
+  .tripdetails-container .farmers-list .farmerlist-card button,
+  .places-card button,
+  .booknow-btn button {
     padding: .7rem 3rem;
     border: none;
     background-color: #000000;
@@ -1732,13 +1752,15 @@
   }
 
   .trip-container .farmers-list .farmerlist-card button:hover,
-  .places-card button:hover {
+  .tripdetails-container .farmers-list .farmerlist-card button:hover,
+  .places-card button:hover,
+  .booknow-btn button:hover {
     background-color: #f7f7f7;
     color: #000000;
     letter-spacing: 3px;
   }
   
-  .trip-container .farmers-content {
+  .farminfo-container .farmers-content {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
@@ -1746,26 +1768,38 @@
     margin-inline: auto;
   }
 
-  .trip-container .farm-info {
+  .farminfo-container .farm-info {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
+
+  .farminfo-container swiper-container {
+    height: 100%;
+  }
+
+  .farminfo-container .farm-story i {
+    color: orange;
+  }
   
-  .trip-container .farm-info .farmer-images {
+  .farminfo-container .farm-info .farmer-images {
     height: 350px;
     width: 100%;
     position: relative;
   }
   
-  .trip-container .farm-info .farmer-images img {
+  .farminfo-container .farm-info .farmer-images img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: top;
   }
+
+  .farminfo-container .farm-item {
+    height: 350px;
+  }
   
-  .trip-container .farmer-card .farm-story {
+  .farminfo-container .farmer-card .farm-story {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1777,7 +1811,7 @@
     gap: 1rem;
   }
   
-  .trip-container .farmer-card .farm-name h2 {
+  .farminfo-container .farmer-card .farm-name h2 {
     margin-bottom: 1rem;
     font-weight: normal;
     text-decoration-color: #00000066;
@@ -1790,8 +1824,7 @@
     align-items: center;
     margin-bottom: 4rem;
     height: 550px;
-    width: 95%;
-    margin-inline: auto;
+    background-color: #ebebeb;
   }
   
   .trip-container .cupping-container > * {
@@ -1803,16 +1836,50 @@
     flex-direction: column;
     gap: 2rem;
     justify-content: center;
-    /* align-items: center; */
+    text-align: center;
     padding-inline: 10px;
     font-size: 1.5rem;
   }
+
+  .trip-container .cupping-container .cupping-text h2 {
+    font-weight: 400;
+    font-size: 3rem;
+  }
+
   .trip-container .cupping-container .cupping-text p {
     width: 100%;
-    font-weight: 300;
+    font-weight: 200;
     font-size: 1.8rem;
-    line-height: 1.5rem;
-    text-align: left;
+    line-height: 1.8rem;
+  }
+
+  .trip-container .cupping-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .trip-container .cupping-icons .cuppingicon-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .trip-container .cupping-icons .cuppingicon-card p {
+    font-size: 1.2rem;
+  }
+
+  .trip-container .cupping-icons .cuppingicon-card .cupping-icon {
+    height: 50px;
+    width: 50px;
+  }
+
+  .trip-container .cupping-icons .cuppingicon-card .cupping-icon img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   
   .trip-container .cupping-container .cupping-text button {
@@ -1820,9 +1887,9 @@
     color: #fff;
     padding: 10px 60px;
     font-size: 1.2rem;
-    align-self: flex-start;
     border: none;
     transition: all 0.6s ease-in-out;
+    align-self: center;
   }
   
   .trip-container .cupping-container .cupping-image {
@@ -1832,27 +1899,6 @@
     background-size: cover;
     background-position: center;
   }
-
-  /* .cupping-container .cupping-image .cupping-card.image-one {
-    grid-area: 1 / 1 / 3 / 4;
-    z-index: 1;
-  }
-
-  .cupping-container .cupping-image .cupping-card.image-two {
-    grid-area: 3 / 1 / 5 / 4;
-  }
-
-  .cupping-container .cupping-image .cupping-card.image-three {
-    grid-area: 1 / 4 / 5 / 7;
-  } 
-  
- .trip-container .cupping-container .cupping-image img {
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-  } */
   
   /* TIPS CONTAINER */
   .trip-container .tips-container {
@@ -1870,12 +1916,14 @@
   }
   
   .trip-container .tips-container .tips-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    width: 100%;
     gap: .5rem;
   }
   
   .trip-container .tips-container .tips-content > * {
-    flex-basis: 100%;
     border: 1px solid #00000014;
     padding: 1rem;
     height: 400px;
@@ -1938,77 +1986,81 @@
   
   /* CHECKLIST */
   .trip-container .checklist-container {
-    /* border: 2px solid red; */
-    margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
     align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding-block: 3rem;
   }
   
+  .trip-container .checklist-container::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #e8e2d6;
+  }
+
+  .trip-container .checklist-container::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 50%;
+    width: 100%;
+    height: 50%;
+    background-color: #f5f5f5;
+  }
+
   .trip-container .checklist-container .checklist-list {
-    text-align: start;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+    margin-inline: auto;
+    gap: .5rem;
   }
-  
-  .trip-container .checklist-container .checklist-list ul li {
-    padding-block: .5rem;
-    display: flex;
+
+  .trip-container .checklist-list .checklist-card {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
     align-items: center;
+    background-color: #ebebeb;
+    height: 270px;
+    border-radius: 4px;
+    padding: 1rem;
   }
-  
-  .trip-container .checklist-container .checklist-list ul li i {
-    font-size: 2rem;
-    color: green;
+
+  .trip-container .checklist-list .checklist-card .checklist-icon {
+    height: 80px;
+    width: 100%;
+  }
+
+  .trip-container .checklist-list .checklist-card .checklist-icon img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 
   /* ALL ORIGIN TRIP MEDIA QUERIES */
   /* TRIP HERO media queries */
   @media (max-width: 1024px) {
-    .trip-container .tips-container .tips-content {
-      justify-content: center;
-      flex-wrap: wrap;
+    .trip-container .tips-container .tips-content,
+    .trip-container .trip-purpose .purpose-list {
+      grid-template-columns: 1fr 1fr;
     }
 
-    .trip-container .tips-container .tips-content > * {
-      max-width: 400px;
-      min-width: 300px;
-    }
-  }
-
-  @media (max-width: 950px) {
-    .trip-container .expenses .expenses-content {
-      flex-direction: column;
-    }
-
-    .trip-container .expenses .expenses-content > * {
-      flex-basis: auto;
-    }
-
-    .trip-container .expenses .expenses-content .expenses-info {
-      flex-direction: row;
-      padding-inline: 1rem;
-    }
-
-    .trip-container .expenses .expenses-content .expenses-info > * {
-      flex-basis: 100%;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .trip-container .expenses .expenses-content .expenses-info {
-      flex-direction: column;
-      padding-inline: 1rem;
-    }
-
-    .trip-container .expenses .expenses-content .expenses-info > * {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .trip-container .expenses .expenses-content .expenses-image {
-      height: 400px;
+    .trip-container .checklist-container .checklist-list {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -2025,16 +2077,16 @@
       flex-direction: column;
     }
 
-    .trip-container .trip-purpose .purpose-list {
-      width: 95%;
+    .farminfo-container .farm-item {
+      height: 300px;
     }
 
-    .trip-container .farm-info .farmer-images {
+    .farminfo-container .farm-info .farmer-images {
       width: 100%;
       height: 350px;
     }
 
-    .trip-container .farm-info .farmer-images img {
+    .farminfo-container .farm-info .farmer-images img {
       object-position: top;
     }
 
@@ -2043,6 +2095,7 @@
       height: auto;
       gap: 1rem;
       text-align: center;
+      padding-bottom: 2rem;
     }
 
     .trip-container .cupping-container .cupping-text button {
@@ -2059,10 +2112,6 @@
 
     .trip-container .cupping-container .cupping-image {
       height: 300px;
-    }
-
-    .trip-container .cupping-container .cupping-image img {
-      margin-inline: auto;
     }
 
     .trip-container .cupping-container .cupping-text {
@@ -2082,60 +2131,35 @@
       grid-area: 1 / 2 / 2 / 3;
     }
 
-    .trip-container .places .places-card.ndaroini-place {
+    .trip-container .places .places-card.november {
       grid-area: 2 / 1 / 3 / 3;
     }
 
-    .trip-container .places .places-card.geralds-place {
+    .trip-container .places .places-card.january {
       grid-area: 3 / 1 / 4 / 2;
     }
 
-    .trip-container .places .places-card.ragis-place {
+    .trip-container .places .places-card.july {
       grid-area: 3 / 2 / 4 / 3;
     }
 
     .trip-container .places .places-card {
       height: 300px;
     }
+
+    .trip-container .checklist-container .checklist-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 600px) {
     .trip-container .trip-purpose .purpose-list {
       grid-template-columns: 1fr;
-      grid-template-rows: auto;
     }
 
-    /* .trip-container .purpose-list .purpose-card.farmer-image {
-      grid-area: 1 / 1 / 2 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.meetfarmer {
-      grid-area: 2 / 1 / 3 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.process-image {
-      grid-area: 3 / 1 / 4 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.process {
-      grid-area: 4 / 1 / 5 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.tasting-image {
-      grid-area: 5 / 1 / 6 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.taste {
-      grid-area: 6 / 1 / 7 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.relations-image {
-      grid-area: 7 / 1 / 8 / 2;
-    } */
-
-    /* .trip-container .purpose-list .purpose-card.relations {
-      grid-area: 8 / 1 / 9 / 2;
-    } */
+    .trip-container .expenses .expenses-content .expenses-info {
+      flex-direction: column;
+    }
 
     .trip-container .trip-purpose .purpose-list > * {
       height: 200px;
@@ -2143,16 +2167,19 @@
 
     .trip-container .purpose-list .purpose-card {
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
-    .trip-container .purpose-list .purpose-card .purpose-icon {
-      display: none;
+    .trip-container .farmers-list,
+    .tripdetails-container .farmers-list {
+      grid-template-columns: 1fr ;
     }
 
-    .trip-container .cupping-container {
-      padding: 3rem 0rem;
+    .trip-container .tips-container .tips-content {
+      grid-template-columns: 1fr;
+    }
+
+    .trip-container .checklist-container .checklist-list {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -2161,7 +2188,8 @@
       width: 100%;
     }
 
-    .trip-container .trip-content h2 {
+    .trip-container .trip-content h2,
+    .trip-container .cupping-container .cupping-text h2 {
       font-size: 2.3rem;
     }
 
@@ -2169,22 +2197,16 @@
       padding: 10px 20px;
     }
 
-    .trip-container .expenses .expenses-content .expenses-image img {
-      object-fit: cover;
-    }
-
     .trip-container .trip-purpose .purpose-header h2,
     .trip-container .expenses .expenses-header h2,
     .trip-container .meet-farmers .meetfarmers-header h2,
+    .tripdetails-container .meet-farmers .meetfarmers-header h2,
     .trip-container .tips-container .tips-header h2,
-    .itinerary h2 {
+    .itinerary h2,
+    .tripdetail-title h2,
+    .checklist-header h2 {
       font-size: 2.2rem;
       line-height: 2rem;
-    }
-
-    .trip-container .tips-container .tips-content > * {
-      max-width: 300px;
-      min-width: 200px;
     }
 
     .trip-container .places {
@@ -2194,9 +2216,9 @@
 
     .trip-container .places .places-card.farm-place,
     .trip-container .places .places-card.bonus-place,
-    .trip-container .places .places-card.ndaroini-place,
-    .trip-container .places .places-card.geralds-place,
-    .trip-container .places .places-card.ragis-place {
+    .trip-container .places .places-card.november,
+    .trip-container .places .places-card.january,
+    .trip-container .places .places-card.july {
       grid-area: auto;
     }
 

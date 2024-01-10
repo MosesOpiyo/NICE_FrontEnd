@@ -1,1 +1,49 @@
-<p>tripdetails works!</p>
+<app-navbar></app-navbar>
+
+<section class="tripdetails-container">
+        <div class="tripdetail-title">
+            <h2>{{trip.name}} Origin Trip</h2>
+        </div>
+    
+        <div class="tripdetail-info">
+            <p><i class="fa-regular fa-calendar"></i> &nbsp; {{trip.month}} 5th - 11th</p>
+            <p><i class="fa-solid fa-location-dot"></i> &nbsp; {{trip.region}}, {{trip.name}}</p>
+        </div>
+
+         <!-- BOOK NOW BUTTON -->
+         <div class="booknow-btn">
+            <button type="button" (click)="showTripRegisterDialog()">BOOK YOUR SLOT NOW</button>
+        </div>
+
+        <!-- FARMS SECTION -->
+        <div class="meet-farmers">
+          <div class="meetfarmers-header">
+            <h2>The farms you'll visit</h2>
+          </div>
+        
+          <div class="farmers-list">
+            <div class="farmerlist-card" ngClass={{data.shortFarmName}} *ngFor="let data of farmerData">
+                <h2>{{data.farmName}}</h2>
+                <button type="button" (click)="openFarmDetails(data.id)">View Farm Details</button>
+            </div>
+          </div>
+        </div>
+    
+        <!-- ITINERARY -->
+        <div class="itinerary">
+            <h2>Origin Trip Itinerary</h2>
+            <a href="../../../assets/docs/itinerary/2023 Nyeri Origin Trip flier.pdf" download="{{trip.region}} Origin Trip Itinerary"
+                id="itinerary">
+                Download {{trip.region}} Origin Trip Itinerary
+                &nbsp;&nbsp;
+                <i class="fa fa-file-pdf"></i>
+            </a>
+        </div>
+
+        <!-- BOOK NOW BUTTON -->
+        <div class="booknow-btn">
+            <button type="button" (click)="showTripRegisterDialog()">BOOK YOUR SLOT NOW</button>
+        </div>
+</section>
+
+<app-footer></app-footer>

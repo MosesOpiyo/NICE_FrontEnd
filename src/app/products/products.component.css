@@ -44,6 +44,10 @@
   /* top: 140px; */
 }
 
+:host ::ng-deep .ngx-pagination a:not([href]):not([class]) {
+  color: #000;
+}
+
 .shop-component .product-item .product-details {
   display: flex;
   justify-content: space-between;

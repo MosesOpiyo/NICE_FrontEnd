@@ -46,12 +46,12 @@
 
 @media (max-width: 600px) {
     .side-nav {
-        min-width: 55px;
+        min-width: 100px;
         max-width: 100px;
     }
 
     .main { 
-        width: calc(100vw - 110px);
+        width: calc(100vw - 100px);
         left: 100px;
     }
 }

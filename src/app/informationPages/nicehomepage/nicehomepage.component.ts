@@ -20,6 +20,7 @@ export class NicehomepageComponent implements OnInit {
   number_value2:any;
   isShowDiv = false;
   isShowDiv2 = false;
+  email: any;
   
 
   //roasted
@@ -273,7 +274,9 @@ export class NicehomepageComponent implements OnInit {
 
   showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string){
     const dialogRef = this.dialog.open(AddtocartComponent,{
-      minWidth: '250px',
+      width: '30pc',
+      maxWidth: '90vw',
+      autoFocus: false,
       maxHeight: '100vh',
       enterAnimationDuration,
       exitAnimationDuration

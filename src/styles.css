@@ -79,9 +79,9 @@ text-decoration: none;
 color: inherit;
 }
 
-.logo img {
+/* .logo img {
 border-radius: 50px;
-}
+} */
 
 /* input,
 button,
@@ -103,13 +103,22 @@ font-size: 2.5rem;
 line-height: 53px;
 }
 
+
+/* added after move to hero */
+.roast-header h2 {
+  font-weight: 300;
+}
+#hero .one .roast-header h2 {
+  color: #fff;
+}
+
 .roast-header h2,
 .latest-header h2 {
 position: relative;
 z-index: 2;
 }
 
-.roast-header h2::after,
+/* .roast-header h2::after, */
 .latest-header h2::after {
 content: "";
 position: absolute;
@@ -263,18 +272,16 @@ opacity: .2;
     font-size: 1rem;
   }
 
-  .navbar ul li.cart i{
-    font-size: 1.3rem;
-  }
-
   .mobile-icons ul li i {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .navbar {
     padding: 0;
     display: flex;
     align-items: center;
+    /* style because of absolute logo(logo width + navbar p-left) */
+    /* margin-left: 90.8px; */
   }
 
   .navbar ul {
@@ -392,6 +399,14 @@ opacity: .2;
     visibility: visible;
   }
 
+  .mobile-icons .dropdown.user-case ul li {
+    padding: 5px;
+  }
+
+  .mobile-icons .dropdown.user-case ul li:hover > a {
+    color: #67b0d1;
+  }
+
   .navbar .dropdown.user-case ul,
   .dashboard-container .nav-links .dropdown ul {
     padding: 0;
@@ -399,12 +414,14 @@ opacity: .2;
   }
 
   .mobile-icons .dropdown.user-case a {
-    padding: 8px 17px;
+    padding: 2px;
     display: flex;
     align-items: center;
     gap: .4rem;
     cursor: pointer;
     color: #000000;
+    font-size: .8rem;
+    text-align: center;
   }
 
   .mobile-icons .dropdown.user-case a i {
@@ -578,12 +595,13 @@ opacity: .2;
     .mobile-icons {
       display: block;
       padding-inline: .5rem;
+      /* margin-left: 90.8px; */
     }
 
     .mobile-icons ul {
       display: flex;
       align-items: center;
-      gap: 3rem;
+      gap: 1.5rem;
     }
 
     .mobile-icons button {
@@ -593,6 +611,11 @@ opacity: .2;
     }
 
     .mobile-icons ul li i {
+      color: #212529;
+      transition: all 350ms ease-in-out;
+    }
+
+    .mobile-icons ul li i:hover {
       color: #000000;
     }
 
@@ -615,14 +638,27 @@ opacity: .2;
     }
   }
 
+  /* @media (max-width: 768px) {
+    .mobile-icons {
+      margin-left: 80.8px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .mobile-icons {
+      margin-left: 70.8px;
+    }
+  } */
+
+  @media (max-width: 425px) {
+    .mobile-icons ul {
+      gap: 1rem;
+    }
+  }
+
   @media (max-width: 320px) {
     .mobile-icons ul {
-      gap: 0rem;
-    }
-
-    .mobile-icons .dropdown.user-case a {
-      padding-inline: 7px;
-      font-size: .8rem;
+      gap: .5rem;
     }
   }
 
@@ -798,11 +834,11 @@ opacity: .2;
     z-index: 1;
   }
 
-  .hero .swiper-slide.two .slide-header {
+  /* .hero .swiper-slide.two .slide-header {
     justify-content: center;
-  }
+  } */
 
-  .hero .swiper-slide.two .slide-header::after {
+  /* .hero .swiper-slide.two .slide-header::after {
       content: '';
       height: 100%;
       width: 100%;
@@ -812,8 +848,9 @@ opacity: .2;
       position: absolute;
       opacity: .3;
       z-index: -1;
-  }
+  } */
 
+  .hero .swiper-slide.two .slide-header,
   .hero .swiper-slide.three .slide-header {
     justify-content: flex-start;
   }
@@ -824,7 +861,7 @@ opacity: .2;
     right: 5%;
   }
 
-  .hero .swiper-slide.two .slide-header .hero-content {
+  /* .hero .swiper-slide.two .slide-header .hero-content {
     width: 80%;
     right: 0;
     display: flex;
@@ -833,8 +870,9 @@ opacity: .2;
     align-items: center;
     justify-content: center;
     text-align: center;
-  }
+  } */
 
+  .hero .swiper-slide.two .slide-header .hero-content,
   .hero .swiper-slide.three .slide-header .hero-content {
     width: 40%;
     right: 0;
@@ -868,11 +906,6 @@ opacity: .2;
 
   #hero .hero-content h2 {
     margin-block: 25px;
-  }
-
-  #hero .two .hero-content h2,
-  #hero .two .hero-content p {
-    color: #fff;
   }
 
   #hero p {
@@ -966,7 +999,7 @@ opacity: .2;
   }
 
   .hero .two .swiper-content::after {
-    background-color: #00000012;
+    background-color: #f6d7bb;
   }
 
   .hero .two .slide-header .image {
@@ -997,9 +1030,11 @@ opacity: .2;
   }
 
   .hero .two .slide-header {
+    background-image: url("./assets/img/hero/hero2.1.jpg");
     background-position: center;
-    /* background-size: cover; */
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.47), rgba(0, 0, 0, 0.51)), url("./assets/img/hero/hero2.jpg") top center;
+    background-size: cover;
+    /* background-position: center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.47), rgba(0, 0, 0, 0.51)), url("./assets/img/hero/hero2.jpg") top center; */
   }
 
   /* HERO SLIDE THREE */
@@ -1008,13 +1043,13 @@ opacity: .2;
   }
 
   .hero .three .slide-header {
-    background-image: url("./assets/img/hero/hero3.1.jpg");
-    background-position: top;
+    background-image: url("./assets/img/hero/hero3.jpg");
+    background-position: center;
     background-size: cover;
   }
 
   .hero .three .swiper-content::after {
-    background-color: #f8f8f7;
+    background-color: #f5e7da;
   }
 
   .three .hero-btn {
@@ -1056,10 +1091,12 @@ opacity: .2;
       padding: 10px 40px;
     }
 
+    .hero .swiper-slide.two .slide-header,
     .hero .swiper-slide.three .slide-header {
       justify-content: center;
     }
 
+    .hero .swiper-slide.two .slide-header .hero-content,
     .hero .swiper-slide.three .slide-header .hero-content {
       text-align: center;
       padding-left: 0rem;
@@ -1108,6 +1145,7 @@ opacity: .2;
       top: 15%;
     }
 
+    .hero .swiper-slide.two .slide-header .hero-content,
     .hero .swiper-slide.three .slide-header .hero-content {
         width: 50%;
     }
@@ -1176,11 +1214,17 @@ opacity: .2;
       color: #fff;
     }
 
-    .hero .three .slide-header {
-      background-image: url("./assets/img/hero/hero3mobile.jpg");
+    .hero .two .slide-header {
+      background-image: url("./assets/img/hero/hero2.1mobile.jpg");
       background-position: center;
     }
 
+    .hero .three .slide-header {
+      background-image: url("./assets/img/hero/hero3mobile2.jpg");
+      background-position: center;
+    }
+
+    .hero .swiper-slide.two .slide-header::after,
     .hero .swiper-slide.three .slide-header::after {
       content: '';
       height: 100%;
@@ -1325,7 +1369,9 @@ opacity: .2;
 
   /* ROAST SECTION */
   .roast-container {
-    margin: 2rem 0 3rem 0;
+    /* margin: 2rem 0 3rem 0; */
+    /* added below style after move to hero */
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1353,12 +1399,18 @@ opacity: .2;
     text-align: center;
   }
 
-  .roast-card p {
+  .roast-card p,
+  #roast-card p {
     transition: all 500ms ease-in-out;
     position: relative;
     z-index: 2;
     top: -50%;
     line-height: 1.2rem;
+    letter-spacing: 3px;
+    /* added after moving div to hero section */
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-bottom: 0;
   }
 
   .roast-card .roast-img {
@@ -1378,16 +1430,12 @@ opacity: .2;
     background-blend-mode: multiply;
   }
 
-  .roast-card p {
-    letter-spacing: 3px;
-  }
-
   .light2 {
     grid-area: light;
   }
 
   .light2 .roast-img {
-    background-image: url("https://img.freepik.com/free-photo/top-view-raspberries-with-leaves-bowl-cup-tea-with-raspberries-green-surface_141793-16225.jpg?w=740&t=st=1701698392~exp=1701698992~hmac=a36c26991f63dae1f3b39688468a14a1c372f430898f9e0e9f3b7bf7612fedb2");
+    background-image: url("./assets/img/profile/raspberries.jpg");
   }
 
   .lightmed2 {
@@ -1395,7 +1443,7 @@ opacity: .2;
   }
   
   .lightmed2 .roast-img {
-    background-image: url("https://img.freepik.com/free-photo/front-view-mokachino-with-whipped-cream-chocolate-table_141793-4644.jpg?w=740&t=st=1701698022~exp=1701698622~hmac=882e0c9257ddb84937f6ba410327af541d66319955c0b045c97f808a70db9b56");
+    background-image: url("./assets/img/profile/chocolatey.jpg");
   }
 
   .med2 {
@@ -1403,7 +1451,7 @@ opacity: .2;
   }
 
   .med2 .roast-img {
-    background-image: url("https://img.freepik.com/free-photo/blackcurrant-confiture-with-glass-juice-white_114579-23281.jpg?w=740&t=st=1701697742~exp=1701698342~hmac=ade319e8a96095fe6534e1e482aefd1b5732a7d285f281fe36d574c72ee541c3");
+    background-image: url("./assets/img/profile/blackcurrant.jpg");
   }
 
   .meddark2 {
@@ -1411,7 +1459,7 @@ opacity: .2;
   }
 
   .meddark2 .roast-img {
-    background-image: url("https://img.freepik.com/free-photo/delicious-red-apples-studio_23-2150811033.jpg?t=st=1701700925~exp=1701704525~hmac=34df08909152c472a98fa96e35a817208706804a3be9c6e2324e38c9e794f6b9&w=740");
+    background-image: url("./assets/img/profile/fruit.jpg");
   }
 
   .dark2 {
@@ -1419,7 +1467,7 @@ opacity: .2;
   }
   
   .dark2 .roast-img {
-    background-image: url("https://img.freepik.com/free-photo/half-top-view-cup-tea-with-fresh-lemons-white-desk-fruit-fresh-citrus-exotic_140725-39951.jpg?w=360&t=st=1701697580~exp=1701698180~hmac=251e549a6f985367beec08cba34e1eaf3699d6181f6e24f2c9d4089ca03dc50f");
+    background-image: url("./assets/img/profile/lemon.jpg");
   }
 
   .fruity {
@@ -1427,7 +1475,7 @@ opacity: .2;
   }
   
   .fruity .roast-img { 
-    background-image: url("https://img.freepik.com/free-photo/office-desktop-with-coffee-cup-cookies_23-2148166782.jpg?w=360&t=st=1701698986~exp=1701699586~hmac=1e7413796b992bd0db1fb00a29adedd0dfa182d846f956728adf217bfcf8e330");
+    background-image: url("./assets/img/profile/acidity.jpg");
   }
 
 
@@ -1470,7 +1518,7 @@ opacity: .2;
     width: 95%;
     margin-inline: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px 5px;
+    gap: 10px;
     padding-top: .5rem;
     justify-items: center;
   }
@@ -1599,7 +1647,6 @@ opacity: .2;
   @media (max-width: 425px) {
     .latest-products {
       grid-template-columns: 1fr;
-      gap: 15px;
     }
 
     .latest-container .latest-products .product-item {
@@ -1721,7 +1768,7 @@ opacity: .2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .modal-contents .product-form .roasted .option-list,
@@ -1735,7 +1782,7 @@ opacity: .2;
   .buttons-list {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 1.5rem;
     align-items: center;
   }
 
@@ -1751,6 +1798,12 @@ opacity: .2;
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    text-align: start;
+  }
+
+  .radio .radio1 label,
+  .radio .radio2 label {
+    margin-left: .3rem;
   }
 
   .modal-contents .product-form .roasted .incrdecr,
@@ -1780,6 +1833,10 @@ opacity: .2;
     color: #fff;
   }
 
+  .submit-btn .buy {
+    text-align: center;
+  }
+
   .modal-contents .product-form .submit-btn button,
   .product-component .product-form .submit-btn button,
   .submit-btn .buy {
@@ -1793,8 +1850,7 @@ opacity: .2;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    border-radius: .5rem;
-    padding: 2rem;
+    padding: 1rem 2rem;
   }
 
   .modal-contents .product-form .green .packaging,
@@ -1803,6 +1859,15 @@ opacity: .2;
   .product-component .product-form .green .price-lb {
     display: flex;
     gap: 1rem;
+  }
+
+  .product-form .green .green-data {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   /* media queries */
@@ -1814,6 +1879,14 @@ opacity: .2;
     #delivery,
     #delivery2 {
       width: 100%;
+    }
+
+    .modal-contents .product-form .green .packaging,
+    .modal-contents .product-form .green .price-lb,
+    .product-component .product-form .green .packaging,
+    .product-component .product-form .green .price-lb {
+      flex-direction: column;
+      gap: 0rem;
     }
   }
   /* END OF MODAL STYLING */
@@ -1889,6 +1962,10 @@ opacity: .2;
     gap: .5rem;
   }
 
+  .product-form .submit-btn > * {
+    width: 157px;
+  }
+
   .cta-container .cta-content a,
   .modal-contents .product-form .submit-btn button,
   .product-component .product-form .submit-btn button,
@@ -1899,21 +1976,6 @@ opacity: .2;
     font-size: 15px;
     font-weight: 300;
     transition: all 400ms ease-in-out;
-  }
-
-  @media (max-width: 540px) {
-    .modal-contents .product-form .submit-btn button,
-    .submit-btn .buy {
-      padding: .5rem;
-      font-size: .8rem;
-    }
-  }
-
-  @media (max-width: 468px) {
-    .product-form .submit-btn {
-      flex-direction: column;
-      text-align: center;
-    }
   }
 
   .cta-container .cta-content a:hover,
@@ -2165,6 +2227,11 @@ opacity: .2;
     .roast-header h2 {
       font-size: 1.7rem;
     }
+
+    .product-form .submit-btn {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   @media (max-width: 320px) {
@@ -2287,13 +2354,13 @@ opacity: .2;
       text-align: center;
     }
 
+    .sellercafe-container .sellercafe-card .cta-image {
+      width: 100%;
+    }
+
     .sellercafe-container .sellercafe-card .cta-image img {
       width: 80%;
       margin-inline: auto;
-    }
-
-    .sellercafe-container .cafe .cta-image img {
-      width: 100%;
     }
 
     .sellercafe-card .cta-content h4 {
@@ -2326,16 +2393,15 @@ opacity: .2;
   }
 
   @media (max-width: 425px) {
-    .sellercafe-container .cafe .cta-image img {
-      width: 90%;
-    }
-
-    .sellercafe-container .seller .cta-image img {
-      width: 85%;
-    }
-
     .sellercafe-container .sellercafe-card .cta-image img {
       height: 450px;
+      width: 85%;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .sellercafe-container .sellercafe-card .cta-image img {
+      width: 95%;
     }
   }
 
@@ -2491,44 +2557,15 @@ opacity: .2;
     margin-bottom: 1rem;
   }
 
-  .subscribe-form form input {
-    border: 1px solid black;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-
-  .subscribe-form form .email-input {
-    background-color: #f0f7fa;
-    font-weight: bold;
-  }
-
-  .subscribe-form form .subscribe-btn {
-    border-top-right-radius: .5rem;
-    border-bottom-right-radius: .5rem;
-    background-color: rgb(5, 5, 90);
-    color: #fff;
-    width: 200px;
-    border: none;
-    transition: all 500ms ease-in-out;
-  }
-
-  .subscribe-form form .subscribe-btn:hover {
-    background-color: #e38c2b;
-    cursor: pointer;
-    color: #000000;
+  .subscribe-container .newsletter {
+    display: flex;
+    align-items: center;
   }
 
   /* media queries */
   @media (max-width: 1024px) {
     .subscribe-container .newsletter {
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .subscribe-form form .subscribe-btn {
-      border-radius: .5rem;
     }
   }
 
@@ -2557,10 +2594,6 @@ opacity: .2;
     }
 
     .subscribe-header {
-      width: 100%;
-    }
-
-    .subscribe-form form input {
       width: 100%;
     }
   }
@@ -2899,10 +2932,13 @@ opacity: .2;
         overflow: hidden;
         height: auto;
         gap: .2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: max-content max-content;
       }
 
       .shop-component .sidebar .widget-title {
-        border: 2px solid #0000001c;
+        border: 2px solid #0000000d;
       }
   
       .shop-component .products .productlist {
@@ -2924,8 +2960,20 @@ opacity: .2;
         margin-bottom: 0rem;
       }
 
+      .shop-component .products .sidebar .profiletype {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+
+      .shop-component .products .sidebar .coffeeorigin {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+
+      .shop-component .products .sidebar .specialproducts {
+        grid-area: 2 / 3 / 3 / 4;
+      }
+
       .shop-component .products .sidebar > * ul {
-        border: 2px solid #0000001c;
+        border: 2px solid #0000000d;
         border-top: none;
       }
   
@@ -2943,14 +2991,22 @@ opacity: .2;
 
     @media (max-width: 425px) {
       .shop-component .products .sidebar {
-        flex-direction: column;
-        margin-inline: auto;
-        width: max-content;
+        width: 100%;
         gap: .5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content max-content max-content;
       }
 
-      .shop-component .sidebar .widget-title {
-        width: 150px;
+      .shop-component .products .sidebar .profiletype {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+
+      .shop-component .products .sidebar .coffeeorigin {
+        grid-area: 3 / 1 / 4 / 2;
+      }
+
+      .shop-component .products .sidebar .specialproducts {
+        grid-area: 4 / 1 / 5 / 2;
       }
 
       .shop-component .sidebar h2 {
@@ -3012,7 +3068,7 @@ opacity: .2;
   }
 
   .product-component .product-image {
-    height: 500px;
+    height: 595px;
     background-color: #f7f8fa;
     box-shadow: 0 0 2px 1px #e6e6e6;
     border-radius: .5rem;
@@ -3065,14 +3121,17 @@ opacity: .2;
     gap: 0;
   }
 
-  .product-component .product-alldetails .product-form .col {
-    margin-bottom: .5rem;
-  }
-
   .product-component .product-form .roasted,
   .product-component .product-form .green {
     padding-block: 2rem;
-    border: 2px solid #00000017;
+    border: 1px solid #00000017;
+    border-radius: .5rem;
+    height: 395px;
+  }
+
+  .product-component .product-form .green table td {
+    padding-inline: 10px;
+    font-size: 1.2rem;
   }
 
   .product-component .product-alldetails p {
@@ -3086,7 +3145,7 @@ opacity: .2;
   /* TABBED INFO SECTION */
   .product-component .farm-tab,
   .farmdetails-component .farm-tab {
-    border-top: 2px solid #00000017;
+    border-top: 1px solid #00000017;
     /* padding-block: .5rem; */
   }
 
@@ -3271,6 +3330,7 @@ opacity: .2;
 
     .product-component .product-alldetails {
       text-align: center;
+      padding: 1rem 0 1rem 0;
     }
 
     .product-component .product-image img {
@@ -3313,6 +3373,12 @@ opacity: .2;
     .product-component .product-image,
     .product-component .product-alldetails {
       width: 100%;
+    }
+
+    .product-component .product-form .roasted,
+    .product-component .product-form .green {
+      height: auto;
+      padding-inline: 0.5rem;
     }
   }
 

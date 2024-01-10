@@ -8,11 +8,11 @@
       effect: "fade",
       loop: true,
       loopFillGroupWithBlank: true,
-      // autoplay: {
-      //   delay: 5000,
-      //   pauseOnMouseEnter: true,
-      //   disableOnInteraction: false,
-      // },
+      autoplay: {
+      delay: 5000,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -76,6 +76,39 @@
       clickable: true,
     },			
   }); 
+
+  //  Initialize individual product seller info timeline slide 
+  var swiper = new Swiper(".timeline-slide", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {     
+			// when window width is 425px - 640px
+			 425: {       
+         slidesPerView: 2,
+         spaceBetween: 10     
+       },    
+      // when window width is 640px - 900px    
+       640: {       
+         slidesPerView: 3,       
+         spaceBetween: 20     
+       },
+       // when window width is 640px - 900px    
+       900: {       
+        slidesPerView: 4,       
+        spaceBetween: 20     
+      }
+    },
+  });
 
 
   /**

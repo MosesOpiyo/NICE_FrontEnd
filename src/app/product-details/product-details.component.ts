@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from '../Service/Cart/cart.service';
 import { CartStoreService } from '../Store/Cart/cart-store.service';
 import { ProductStoreService } from '../Store/Products/product-store.service';
+import { TimelinecontentComponent } from '../timelinecontent/timelinecontent.component';
 
 
 @Component({
@@ -21,8 +22,50 @@ export class ProductDetailsComponent implements OnInit {
 
   num: number = 1;
   num2: number = 1;
-  isShowDiv = false;
-  isShowDiv2 = false;
+  isShowDiv: boolean  = false;
+  isShowDiv2: boolean  = false;
+
+  // for roasted
+  checkStatus1(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv = false
+    }
+    else {
+      this.isShowDiv = true
+    }
+  }
+
+  checkStatus2(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv = true
+    }
+    else {
+      this.isShowDiv = false
+    }
+  }
+
+  // for green
+  checkStatus3(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv2 = false
+    }
+    else {
+      this.isShowDiv2 = true
+    }
+  }
+
+  checkStatus4(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv2 = true
+    }
+    else {
+      this.isShowDiv2 = false
+    }
+  }
 
   //roasted
   value(value: any) {
@@ -48,6 +91,44 @@ export class ProductDetailsComponent implements OnInit {
      this.myScriptElement.src = "./assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
+
+  timeline = [
+    {
+      id: 1,
+      imgSource: '../../assets/img/farm/farm1.jpg',
+      comment: 'flowering'
+    },
+    {
+      id: 2,
+      imgSource: '../../assets/img/farm/farm2.jpg',
+      comment: 'maturing'
+    },
+    {
+      id: 3,
+      imgSource: '../../assets/img/farm/farm3.jpg',
+      comment: 'harvesting'
+    },
+    {
+      id: 4,
+      imgSource: '../../assets/img/farm/farm4.jpg',
+      comment: 'processing'
+    },
+    {
+      id: 5,
+      imgSource: '../../assets/img/farm/farm5.jpg',
+      comment: 'sale'
+    },
+    {
+      id: 6,
+      imgSource: '../../assets/img/farm/farm6.jpg',
+      comment: 'flowering'
+    },
+    {
+      id: 7,
+      imgSource: '../../assets/img/farm/farm7.jpg',
+      comment: 'flowering'
+    },
+  ]
 
   isLoggedIn:any
   id:any
@@ -164,29 +245,20 @@ export class ProductDetailsComponent implements OnInit {
   //product form tab index
   tabChange(tabIndex: number) {
     this.activatedTabIndex = tabIndex;
+    // console.log(this.isShowDiv);
+    // console.log(this.isShowDiv2);
+    this.isShowDiv = false;
+    this.isShowDiv2 = false;
+    this.quantityPrice = "";
+    this.grind = "";
+    this.roast_type = "";
+    // console.log(this.isShowDiv);
+    // console.log(this.isShowDiv2);
   }
 
   // detailedtabs tab index
   tabChange2(tabIndex: number) {
     this.activatedTabIndex2 = tabIndex;
-  }
-
-  // for roasted section
-  toggleDivOff() {
-    this.isShowDiv = false;
-  }
-
-  toggleDivOn() {
-    this.isShowDiv = true;
-  }
-
-  // for green tab section
-  toggleDivOff2() {
-    this.isShowDiv2 = false;
-  }
-
-  toggleDivOn2() {
-    this.isShowDiv2 = true;
   }
 
   // increment button for roasted section
@@ -217,6 +289,15 @@ export class ProductDetailsComponent implements OnInit {
     else{
       this.num2 -= 1;
     }
+  }
+
+  openFarmDetails() {
+    let dialogRef = this.dialog.open(TimelinecontentComponent,{
+      width: '30pc',
+      maxWidth: '90vw',
+      autoFocus: false,
+      maxHeight: '100vh'
+    })
   }
 
 }

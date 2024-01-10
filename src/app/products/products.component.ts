@@ -16,8 +16,8 @@ import { AddtocartComponent } from '../addtocart/addtocart.component';
 })
 export class ProductsComponent implements OnInit {
   selectedOption: FormGroup;
-  // p:number = 1;
-  // itemsPerPage:number = 10;
+  p:number = 1;
+  itemsPerPage:number = 10;
   num: number = 1;
   num2: number = 1;
   totalProduct:any;
@@ -110,8 +110,13 @@ export class ProductsComponent implements OnInit {
 
  showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string){
   const dialogRef = this.dialog.open(AddtocartComponent,{
-    minWidth: '250px',
+    width: '30pc',
+    maxWidth: '90vw',
+    autoFocus: false,
     maxHeight: '100vh',
+
+    // minWidth: '250px',
+    // maxHeight: '100vh',
     enterAnimationDuration,
     exitAnimationDuration
   });
