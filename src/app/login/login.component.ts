@@ -48,6 +48,7 @@ isLoggedIn: boolean;
       form.append('username',username),
       form.append('email',this.socialUser.email),
       form.append('password',this.socialUser.idToken.slice(0,50)),
+      form.append('session',localStorage.getItem('session'))
       this.service.googleRegistration(form)
       this.dialogRef.close();
     }
