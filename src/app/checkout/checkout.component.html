@@ -1,0 +1,282 @@
+<div class="checkout-container">
+
+    <div class="navbar-container">
+        <div class="cart-link">
+            <i class="fa-solid fa-chevron-left"></i>
+            <a routerLink="/Cart">Back to Cart</a>
+        </div>
+
+        <div class="logo">
+          <a routerLink="/">
+            <img src="../../assets/img/logo4.png" alt="coffee bean" class="img-fluid">
+          </a>
+        </div>
+
+        <div class="secure-checkout">
+            <span>
+                <i class="fa-solid fa-lock"></i>
+                Secure Checkout
+            </span>
+        </div>
+    </div>
+
+
+    <div class="checkout-content">
+        <div class="checkout-form">
+            <div class="actionbuttons">
+                <div class="login">
+                    <button mat-raised-button type="button" (click)="showLoginDialog()">
+                        <span class="logintext">Returning Customer?</span>
+                        Log In
+                    </button>
+                </div>
+
+                <div class="signup">
+                    <button mat-raised-button type="button" (click)="showSignUpDialog()">
+                        <span class="signuptext">Don't have an account?</span>
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+
+            <form action="" ngNativeValidate>
+
+                <div class="email">
+                    <h2>Contact Information</h2>
+                    <div class="label-float">
+                        <input id="email" name="email" [(ngModel)]="email" class="form-input" type="email" placeholder=" " required>
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+
+                <div class="shipping">
+                    <h2>Shipping Address</h2>
+
+                    <div class="shipping-content">
+                        <div class="country-selector">
+                            <select class="crs-country" title="country" data-region-id="region" data-default-option="Select a country"></select>
+                        </div>
+
+                        <div class="label-float fname">
+                            <input id="firstname" name="First name" [(ngModel)]="firstname" class="form-input"
+                                type="text" placeholder=" " required>
+                            <label for="firstname">First Name</label>
+                        </div>
+    
+                        <div class="label-float lname">
+                            <input id="lastname" name="Last name" [(ngModel)]="lastname" class="form-input"
+                                type="text" placeholder=" " required>
+                            <label for="lastname">Last Name</label>
+                        </div>
+
+                        <div class="label-float cname">
+                            <input id="companyname" name="Company name" [(ngModel)]="companyname" class="form-input"
+                                type="text" placeholder=" ">
+                            <label for="companyname">Company Name (optional)</label>
+                        </div>
+
+                        <div class="label-float address">
+                            <input id="address" name="Address" [(ngModel)]="address" class="form-input"
+                                type="text" placeholder=" " required>
+                            <label for="address">Address</label>
+                        </div>
+
+                        <div class="label-float apartment">
+                            <input id="apartment" name="Apartment" [(ngModel)]="apartment" class="form-input"
+                                type="text" placeholder=" ">
+                            <label for="apartment">Apartment, Suite, Unit etc (optional)</label>
+                        </div>
+
+                        <div class="region-selector">
+                            <select id="region" title="region" data-blank-option="No country selected" data-default-option="Select a state/region/territory"></select>
+                        </div>
+
+                        <div class="label-float city">
+                            <input id="city" name="City" [(ngModel)]="city" class="form-input"
+                                type="text" placeholder=" " required>
+                            <label for="city">City</label>
+                        </div>
+
+                        <div class="label-float postcode">
+                            <input id="postcode" name="Post code" [(ngModel)]="postcode" class="form-input"
+                                type="text" placeholder=" " required>
+                            <label for="postcode">Postcode / ZIP Code</label>
+                        </div>
+
+                        <div class="label-float phone">
+                            <input id="phone" name="Phone number" [(ngModel)]="phone" class="form-input"
+                                type="tel" placeholder=" " required>
+                            <label for="phone">Phone for delivery contact</label>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="shipping-method">
+                    <h2>Shipping Method</h2>
+                </div>
+
+                <div class="payment">
+                    <h2>Payment Method</h2>
+
+                    <div class="payment-accordion">
+                        <div class="payment-card">
+                            <input type="radio" name="payment" id="creditcard" class="accordion-input" checked>
+                            <label for="creditcard" class="accordion-label">
+                              Credit Card
+                              <div class="payment-logo">
+                                <img src="../../assets/img/payment-logo.jpg" alt="payment partners company logos">
+                                <p>and more</p>
+                              </div>
+                            </label>
+
+                            
+
+                            <div class="accordion-content">
+                                <div class="label-float cardnumber">
+                                    <input id="cardnumber" name="Card number" [(ngModel)]="cardnumber" class="form-input"
+                                        type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" 
+                                        autocomplete="cc-number" maxlength="19" placeholder=" " required>
+                                    <label for="cardnumber">Card number</label>
+                                </div>
+
+                                <div class="label-float cardname">
+                                    <input id="cardname" name="Card name" [(ngModel)]="cardname" class="form-input"
+                                        type="text" placeholder=" " required>
+                                    <label for="cardname">Name on card</label>
+                                </div>
+
+                                <div class="label-float cardname">
+                                    <input id="expiration" name="Expiration" [(ngModel)]="expiration" class="form-input"
+                                        type="text" placeholder=" " required>
+                                    <label for="expiration">Expiration date</label>
+                                </div>
+
+                                <div class="label-float cardname">
+                                    <input id="securitycode" name="Security code" [(ngModel)]="securitycode" class="form-input"
+                                        type="number" maxlength="4" placeholder=" " required>
+                                    <label for="securitycode">Security code</label>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="payment-card">
+                            <input type="radio" name="payment" id="paypal" class="accordion-input">
+                            <label for="paypal" class="accordion-label">
+                              Paypal
+                              <div class="payment-logo paypal">
+                                <img src="../../assets/img/paypal-logo.png" alt="paypal logos">
+                              </div>
+                            </label>
+                            <div class="accordion-content paypal-content">
+                                <div class="payment-logo paypal2">
+                                    <img src="../../assets/img/paypal-logo2.png" alt="paypal logos">
+                                  </div>
+                                <p>After clicking "pay now" below you'll be redirected to PayPal to complete your purchase securely</p>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="billing">
+                    <h2>Billing Address</h2>
+
+                    <div class="billing-accordion">
+                        <div class="billing-card">
+                            <input type="radio" name="billing" id="same" class="accordion-input" checked>
+                            <label for="same" class="accordion-label">
+                             Same as shipping address
+                            </label>
+                        </div>
+                
+                        <div class="billing-card">
+                            <input type="radio" name="billing" id="different" class="accordion-input">
+                            <label for="different" class="accordion-label">
+                              Use a different billing address
+                            </label>
+
+                            <div class="accordion-content billing-content">
+                                <div class="country-selector">
+                                    <select class="crs-country" title="country" data-region-id="regioncity" data-default-option="Select a country"></select>
+                                </div>
+        
+                                <div class="label-float fname">
+                                    <input id="firstname" name="First name" [(ngModel)]="firstname" class="form-input"
+                                        type="text" placeholder=" " required>
+                                    <label for="firstname">First Name</label>
+                                </div>
+            
+                                <div class="label-float lname">
+                                    <input id="lastname" name="Last name" [(ngModel)]="lastname" class="form-input"
+                                        type="text" placeholder=" " required>
+                                    <label for="lastname">Last Name</label>
+                                </div>
+        
+                                <div class="label-float cname">
+                                    <input id="companyname" name="Company name" [(ngModel)]="companyname" class="form-input"
+                                        type="text" placeholder=" ">
+                                    <label for="companyname">Company Name (optional)</label>
+                                </div>
+        
+                                <div class="label-float address">
+                                    <input id="address" name="Address" [(ngModel)]="address" class="form-input"
+                                        type="text" placeholder=" " required>
+                                    <label for="address">Address</label>
+                                </div>
+        
+                                <div class="label-float apartment">
+                                    <input id="apartment" name="Apartment" [(ngModel)]="apartment" class="form-input"
+                                        type="text" placeholder=" ">
+                                    <label for="apartment">Apartment, Suite, Unit etc (optional)</label>
+                                </div>
+        
+                                <div class="region-selector">
+                                    <select id="regioncity" title="region" data-blank-option="No country selected" data-default-option="Select a state/region/territory"></select>
+                                </div>
+        
+                                <div class="label-float city">
+                                    <input id="city" name="City" [(ngModel)]="city" class="form-input"
+                                        type="text" placeholder=" " required>
+                                    <label for="city">City</label>
+                                </div>
+        
+                                <div class="label-float postcode">
+                                    <input id="postcode" name="Post code" [(ngModel)]="postcode" class="form-input"
+                                        type="text" placeholder=" " required>
+                                    <label for="postcode">Postcode / ZIP Code</label>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="remember">
+                    <h2>Remember me</h2>
+
+                    <div class="remember-input">
+                        <input type="checkbox" id="myInput" title="Remember me">
+                        <label for="myInput" class="remember-me">&nbsp;Save my information for a faster checkout</label>
+                    </div>
+                </div>
+
+                <div class="submit-button">
+                    <button mat-raised-button type="submit">Pay Now</button>
+                </div>     
+
+                <div class="policies">
+                    <p class="terms-text">By placing this order, you acknowledge you've read and agreed to our <a routerLink="/terms and conditions">Privacy Policy, Returns Policy, and our Terms of Service</a></p>
+                </div>
+
+            </form>
+
+            <div class="policies"></div>
+        </div>
+
+        <div class="checkout-summary"></div>
+    </div>
+    
+
+    
+</div>
+
+

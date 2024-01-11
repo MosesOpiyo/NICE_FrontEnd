@@ -20,6 +20,7 @@ import { TripdetailsComponent } from './informationPages/tripdetails/tripdetails
 import { OriginsComponent } from './origins/origins.component';
 import { OrigindetailsComponent } from './origindetails/origindetails.component';
 import { TermsComponent } from './informationPages/terms/terms.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routes: Routes = [
@@ -41,8 +42,8 @@ const routes: Routes = [
   {path: 'trip-details/:monthid', component: TripdetailsComponent},
   {path: 'origins', component: OriginsComponent},
   {path: 'origin/:originId', component: OrigindetailsComponent},
-  {path: 'terms and conditions', component: TermsComponent}
-
+  {path: 'terms and conditions', component: TermsComponent},
+  {path: 'checkout', component: CheckoutComponent}
 ];
 
 @NgModule({
