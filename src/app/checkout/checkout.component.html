@@ -14,8 +14,8 @@
 
         <div class="secure-checkout">
             <span>
-                <i class="fa-solid fa-lock"></i>
                 Secure Checkout
+                <i class="fa-solid fa-lock"></i>
             </span>
         </div>
     </div>
@@ -25,17 +25,13 @@
         <div class="checkout-form">
             <div class="actionbuttons">
                 <div class="login">
-                    <button mat-raised-button type="button" (click)="showLoginDialog()">
-                        <span class="logintext">Returning Customer?</span>
-                        Log In
-                    </button>
+                    <span class="logintext">Returning Customer?</span>
+                    <button mat-raised-button type="button" (click)="showLoginDialog()">Log In</button>
                 </div>
 
                 <div class="signup">
-                    <button mat-raised-button type="button" (click)="showSignUpDialog()">
-                        <span class="signuptext">Don't have an account?</span>
-                        Sign Up
-                    </button>
+                    <span class="signuptext">Don't have an account?</span>
+                    <button mat-raised-button type="button" (click)="showSignUpDialog()">Sign Up</button>
                 </div>
             </div>
 
@@ -121,12 +117,11 @@
 
                     <div class="payment-accordion">
                         <div class="payment-card">
-                            <input type="radio" name="payment" id="creditcard" class="accordion-input" checked>
+                            <input type="radio" name="payment" id="creditcard" class="accordion-input" checked (change)="checkStatus1($event)">
                             <label for="creditcard" class="accordion-label">
                               Credit Card
                               <div class="payment-logo">
                                 <img src="../../assets/img/payment-logo.jpg" alt="payment partners company logos">
-                                <p>and more</p>
                               </div>
                             </label>
 
@@ -161,7 +156,7 @@
                         </div>
                 
                         <div class="payment-card">
-                            <input type="radio" name="payment" id="paypal" class="accordion-input">
+                            <input type="radio" name="payment" id="paypal" class="accordion-input" (change)="checkStatus2($event)">
                             <label for="paypal" class="accordion-label">
                               Paypal
                               <div class="payment-logo paypal">
@@ -201,33 +196,33 @@
                                 </div>
         
                                 <div class="label-float fname">
-                                    <input id="firstname" name="First name" [(ngModel)]="firstname" class="form-input"
+                                    <input id="first_name" name="First name" [(ngModel)]="billingfirstname" class="form-input"
                                         type="text" placeholder=" " required>
-                                    <label for="firstname">First Name</label>
+                                    <label for="first_name">First Name</label>
                                 </div>
             
                                 <div class="label-float lname">
-                                    <input id="lastname" name="Last name" [(ngModel)]="lastname" class="form-input"
+                                    <input id="last_name" name="Last name" [(ngModel)]="billinglastname" class="form-input"
                                         type="text" placeholder=" " required>
-                                    <label for="lastname">Last Name</label>
+                                    <label for="last_name">Last Name</label>
                                 </div>
         
                                 <div class="label-float cname">
-                                    <input id="companyname" name="Company name" [(ngModel)]="companyname" class="form-input"
+                                    <input id="company_name" name="Company name" [(ngModel)]="billingcompanyname" class="form-input"
                                         type="text" placeholder=" ">
-                                    <label for="companyname">Company Name (optional)</label>
+                                    <label for="company_name">Company Name (optional)</label>
                                 </div>
         
                                 <div class="label-float address">
-                                    <input id="address" name="Address" [(ngModel)]="address" class="form-input"
+                                    <input id="user_address" name="Address" [(ngModel)]="billingaddress" class="form-input"
                                         type="text" placeholder=" " required>
-                                    <label for="address">Address</label>
+                                    <label for="user_address">Address</label>
                                 </div>
         
                                 <div class="label-float apartment">
-                                    <input id="apartment" name="Apartment" [(ngModel)]="apartment" class="form-input"
+                                    <input id="user_apartment" name="Apartment" [(ngModel)]="billingapartment" class="form-input"
                                         type="text" placeholder=" ">
-                                    <label for="apartment">Apartment, Suite, Unit etc (optional)</label>
+                                    <label for="user_apartment">Apartment, Suite, Unit etc (optional)</label>
                                 </div>
         
                                 <div class="region-selector">
@@ -235,22 +230,22 @@
                                 </div>
         
                                 <div class="label-float city">
-                                    <input id="city" name="City" [(ngModel)]="city" class="form-input"
+                                    <input id="user_city" name="City" [(ngModel)]="billingcity" class="form-input"
                                         type="text" placeholder=" " required>
-                                    <label for="city">City</label>
+                                    <label for="user_city">City</label>
                                 </div>
         
                                 <div class="label-float postcode">
-                                    <input id="postcode" name="Post code" [(ngModel)]="postcode" class="form-input"
+                                    <input id="user_postcode" name="Post code" [(ngModel)]="billingpostcode" class="form-input"
                                         type="text" placeholder=" " required>
-                                    <label for="postcode">Postcode / ZIP Code</label>
+                                    <label for="user_postcode">Postcode / ZIP Code</label>
                                 </div>
                             </div>
                         </div>
                       </div>
                 </div>
 
-                <div class="remember">
+                <div class="remember" *ngIf="isShowContent">
                     <h2>Remember me</h2>
 
                     <div class="remember-input">
@@ -272,7 +267,87 @@
             <div class="policies"></div>
         </div>
 
-        <div class="checkout-summary"></div>
+        <div class="checkout-summary">
+            <div class="chekout-info">
+                <div class="cart-summary">
+                    <div class="cart-product">
+                        <div class="product-image">
+                            <img src="../../assets/img/packaging/coffee-bag-01.png" alt="">
+                        </div>
+        
+                        <div class="product-info">
+                            <div class="item-name">
+                                <p>Mettle</p>
+                            </div>
+        
+                            <div class="item-quantity">
+                                <p>Qty: <span>2</span></p>
+                            </div>
+        
+                            <div class="item-price">
+                                <p>Price: <span>$200</span></p>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+    
+                <div class="giftcard-input">
+                    <form action="">
+                        <div class="label-float coupon">
+                            <input id="coupon" name="Gift card/coupon" [(ngModel)]="coupon" class="form-input"
+                                type="text" placeholder=" ">
+                            <label for="coupon">Gift Card / Coupon code</label>
+                        </div>
+    
+                        <div class="submit-button">
+                            <button mat-raised-button type="submit">Apply</button>
+                        </div>
+                    </form>
+                </div>
+    
+                <div class="items-total">
+                    <div class="subtotal">
+                        <p>Subtotal:</p>
+                        <span>$200</span>
+                    </div>
+    
+                    <div class="shipping-total">
+                        <p>Shipping:</p>
+                        <span>$200</span>
+                    </div>
+    
+                    <div class="tax">
+                        <p>Estimated Tax:</p>
+                        <span>$200</span>
+                    </div>
+    
+                    <div class="coupon-total">
+                        <p>Gift card/Coupon:</p>
+                        <span>$200</span>
+                    </div>
+    
+                    <hr>
+    
+                    <div class="alltotals">
+                        <p>TOTAL:</p>
+                        <span>$200</span>
+                    </div>
+                </div>
+    
+                <div class="chat">
+                    <p><i class="fa-solid fa-comment"></i> Any queries/questions?</p>
+                    <p>Live Chat: <span>+1 123 456 789</span></p>
+                    <p>Your Cart ID: <span>A123BCD</span></p>
+                </div>
+    
+                <div class="logos">
+                    <p>Secure Payment&nbsp; <i class="fa-solid fa-lock"></i></p>
+                    <div class="logos-image">
+                        <img src="../../assets/img/payment-logo.jpg" alt="all company logos">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
 

@@ -24,8 +24,37 @@ export class CheckoutComponent {
   cardname: any;
   expiration: any;
   securitycode: any;
+  coupon: any;
+  billingfirstname: any;
+  billinglastname: any;
+  billingcompanyname: any;
+  billingaddress: any;
+  billingapartment: any;
+  billingcity: any;
+  billingpostcode: any;
 
   constructor(private dialog:MatDialog){}
+
+  isShowContent: boolean = true;
+  checkStatus1(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowContent = true
+    }
+    else {
+      this.isShowContent = false
+    }
+  }
+
+  checkStatus2(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowContent = false
+    }
+    else {
+      this.isShowContent = true
+    }
+  }
 
   showSignUpDialog(){
     const dialogRef = this.dialog.open(SignUpComponent,{
