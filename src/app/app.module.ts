@@ -130,7 +130,7 @@ register();
           {
             id:GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '1004580228614-c94anmvia83hp8n2q8tb97hojn3flsnl.apps.googleusercontent.com'
+              '537434316637-217taafkc9uqkp1efl6nr2puekrftkan.apps.googleusercontent.com'
             )
           }
         ],

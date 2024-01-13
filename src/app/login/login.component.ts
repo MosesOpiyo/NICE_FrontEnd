@@ -1,11 +1,12 @@
 import { Component,Inject } from '@angular/core';
-import { SocialUser,SocialAuthService, } from '@abacritt/angularx-social-login';
+import { SocialUser,SocialAuthService,GoogleLoginProvider, } from '@abacritt/angularx-social-login';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../AuthService/authentication.service';
 
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.component';
 import { ForgotpasswordComponent } from '../forgotpassword/forgotpassword.component';
+import { error } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -14,27 +15,34 @@ import { ForgotpasswordComponent } from '../forgotpassword/forgotpassword.compon
 })
 export class LoginComponent {
 
-constructor(
-  public dialogRef: MatDialogRef<LoginComponent>,
-  private dialog:MatDialog,
-  public service: AuthenticationService,
-  private socialService: SocialAuthService,
-  @Inject(MAT_DIALOG_DATA) public data: any
-){}
-email: any;
-password: any;
-profile:any;
-isPasswordVisible = false;
+  constructor(
+    public dialogRef: MatDialogRef<LoginComponent>,
+    private dialog:MatDialog,
+    public service: AuthenticationService,
+    private socialService: SocialAuthService,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ){}
+  user_email: any;
+  password: any;
+  profile:any;
+  isPasswordVisible = false;
 
-socialUser: SocialUser
-isLoggedIn: boolean;
+  socialUser: SocialUser
+  isLoggedIn: boolean;
 
   loginUser(){
     let form = new FormData();
-    form.append('email',this.email),
+    form.append('email',this.user_email),
     form.append('password',this.password),
     this.service.login(form)
     this.dialogRef.close();
+  }
+  
+
+  signUpWithGoogle(): void {
+    this.socialService.signIn(GoogleLoginProvider.PROVIDER_ID).then(user => {
+      console.log(`user: ${user}`)
+    });
   }
 
   signInWithGoogle(){
@@ -43,7 +51,6 @@ isLoggedIn: boolean;
     if(this.isLoggedIn){
       this.socialUser = user
       let username = `${this.socialUser.firstName} ${this.socialUser.lastName}`
-      console.log(this.socialUser.idToken.slice(0,50))
       let form = new FormData();
       form.append('username',username),
       form.append('email',this.socialUser.email),
@@ -51,6 +58,9 @@ isLoggedIn: boolean;
       form.append('session',localStorage.getItem('session'))
       this.service.googleRegistration(form)
       this.dialogRef.close();
+      this.socialService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
+    }else{
+      console.log("Not working")
     }
     })
   }

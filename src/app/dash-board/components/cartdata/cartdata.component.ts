@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment.development';
 @Component({
   selector: 'app-cartdata',
   templateUrl: './cartdata.component.html',
-  styleUrl: './cartdata.component.css'
+  styleUrls: ['./cartdata.component.css']
 })
 export class CartdataComponent implements OnInit {
   // order tabs
@@ -28,7 +28,6 @@ export class CartdataComponent implements OnInit {
     this.store.storeProfileData()
     this.store.data$.subscribe((res:any)=>{
       this.user = res
-      console.log(this.user)
     })
 
     this.cart.data$.subscribe((data:any) =>{
