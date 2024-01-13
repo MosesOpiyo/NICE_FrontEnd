@@ -93,7 +93,7 @@
               <button (click)="Pay(subTotal(userCart))" mat-raised-button>CHECKOUT ({{subTotal(userCart) | currency:'USD'}})</button>
             </div>
             <div class="backshop">
-              <a routerLink="/Products"><i class="fa-solid fa-chevron-left"></i>&nbsp;CONTINUE SHOPPING</a>
+              <a routerLink="/shop"><i class="fa-solid fa-chevron-left"></i>&nbsp;CONTINUE SHOPPING</a>
             </div>
           </div>
 
@@ -110,7 +110,7 @@
         <div class="cart-contents">
           <h4>mmmmhh... seems like your Cart is Empty!</h4>
           <h6>Add item(s) to it now</h6>
-          <a routerLink="/Products">SHOP NOW&nbsp;<i class="fa-solid fa-cart-arrow-down"></i></a>
+          <a routerLink="/shop">SHOP NOW&nbsp;<i class="fa-solid fa-cart-arrow-down"></i></a>
         </div>
       </div>
     </ng-container>

@@ -56,6 +56,18 @@ export class CheckoutComponent {
     }
   }
 
+  // mobile cart summary
+  isShowCartsummary: boolean = false;
+  checkStatus(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowCartsummary = true
+    }
+    else {
+      this.isShowCartsummary = false
+    }
+  }
+
   showSignUpDialog(){
     const dialogRef = this.dialog.open(SignUpComponent,{
       width: '25pc',

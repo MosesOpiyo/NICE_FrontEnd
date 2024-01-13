@@ -61,6 +61,7 @@
 .checkout-form .actionbuttons {
   padding-bottom: 1rem;
   border-bottom: 1px solid #00000033;
+  width: 100%;
 }
 
 .checkout-form .actionbuttons,
@@ -118,6 +119,8 @@
     padding-inline: .5rem;
 }
 
+
+/* shipping and billing forms */
 .checkout-container form .email h2,
 .checkout-container form .shipping h2,
 .checkout-container form .shipping-method h2,
@@ -181,8 +184,7 @@
     grid-area: 6 / 5 / 7 / 7;
 }
 
-.checkout-container form .shipping-content .phone,
-.checkout-container form .billing-content .phone {
+.checkout-container form .shipping-content .phone {
     grid-area: 7 / 1 / 8 / 7;
 }
 
@@ -199,9 +201,16 @@
 
 
 /* input animations */
-.label-float{
+  .label-float{
     position: relative;
     padding-top: 13px;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .giftcard-input .label-float {
+    min-width: auto;
+    max-width: max-content;
   }
   
   .label-float input{
@@ -260,7 +269,8 @@
 }
 
   .checkout-container .payment-accordion > *,
-  .checkout-container .billing-accordion > * {
+  .checkout-container .billing-accordion > *,
+  .checkout-container .shipmethod-accordion > * {
     border: 1px solid #e5e5e5;
     padding-block: 1rem;
     background-color: #f5f5f5;
@@ -272,15 +282,15 @@
   }
 
   .accordion-label {
-    font-size: 1.2rem;
-    color: #000000;
+    font-size: 14.5px;
+    color: #000000db;
     font-weight: 400;
     cursor: pointer;
     transition: background-color 0.1s ease-in;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    width: 95%;
+    width: 94%;
   }
 
   .accordion-content {
@@ -353,6 +363,22 @@
     object-fit: contain;
   }
 
+  /* shipping method  */
+  .checkout-container .shipmethod-accordion .shipmethod-card {
+    display: flex;
+    align-items: center;
+  }
+
+  .checkout-container form .shipmethod-card input.accordion-input {
+    top: 0;
+  }
+
+  .shipmethod-accordion .shipmethod-card .accordion-label .method-info {
+    width: 75%;
+    text-wrap: balance;
+  }
+
+  /* remember me */
   .checkout-container form .remember-input {
     display: flex;
     margin-bottom: 10px;
@@ -366,6 +392,7 @@
     max-width: max-content;
   }
 
+  /* policies */
   .checkout-container .policies {
     text-align: center;
     width: 70%;
@@ -400,7 +427,12 @@
     padding: 40px 10px 10px 10px;
 }
 
-.checkout-summary .chekout-info {
+/* mobile cart summary */
+.checkout-container .checkout-content .checkout-summary.mobile {
+  display: none;
+}
+
+.checkout-summary .checkout-info {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -470,8 +502,10 @@
 .checkout-summary .items-total .coupon-total,
 .checkout-summary .items-total .alltotals {
   display: grid;
-  width: 68%;
+  width: 75%;
   grid-template: 1fr / 1fr 1fr;
+  padding-block: 3px;
+  align-items: center;
 }
 
 .checkout-summary .items-total span {
@@ -480,7 +514,7 @@
 
 .checkout-summary hr {
   margin: 0;
-  width: 68%;
+  width: 75%;
 }
 
 .checkout-summary .chat {
@@ -504,6 +538,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  text-align: center;
 }
 
 .checkout-summary .logos i {
@@ -524,15 +559,226 @@
 
 
 
+/* media queries */
+@media (max-width: 1024px) {
+  .checkout-container .checkout-content {
+    flex-direction: column-reverse;
+  }
+
+  .checkout-container .checkout-content .checkout-summary {
+    display: none;
+  }
+
+    /* mobile cart summary */
+  .checkout-container .checkout-content .checkout-summary.mobile {
+    position: relative;
+    width: 100%;
+    left: 0;
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+  }
+  .checkout-container .checkout-summary.mobile input[type='checkbox'] {
+    display: none;
+  }
+  .checkout-container .checkout-summary.mobile .accordion-content {
+    display: none;
+  }
+  .checkout-container .checkout-summary.mobile input.accordion-input:checked ~ .accordion-content {
+    display: block;
+  }
+  .checkout-container .checkout-summary.mobile .accordion-label {
+    margin-inline: auto;
+    font-size: 1.2rem;
+  }
+  .checkout-container .checkout-summary.mobile  .input-checked,
+  .checkout-container .checkout-summary.mobile  .input-notchecked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .checkout-container .checkout-summary.mobile .fa-caret-up {
+    padding-top: 4px;
+  }
+  .checkout-container .checkout-summary.mobile label .payment-logo {
+    width: auto;
+  }
+
+  .checkout-container .checkout-content .checkout-form {
+    width: 100%;
+  }
+
+  .checkout-summary .cart-summary {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .checkout-summary .items-total .subtotal,
+  .checkout-summary .items-total .shipping-total,
+  .checkout-summary .items-total .tax,
+  .checkout-summary .items-total .coupon-total,
+  .checkout-summary .items-total .alltotals {
+    width: 50%;
+  }
+
+  .checkout-summary hr {
+    width: 50%;
+  }
+}
+
 @media (max-width: 991px) {
     .navbar-container .logo img {
         height: 60px;
     }
 }
 
+@media (max-width: 768px) {
+  .checkout-summary .cart-summary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .checkout-summary .items-total .subtotal,
+  .checkout-summary .items-total .shipping-total,
+  .checkout-summary .items-total .tax,
+  .checkout-summary .items-total .coupon-total,
+  .checkout-summary .items-total .alltotals {
+    width: 75%;
+  }
+
+  .checkout-summary hr {
+    width: 75%;
+  }
+}
+
 @media (max-width: 600px) {
-    .navbar-container .logo img {
-        height: 50px;
-        top: 5px;
-    }
+  .navbar-container .logo img {
+    height: 50px;
+    top: 5px;
+  }
+
+  .checkout-form .actionbuttons {
+    flex-direction: column;
+  }
+
+  .checkout-form form,
+  .checkout-summary .checkout-info {
+    width: 95%;
+  }
+
+  .checkout-container form .shipping-content .region-selector,
+  .checkout-container form .billing-content .region-selector {
+    grid-area: 6 / 1 / 7 / 7;
+  }
+
+  .checkout-container form .shipping-content .city,
+  .checkout-container form .billing-content .city {
+    grid-area: 7 / 1 / 8 / 4;
+  }
+
+  .checkout-container form .shipping-content .postcode,
+  .checkout-container form .billing-content .postcode {
+    grid-area: 7 / 4 / 8 / 7;
+  }
+
+  .checkout-container form .shipping-content .phone {
+    grid-area: 8 / 1 / 9 / 7;
+  }
+
+  .checkout-container .checkout-summary.mobile .accordion-label {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .checkout-summary .logos {
+    flex-direction: column-reverse;
+    gap: 0rem;
+  }
+
+  .checkout-summary .cart-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (max-width: 425px) {
+  .navbar-container .secure-checkout {
+    display: none;
+  }
+
+  .checkout-summary .cart-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .accordion-label {
+    width: 85%;
+  }
+
+  .payment-logo {
+    width: 150px;
+  }
+
+  .checkout-container form .shipping-content,
+  .checkout-container form input.accordion-input:checked~.accordion-content.billing-content {
+    grid-template: auto / 1fr;
+  }
+
+
+  .checkout-container form .shipping-content .country-selector,
+  .checkout-container form .billing-content .country-selector,
+  .checkout-container form .shipping-content .fname,
+  .checkout-container form .billing-content .fname,
+  .checkout-container form .shipping-content .lname,
+  .checkout-container form .billing-content .lname,
+  .checkout-container form .shipping-content .cname,
+  .checkout-container form .billing-content .cname,
+  .checkout-container form .shipping-content .address,
+  .checkout-container form .billing-content .address,
+  .checkout-container form .shipping-content .apartment,
+  .checkout-container form .billing-content .apartment,
+  .checkout-container form .shipping-content .region-selector,
+  .checkout-container form .billing-content .region-selector,
+  .checkout-container form .shipping-content .city,
+  .checkout-container form .billing-content .city,
+  .checkout-container form .shipping-content .postcode,
+  .checkout-container form .billing-content .postcode,
+  .checkout-container form .shipping-content .phone {
+    grid-area: auto;
+  }
+
+  .checkout-container form input.accordion-input:checked ~ .accordion-content {
+    grid-template: 1fr / 1fr;
+  }
+
+  .checkout-summary .items-total .subtotal,
+  .checkout-summary .items-total .shipping-total,
+  .checkout-summary .items-total .tax,
+  .checkout-summary .items-total .coupon-total,
+  .checkout-summary .items-total .alltotals {
+    width: 100%;
+  }
+
+  .checkout-summary hr {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .checkout-summary .giftcard-input form {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .giftcard-input .label-float {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .checkout-summary .cart-summary {
+    grid-template-columns: 1fr;
+  }
 }
