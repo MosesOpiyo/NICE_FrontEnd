@@ -429,35 +429,138 @@
 
 
   /* EMPOWER SECTION */
-  .empower-container .empower-content .empower-btn,
   .empower-container {
-    display: grid;
-    grid-template: 1fr / 1fr 1fr 1fr;
-    width: 100%;
-    height: 500px;
-  }
-
-  .empower-container .coffee-image,
-  .empower-container .farmer-image {
-    background-image: url("../../../assets/img/coffee.jpg");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .empower-container  .empower-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    height: 600px;
+    background-color: #000000;
+    margin-bottom: 4rem;
+    color: #ffffff;
   }
 
-  .empower-container .empower-content .empower-btn {
-    grid-template: 1fr / 1fr 1fr;
-    height: max-content;
-    gap: 1rem;
+  .empower-container .empower-info {
+    width: 95%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .empower-container .empower-info > * {
+    flex-basis: 100%;
   }
 
   .empower-container .farmer-image {
     background-image: url("../../../assets/img/farmer.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
   }
+
+  .empower-container .empower-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-inline: 25px;
+    height: 100%;
+  }
+
+  .empower-container .empower-content .empower-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 80%;
+    text-align: center;
+  }
+
+  .empower-container .empower-content .empower-btn > * {
+    flex-basis: 100%;
+  }
+
+  .empower-container .empower-content .empower-btn a {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+  }
+
+  .empower-container .empower-content .empower-btn a:hover {
+    background-color: #000000;
+    color: #ffffff;
+    letter-spacing: 3px;
+    border: 1px solid #ffffff;
+  }
+
+  .empower-container h2 {
+    font-weight: 300;
+    font-size: 4rem;
+    line-height: 60px;
+  }
+
+  .empower-container p {
+    color: #ffffffc9;
+    font-size: 1.15rem;
+    width: 90%;
+  }
+
+/* media queries for empower section */
+   @media (max-width: 768px) {
+    .empower-container {
+      height: max-content;
+      padding-block: 2rem;
+    }
+
+    .empower-container .empower-info {
+      align-items: normal;
+      flex-direction: column-reverse;
+      gap: 1rem;
+    }
+  
+    .empower-container .empower-info > * {
+      flex-basis: auto;
+    }
+
+    .empower-container .farmer-image {
+      height: 400px;
+    }
+
+    .empower-container .empower-content {
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .empower-container .empower-content .empower-btn {
+      width: 100%;
+    }
+
+    .empower-container h2,
+    .empower-container p  {
+      width: 100%;
+    }
+
+    .empower-container h2  {
+      font-size: 2.8rem;
+      line-height: 45px;
+    }
+  
+   } 
+
+   @media (max-width: 425px) {
+    .empower-container .empower-content {
+      padding-inline: 10px;
+    }
+   }
+
+   @media (max-width: 375px) {
+    .empower-container .empower-content .empower-btn {
+      flex-direction: column;
+    }
+
+    .empower-container .empower-content .empower-btn a {
+      width: 150px;
+    }
+   }

@@ -322,31 +322,57 @@
     border: none;
   }
   
+  /* pure counter */
   .expo-container .pure-counter {
-    position: relative;
-    z-index: 3;
     display: flex;
-    padding-top: 40px;
-    justify-content: space-between;
-    width: 95%;
-    margin-inline: auto;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
     gap: .7rem;
+    background-color: #eeeeee;
+    margin-bottom: 2.5rem;
+    background-color: #00ffa31c;
   }
-  
-  /* .expo-container .video-container .pure-counter > * {
-    border: 2px solid white;
-  } */
+
+  .expo-container .pure-counter .counter-header {
+    width: 35%;
+  }
+
+  .expo-container .pure-counter .counter-header h2 {
+    font-size: 3rem;
+  }
+
+  .expo-container .pure-counter .counter-content {
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    gap: 40px;
+  }
   
   .expo-container .pure-counter .count-box {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 2px 1px #e3e3e3;
+    border-radius: 10px;
+    margin-inline: 1rem;
+    width: 170px;
+    height: 170px;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+
+  .expo-container .pure-counter .count-box .count-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .expo-container .pure-counter .count-box span {
-    font-size: 3rem;
-    color: #fcff48;
+    font-size: 4rem;
   }
   
   
@@ -1057,6 +1083,29 @@
 
   /* ALL EXPO PAGE COMPONENT STYLING */
   /* EXPO HERO HEADER media queries */
+  @media (max-width: 1024px) {
+    .expo-container .pure-counter .counter-header h2 {
+      font-size: 2.5rem;
+    }
+  }
+ 
+  @media (max-width: 768px) {
+    .expo-container .pure-counter {
+      flex-direction: column;
+      text-align: center;
+      padding-inline: 10px;
+    }
+
+    .expo-container .pure-counter .counter-header {
+      width: 100%;
+    }
+
+    .expo-container .pure-counter .counter-content {
+      width: 100%;
+      gap: 20px;
+    }
+  }
+  
   @media (max-width: 600px) {
     .expo-container .expo-header h2,
     .expo-container .sponsor-header h2,
@@ -1068,13 +1117,8 @@
       gap: .5rem;
     }
 
-    .expo-container .pure-counter .count-box span {
-      font-size: 2.5rem;
-    }
-
-    .expo-container .pure-counter .count-box p {
-      font-size: .9rem;
-      line-height: .8rem;
+    .expo-container .pure-counter .count-box {
+      width: 160px;
     }
   }
 
@@ -1102,12 +1146,8 @@
       padding: 9px 40px;
     }
 
-    .expo-container .pure-counter {
-      width: 99%;
-    }
-
-    .expo-container .pure-counter .count-box span {
-      font-size: 2rem;
+    .expo-container .pure-counter .counter-content {
+      grid-template-columns: max-content;
     }
 
     .expo-container .expo-content .expo-text p {
