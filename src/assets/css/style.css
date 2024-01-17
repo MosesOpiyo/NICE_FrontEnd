@@ -1575,9 +1575,7 @@
   }
   
   .trip-container .trip-purpose .purpose-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    display: flex;
     width: 100%;
     height: max-content;
     gap: .5rem;
@@ -1585,6 +1583,7 @@
   
   .trip-container .trip-purpose .purpose-list > * {
     height: 500px;
+    flex-basis: 100%;
   }
   
   .trip-container .purpose-list .purpose-card {
@@ -1596,6 +1595,13 @@
     position: relative;
     z-index: 1;
     color: #fff;
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+  }
+
+  .trip-container .purpose-list .purpose-card:hover {
+    flex: 1 1 50%;
   }
 
   .trip-container .purpose-list .purpose-card::after {
@@ -2096,6 +2102,7 @@
   @media (max-width: 1024px) {
     .trip-container .tips-container .tips-content,
     .trip-container .trip-purpose .purpose-list {
+      display: grid;
       grid-template-columns: 1fr 1fr;
     }
 
