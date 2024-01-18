@@ -457,6 +457,24 @@
                 </div>
               </div>
             </div>
+
+
+            <div class="buyer-rating">
+              <h2>Rate the product</h2>
+
+              <div>
+                <div>
+                  <ul class="list-inline rating-list" *ngFor="let star of stars; let i= index"> 
+                    <li (click)="countStar(star)" title="{{star}}" id="{{'starId'+i}}" [ngClass]="{'selected': (star <= selectedValue)}" (mouseover)="addClass(star)" (mouseout)="removeClass(star)"> 
+                      <!-- ★ -->
+                      <i class="fa-solid fa-star"></i>
+                    </li>
+                </ul>
+
+                  <button type="button" (click)="clearStars()">Clear Rating</button>
+                </div>
+              </div>
+            </div>
         </div>
 
     </section>

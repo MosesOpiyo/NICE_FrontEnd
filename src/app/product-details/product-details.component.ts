@@ -20,10 +20,71 @@ import { TimelinecontentComponent } from '../timelinecontent/timelinecontent.com
 })
 export class ProductDetailsComponent implements OnInit {
 
+  isLoggedIn:any
+  id:any
+  item:any
+  userCart:any
+  ratings : number[] = [];
+  total:any
+  cloudinaryUrl = environment.CLOUDINARY_URL
+  quantityPrice:any = ""
+  quantity:any = ""
+  grind:any = ""
+  price:any = ""
+  roast_type:any = ""
+  code:any = 0
   num: number = 1;
   num2: number = 1;
   isShowDiv: boolean  = false;
   isShowDiv2: boolean  = false;
+  stars: number[] = [1, 2, 3, 4, 5];
+  selectedValue: number;
+  private snackBarDuration: number = 2000;
+
+  myScriptElement: HTMLScriptElement;
+  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private store:ProductStoreService,private cart:CartService,private cartStore:CartStoreService){
+     this.myScriptElement = document.createElement("script");
+     this.myScriptElement.src = "./assets/js/main.js";
+     document.body.appendChild(this.myScriptElement);
+  }
+
+  timeline = [
+    {
+      id: 1,
+      imgSource: '../../assets/img/farm/farm1.jpg',
+      comment: 'flowering'
+    },
+    {
+      id: 2,
+      imgSource: '../../assets/img/farm/farm2.jpg',
+      comment: 'maturing'
+    },
+    {
+      id: 3,
+      imgSource: '../../assets/img/farm/farm3.jpg',
+      comment: 'harvesting'
+    },
+    {
+      id: 4,
+      imgSource: '../../assets/img/farm/farm4.jpg',
+      comment: 'processing'
+    },
+    {
+      id: 5,
+      imgSource: '../../assets/img/farm/farm5.jpg',
+      comment: 'sale'
+    },
+    {
+      id: 6,
+      imgSource: '../../assets/img/farm/farm6.jpg',
+      comment: 'flowering'
+    },
+    {
+      id: 7,
+      imgSource: '../../assets/img/farm/farm7.jpg',
+      comment: 'flowering'
+    },
+  ]
 
   // for roasted
   checkStatus1(event:any){
@@ -83,66 +144,45 @@ export class ProductDetailsComponent implements OnInit {
 
   // tabbed-info tabs
   tabs2: string [] = ['Seller Info', 'Reviews'];
-  activatedTabIndex2: number = 0;
+  activatedTabIndex2: number = 0;  
 
-  myScriptElement: HTMLScriptElement;
-  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private store:ProductStoreService,private cart:CartService,private cartStore:CartStoreService){
-     this.myScriptElement = document.createElement("script");
-     this.myScriptElement.src = "./assets/js/main.js";
-     document.body.appendChild(this.myScriptElement);
+  // user rating
+  countStar(star: number) {
+    this.selectedValue = star;
+    console.log('Value of star', star);
+    this.snackBar.open('You have rated the product as a ' + star + ' star ', '', {
+      duration: this.snackBarDuration,
+      panelClass: ['green-snackbar'],
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    });
+    
   }
 
-  timeline = [
-    {
-      id: 1,
-      imgSource: '../../assets/img/farm/farm1.jpg',
-      comment: 'flowering'
-    },
-    {
-      id: 2,
-      imgSource: '../../assets/img/farm/farm2.jpg',
-      comment: 'maturing'
-    },
-    {
-      id: 3,
-      imgSource: '../../assets/img/farm/farm3.jpg',
-      comment: 'harvesting'
-    },
-    {
-      id: 4,
-      imgSource: '../../assets/img/farm/farm4.jpg',
-      comment: 'processing'
-    },
-    {
-      id: 5,
-      imgSource: '../../assets/img/farm/farm5.jpg',
-      comment: 'sale'
-    },
-    {
-      id: 6,
-      imgSource: '../../assets/img/farm/farm6.jpg',
-      comment: 'flowering'
-    },
-    {
-      id: 7,
-      imgSource: '../../assets/img/farm/farm7.jpg',
-      comment: 'flowering'
-    },
-  ]
+  clearStars() {
+    this.selectedValue = 0;
+    console.log('Value of star', this.selectedValue);
+  }
 
-  isLoggedIn:any
-  id:any
-  item:any
-  userCart:any
-  ratings : number[] = [];
-  total:any
-  cloudinaryUrl = environment.CLOUDINARY_URL
-  quantityPrice:any = ""
-  quantity:any = ""
-  grind:any = ""
-  price:any = ""
-  roast_type:any = ""
-  code:any = 0
+  addClass(star) {
+    console.log("star", star); 
+    console.log("selectedvalue", this.selectedValue);
+    let ab = "";
+    for (let i = 0; i < star; i++) {
+      console.log("star i", star);
+      ab = "starId" + i;
+      document.getElementById(ab).classList.add("selected");
+    }
+ }
+ removeClass(star) {
+    console.log("removestar", star);
+    let ab = "";
+   for (let i = star-1; i >= this.selectedValue; i--) {
+      console.log("star i", star);
+      ab = "starId" + i;
+      document.getElementById(ab).classList.remove("selected");
+    }
+ }
 
   cartItem(id:any){
     const parts = this.quantityPrice.split('-');
@@ -202,6 +242,65 @@ export class ProductDetailsComponent implements OnInit {
    }); 
  }
 
+ //product form tab index
+ tabChange(tabIndex: number) {
+  this.activatedTabIndex = tabIndex;
+  // console.log(this.isShowDiv);
+  // console.log(this.isShowDiv2);
+  this.isShowDiv = false;
+  this.isShowDiv2 = false;
+  this.quantityPrice = "";
+  this.grind = "";
+  this.roast_type = "";
+  // console.log(this.isShowDiv);
+  // console.log(this.isShowDiv2);
+}
+
+// detailedtabs tab index
+tabChange2(tabIndex: number) {
+  this.activatedTabIndex2 = tabIndex;
+}
+
+// increment button for roasted section
+increment(){
+  this.num++;
+}
+  
+//decrements item for roasted section
+decrement(){
+  if(this.num-1 < 1){
+    this.num = 1;
+  }
+  else{
+    this.num -= 1;
+  }
+}
+
+// increment button for green section
+increment2(){
+  this.num2++;
+  }
+  
+//decrements item for green section
+decrement2(){
+  if(this.num2-1 < 1){
+    this.num2 = 1;
+  }
+  else{
+    this.num2 -= 1;
+  }
+}
+
+openFarmDetails() {
+  let dialogRef = this.dialog.open(TimelinecontentComponent,{
+    width: '30pc',
+    maxWidth: '90vw',
+    autoFocus: false,
+    maxHeight: '100vh'
+  })
+}
+
+
  ngOnInit(): void {
   this.id = this.idRouter.snapshot.paramMap.get('id');
   this.store.data$.subscribe((res:any)=>{
@@ -213,62 +312,5 @@ export class ProductDetailsComponent implements OnInit {
   })
   }
 
-  //product form tab index
-  tabChange(tabIndex: number) {
-    this.activatedTabIndex = tabIndex;
-    // console.log(this.isShowDiv);
-    // console.log(this.isShowDiv2);
-    this.isShowDiv = false;
-    this.isShowDiv2 = false;
-    this.quantityPrice = "";
-    this.grind = "";
-    this.roast_type = "";
-    // console.log(this.isShowDiv);
-    // console.log(this.isShowDiv2);
-  }
-
-  // detailedtabs tab index
-  tabChange2(tabIndex: number) {
-    this.activatedTabIndex2 = tabIndex;
-  }
-
-  // increment button for roasted section
-  increment(){
-    this.num++;
-  }
-    
-  //decrements item for roasted section
-  decrement(){
-    if(this.num-1 < 1){
-      this.num = 1;
-    }
-    else{
-      this.num -= 1;
-    }
-  }
-
-  // increment button for green section
-  increment2(){
-    this.num2++;
-    }
-    
-  //decrements item for green section
-  decrement2(){
-    if(this.num2-1 < 1){
-      this.num2 = 1;
-    }
-    else{
-      this.num2 -= 1;
-    }
-  }
-
-  openFarmDetails() {
-    let dialogRef = this.dialog.open(TimelinecontentComponent,{
-      width: '30pc',
-      maxWidth: '90vw',
-      autoFocus: false,
-      maxHeight: '100vh'
-    })
-  }
-
+  
 }

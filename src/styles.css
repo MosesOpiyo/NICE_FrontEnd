@@ -3161,19 +3161,13 @@ opacity: .2;
     gap: 1rem;
   }
 
-  /* .farm-tab .owners {
-    border: 2px solid red;
-  } */
-
   .product-component .farm-tab .owners > *,
   .product-component .farm-tab .farmdetails > *,
   .product-component .farm-tab .morefarmdetails > *,
   .farmdetails-component .farm-tab .owners > *,
   .farmdetails-component .farm-tab .farmdetails > *,
   .farmdetails-component .farm-tab .morefarmdetails > * {
-    /* border: 2px solid black; */
     flex-basis: 100%;
-    /* padding: .5rem; */
   }
 
   .product-component .farm-tab .owners .owner-image,
@@ -3192,7 +3186,6 @@ opacity: .2;
   .farmdetails-component .farm-tab .farmdetails .farm-bio {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
   }
 
@@ -3217,7 +3210,8 @@ opacity: .2;
 
   .product-component .farm-tab .morefarmdetails,
   .farmdetails-component .farm-tab .morefarmdetails {
-    height: 450px;
+    height: 300px;
+    margin-top: 10px;
   }
 
   .product-component .farm-tab .morefarmdetails .map iframe,
@@ -3229,9 +3223,9 @@ opacity: .2;
 
   .product-component .morefarmdetails .history,
   .farmdetails-component .morefarmdetails .history {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: none;
+    /* flex-direction: column;
+    gap: 1rem; */
   }
 
   .product-component .reviews-tab > *,

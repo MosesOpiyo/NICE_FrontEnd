@@ -77,6 +77,33 @@
   letter-spacing: 3px;
 }
 
+.rating-list li {
+  /* float: right; */
+  color: #929292;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.rating-list li:hover,
+.rating-list li:hover ~ li,
+.rating-list li.selected {
+  color: #ffd700;
+  
+}
+
+.rating-list {
+  display: inline-block;
+  list-style: none;
+  font-size: 2rem;
+}
+
+::ng-deep .green-snackbar {
+  --mdc-snackbar-container-color: #189208;
+  --mat-mdc-snack-bar-button-color: #fff;
+  --mdc-snackbar-supporting-text-color: #fff;
+}
+
+/* media queries */
 @media (max-width: 375px) {
   .product-container .incrdecr {
     flex-direction: column;
