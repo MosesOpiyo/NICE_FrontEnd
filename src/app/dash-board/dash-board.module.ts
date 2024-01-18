@@ -45,6 +45,7 @@ import { ConfirmPasswordComponent } from './components/user-settings/confirm-pas
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TimeAgoPipe } from './components/timeline/time/time-ago.pipe';
 import { CartdataComponent } from './components/cartdata/cartdata.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { CartdataComponent } from './components/cartdata/cartdata.component';
     ConfirmPasswordComponent,
     TabsComponent,
     TimeAgoPipe,
-    CartdataComponent
+    CartdataComponent,
+    WishlistComponent
   ],
   imports: [
     CommonModule,

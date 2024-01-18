@@ -149,7 +149,7 @@ export class DashboardsidebarComponent implements OnInit {
 
     {
       id: 3,
-      link: 'dash-board/cart',
+      link: 'dash-board/wishlist',
       listName: 'Wishlist',
       icon: 'fa-solid fa-heart'
     },
