@@ -104,6 +104,15 @@ export class AuthenticationService implements OnInit {
     }
   }
 
+  passwordRecoveryEmail(email:any){
+    this.http.post(`${environment.BASE_URL}Authentication/PasswordRecovery`,email).subscribe((response:any)=>{
+      this.snackBar.open(response, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    })
+  }
+
   login(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Login`,credentials).subscribe((response:any)=>{
       try{

@@ -18,7 +18,13 @@ export class CartComponent implements OnInit {
 
   public product : any =  [];
   public grandTotal !: number;
-
+  cloudinaryUrl = environment.CLOUDINARY_URL
+  user:any | null = null;
+  displayedColumns: string[] = ['image','name','quantity','price','delete'];
+  userCart:any | null = null;
+  isLoggedIn:any
+  quantity = 0
+  total = 0
 
 
   myScriptElement: HTMLScriptElement;
@@ -27,14 +33,6 @@ export class CartComponent implements OnInit {
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
-
-  cloudinaryUrl = environment.CLOUDINARY_URL
-  user:any | null = null;
-  displayedColumns: string[] = ['image','name','quantity','price','delete'];
-  userCart:any | null = null;
-  isLoggedIn:any
-  quantity = 0
-  total = 0
 
   add(){
     this.quantity++
@@ -80,6 +78,42 @@ export class CartComponent implements OnInit {
     })
   })
  }
+
+//quantity
+value(value: any, id: number, quantity: number) {
+  for (let i=0; i < this.userCart.length; i++){
+    if (this.userCart[i].id === id) {
+      this.userCart[i].quantity = value.target.value;
+      quantity = value.target.value
+    }
+  }
+}
+
+
+//decrements item for quantity section
+decrement(element: any, id: number, quantity: number){
+  if (quantity-1 < 1) {
+    quantity = 1;
+  }
+  else {
+    for (let i=0; i < this.userCart.length; i++){
+      if (this.userCart[i].id === id) {
+        quantity -= 1
+        this.userCart[i].quantity = quantity;
+      }
+    }
+  }
+}
+
+// increment button for quantity section
+increment(element: any, id: number, quantity: number){
+  for (let i=0; i < this.userCart.length; i++){
+    if (this.userCart[i].id === id) {
+      quantity++
+      this.userCart[i].quantity = quantity;
+    }
+  }
+}
 
  ngOnInit(): void {
   this.cart.data$.subscribe((data:any) =>{

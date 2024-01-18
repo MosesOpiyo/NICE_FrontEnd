@@ -1,4 +1,4 @@
-import { Component,Inject } from '@angular/core';
+import { Component,Inject, OnInit } from '@angular/core';
 import { SocialUser,SocialAuthService,GoogleLoginProvider, } from '@abacritt/angularx-social-login';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../AuthService/authentication.service';
@@ -13,7 +13,7 @@ import { error } from 'console';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<LoginComponent>,
@@ -30,20 +30,30 @@ export class LoginComponent {
   socialUser: SocialUser
   isLoggedIn: boolean;
 
+  ngOnInit(): void {
+    this.signInWithGoogle()
+  }
+
   loginUser(){
-    let form = new FormData();
-    form.append('email',this.user_email),
-    form.append('password',this.password),
-    this.service.login(form)
-    this.dialogRef.close();
+    if(this.user_email,this.password){
+      let form = new FormData();
+      form.append('email',this.user_email),
+      form.append('password',this.password),
+      this.service.login(form)
+      this.dialogRef.close();
+    }else{
+      return null
+    }
   }
   
+  test(){
+    console.log('Works')
+  }
 
   signUpWithGoogle(): void {
-    this.socialService.signIn(GoogleLoginProvider.PROVIDER_ID).then(user => {
-      console.log(`user: ${user}`)
-    });
+    this.socialService.getAccessToken
   }
+  
 
   signInWithGoogle(){
     this.socialService.authState.subscribe((user:any)=>{
@@ -58,7 +68,6 @@ export class LoginComponent {
       form.append('session',localStorage.getItem('session'))
       this.service.googleRegistration(form)
       this.dialogRef.close();
-      this.socialService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
     }else{
       console.log("Not working")
     }

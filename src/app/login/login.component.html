@@ -30,10 +30,7 @@
         <div class="form-extras">
             <p class="googlelogin"><strong>Or</strong></p>
             <div class="google-button">
-                <asl-google-signin-button *ngIf="!isLoggedIn" (click)="signInWithGoogle()" type='standard' size='large'>Sign In With Google</asl-google-signin-button>
-                <button *ngIf="isLoggedIn"><div class="spinner-border" role="status">
-                    <span class="sr-only">Logging user...</span>
-                  </div></button>
+                <asl-google-signin-button *ngIf="!isLoggedIn"  type='standard' size='large'>Sign In With Google</asl-google-signin-button>
             </div>
             <p class="py-2">Dont have an account?<br><a class="signup-link" (click)="showSignUpDialog()">Sign up</a></p>
             <p  class="terms-text">By continuing, you acknowledge you've read our <a mat-dialog-close routerLink="/terms and conditions">Privacy Policy</a> and agree to <a routerLink="/terms and conditions" mat-dialog-close>Our Terms of Service</a></p>

@@ -126,14 +126,14 @@
             
             <a (click)="navigateToChild(item)" class="product-item">
               <div class="product-image">
-                  <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
+                <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
               </div>
-
+          
               <div class="product-name">
                 <div class="name">
                   <p>{{item.product.name}}</p>
                 </div>
-                  
+          
                 <div class="rating">
                   <p *ngIf=" averageRating(item) == 5">
                     <i class="fa-solid fa-star"></i>
@@ -161,28 +161,28 @@
                     <i class="fa-solid fa-star"></i>
                   </p>
                   <p *ngIf="averageRating(item) == 0">
-                    
+          
                   </p>
                 </div>
               </div>
-
+          
               <div class="farm-name">
                 <p>Producer: Kiaragana Coffee Factory</p>
               </div>
-
+          
               <div class="product-details">
-                  <p>Origin: {{item.product.origin | titlecase}}</p>
-                  <p>{{item.price | currency:'USD'}} / 12oz</p>
+                <p>Origin: {{item.product.origin | titlecase}}</p>
+                <p>{{item.price | currency:'USD'}} / 12oz</p>
               </div>
-
+          
             </a>
-
+          
             <div class="latestadd-actions product-addactions">
               <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
                 Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
               </a>
               <a role="button" title="wishlist">
-                  <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart"></i>
               </a>
             </div>
           </div>
@@ -193,7 +193,7 @@
           <div class="product-card"  *ngFor="let item of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
 
             
-            <a routerLink="/Products/{{item.id}}" class="product-item">
+            <a routerLink="/shop/{{item.product.name}}/{{item.id}}" class="product-item">
               <div class="product-image">
                   <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
               </div>
@@ -345,7 +345,7 @@
       
                       <div class="submit-btn">
                           <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                          <a routerLink="/Checkout" class="buy">BUY NOW</a>
+                          <a routerLink="/checkout" class="buy">BUY NOW</a>
                       </div>
                       </div>
       
@@ -406,7 +406,7 @@
       
                       <div class="submit-btn">
                           <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                          <a routerLink="/Checkout" class="buy">BUY NOW</a>
+                          <a routerLink="/checkout" class="buy">BUY NOW</a>
                       </div>
       
                   </form>
