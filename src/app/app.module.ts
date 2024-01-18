@@ -58,6 +58,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { FarminfoComponent } from './informationPages/farminfo/farminfo.component';
 import { TimelinecontentComponent } from './timelinecontent/timelinecontent.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 // register Swiper custom elements
 register();
 
@@ -100,6 +101,7 @@ register();
     FarminfoComponent,
     TimelinecontentComponent,
     CheckoutComponent,
+    UpdatepasswordComponent,
   ],
   // entryComponents:[LoginComponent],
   imports: [
