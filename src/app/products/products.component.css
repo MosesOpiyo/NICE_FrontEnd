@@ -41,7 +41,7 @@
 
 :host ::ng-deep footer {
   position: relative;
-  /* top: 140px; */
+  top: 76px;
 }
 
 :host ::ng-deep .ngx-pagination a:not([href]):not([class]) {

@@ -38,7 +38,7 @@ export class ProductDetailsComponent implements OnInit {
   isShowDiv: boolean  = false;
   isShowDiv2: boolean  = false;
   stars: number[] = [1, 2, 3, 4, 5];
-  selectedValue: number;
+  selectedValue: number = 0;
   private snackBarDuration: number = 2000;
 
   myScriptElement: HTMLScriptElement;
@@ -147,9 +147,8 @@ export class ProductDetailsComponent implements OnInit {
   activatedTabIndex2: number = 0;  
 
   // user rating
-  countStar(star: number) {
+  countStar(star: any) {
     this.selectedValue = star;
-    console.log('Value of star', star);
     this.snackBar.open('You have rated the product as a ' + star + ' star ', '', {
       duration: this.snackBarDuration,
       panelClass: ['green-snackbar'],
@@ -161,24 +160,19 @@ export class ProductDetailsComponent implements OnInit {
 
   clearStars() {
     this.selectedValue = 0;
-    console.log('Value of star', this.selectedValue);
   }
 
-  addClass(star) {
-    console.log("star", star); 
-    console.log("selectedvalue", this.selectedValue);
+  addClass(star: any) {
     let ab = "";
     for (let i = 0; i < star; i++) {
-      console.log("star i", star);
       ab = "starId" + i;
       document.getElementById(ab).classList.add("selected");
     }
  }
- removeClass(star) {
-    console.log("removestar", star);
+
+ removeClass(star: any) {
     let ab = "";
    for (let i = star-1; i >= this.selectedValue; i--) {
-      console.log("star i", star);
       ab = "starId" + i;
       document.getElementById(ab).classList.remove("selected");
     }
@@ -252,8 +246,8 @@ export class ProductDetailsComponent implements OnInit {
   this.quantityPrice = "";
   this.grind = "";
   this.roast_type = "";
-  // console.log(this.isShowDiv);
-  // console.log(this.isShowDiv2);
+  this.num = 1;
+  this.num2 = 1;
 }
 
 // detailedtabs tab index

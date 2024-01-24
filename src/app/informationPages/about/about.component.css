@@ -54,6 +54,11 @@
     background-color: transparent;
   }
 
+  .fa-chevron-up,
+  .fa-chevron-down {
+    color: #0000008c;
+  }
+
   .expogallery-item,
   .expogallery-links,
   .expogallery-links a {
