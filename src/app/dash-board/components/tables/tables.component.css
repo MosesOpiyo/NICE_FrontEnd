@@ -9,6 +9,11 @@
     margin-inline: auto;
 }
 
+h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
 .dropdown{
     border: 2px solid #0000001f;
     position: absolute;

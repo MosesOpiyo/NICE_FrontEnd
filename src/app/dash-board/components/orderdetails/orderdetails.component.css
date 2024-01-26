@@ -1,0 +1,34 @@
+.orderdetails-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: .5rem
+}
+
+.order-card {
+    background: #f1f1f1;
+    padding: 0.5rem;
+}
+
+.orderdetails-container h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.orderdetails-container h3 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.orderdetails-container p {
+    font-size: .9rem;
+}
+
+.delivery-info,
+.payment-info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}

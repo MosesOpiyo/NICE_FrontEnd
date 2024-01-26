@@ -46,6 +46,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { TimeAgoPipe } from './components/timeline/time/time-ago.pipe';
 import { CartdataComponent } from './components/cartdata/cartdata.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { OrderdetailsComponent } from './components/orderdetails/orderdetails.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     TabsComponent,
     TimeAgoPipe,
     CartdataComponent,
-    WishlistComponent
+    WishlistComponent,
+    OrderdetailsComponent
   ],
   imports: [
     CommonModule,

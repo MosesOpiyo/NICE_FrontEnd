@@ -6,9 +6,9 @@
         <div class="dashboard-card info">
             <div class="card-header">
                 <div>
-                    <h5 *ngIf="user['user']['type']=='FARMER'">Manager's Details</h5>
-                    <h5 *ngIf="user['user']['type']=='WAREHOUSER'">Warehouser's Details</h5>
-                    <h5 *ngIf="user['user']['type']=='BUYER'">My Details</h5>
+                    <h4 *ngIf="user['user']['type']=='FARMER'">Manager's Details</h4>
+                    <h4 *ngIf="user['user']['type']=='WAREHOUSER'">Warehouser's Details</h4>
+                    <h4 *ngIf="user['user']['type']=='BUYER'">My Details</h4>
                 </div>
             </div>
         
@@ -35,8 +35,8 @@
 
         <!-- 2ND CARD(FARMER) -->
         <div class="dashboard-card user-info" *ngIf="user.user.type=='FARMER'">
-            <h5 class="mb-4" *ngIf="profile && profile.estate_name != 'None'">Estate Details</h5>
-            <h5 class="mb-4" *ngIf="profile && profile.estate_name == 'None'">Society Details</h5>
+            <h4 class="mb-4" *ngIf="profile && profile.estate_name != 'None'">Estate Details</h4>
+            <h4 class="mb-4" *ngIf="profile && profile.estate_name == 'None'">Society Details</h4>
         
             <div *ngIf="profile">
                 <ul *ngIf="profile" class="farmer-info">
@@ -203,7 +203,7 @@
 
         <!-- 2ND CARD(WAREHOUSER / ORIGIN WAREHOUSER) -->
         <div class="dashboard-card user-info" *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'">
-            <h5 *ngIf="warehouse" class="mb-4">Warehouse Details</h5>
+            <h4 *ngIf="warehouse" class="mb-4">Warehouse Details</h4>
 
             <div *ngIf="warehouse">
                 <ul *ngIf="warehouse" class="warehouse-info">
@@ -249,7 +249,7 @@
 
         <!-- 2ND CARD(BUYER) -->
         <div class="dashboard-card user-info" *ngIf="user.user.type=='BUYER'">
-            <h5 class="mb-4">My Details</h5>
+            <h4 class="mb-4">My Details</h4>
 
             <div>
                 <ul class="buyer-info">
