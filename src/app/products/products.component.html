@@ -134,44 +134,43 @@
                 </div>
           
                 <div class="rating">
-                  <p *ngIf=" averageRating(item) == 5">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                  <p *ngIf="averageRating(item) == 5">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
                   </p>
                   <p *ngIf="averageRating(item) == 4">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
                   </p>
                   <p *ngIf="averageRating(item) == 3">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
                   </p>
                   <p *ngIf="averageRating(item) == 2">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
                   </p>
                   <p *ngIf="averageRating(item) == 1">
-                    <i class="fa-solid fa-star"></i>
+                    <span class="star">★</span>
                   </p>
                   <p *ngIf="averageRating(item) == 0">
-          
                   </p>
                 </div>
               </div>
           
               <div class="farm-name">
-                <p>Producer: Kiaragana Coffee Factory</p>
+                <p>Kiaragana Coffee Factory</p>
               </div>
           
               <div class="product-details">
                 <p>Origin: {{item.product.origin | titlecase}}</p>
-                <p>{{item.price | currency:'USD'}} / 12oz</p>
+                <p class="fw-bold">{{item.price | currency:'USD'}} / 12oz</p>
               </div>
           
             </a>
@@ -203,33 +202,32 @@
                 </div>
                   
                 <div class="rating">
-                  <p *ngIf=" averageRating(item) == 5">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                  <p *ngIf="averageRating(item) == 5">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
                   </p>
                   <p *ngIf="averageRating(item) == 4">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
                   </p>
                   <p *ngIf="averageRating(item) == 3">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
                   </p>
                   <p *ngIf="averageRating(item) == 2">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
                   </p>
                   <p *ngIf="averageRating(item) == 1">
-                    <i class="fa-solid fa-star"></i>
+                    <span class="star">★</span>
                   </p>
                   <p *ngIf="averageRating(item) == 0">
-                    
                   </p>
                 </div>
               </div>
@@ -240,6 +238,7 @@
 
               <div class="product-details">
                   <p>Origin: {{item.product.origin | titlecase}}</p>
+                  <p class="fw-bold">{{item.price | currency:'USD'}} / 12oz</p>
               </div>
 
             </a>

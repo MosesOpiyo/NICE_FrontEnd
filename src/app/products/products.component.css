@@ -13,6 +13,10 @@
   background-color: rgb(216 216 216 / 68%);
 }
 
+:host ::ng-deep #header .navbar-mobile .shop {
+  color: #67b0d1;
+}
+
 :host ::ng-deep #header.header-scrolled .navbar .active {
   background-color: transparent;
   color: #000000;
@@ -39,9 +43,14 @@
   background-color: transparent;
 }
 
+:host ::ng-deep #header .navbar-mobile li:hover> .active {
+  color: #67b0d1;
+}
+
 :host ::ng-deep footer {
   position: relative;
   top: 76px;
+  padding-bottom: 76px;
 }
 
 :host ::ng-deep .ngx-pagination a:not([href]):not([class]) {
@@ -51,6 +60,8 @@
 .shop-component .product-item .product-details {
   display: flex;
   justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .sidebar input[type="radio"] {

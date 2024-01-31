@@ -78,6 +78,15 @@
   background-color: transparent;
 }
 
+:host ::ng-deep #header .navbar-mobile .expo {
+  background-color: rgb(216 216 216 / 68%);
+  color: #67b0d1;
+}
+
+:host ::ng-deep #header .navbar-mobile li:hover> .active {
+  color: #67b0d1;
+}
+
 /* .expo-container {
   border: 2px solid black; 
 } */
