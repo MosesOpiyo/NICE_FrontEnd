@@ -12,6 +12,26 @@
     <!-- ORDER HISTORY STATUS -->
     <div class="order-status order-card">
         <h2>ORDER STATUS</h2>
+
+        <div class="order-timeline">
+            <div *ngFor="let item of value" class="timeline-event">
+                <div class="timeline-point-track">
+                    <div class="timeline-point" [ngClass]="item?.status === 'P' ? 'highlight' : ''"></div>
+                    <div class="timeline-track" [ngClass]="item?.status === 'P' ? 'highlight' : ''"></div>
+                </div>
+
+                <div class="ordertimeline-content" [ngClass]="item?.status === 'P' ? 'icon' : ''">
+                    <span>
+                        {{item.content}}
+                        <i class="fa-solid fa-circle-check"></i>
+                    </span>
+                    
+                    <span class="timeline-date">
+                        {{item.date}}
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- DELIVERY INFO -->

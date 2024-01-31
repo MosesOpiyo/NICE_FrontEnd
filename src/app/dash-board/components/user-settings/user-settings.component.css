@@ -1,10 +1,15 @@
 .settings-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* justify-content: center; */
     gap: 1rem;
     width: 95%;
     margin-inline: auto;
+}
+
+.settings-container h2 {
+    font-size: 23.1px;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .settings-card {
@@ -12,7 +17,7 @@
     padding: 1rem;
     border-radius: 4px;
     box-shadow: 0 0 5px #ccc;
-    height: 250px;
+    height: max-content;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -73,15 +78,13 @@
   }
 
   .label-float input{
-    border: 1px solid lightgrey;
-    border-radius: 5px;
     outline: none;
     min-width: 250px;
     padding: 15px 20px;
     font-size: 16px;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
-    -webkit-appearance:none;
+    appearance:none;
     transition: all .1s linear;
   }
 
@@ -94,13 +97,14 @@
     pointer-events: none;
     position: absolute;
     top: calc(50% - 13px);
-    left: 15px;
+    left: .26rem;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
     background-color: white;
     padding: 2px 5px;
     box-sizing: border-box;
     transition: all .1s linear;
+    font-size: 14.5px;
   }
 
   .oldpassword-edit .label-float label {
@@ -108,14 +112,14 @@
   }
   
   .label-float input:required:invalid + label {
-    color: #000000b7;
+    color: #000000a8;
   }
 
   .label-float input:focus + label,
   .label-float input:not(:placeholder-shown) + label{
     font-size: 13px;
     top: 3px;
-    color: #000000b7;
+    color: #000000a8;
   }
 
   .oldpassword-edit  .label-float input:focus + label,
@@ -148,21 +152,24 @@
 }
 
 .settings-container form input:focus {
-    border: 1px solid #0000ff85;
+    border: 1px solid #0000ff59;
     box-shadow: none;
 }
 
 .settings-container form .signup-visibility {
     margin-bottom: 10px;
-}
-
-.settings-container .signup-visibility {
     display: flex;
 }
 
+.settings-container form .signup-visibility > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .settings-container #myInput {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
 }
 
 /* media queries */

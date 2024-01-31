@@ -37,13 +37,30 @@
         <ul class="nav-items">
             <li class="dropdown">
                 <a class="user-link">
-                    <span>Hello, {{user.username | titlecase}}</span>
+                    <span>Hi, {{user.username | titlecase}}</span>
                     <i class="fa-solid fa-chevron-down"></i>
                 </a>
                 <ul class="dropdown-links">
-                    <li><a routerLink="/dash-board">My Profile</a></li>
-                    <li><a routerLink="/dash-board/settings">Settings</a></li>
-                    <li><a (click)="logOut()">Log Out</a></li>
+                    <li>
+                        <a routerLink="/dash-board">
+                            <img src="https://cdn-icons-png.freepik.com/256/8647/8647311.png?ga=GA1.1.113623340.1706293126&semt=ais" alt="user icon">
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a routerLink="/dash-board/settings">
+                            <img src="https://cdn-icons-png.freepik.com/256/3524/3524636.png?ga=GA1.1.113623340.1706293126&semt=ais" alt="gear icon">
+                            <span>Settings</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a (click)="logOut()">
+                            <img src="https://cdn-icons-png.freepik.com/256/1828/1828427.png?ga=GA1.1.1107079248.1706713315&semt=ais" alt="exiting door icon">
+                            <span>Log Out</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>

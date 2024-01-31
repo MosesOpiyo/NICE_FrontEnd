@@ -41,6 +41,27 @@
         </div>
     </div>
 
+    <!-- USERNAME EDIT -->
+    <div class="name settings-card">
+        <div class="name-header">
+            <h2>Edit Name</h2>
+        </div>
+    
+        <div class="name-edit">
+            <p>This is the name associated with your account:<br> <span>{{user.user.username | titlecase}}</span></p>
+
+            <form ngNativeValidate>
+                <div class="label-float">
+                    <input id="name" name="name" [(ngModel)]="newUsername" class="form-control"
+                        type="text" placeholder=" " required>
+                    <label for="name">Change Name</label>
+                </div>
+
+                <button (click)="showConfirmPasswordDialog('username')" type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+
     <!-- PASSWORD EDIT -->
     <div class="password settings-card">
         <div class="password-header">
@@ -77,27 +98,6 @@
                 </div>
 
                 <button type="submit">SUBMIT</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- USERNAME EDIT -->
-    <div class="name settings-card">
-        <div class="name-header">
-            <h2>Edit Name</h2>
-        </div>
-    
-        <div class="name-edit">
-            <p>This is the name associated with your account:<br> <span>{{user.user.username | titlecase}}</span></p>
-
-            <form ngNativeValidate>
-                <div class="label-float">
-                    <input id="name" name="name" [(ngModel)]="newUsername" class="form-control"
-                        type="text" placeholder=" " required>
-                    <label for="name">Change Name</label>
-                </div>
-
-                <button (click)="showConfirmPasswordDialog('username')" type="submit">SUBMIT</button>
             </form>
         </div>
     </div>
