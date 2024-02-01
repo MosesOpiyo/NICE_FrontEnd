@@ -4,6 +4,7 @@ import { NotificationsService } from 'src/app/Notifications/notifications.servic
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConfirmdeletionComponent } from '../confirmdeletion/confirmdeletion.component';
 import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-messages',
@@ -11,7 +12,7 @@ import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authenticat
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent {
-  constructor(private service:AuthenticationStoreService,private dialog:MatDialog,private notifications:NotificationsService,private snackbar:MatSnackBar){}
+  constructor(private service:AuthenticationStoreService,private dialog:MatDialog,private notifications:NotificationsService,private snackbar:MatSnackBar,private route:Router){}
   user:any
   isSeleted:boolean
   masterSelected = false;
@@ -42,6 +43,10 @@ isAllSelected(item:any) {
     this.notificationsList.push(item.id)
     console.log(this.notificationsList)
   }
+}
+
+navigate(subroute){
+  this.route.navigate([`dash-board/${subroute}`])
 }
 
 showDeletionDialog() {

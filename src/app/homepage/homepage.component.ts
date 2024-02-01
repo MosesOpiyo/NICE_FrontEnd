@@ -4,6 +4,7 @@ import { AuthenticationStoreService } from '../AuthServiceStore/authentication-s
 import { CartService } from '../Service/Cart/cart.service';
 import { CartStoreService } from '../Store/Cart/cart-store.service';
 import { ProductStoreService } from '../Store/Products/product-store.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-homepage',
@@ -17,6 +18,7 @@ export class HomepageComponent implements OnInit {
      this.myScriptElement.src = "./assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
+
   ngOnInit(): void {
     this.product.productData()
     this.cartStore.cartCheck()

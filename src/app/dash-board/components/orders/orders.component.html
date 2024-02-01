@@ -13,11 +13,11 @@
                 </div>
 
                 <div class="table-responsive">
-                    <div  *ngIf="!Orders" class="empty">
+                    <div  *ngIf="!Orders && !farmerOrders" class="empty">
                         <p>Orders will appear here</p>
                     </div>
 
-                    <table *ngIf="Orders" mat-table [dataSource]="Orders" class="mat-elevation-z8 demo-table table-light">
+                    <table *ngIf="user.type =='WAREHOUSER'" mat-table [dataSource]="Orders" class="mat-elevation-z8 demo-table table-light">
                         <ng-container matColumnDef="name">
                           <th mat-header-cell *matHeaderCellDef> Name </th>
                           <td mat-cell *matCellDef="let element"> {{element.product.name}} </td>
@@ -46,6 +46,45 @@
                           <tr
                               mat-row
                               *matRowDef="let row; columns: displayedColumns;"
+                          ></tr>
+                      </table>
+                      <table *ngIf="user.type =='FARMER'" mat-table [dataSource]="farmerOrders" class="mat-elevation-z8 demo-table table-light">
+                        <ng-container matColumnDef="buyer">
+                          <th mat-header-cell *matHeaderCellDef> Buyer</th>
+                          <td mat-cell *matCellDef="let element"> {{element.buyer.username}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="products">
+                          <th mat-header-cell *matHeaderCellDef> Products </th>
+                          <td mat-cell *matCellDef="let element"> {{element.product.length}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="country">
+                            <th mat-header-cell *matHeaderCellDef> Country </th>
+                            <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+                          </ng-container>
+                        <ng-container matColumnDef="warehouse">
+                          <th mat-header-cell *matHeaderCellDef> Warehouse </th>
+                          <td mat-cell *matCellDef="let element"> {{element.warehouse.name}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="date">
+                            <th mat-header-cell *matHeaderCellDef> Date </th>
+                            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="quantity">
+                            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+                            <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="marker">
+                            <th mat-header-cell *matHeaderCellDef> Marker </th>
+                            <td mat-cell *matCellDef="let element"> {{element.marker}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="is_fulfilled">
+                            <th mat-header-cell *matHeaderCellDef> Is Fulfilled </th>
+                            <td mat-cell *matCellDef="let element"><i *ngIf="element.is_fulfilled==true" style="color: green;font-size: 25px;" class="bi bi-check2-circle"></i><i *ngIf="element.is_fulfilled==false" style="color: red;font-size: 25px;" class="bi bi-x-circle"></i></td>
+                        </ng-container>
+                          <tr mat-header-row *matHeaderRowDef="farmerDisplayedColumns"></tr>
+                          <tr
+                              mat-row
+                              *matRowDef="let row; columns: farmerDisplayedColumns;"
                           ></tr>
                       </table>
                 </div>
