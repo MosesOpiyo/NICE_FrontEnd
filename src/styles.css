@@ -904,6 +904,10 @@ opacity: .2;
     color: #000000;
   }
 
+  #hero .one h1 {
+    margin-bottom: 40px;
+  }
+
   #hero .hero-content h2 {
     margin-block: 25px;
   }
@@ -2720,9 +2724,8 @@ opacity: .2;
     /* border: 2px solid black; */
     position: relative;
     display: flex;
-    /* top: 140px; */
     top: 76px;
-    margin-bottom: 152px;
+    margin-bottom: 76px;
   }
   
   /* sidebar */
@@ -2784,6 +2787,7 @@ opacity: .2;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    gap: 2rem;
   }
   
     /* PRODUCTS STYLING */
@@ -2819,6 +2823,7 @@ opacity: .2;
     .farmdetails-component .product-card p {
       line-height: 1rem;
       color: #000000d1;
+      text-align: center;
     }
     
     .shop-component .product-item,
@@ -2827,7 +2832,7 @@ opacity: .2;
       /* border: 2px solid grey; */
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: .5rem;
     }
   
     .shop-component .product-item .product-name,
@@ -2875,11 +2880,17 @@ opacity: .2;
     .farmdetails-component .product-name {
       display: flex;
       justify-content: space-between;
-      /* border: 2px solid black; */
+      flex-direction: column;
+      align-items: center;
     }
   
     .shop-component .product-item .rating i,
     .farmdetails-component .product-item .rating i {
+      color: orange;
+    }
+
+    .shop-component .product-item .rating p span.star,
+    .farmdetails-component .product-item .rating p span.star {
       color: orange;
     }
   
@@ -2911,13 +2922,23 @@ opacity: .2;
     .farmdetails-component .products-pagination {
       display: flex;
       justify-content: center;
+      border-top: 1px solid #00000012;
+      padding-top: 1rem;
     }
   
     /* media-queries */
-    @media (max-width: 1024px) {
+    @media (max-width: 1130px) {
       .shop-component .productlist-content,
       .farmdetails-component .productlist-content {
         grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 850px) {
+      .shop-component .product-card,
+      .farmdetails-component .product-card {
+        height: max-content;
+        padding-bottom: 0.5rem
       }
     }
   
@@ -2940,7 +2961,7 @@ opacity: .2;
       }
 
       .shop-component .sidebar .widget-title {
-        border: 2px solid #0000000d;
+        border: 1px solid #0000000d;
       }
   
       .shop-component .products .productlist {
@@ -2975,7 +2996,7 @@ opacity: .2;
       }
 
       .shop-component .products .sidebar > * ul {
-        border: 2px solid #0000000d;
+        border: 1px solid #0000000d;
         border-top: none;
       }
   
@@ -3022,14 +3043,16 @@ opacity: .2;
         grid-template-columns: repeat(1, 1fr);
       }
   
-      .shop-component .product-card {
+      .shop-component .product-card,
+      .farmdetails-component .product-card {
         width: 90%;
         margin-inline: auto;
       }
     }
   
     @media (max-width: 300px) {
-      .shop-component .product-card {
+      .shop-component .product-card,
+      .farmdetails-component .product-card {
         width: 100%;
       }
     }
@@ -3039,12 +3062,10 @@ opacity: .2;
      /* INDIVIDUAL PRODUCT COMPONENT STYLING */
   .product-component .product-container {
     padding: 1rem;
-    /* border: 2px solid red; */
-    margin-bottom: 150px;
+    margin-bottom: 75px;
     position: relative;
     top: 75px;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -3161,19 +3182,13 @@ opacity: .2;
     gap: 1rem;
   }
 
-  /* .farm-tab .owners {
-    border: 2px solid red;
-  } */
-
   .product-component .farm-tab .owners > *,
   .product-component .farm-tab .farmdetails > *,
   .product-component .farm-tab .morefarmdetails > *,
   .farmdetails-component .farm-tab .owners > *,
   .farmdetails-component .farm-tab .farmdetails > *,
   .farmdetails-component .farm-tab .morefarmdetails > * {
-    /* border: 2px solid black; */
     flex-basis: 100%;
-    /* padding: .5rem; */
   }
 
   .product-component .farm-tab .owners .owner-image,
@@ -3192,7 +3207,6 @@ opacity: .2;
   .farmdetails-component .farm-tab .farmdetails .farm-bio {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
   }
 
@@ -3217,7 +3231,8 @@ opacity: .2;
 
   .product-component .farm-tab .morefarmdetails,
   .farmdetails-component .farm-tab .morefarmdetails {
-    height: 450px;
+    height: 300px;
+    margin-top: 10px;
   }
 
   .product-component .farm-tab .morefarmdetails .map iframe,
@@ -3229,9 +3244,9 @@ opacity: .2;
 
   .product-component .morefarmdetails .history,
   .farmdetails-component .morefarmdetails .history {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: none;
+    /* flex-direction: column;
+    gap: 1rem; */
   }
 
   .product-component .reviews-tab > *,

@@ -14,6 +14,11 @@
     color: orange;
 }
 
+h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
 .wishlist-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -24,7 +29,7 @@
 }
 
 .wishlist-container .dashboard-card {
-    background-color: #f2f2f2;
+    background-color: #eeeeee;
     border-radius: 4px;
     height: 100%;
     box-shadow: 0 0 5px #ccc;
@@ -36,7 +41,7 @@
     display: grid;
     width: 100%;
     border-bottom: 1px solid #0000000f;
-    grid-template: 1fr / 20% 80%;
+    grid-template: 1fr / 150px 1fr;
     align-items: center;
     position: relative;
 }
@@ -115,7 +120,18 @@
     }
 
     .cartcontents-mobile {
-        grid-template: 1fr / 1fr 1fr;
+        grid-template: auto / 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .cartcontents-mobile .product-content {
+        justify-items: center;
+    }
+
+    .cartcontents-mobile .image {
+        width: max-content;
+        height: 200px;
     }
 }
 

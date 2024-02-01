@@ -74,6 +74,8 @@ export class AddtocartComponent implements OnInit {
     this.quantityPrice = "";
     this.grind = "";
     this.roast_type = "";
+    this.number_value = 1;
+    this.number_value2 = 1;
   }
 
   // increment button for roasted section

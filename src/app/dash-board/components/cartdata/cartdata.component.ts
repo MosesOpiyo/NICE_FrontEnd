@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
 import { Profile } from 'src/app/Classes/ProfileClass/profile';
 import { CartStoreService } from 'src/app/Store/Cart/cart-store.service';
 import { environment } from 'src/environments/environment.development';
+import { MatDialog } from '@angular/material/dialog';
+import { OrderdetailsComponent } from '../orderdetails/orderdetails.component';
 
 @Component({
   selector: 'app-cartdata',
@@ -10,21 +12,23 @@ import { environment } from 'src/environments/environment.development';
   styleUrls: ['./cartdata.component.css']
 })
 export class CartdataComponent implements OnInit {
-  // order tabs
-  tabs: string [] = ['Orders', 'Cancelled Orders'];
+  tabsArray: string[] = ['Orders', 'Cancelled Orders'];
   activatedTabIndex: number = 0;
-
   user:Profile;
   userCart:any | null = null;
-  cloudinaryUrl = environment.CLOUDINARY_URL
+  cloudinaryUrl = environment.CLOUDINARY_URL;
+  
+  constructor(private cart:CartStoreService, private store:AuthenticationStoreService, private dialog: MatDialog){}
+
+  setTab(index:number) {
+    this.activatedTabIndex = index;
+  }
 
   tabChange(tabIndex: number) {
     this.activatedTabIndex = tabIndex;
   }
 
-   constructor(private cart:CartStoreService, private store:AuthenticationStoreService){}
-
-    ngOnInit(): void {
+  ngOnInit(): void {
     this.store.storeProfileData()
     this.store.data$.subscribe((res:any)=>{
       this.user = res
@@ -34,5 +38,14 @@ export class CartdataComponent implements OnInit {
       this.userCart = data['products']
       console.log(this.userCart.product)
     })
+  }
+
+  showorderdetailsDialog(){
+    const dialogRef = this.dialog.open(OrderdetailsComponent,{
+      width: '30pc',
+      maxWidth: '90vw',
+      autoFocus: false,
+      maxHeight: '100vh'
+    }); 
   }
 }

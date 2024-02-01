@@ -10,6 +10,11 @@
     color: red;
 }
 
+h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
 .payments-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -21,7 +26,7 @@
 }
 
 .payments-container .dashboard-card {
-    background-color: #f2f2f2;
+    background-color: #eeeeee;
     padding: 1rem;
     border-radius: 4px;
     height: 100%;

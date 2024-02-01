@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog'
+import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { AuthenticationService } from '../AuthService/authentication.service';
 import { SignUpComponent } from '../sign-up/sign-up.component';
@@ -95,6 +95,7 @@ export class NavbarComponent implements OnInit {
       autoFocus: false,
       maxHeight: '100vh',
     })
+    this.toggleMenu();
   }
 
   showTripRegisterDialog() {
@@ -104,6 +105,7 @@ export class NavbarComponent implements OnInit {
       autoFocus: false,
       maxHeight: '100vh',
     })
+    this.toggleMenu();
   }
 
   ngOnInit(): void {

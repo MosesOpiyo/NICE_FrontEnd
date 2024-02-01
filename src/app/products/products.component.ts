@@ -22,7 +22,10 @@ export class ProductsComponent implements OnInit {
   num2: number = 1;
   totalProduct:any;
   products:any;
-  cloudinaryUrl = environment.CLOUDINARY_URL
+  isShowDiv = false;
+  isShowDiv2 = false;
+  dataFromChild: string;
+  cloudinaryUrl = environment.CLOUDINARY_URL;
 
 
   myScriptElement: HTMLScriptElement;
@@ -31,15 +34,19 @@ export class ProductsComponent implements OnInit {
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
-  isShowDiv = false;
-  isShowDiv2 = false;
-  dataFromChild: string;
+  
+  // paginator
+  onPageChange(page: number) {
+    this.p = page;
+    window.scrollTo(0, 0);
+  }
   
   handleDataFromChild(data: string) {
       this.filteredProducts = this.products.filter(item => {
         return item.product.name.indexOf(data.toUpperCase()) > -1
       })
   }
+  
   //Variety sidenav
   isShowVariety = true;
    toggleVarietyOn() {

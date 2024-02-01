@@ -3,15 +3,19 @@
         <!-- FIRST CARD -->
         <div class="dashboard-card orders-table">
 
-            <div class="rounded h-100 p-4">
+            <div class="rounded h-100 order-card">
                 <div class="row g-0" style="width: 100%;">
                     <div class="col-lg-10">
-                        <h4 class="mb-4">Orders</h4>
+                        <h4 class="mb-4">My Orders</h4>
                     </div>
                 </div>
 
                 <div class="col">
-                    <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)" ></app-tabs>
+                    <ul class="navs navs-tabs">
+                        <li class="navs-item" *ngFor="let tab of tabsArray; let sr = index" (click)="setTab(sr)" [ngClass]="activatedTabIndex == sr ? 'active' : '' " >
+                            <a class="navs-link" [ngClass]="activatedTabIndex == sr ? 'active' : '' ">{{tab}}</a>
+                        </li>
+                    </ul>                    
                 </div>
 
                 <div *ngIf="activatedTabIndex == 0">
@@ -25,14 +29,18 @@
                                 <div class="product-name">
                                     <p>Product Name: <span>Chim</span></p>
                                 </div>
+
+                                <div class="order-details">
+                                    <button type="button" (click)="showorderdetailsDialog()">VIEW ORDER DETAILS</button>
+                                </div>
                             </div>
                 
                             <div class="product-data">
-                                <div class="product-quantity">
-                                    <p>Quantity: <span>4</span></p>
+                                <div class="order-placed">
+                                    <p>Order placed: <span>25-12-2023</span></p>
                                 </div>
                                 <div class="product-price">
-                                    <p>$200</p>
+                                    <p>Total: <span>$200</span></p>
                                 </div>
                                 <div class="product-number">
                                     <p>Order: <span>ABC12345</span></p>
@@ -57,17 +65,21 @@
                                 <div class="product-name">
                                     <p>Product Name: <span>Mettle</span></p>
                                 </div>
+
+                                <div class="order-details">
+                                    <button type="button" (click)="showorderdetailsDialog()">VIEW ORDER DETAILS</button>
+                                </div>
                             </div>
                 
                             <div class="product-data">
-                                <div class="product-quantity">
-                                    <p>Quantity: <span>2</span></p>
+                                <div class="order-placed">
+                                    <p>Order placed: <span>25-12-2023</span></p>
                                 </div>
                                 <div class="product-price">
-                                    <p>$100</p>
+                                    <p>Total: <span>$200</span></p>
                                 </div>
                                 <div class="product-number">
-                                    <p>Order No: <span>ABC12345</span></p>
+                                    <p>Order: <span>ABC12345</span></p>
                                 </div>
                                 <div class="delivery-status">
                                     <p class="notdelivered">FAILED DELIVERY</p>
