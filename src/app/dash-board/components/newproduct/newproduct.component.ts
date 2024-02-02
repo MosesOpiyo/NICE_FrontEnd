@@ -3,6 +3,12 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductsService } from 'src/app/ProductsService/products.service';
 
+interface Profile {
+  value: string;
+  viewValue: string;
+}
+
+
 @Component({
   selector: 'app-newproduct',
   templateUrl: './newproduct.component.html',
@@ -31,6 +37,15 @@ export class NewproductComponent implements OnInit {
   level:any
   email:any
 
+
+  profiles: Profile[] = [
+    {value: 'acidity-0', viewValue: 'Bright acidity'},
+    {value: 'lemon-1', viewValue: 'Lemon'},
+    {value: 'blackcurrant-2', viewValue: 'Blackcurrant'},
+    {value: 'chocolatey-3', viewValue: 'Chocolatey'},
+    {value: 'raspberry-4', viewValue: 'Raspberry'},
+    {value: 'fruity-5', viewValue: 'Fruity'},
+  ];
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({

@@ -169,7 +169,10 @@ export class TablesComponent implements OnInit {
 
   showProductDialog(){
     const dialogRef = this.dialog.open(NewproductComponent,{
-      width: '40pc'
+      width: '40pc',
+      maxWidth: '90vw',
+      autoFocus: false,
+      maxHeight: '100vh',
     });
   }
 

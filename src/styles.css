@@ -2163,9 +2163,10 @@ opacity: .2;
     }
 
     .popular-header h2 {
-      color: #000000;
+      color: #212529;
       position: relative;
       z-index: 1;
+      font-weight: 500;
     }
 
     .popular-header h2::after {
@@ -2215,7 +2216,8 @@ opacity: .2;
     .popular-header h2,
     .farmer-header h2,
     .latest-header h2,
-    .roast-header h2 {
+    .roast-header h2,
+    .subscribe-header h2 {
       font-size: 2rem;
     }
   }
@@ -2228,7 +2230,8 @@ opacity: .2;
     .popular-header h2,
     .farmer-header h2,
     .latest-header h2,
-    .roast-header h2 {
+    .roast-header h2,
+    .subscribe-header h2 {
       font-size: 1.7rem;
     }
 
@@ -2559,7 +2562,6 @@ opacity: .2;
   }
 
   .subscribe-content h2 {
-    font-size: 2rem;
     margin-bottom: 1rem;
   }
 
