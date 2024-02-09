@@ -20,13 +20,13 @@ export class CartComponent implements OnInit {
   public grandTotal !: number;
   cloudinaryUrl = environment.CLOUDINARY_URL
   user:any | null = null;
-  displayedColumns: string[] = ['image','name','quantity','price','delete'];
+  displayedColumns: string[] = ['image','name','quantity','price','subtotal','subscription','delete'];
   userCart:any | null = null;
   isLoggedIn:any
   quantity = 0
   total = 0
 
-
+  
   myScriptElement: HTMLScriptElement;
   constructor(private cart:CartStoreService, private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService,private cartStore:CartStoreService){
      this.myScriptElement = document.createElement("script");
