@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-farminfo',
   templateUrl: './farminfo.component.html',
-  styleUrl: './farminfo.component.css'
+  styleUrls: ['./farminfo.component.css']
 })
 export class FarminfoComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: {

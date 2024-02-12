@@ -1,41 +1,59 @@
-import { Component,Inject } from '@angular/core';
-import { SocialUser,SocialAuthService, } from '@abacritt/angularx-social-login';
+import { Component,Inject, OnInit } from '@angular/core';
+import { SocialUser,SocialAuthService,GoogleLoginProvider, } from '@abacritt/angularx-social-login';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../AuthService/authentication.service';
 
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { FarmerSignUpComponent } from '../sign-up/farmer-sign-up/farmer-sign-up.component';
 import { ForgotpasswordComponent } from '../forgotpassword/forgotpassword.component';
+import { error } from 'console';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-constructor(
-  public dialogRef: MatDialogRef<LoginComponent>,
-  private dialog:MatDialog,
-  public service: AuthenticationService,
-  private socialService: SocialAuthService,
-  @Inject(MAT_DIALOG_DATA) public data: any
-){}
-email: any;
-password: any;
-profile:any;
-isPasswordVisible = false;
+  constructor(
+    public dialogRef: MatDialogRef<LoginComponent>,
+    private dialog:MatDialog,
+    public service: AuthenticationService,
+    private socialService: SocialAuthService,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ){}
+  user_email: any;
+  password: any;
+  profile:any;
+  isPasswordVisible = false;
 
-socialUser: SocialUser
-isLoggedIn: boolean;
+  socialUser: SocialUser
+  isLoggedIn: boolean;
+
+  ngOnInit(): void {
+    this.signInWithGoogle()
+  }
 
   loginUser(){
-    let form = new FormData();
-    form.append('email',this.email),
-    form.append('password',this.password),
-    this.service.login(form)
-    this.dialogRef.close();
+    if(this.user_email,this.password){
+      let form = new FormData();
+      form.append('email',this.user_email),
+      form.append('password',this.password),
+      this.service.login(form)
+      this.dialogRef.close();
+    }else{
+      return null
+    }
   }
+  
+  test(){
+    console.log('Works')
+  }
+
+  signUpWithGoogle(): void {
+    this.socialService.getAccessToken
+  }
+  
 
   signInWithGoogle(){
     this.socialService.authState.subscribe((user:any)=>{
@@ -43,13 +61,15 @@ isLoggedIn: boolean;
     if(this.isLoggedIn){
       this.socialUser = user
       let username = `${this.socialUser.firstName} ${this.socialUser.lastName}`
-      console.log(this.socialUser.idToken.slice(0,50))
       let form = new FormData();
       form.append('username',username),
       form.append('email',this.socialUser.email),
       form.append('password',this.socialUser.idToken.slice(0,50)),
+      form.append('session',localStorage.getItem('session'))
       this.service.googleRegistration(form)
       this.dialogRef.close();
+    }else{
+      console.log("Not working")
     }
     })
   }

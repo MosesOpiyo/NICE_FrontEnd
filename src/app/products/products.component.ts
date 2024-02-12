@@ -21,6 +21,8 @@ export class ProductsComponent implements OnInit {
   num: number = 1;
   num2: number = 1;
   totalProduct:any;
+  flavourOptions: any[] = []
+  originOptions: any[] = []
   products:any;
   isShowDiv = false;
   isShowDiv2 = false;
@@ -29,7 +31,7 @@ export class ProductsComponent implements OnInit {
 
 
   myScriptElement: HTMLScriptElement;
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private product:ProductStoreService){
+  constructor(private dialog: MatDialog,private service:AuthenticationService,private product:ProductStoreService,private route:Router){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
@@ -40,11 +42,36 @@ export class ProductsComponent implements OnInit {
     this.p = page;
     window.scrollTo(0, 0);
   }
+  getFlavourOptions(){
+    this.products.forEach((product:any) => {
+      if(!this.flavourOptions.includes(product.product.cup_notes)){
+        this.flavourOptions.push(product.product.cup_notes)
+      }
+    });
+  }
+
+  getOriginrOptions(){
+    this.products.forEach((product:any) => {
+      if(!this.originOptions.includes(product.product.origin)){
+        this.originOptions.push(product.product.origin)
+      }
+    });
+  }
   
   handleDataFromChild(data: string) {
       this.filteredProducts = this.products.filter(item => {
         return item.product.name.indexOf(data.toUpperCase()) > -1
       })
+  }
+  optionsFlavorFilter(option:string){
+    this.filteredProducts = this.products.filter(item => {
+      return item.product.cup_notes.indexOf(option) > -1
+    })
+  }
+  optionsOriginFilter(option:string){
+    this.filteredProducts = this.products.filter(item => {
+      return item.product.origin.indexOf(option) > -1
+    })
   }
   
   //Variety sidenav
@@ -92,7 +119,10 @@ export class ProductsComponent implements OnInit {
   total:any
   filteredProducts:any
 
-  
+  navigateToChild(item:any) {
+    let data = item 
+    this.route.navigate([`/shop/${item.product.name}/${item.id}`]);
+  }
 
 
   showLoginDialog(){
@@ -112,8 +142,12 @@ export class ProductsComponent implements OnInit {
    }); 
  }
 
- showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string){
+ showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string,item:any,name:any){
   const dialogRef = this.dialog.open(AddtocartComponent,{
+    data: {
+      item:item.id,
+      name:item.product.name
+    },
     width: '30pc',
     maxWidth: '90vw',
     autoFocus: false,
@@ -152,6 +186,8 @@ export class ProductsComponent implements OnInit {
     else{
       this.products = res
     }
+    this.getFlavourOptions()
+    this.getOriginrOptions()
     this.products.forEach((product:any) => {
       product.rating.forEach((ratingItem: any) => {
         this.ratings.push(ratingItem.rating)

@@ -2,7 +2,8 @@ name: Test
 
 on:
   push:
-    branches: [ ft-functionality,ft-design ]
+    branches: [ ft-functionality ]
 jobs:
   test:
     runs-on: ubuntu-latest
+

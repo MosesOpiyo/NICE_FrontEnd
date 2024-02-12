@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class UpdatepasswordComponent {
 
   isPasswordVisible = false;
+  email:any
   newpassword: any;
   confirmpassword: any;
 

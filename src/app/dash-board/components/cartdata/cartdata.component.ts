@@ -9,7 +9,7 @@ import { OrderdetailsComponent } from '../orderdetails/orderdetails.component';
 @Component({
   selector: 'app-cartdata',
   templateUrl: './cartdata.component.html',
-  styleUrl: './cartdata.component.css'
+  styleUrls: ['./cartdata.component.css']
 })
 export class CartdataComponent implements OnInit {
   tabsArray: string[] = ['Orders', 'Cancelled Orders'];
@@ -32,7 +32,6 @@ export class CartdataComponent implements OnInit {
     this.store.storeProfileData()
     this.store.data$.subscribe((res:any)=>{
       this.user = res
-      console.log(this.user)
     })
 
     this.cart.data$.subscribe((data:any) =>{

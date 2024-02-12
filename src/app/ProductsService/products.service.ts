@@ -74,6 +74,12 @@ export class ProductsService {
     })
     return this.http.get(`${environment.BASE_URL}Warehouse/Warehouse`,{'headers':headers})
   }
+  getFarmerOrders(){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/FarmerOrders`,{'headers':headers})
+  }
   
   getWarehouseOrders(){
     let headers = new HttpHeaders({

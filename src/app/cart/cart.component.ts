@@ -20,9 +20,10 @@ export class CartComponent implements OnInit {
   public grandTotal !: number;
   cloudinaryUrl = environment.CLOUDINARY_URL
   user:any | null = null;
-  displayedColumns: string[] = ['image','name','quantity','price','subtotal','subscription','delete'];
+  displayedColumns: string[] = ['image','name','weight','quantity','price','totalPrice','delete'];
   userCart:any | null = null;
   isLoggedIn:any
+  itemQuantity:number = 1
   quantity = 0
   total = 0
 
@@ -42,6 +43,11 @@ export class CartComponent implements OnInit {
       this.quantity--
     }
   }
+  
+  itemQuantityTotal(price,quantity){
+    var total_price = quantity * price
+    return total_price.toFixed(2)
+  }
 
   showLoginDialog(){
    const dialogRef = this.dialog.open(LoginComponent,{
@@ -54,23 +60,23 @@ export class CartComponent implements OnInit {
    this.ngOnInit()
  }
 
- showSignUpDialog(){
-   const dialogRef = this.dialog.open(SignUpComponent,{
-     width: '25pc'
-   }); 
- }
  subTotal(items:any){
   const list :number[] = []
    items.forEach((item:any)=>{
-    list.push(item.price)
+    var total = item.price * item.quantity
+    list.push(total)
    });
    const sum = list.reduce((acc, item) => acc + item, 0);
    return sum
  }
  Pay(amount:any){
-  this.cartService.makePayment(amount).subscribe((res:any)=>{
-    window.open(res)
-  })
+  if(sessionStorage.getItem("Token")){
+    this.cartService.makePayment(amount).subscribe((res:any)=>{
+      window.open(res)
+    })
+  }else{
+    this.showLoginDialog()
+  }
  }
  removeItem(id:number){
   this.cartService.removeFromCart(id).subscribe((res:any) => {
@@ -95,12 +101,13 @@ value(value: any, id: number, quantity: number) {
 decrement(element: any, id: number, quantity: number){
   if (quantity-1 < 1) {
     quantity = 1;
+    element.quantity = quantity
   }
   else {
     for (let i=0; i < this.userCart.length; i++){
       if (this.userCart[i].id === id) {
         quantity -= 1
-        this.userCart[i].quantity = quantity;
+        element.quantity = quantity
       }
     }
   }
@@ -111,14 +118,24 @@ increment(element: any, id: number, quantity: number){
   for (let i=0; i < this.userCart.length; i++){
     if (this.userCart[i].id === id) {
       quantity++
-      this.userCart[i].quantity = quantity;
+      element.quantity = quantity
     }
   }
 }
 
  ngOnInit(): void {
   this.cart.data$.subscribe((data:any) =>{
-    this.userCart = data['products']
+    if(data == ""){
+      const session = localStorage.getItem("session")
+      this.cart.updateCart(session)
+      this.cart.data$.subscribe((data:any) =>{
+        this.userCart = data['products']
+      })
+    }else{
+      this.userCart = data['products']
+    }
+    
+    
   })
  }
 

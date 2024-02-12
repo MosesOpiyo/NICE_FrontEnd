@@ -15,35 +15,12 @@
           </div>
           <!-- <input type="hidden" id="previous_select"> -->
           <ul *ngIf="isShowVariety">
-            <li class="customRadio">
-              <input type="radio" value="Variety1" id="Variety1" name="variety"  />
-              <label for="Variety1"><span><span></span></span>Bright acidity</label>
-            </li>
-
-            <li class="customRadio">
-              <input type="radio" value="Variety2" id="Variety2" name="variety"  />
-              <label for="Variety2"><span><span></span></span>Lemon</label>
-            </li>
-
-            <li class="customRadio">
-              <input type="radio" value="Variety2" id="Variety3" name="variety"  />
-              <label for="Variety3"><span><span></span></span>Blackcurrant</label>
-            </li>
-
-            <li class="customRadio">
-              <input type="radio" value="Variety2" id="Variety4" name="variety"  />
-              <label for="Variety4"><span><span></span></span>Chocolatey</label>
-            </li>
-
-            <li class="customRadio">
-              <input type="radio" value="Variety2" id="Variety5" name="variety"  />
-              <label for="Variety5"><span><span></span></span>Raspberry</label>
-            </li>
-
-            <li class="customRadio">
-              <input type="radio" value="Variety2" id="Variety6" name="variety"  />
-              <label for="Variety6"><span><span></span></span>Fruity</label>
-            </li>
+            <div class="options" *ngFor="let flavour of flavourOptions">
+              <li class="customRadio">
+                <input type="radio" value="{{flavour}}" (click)="optionsFlavorFilter(flavour)" id="{{flavour}}" name="{{flavour}}"  />
+                <label for="{{flavour}}"><span><span></span></span>{{flavour}}</label>
+              </li>
+            </div>
           </ul>
         </div>
 
@@ -56,35 +33,12 @@
           </div>
           <!-- <input type="hidden" id="previous_select"> -->
           <ul *ngIf="isShowFarms">
-            <li class="customRadio">
-              <input type="radio" value="farm1" id="farm1"  name="farm" />
-              <label for="farm1"><span><span></span></span>Kiambu</label>
-            </li>
-
-            <li class="customRadio">
-              <input type="radio" value="farm2" id="farm2" name="farm" />
-              <label for="farm2"><span><span></span></span>Nyeri</label>
-            </li>
-
-            <li class="customRadio">
-              <input type="radio" value="farm2" id="farm3" name="farm" />
-              <label for="farm3"><span><span></span></span>Kirinyaga</label>
-            </li>
-
-            <li class="customRadio">
-              <input type="radio" value="farm2" id="farm4" name="farm"  />
-              <label for="farm4"><span><span></span></span>Meru</label>
-            </li>
-
-            <li class="customRadio">
-              <input type="radio" value="farm2" id="farm5" name="farm" />
-              <label for="farm5"><span><span></span></span>Murang'a</label>
-            </li>
-
-            <li class="customRadio">
-              <input type="radio" value="farm2" id="farm6" name="farm"  />
-              <label for="farm6"><span><span></span></span>Rift Valley</label>
-            </li>
+            <div class="origins" *ngFor="let origin of originOptions">
+              <li class="customRadio">
+                <input type="radio" value="{{origin}}" id="{{origin}}" (click)="optionsOriginFilter(origin)"  name="{{origin}}" />
+                <label for="{{origin}}"><span><span></span></span>{{origin}}</label>
+              </li>
+            </div>
           </ul>
         </div>
 
@@ -121,9 +75,10 @@
 
         <div *ngIf="filteredProducts == null" class="productlist-content">
           <!-- paginate: { itemsPerPage: itemsPerPage, currentPage: p } -->
-          <div class="product-card" *ngFor="let item of products  | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
-          
-            <a routerLink="/shop/{{item.product.name}}/{{item.id}}" class="product-item">
+          <div class="product-card"  *ngFor="let item of products  | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" data-aos="fade-up">
+
+            
+            <a (click)="navigateToChild(item)" class="product-item">
               <div class="product-image">
                 <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
               </div>
@@ -176,7 +131,7 @@
             </a>
           
             <div class="latestadd-actions product-addactions">
-              <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+              <a role="button" (click)="showAddtocartDialog('500ms', '500ms',item,item.product.name)">
                 Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
               </a>
               <a role="button" title="wishlist">
@@ -244,7 +199,7 @@
             </a>
 
             <div class="latestadd-actions product-addactions">
-              <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+              <a role="button" (click)="showAddtocartDialog('500ms', '500ms',item,item.product.name)">
                 Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
               </a>
               <a role="button" title="wishlist">
