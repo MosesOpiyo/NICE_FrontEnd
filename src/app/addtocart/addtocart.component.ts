@@ -27,6 +27,7 @@ export class AddtocartComponent implements OnInit {
   price:any = ""
   subscription:boolean = false
   roast_type:any = ""
+  size: any;
 
   // for roasted
   checkStatus1(event:any){
@@ -102,7 +103,8 @@ export class AddtocartComponent implements OnInit {
       this.cartStore.updateCart(session)
       this.snackBar.open(`${this.data.name} has been added to your cart.`, 'Close', {
         duration: 3000,
-        panelClass: ['blue-snackbar']
+        panelClass: ['green-snackbar'],
+        horizontalPosition: 'center',
       });
       this.dialog.closeAll()
       this.cartStore.updateCart(this.session)

@@ -73,20 +73,20 @@
               <div class="product-content">
                 <div class="product-info">
                   <div class="product-name">
-                    <p>Product name: &nbsp; <span>{{element.product.name}}</span></p>
+                    <p>Product name: &nbsp; <span>{{element.product.product.name}}</span></p>
                   </div>
-    
-                  <div class="product-price">
-                    <p>Price: &nbsp; <span>{{element.price | currency:'USD'}}</span></p>
-                  </div>
+                </div>
+
+                <div class="product-weight">
+                  <p>Weight: &nbsp; <span>{{element.weight}}</span></p>
+                </div>
+
+                <div class="product-price">
+                  <p>Price (Each): &nbsp; <span>{{element.price | currency:'USD'}}</span></p>
                 </div>
   
                 <div class="product-subtotal">
-                  <p>Subtotal: &nbsp; <span>${{element.subtotal}}</span></p>
-                </div>
-  
-                <div class="product-subscription">
-                  <p>Subscription: &nbsp; <span>${{element.subscription}}</span></p>
+                  <p>Price (Total): &nbsp; <span>{{itemQuantityTotal(element.price,element.quantity) | currency:'USD'}}</span></p>
                 </div>
     
                 <div class="product-quantity">
@@ -123,7 +123,6 @@
     <ng-container *ngIf="userCart.length == 0">
       <div class="cartempty-container">
         <div class="cart-image">
-          <!-- <img src="../../assets/img/empty-cart.png" alt="cart"> -->
           <lottie-player src="https://lottie.host/93a50f3e-661a-4fe0-ab14-8c173b059bc6/HExNGdeD9F.json" background="#ffffff" speed="1" loop autoplay direction="1" mode="normal"></lottie-player>
         </div>
       

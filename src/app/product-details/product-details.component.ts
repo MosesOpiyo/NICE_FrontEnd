@@ -42,6 +42,7 @@ export class ProductDetailsComponent implements OnInit {
   stars: number[] = [1, 2, 3, 4, 5];
   selectedValue: number = 0;
   private snackBarDuration: number = 2000;
+  size: any;
 
   myScriptElement: HTMLScriptElement;
   constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private store:ProductStoreService,private cart:CartService,private cartStore:CartStoreService){
