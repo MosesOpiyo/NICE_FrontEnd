@@ -23,7 +23,7 @@ export class ProductsnavbarComponent implements OnInit {
   
   ngOnInit(): void {
     if(sessionStorage.getItem('Token')){
-      this.cart.getCart().subscribe((res:any)=>{
+      this.cart.getAuthCart().subscribe((res:any)=>{
         this.userCart = res['products'].length
       })
      }

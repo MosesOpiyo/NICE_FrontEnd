@@ -3,10 +3,8 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AuthenticationService } from 'src/app/AuthService/authentication.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IPasswordStrengthMeterService } from 'angular-password-strength-meter';
-import { VerificationComponent } from 'src/app/verification/verification.component';
 import { LoginComponent } from 'src/app/login/login.component';
 import { countryCodes } from './country-dial-codes';
-import { isEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-farmer-sign-up',

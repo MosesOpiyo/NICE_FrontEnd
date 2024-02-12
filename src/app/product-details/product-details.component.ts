@@ -29,11 +29,13 @@ export class ProductDetailsComponent implements OnInit {
   cloudinaryUrl = environment.CLOUDINARY_URL
   quantityPrice:any = ""
   quantity:any = ""
+  weight:any = ""
   grind:any = ""
   price:any = ""
   roast_type:any = ""
+  subscription:boolean = false
   code:any = 0
-  num: number = 1;
+  num: any = 1;
   num2: number = 1;
   isShowDiv: boolean  = false;
   isShowDiv2: boolean  = false;
@@ -149,9 +151,12 @@ openFarmDetails() {
     // Check if radio button is checked
     if(event.target.checked == true){
       this.isShowDiv = false
+      this.subscription = false
+      console.log(this.subscription)
     }
     else {
       this.isShowDiv = true
+      this.subscription = true
     }
   }
 
@@ -159,9 +164,12 @@ openFarmDetails() {
     // Check if radio button is checked
     if(event.target.checked == true){
       this.isShowDiv = true
+      this.subscription = false
+      console.log(this.subscription)
     }
     else {
       this.isShowDiv = false
+      this.subscription = false
     }
   }
 
@@ -238,27 +246,33 @@ openFarmDetails() {
  }
 
   cartItem(id:any){
-    const session = this.getSession()
-    const parts = this.quantityPrice.split('-');
-    this.quantity = parseInt(parts[0],10)
-    this.price = parseFloat(parts[1])
+    const session = localStorage.getItem("session")
+    const parts = this.quantityPrice.split('|');
+    this.quantity = parseInt(this.num)
+    this.price = parseFloat(parts[0])
+    this.weight = parseInt(parts[1])
+    console.log(`Price: ${this.price}, weight: ${this.weight}`)
     let form = new FormData();
+    form.append('weight',this.weight),
     form.append('quantity',this.quantity),
     form.append('grind',this.grind),
     form.append('price',this.price),
     form.append('roast_type',this.roast_type),
-    form.append('code',this.item.code)
-    this.cart.addToCart(id,this.session,form).subscribe((res:any) => {
+    form.append('subscription',String(this.subscription))
+    form.append('code',this.code)
+    this.cart.addToCart(this.item.id,session,form).subscribe((res:any) => {
       this.snackBar.open(`${this.item.product.name} has been added to your cart.`, 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']
       });
+      this.dialog.closeAll()
       this.cartStore.updateCart(this.session)
 
     })
   }
 
   cartItem2(id:any){
+    console.log(this.item)
     this.quantity = 100
     this.grind = 'None'
     this.roast_type = 'None'

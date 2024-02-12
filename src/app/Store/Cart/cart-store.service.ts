@@ -14,15 +14,22 @@ export class CartStoreService {
     this.dataSubject.next(data);
   }
   cartData(){
-    if(sessionStorage.getItem('Token')){
+    const Token = sessionStorage.getItem('Token')
+    const session = localStorage.getItem("session")
+    if(Token){
       this.cart.getAuthCart().subscribe((res:any) => {
         this.updateData(res)
       })
     }else{
-      this.cart.getCart().subscribe((res:any) => {
-        localStorage.setItem("session",res['session_id'])
-        this.updateData(res)
-      })
+      if(session){
+        this.cart.getCartSession(session).subscribe((res:any) => {
+          this.updateData(res)
+        })
+      }else{
+        this.cart.getCart().subscribe((res:any) => {
+          localStorage.setItem('session',res.session_id)
+        })
+      }
     }
   }
   cartCheck(){
@@ -35,7 +42,7 @@ export class CartStoreService {
     })
   }
   updateCart(session:any){
-    this.cart.checkCart(session).subscribe((res:any) => {
+    this.cart.getCartSession(session).subscribe((res:any) => {
       this.updateData(res)
     })
   }

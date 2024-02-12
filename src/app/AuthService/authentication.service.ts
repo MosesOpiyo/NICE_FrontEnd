@@ -4,9 +4,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { AuthService } from '../Auth/auth.service';
 import { environment } from 'src/environments/environment.development';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { error } from 'console';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdatepasswordComponent } from '../updatepassword/updatepassword.component';
 

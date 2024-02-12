@@ -35,7 +35,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { TabsComponent } from './tabs/tabs.component';
 import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 import { AboutComponent } from './informationPages/about/about.component';
-import { PasswordToggleDirective } from './sign-up/password-toggle.directive';
+import { PasswordToggleDirective } from './sign-up/farmer-sign-up/password-toggle.directive';
 import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.component';
 import { AttributionsComponent } from './informationPages/attributions/attributions.component';
 import { DashBoardModule } from './dash-board/dash-board.module';
@@ -82,7 +82,6 @@ register();
     TabsComponent,
     NotfoundComponent,
     AboutComponent,
-    PasswordToggleDirective,
     FarmerSignUpComponent,
     AttributionsComponent,
     FarmComponent,
