@@ -264,7 +264,7 @@ openFarmDetails() {
     this.cart.addToCart(this.item.id,session,form).subscribe((res:any) => {
       this.snackBar.open(`${this.item.product.name} has been added to your cart.`, 'Close', {
         duration: 3000,
-        panelClass: ['blue-snackbar']
+        panelClass: ['green-snackbar']
       });
       this.dialog.closeAll()
       this.cartStore.updateCart(this.session)
