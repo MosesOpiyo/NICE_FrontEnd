@@ -64,38 +64,48 @@
             </table>
           </div>
 
-          <div class="cartcontents-mobile" *ngFor="let element of userCart">
-            <div class="image">
-              <img src="{{cloudinaryUrl}}{{element['product']['img']}}" alt="Product Image">
-            </div>
-
-            <div class="product-content">
-              <div class="product-info">
-                <div class="product-name">
-                  <p>{{element.product.name}}</p>
-                </div>
-  
-                <div class="product-price">
-                  <p>${{element.price}}</p>
-                </div>
+          <div class="mobile-cart">
+            <div class="cartcontents-mobile" *ngFor="let element of userCart">
+              <div class="image">
+                <img src="{{cloudinaryUrl}}{{element['product']['img']}}" alt="Product Image">
               </div>
   
-              <div class="product-quantity">
-                <div class="incrdecr">
-                  <button type="button" (click)="decrement(element, element.id, element.quantity)" class="decrement"><span>&minus;</span></button>
-                  <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="element.quantity" (change)="value($event, element.id, element.quantity)" title="input-count">
-                  <button type="button" (click)="increment(element, element.id, element.quantity)" class="increment"><span>&plus;</span></button>
+              <div class="product-content">
+                <div class="product-info">
+                  <div class="product-name">
+                    <p>Product name: &nbsp; <span>{{element.product.name}}</span></p>
+                  </div>
+    
+                  <div class="product-price">
+                    <p>Price: &nbsp; <span>{{element.price | currency:'USD'}}</span></p>
+                  </div>
                 </div>
-              </div>
   
-              <div class="product-action">
-                <button (click)="removeItem(element.id)" aria-label="delete icon">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
+                <div class="product-subtotal">
+                  <p>Subtotal: &nbsp; <span>${{element.subtotal}}</span></p>
+                </div>
+  
+                <div class="product-subscription">
+                  <p>Subscription: &nbsp; <span>${{element.subscription}}</span></p>
+                </div>
+    
+                <div class="product-quantity">
+                  <div class="incrdecr">
+                    <button type="button" (click)="decrement(element, element.id, element.quantity)" class="decrement"><span>&minus;</span></button>
+                    <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="element.quantity" (change)="value($event, element.id, element.quantity)" title="input-count">
+                    <button type="button" (click)="increment(element, element.id, element.quantity)" class="increment"><span>&plus;</span></button>
+                  </div>
+                </div>
+    
+                <div class="product-action">
+                  <button (click)="removeItem(element.id)" aria-label="delete icon">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-
+          
           <div class="summary-container">
             <h4>CART SUMMARY</h4>
             <h4>Sub Total: <span>{{subTotal(userCart) | currency:'USD'}}</span></h4>

@@ -5,7 +5,7 @@
     <div class="dashboard-card all-tables">
 
       <div class="rounded h-100 p-4">
-        <div>
+        <div class="actionheaders">
             <div>
                 <h4 *ngIf="user.type=='FARMER' || user.type=='ORIGINWAREHOUSER' " class="mb-4">Products <span *ngIf="user.type=='ORIGINWAREHOUSER' ">- Farmers({{farmerCount.length}})</span></h4>
                 <h4 *ngIf="user.type=='WAREHOUSER'" class="mb-4">Inventory</h4>

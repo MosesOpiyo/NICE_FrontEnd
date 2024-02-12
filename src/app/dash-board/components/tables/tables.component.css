@@ -9,6 +9,11 @@
     margin-inline: auto;
 }
 
+.actionheaders {
+    display: flex;
+    justify-content: space-between;
+}
+
 h4 {
     text-transform: uppercase;
     font-weight: 500;
@@ -160,5 +165,17 @@ mat-paginator {
         display: block;
         text-align: center;
         margin-top: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .actionheaders {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .tables-container {
+        gap: 5px;
     }
 }

@@ -95,7 +95,6 @@ export class NavbarComponent implements OnInit {
       autoFocus: false,
       maxHeight: '100vh',
     })
-    this.toggleMenu();
   }
 
   showTripRegisterDialog() {
@@ -105,7 +104,6 @@ export class NavbarComponent implements OnInit {
       autoFocus: false,
       maxHeight: '100vh',
     })
-    this.toggleMenu();
   }
 
   ngOnInit(): void {

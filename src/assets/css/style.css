@@ -289,6 +289,7 @@
   
   .expo-container .expo-content h2 {
     font-size: 3rem;
+    font-weight: 500;
   }
   
   .expo-container .expo-content .expo-text {
@@ -649,8 +650,10 @@
   .expo-container .exhibitor-header h2 {
     font-size: 3rem;
     position: relative;
+    font-weight: 500;
   }
   
+  .expo-container .expo-header h2::after,
   .expo-container .sponsor-header h2::after,
   .expo-container .exhibitor-header h2::after,
   .about-component .story-header h2::after,
@@ -1464,6 +1467,7 @@
   
   .trip-container .trip-content h2 {
     font-size: 3rem;
+    font-weight: 500;
   }
   
   .trip-container .trip-content .trip-text {
@@ -1724,6 +1728,7 @@
     font-size: 3rem;
     margin-bottom: .5rem;
     position: relative;
+    font-weight: 500;
   }
 
   .trip-container .farmers-list,
@@ -2287,6 +2292,7 @@
       font-size: 3rem;
       line-height: 2.5rem;
       position: relative;
+      font-weight: 500;
   }
   
   /* ABOUT HEADER */

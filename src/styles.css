@@ -1529,7 +1529,7 @@ opacity: .2;
   
   .latest-container .latest-products .product-item {
     width: 100%;
-    height: 350px;
+    height: 400px;
     box-shadow: 0 0 2px 1px #e6e6e6;
     border-radius: 5px;
     transition: all 500ms ease-in-out;
@@ -2028,55 +2028,7 @@ opacity: .2;
     gap: 1rem;
   }
 
-
-  .popular-container .swiper-button-next,
-  .popular-container .swiper-button-prev {
-    color: #1010206e;
-  }
-
-  .popular-container .swiper {
-    width: 70%;
-    height: 100%;
-  }
-
-  .popular-swiper .swiper-wrapper .swiper-slide {
-    border: 1px solid #0000001c;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    align-items: center;
-  }
-
-  .popular-swiper .swiper-slide .product-image {
-    background-color: #f7f8fa;
-    width: 100%;
-    height: 300px;
-
-    position: relative;
-    z-index: 1;
-
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-  }
-
-
-  .popular-swiper .swiper-slide .product-image img {
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    object-fit: contain;
-    object-position: center;
-    width: 100%;
-    height: 100%;
-    transition: all 1s ease-in-out;
-  }
-
-  .popular-swiper .swiper-slide .product-image img:hover {
-    transform: scale(1.2);
-  }
-
-  .popular-swiper .swiper-slide .product-name {
+  .popular-container .product-name {
     margin-top: 1rem;
   }
 
@@ -2154,18 +2106,11 @@ opacity: .2;
       flex-direction: column-reverse;
     }
 
-    .popular-container .swiper {
-      width: 100%;
-    }
-
-    .popular-swiper .swiper-wrapper .swiper-slide {
-      height: 500px;
-    }
-
     .popular-header h2 {
-      color: #000000;
+      color: #212529;
       position: relative;
       z-index: 1;
+      font-weight: 500;
     }
 
     .popular-header h2::after {
@@ -2215,7 +2160,8 @@ opacity: .2;
     .popular-header h2,
     .farmer-header h2,
     .latest-header h2,
-    .roast-header h2 {
+    .roast-header h2,
+    .subscribe-header h2 {
       font-size: 2rem;
     }
   }
@@ -2228,7 +2174,8 @@ opacity: .2;
     .popular-header h2,
     .farmer-header h2,
     .latest-header h2,
-    .roast-header h2 {
+    .roast-header h2,
+    .subscribe-header h2 {
       font-size: 1.7rem;
     }
 
@@ -2304,7 +2251,7 @@ opacity: .2;
     padding-left: 3rem;
     margin-block: 1rem;
     width: 60%;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 
    .sellercafe-card .cta-content .cta-btn {
@@ -2452,7 +2399,7 @@ opacity: .2;
 
   .services-container > * {
     flex-basis: 100%;
-    border-left: 2px solid rgba(0, 0, 0, 0.267);
+    border-left: 1px solid rgba(0, 0, 0, 14%);
   }
 
   .services-card {
@@ -2477,7 +2424,7 @@ opacity: .2;
   }
 
   .service-text p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
 
@@ -2559,7 +2506,6 @@ opacity: .2;
   }
 
   .subscribe-content h2 {
-    font-size: 2rem;
     margin-bottom: 1rem;
   }
 

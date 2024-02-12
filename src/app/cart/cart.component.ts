@@ -27,7 +27,7 @@ export class CartComponent implements OnInit {
   quantity = 0
   total = 0
 
-
+  
   myScriptElement: HTMLScriptElement;
   constructor(private cart:CartStoreService, private dialog: MatDialog,private service:AuthenticationService,private route:Router, private cartService : CartService,private cartStore:CartStoreService){
      this.myScriptElement = document.createElement("script");
