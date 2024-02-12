@@ -2,9 +2,10 @@
   height: 100%;
 }
 
-.logo img{
-  border-radius: 50px;
-  height: 100%;
+.logo img {
+  height: 70px;
+  position: relative;
+  top: -15px;
 }
 
 .sell {
@@ -14,4 +15,22 @@
 .register-expo,
 .register-trip {
   cursor: pointer;
+}
+
+.navbar-mobile li span {
+  font-size: 15px;
+}
+
+@media (max-width: 991px) {
+  .logo img {
+    height: 60px;
+    top: -13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    height: 50px;
+    top: -5px;
+  }
 }

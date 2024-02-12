@@ -10,18 +10,22 @@ import { environment } from 'src/environments/environment.development';
 export class CartService {
 
   constructor(private http:HttpClient) { }
+  getCartSession(session:any){
+    const queryParams = new URLSearchParams();
+    queryParams.set('session', session);
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart?${queryParams.toString()}`)
+  }
   getCart(){
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart`)
+  }
+  getAuthCart(){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
     })
     return this.http.get(`${environment.BASE_URL}Orders&Cart/Cart`,{'headers':headers})
   }
-  addToCart(id:number,cartItem:any){
-    let headers = new HttpHeaders({
-      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
-    })
-    this.http.post(`${environment.BASE_URL}Orders&Cart/NewProductInCart/${id}`,cartItem,{'headers':headers}).subscribe((res:any)=>{
-    })
+  addToCart(id:number,session:any,cartItem:any){
+    return this.http.post(`${environment.BASE_URL}Orders&Cart/NewProductInCart/${session}/${id}`,cartItem)
   }
   removeFromCart(id:number){
     let headers = new HttpHeaders({

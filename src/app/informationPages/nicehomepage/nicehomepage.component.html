@@ -1,97 +1,83 @@
 <div class="homepage-container">
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero swiper">
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero swiper">
 
-      <div class="swiper-wrapper">
-          <div class="swiper-slide one">
-              <div class="slide-header">
-                  <div class="mobile-btn">
-                      <a class="mobilehero-btn" routerLink="/Products" role="button">SHOP NOW&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
-                  </div>
+        <div class="swiper-wrapper">
+            <!-- 1st slide -->
+            <div class="swiper-slide one">
+                <div class="slide-header">
+                    <div class="mobile-btn">
+                        <a class="mobilehero-btn" routerLink="/shop" role="button">SHOP NOW&nbsp; <i
+                                class="fa-solid fa-cart-arrow-down"></i></a>
+                    </div>
 
-                  <div class="image">
-                      <img src="../../../assets/img/hero/hero1.jpg" alt="farm">
-                  </div>
+                    <div class="image">
+                        <img src="../../../assets/img/hero/hero1.jpg" alt="farm">
+                    </div>
 
-                  <div class="hero-content">
-                      <h1>Why settle for secondhand when you can have it direct from farm?</h1>
-                      <p class="hero-par2">100% Direct</p>
-                      <div class="hero-button">
-                          <a class="hero-btn" routerLink="/Products" role="button">SHOP NOW&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
-                      </div>
-                  </div>
-              </div>
+                    <div class="hero-content">
+                        <h1>Why settle for secondhand when you can have it direct from farm?</h1>
+                        <!-- <p class="hero-par2">100% Direct</p> -->
+                        <div class="hero-button">
+                            <a class="hero-btn" routerLink="/shop" role="button">SHOP NOW&nbsp; <i
+                                    class="fa-solid fa-cart-arrow-down"></i></a>
+                        </div>
+                    </div>
+                </div>
 
-              <div class="swiper-content">
-                  <div class="farmers-container">
+                <div class="swiper-content">
+                    <!-- ======= Roast Section ======= -->
+                    <div class="roast-container" data-aos="fade-up">
+                        <div class="roast-header" data-aos="fade-up">
+                            <h2>Shop by Profile</h2>
+                        </div>
 
-                      <div class="section-title farmer-header" data-aos="fade-up" data-aos-delay="100">
-                          <h2>Shop by origin</h2>
-                      </div>
-      
-                      <div class="farmer-list" data-aos="fade-up">
-                          <a routerLink="farms/1" class="farmer farmer-one" data-aos="fade-up">
-                              <div>
-                                  <p>
-                                    <i class="fa-solid fa-location-dot"></i>&nbsp; Nyeri, Kenya.
-                                  </p>
-                              </div>
-                          </a>
-      
-                          <div class="farmer farmer-two" data-aos="fade-up">
-                              <p><i class="fa-solid fa-location-dot"></i>&nbsp; Kabati, Kenya.
-                                </p>
-                          </div>
-      
-                          <div class="farmer farmer-three" data-aos="fade-up">
-                              <p>
-                                  <i class="fa-solid fa-location-dot"></i>&nbsp; Limuru, Kenya.
-                                </p>
-                          </div>
-      
-                          <div class="farmer farmer-four" data-aos="fade-up">
-                              <p>
-                                  <i class="fa-solid fa-location-dot"></i>&nbsp; Nakuru, Kenya.
-                                </p>
-                          </div>
-      
-                          <div class="farmer farmer-five" data-aos="fade-up">
-                              <p>
-                                  <i class="fa-solid fa-location-dot"></i>&nbsp; Murang'a, Kenya.
-                                </p>
-                          </div>
-      
-                          <div class="farmer farmer-six" data-aos="fade-up">
-                              <p>
-                                  <i class="fa-solid fa-location-dot"></i>&nbsp; Kiambu, Kenya.
-                                </p>
-                          </div>
-                      </div>
-      
-                      <div class="view-more" data-aos="fade-up">
-                          <a routerLink="/origins" role="button">
-                              VIEW ALL ORIGINS&nbsp;
-                              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-          </div>
 
-          <div class="swiper-slide two">
-              <div class="slide-header">
-                  <div class="hero-content">
-                      <h2>Single origin coffee</h2>
-                      <p class="subtitle">Buy fresh, unadultarated coffee straight from the farm.</p>
-                      <p class="hero-par2">100% Pure</p>
-                      <div class="hero-button">
-                          <a class="hero-btn" routerLink="/Products" role="button">SHOP NOW&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
-                      </div>
-                  </div>
-              </div>
+                        <div class="roast-details">
+                            <a routerLink="/shop" class="light2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-right">
+                                    <div class="roast-img"></div>
+                                    <p>Raspberry</p>
+                                </div>
+                            </a>
 
-              <div class="swiper-content">
-                  <div class="farmers-container">
+                            <a routerLink="/shop" class="lightmed2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-up">
+                                    <div class="roast-img"></div>
+                                    <p>Chocolatey</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="med2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-right">
+                                    <div class="roast-img"></div>
+                                    <p>Blackcurrant</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="meddark2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-up">
+                                    <div class="roast-img"></div>
+                                    <p>Fruity</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="dark2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-left">
+                                    <div class="roast-img"></div>
+                                    <p>Lemon</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="fruity">
+                                <div class="roast-card" id="roast-card" data-aos="fade-left">
+                                    <div class="roast-img"></div>
+                                    <p>Bright acidity</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div class="farmers-container">
 
                       <div class="section-title farmer-header" data-aos="fade-up" data-aos-delay="100">
                           <h2>Shop by origin</h2>
@@ -142,24 +128,198 @@
                               <i class="fa-solid fa-arrow-up-right-from-square"></i>
                           </a>
                       </div>
-                  </div>
-              </div>
-          </div>
+                  </div> -->
+                </div>
+            </div>
 
-          <div class="swiper-slide three">
-              <div class="slide-header">
-                  <div class="hero-content">
-                      <h2>Everyday is coffee day. Shop direct from farm and get upto 15% off.</h2>
-                      <!-- <p class="hero-par2">100% Pure Coffee</p> -->
-                      <div class="hero-button">
-                          <a class="hero-btn" routerLink="/Products" role="button">SHOP & SAVE&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
+            <!-- 2nd slide -->
+            <div class="swiper-slide two">
+                <div class="slide-header">
+                    <div class="hero-content">
+                        <h2>Single origin coffee. Buy unadultarated coffee straight from the farm.</h2>
+                        <!-- <p class="subtitle">Buy fresh, unadultarated coffee straight from the farm.</p> -->
+                        <!-- <p class="hero-par2">100% Pure</p> -->
+                        <div class="hero-button">
+                            <a class="hero-btn" routerLink="/shop" role="button">SHOP NOW&nbsp; <i
+                                    class="fa-solid fa-cart-arrow-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-content">
+                    <!-- ======= Roast Section ======= -->
+                    <div class="roast-container" data-aos="fade-up">
+                        <div class="roast-header" data-aos="fade-up">
+                            <h2>Shop by Profile</h2>
+                        </div>
+
+
+                        <div class="roast-details">
+                            <a routerLink="/shop" class="light2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-right">
+                                    <div class="roast-img"></div>
+                                    <p>Raspberry</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="lightmed2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-up">
+                                    <div class="roast-img"></div>
+                                    <p>Chocolatey</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="med2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-right">
+                                    <div class="roast-img"></div>
+                                    <p>Blackcurrant</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="meddark2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-up">
+                                    <div class="roast-img"></div>
+                                    <p>Fruity</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="dark2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-left">
+                                    <div class="roast-img"></div>
+                                    <p>Lemon</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="fruity">
+                                <div class="roast-card" id="roast-card" data-aos="fade-left">
+                                    <div class="roast-img"></div>
+                                    <p>Bright acidity</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div class="farmers-container">
+
+                      <div class="section-title farmer-header" data-aos="fade-up" data-aos-delay="100">
+                          <h2>Shop by origin</h2>
                       </div>
-                  </div>
-              </div>
-              
+      
+                      <div class="farmer-list" data-aos="fade-up">
+                          <a routerLink="farms/1" class="farmer farmer-one" data-aos="fade-up">
+                              <div>
+                                  <p>
+                                    <i class="fa-solid fa-location-dot"></i>&nbsp; Nyeri, Kenya.
+                                  </p>
+                              </div>
+                          </a>
+      
+                          <div class="farmer farmer-two" data-aos="fade-up">
+                              <p><i class="fa-solid fa-location-dot"></i>&nbsp; Kabati, Kenya.
+                                </p>
+                          </div>
+      
+                          <div class="farmer farmer-three" data-aos="fade-up">
+                              <p>
+                                  <i class="fa-solid fa-location-dot"></i>&nbsp; Limuru, Kenya.
+                                </p>
+                          </div>
+      
+                          <div class="farmer farmer-four" data-aos="fade-up">
+                              <p>
+                                  <i class="fa-solid fa-location-dot"></i>&nbsp; Nakuru, Kenya.
+                                </p>
+                          </div>
+      
+                          <div class="farmer farmer-five" data-aos="fade-up">
+                              <p>
+                                  <i class="fa-solid fa-location-dot"></i>&nbsp; Murang'a, Kenya.
+                                </p>
+                          </div>
+      
+                          <div class="farmer farmer-six" data-aos="fade-up">
+                              <p>
+                                  <i class="fa-solid fa-location-dot"></i>&nbsp; Kiambu, Kenya.
+                                </p>
+                          </div>
+                      </div>
+      
+                      <div class="view-more" data-aos="fade-up">
+                          <a routerLink="/origins" role="button">
+                              VIEW ALL ORIGINS&nbsp;
+                              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                          </a>
+                      </div>
+                  </div> -->
+                </div>
+            </div>
 
-              <div class="swiper-content">
-                  <div class="farmers-container">
+            <!-- 3rd slide -->
+            <div class="swiper-slide three">
+                <div class="slide-header">
+                    <div class="hero-content">
+                        <h2>Shop direct from farm and get upto 15% off.</h2>
+                        <!-- <p class="hero-par2">100% Pure Coffee</p> -->
+                        <div class="hero-button">
+                            <a class="hero-btn" routerLink="/shop" role="button">SHOP & SAVE&nbsp; <i
+                                    class="fa-solid fa-cart-arrow-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-content">
+                    <!-- ======= Roast Section ======= -->
+                    <div class="roast-container" data-aos="fade-up">
+                        <div class="roast-header" data-aos="fade-up">
+                            <h2>Shop by Profile</h2>
+                        </div>
+
+
+                        <div class="roast-details">
+                            <a routerLink="/shop" class="light2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-right">
+                                    <div class="roast-img"></div>
+                                    <p>Raspberry</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="lightmed2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-up">
+                                    <div class="roast-img"></div>
+                                    <p>Chocolatey</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="med2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-right">
+                                    <div class="roast-img"></div>
+                                    <p>Blackcurrant</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="meddark2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-up">
+                                    <div class="roast-img"></div>
+                                    <p>Fruity</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="dark2">
+                                <div class="roast-card" id="roast-card" data-aos="fade-left">
+                                    <div class="roast-img"></div>
+                                    <p>Lemon</p>
+                                </div>
+                            </a>
+
+                            <a routerLink="/shop" class="fruity">
+                                <div class="roast-card" id="roast-card" data-aos="fade-left">
+                                    <div class="roast-img"></div>
+                                    <p>Bright acidity</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div class="farmers-container">
 
                       <div class="section-title farmer-header" data-aos="fade-up" data-aos-delay="100">
                           <h2>Shop by origin</h2>
@@ -210,1381 +370,1117 @@
                               <i class="fa-solid fa-arrow-up-right-from-square"></i>
                           </a>
                       </div>
-                  </div>
-              </div>
-          </div>
+                  </div> -->
+                </div>
+            </div>
 
 
-      </div>
+        </div>
 
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <!-- <div class="swiper-pagination"></div> -->
-  </section>
-  <!-- End Hero -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-pagination"></div> -->
+    </section>
+    <!-- End Hero -->
 
 
-  <!-- ======= Roast Section ======= -->
-  <div class="roast-container" data-aos="fade-up">
+    <!-- ======= Profile Section ======= -->
+    <!-- <div class="roast-container" data-aos="fade-up">
       <div class="roast-header" data-aos="fade-up">
           <h2>Shop by Profile</h2>
       </div>
 
      
       <div class="roast-details">
-        <a routerLink="/Products" class="light2">
-            <div class="roast-card" data-aos="fade-right">
+        <a routerLink="/shop" class="light2">
+            <div class="roast-card" id="roast-card" data-aos="fade-right">
                 <div class="roast-img"></div>
                 <p>Raspberry</p>
             </div>
         </a>
           
-        <a routerLink="/Products" class="lightmed2">
-            <div class="roast-card" data-aos="fade-up">
+        <a routerLink="/shop" class="lightmed2">
+            <div class="roast-card" id="roast-card" data-aos="fade-up">
                 <div class="roast-img"></div>  
                 <p>Chocolatey</p>
             </div>
         </a>
 
-        <a routerLink="/Products" class="med2">
-            <div class="roast-card" data-aos="fade-right">
+        <a routerLink="/shop" class="med2">
+            <div class="roast-card" id="roast-card" data-aos="fade-right">
                 <div class="roast-img"></div>  
                 <p>Blackcurrant</p>
             </div>
         </a>
 
-        <a routerLink="/Products" class="meddark2">
-            <div class="roast-card" data-aos="fade-up">
+        <a routerLink="/shop" class="meddark2">
+            <div class="roast-card" id="roast-card" data-aos="fade-up">
                 <div class="roast-img"></div>  
                 <p>Fruity</p>
             </div>
         </a>
 
-        <a routerLink="/Products" class="dark2">
-            <div class="roast-card" data-aos="fade-left">
+        <a routerLink="/shop" class="dark2">
+            <div class="roast-card" id="roast-card" data-aos="fade-left">
                 <div class="roast-img"></div>  
                 <p>Lemon</p>
             </div>
         </a>
 
-        <a routerLink="/Products" class="fruity">
-            <div class="roast-card" data-aos="fade-left">
+        <a routerLink="/shop" class="fruity">
+            <div class="roast-card" id="roast-card" data-aos="fade-left">
                 <div class="roast-img"></div>  
                 <p>Bright acidity</p>
             </div>
         </a>
       </div>
-  </div>
-  <!-- End SELECT ROAST -->
+  </div> -->
+    <!-- End SELECT ROAST -->
 
-  <!-- ======= Most Popular Section ======= -->
-  <div class="popular-container">
-    <div class="mobile popular-cta view-more" data-aos="fade-up">
-        <a routerLink="/Products">VIEW MORE&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-    </div>
+    <!-- ======= Most Popular Section ======= -->
+    <div class="popular-container">
+        <div class="mobile popular-cta view-more" data-aos="fade-up">
+            <a routerLink="/shop">VIEW MORE&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
 
-    <div class="test-swiper" data-aos="fade-left">
+        <div class="test-swiper" data-aos="fade-left" *ngIf="popularProducts">
 
-      <swiper-container
-      slides-per-view=1
-      navigation = "true"
-      pagination = "true"
-      pagination-clickable = "true"
-      loop="true"
-      autoplay="true"
-      autoplay-delay="3000"
-      autoplay-pause-on-mouse-enter="true"
-      autoplay-disable-on-interaction="false"
-      space-between="10"
-      class="mobile"
-      >
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/1'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-01.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$1 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/2'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$2 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/3'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$3 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/4'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-04.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$4 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/5'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/pkg1.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$5 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/6'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/pkg7.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$6 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-      </swiper-container>
-  
-      <swiper-container
-      slides-per-view=2
-      navigation = "true"
-      pagination = "true"
-      pagination-clickable = "true"
-      loop="true"
-      autoplay="true"
-      autoplay-delay="3000"
-      autoplay-pause-on-mouse-enter="true"
-      autoplay-disable-on-interaction="false"
-      space-between="10"
-      class="tablet"
-      >
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/1'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-01.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$1 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/2'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$2 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/3'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$3 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/4'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-04.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$4 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/5'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/pkg1.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$5 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/6'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/pkg7.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$6 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-      </swiper-container>
+            <!-- mobile slide -->
+            <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true"
+                loop="true" autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true"
+                autoplay-disable-on-interaction="false" space-between="10" class="mobile">
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[0].img}}' alt="package">
+                            </div>
 
-      <swiper-container
-      slides-per-view=3
-      navigation = "true"
-      pagination = "true"
-      pagination-clickable = "true"
-      loop="true"
-      autoplay="true"
-      autoplay-delay="3000"
-      autoplay-pause-on-mouse-enter="true"
-      autoplay-disable-on-interaction="false"        
-      space-between="10"
-      class="laptop"
-      >
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/1'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-01.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$1 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/2'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$2 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/3'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-03.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$3 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/4'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/coffee-bag-04.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$4 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/5'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/pkg1.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$5 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-  
-          <swiper-slide class="slide-content">
-              <div class="product-item product1">
-                  <a routerLink='/Products/6'>
-                      <div class="product-image">
-                          <img src='../../../assets/img/packaging/pkg7.png' alt="package">
-                      </div>
-              
-                      <div class="product-name">
-                          <p>Mettle</p>
-  
-                          <div class="rating">
-                              <p><i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                                  <i class="fa-solid fa-star"></i>
-                              </p>
-                          </div>
-                      </div>
-  
-                      <div class="farm-name">
-                          <p>Riakiania Coffee Factory</p>
-                      </div>
-              
-                      <div class="product-details">
-                          <p>Origin: Kenya</p>
-                          <p>$6 / 12oz</p>
-                      </div>
-                  </a>
-              
-                  <div class="latestadd-actions">
-                      <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                          Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                      </a>
-                      <a role="button" title="wishlist">
-                          <i class="fa-solid fa-heart"></i>
-                      </a>
-                  </div>
-              
-              </div>
-          </swiper-slide>
-      </swiper-container>
-  
-    </div>
+                            <div class="product-name">
+                                <p>{{popularProducts[0].product.name}}</p>
 
-    <div class="popular-header" data-aos="fade-right">
-        <h2>Most Popular</h2>
-        <div class="popular-cta">
-            <a routerLink="/Products">VIEW MORE&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[1].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[1].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[2].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[2].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[3].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[3].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[4].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[4].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[5].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[5].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+
+            <!-- tablet slide -->
+            <swiper-container slides-per-view=2 navigation="true" pagination="true" pagination-clickable="true"
+                loop="true" autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true"
+                autoplay-disable-on-interaction="false" space-between="10" class="tablet">
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[0].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[0].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[1].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[1].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[2].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[2].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[3].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[3].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[4].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[4].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[5].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[5].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+
+            <!-- laptop slide -->
+            <swiper-container slides-per-view=3 navigation="true" pagination="true" pagination-clickable="true"
+                loop="true" autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true"
+                autoplay-disable-on-interaction="false" space-between="10" class="laptop">
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[0].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[0].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[1].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[1].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[2].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[2].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[3].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[3].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[4].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[4].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide class="slide-content">
+                    <div class="product-item product1">
+                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}'>
+                            <div class="product-image">
+                                <img src='{{cloudinaryUrl}}{{popularProducts[5].img}}' alt="package">
+                            </div>
+
+                            <div class="product-name">
+                                <p>{{popularProducts[5].product.name}}</p>
+
+                                <div class="rating">
+                                    <p><i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="farm-name">
+                                <p>Riakiania Coffee Factory</p>
+                            </div>
+
+                            <div class="product-details">
+                                <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
+                                <p>{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
+                            </div>
+                        </a>
+
+                        <div class="latestadd-actions">
+                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a role="button" title="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+
+        </div>
+
+        <div class="popular-header" data-aos="fade-right">
+            <h2>Most Popular</h2>
+            <div class="popular-cta">
+                <a routerLink="/shop">VIEW MORE&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
         </div>
     </div>
-</div>
-<!-- End of Most Popular section -->
+    <!-- End of Most Popular section -->
 
- <!-- 2ND CTA SECTION -->
- <div class="short-container">
-    <div class="short-content" data-aos="fade-up">
-        <h2>Life is too short for bad coffee!</h2>
-        <p>Grab fresh, quality, unadultarated coffee straight from the farm.</p>
+    <!-- 2ND CTA SECTION -->
+    <div class="short-container">
+        <div class="short-content" data-aos="fade-up">
+            <h2>Life is too short for bad coffee!</h2>
+            <p>Grab fresh, quality, unadultarated coffee straight from the farm.</p>
+        </div>
+        <div class="short-btn" data-aos="fade-up">
+            <div class="cta-btn"><a routerLink="/shop">SHOP DIRECT FROM FARM&nbsp; <i
+                        class="fa-solid fa-cart-arrow-down"></i></a></div>
+        </div>
     </div>
-    <div class="short-btn" data-aos="fade-up">
-        <div class="cta-btn"><a routerLink="/Products">SHOP DIRECT FROM FARM&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a></div>
-    </div>
-  </div>
 
-  
-  <!-- ======= Latest Coffees Section ======= -->
-  <div class="latest-container" data-aos="fade-up">
-      <div class="latest-header">
-          <h2>Latest Coffees</h2>
-      </div>
 
-      <div class="latest-products">
-        <div class="product-item product1" data-aos="fade-up" data-aos-delay="100">
-            <a routerLink="/Products/1">
-                <div class="product-image">
-                    <img src="../../../assets/img/packaging/coffee-bag-01.png" alt="package">
+    <!-- ======= Latest Coffees Section ======= -->
+    <div class="latest-container" data-aos="fade-up">
+        <div class="latest-header">
+            <h2>Latest Coffees</h2>
+        </div>
+
+        <div class="latest-products">
+            <div class="product-item product1" data-aos="fade-up" data-aos-delay="100" *ngFor="let item of products">
+                <a routerLink="/shop/{{item.product.name}}/{{item.id}}">
+                    <div class="product-image">
+                        <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
+                    </div>
+
+                    <div class="product-name">
+                        <p>{{item.product.name}}</p>
+
+                    </div>
+
+                    <div class="product-details">
+                        <p>Origin: {{item.product.origin | titlecase}}</p>
+                        <p>{{item.price | currency:'USD'}} / 12oz</p>
+                    </div>
+                </a>
+
+                <div class="latestadd-actions">
+                    <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
+                        Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
+                    </a>
+                    <a role="button" title="wishlist">
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
                 </div>
-        
-                <div class="product-name">
-                    <p>Mettle</p>
-        
-                </div>
-        
-                <div class="product-details">
-                    <p>Origin: Kenya</p>
-                    <p>$18.80 / 12oz</p>
-                </div>
+
+            </div>
+        </div>
+
+        <div class="view-more" data-aos="fade-up">
+            <a routerLink="/shop" role="button">
+                VIEW MORE COFFEE&nbsp;
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-        
-            <div class="latestadd-actions">
-                <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                    Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                </a>
-                <a role="button" title="wishlist">
-                    <i class="fa-solid fa-heart"></i>
-                </a>
-            </div>
-        
         </div>
 
-          <div class="product-item" data-aos="fade-up" data-aos-delay="200">
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-02.png" alt="package">
-              </div>
+    </div>
+    <!-- End Latest Coffees Section -->
 
-              <div class="product-name">
-                  <p>Mettle</p>
-                  
-              </div>
+    <!-- ======= CTA Section ======= -->
+    <div class="cta-container">
+        <div class="cta-card one" data-aos="fade-right">
+            <div class="cta-content">
 
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-          </div>
+                <p>Get your <strong>DECAF</strong> fresh</p>
 
-          <div class="product-item" data-aos="fade-up" data-aos-delay="300">
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-03.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <p>Mettle</p>
-                  
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-          </div>
-
-          <div class="product-item" data-aos="fade-up" data-aos-delay="400">
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-04.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <p>Mettle</p>
-                  
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-          </div>
-
-          <div class="product-item large" data-aos="fade-up" data-aos-delay="500">
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/pkg7.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <p>Mettle</p>
-                  
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-          </div>
-
-          <div class="product-item" data-aos="fade-up" data-aos-delay="600">
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-03.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <p>Mettle</p>
-                  
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-          </div>
-
-          <div class="product-item" data-aos="fade-up" data-aos-delay="700">
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-02.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <p>Mettle</p>
-                  
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-          </div>
-
-          <div class="product-item" data-aos="fade-up" data-aos-delay="800">
-              <div class="product-image">
-                  <img src="../../../assets/img/packaging/coffee-bag-03.png" alt="package">
-              </div>
-
-              <div class="product-name">
-                  <p>Mettle</p>
-                  
-              </div>
-
-              <div class="product-details">
-                  <p>Origin: Kenya</p>
-                  <p>$18.80 / 12oz</p>
-              </div>
-          </div>
-
-      </div>
-
-      <div class="view-more" data-aos="fade-up">
-          <a routerLink="/Products" role="button">
-              VIEW MORE COFFEE&nbsp;
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-      </div>
-
-  </div>
-  <!-- End Latest Coffees Section -->
-
-  <!-- modal -->
-  <div  *ngIf="isModalOpen" class="modals">
-
-    <!-- Modal content -->
-    <div class="modal-contents">
-      <span class="modal-close" (click)="toggleModal()">
-          <i class="fa-solid fa-x"></i>
-        </span>
-
-        <div class="product-form">
-            <div class="col">
-                <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)"></app-tabs>
-            </div>
-    
-            <div *ngIf="activatedTabIndex == 0" class="roasted">
-    
-                <form action="" method="post">
-                    <div class="option-list">
-                        <select id="packsize" name="packsize" title="packsize" required>
-                            <option value="">Choose Pack Size...</option>
-                            <option value="18.80|12oz">12oz ($18.80)</option>
-                            <option value="46.80|32oz">32oz ($46.80)</option>
-                            <option value="68.20|3lbs">3lbs ($68.20)</option>
-                            <option value="68.20|3lbs">5lbs ($113.00)</option>
-                        </select>
-        
-                        <select id="grind" name="grind" title="grind" required>
-                            <option value="">Choose Grind...</option>
-                            <option value="Whole beans">Whole beans</option>
-                            <option value="Extra coarse">Extra coarse (Cold brews)</option>
-                            <option value="Coarse">Coarse (French press/percolators)</option>
-                            <option value="Medium-coarse">Medium-coarse (Chemex/clever drippers)</option>
-                            <option value="Medium">Medium (Drip/regular)</option>
-                            <option value="Medium-fine">Medium-fine (Pour overs/siphon)</option>
-                            <option value="Fine">Fine (Espresso)</option>
-                            <option value="Super-fine">Super-fine (Turkish)</option>
-                        </select>
-        
-                        <select id="roast" name="roast" title="roast" required>
-                            <option value="">Choose Roast Type...</option>
-                            <option value="Light">Light</option>
-                            <option value="Medium/light">Medium/light</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Medium/dark">Medium/dark</option>
-                            <option value="Dark">Dark</option>
-                        </select>
-                    </div>
-    
-                    <div class="radio">
-                        <div class="radio1">
-                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2() checked>
-                            <label for="onetime">One time purchase</label><br>
-                        </div>
-
-                        <div class="radio2">
-                            <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
-                            <label for="subscribe">Subscribe & save 10%</label><br>
-                        </div>
-    
-                        <div *ngIf="isShowDiv2">
-                            <select id="delivery" name="delivery" title="delivery" required>
-                                <option value="">Choose Delivery Period...</option>
-                                <option value="2 weeks">Deliver every 2 weeks</option>
-                                <option value="3 weeks">Deliver every 3 weeks</option>
-                                <option value="month">Deliver every month</option>
-                                <option value="6 weeks">Deliver every 6 weeks</option>
-                                <option value="2 months">Deliver every 2 months</option>
-                            </select>
-                        </div>
-                    </div>
-    
-                    <div class="incrdecr">
-                        <div (click)=decrement() class="decrement">-</div>
-                        <input type="number" name="quantity" id="counting" [(ngModel)]="number_value" (change)="check($event)" title="input-count">
-                        <div (click)=increment() class="increment">+</div>
-                    </div>
-    
-                    <div class="submit-btn">
-                        <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                        <a routerLink="/Checkout" class="buy">BUY NOW</a>
-                    </div>
-    
-                </form>
-            </div>
-    
-            <div *ngIf="activatedTabIndex == 1" class="green">
-                <div class="packaging">
-                    <p>Packaging</p>
-                    <p>Grainpro & Outer Jutebag</p>
+                <div class="cta-btn">
+                    <a routerLink="/shop">GET IT NOW &nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
                 </div>
-    
-                <div class="price-lb">
-                    <p>Price/Lb</p>
-    
-                    <div class="lb">
-                        <p>1 - 660 lbs</p>
-                        <p>660lbs +</p>
-                    </div>
-    
-                    <div class="lb-price">
-                        <p>- $7.70</p>
-                        <p>- $6.93</p>
-                    </div>
+
+            </div>
+        </div>
+
+        <div class="cta-card two" data-aos="fade-left">
+            <div class="cta-content">
+
+                <p>Fill your <strong>PODS</strong> with quality coffee.</p>
+
+                <div class="cta-btn">
+                    <a routerLink="/shop">FIND YOUR FLAVOR &nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
                 </div>
-    
-                <form action="/" method="post">
-                    <div class="radio">
-                        <div class="radio1">
-                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff() checked>
-                            <label for="onetime">One time purchase</label><br>
-                        </div>
 
-                        <div class="radio1">
-                            <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
-                            <label for="subscribe">Subscribe & save 10%</label><br>
-                        </div>
+            </div>
+        </div>
 
-                        <div *ngIf="isShowDiv">
-                            <select id="delivery2" name="delivery" title="delivery" required>
-                                <option value="">Choose Delivery Period...</option>
-                                <option value="2 weeks">Deliver every 2 weeks</option>
-                                <option value="3 weeks">Deliver every 3 weeks</option>
-                                <option value="month">Deliver every month</option>
-                                <option value="6 weeks">Deliver every 6 weeks</option>
-                                <option value="2 months">Deliver every 2 months</option>
-                            </select>
-                        </div>
-                    </div>
-    
-                    <div class="incrdecr">
-                        <div (click)=decrement2() class="decrement">-</div>
-                        <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="number_value2" (change)="check2($event)" title="input-count">
-                        <div (click)=increment2() class="increment">+</div>
-                    </div>
-    
-                    <div class="submit-btn">
-                        <button type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                        <a routerLink="/Checkout" class="buy">BUY NOW</a>
-                    </div>
-    
-                </form>
-    
+        <div class="cta-card three" data-aos="fade-left">
+            <div class="cta-content">
+
+                <p>Grab a <strong>COLD BREW</strong> and conquer the day.</p>
+
+                <div class="cta-btn">
+                    <a routerLink="/shop">GET COLD BREWED &nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End CTA Section -->
+
+    <!-- Become a seller&cafe section -->
+    <div class="sellercafe-container" data-aos="fade-up">
+
+        <div class="seller sellercafe-card">
+
+            <div class="cta-image" data-aos="fade-right" data-aos-delay="400">
+                <img src="../../../assets/img/sellerbg.webp" alt="farmer">
+            </div>
+
+            <div class="cta-content" data-aos="fade-left" data-aos-delay="600">
+                <div id="cta-content1">
+                    <h4><span class="white">Do you</span> own a <span class="white-responsive2">coffee </span><span
+                            class="white-responsive">farm?</span></h4>
+                    <p>Make your coffee available on the world's 1st direct coffee marketplace.</p>
+                    <div class="cta-btn"><a (click)="showFarmerSignUpDialog()">SELL NOW&nbsp; <i
+                                class="fa-solid fa-dollar-sign"></i></a></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="cafe sellercafe-card">
+
+            <div class="cta-image" data-aos="fade-left" data-aos-delay="400">
+                <img src="../../../assets/img/roasterybg.jpg" alt="a coffee machine in a cafe">
+            </div>
+
+            <div class="cta-content" data-aos="fade-right" data-aos-delay="600">
+                <div id="cta-content2">
+                    <h4>Do you own a <span class="cafewhite">café </span><span class="orwhite">or </span><span
+                            class="awhite">a </span><span class="roastwhite">roastery?</span></h4>
+                    <p>Get your coffee from the world's 1st direct coffee marketplace.</p>
+                    <div class="cta-btn"><a routerLink="/shop">SHOP DIRECT FROM FARM&nbsp; <i
+                                class="fa-solid fa-cart-arrow-down"></i></a></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- END OF seller&cafe section -->
+
+    <!-- Empower farmers section -->
+    <div class="empower-container">
+
+        <div class="empower-info">
+            <div class="empower-content">
+                <h2>Supporting Farmers, Brewing Success</h2>
+                <p>Your purchase directly supports and transform the lives of coffee farmers who deserve fair rewards.
+                    We prioritize fair trade practices ensuring you contribute to improving their livelihoods. Join us
+                    in creating a sustainable future.</p>
+
+                <div class="empower-btn">
+                    <a routerLink="/about">Learn More</a>
+                    <a routerLink="/shop">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="farmer-image"></div>
+        </div>
+
+    </div>
+
+     <!-- services container -->
+     <div class="services-container" data-aos="fade-up">
+
+        <div class="services-card one" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon">
+                <i class="fa-solid fa-mug-hot"></i>
+            </div>
+
+            <div class="service-header">
+                <h2>Fresh Roast</h2>
+            </div>
+
+            <div class="service-text">
+                <p>Get your coffee fresh everytime, roasted on order.</p>
+            </div>
+        </div>
+
+        <div class="services-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon">
+                <i class="fa-solid fa-fingerprint"></i>
+            </div>
+
+            <div class="service-header">
+                <h2>Safe Payment</h2>
+            </div>
+
+            <div class="service-text">
+                <p>Pay with the world’s most popular and secure payment methods.</p>
+            </div>
+        </div>
+
+        <div class="services-card last" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+
+            <div class="service-header">
+                <h2>Fast Delivery</h2>
+            </div>
+
+            <div class="service-text">
+                <p>And free returns. See checkout for delivery dates.</p>
             </div>
         </div>
 
     </div>
-  
-  </div>
-  <!-- end of modal -->
+    <!-- END OF servcies container -->
 
-  <!-- ======= CTA Section ======= -->
-  <div class="cta-container">
-      <div class="cta-card one" data-aos="fade-right">
-          <div class="cta-content">
 
-              <p>Get your <strong>DECAF</strong> fresh</p>
+    <!-- ======= Subscribe Section ======= -->
+    <div class="subscribe-container">
 
-              <div class="cta-btn">
-                  <a routerLink="/Products">GET IT NOW &nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
-              </div>
-
-          </div>
-      </div>
-
-      <div class="cta-card two" data-aos="fade-left">
-          <div class="cta-content">
-
-              <p>Fill your <strong>PODS</strong> with quality coffee.</p>
-
-              <div class="cta-btn">
-                  <a routerLink="/Products">FIND YOUR FLAVOR &nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
-              </div>
-          
-          </div>
-      </div>
-
-      <div class="cta-card three" data-aos="fade-left">
-        <div class="cta-content">
-
-            <p>Grab a <strong>COLD BREW</strong> and conquer the day.</p>
-
-            <div class="cta-btn">
-                <a routerLink="/Products">GET COLD BREWED &nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a>
+        <div class="subscribe-images" data-aos="fade-left">
+            <!-- <h2>Brewing Success: One Stat at a Time.</h2> -->
+            <div class="image-card image-one">
+                <img src="https://cdn.pixabay.com/photo/2019/10/31/07/16/coffee-4591173_640.jpg" alt="farmer">
             </div>
-        
+
+            <div class="image-card image-two">
+                <img src="https://img.freepik.com/free-photo/hand-picked-organic-fruit-ripe-harvesting-generated-by-ai_188544-44962.jpg?size=626&ext=jpg"
+                    alt="farm">
+            </div>
+
+            <div class="image-card image-three">
+                <img src="https://img.freepik.com/free-photo/woman-holding-cup-coffee-looking-photographer_23-2148363571.jpg?size=626&ext=jpg"
+                    alt="coffee drinker">
+            </div>
         </div>
+
+        <div class="subscribe-content" data-aos="fade-left">
+            <div class="subscribe-header">
+                <h2>Subscribe To Our Newsletter And Get up to 15% Off</h2>
+            </div>
+
+            <div class="subscribe-form">
+                <form method="get" action="" ngNativeValidate>
+                    <div class="newsletter">
+                        <div class="label-float">
+                            <input id="email" name="email" [(ngModel)]="email" aria-label="Enter email address"
+                                type="email" placeholder=" " required>
+                            <label for="email">Enter email address</label>
+                        </div>
+
+                        <button mat-raised-button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </div>
-  </div>
-  <!-- End CTA Section -->
+    <!-- ======= End of Subscribe Section ======= -->
 
-  <!-- Become a seller&cafe section -->
-      <div class="sellercafe-container" data-aos="fade-up">
-
-          <div class="seller sellercafe-card">
-
-              <div class="cta-image" data-aos="fade-right" data-aos-delay="400">
-                  <img src="../../../assets/img/sellerbg.webp" alt="farmer" >
-              </div>
-
-              <div class="cta-content" data-aos="fade-left" data-aos-delay="600">
-                  <div id="cta-content1">
-                      <h4><span class="white">Do you</span> own a <span class="white-responsive2">coffee </span><span class="white-responsive">farm?</span></h4>
-                      <p>Make your coffee available on the world's 1st direct coffee marketplace.</p>
-                      <div class="cta-btn"><a (click)="showFarmerSignUpDialog()">SELL NOW&nbsp; <i class="fa-solid fa-dollar-sign"></i></a></div>
-                  </div>
-                  
-              </div>
-
-          </div>
-
-          <div class="cafe sellercafe-card">
-
-              <div class="cta-image" data-aos="fade-left" data-aos-delay="400">
-                  <img src="../../../assets/img/roasterybg.jpg" alt="a coffee machine in a cafe" >
-              </div>
-
-              <div class="cta-content" data-aos="fade-right" data-aos-delay="600">
-                  <div id="cta-content2">
-                      <h4>Do you own a <span class="cafewhite">café </span><span class="orwhite">or </span><span class="awhite">a </span><span class="roastwhite">roastery?</span></h4>
-                      <p>Get your coffee from the world's 1st direct coffee marketplace.</p>
-                      <div class="cta-btn"><a routerLink="/Products">SHOP DIRECT FROM FARM&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></a></div>
-                  </div>
-                  
-              </div>
-
-          </div>
-          
-      </div>
-      
-  <!-- END OF seller&cafe section -->
-
-  <!-- services container -->
-  <div class="services-container" data-aos="fade-up">
-
-      <div class="services-card one" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-icon">
-              <i class="fa-solid fa-mug-hot"></i>
-          </div>
-
-          <div class="service-header">
-              <h2>Fresh Roast</h2>
-          </div>
-
-          <div class="service-text">
-              <p>Get your coffee fresh everytime, roasted on order.</p>
-          </div>
-      </div>
-
-      <div class="services-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-icon">
-              <i class="fa-solid fa-fingerprint"></i>
-          </div>
-
-          <div class="service-header">
-              <h2>Safe Payment</h2>
-          </div>
-
-          <div class="service-text">
-              <p>Pay with the world’s most popular and secure payment methods.</p>
-          </div>
-      </div>
-
-      <div class="services-card last" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-icon">
-              <i class="fa-solid fa-truck-fast"></i>
-          </div>
-
-          <div class="service-header">
-              <h2>Fast Delivery</h2>
-          </div>
-
-          <div class="service-text">
-              <p>And free returns. See checkout for delivery dates.</p>
-          </div>
-      </div>
-
-  </div>
-  <!-- END OF servcies container -->
-
- 
-  
-  
-  <!-- ======= Subscribe Section ======= -->
-  <div class="subscribe-container">
-
-      <div class="subscribe-images" data-aos="fade-left">
-          <!-- <h2>Brewing Success: One Stat at a Time.</h2> -->
-          <div class="image-card image-one">
-              <img src="https://cdn.pixabay.com/photo/2019/10/31/07/16/coffee-4591173_640.jpg" alt="farmer">
-          </div>
-
-          <div class="image-card image-two">
-              <img src="https://img.freepik.com/free-photo/hand-picked-organic-fruit-ripe-harvesting-generated-by-ai_188544-44962.jpg?size=626&ext=jpg" alt="farm">
-          </div>
-
-          <div class="image-card image-three">
-              <img src="https://img.freepik.com/free-photo/woman-holding-cup-coffee-looking-photographer_23-2148363571.jpg?size=626&ext=jpg" alt="coffee drinker">
-          </div>
-      </div>
-
-      <div class="subscribe-content" data-aos="fade-left">
-          <div class="subscribe-header">
-              <h2>Subscribe To Our Newsletter And Get up to 15% Off</h2>
-          </div>
-      
-          <div class="subscribe-form">
-              <form method="get" action="">
-                  <div class="newsletter">
-                      <input type="email" class="email-input" maxlength="256" name="Newsletter-Form-4"
-                          aria-label="Enter email address" placeholder="Enter email address" id="Newsletter-Form-4"
-                          required="" />
-      
-                      <input type="submit" value="Subscribe" class="subscribe-btn" />
-                  </div>
-              </form>
-          </div>
-      </div>
-
-      
-
-  </div>
-  <!-- ======= End of Subscribe Section ======= -->
 </div>

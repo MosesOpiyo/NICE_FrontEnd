@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { ProductsService } from 'src/app/ProductsService/products.service';
-import { AuthenticationService } from 'src/app/AuthService/authentication.service';
+import { AuthenticationStoreService } from 'src/app/AuthServiceStore/authentication-store.service';
+import { PaymentService } from 'src/app/PaymentService/payment.service';
+
+
 
 @Component({
   selector: 'app-payments',
@@ -9,14 +11,15 @@ import { AuthenticationService } from 'src/app/AuthService/authentication.servic
 })
 export class PaymentsComponent {
 
-  displayedColumns: string[] = ['date','product','orderno','delivery','amount','payment', 'status'];
-  Orders:any
+  displayedColumns: string[] = ['buyer','products','country','warehouse','date','quantity','marker','amount','is_fulfilled'];
+  payments:any
 
-  constructor(private products:ProductsService,private service:AuthenticationService){}
+  constructor(private payment:PaymentService,private service:AuthenticationStoreService){}
 
   ngOnInit(): void {
-    this.products.getWarehouseOrders().subscribe((res:any)=>{
-      this.Orders = res
+    this.payment.getPayments().subscribe((res:any) =>{
+      this.payments = res
+      console.log(this.payments)
     })
   }
 }

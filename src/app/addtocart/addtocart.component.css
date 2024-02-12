@@ -16,3 +16,13 @@
     text-align: center;
     border: 1px solid #0000004a;
   }
+
+  .modal-contents .product-form select,
+  .modal-contents .product-form label, 
+  .modal-contents .product-form p {
+    font-size: 1.1rem;
+  }
+
+  .product-form .green table td {
+    padding-inline: 10px;
+  }

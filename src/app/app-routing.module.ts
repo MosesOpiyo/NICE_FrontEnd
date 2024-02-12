@@ -20,6 +20,8 @@ import { TripdetailsComponent } from './informationPages/tripdetails/tripdetails
 import { OriginsComponent } from './origins/origins.component';
 import { OrigindetailsComponent } from './origindetails/origindetails.component';
 import { TermsComponent } from './informationPages/terms/terms.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 
 
 const routes: Routes = [
@@ -30,19 +32,20 @@ const routes: Routes = [
   {path:'Expo',component:ExpoComponent},
   {path:'Origin-Trip',component:OriginTripComponent},
   {path: 'Cart', component:CartComponent},
-  {path: 'Products', component:ProductsComponent},
-  {path: 'Products/:id', component: ProductDetailsComponent},
-  {path: 'Products/:productId', component: ProductDetailsComponent},
+  {path: 'shop', component:ProductsComponent},
+  {path: 'shop/:productname/:id', component: ProductDetailsComponent},
+  // {path: 'Products/:productId', component: ProductDetailsComponent},
   {path: '404', component: NotfoundComponent},
   {path: 'about', component: AboutComponent},
   {path: 'attributions', component: AttributionsComponent},
   {path: 'farms/:originId', component: FarmComponent},
   {path: 'farm/:farmId', component:FarmdetailsComponent},
-  {path: 'trip-details', component: TripdetailsComponent},
+  {path: 'trip-details/:monthid', component: TripdetailsComponent},
   {path: 'origins', component: OriginsComponent},
   {path: 'origin/:originId', component: OrigindetailsComponent},
-  {path: 'terms and conditions', component: TermsComponent}
-
+  {path: 'terms and conditions', component: TermsComponent},
+  {path: 'checkout', component: CheckoutComponent},
+  {path: 'update_password', component: UpdatepasswordComponent}
 ];
 
 @NgModule({

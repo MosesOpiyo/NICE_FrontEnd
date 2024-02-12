@@ -7,6 +7,8 @@ import { AuthService } from 'src/app/Auth/auth.service';
 import { Router } from '@angular/router';
 import { FarmerSignUpComponent } from 'src/app/sign-up/farmer-sign-up/farmer-sign-up.component';
 import { AddtocartComponent } from 'src/app/addtocart/addtocart.component';
+import { ProductStoreService } from 'src/app/Store/Products/product-store.service';
+import { environment } from 'src/environments/environment.development';
 
 
 @Component({
@@ -20,34 +22,12 @@ export class NicehomepageComponent implements OnInit {
   number_value2:any;
   isShowDiv = false;
   isShowDiv2 = false;
+  email: any;
+  products:any;
+  popularProducts: any;
+  ratings : number[] = [];
+  cloudinaryUrl = environment.CLOUDINARY_URL
   
-
-  //roasted
-  check(value: any) {
-    this.number_value = value.target.value;
-  }
-
-  //green
-  check2(value: any) {
-    this.number_value2 = value.target.value;
-  }
-
-  // modal
-  isModalOpen = false;
-  toggleModal(): void {
-    this.isModalOpen = !this.isModalOpen;
-    this.number_value = 1;
-    this.number_value2 = 1;
-  }
-
-  // product form tabs
-  tabs: string [] = ['Roasted', 'Green'];
-  activatedTabIndex: number = 0;
-
-  // tabbed-info tabs
-  tabs2: string [] = ['Seller Info', 'Reviews'];
-  activatedTabIndex2: number = 0;
-
   coffeeData = [ 
     {
       id: 1,
@@ -231,7 +211,7 @@ export class NicehomepageComponent implements OnInit {
   ]
 
   myScriptElement: HTMLScriptElement;
-   constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router){
+   constructor(private dialog: MatDialog,private service:AuthenticationService,private route:Router,private product:ProductStoreService){
       this.myScriptElement = document.createElement("script");
       this.myScriptElement.src = "./assets/js/main.js";
       document.body.appendChild(this.myScriptElement);
@@ -273,7 +253,9 @@ export class NicehomepageComponent implements OnInit {
 
   showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string){
     const dialogRef = this.dialog.open(AddtocartComponent,{
-      minWidth: '250px',
+      width: '30pc',
+      maxWidth: '90vw',
+      autoFocus: false,
       maxHeight: '100vh',
       enterAnimationDuration,
       exitAnimationDuration
@@ -281,64 +263,33 @@ export class NicehomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.product.data$.subscribe((res:any)=>{
+      if(res == ""){
+        this.product.productData()
+        this.product.data$.subscribe((res:any)=>{})
+      }
+      else {
+        let eightproducts: any[] = [];
+        let sixproducts: any[] = [];
+
+        for(let i=0; i<6; i++) {
+          sixproducts.push(res[i])
+          this.popularProducts = sixproducts;
+        }
+
+        for(let i=0; i<8; i++) {
+          eightproducts.push(res[i])
+          this.products = eightproducts;
+        }
+      }
+
+      this.products.forEach((product:any) => {
+        product.rating.forEach((ratingItem: any) => {
+          this.ratings.push(ratingItem.rating)
+        });
+      })
+    });
    }
 
-   //product form tab index
-  tabChange(tabIndex: number) {
-    this.activatedTabIndex = tabIndex;
-  }
-
-  // detailedtabs tab index
-  tabChange2(tabIndex: number) {
-    this.activatedTabIndex2 = tabIndex;
-  }
-
-  // for roasted section
-  toggleDivOff() {
-    this.isShowDiv = false;
-  }
-
-  toggleDivOn() {
-    this.isShowDiv = true;
-  }
-
-  // for green tab section
-  toggleDivOff2() {
-    this.isShowDiv2 = false;
-  }
-
-  toggleDivOn2() {
-    this.isShowDiv2 = true;
-  }
-
-  // increment button for roasted section
-  increment(){
-    this.number_value++;
-    }
-    
-  //decrements item for roasted section
-  decrement(){
-    if(this.number_value-1 < 1){
-      this.number_value = 1;
-    }
-    else{
-      this.number_value -= 1;
-    }
-  }
-
-  // increment button for green section
-  increment2(){
-    this.number_value2++;
-    }
-    
-  //decrements item for green section
-  decrement2(){
-    if(this.number_value2-1 < 1){
-      this.number_value2 = 1;
-    }
-    else{
-      this.number_value2 -= 1;
-    }
-  }
 }
 

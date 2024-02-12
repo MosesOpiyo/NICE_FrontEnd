@@ -3,11 +3,9 @@
 <section class="trip-container">
     <!-- HERO SECTION -->
     <div class="triphero-container">
-        <!-- <video src="../../../assets/Video/trip2.mp4" autoplay loop playsinline muted [disablePictureInPicture]="true" preload="auto"></video> -->
-
         <div class="trip-content">
             <div class="trip-header">
-                <h2>Embark on a journey to the Coffee Cradle!</h2>
+                <h2>Embark on a journey to the coffee cradle!</h2>
             </div>
             
             <!-- <div class="trip-text">
@@ -16,7 +14,7 @@
             </div> -->
 
             <div class="register-btn">
-                <a href="">BOOKING CLOSED</a>
+                <a href="Origin-Trip#bookings">BOOK NOW</a>
             </div>
         </div>
     </div>
@@ -37,23 +35,15 @@
             </div>
         </div>
 
-        <a class="places-card geralds-place" routerLink="/trip-details">
+        <a
+          class="places-card"
+          *ngFor="let info of tripData"
+          routerLink="/trip-details/{{info.id}}"
+          ngClass={{info.shortheader}}
+          id="bookings"
+        >
             <div class="places-header">
-                <h2>JANUARY TRIP</h2>
-                <button type="button">BOOK NOW</button>
-            </div>
-        </a>
-
-        <a class="places-card ragis-place" routerLink="/trip-details">
-            <div class="places-header">
-                <h2>JULY TRIP</h2>
-                <button type="button">BOOK NOW</button>
-            </div>
-        </a>
-
-        <a class="places-card ndaroini-place" routerLink="/trip-details">
-            <div class="places-header">
-                <h2>NOVEMBER TRIP</h2>
+                <h2>{{info.header}}</h2>
                 <button type="button">BOOK NOW</button>
             </div>
         </a>
@@ -63,54 +53,30 @@
     <div class="trip-purpose">
         <div class="purpose-header">
             <h2>Go direct to source</h2>
-            <!-- <p>Connect directly with producers of the elusive Nyeri cup judged by coffee connoisseurs as one of the best in the world.</p> -->
         </div>
 
         <div class="purpose-list">
             <div class="purpose-card meetfarmer">
                 <div class="purpose-content">
                     <h2>Meet the farmers</h2>
-                    <!-- <p>Put a face to the coffee you buy by connecting directly with amazing farmers</p> -->
                 </div>
             </div>
-            <!-- 
-            <div class="purpose-card farmer-image">
-                <img src="https://img.freepik.com/premium-photo/portrait-female-african-farmer_216356-738.jpg?w=740" alt="">
-            </div> -->
-
-            <!-- <div class="purpose-card process-image">
-                <img src="https://img.freepik.com/free-photo/colorful-cogwheels-arrangement-top-view_23-2149382397.jpg?size=626&ext=jpg&ga=GA1.1.771609611.1699605036&semt=sph" alt="">
-            </div> -->
 
             <div class="purpose-card process">
-                <!-- <div class="purpose-icon">
-                    <i class="fa-solid fa-gears"></i>
-                </div> -->
                 <div class="purpose-content">
                     <h2>Learn the process</h2>
-                    <!-- <p>Get your hands dirty as you learn how your coffee is grown and prepared</p> -->
                 </div>
             </div>
 
             <div class="purpose-card taste">
                 <div class="purpose-content">
                     <h2>Taste their coffees</h2>
-                    <!-- <p>The Nyeri Orgin Trip is a cuppers paradise with countless samples to taste</p> -->
                 </div>
             </div>
-            
-            <!-- <div class="purpose-card tasting-image">
-                <img src="https://img.freepik.com/free-photo/girl-having-cup-coffee-enjoying-taste_144627-67507.jpg?w=740&t=st=1699609828~exp=1699610428~hmac=c7d52240b13a9fc96e1feeb0fb0f5de11496eaf2053da30139dac5bf6cf6a57d" alt="">
-            </div> -->
-
-            <!-- <div class="purpose-card relations-image">
-                <img src="https://img.freepik.com/free-photo/business-collaboration-success-by-handshake_23-2148339368.jpg?w=740&t=st=1699611729~exp=1699612329~hmac=23a2f2ac220a2b29b3ad23bf2e1e01e8b4d176af43cd8a637812f5b375dbede4" alt="">
-            </div> -->
 
             <div class="purpose-card relations">
                 <div class="purpose-content">
                     <h2>Create direct relationships</h2>
-                    <!-- <p>Remove the veil between you and farmers and build lasting direct relationships</p> -->
                 </div>
             </div>
 
@@ -121,17 +87,19 @@
     <!-- EXPENSES SECTION -->
     <div class="expenses">
         <div class="expenses-header">
-            <h2>Expenses Paid Trip</h2>
+            <h2>Expenses paid trip</h2>
         </div>
 
         <div class="expenses-content">
-            <div class="expenses-image">
-                <img src="https://img.freepik.com/free-vector/tropical-vacation-air-travel-service-composition_98292-6990.jpg?size=626&ext=jpg&ga=GA1.1.47500303.1698056812&semt=sph" alt="travel bag">
-            </div>
-
             <div class="expenses-info">
                 <div class="covered">
-                    <h2>Costs covered</h2>
+                    <div class="costs-header">
+                        <div class="costs-icons">
+                            <i class="fa-regular fa-dollar-sign"></i>
+                            <sup><i class="fa-solid fa-check"></i></sup>
+                        </div>
+                        <h2>Costs covered</h2>
+                    </div>
                     <ul>
                         <li><i class="fa-solid fa-check"></i>&nbsp;Arrival and departure airport transfers</li>
                         <li><i class="fa-solid fa-check"></i>&nbsp;Seven days full board accommodation</li>
@@ -146,7 +114,13 @@
                 </div>
         
                 <div class="not-covered">
-                    <h2>Costs not covered</h2>
+                    <div class="costs-header">
+                        <div class="costs-icons">
+                            <i class="fa-regular fa-dollar-sign"></i>
+                            <sup><i class="fa-solid fa-xmark"></i></sup>
+                        </div>
+                        <h2>Costs not covered</h2>
+                    </div>
                     <ul>
                         <li><i class="fa-solid fa-xmark"></i>&nbsp;International Airfares</li>
                         <li><i class="fa-solid fa-xmark"></i>&nbsp;Tourist entry Visa to Kenya</li>
@@ -170,241 +144,42 @@
         </div>
         
         <div class="farmers-list">
-            <div class="farmerlist-card" *ngFor="let data of farmerData">
+            <div class="farmerlist-card" ngClass={{data.shortFarmName}} *ngFor="let data of farmerData">
                 <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="toggleModal()">View Farm Details</button>
+                <button type="button" (click)="openFarmDetails(data.id)">View Farm Details</button>
             </div>
-
-            <div class="farmerlist-card" *ngFor="let data of farmerData2">
-                <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="toggleModal2()">View Farm Details</button>
-            </div>
-
-            <div class="farmerlist-card" *ngFor="let data of farmerData3">
-                <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="toggleModal3()">View Farm Details</button>
-            </div>
-
-            <div class="farmerlist-card" *ngFor="let data of farmerData4">
-                <h2>{{data.farmName}}</h2>
-                <button type="button" (click)="toggleModal4()">View Farm Details</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- farmer modal -->
-    <div class="farmers-content" *ngIf="isModalOpen" class="modals">
-        <div class="farmer-card modal-contents" *ngFor="let data of farmerData">
-            <span class="modal-close" (click)="toggleModal()">
-                <i class="fa-solid fa-x"></i>
-            </span>
-
-            <div class="farm-name">
-                <h2>{{data.farmName}}</h2>
-            </div>
-
-            <div class="farm-info">
-
-                <div class="farmer-images ndaroini-images">
-                    <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
-                        autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
-                        space-between="10" class="mobile">
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl1}} alt="farm">                    
-                            </div>
-                        </swiper-slide>
-                    
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl2}} alt="farm">
-                            </div>
-                        </swiper-slide>
-                    </swiper-container>
-
-                    <!-- <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src={{data.imageUrl1}} alt="farm">
-                        </div>
-              
-                        <div class="swiper-slide">
-                            <img src={{data.imageUrl2}} alt="farm">
-                        </div>
-                    </div>
-              
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div> -->
-                </div>
-                
-                <div class="farm-story">
-                    <p>
-                        <i class={{data.rating[0]}}></i>
-                        <i class={{data.rating[1]}}></i>
-                        <i class={{data.rating[2]}}></i>
-                        <i class={{data.rating[3]}}></i>
-                        <i class={{data.rating[4]}}></i>
-                    </p>
-                    <p>{{data.story}}</p>
-                </div>
-            </div>      
-        </div>
-    </div>
-
-    <!-- farmer modal2 -->
-    <div class="farmers-content" *ngIf="isModalOpen2" class="modals">
-        <div class="farmer-card modal-contents" *ngFor="let data of farmerData2">
-            <span class="modal-close" (click)="toggleModal2()">
-                <i class="fa-solid fa-x"></i>
-            </span>
-
-            <div class="farm-name">
-                <h2>{{data.farmName}}</h2>
-            </div>
-
-            <div class="farm-info">
-
-                <div class="farmer-images geralds-images">
-                    <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
-                        autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
-                        space-between="10" class="mobile">
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl1}} alt="farm">                    
-                            </div>
-                        </swiper-slide>
-                    
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl2}} alt="farm">
-                            </div>
-                        </swiper-slide>
-                    </swiper-container>
-                </div>
-                
-                <div class="farm-story">
-                    <p>
-                        <i class={{data.rating[0]}}></i>
-                        <i class={{data.rating[1]}}></i>
-                        <i class={{data.rating[2]}}></i>
-                        <i class={{data.rating[3]}}></i>
-                        <i class={{data.rating[4]}}></i>
-                    </p>
-                    <p>{{data.story}}</p>
-                </div>
-            </div>      
-        </div>
-    </div>
-
-    <!-- farmer modal3 -->
-    <div class="farmers-content" *ngIf="isModalOpen3" class="modals">
-        <div class="farmer-card modal-contents" *ngFor="let data of farmerData3">
-            <span class="modal-close" (click)="toggleModal3()">
-                <i class="fa-solid fa-x"></i>
-            </span>
-
-            <div class="farm-name">
-                <h2>{{data.farmName}}</h2>
-            </div>
-
-            <div class="farm-info">
-
-                <div class="farmer-images ragis-images">
-                    <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
-                        autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
-                        space-between="10" class="mobile">
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl1}} alt="farm">                    
-                            </div>
-                        </swiper-slide>
-                    
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl2}} alt="farm">
-                            </div>
-                        </swiper-slide>
-                    </swiper-container>
-                </div>
-                
-                <div class="farm-story">
-                    <p>
-                        <i class={{data.rating[0]}}></i>
-                        <i class={{data.rating[1]}}></i>
-                        <i class={{data.rating[2]}}></i>
-                        <i class={{data.rating[3]}}></i>
-                        <i class={{data.rating[4]}}></i>
-                    </p>
-                    <p>{{data.story}}</p>
-                </div>
-            </div>      
-        </div>
-    </div>
-
-    <!-- farmer modal4 -->
-    <div class="farmers-content" *ngIf="isModalOpen4" class="modals">
-        <div class="farmer-card modal-contents" *ngFor="let data of farmerData4">
-            <span class="modal-close" (click)="toggleModal4()">
-                <i class="fa-solid fa-x"></i>
-            </span>
-            
-            <div class="farm-name">
-                <h2>{{data.farmName}}</h2>
-            </div>
-
-            <div class="farm-info">
-
-                <div class="farmer-images jungle-images">
-                    <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true" loop="true"
-                        autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
-                        space-between="10" class="mobile">
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl1}} alt="farm">                    
-                            </div>
-                        </swiper-slide>
-                    
-                        <swiper-slide class="slide-content">
-                            <div class="farm-item">
-                                <img src={{data.imageUrl2}} alt="farm">
-                            </div>
-                        </swiper-slide>
-                    </swiper-container>
-                </div>
-                
-                <div class="farm-story">
-                    <p>
-                        <i class={{data.rating[0]}}></i>
-                        <i class={{data.rating[1]}}></i>
-                        <i class={{data.rating[2]}}></i>
-                        <i class={{data.rating[3]}}></i>
-                        <i class={{data.rating[4]}}></i>
-                    </p>
-                    <p>{{data.story}}</p>
-                </div>
-            </div>      
         </div>
     </div>
 
      <!-- CUPPING -->
      <div class="cupping-container">
         <div class="cupping-text">
+            <h2>Cuppers paradise</h2>
             <p>Get a chance to cup all of Nyeri's finest coffees. Order and purchase the coffees you like directly from farmers during the trip.</p>
+            <div class="cupping-icons">
+                <div class="visit cuppingicon-card">
+                    <div class="cupping-icon">
+                        <img src="../../../assets/img/Trip/location.png" alt="map pointer">
+                    </div>
+                    <p>visit</p>
+                </div>
+                <div class="cup cuppingicon-card">
+                    <div class="cupping-icon">
+                        <img src="../../../assets/img/Trip/mug.png" alt="a coffee mug">
+                    </div>
+                    <p>cup</p>
+                </div>
+                <div class="buy cuppingicon-card">
+                    <div class="cupping-icon">
+                        <img src="../../../assets/img/Trip/shopping-bag.png" alt="a shopping basket">
+                    </div>
+                    <p>buy</p>
+                </div>
+            </div>
             <button type="button" (click)="showTripRegisterDialog()">BOOK NOW</button>
         </div>
         
-        <div class="cupping-image">      
-                <!-- <div class="cupping-card image-one">
-                    <img src="https://images.pexels.com/photos/13806389/pexels-photo-13806389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="farm">
-                </div>
-      
-                <div class="cupping-card image-two">
-                    <img src="../../../assets/img/Trip/cupping2.webp" alt="coffee drinker">
-                </div>
-
-                <div class="cupping-card image-three">
-                    <img src="https://images.pexels.com/photos/9455933/pexels-photo-9455933.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="coffee drinker">
-                </div> -->
-        </div>     
+        <div class="cupping-image"></div>     
     </div>
 
     <!-- TIPS -->
@@ -476,28 +251,62 @@
         </div>
 
         <div class="checklist-list">
-            <ul>
-                <li><i class="fa-regular fa-circle-check"></i>&nbsp;Bug Repellent – to keep the little pests you encounter at bay</li>
-                <li><i class="fa-regular fa-circle-check"></i>&nbsp;Suitable Clothing – to protect you from elements of weather</li>
-                <li><i class="fa-regular fa-circle-check"></i>&nbsp;Medication and Health Products – to cushion your body from the shock of new foods, water and weather</li>
-                <li><i class="fa-regular fa-circle-check"></i>&nbsp;A Good Camera – to back up your story</li>
-                <li><i class="fa-regular fa-circle-check"></i>&nbsp;Local currency – credit cards and ATMs don’t count on the farm</li>
-                <li><i class="fa-regular fa-circle-check"></i>&nbsp;Gifts – to show your appreciation and build friendship</li>
-                <li><i class="fa-regular fa-circle-check"></i>&nbsp;Altimeter – it’s fun tracking the elevation along your journey and learning how it changes the coffee</li>
-                <li><i class="fa-regular fa-circle-check"></i>&nbsp;Research – in addition to our information package, it’s good to do your research to strengthen your purpose</li>
-            </ul>
+            <div class="checklist-card repellent">
+                <div class="checklist-icon">
+                    <img src="../../../assets/img/Trip/bug-spray.png" alt="a bug repellent">
+                </div>
+                <span>Bug Repellent – to keep the little pests you encounter at bay</span>
+            </div>
+
+            <div class="checklist-card clothing">
+                <div class="checklist-icon">
+                    <img src="../../../assets/img/Trip/brand.png" alt="clothing">
+                </div>
+                <span>Suitable Clothing – to protect you from elements of weather</span>
+            </div>
+
+            <div class="checklist-card medication">
+                <div class="checklist-icon">
+                    <img src="../../../assets/img/Trip/syringe.png" alt="Medication">
+                </div>
+                <span>Medication and Health Products – to cushion your body from the shock of new foods, water and weather</span>
+            </div>
+
+            <div class="checklist-card camera">
+                <div class="checklist-icon">
+                    <img src="../../../assets/img/Trip/camera.png" alt="a camera">
+                </div>
+                <span>A Good Camera – to back up your story</span>
+            </div>
+
+            <div class="checklist-card currency">
+                <div class="checklist-icon">
+                    <img src="../../../assets/img/Trip/money.png" alt="currency">
+                </div>
+                <span>Local currency – credit cards and ATMs don’t count on the farm</span>
+            </div>
+
+            <div class="checklist-card gifts">
+                <div class="checklist-icon">
+                    <img src="../../../assets/img/Trip/gift.png" alt="gifts">
+                </div>
+                <span>Gifts – to show your appreciation and build friendship</span>
+            </div>
+
+            <div class="checklist-card altimeter">
+                <div class="checklist-icon">
+                    <img src="../../../assets/img/Trip/voltmeter.png" alt="altimeter">
+                </div>
+                <span>Altimeter – it’s fun tracking the elevation along your journey and learning how it changes the coffee</span>
+            </div>
+
+            <div class="checklist-card research">
+                <div class="checklist-icon">
+                    <img src="../../../assets/img/Trip/search.png" alt="a magnifying glass on paper">
+                </div>
+                <span>Research – in addition to our information package, it’s good to do your research to strengthen your purpose</span>
+            </div>
         </div>
-    </div>
-
-
-    <!-- ITINERARY -->
-    <div class="itinerary">
-        <h2>Origin Trip Itinerary</h2>
-        <a href="../../../assets/docs/itinerary/2023 Nyeri Origin Trip flier.pdf" download="Nyeri Origin Trip Itinerary" id="itinerary">
-            Download Nyeri Origin Trip Itinerary
-            &nbsp;&nbsp;
-            <i class="fa fa-file-pdf"></i>
-        </a>
     </div>
     
 </section>

@@ -2,450 +2,767 @@
   <app-navbar></app-navbar>
 
 
-    <section class="product-container">
+  <section class="product-container">
 
-      <div class="product-details">
+    <div class="product-details">
 
-          <div class="product-image">
-              <img src="{{cloudinaryUrl}}{{item.img}}" alt="coffee">
+      <div class="product-image">
+        <img src="{{cloudinaryUrl}}{{item.img}}" alt="coffee">
+      </div>
+
+      <div class="product-alldetails">
+
+        <div class="product-info">
+          <div class="product-detail">
+            <p>{{item.product.name}}</p>
+            <p>Description: - {{item.product.cup_notes}}</p>
+            <p>Riaikania Coffee Factory</p>
+            <p *ngIf=" averageRating(item) == 5">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </p>
+            <p *ngIf="averageRating(item) == 4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </p>
+            <p *ngIf="averageRating(item) == 3">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </p>
+            <p *ngIf="averageRating(item) == 2">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </p>
+            <p *ngIf="averageRating(item) == 1">
+              <i class="fa-solid fa-star"></i>
+            </p>
+            <p *ngIf="averageRating(item) == 0">
+
+            </p>
+            <p>In stock</p>
+            <p>Shipping: Free (Continental US only)</p>
+          </div>
+        </div>
+
+        <div class="product-form">
+          <div class="col">
+            <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)"></app-tabs>
           </div>
 
-          <div class="product-alldetails">
+          <div *ngIf="activatedTabIndex == 0" class="roasted">
 
-              <div class="product-info">
-                  <div class="product-detail">
-                      <p>{{item.product.name}}</p>
-                      <p>Description:  - {{item.product.cup_notes}}</p>
-                      <p>Riaikania Coffee Factory</p>
-                      <p *ngIf=" averageRating(item) == 5">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                      </p>
-                      <p *ngIf="averageRating(item) == 4">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                      </p>
-                      <p *ngIf="averageRating(item) == 3">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                      </p>
-                      <p *ngIf="averageRating(item) == 2">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                      </p>
-                      <p *ngIf="averageRating(item) == 1">
-                        <i class="fa-solid fa-star"></i>
-                      </p>
-                      <p *ngIf="averageRating(item) == 0">
-                        
-                      </p>
-                      <p>In stock</p>
-                      <p>Shipping: Free (Continental US only)</p>
-                  </div> 
+            <form action="" method="post" ngNativeValidate>
+              <div class="option-list">
+                <select id="packsize" [(ngModel)]="quantityPrice" name="packsize" title="packsize" required>
+                  <option value="" disabled selected>Choose Pack Size...</option>
+                  <option value="12-18.80">12oz ($18.80)</option>
+                  <option value="32-46.80">32oz ($46.80)</option>
+                  <option value="48-68.20">48oz ($68.20)</option>
+                  <option value="80-113.00">80oz ($113.00)</option>
+                </select>
+
+                <select id="grind" [(ngModel)]="grind" name="grind" title="grind" required>
+                  <option value="" disabled selected>Choose Grind...</option>
+                  <option value="Whole beans">Whole beans</option>
+                  <option value="Extra coarse">Extra coarse (Cold brews)</option>
+                  <option value="Coarse">Coarse (French press/percolators)</option>
+                  <option value="Medium-coarse">Medium-coarse (Chemex/clever drippers)</option>
+                  <option value="Medium">Medium (Drip/regular)</option>
+                  <option value="Medium-fine">Medium-fine (Pour overs/siphon)</option>
+                  <option value="Fine">Fine (Espresso)</option>
+                  <option value="Super-fine">Super-fine (Turkish)</option>
+                </select>
+
+                <select id="roast" [(ngModel)]="roast_type" name="roast" title="roast" required>
+                  <option value="" disabled selected>Choose Roast Type...</option>
+                  <option value="Light">Light</option>
+                  <option value="Medium/light">Medium/light</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Medium/dark">Medium/dark</option>
+                  <option value="Dark">Dark</option>
+                </select>
               </div>
 
-              <div class="product-form">
-                <div class="col">
-                  <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)" ></app-tabs>
+              <div class="buttons-list">
+                <div class="radio">
+                  <div class="radio1">
+                    <input type="radio" id="onetime" name="subscribe" value="one-time" checked
+                      (change)="checkStatus1($event)">
+                    <label for="onetime">One time purchase</label><br>
+                  </div>
+
+                  <div class="radio2">
+                    <input type="radio" id="subscribe" name="subscribe" value="subscribed"
+                      (change)="checkStatus2($event)">
+                    <label for="subscribe">Subscribe & save 10%</label><br>
+                  </div>
+
+                  <div *ngIf="isShowDiv">
+                    <select id="greendelivery" name="delivery" title="delivery" required>
+                      <option value="">Choose Delivery Period...</option>
+                      <option value="2 weeks">Deliver every 2 weeks</option>
+                      <option value="3 weeks">Deliver every 3 weeks</option>
+                      <option value="month">Deliver every month</option>
+                      <option value="6 weeks">Deliver every 6 weeks</option>
+                      <option value="2 months">Deliver every 2 months</option>
+                    </select>
+                  </div>
                 </div>
 
-                  <div *ngIf="activatedTabIndex == 0" class="roasted">
-                      
-                      <form action="" method="post" ngNativeValidate>
-                        <div class="option-list">
-                            <select id="packsize" [(ngModel)]="quantityPrice" name="packsize" title="packsize" required>
-                              <option value="" disabled selected>Choose Pack Size...</option>
-                              <option value="12-18.80">12oz ($18.80)</option>
-                              <option value="32-46.80">32oz ($46.80)</option>
-                              <option value="48-68.20">48oz ($68.20)</option>
-                              <option value="80-113.00">80oz ($113.00)</option>
-                            </select>
-          
-                            <select id="grind" [(ngModel)]="grind" name="grind" title="grind" required>
-                              <option value="" disabled selected>Choose Grind...</option>
-                              <option value="Whole beans">Whole beans</option>
-                              <option value="Extra coarse">Extra coarse (Cold brews)</option>
-                              <option value="Coarse">Coarse (French press/percolators)</option>
-                              <option value="Medium-coarse">Medium-coarse (Chemex/clever drippers)</option>
-                              <option value="Medium">Medium (Drip/regular)</option>
-                              <option value="Medium-fine">Medium-fine (Pour overs/siphon)</option>
-                              <option value="Fine">Fine (Espresso)</option>
-                              <option value="Super-fine">Super-fine (Turkish)</option>
-                            </select>
-          
-                            <select id="roast" [(ngModel)]="roast_type" name="roast" title="roast" required>
-                              <option value="" disabled selected>Choose Roast Type...</option>
-                              <option value="Light">Light</option>
-                              <option value="Medium/light">Medium/light</option>
-                              <option value="Medium">Medium</option>
-                              <option value="Medium/dark">Medium/dark</option>
-                              <option value="Dark">Dark</option>
-                            </select>
-                        </div>
+                <div class="incrdecr">
+                  <div (click)=decrement() class="decrement">-</div>
+                  <input type="number" name="roasted-quantity" id="roasted-counting" [(ngModel)]="num"
+                    (change)="value($event)" title="input-count">
+                  <div (click)=increment() class="increment">+</div>
+                </div>
 
-                        <div class="buttons-list">
-                          <div class="radio">
-                            <div class="radio1">
-                              <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff2() checked>
-                              <label for="onetime">One time purchase</label><br>
-                            </div>
-
-                            <div class="radio2">
-                              <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn2()>
-                              <label for="subscribe">Subscribe & save 10%</label><br>
-                            </div>
-                          
-                            <div *ngIf="isShowDiv2">
-                              <select id="greendelivery" name="delivery" title="delivery" required>
-                                <option value="">Choose Delivery Period...</option>
-                                <option value="2 weeks">Deliver every 2 weeks</option>
-                                <option value="3 weeks">Deliver every 3 weeks</option>
-                                <option value="month">Deliver every month</option>
-                                <option value="6 weeks">Deliver every 6 weeks</option>
-                                <option value="2 months">Deliver every 2 months</option>
-                              </select>
-                            </div>
-                          </div>
-
-                          <div class="incrdecr">
-                            <div (click)=decrement() class="decrement">-</div>
-                            <input type="number" name="roasted-quantity" id="roasted-counting" [(ngModel)]="num" (change)="value($event)" title="input-count">
-                            <div (click)=increment() class="increment">+</div>
-                          </div>
-
-                          <div class="submit-btn">
-                            <button (click)="cartItem(item.id)" type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                            <a routerLink="/Checkout" class="buy">BUY NOW</a>
-                          </div>
-                        </div>
-
-                          
-
-                      </form>
-                  </div>
-
-                  <div *ngIf="activatedTabIndex == 1" class="green">
-                      <div class="packaging">
-                        <p>Packaging</p>
-                        <p>Grainpro & Outer Jutebag</p>
-                      </div>
-
-                      <div class="price-lb">
-                        <p>Price/Lb</p>
-
-                        <div class="lb">
-                          <p>1 - 660 lbs</p>
-                          <p>660lbs +</p>
-                        </div>
-
-                        <div class="lb-price">
-                          <p>- $7.70</p>
-                          <p>- $6.93</p>
-                        </div>
-                      </div>
-
-                      <form action="/" method="post" ngNativeValidate>
-                        <div class="radio">
-                          <div class="radio1">
-                            <input type="radio" id="onetime" name="subscribe" value="one-time" (click)=toggleDivOff() checked>
-                            <label for="onetime">One time purchase</label><br>
-                        </div>
-
-                        <div class="radio1">
-                            <input type="radio" id="subscribe" name="subscribe" value="subscribed" (click)=toggleDivOn()>
-                            <label for="subscribe">Subscribe & save 10%</label><br>
-                        </div>
-                        
-                          <div *ngIf="isShowDiv">
-                            <select id="delivery" name="delivery" title="delivery" required>
-                              <option value="">Choose Delivery Period...</option>
-                              <option value="2 weeks">Deliver every 2 weeks</option>
-                              <option value="3 weeks">Deliver every 3 weeks</option>
-                              <option value="month">Deliver every month</option>
-                              <option value="6 weeks">Deliver every 6 weeks</option>
-                              <option value="2 months">Deliver every 2 months</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div class="incrdecr">
-                          <div (click)=decrement2() class="decrement">-</div>
-                          <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="num2" (change)="value2($event)" title="input-count">
-                          <div (click)=increment2() class="increment">+</div>
-                        </div>
-
-
-                        <div class="submit-btn">
-                          <button (click)="cartItem2(item.id)" type="submit">ADD TO CART&nbsp; <i class="fa-solid fa-cart-arrow-down"></i></button>
-                          <a routerLink="/Checkout" class="buy">BUY NOW</a>
-                      </div>
-
-                      </form>
-                      
-                  </div>
+                <div class="submit-btn">
+                  <button (click)="cartItem(item.id)" type="submit">ADD TO CART&nbsp; <i
+                      class="fa-solid fa-cart-arrow-down"></i></button>
+                  <a routerLink="/checkout" class="buy">BUY NOW</a>
+                </div>
               </div>
+
+
+
+            </form>
           </div>
+
+          <div *ngIf="activatedTabIndex == 1" class="green">
+            <div class="green-data">
+              <div class="packaging">
+                <p>Packaging:</p>
+                <p>Grainpro & Outer Jutebag</p>
+              </div>
+
+              <div class="price-lb">
+                <p>Price/Lb:</p>
+
+                <table>
+                  <tr>
+                    <td>1 - 660 lbs</td>
+                    <td>$7.70</td>
+                  </tr>
+                  <tr>
+                    <td>660lbs +</td>
+                    <td>$6.93</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <form action="/" method="post" ngNativeValidate>
+              <div class="radio">
+                <div class="radio1">
+                  <input type="radio" id="onetime" name="subscribe" value="one-time" checked
+                    (change)="checkStatus3($event)">
+                  <label for="onetime">One time purchase</label><br>
+                </div>
+
+                <div class="radio1">
+                  <input type="radio" id="subscribe" name="subscribe" value="subscribed"
+                    (change)="checkStatus4($event)">
+                  <label for="subscribe">Subscribe & save 10%</label><br>
+                </div>
+
+                <div *ngIf="isShowDiv2">
+                  <select id="delivery" name="delivery" title="delivery" required>
+                    <option value="">Choose Delivery Period...</option>
+                    <option value="2 weeks">Deliver every 2 weeks</option>
+                    <option value="3 weeks">Deliver every 3 weeks</option>
+                    <option value="month">Deliver every month</option>
+                    <option value="6 weeks">Deliver every 6 weeks</option>
+                    <option value="2 months">Deliver every 2 months</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="incrdecr">
+                <div (click)=decrement2() class="decrement">-</div>
+                <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="num2"
+                  (change)="value2($event)" title="input-count">
+                <div (click)=increment2() class="increment">+</div>
+              </div>
+
+
+              <div class="submit-btn">
+                <button (click)="cartItem2(item.id)" type="submit">ADD TO CART&nbsp; <i
+                    class="fa-solid fa-cart-arrow-down"></i></button>
+                <a routerLink="/checkout" class="buy">BUY NOW</a>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="tabbed-info">
+
+      <div class="col">
+        <app-tabs [tabsArray]="tabs2" (onTabChange)="tabChange2($event)"></app-tabs>
+      </div>
+
+      <div *ngIf="activatedTabIndex2 == 0" class="farm-tab">
+        <div class="swiper timeline-slide">
+          <div class="timeline-swiper" data-aos="fade-left">
     
+            <!-- mobile slide -->
+            <swiper-container slides-per-view=1 loop="true"
+                autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true"
+                autoplay-disable-on-interaction="false" space-between="10" class="mobile">
+                <swiper-slide class="slide-content">
+                  <div class="timeline-item timeline1">
+              
+                    <div class="timeline-image">
+                      <img src='../../assets/img/farm/farm1.jpg' alt="package">
+                    </div>
+              
+                    <div class="timeline-text">
+                      <p>Planting</p>
+                    </div>
+              
+                  </div>
+                </swiper-slide>
+              
+                <swiper-slide class="slide-content">
+                  <div class="timeline-item timeline1">
+              
+                    <div class="timeline-image">
+                      <img src='../../assets/img/farm/farm2.jpg' alt="package">
+                    </div>
+              
+                    <div class="timeline-text">
+                      <p>Flowering</p>
+                    </div>
+              
+                  </div>
+                </swiper-slide>
+              
+                <swiper-slide class="slide-content">
+                  <div class="timeline-item timeline1">
+              
+                    <div class="timeline-image">
+                      <img src='../../assets/img/farm/farm3.jpg' alt="package">
+                    </div>
+              
+                    <div class="timeline-text">
+                      <p>Maturing</p>
+                    </div>
+              
+                  </div>
+                </swiper-slide>
+              
+                <swiper-slide class="slide-content">
+                  <div class="timeline-item timeline1">
+              
+                    <div class="timeline-image">
+                      <img src='../../assets/img/farm/farm4.jpg' alt="package">
+                    </div>
+              
+                    <div class="timeline-text">
+                      <p>Harvesting</p>
+                    </div>
+              
+                  </div>
+                </swiper-slide>
+              
+                <swiper-slide class="slide-content">
+                  <div class="timeline-item timeline1">
+              
+                    <div class="timeline-image">
+                      <img src='../../assets/img/farm/farm5.jpg' alt="package">
+                    </div>
+              
+                    <div class="timeline-text">
+                      <p>Processing</p>
+                    </div>
+              
+                  </div>
+                </swiper-slide>
+              
+                <swiper-slide class="slide-content">
+                  <div class="timeline-item timeline1">
+              
+                    <div class="timeline-image">
+                      <img src='../../assets/img/farm/farm6.jpg' alt="package">
+                    </div>
+              
+                    <div class="timeline-text">
+                      <p>Sale</p>
+                    </div>
+              
+                  </div>
+                </swiper-slide>
+            </swiper-container>
+        
+            <!-- tablet slide -->
+            <swiper-container slides-per-view=2 loop="true"
+              autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
+              space-between="10" class="tablet">
+             <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm1.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Planting</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm2.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Flowering</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm3.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Maturing</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm4.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Harvesting</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm5.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Processing</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm6.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Sale</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            </swiper-container>
+        
+            <!-- laptop slide -->
+            <swiper-container slides-per-view=3 loop="true" autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true" autoplay-disable-on-interaction="false"
+              space-between="10" class="laptop">
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm1.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Planting</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm2.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Flowering</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm3.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Maturing</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm4.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Harvesting</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm5.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Processing</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            
+              <swiper-slide class="slide-content">
+                <div class="timeline-item timeline1">
+            
+                  <div class="timeline-image">
+                    <img src='../../assets/img/farm/farm6.jpg' alt="package">
+                  </div>
+            
+                  <div class="timeline-text">
+                    <p>Sale</p>
+                  </div>
+            
+                </div>
+              </swiper-slide>
+            </swiper-container>
+        
+          </div>
+
+          <div class="timeline-btn">
+            <button type="button" (click)="openFarmDetails()">VIEW MORE TIMELINE PHOTOS</button>
+          </div>
+          
+        </div>
+
+
+        <div class="owners">
+          <div class="owner-image">
+            <img src="../../assets/img/farmers/farmer1.jpg" alt="owner image">
+          </div>
+
+          <div class="owner-bio">
+            <div class="owner-name">
+              <h4>Owner: {{item.product.producer.username | titlecase}}</h4>
+            </div>
+
+            <div class="owner-info">
+              <p>Moses King'ori is no stranger to the coffee industry. His career began at Gerald's Coffee Estate in
+                Nyeri. His commitment and passion for coffee led Moses to various coffee farms in Kenya, Africa. Among
+                other things, he is responsible for and gives the coffee varieties of the Nyeri an even higher level
+                thanks to his enormous expertise and down-to-earth attitude.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="farmdetails">
+
+          <div class="farm-bio">
+
+            <div class="farm-story">
+              <p>Geralds Coffee Estate was started in 1958 by our late father Gerald Kingori. He developed a passion for
+                coffee in all of us and taught us to work on the coffee. Traditionally land is subdivided among sons
+                when a father passes away but we have chosen to manage the estate as one. We work hard to maintain good
+                agricultural practices like our father taught us and our goal is to consistently produce high quality
+                coffee. We hope that soon we will start making good earnings from our hard work by selling our coffee
+                directly to roasters.</p>
+            </div>
+
+            <div class="farm-origin">
+              <p><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Location: Kiambu, Kenya</p>
+              <p><i class="fa-solid fa-tree"></i>&nbsp;&nbsp;Area: 150 Ha</p>
+              <p><i class="fa-solid fa-flag-checkered"></i>&nbsp;&nbsp;Founded: 1991</p>
+            </div>
+
+          </div>
+
+          <div class="farm-images">
+            <div class="farm-image">
+              <img src="../../assets/img/farm/farm1.jpg" alt="farm1">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="morefarmdetails">
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.930759430594!2d36.82183079271866!3d-1.1726699277239063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3c6280decd87%3A0x1a1a1908e6fd13e9!2sKiambu!5e0!3m2!1sen!2ske!4v1696248692754!5m2!1sen!2ske"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map">
+            </iframe>
+          </div>
+
+          <div class="history">
+            <div class="history-info">
+              <table>
+                <thead>
+                  <th>Year</th>
+                  <th>Total</th>
+                  <th>Specialty</th>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>2020</td>
+                    <td>7,000</td>
+                    <td>5,600</td>
+                  </tr>
+
+                  <tr>
+                    <td>2019</td>
+                    <td>8500</td>
+                    <td>6800</td>
+                  </tr>
+
+                  <tr>
+                    <td>2018</td>
+                    <td>6,000</td>
+                    <td>4,800</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="cycle-info">
+              <table>
+                <thead>
+                  <th>Month</th>
+                  <th>Main Season</th>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>January</td>
+                    <td>Sale</td>
+                  </tr>
+
+                  <tr>
+                    <td>February</td>
+                    <td>Sale</td>
+                  </tr>
+
+                  <tr>
+                    <td>March</td>
+                    <td>Sale</td>
+                  </tr>
+
+                  <tr>
+                    <td>April</td>
+                    <td>Flowering</td>
+                  </tr>
+
+                  <tr>
+                    <td>May</td>
+                    <td>Flowering</td>
+                  </tr>
+
+                  <tr>
+                    <td>June</td>
+                    <td>Maturing</td>
+                  </tr>
+
+                  <tr>
+                    <td>July</td>
+                    <td>Maturing</td>
+                  </tr>
+
+                  <tr>
+                    <td>August</td>
+                    <td>Maturing</td>
+                  </tr>
+
+                  <tr>
+                    <td>September</td>
+                    <td>Maturing</td>
+                  </tr>
+
+                  <tr>
+                    <td>October</td>
+                    <td>Harvesting & Processing</td>
+                  </tr>
+
+                  <tr>
+                    <td>November</td>
+                    <td>Harvesting & Processing</td>
+                  </tr>
+
+                  <tr>
+                    <td>December</td>
+                    <td>Harvesting & Processing</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="activatedTabIndex2 == 1" class="reviews-tab">
+
+        <div class="average-reviews">
+          <h4>Average Customer reviews</h4>
+          <p *ngIf="averageRating(item) == 5">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </p>
+          <p *ngIf="averageRating(item) == 4">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </p>
+          <p *ngIf="averageRating(item) == 3">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </p>
+          <p *ngIf="averageRating(item) == 2">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </p>
+          <p *ngIf="averageRating(item) == 1">
+            <i class="fa-solid fa-star"></i>
+          </p>
+          <p *ngIf="averageRating(item) == 0">
+
+          </p>
+
+          <span>
+            <p>{{averageRating(item)}} out of 5</p>
+          </span>
+
+        </div>
+
+        <div *ngFor="let rating of item.rating" class="rating-card">
+          <div class="user-icon">
+            <div class="icon">{{rating.user.username.substring(0, 1) | titlecase}}</div>
+            <div class="username">{{rating.user.username | titlecase}}</div>
+          </div>
+
+          <div class="user-rating">
+            <p *ngIf="rating.rating == 5">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </p>
+            <p *ngIf="rating.rating == 4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </p>
+            <p *ngIf="rating.rating == 3">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </p>
+            <p *ngIf="rating.rating == 2">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </p>
+            <p *ngIf="rating.rating == 1">
+              <i class="fa-solid fa-star"></i>
+            </p>
+
+            <p class="verified">Verified Purchase</p>
+          </div>
+
+          <div class="ratinginfo">
+            <h4>Love It!!</h4>
+            <p>The best coffee I've ever heard.</p>
+          </div>
+        </div>
+
+        <div class="buyer-rating">
+          <h4>Rate the product</h4>
+  
+          <div class="rating-content">
+            <div class="rating-stars">
+              <ul class="list-inline rating-list" *ngFor="let star of stars; let i= index">
+                <li (click)="countStar(star)" title="{{star}}" id="{{'starId'+i}}"
+                  [ngClass]="{'selected': (star <= selectedValue)}" (mouseover)="addClass(star)"
+                  (mouseout)="removeClass(star)">
+                  ★
+                  <!-- <i class="fa-solid fa-star"></i> -->
+                </li>
+              </ul>
+            </div>
+  
+            <div class="clear-rating">
+              <button type="button" (click)="clearStars()">Clear Rating</button>
+            </div>
+          </div>
+        </div>
       </div>
 
 
-      <div class="tabbed-info">
+      
+    </div>
 
-          <div class="col">
-            <app-tabs [tabsArray]="tabs2" (onTabChange)="tabChange2($event)" ></app-tabs>
-          </div>
-
-          <div *ngIf="activatedTabIndex2 == 0" class="farm-tab">
-
-            <div class="owners">
-              <div class="owner-image">
-                <img src="../../assets/img/farmers/farmer1.jpg" alt="owner image">
-              </div>
-
-              <div class="owner-bio">
-                <div class="owner-name">
-                  <h4>Owner: {{item.product.producer.username | titlecase}}</h4>
-                </div>
-
-                <div class="owner-info">
-                  <p>Moses King'ori is no stranger to the coffee industry. His career began at Gerald's Coffee Estate in Nyeri. His commitment and passion for coffee led Moses to various coffee farms in Kenya, Africa. Among other things, he is responsible for and gives the coffee varieties of the Nyeri an even higher level thanks to his enormous expertise and down-to-earth attitude.</p>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="farmdetails">
-
-              <div class="farm-bio">
-
-                <div class="farm-story">
-                  <p>Geralds Coffee Estate was started in 1958 by our late father Gerald Kingori. He developed a passion for coffee in all of us and taught us to work on the coffee. Traditionally land is subdivided among sons when a father passes away but we have chosen to manage the estate as one. We work hard to maintain good agricultural practices like our father taught us and our goal is to consistently produce high quality coffee. We hope that soon we will start making good earnings from our hard work by selling our coffee directly to roasters.</p>
-                </div>
-
-                <div class="farm-origin">
-                  <p><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Location: Kiambu, Kenya</p>
-                  <p><i class="fa-solid fa-tree"></i>&nbsp;&nbsp;Area: 150 Ha</p>
-                  <p><i class="fa-solid fa-flag-checkered"></i>&nbsp;&nbsp;Founded: 1991</p>
-               </div>
-                
-              </div>
-
-              <div class="farm-images">
-                <div class="farm-image">
-                  <img src="../../assets/img/farm/farm1.jpg" alt="farm1">
-                </div>
-              </div>
-
-            </div>
-
-            <div class="morefarmdetails">
-              <div class="map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.930759430594!2d36.82183079271866!3d-1.1726699277239063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3c6280decd87%3A0x1a1a1908e6fd13e9!2sKiambu!5e0!3m2!1sen!2ske!4v1696248692754!5m2!1sen!2ske"
-                  allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  title="map">
-                </iframe>
-              </div>
-
-              <div class="history">
-                <div class="history-info">
-                  <table>
-                    <thead>
-                      <th>Year</th>
-                      <th>Total</th>
-                      <th>Specialty</th>
-                    </thead>
-
-                    <tbody>
-                      <tr>
-                        <td>2020</td>
-                        <td>7,000</td>
-                        <td>5,600</td>
-                      </tr>
-
-                      <tr>
-                        <td>2019</td>
-                        <td>8500</td>
-                        <td>6800</td>
-                      </tr>
-
-                      <tr>
-                        <td>2018</td>
-                        <td>6,000</td>
-                        <td>4,800</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="cycle-info">
-                  <table>
-                    <thead>
-                      <th>Month</th>
-                      <th>Main Season</th>
-                    </thead>
-
-                    <tbody>
-                      <tr>
-                        <td>January</td>
-                        <td>Sale</td>
-                      </tr>
-
-                      <tr>
-                        <td>February</td>
-                        <td>Sale</td>
-                      </tr>
-
-                      <tr>
-                        <td>March</td>
-                        <td>Sale</td>
-                      </tr>
-
-                      <tr>
-                        <td>April</td>
-                        <td>Flowering</td>
-                      </tr>
-
-                      <tr>
-                        <td>May</td>
-                        <td>Flowering</td>
-                      </tr>
-
-                      <tr>
-                        <td>June</td>
-                        <td>Maturing</td>
-                      </tr>
-
-                      <tr>
-                        <td>July</td>
-                        <td>Maturing</td>
-                      </tr>
-
-                      <tr>
-                        <td>August</td>
-                        <td>Maturing</td>
-                      </tr>
-
-                      <tr>
-                        <td>September</td>
-                        <td>Maturing</td>
-                      </tr>
-
-                      <tr>
-                        <td>October</td>
-                        <td>Harvesting & Processing</td>
-                      </tr>
-
-                      <tr>
-                        <td>November</td>
-                        <td>Harvesting & Processing</td>
-                      </tr>
-
-                      <tr>
-                        <td>December</td>
-                        <td>Harvesting & Processing</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div *ngIf="activatedTabIndex2 == 1" class="reviews-tab">
-
-            <div class="average-reviews">
-              <h4>Average Customer reviews</h4>
-              <p *ngIf="averageRating(item) == 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </p>
-              <p *ngIf="averageRating(item) == 4">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </p>
-              <p *ngIf="averageRating(item) == 3">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </p>
-              <p *ngIf="averageRating(item) == 2">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </p>
-              <p *ngIf="averageRating(item) == 1">
-                <i class="fa-solid fa-star"></i>
-              </p>
-              <p *ngIf="averageRating(item) == 0">
-                
-              </p>
-
-                <span>
-                  <p>{{averageRating(item)}} out of 5</p>
-                </span>
-
-            </div>
-
-            <div *ngFor="let rating of item.rating" class="rating-card">
-              <div class="user-icon">
-                <div class="icon">{{rating.user.username.substring(0, 1) | titlecase}}</div>
-                <div class="username">{{rating.user.username | titlecase}}</div>
-              </div>
-
-              <div class="user-rating">
-                <p *ngIf="rating.rating == 5">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </p>
-                <p *ngIf="rating.rating == 4">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </p>
-                <p *ngIf="rating.rating == 3">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </p>
-                <p *ngIf="rating.rating == 2">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </p>
-                <p *ngIf="rating.rating == 1">
-                  <i class="fa-solid fa-star"></i>
-                </p>
-
-                <p class="verified">Verified Purchase</p>
-              </div>
-
-                <div class="ratinginfo">
-                  <h4>Love It!!</h4>
-                  <p>The best coffee I've ever heard.</p>
-                </div>
-              </div>
-            </div>
-        </div>
-
-    </section>
+  </section>
 
 
   <app-footer></app-footer>
 </section>
-

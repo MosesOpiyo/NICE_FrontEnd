@@ -10,6 +10,23 @@
 .google-button {
     max-width: 328px;
 }
+.google-button button{
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    background-color: transparent;
+    padding: 2px;
+    align-items: center;
+}
+.google-button img{
+    width: 30px;
+}
+.google-button h5{
+    font-size: 13px;
+    padding: 6px;
+    font-weight: 500;
+}
 
 .googlelogin {
     padding-block: 8px;

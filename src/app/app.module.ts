@@ -35,7 +35,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { TabsComponent } from './tabs/tabs.component';
 import { NotfoundComponent } from './errorPages/notfound/notfound.component';
 import { AboutComponent } from './informationPages/about/about.component';
-import { PasswordToggleDirective } from './sign-up/password-toggle.directive';
+import { PasswordToggleDirective } from './sign-up/farmer-sign-up/password-toggle.directive';
 import { FarmerSignUpComponent } from './sign-up/farmer-sign-up/farmer-sign-up.component';
 import { AttributionsComponent } from './informationPages/attributions/attributions.component';
 import { DashBoardModule } from './dash-board/dash-board.module';
@@ -55,6 +55,10 @@ import { OrigindetailsComponent } from './origindetails/origindetails.component'
 import { TermsComponent } from './informationPages/terms/terms.component';
 import { AddtocartComponent } from './addtocart/addtocart.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { FarminfoComponent } from './informationPages/farminfo/farminfo.component';
+import { TimelinecontentComponent } from './timelinecontent/timelinecontent.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 // register Swiper custom elements
 register();
 
@@ -78,7 +82,6 @@ register();
     TabsComponent,
     NotfoundComponent,
     AboutComponent,
-    PasswordToggleDirective,
     FarmerSignUpComponent,
     AttributionsComponent,
     FarmComponent,
@@ -94,6 +97,10 @@ register();
     TermsComponent,
     AddtocartComponent,
     ForgotpasswordComponent,
+    FarminfoComponent,
+    TimelinecontentComponent,
+    CheckoutComponent,
+    UpdatepasswordComponent,
   ],
   // entryComponents:[LoginComponent],
   imports: [
@@ -126,7 +133,7 @@ register();
           {
             id:GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '1004580228614-c94anmvia83hp8n2q8tb97hojn3flsnl.apps.googleusercontent.com'
+              '537434316637-217taafkc9uqkp1efl6nr2puekrftkan.apps.googleusercontent.com'
             )
           }
         ],

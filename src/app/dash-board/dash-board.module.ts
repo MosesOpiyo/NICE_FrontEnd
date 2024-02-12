@@ -44,6 +44,9 @@ import { ConfirmdeletionComponent } from './components/message/confirmdeletion/c
 import { ConfirmPasswordComponent } from './components/user-settings/confirm-password/confirm-password.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TimeAgoPipe } from './components/timeline/time/time-ago.pipe';
+import { CartdataComponent } from './components/cartdata/cartdata.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { OrderdetailsComponent } from './components/orderdetails/orderdetails.component';
 
 
 @NgModule({
@@ -74,7 +77,10 @@ import { TimeAgoPipe } from './components/timeline/time/time-ago.pipe';
     ConfirmdeletionComponent,
     ConfirmPasswordComponent,
     TabsComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    CartdataComponent,
+    WishlistComponent,
+    OrderdetailsComponent
   ],
   imports: [
     CommonModule,

@@ -14,6 +14,8 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { MessagesComponent } from './components/message/messages/messages.component';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
+import { CartdataComponent } from './components/cartdata/cartdata.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -36,7 +38,9 @@ const routes: Routes = [
           // { path: '', component:  }
         ]
        },
-      { path: 'messages', component: MessagesComponent }
+      { path: 'messages', component: MessagesComponent },
+      { path: 'buyer_orders', component: CartdataComponent },
+      { path: 'wishlist', component: WishlistComponent }
     ]
   }
 ];

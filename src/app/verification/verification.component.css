@@ -18,6 +18,11 @@
     text-align: center;
 }
 
+.verification-container p span {
+  font-weight: bold;
+  color: brown;
+}
+
 .verification-container form {
     display: flex;
     flex-direction: column;
@@ -54,6 +59,7 @@
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
     -webkit-appearance:none;
+    appearance: none;
     transition: all .1s linear;
   }
 

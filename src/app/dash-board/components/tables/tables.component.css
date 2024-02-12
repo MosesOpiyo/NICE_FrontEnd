@@ -9,6 +9,16 @@
     margin-inline: auto;
 }
 
+.actionheaders {
+    display: flex;
+    justify-content: space-between;
+}
+
+h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
 .dropdown{
     border: 2px solid #0000001f;
     position: absolute;
@@ -20,7 +30,7 @@
 }
 
 .tables-container .dashboard-card {
-    background-color: #f2f2f2;
+    background-color: #eeeeee;
     border-radius: 4px;
     height: 100%;
     box-shadow: 0 0 5px #ccc;
@@ -155,5 +165,17 @@ mat-paginator {
         display: block;
         text-align: center;
         margin-top: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .actionheaders {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .tables-container {
+        gap: 5px;
     }
 }

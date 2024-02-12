@@ -4,12 +4,9 @@ import { Injectable, OnInit } from '@angular/core';
 import { AuthService } from '../Auth/auth.service';
 import { environment } from 'src/environments/environment.development';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { error } from 'console';
 import { MatDialog } from '@angular/material/dialog';
-import { VerificationComponent } from '../verification/verification.component';
-import { AuthenticationStoreService } from '../AuthServiceStore/authentication-store.service';
+import { UpdatepasswordComponent } from '../updatepassword/updatepassword.component';
 
 @Injectable({
   providedIn: 'root'
@@ -23,13 +20,6 @@ export class AuthenticationService implements OnInit {
   }
   farmerRegister(credentials:any,email:any){
     this.http.post(`${environment.BASE_URL}Authentication/FarmerRegistration`,credentials).subscribe((response:any)=>{
-      this.dialog.open(VerificationComponent,{
-        width: '25pc',
-        autoFocus: false,
-        data:{
-          email:email
-        }
-      })
       this.snackBar.open("Account Created Successfully, Please verify via email.", 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']
@@ -104,6 +94,33 @@ export class AuthenticationService implements OnInit {
     }
   }
 
+  passTokenCheck(){
+    if(localStorage.getItem('passToken')){
+      const dialogRef = this.dialog.open(UpdatepasswordComponent,{
+        width: '25pc',
+        maxWidth: '90vw',
+        autoFocus: false,
+        maxHeight: '100vh'
+      }); 
+    }
+  }
+
+  passwordRecoveryEmail(email:any){
+    this.http.post(`${environment.BASE_URL}Authentication/PasswordRecovery`,email).subscribe((response:any)=>{
+      localStorage.setItem("passToken",response)
+      this.snackBar.open("Email has been successfully Sent.", 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    }),(error:any) =>{
+      console.log(error.error)
+      this.snackBar.open(error.error, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+    }
+  }
+
   login(credentials:any){
     this.http.post(`${environment.BASE_URL}Authentication/Login`,credentials).subscribe((response:any)=>{
       try{
@@ -116,7 +133,7 @@ export class AuthenticationService implements OnInit {
       this.refreshPage()
       }catch{
         if(response){
-          this.snackBar.open('Account not Verified, Please verify.', 'Close', {
+          this.snackBar.open('Something went wrong please retry.', 'Close', {
             duration: 3000,
             panelClass: ['blue-snackbar']
           });

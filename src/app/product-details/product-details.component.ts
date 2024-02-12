@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from '../Service/Cart/cart.service';
 import { CartStoreService } from '../Store/Cart/cart-store.service';
 import { ProductStoreService } from '../Store/Products/product-store.service';
+import { TimelinecontentComponent } from '../timelinecontent/timelinecontent.component';
 
 
 @Component({
@@ -19,10 +20,179 @@ import { ProductStoreService } from '../Store/Products/product-store.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  num: number = 1;
+  isLoggedIn:any
+  id:any
+  item:any
+  userCart:any
+  ratings : number[] = [];
+  total:any
+  cloudinaryUrl = environment.CLOUDINARY_URL
+  quantityPrice:any = ""
+  quantity:any = ""
+  weight:any = ""
+  grind:any = ""
+  price:any = ""
+  roast_type:any = ""
+  subscription:boolean = false
+  code:any = 0
+  num: any = 1;
   num2: number = 1;
-  isShowDiv = false;
-  isShowDiv2 = false;
+  isShowDiv: boolean  = false;
+  isShowDiv2: boolean  = false;
+  stars: number[] = [1, 2, 3, 4, 5];
+  selectedValue: number = 0;
+  private snackBarDuration: number = 2000;
+
+  myScriptElement: HTMLScriptElement;
+  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private store:ProductStoreService,private cart:CartService,private cartStore:CartStoreService){
+     this.myScriptElement = document.createElement("script");
+     this.myScriptElement.src = "./assets/js/main.js";
+     document.body.appendChild(this.myScriptElement);
+  }
+
+  timeline = [
+    {
+      id: 1,
+      imgSource: '../../assets/img/farm/farm1.jpg',
+      comment: 'flowering'
+    },
+    {
+      id: 2,
+      imgSource: '../../assets/img/farm/farm2.jpg',
+      comment: 'maturing'
+    },
+    {
+      id: 3,
+      imgSource: '../../assets/img/farm/farm3.jpg',
+      comment: 'harvesting'
+    },
+    {
+      id: 4,
+      imgSource: '../../assets/img/farm/farm4.jpg',
+      comment: 'processing'
+    },
+    {
+      id: 5,
+      imgSource: '../../assets/img/farm/farm5.jpg',
+      comment: 'sale'
+    },
+    {
+      id: 6,
+      imgSource: '../../assets/img/farm/farm6.jpg',
+      comment: 'flowering'
+    },
+    {
+      id: 7,
+      imgSource: '../../assets/img/farm/farm7.jpg',
+      comment: 'flowering'
+    },
+  ]
+  
+  //product form tab index
+ tabChange(tabIndex: number) {
+  this.activatedTabIndex = tabIndex;
+  // console.log(this.isShowDiv);
+  // console.log(this.isShowDiv2);
+  this.isShowDiv = false;
+  this.isShowDiv2 = false;
+  this.quantityPrice = "";
+  this.grind = "";
+  this.roast_type = "";
+  this.num = 1;
+  this.num2 = 1;
+}
+
+// detailedtabs tab index
+tabChange2(tabIndex: number) {
+  this.activatedTabIndex2 = tabIndex;
+}
+
+// increment button for roasted section
+increment(){
+  this.num++;
+}
+  
+//decrements item for roasted section
+decrement(){
+  if(this.num-1 < 1){
+    this.num = 1;
+  }
+  else{
+    this.num -= 1;
+  }
+}
+
+// increment button for green section
+increment2(){
+  this.num2++;
+  }
+  
+//decrements item for green section
+decrement2(){
+  if(this.num2-1 < 1){
+    this.num2 = 1;
+  }
+  else{
+    this.num2 -= 1;
+  }
+}
+
+openFarmDetails() {
+  let dialogRef = this.dialog.open(TimelinecontentComponent,{
+    width: '30pc',
+    maxWidth: '90vw',
+    autoFocus: false,
+    maxHeight: '100vh'
+  })
+}
+
+  // for roasted
+  checkStatus1(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv = false
+      this.subscription = false
+      console.log(this.subscription)
+    }
+    else {
+      this.isShowDiv = true
+      this.subscription = true
+    }
+  }
+
+  checkStatus2(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv = true
+      this.subscription = false
+      console.log(this.subscription)
+    }
+    else {
+      this.isShowDiv = false
+      this.subscription = false
+    }
+  }
+
+  // for green
+  checkStatus3(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv2 = false
+    }
+    else {
+      this.isShowDiv2 = true
+    }
+  }
+
+  checkStatus4(event:any){
+    // Check if radio button is checked
+    if(event.target.checked == true){
+      this.isShowDiv2 = true
+    }
+    else {
+      this.isShowDiv2 = false
+    }
+  }
 
   //roasted
   value(value: any) {
@@ -40,57 +210,82 @@ export class ProductDetailsComponent implements OnInit {
 
   // tabbed-info tabs
   tabs2: string [] = ['Seller Info', 'Reviews'];
-  activatedTabIndex2: number = 0;
+  activatedTabIndex2: number = 0;  
 
-  myScriptElement: HTMLScriptElement;
-  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private store:ProductStoreService,private cart:CartService,private cartStore:CartStoreService){
-     this.myScriptElement = document.createElement("script");
-     this.myScriptElement.src = "./assets/js/main.js";
-     document.body.appendChild(this.myScriptElement);
+  // user rating
+  countStar(star: any) {
+    this.selectedValue = star;
+    this.snackBar.open('You have rated the product as a ' + star + ' star ', '', {
+      duration: this.snackBarDuration,
+      panelClass: ['green-snackbar'],
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    });
+  
   }
 
-  isLoggedIn:any
-  id:any
-  item:any
-  userCart:any
-  ratings : number[] = [];
-  total:any
-  cloudinaryUrl = environment.CLOUDINARY_URL
-  quantityPrice:any = ""
-  quantity:any = ""
-  grind:any = ""
-  price:any = ""
-  roast_type:any = ""
-  code:any = 0
+  clearStars() {
+    this.selectedValue = 0;
+  }
+  list:any
+  session:any
+  addClass(star: any) {
+    let ab = "";
+    for (let i = 0; i < star; i++) {
+      ab = "starId" + i;
+      document.getElementById(ab).classList.add("selected");
+    }
+ }
+
+ removeClass(star: any) {
+    let ab = "";
+   for (let i = star-1; i >= this.selectedValue; i--) {
+      ab = "starId" + i;
+      document.getElementById(ab).classList.remove("selected");
+    }
+ }
 
   cartItem(id:any){
-    const parts = this.quantityPrice.split('-');
-    this.quantity = parseInt(parts[0],10)
-    this.price = parseFloat(parts[1])
+    const session = localStorage.getItem("session")
+    const parts = this.quantityPrice.split('|');
+    this.quantity = parseInt(this.num)
+    this.price = parseFloat(parts[0])
+    this.weight = parseInt(parts[1])
+    console.log(`Price: ${this.price}, weight: ${this.weight}`)
     let form = new FormData();
+    form.append('weight',this.weight),
     form.append('quantity',this.quantity),
     form.append('grind',this.grind),
     form.append('price',this.price),
     form.append('roast_type',this.roast_type),
-    form.append('code',this.item.code)
-    console.log(form)
-    this.cart.addToCart(id,form)
-    this.cart.getCart().subscribe((res:any) => {
-      this.cartStore.updateData(res)
+    form.append('subscription',String(this.subscription))
+    form.append('code',this.code)
+    this.cart.addToCart(this.item.id,session,form).subscribe((res:any) => {
+      this.snackBar.open(`${this.item.product.name} has been added to your cart.`, 'Close', {
+        duration: 3000,
+        panelClass: ['blue-snackbar']
+      });
+      this.dialog.closeAll()
+      this.cartStore.updateCart(this.session)
+
     })
   }
 
   cartItem2(id:any){
+    console.log(this.item)
     this.quantity = 100
     this.grind = 'None'
     this.roast_type = 'None'
     this.price = 100
+    const session = this.getSession()
     let form = new FormData();
     form.append('quantity',this.quantity),
     form.append('grind',this.grind),
     form.append('price',this.price),
     form.append('roast_type',this.roast_type),
-    this.cart.addToCart(id,form)
+    this.cart.addToCart(id,this.session,form).subscribe((res:any) => {
+      this.cartStore.updateCart(this.session)
+    })
     this.ngOnInit()
   }
 
@@ -120,74 +315,37 @@ export class ProductDetailsComponent implements OnInit {
      width: '25pc'
    }); 
  }
-
- ngOnInit(): void {
-  this.id = this.idRouter.snapshot.paramMap.get('id');
+ 
+ getProduct(id:any){
   this.store.data$.subscribe((res:any)=>{
-    console.log()
-    this.item = res[parseInt(this.id) - 1]
-    this.item.rating.forEach((ratingItem:any) => {
-      this.ratings.push(ratingItem.rating)
-        });
-  })
-  }
-
-  //product form tab index
-  tabChange(tabIndex: number) {
-    this.activatedTabIndex = tabIndex;
-  }
-
-  // detailedtabs tab index
-  tabChange2(tabIndex: number) {
-    this.activatedTabIndex2 = tabIndex;
-  }
-
-  // for roasted section
-  toggleDivOff() {
-    this.isShowDiv = false;
-  }
-
-  toggleDivOn() {
-    this.isShowDiv = true;
-  }
-
-  // for green tab section
-  toggleDivOff2() {
-    this.isShowDiv2 = false;
-  }
-
-  toggleDivOn2() {
-    this.isShowDiv2 = true;
-  }
-
-  // increment button for roasted section
-  increment(){
-    this.num++;
-  }
-    
-  //decrements item for roasted section
-  decrement(){
-    if(this.num-1 < 1){
-      this.num = 1;
+    if(res == ""){
+      this.store.productData()
+      this.store.data$.subscribe((res:any)=>{
+      })
     }
     else{
-      this.num -= 1;
+      this.list = res
     }
+    this.list.forEach((product:any) => {
+      if(product.id == id){
+        this.item = product
+      }
+    });
+ })}
+
+ getSession(){
+  this.cartStore.data$.subscribe((res:any) =>{
+     this.session = res['session_id']
+   })
+   
+ }
+ ngOnInit(): void {
+  
+  this.idRouter.params.subscribe(params => {
+   this.getProduct(params['id'])
+   this.getSession()
+  });
   }
 
-  // increment button for green section
-  increment2(){
-    this.num2++;
-    }
-    
-  //decrements item for green section
-  decrement2(){
-    if(this.num2-1 < 1){
-      this.num2 = 1;
-    }
-    else{
-      this.num2 -= 1;
-    }
-  }
-
+  
 }

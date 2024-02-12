@@ -5,6 +5,11 @@ th,td{
     color: black;
 }
 
+h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
 .manifests-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -17,7 +22,7 @@ th,td{
 }
 
 .manifests-container .dashboard-card {
-    background-color: #f2f2f2;
+    background-color: #eeeeee;
     border-radius: 4px;
     height: 100%;
     box-shadow: 0 0 5px #ccc;

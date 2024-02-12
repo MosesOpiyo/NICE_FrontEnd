@@ -19,6 +19,10 @@
     color: #000000;
   }
 
+  :host ::ng-deep #header .navbar-mobile .about-link {
+    color: #67b0d1;
+  }
+
   :host ::ng-deep #header .navbar a:hover {
     background-color: rgb(216 216 216 / 68%);
   }
@@ -52,6 +56,23 @@
 
   :host ::ng-deep #header .navbar .dropdown ul a:hover {
     background-color: transparent;
+  }
+
+  :host ::ng-deep #header .navbar-mobile .active {
+    color: #2f4d5a;
+  }
+
+  :host ::ng-deep #header .navbar-mobile li:hover> .active {
+    color: #67b0d1;
+  }
+
+  #header.header-scrolled .navbar-mobile .active {
+    color: #2f4d5a;
+  }
+
+  .fa-chevron-up,
+  .fa-chevron-down {
+    color: #0000008c;
   }
 
   .expogallery-item,
@@ -135,6 +156,7 @@
 
   .faq-container .faq-header h2 {
     font-size: 3rem;
+    font-weight: 500;
   }
 
   .faq-container .faq-header .faq-image {

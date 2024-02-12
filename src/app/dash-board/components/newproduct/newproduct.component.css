@@ -1,19 +1,44 @@
-ng-template{
+ng-template {
     background-color: white;
 }
-mat-form-field{
-    margin: 10px;
-    width: 45%;
-    
+
+mat-form-field {
+    width: 100%;
 }
-input{
-    border-radius: 10px;
+
+form {
+    padding: 10px;
 }
+
+form .form-content {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+}
+
+form button {
+    background-color: #838283;
+    width: 100px;
+}
+
+form button.submitbtn,
+form button.nextbtn {
+    margin-left: 10px;
+}
+
 ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
     opacity: 0.03 !important;
     background-color: red !important;
-  }
-  
-::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
     background-color: red;
-  }
+}
+
+@media (max-width: 600px) {
+    form .form-content {
+        grid-template-columns: 1fr;
+    }
+}
