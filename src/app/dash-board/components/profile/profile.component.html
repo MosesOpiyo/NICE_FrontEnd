@@ -134,17 +134,6 @@
             </mat-form-field>
           
             <mat-form-field>
-              <mat-label>Variety</mat-label>
-              <input matInput placeholder="Coffee Variety" formControlName="coffee_variety" required>
-            </mat-form-field>
-          
-          
-            <mat-form-field>
-              <mat-label>Farming Method (Organic or Inorganic)</mat-label>
-              <input matInput placeholder="Farming Method" formControlName="farming_method" required>
-            </mat-form-field>
-          
-            <mat-form-field>
               <mat-label>Certification Type</mat-label>
               <input matInput placeholder="Certification Type" formControlName="certification_type" required>
             </mat-form-field>
@@ -187,9 +176,54 @@
               <mat-label>Grower's History</mat-label>
               <input matInput placeholder="Grower's History" formControlName="grower_history" required>
             </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Production history</mat-label>
+              <input matInput placeholder="Farm Area" formControlName="farm_area" type="number" required>
+            </mat-form-field>
+
+            <mat-selection-list #farmingmethod>
+              <h3 mat-subheader>Select farming method:</h3>
+              <div class="farmingmethod">
+                <mat-list-option checkboxPosition="before" value="organic">Organic</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="inorganic">Inorganic</mat-list-option>
+              </div>
+            </mat-selection-list>
+
+            <mat-selection-list #species>
+              <h3 mat-subheader>Select species:</h3>
+              <div class="species">
+                <mat-list-option checkboxPosition="before" value="arabica">Arabica</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="robusta">Robusta</mat-list-option>
+              </div>
+            </mat-selection-list>
+
+            <mat-selection-list #variety>
+              <h3 mat-subheader>Select coffee variety:</h3>
+              <div class="variety-list">
+                <mat-list-option checkboxPosition="before" value="ruiruII">Ruiru II</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="SL-28">SL-28</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="SL-34">SL-34</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="grafted">Grafted</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="batian">Batian</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="bluemountain">Blue Mountain</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="geisha">Geisha</mat-list-option>
+              </div>
+            </mat-selection-list>
+
+            <mat-selection-list #processing>
+              <h3 mat-subheader>Select processing method:</h3>
+              <div class="processing">
+                <mat-list-option togglePosition="before" value="fully">Fully washed</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="partially">Partially washed</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="natural">Natural</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="anaerobic">Anaerobic fermentation</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="carbonic">Carbonic maceration</mat-list-option>
+              </div>
+            </mat-selection-list>
           </div>
       
-          <div>
+          <div class="flex-buttons">
             <button type="button" mat-button matStepperPrevious><i class="fa-solid fa-less-than"></i> Back</button>
             <button type="submit" class="submitbtn" (click)="submit()" mat-button>Submit</button>
           </div>
