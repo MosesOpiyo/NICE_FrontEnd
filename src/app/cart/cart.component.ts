@@ -7,6 +7,7 @@ import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { environment } from 'src/environments/environment.development';
 import { CartService } from '../Service/Cart/cart.service';
 import { CartStoreService } from '../Store/Cart/cart-store.service';
+import { AddtocartComponent } from '../addtocart/addtocart.component';
 
 @Component({
   selector: 'app-cart',
@@ -22,10 +23,18 @@ export class CartComponent implements OnInit {
   user:any | null = null;
   displayedColumns: string[] = ['image','name','weight','quantity','price','totalPrice','delete'];
   userCart:any | null = null;
+  userWishList:any | null = null;
   isLoggedIn:any
   itemQuantity:number = 1
   quantity = 0
   total = 0
+
+  tabsArray: string[] = ['Your cart', 'Your wishlist'];
+  activatedTabIndex: number = 0;
+
+  setTab(index:number) {
+    this.activatedTabIndex = index;
+  }
 
   
   myScriptElement: HTMLScriptElement;
@@ -123,6 +132,24 @@ increment(element: any, id: number, quantity: number){
   }
 }
 
+showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string,item:any,name:any){
+  const dialogRef = this.dialog.open(AddtocartComponent,{
+    data: {
+      item:item.id,
+      name:item.product.name
+    },
+    width: '30pc',
+    maxWidth: '90vw',
+    autoFocus: false,
+    maxHeight: '100vh',
+
+    // minWidth: '250px',
+    // maxHeight: '100vh',
+    enterAnimationDuration,
+    exitAnimationDuration
+  });
+}
+
  ngOnInit(): void {
   this.cart.data$.subscribe((data:any) =>{
     if(data == ""){
@@ -130,6 +157,7 @@ increment(element: any, id: number, quantity: number){
       this.cart.updateCart(session)
       this.cart.data$.subscribe((data:any) =>{
         this.userCart = data['products']
+        this.userWishList = data['wishlist']
       })
     }else{
       this.userCart = data['products']

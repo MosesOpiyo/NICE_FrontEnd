@@ -158,6 +158,14 @@
             </div>
 
             <form action="/" method="post" ngNativeValidate>
+              <div>
+                <div class="label-float">
+                    <input id="size" name="size" [(ngModel)]="size" class="form-control"
+                    type="number" placeholder=" " required>
+                    <label for="size">Enter weight</label>
+                </div>
+              </div>
+
               <div class="radio">
                 <div class="radio1">
                   <input type="radio" id="onetime" name="subscribe" value="one-time" checked

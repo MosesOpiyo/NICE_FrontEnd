@@ -8,6 +8,16 @@ interface Profile {
   viewValue: string;
 }
 
+interface Processing {
+  value: string;
+  viewValue: string;
+}
+
+interface Species {
+  value: string;
+  viewValue: string;
+}
+
 
 @Component({
   selector: 'app-newproduct',
@@ -33,6 +43,7 @@ export class NewproductComponent implements OnInit {
   processing:any
   drying:any
   caffeine:any
+  species:any
   acidity:any
   level:any
   email:any
@@ -45,6 +56,20 @@ export class NewproductComponent implements OnInit {
     {value: 'chocolatey-3', viewValue: 'Chocolatey'},
     {value: 'raspberry-4', viewValue: 'Raspberry'},
     {value: 'fruity-5', viewValue: 'Fruity'},
+  ];
+
+  processingValues: Processing[] = [
+    {value: 'Fully-Washed', viewValue: 'Fully Washed'},
+    {value: 'Partially-Washed', viewValue: 'Partially Washed'},
+    {value: 'Natural', viewValue: 'Natural'},
+    {value: 'Anaerobic', viewValue: 'Anaerobic'},
+    {value: 'Fermentation', viewValue: 'Fermentation'},
+    {value: 'Carbonic-Maceration', viewValue: 'Carbonic Maceration'},
+  ];
+
+  speciesValues: Species[] = [
+    {value: 'Arabica', viewValue: 'Arabica'},
+    {value: 'Robusta', viewValue: 'Robusta'},
   ];
 
   ngOnInit(): void {
@@ -64,6 +89,7 @@ export class NewproductComponent implements OnInit {
       processing: ['', Validators.required],
       drying: ['', Validators.required],
       caffeine: ['', Validators.required],
+      species: ['', Validators.required],
       acidity: ['', Validators.required],
       level: ['', Validators.required],
       email: ['', Validators.required],
@@ -83,12 +109,13 @@ export class NewproductComponent implements OnInit {
       processing: new FormControl(this.thirdFormGroup.controls['processing'].value),
       drying: new FormControl(this.thirdFormGroup.controls['drying'].value),
       caffeine: new FormControl(this.thirdFormGroup.controls['caffeine'].value),
+      species: new FormControl(this.thirdFormGroup.controls['species'].value),
       acidity: new FormControl(this.thirdFormGroup.controls['acidity'].value),
       level: new FormControl(this.thirdFormGroup.controls['level'].value),
       email: new FormControl(this.thirdFormGroup.controls['email'].value),
     });
     this.dialog.closeAll
-    this.product.addProduct(form.value)
+    this.product.addProduct(form.value,this.name)
   }
 
 }

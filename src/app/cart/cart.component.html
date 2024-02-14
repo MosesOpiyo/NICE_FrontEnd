@@ -1,142 +1,192 @@
 <section class="cart-component">
   <app-navbar></app-navbar>
 
-  <div class="cart-container">
-    <div class="cart-header">
-      <h2>Your Cart</h2>
+
+  <div class="cart-wishlist">
+    <div class="col">
+      <ul class="navs navs-tabs">
+          <li class="navs-item" *ngFor="let tab of tabsArray; let sr = index" (click)="setTab(sr)" [ngClass]="activatedTabIndex == sr ? 'active' : '' " >
+              <a class="navs-link" [ngClass]="activatedTabIndex == sr ? 'active' : '' ">{{tab}}</a>
+          </li>
+      </ul>                    
     </div>
-
-    <ng-container *ngIf="userCart.length != 0">
-
-      <div class="cart-contents">
-          <div class="cart-table">
-            <table mat-table [dataSource]="userCart">
-
-                <ng-container matColumnDef="image">
-                  <th mat-header-cell *matHeaderCellDef> Product </th>
-                  <td mat-cell *matCellDef="let element">
-                    <img src="{{cloudinaryUrl}}{{element['product']['img']}}" alt="Product Image">
-                  </td>
-                </ng-container>
-
-                <ng-container matColumnDef="name">
-                  <th mat-header-cell *matHeaderCellDef> Name </th>
-                  <td  mat-cell *matCellDef="let element"> {{element.product.product.name}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="weight">
-                  <th mat-header-cell *matHeaderCellDef> Weight </th>
-                  <td  mat-cell *matCellDef="let element"> {{element.weight}} </td>
-                </ng-container>
- 
-                <ng-container matColumnDef="quantity">
-                  <th mat-header-cell *matHeaderCellDef> Quantity </th>
-                  <td mat-cell *matCellDef="let element">
+  
+    <div class="cart-container" *ngIf="activatedTabIndex == 0">
+      <ng-container *ngIf="userCart.length != 0">
+  
+        <div class="cart-contents">
+            <div class="cart-table">
+              <table mat-table [dataSource]="userCart">
+  
+                  <ng-container matColumnDef="image">
+                    <th mat-header-cell *matHeaderCellDef> Product </th>
+                    <td mat-cell *matCellDef="let element">
+                      <img src="{{cloudinaryUrl}}{{element['product']['img']}}" alt="Product Image">
+                    </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td  mat-cell *matCellDef="let element"> {{element.product.product.name}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef> Weight </th>
+                    <td  mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                  </ng-container>
+   
+                  <ng-container matColumnDef="quantity">
+                    <th mat-header-cell *matHeaderCellDef> Quantity </th>
+                    <td mat-cell *matCellDef="let element">
+                      <div class="incrdecr">
+                        <button type="button" (click)="decrement(element, element.id, element.quantity)" class="decrement"><span>&minus;</span></button>
+                        <input type="number" name="green-quantity" id="{{element.id}}" [(ngModel)]="element.quantity" (change)="value($event, element.id, element.quantity)" title="input-count" autocomplete="off">
+                        <button type="button" (click)="increment(element, element.id, element.quantity)" class="increment"><span>&plus;</span></button>
+                      </div>
+                    </td>
+                  </ng-container>
+      
+                  <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef> Price (Each) </th>
+                    <td mat-cell *matCellDef="let element"> {{element.price | currency:'USD'}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="totalPrice">
+                    <th mat-header-cell *matHeaderCellDef> Price (Total) </th>
+                    <td mat-cell *matCellDef="let element"> {{itemQuantityTotal(element.price,element.quantity) | currency:'USD'}} </td>
+                  </ng-container>
+      
+                  <ng-container matColumnDef="delete">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element">
+                      <button (click)="removeItem(element.id)" aria-label="delete icon">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </td>
+                  </ng-container>
+                
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            </div>
+  
+            <div class="mobile-cart">
+              <div class="cartcontents-mobile" *ngFor="let element of userCart">
+                <div class="image">
+                  <img src="{{cloudinaryUrl}}{{element['product']['img']}}" alt="Product Image">
+                </div>
+    
+                <div class="product-content">
+                  <div class="product-info">
+                    <div class="product-name">
+                      <p>Product name: &nbsp; <span>{{element.product.product.name}}</span></p>
+                    </div>
+                  </div>
+  
+                  <div class="product-weight">
+                    <p>Weight: &nbsp; <span>{{element.weight}}</span></p>
+                  </div>
+  
+                  <div class="product-price">
+                    <p>Price (Each): &nbsp; <span>{{element.price | currency:'USD'}}</span></p>
+                  </div>
+    
+                  <div class="product-subtotal">
+                    <p>Price (Total): &nbsp; <span>{{itemQuantityTotal(element.price,element.quantity) | currency:'USD'}}</span></p>
+                  </div>
+      
+                  <div class="product-quantity">
                     <div class="incrdecr">
                       <button type="button" (click)="decrement(element, element.id, element.quantity)" class="decrement"><span>&minus;</span></button>
-                      <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="element.quantity" (change)="value($event, element.id, element.quantity)" title="input-count">
+                      <input type="number" name="green-quantity" id="{{element.id}}" [(ngModel)]="element.quantity" (change)="value($event, element.id, element.quantity)" title="input-count" autocomplete="off">
                       <button type="button" (click)="increment(element, element.id, element.quantity)" class="increment"><span>&plus;</span></button>
                     </div>
-                  </td>
-                </ng-container>
-    
-                <ng-container matColumnDef="price">
-                  <th mat-header-cell *matHeaderCellDef> Price (Each) </th>
-                  <td mat-cell *matCellDef="let element"> {{element.price | currency:'USD'}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="totalPrice">
-                  <th mat-header-cell *matHeaderCellDef> Price (Total) </th>
-                  <td mat-cell *matCellDef="let element"> {{itemQuantityTotal(element.price,element.quantity) | currency:'USD'}} </td>
-                </ng-container>
-    
-                <ng-container matColumnDef="delete">
-                  <th mat-header-cell *matHeaderCellDef> Action </th>
-                  <td mat-cell *matCellDef="let element">
+                  </div>
+      
+                  <div class="product-action">
                     <button (click)="removeItem(element.id)" aria-label="delete icon">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
-                  </td>
-                </ng-container>
-              
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-          </div>
-
-          <div class="mobile-cart">
-            <div class="cartcontents-mobile" *ngFor="let element of userCart">
-              <div class="image">
-                <img src="{{cloudinaryUrl}}{{element['product']['img']}}" alt="Product Image">
-              </div>
-  
-              <div class="product-content">
-                <div class="product-info">
-                  <div class="product-name">
-                    <p>Product name: &nbsp; <span>{{element.product.name}}</span></p>
                   </div>
-    
-                  <div class="product-price">
-                    <p>Price: &nbsp; <span>{{element.price | currency:'USD'}}</span></p>
-                  </div>
-                </div>
-  
-                <div class="product-subtotal">
-                  <p>Subtotal: &nbsp; <span>${{element.subtotal}}</span></p>
-                </div>
-  
-                <div class="product-subscription">
-                  <p>Subscription: &nbsp; <span>${{element.subscription}}</span></p>
-                </div>
-    
-                <div class="product-quantity">
-                  <div class="incrdecr">
-                    <button type="button" (click)="decrement(element, element.id, element.quantity)" class="decrement"><span>&minus;</span></button>
-                    <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="element.quantity" (change)="value($event, element.id, element.quantity)" title="input-count">
-                    <button type="button" (click)="increment(element, element.id, element.quantity)" class="increment"><span>&plus;</span></button>
-                  </div>
-                </div>
-    
-                <div class="product-action">
-                  <button (click)="removeItem(element.id)" aria-label="delete icon">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div class="summary-container">
-            <h4>CART SUMMARY</h4>
-            <h4>Sub Total: <span>{{subTotal(userCart) | currency:'USD'}}</span></h4>
-            <div class="completion">
-              <button (click)="Pay(subTotal(userCart))" mat-raised-button>CHECKOUT ({{subTotal(userCart) | currency:'USD'}})</button>
+            
+            <div class="summary-container">
+              <h4>CART SUMMARY</h4>
+              <h4>Sub Total: <span>{{subTotal(userCart) | currency:'USD'}}</span></h4>
+              <div class="completion">
+                <button (click)="Pay(subTotal(userCart))" mat-raised-button>CHECKOUT ({{subTotal(userCart) | currency:'USD'}})</button>
+              </div>
+              <div class="backshop">
+                <a routerLink="/shop"><i class="fa-solid fa-chevron-left"></i>&nbsp;CONTINUE SHOPPING</a>
+              </div>
             </div>
-            <div class="backshop">
-              <a routerLink="/shop"><i class="fa-solid fa-chevron-left"></i>&nbsp;CONTINUE SHOPPING</a>
-            </div>
+
+        </div>
+      </ng-container>
+  
+      <ng-container *ngIf="userCart.length == 0">
+        <div class="cartempty-container">
+          <div class="cart-image">
+            <dotlottie-player src="https://lottie.host/a5e48237-414d-421e-a6fa-1ee6b5861f14/LQYd6jTrWB.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+           <!-- <lottie-player src="https://lottie.host/93a50f3e-661a-4fe0-ab14-8c173b059bc6/HExNGdeD9F.json" background="#ffffff" speed="1" loop autoplay direction="1" mode="normal"></lottie-player> -->
           </div>
-
-      </div>
-    </ng-container>
-
-    <ng-container *ngIf="userCart.length == 0">
-      <div class="cartempty-container">
-        <div class="cart-image">
-          <!-- <img src="../../assets/img/empty-cart.png" alt="cart"> -->
-          <lottie-player src="https://lottie.host/93a50f3e-661a-4fe0-ab14-8c173b059bc6/HExNGdeD9F.json" background="#ffffff" speed="1" loop autoplay direction="1" mode="normal"></lottie-player>
+        
+          <div class="cart-contents">
+            <h4>mmmmhh... seems like your Cart is Empty!</h4>
+            <h6>Add item(s) to it now</h6>
+            <a routerLink="/shop">SHOP NOW&nbsp;<i class="fa-solid fa-cart-arrow-down"></i></a>
+          </div>
         </div>
-      
-        <div class="cart-contents">
-          <h4>mmmmhh... seems like your Cart is Empty!</h4>
-          <h6>Add item(s) to it now</h6>
-          <a routerLink="/shop">SHOP NOW&nbsp;<i class="fa-solid fa-cart-arrow-down"></i></a>
-        </div>
+      </ng-container>
+    </div>
+  
+    <div class="wishlist-container" *ngIf="activatedTabIndex == 1">
+      <div class="wishlist-table">      
+                <div *ngFor="let item of userWishList" class="wishlist-contents">
+                    <div class="delete-icon">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+  
+                    <div class="image">
+                        <img src="{{cloudinaryUrl}}{{item['img']}}" alt="Product Image">
+                    </div>
+            
+                    <div class="product-content">
+                        <div class="product-info">
+                            <div class="product-name">
+                                <p>Product Name: <span>{{item.product.name}}</span></p>
+                            </div>
+                        </div>
+            
+                        <div class="product-data">
+                            <div class="product-stock">
+                                <p>In stock</p>
+                            </div>
+                            <div class="product-rating">
+                                <p>
+                                    4.5
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>(21)</span>
+                                </p>
+                            </div>
+                            <div class="product-price">
+                                <p>${{item.price}}/12oz</p>
+                            </div>
+                            <div class="product-origin">
+                              <p>Origin: <span>{{item.product.origin}}</span></p>
+                            </div>
+                            <div class="buy-status">
+                                <button type="button" (click)="showAddtocartDialog('500ms', '500ms',item,item.product.name)">ADD TO CART</button>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
       </div>
-    </ng-container>
+    </div>
   </div>
-
-    
+  
 
 
   <app-footer></app-footer>
