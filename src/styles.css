@@ -1754,15 +1754,14 @@ opacity: .2;
 
   .modal-contents .product-form .roasted,
   .product-component .product-form .roasted {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   @media (max-width: 500px) {
     .modal-contents .product-form .roasted,
-      .product-component .product-form .roasted {
-        padding: 1rem;
+    .product-component .product-form .roasted {
         padding-inline: .5rem;
-      }
+    }
   }
 
   .modal-contents .product-form .roasted form,
@@ -1820,25 +1819,32 @@ opacity: .2;
     display: flex;
     align-items: center;
     width: max-content;
+    gap: 0.2rem;
   }
 
   /* .product-container is in the individual product component  */
-  .modal-contents .product-form .roasted .incrdecr div,
-  .modal-contents .product-form .green .incrdecr div,
-  .product-container .incrdecr div { 
-    background-color: rgb(197, 188, 188);
-    padding: .2rem .3rem;
-    color: #000000;
-    padding-inline: 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    cursor: pointer;
+  .modal-contents .product-form .roasted .incrdecr button,
+  .modal-contents .product-form .green .incrdecr button,
+  .product-container .incrdecr button { 
+    border: 1px solid #00000047;
+    background-color: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    color: black;
   }
 
-  .incrdecr span {
+  .modal-contents .product-form .roasted .incrdecr button span,
+  .modal-contents .product-form .green .incrdecr button span,
+  .product-container .incrdecr button span {
     font-weight: bold;
     font-size: 1.2rem;
-    color: #fff;
+    color: #000000;
   }
 
   .submit-btn .buy {
@@ -1857,11 +1863,7 @@ opacity: .2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 2rem;
-  }
-
-  .modal-contents .product-form .green {
-    padding: 1rem .2rem;
+    padding: 1rem;
   }
 
   .modal-contents .product-form .green .packaging,
@@ -2195,6 +2197,10 @@ opacity: .2;
   @media (max-width: 320px) {
     .popular-header {
       width: 90%;
+    }
+
+    .modal-contents .product-form .roasted .incrdecr {
+      flex-direction: column;
     }
   }
 
@@ -3064,6 +3070,7 @@ opacity: .2;
 
   .product-component .product-container .product-detail > * {
     margin-bottom: .2rem;
+    font-weight: 400;
   }
 
   .product-component .product-alldetails {
@@ -3099,7 +3106,6 @@ opacity: .2;
 
   .product-component .product-form .roasted,
   .product-component .product-form .green {
-    padding-block: 2rem;
     border: 1px solid #00000017;
     border-radius: .5rem;
     height: 395px;

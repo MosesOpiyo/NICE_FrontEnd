@@ -14,7 +14,7 @@
 
         <div class="product-info">
           <div class="product-detail">
-            <p>{{item.product.name}}</p>
+            <p class="bold">{{item.product.name}}</p>
             <p>Description: - {{item.product.cup_notes}}</p>
             <p>Riaikania Coffee Factory</p>
             <p *ngIf=" averageRating(item) == 5">
@@ -116,10 +116,10 @@
                 </div>
 
                 <div class="incrdecr">
-                  <div (click)=decrement() class="decrement">-</div>
+                  <button type="button" (click)=decrement() class="decrement"><span>&minus;</span></button>
                   <input type="number" name="roasted-quantity" id="roasted-counting" [(ngModel)]="num"
                     (change)="value($event)" title="input-count">
-                  <div (click)=increment() class="increment">+</div>
+                  <button type="button" (click)=increment() class="increment"><span>&plus;</span></button>
                 </div>
 
                 <div class="submit-btn">
@@ -192,10 +192,10 @@
               </div>
 
               <div class="incrdecr">
-                <div (click)=decrement2() class="decrement">-</div>
+                <button type="button" (click)=decrement2() class="decrement"><span>&minus;</span></button>
                 <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="num2"
                   (change)="value2($event)" title="input-count">
-                <div (click)=increment2() class="increment">+</div>
+                <button type="button" (click)=increment2() class="increment"><span>&plus;</span></button>
               </div>
 
 
