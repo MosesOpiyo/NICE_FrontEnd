@@ -10,13 +10,13 @@ import { AuthenticationService } from '../AuthService/authentication.service';
 export class ProductsService {
 
   constructor(private http:HttpClient,private snackBar:MatSnackBar,private service:AuthenticationService) { }
-  addProduct(input:any){
+  addProduct(input:any,name:any){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
     })
      this.http.post(`${environment.BASE_URL}Farmers/NewProduct`,input,{"headers":headers}).subscribe((res:any)=>{
       this.service.refreshPage()
-      this.snackBar.open(res, 'Close', {
+      this.snackBar.open(`New Product ${name} has been added.`, 'Close', {
         duration: 3000,
         panelClass: ['blue-snackbar']
       });

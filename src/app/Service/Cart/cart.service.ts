@@ -33,6 +33,15 @@ export class CartService {
     })
     return this.http.get(`${environment.BASE_URL}Orders&Cart/RemoveFromCart/${id}`,{'headers':headers})
   }
+  addToWishlist(id:number,session:any){
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/NewProductInWishList/${session}/${id}`)
+  }
+  removeFromWishlist(id:number){
+    let headers = new HttpHeaders({
+      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/RemoveFromWishlist/${id}`,{'headers':headers})
+  }
   makePayment(amount:any){
     let headers = new HttpHeaders({
       'Authorization':`Bearer ${sessionStorage.getItem('Token')}`

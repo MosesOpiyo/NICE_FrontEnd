@@ -8,6 +8,8 @@ import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { environment } from 'src/environments/environment.development';
 import { ProductStoreService } from '../Store/Products/product-store.service';
 import { AddtocartComponent } from '../addtocart/addtocart.component';
+import { CartService } from '../Service/Cart/cart.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-products',
@@ -31,7 +33,7 @@ export class ProductsComponent implements OnInit {
 
 
   myScriptElement: HTMLScriptElement;
-  constructor(private dialog: MatDialog,private service:AuthenticationService,private product:ProductStoreService,private route:Router){
+  constructor(private dialog: MatDialog,private service:AuthenticationService,private product:ProductStoreService,private route:Router,private cart:CartService,private snackbar:MatSnackBar){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
@@ -140,6 +142,18 @@ export class ProductsComponent implements OnInit {
    const dialogRef = this.dialog.open(SignUpComponent,{
      width: '25pc'
    }); 
+ }
+ 
+
+ addToWishList(id:any,item:any){
+  const session = localStorage.getItem("session")
+  this.cart.addToWishlist(id,session).subscribe((res:any) => {
+    this.snackbar.open(`${item.product.name} has been added to your wishlist.`, 'Close', {
+      duration: 3000,
+      panelClass: ['green-snackbar'],
+      horizontalPosition: 'center',
+    });
+  })
  }
 
  showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string,item:any,name:any){

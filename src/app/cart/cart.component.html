@@ -144,19 +144,19 @@
   
     <div class="wishlist-container" *ngIf="activatedTabIndex == 1">
       <div class="wishlist-table">      
-                <div class="wishlist-contents">
+                <div *ngFor="let item of userWishList" class="wishlist-contents">
                     <div class="delete-icon">
                         <i class="fa-solid fa-trash-can"></i>
                     </div>
   
                     <div class="image">
-                        <img src="../../../../assets/img/packaging/coffee-bag-02.png" alt="Product Image">
+                        <img src="{{cloudinaryUrl}}{{item['img']}}" alt="Product Image">
                     </div>
             
                     <div class="product-content">
                         <div class="product-info">
                             <div class="product-name">
-                                <p>Product Name: <span>Chim</span></p>
+                                <p>Product Name: <span>{{item.product.name}}</span></p>
                             </div>
                         </div>
             
@@ -172,13 +172,13 @@
                                 </p>
                             </div>
                             <div class="product-price">
-                                <p>$0/12oz</p>
+                                <p>${{item.price}}/12oz</p>
                             </div>
                             <div class="product-origin">
-                              <p>Origin: <span>Kenya</span></p>
+                              <p>Origin: <span>{{item.product.origin}}</span></p>
                             </div>
                             <div class="buy-status">
-                                <button type="button" (click)="showAddtocartDialog('500ms', '500ms')">ADD TO CART</button>
+                                <button type="button" (click)="showAddtocartDialog('500ms', '500ms',item,item.product.name)">ADD TO CART</button>
                             </div>
                         </div>   
                     </div>
