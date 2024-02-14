@@ -207,6 +207,70 @@
   margin-top: 7px;
 }
 
+/* green tab */
+/* input animations */
+.label-float{
+  position: relative;
+  padding-top: 13px;
+}
+
+.label-float input{
+  outline: none;
+  min-width: 250px;
+  padding: 15px 20px;
+  font-size: 16px;
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  /* -webkit-appearance:none; */
+  appearance:none;
+  transition: all .1s linear;
+}
+
+
+.label-float input::placeholder{
+  color:transparent;
+}
+
+.label-float label{
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% - 6px);
+  left: .26rem;
+  -webkit-transition: all .1s linear;
+  -moz-transition: all .1s linear;
+  background-color: white;
+  padding: 2px 5px;
+  box-sizing: border-box;
+  transition: all .1s linear;
+  font-size: 14.5px;
+}
+
+.label-float input:required:invalid + label {
+  color: #000000a8;
+}
+
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label{
+  font-size: 13px;
+  top: 0;
+  color: #000000a8;
+}
+/* end of input animations */
+
+.green form .label-float input {
+  min-width: 100%;
+  max-width: 100%;
+  border: 1px solid #8080807a;
+  border-radius: 4px;
+  height: 35px;
+  padding-inline: .5rem;
+}
+
+.green form .label-float input:focus {
+  border: 1px solid #0000ff59;
+  box-shadow: none;
+}
+
 /* media queries */
 @media (max-width: 425px) {
   .rating-content {

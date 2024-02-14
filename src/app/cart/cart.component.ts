@@ -7,6 +7,7 @@ import { SignUpComponent } from 'src/app/sign-up/sign-up.component';
 import { environment } from 'src/environments/environment.development';
 import { CartService } from '../Service/Cart/cart.service';
 import { CartStoreService } from '../Store/Cart/cart-store.service';
+import { AddtocartComponent } from '../addtocart/addtocart.component';
 
 @Component({
   selector: 'app-cart',
@@ -26,6 +27,13 @@ export class CartComponent implements OnInit {
   itemQuantity:number = 1
   quantity = 0
   total = 0
+
+  tabsArray: string[] = ['Your cart', 'Your wishlist'];
+  activatedTabIndex: number = 0;
+
+  setTab(index:number) {
+    this.activatedTabIndex = index;
+  }
 
   
   myScriptElement: HTMLScriptElement;
@@ -121,6 +129,20 @@ increment(element: any, id: number, quantity: number){
       element.quantity = quantity
     }
   }
+}
+
+showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string){
+  const dialogRef = this.dialog.open(AddtocartComponent,{
+    width: '30pc',
+    maxWidth: '90vw',
+    autoFocus: false,
+    maxHeight: '100vh',
+
+    // minWidth: '250px',
+    // maxHeight: '100vh',
+    enterAnimationDuration,
+    exitAnimationDuration
+  });
 }
 
  ngOnInit(): void {

@@ -1749,7 +1749,7 @@ opacity: .2;
   .product-component .product-container .product-form select,
   .product-component .product-container .product-form label,
   .product-component .product-container .product-form p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .modal-contents .product-form .roasted,
@@ -1772,7 +1772,11 @@ opacity: .2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
+  }
+
+  .modal-contents .product-form .green form {
+    width: 100%;
   }
 
   .modal-contents .product-form .roasted .option-list,
@@ -1853,8 +1857,11 @@ opacity: .2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
     padding: 1rem 2rem;
+  }
+
+  .modal-contents .product-form .green {
+    padding: 1rem .2rem;
   }
 
   .modal-contents .product-form .green .packaging,
@@ -3100,7 +3107,7 @@ opacity: .2;
 
   .product-component .product-form .green table td {
     padding-inline: 10px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .product-component .product-alldetails p {
