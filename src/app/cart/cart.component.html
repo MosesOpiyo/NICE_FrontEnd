@@ -40,7 +40,7 @@
                     <td mat-cell *matCellDef="let element">
                       <div class="incrdecr">
                         <button type="button" (click)="decrement(element, element.id, element.quantity)" class="decrement"><span>&minus;</span></button>
-                        <input type="number" name="green-quantity" id="{{element.id}}" [(ngModel)]="element.quantity" (change)="value($event, element.id, element.quantity)" title="input-count" autocomplete="off">
+                        <input type="number" name="green-quantity" id="{{element.id}}" (ngModel)="element.quantity" (change)="value($event, element.id, element.quantity)" title="input-count" autocomplete="off">
                         <button type="button" (click)="increment(element, element.id, element.quantity)" class="increment"><span>&plus;</span></button>
                       </div>
                     </td>
@@ -98,7 +98,7 @@
                   <div class="product-quantity">
                     <div class="incrdecr">
                       <button type="button" (click)="decrement(element, element.id, element.quantity)" class="decrement"><span>&minus;</span></button>
-                      <input type="number" name="green-quantity" id="{{element.id}}" [(ngModel)]="element.quantity" (change)="value($event, element.id, element.quantity)" title="input-count" autocomplete="off">
+                      <input type="number" name="green-quantity" id="{{element.id}}" (ngModel)="element.quantity" (change)="value($event, element.id, element.quantity)" title="input-count" autocomplete="off">
                       <button type="button" (click)="increment(element, element.id, element.quantity)" class="increment"><span>&plus;</span></button>
                     </div>
                   </div>

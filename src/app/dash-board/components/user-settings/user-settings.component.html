@@ -10,7 +10,7 @@
 
             <form ngNativeValidate>
                 <div class="label-float">
-                    <input id="phone" name="phone" [(ngModel)]="newNumber" class="form-control"
+                    <input id="phone" name="phone" (ngModel)="newNumber" class="form-control"
                         type="tel" placeholder=" " required>
                     <label for="phone">Change Phone Number</label>
                 </div>
@@ -31,7 +31,7 @@
 
             <form ngNativeValidate>
                 <div class="label-float">
-                    <input id="email" name="email" [(ngModel)]="newEmail" class="form-control"
+                    <input id="email" name="email" (ngModel)="newEmail" class="form-control"
                         type="email" placeholder=" " required>
                     <label for="email">Change Email Address</label>
                 </div>
@@ -52,7 +52,7 @@
 
             <form ngNativeValidate>
                 <div class="label-float">
-                    <input id="name" name="name" [(ngModel)]="newUsername" class="form-control"
+                    <input id="name" name="name" (ngModel)="newUsername" class="form-control"
                         type="text" placeholder=" " required>
                     <label for="name">Change Name</label>
                 </div>
@@ -71,19 +71,19 @@
         <div class="oldpassword-edit">
             <form (ngSubmit)="changePassword()">
                 <div class="label-float">
-                    <input id="oldpassword" name="oldpassword" [(ngModel)]="password" class="form-control"
+                    <input id="oldpassword" name="oldpassword" (ngModel)="password" class="form-control"
                     type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
                     <label for="oldpassword">Old Password</label>
                 </div>
 
                 <div class="label-float">
-                    <input id="newpassword" name="newpassword" [(ngModel)]="newPassword" class="form-control"
+                    <input id="newpassword" name="newpassword" (ngModel)="newPassword" class="form-control"
                     type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
                     <label for="newpassword">New Password</label>
                 </div>
 
                 <div class="label-float">
-                    <input id="confirmpassword" name="confirmpassword" [(ngModel)]="confirmNewPassword" class="form-control"
+                    <input id="confirmpassword" name="confirmpassword" (ngModel)="confirmNewPassword" class="form-control"
                     type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
                     <label for="confirmpassword">Confirm New Password</label>
                 </div>

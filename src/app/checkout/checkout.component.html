@@ -40,7 +40,7 @@
                 <div class="email">
                     <h2>Contact Information</h2>
                     <div class="label-float">
-                        <input id="email" name="email" [(ngModel)]="email" class="form-input" type="email" placeholder=" " required>
+                        <input id="email" name="email" (ngModel)="email" class="form-input" type="email" placeholder=" " required>
                         <label for="email">Email</label>
                     </div>
                 </div>
@@ -54,31 +54,31 @@
                         </div>
 
                         <div class="label-float fname">
-                            <input id="firstname" name="First name" [(ngModel)]="firstname" class="form-input"
+                            <input id="firstname" name="First name" (ngModel)="firstname" class="form-input"
                                 type="text" placeholder=" " required>
                             <label for="firstname">First Name</label>
                         </div>
     
                         <div class="label-float lname">
-                            <input id="lastname" name="Last name" [(ngModel)]="lastname" class="form-input"
+                            <input id="lastname" name="Last name" (ngModel)="lastname" class="form-input"
                                 type="text" placeholder=" " required>
                             <label for="lastname">Last Name</label>
                         </div>
 
                         <div class="label-float cname">
-                            <input id="companyname" name="Company name" [(ngModel)]="companyname" class="form-input"
+                            <input id="companyname" name="Company name" (ngModel)="companyname" class="form-input"
                                 type="text" placeholder=" ">
                             <label for="companyname">Company Name (optional)</label>
                         </div>
 
                         <div class="label-float address">
-                            <input id="address" name="Address" [(ngModel)]="address" class="form-input"
+                            <input id="address" name="Address" (ngModel)="address" class="form-input"
                                 type="text" placeholder=" " required>
                             <label for="address">Address</label>
                         </div>
 
                         <div class="label-float apartment">
-                            <input id="apartment" name="Apartment" [(ngModel)]="apartment" class="form-input"
+                            <input id="apartment" name="Apartment" (ngModel)="apartment" class="form-input"
                                 type="text" placeholder=" ">
                             <label for="apartment">Apartment, Suite, Unit etc (optional)</label>
                         </div>
@@ -88,19 +88,19 @@
                         </div>
 
                         <div class="label-float city">
-                            <input id="city" name="City" [(ngModel)]="city" class="form-input"
+                            <input id="city" name="City" (ngModel)="city" class="form-input"
                                 type="text" placeholder=" " required>
                             <label for="city">City</label>
                         </div>
 
                         <div class="label-float postcode">
-                            <input id="postcode" name="Post code" [(ngModel)]="postcode" class="form-input"
+                            <input id="postcode" name="Post code" (ngModel)="postcode" class="form-input"
                                 type="text" placeholder=" " required>
                             <label for="postcode">Postcode / ZIP Code</label>
                         </div>
 
                         <div class="label-float phone">
-                            <input id="phone" name="Phone number" [(ngModel)]="phone" class="form-input"
+                            <input id="phone" name="Phone number" (ngModel)="phone" class="form-input"
                                 type="tel" placeholder=" " required>
                             <label for="phone">Phone for delivery contact</label>
                         </div>
@@ -170,26 +170,26 @@
 
                             <div class="accordion-content">
                                 <div class="label-float cardnumber">
-                                    <input id="cardnumber" name="Card number" [(ngModel)]="cardnumber" class="form-input"
+                                    <input id="cardnumber" name="Card number" (ngModel)="cardnumber" class="form-input"
                                         type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" 
                                         autocomplete="cc-number" maxlength="19" placeholder=" " required>
                                     <label for="cardnumber">Card number</label>
                                 </div>
 
                                 <div class="label-float cardname">
-                                    <input id="cardname" name="Card name" [(ngModel)]="cardname" class="form-input"
+                                    <input id="cardname" name="Card name" (ngModel)="cardname" class="form-input"
                                         type="text" placeholder=" " required>
                                     <label for="cardname">Name on card</label>
                                 </div>
 
                                 <div class="label-float cardname">
-                                    <input id="expiration" name="Expiration" [(ngModel)]="expiration" class="form-input"
+                                    <input id="expiration" name="Expiration" (ngModel)="expiration" class="form-input"
                                         type="text" placeholder=" " required>
                                     <label for="expiration">Expiration date</label>
                                 </div>
 
                                 <div class="label-float cardname">
-                                    <input id="securitycode" name="Security code" [(ngModel)]="securitycode" class="form-input"
+                                    <input id="securitycode" name="Security code" (ngModel)="securitycode" class="form-input"
                                         type="number" maxlength="4" placeholder=" " required>
                                     <label for="securitycode">Security code</label>
                                 </div>
@@ -237,31 +237,31 @@
                                 </div>
         
                                 <div class="label-float fname">
-                                    <input id="first_name" name="First name" [(ngModel)]="billingfirstname" class="form-input"
+                                    <input id="first_name" name="First name" (ngModel)="billingfirstname" class="form-input"
                                         type="text" placeholder=" " required>
                                     <label for="first_name">First Name</label>
                                 </div>
             
                                 <div class="label-float lname">
-                                    <input id="last_name" name="Last name" [(ngModel)]="billinglastname" class="form-input"
+                                    <input id="last_name" name="Last name" (ngModel)="billinglastname" class="form-input"
                                         type="text" placeholder=" " required>
                                     <label for="last_name">Last Name</label>
                                 </div>
         
                                 <div class="label-float cname">
-                                    <input id="company_name" name="Company name" [(ngModel)]="billingcompanyname" class="form-input"
+                                    <input id="company_name" name="Company name" (ngModel)="billingcompanyname" class="form-input"
                                         type="text" placeholder=" ">
                                     <label for="company_name">Company Name (optional)</label>
                                 </div>
         
                                 <div class="label-float address">
-                                    <input id="user_address" name="Address" [(ngModel)]="billingaddress" class="form-input"
+                                    <input id="user_address" name="Address" (ngModel)="billingaddress" class="form-input"
                                         type="text" placeholder=" " required>
                                     <label for="user_address">Address</label>
                                 </div>
         
                                 <div class="label-float apartment">
-                                    <input id="user_apartment" name="Apartment" [(ngModel)]="billingapartment" class="form-input"
+                                    <input id="user_apartment" name="Apartment" (ngModel)="billingapartment" class="form-input"
                                         type="text" placeholder=" ">
                                     <label for="user_apartment">Apartment, Suite, Unit etc (optional)</label>
                                 </div>
@@ -271,13 +271,13 @@
                                 </div>
         
                                 <div class="label-float city">
-                                    <input id="user_city" name="City" [(ngModel)]="billingcity" class="form-input"
+                                    <input id="user_city" name="City" (ngModel)="billingcity" class="form-input"
                                         type="text" placeholder=" " required>
                                     <label for="user_city">City</label>
                                 </div>
         
                                 <div class="label-float postcode">
-                                    <input id="user_postcode" name="Post code" [(ngModel)]="billingpostcode" class="form-input"
+                                    <input id="user_postcode" name="Post code" (ngModel)="billingpostcode" class="form-input"
                                         type="text" placeholder=" " required>
                                     <label for="user_postcode">Postcode / ZIP Code</label>
                                 </div>
@@ -335,7 +335,7 @@
                 <div class="giftcard-input">
                     <form action="">
                         <div class="label-float coupon">
-                            <input id="coupon" name="Gift card/coupon" [(ngModel)]="coupon" class="form-input"
+                            <input id="coupon" name="Gift card/coupon" (ngModel)="coupon" class="form-input"
                                 type="text" placeholder=" ">
                             <label for="coupon">Gift Card / Coupon code</label>
                         </div>
@@ -439,7 +439,7 @@
                     <div class="giftcard-input">
                         <form action="">
                             <div class="label-float coupon">
-                                <input id="coupon" name="Gift card/coupon" [(ngModel)]="coupon" class="form-input"
+                                <input id="coupon" name="Gift card/coupon" (ngModel)="coupon" class="form-input"
                                     type="text" placeholder=" ">
                                 <label for="coupon">Gift Card / Coupon code</label>
                             </div>
