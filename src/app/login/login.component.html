@@ -3,13 +3,13 @@
 
     <form (ngSubmit)="loginUser()" ngNativeValidate>
         <div class="label-float">
-            <input id="user_email" name="user_email" (ngModel)="user_email" class="form-control"
+            <input id="user_email" name="user_email" [(ngModel)]="user_email" class="form-control"
                 type="email" placeholder=" " required>
             <label for="user_email">Email</label>
         </div>
 
         <div class="label-float">
-            <input id="password" name="password" (ngModel)="password" class="form-control"
+            <input id="password" name="password" [(ngModel)]="password" class="form-control"
             type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
             <label for="password">Password</label>
         </div>

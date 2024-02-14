@@ -9,7 +9,7 @@
 
             <form action="" method="post" ngNativeValidate>
                 <div class="option-list">
-                    <select id="packsize" (ngModel)="quantityPrice" name="packsize" title="packsize" required>
+                    <select id="packsize" [(ngModel)]="quantityPrice" name="packsize" title="packsize" required>
                         <option value="" disabled selected>Choose Pack Size...</option>
                         <option value="18.80|12oz">12oz ($18.80)</option>
                         <option value="46.80|32oz">32oz ($46.80)</option>
@@ -17,7 +17,7 @@
                         <option value="68.20|3lbs">5lbs ($113.00)</option>
                     </select>
 
-                    <select id="grind" (ngModel)="grind" name="grind" title="grind" required>
+                    <select id="grind" [(ngModel)]="grind" name="grind" title="grind" required>
                         <option value="" disabled selected>Choose Grind...</option>
                         <option value="Whole beans">Whole beans</option>
                         <option value="Extra coarse">Extra coarse (Cold brews)</option>
@@ -29,7 +29,7 @@
                         <option value="Super-fine">Super-fine (Turkish)</option>
                     </select>
 
-                    <select id="roast" (ngModel)="roast_type" name="roast" title="roast" required>
+                    <select id="roast" [(ngModel)]="roast_type" name="roast" title="roast" required>
                         <option value="" disabled selected>Choose Roast Type...</option>
                         <option value="Light">Light</option>
                         <option value="Medium/light">Medium/light</option>
@@ -66,7 +66,7 @@
 
                 <div class="incrdecr">
                     <div (click)=decrement() class="decrement">-</div>
-                    <input type="number" name="quantity" id="counting" (ngModel)="number_value"
+                    <input type="number" name="quantity" id="counting" [(ngModel)]="number_value"
                         (change)="check($event)" title="input-count">
                     <div (click)=increment() class="increment">+</div>
                 </div>
@@ -106,7 +106,7 @@
             <form action="/" method="post" ngNativeValidate>
                 <div>
                     <div class="label-float">
-                        <input id="size" name="size" (ngModel)="size" class="form-control" type="number"
+                        <input id="size" name="size" [(ngModel)]="size" class="form-control" type="number"
                             placeholder=" " required>
                         <label for="size">Enter weight</label>
                     </div>
@@ -139,7 +139,7 @@
 
                 <div class="incrdecr">
                     <div (click)=decrement2() class="decrement">-</div>
-                    <input type="number" name="green-quantity" id="green-counting" (ngModel)="number_value2"
+                    <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="number_value2"
                         (change)="check2($event)" title="input-count">
                     <div (click)=increment2() class="increment">+</div>
                 </div>
