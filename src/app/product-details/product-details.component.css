@@ -48,6 +48,10 @@
   color: green;
 }
 
+.product-component .product-container .product-detail .bold {
+  font-weight: bold;
+}
+
 /* icons */
 .fa-location-dot {
   color: red;

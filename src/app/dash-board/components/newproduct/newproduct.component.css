@@ -22,9 +22,10 @@ form button {
     width: 100px;
 }
 
-form button.submitbtn,
-form button.nextbtn {
-    margin-left: 10px;
+form .flex-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {

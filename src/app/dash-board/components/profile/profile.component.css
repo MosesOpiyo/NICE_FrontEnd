@@ -3,6 +3,11 @@ mat-slide-toggle{
     align-self: center;
 }
 
+h3 {
+    color: #ffffff99;
+    font-weight: 600;
+}
+
 form {
     padding: 10px;
 }
@@ -19,8 +24,10 @@ form button {
     width: 100px;
 }
 
-form button.submitbtn {
-    margin-left: 10px;
+form .flex-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 input{
