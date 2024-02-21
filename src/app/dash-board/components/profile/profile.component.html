@@ -192,10 +192,18 @@
               <input matInput placeholder="(kgs of cherry)" formControlName="farm_area" type="number" required>
             </mat-form-field>
 
-            <mat-form-field class="extend">
+            <mat-form-field>
               <mat-label>Production history(2022 - 2023)</mat-label>
               <input matInput placeholder="(kgs of cherry)" formControlName="farm_area" type="number" required>
             </mat-form-field>
+
+            <mat-selection-list #dryingmethod>
+              <h3 mat-subheader>Select drying method:</h3>
+              <div class="dryingmethod">
+                <mat-list-option checkboxPosition="before" value="organic">Sun drying</mat-list-option>
+                <mat-list-option checkboxPosition="before" value="inorganic">Mechanical drying</mat-list-option>
+              </div>
+            </mat-selection-list>
 
             <mat-selection-list #farmingmethod>
               <h3 mat-subheader>Select farming method:</h3>
