@@ -30,6 +30,10 @@ form .flex-buttons {
     gap: 10px;
 }
 
+.extend {
+    grid-area: auto / 1 / auto / 3;
+}
+
 input{
     border-radius: 5px;
 }
