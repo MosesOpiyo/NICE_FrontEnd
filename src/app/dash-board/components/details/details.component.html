@@ -131,7 +131,7 @@
                     </li>
 
                     <li>
-                        Coffee Variety:<br>
+                        Coffee Varieties:<br>
                         <span *ngIf="profile">{{profile.coffee_variety}}</span>
                         <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(15)"></i>
                     </li>
@@ -172,10 +172,24 @@
                         <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(21)"></i>
                     </li>
 
-                    <li class="farm-area">
+                    <li>
                         Farm Area:<br>
                         <span *ngIf="profile">{{profile.farm_area}}</span>
                         <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(24)"></i>
+                    </li>
+
+                    <li>
+                        Coffee species:<br>
+                        <span *ngIf="profile">{{profile.species}}</span>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(25)"></i>
+                    </li>
+
+                    
+
+                    <li>
+                        Drying method:<br>
+                        <span *ngIf="profile">{{profile.dryingmethod}}</span>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(26)"></i>
                     </li>
 
                     <li class="history">
@@ -210,19 +224,19 @@
                     <li>
                         Warehouse Name:<br>
                         <span *ngIf="warehouse">{{warehouse.name}}</span>
-                        <i *ngIf="user.user.type=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(25)"></i>
+                        <i *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(27)"></i>
                     </li>
 
                     <li>
                         Warehouse Capacity:<br>
                         <span *ngIf="warehouse">{{warehouse.warehouse_area_storage}}</span>
-                        <i *ngIf="user.user.type=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(26)"></i>
+                        <i *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(28)"></i>
                     </li>
 
                     <li>
                         Warehouse Contact info:<br>
                         <span *ngIf="warehouse"></span>
-                        <i *ngIf="user.user.type=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(27)"></i>
+                        <i *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(29)"></i>
                     </li>
 
                     <li>
@@ -240,7 +254,7 @@
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
-                        <i *ngIf="user.user.type=='WAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(29)"></i>
+                        <i *ngIf="user.user.type=='WAREHOUSER' || user.user.type=='ORIGINWAREHOUSER'" class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(31)"></i>
                     </li>
                     
                 </ul>
@@ -256,26 +270,26 @@
                     <li>
                         Name:<br>
                         <span>{{user.user.username}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(30)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(32)"></i>
                     </li>
 
                     <li>
                         Phone Number:<br>
                         <span></span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(31)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(33)"></i>
                     </li>
 
                     <li>
                         Email Address:<br>
                         <span>{{user.user.email}}</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(32)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(34)"></i>
                     </li>
 
                     <li>
                         Shipping Address:<br>
                         <span>1234 Deliver Str</span>
                         <span>Denver, Colorado</span>
-                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(33)"></i>
+                        <i class="fa-solid fa-pencil" title="Edit" (click)="showEditDialog(35)"></i>
                     </li>
                     
                 </ul>

@@ -19,10 +19,10 @@ export class SavechangesComponent implements OnInit {
     let newData = {
        [`${key}`]:this.change
     }
-    if(this.data.id < 25){
+    if(this.data.id < 27){
       this.update.updateFarmerProfile(key,newData)
     }
-    else if(this.data.id > 24){
+    else if(this.data.id > 26){
       this.updateWarehouse.updateWarehouserProfile(key,newData)
     }
     
