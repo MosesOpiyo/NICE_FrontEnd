@@ -28,19 +28,16 @@ export class CartService {
     return this.http.post(`${environment.BASE_URL}Orders&Cart/NewProductInCart/${session}/${id}`,cartItem)
   }
   removeFromCart(id:number){
-    let headers = new HttpHeaders({
-      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
-    })
-    return this.http.get(`${environment.BASE_URL}Orders&Cart/RemoveFromCart/${id}`,{'headers':headers})
+    const session = localStorage.getItem("session")
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/RemoveFromCart/${session}/${id}`)
   }
-  addToWishlist(id:number,session:any){
+  addToWishlist(id:number){
+    const session = localStorage.getItem("session")
     return this.http.get(`${environment.BASE_URL}Orders&Cart/NewProductInWishList/${session}/${id}`)
   }
   removeFromWishlist(id:number){
-    let headers = new HttpHeaders({
-      'Authorization':`Bearer ${sessionStorage.getItem('Token')}`
-    })
-    return this.http.get(`${environment.BASE_URL}Orders&Cart/RemoveFromWishlist/${id}`,{'headers':headers})
+    const session = localStorage.getItem("session")
+    return this.http.get(`${environment.BASE_URL}Orders&Cart/RemoveFromWishlist/${session}/${id}`)
   }
   makePayment(amount:any){
     let headers = new HttpHeaders({

@@ -45,6 +45,9 @@ export class ProductsComponent implements OnInit {
     window.scrollTo(0, 0);
   }
   getFlavourOptions(){
+    if(!this.flavourOptions.includes('All')){
+      this.flavourOptions.push('All')
+    }
     this.products.forEach((product:any) => {
       if(!this.flavourOptions.includes(product.product.cup_notes)){
         this.flavourOptions.push(product.product.cup_notes)
@@ -53,6 +56,9 @@ export class ProductsComponent implements OnInit {
   }
 
   getOriginrOptions(){
+    if(!this.originOptions.includes('All')){
+      this.originOptions.push('All')
+    }
     this.products.forEach((product:any) => {
       if(!this.originOptions.includes(product.product.origin)){
         this.originOptions.push(product.product.origin)
@@ -61,19 +67,51 @@ export class ProductsComponent implements OnInit {
   }
   
   handleDataFromChild(data: string) {
-      this.filteredProducts = this.products.filter(item => {
-        return item.product.name.indexOf(data.toUpperCase()) > -1
-      })
+    this.filteredProducts = this.products.filter(item => {
+      return item.product.name.indexOf(data.toUpperCase()) > -1
+    })
   }
   optionsFlavorFilter(option:string){
-    this.filteredProducts = this.products.filter(item => {
-      return item.product.cup_notes.indexOf(option) > -1
-    })
+    if(option == 'All'){
+      this.filteredProducts = null
+    }else{
+      if(this.filteredProducts == null){
+        this.filteredProducts = this.products.filter(item => {
+          return item.product.cup_notes.indexOf(option) > -1
+        })
+      }
+      else{
+        this.filteredProducts = this.filteredProducts.filter(item => {
+          return item.product.cup_notes.indexOf(option) > -1
+        })
+        if(this.filteredProducts.length == 0){
+          this.filteredProducts = this.products.filter(item => {
+            return item.product.cup_notes.indexOf(option) > -1
+          })
+        }
+      }
+    }
+    
   }
   optionsOriginFilter(option:string){
-    this.filteredProducts = this.products.filter(item => {
-      return item.product.origin.indexOf(option) > -1
-    })
+    if(option == 'All'){
+      this.filteredProducts = null
+    }else{
+      if(this.filteredProducts == null){
+        this.filteredProducts = this.products.filter(item => {
+          return item.product.origin.indexOf(option) > -1
+        })
+      }else{
+        this.filteredProducts = this.filteredProducts.filter(item => {
+          return item.product.origin.indexOf(option) > -1
+        })
+        if(this.filteredProducts.length == 0){
+          this.filteredProducts = this.products.filter(item => {
+            return item.product.origin.indexOf(option) > -1
+          })
+        }
+      }
+    }
   }
   
   //Variety sidenav
@@ -146,8 +184,7 @@ export class ProductsComponent implements OnInit {
  
 
  addToWishList(id:any,item:any){
-  const session = localStorage.getItem("session")
-  this.cart.addToWishlist(id,session).subscribe((res:any) => {
+  this.cart.addToWishlist(id).subscribe((res:any) => {
     this.snackbar.open(`${item.product.name} has been added to your wishlist.`, 'Close', {
       duration: 3000,
       panelClass: ['green-snackbar'],
