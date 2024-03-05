@@ -31,14 +31,14 @@
 }
 
 .fa-trash-can {
-  color: #ff0000a3;
+  color: #808080;
   font-size: 1.1rem;
   transition: all 250ms ease-in-out;
   cursor: pointer;
 }
 
 .fa-trash-can:hover {
-  color: red;
+  color: #000000;
 }
 
 table button,
@@ -176,9 +176,17 @@ h4 {
   .cart-table table td img {
     width: 100%;
     height: 130px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     /* border: 2px solid red; */
+  }
+
+  td.product_name_image {
+    flex-direction: column;
+  }
+  
+  td.product_name_image p {
+    font-size: 20px;
   }
 
   .cart-component .incrdecr {

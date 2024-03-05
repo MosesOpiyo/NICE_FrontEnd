@@ -21,7 +21,7 @@ export class CartComponent implements OnInit {
   public grandTotal !: number;
   cloudinaryUrl = environment.CLOUDINARY_URL
   user:any | null = null;
-  displayedColumns: string[] = ['image','name','weight','quantity','price','totalPrice','delete'];
+  displayedColumns: string[] = ['image','weight','quantity','totalPrice','delete'];
   userCart:any | null = null;
   isLoggedIn:any
   itemQuantity:number = 1
