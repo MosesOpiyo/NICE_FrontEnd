@@ -26,7 +26,8 @@ export class NicehomepageComponent implements OnInit {
   products:any;
   popularProducts: any;
   ratings : number[] = [];
-  cloudinaryUrl = environment.CLOUDINARY_URL
+  cloudinaryUrl = environment.CLOUDINARY_URL;
+  filteredProducts:any
   
   coffeeData = [ 
     {
@@ -260,6 +261,22 @@ export class NicehomepageComponent implements OnInit {
       enterAnimationDuration,
       exitAnimationDuration
     });
+  }
+
+  averageRating(item:any){
+    const list :number[] = []
+    item.rating.forEach((ratingItem:any) => {
+      list.push(ratingItem.rating)
+    });
+    const sum = list.reduce((acc, item) => acc + item, 0);
+    const total = Math.floor(sum / list.length);
+    return total
+   }
+  
+   filterData(enteredData){
+    this.filteredProducts = this.products.filter(item => {
+      return item.username.toLowerCase().indexOf(enteredData.toLowerCase()) > -1
+    })
   }
 
   ngOnInit(): void {

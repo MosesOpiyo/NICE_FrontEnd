@@ -451,32 +451,57 @@
                 autoplay-disable-on-interaction="false" space-between="10" class="mobile">
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}'>
+                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[0].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[0].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[0].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[0]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -493,32 +518,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}'>
+                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[1].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[1].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[1].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[1]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -535,31 +585,56 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}'>
+                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[2].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[2].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[2].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[2]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
+                                </div>
                             </div>
                         </a>
 
@@ -577,32 +652,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}'>
+                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[3].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[3].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[3].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[3]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -619,32 +719,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}'>
+                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[4].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[4].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[4].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[4]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -661,32 +786,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}'>
+                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[5].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[5].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[5].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[5]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -708,31 +858,56 @@
                 autoplay-disable-on-interaction="false" space-between="10" class="tablet">
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}'>
+                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[0].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[0].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[0].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[0]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
+                                </div>
                             </div>
                         </a>
 
@@ -750,32 +925,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}'>
+                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[1].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[1].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[1].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[1]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -792,32 +992,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}'>
+                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[2].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[2].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[2].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[2]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -834,32 +1059,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}'>
+                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[3].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[3].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[3].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[3]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -876,31 +1126,56 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}'>
+                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[4].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[4].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[4].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[4]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
+                                </div>
                             </div>
                         </a>
 
@@ -918,32 +1193,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}'>
+                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[5].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[5].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[5].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[5]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -965,32 +1265,57 @@
                 autoplay-disable-on-interaction="false" space-between="10" class="laptop">
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}'>
+                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[0].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[0].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[0].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[0]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[0]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div>                            
                         </a>
 
                         <div class="latestadd-actions">
@@ -1007,32 +1332,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}'>
+                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[1].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[1].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[1].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[1]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[1]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -1049,32 +1399,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}'>
+                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[2].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[2].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[2].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[2]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[2]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -1091,32 +1466,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}'>
+                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[3].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[3].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[3].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[3]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[3]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -1133,32 +1533,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}'>
+                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[4].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[4].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[4].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[4]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[4]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -1175,32 +1600,57 @@
 
                 <swiper-slide class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}'>
+                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}' class="shopitem-info">
                             <div class="product-image">
                                 <img src='{{cloudinaryUrl}}{{popularProducts[5].img}}' alt="package">
                             </div>
 
-                            <div class="product-name">
-                                <p>{{popularProducts[5].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
+                            <div class="products-info">
+                                <div class="product-name">
+                                    <div class="name">
+                                        <p>{{popularProducts[5].product.name}}</p>
+                                    </div>
+    
+                                    <div class="rating">
+                                        <p *ngIf="averageRating(popularProducts[5]) == 5">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 4">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 3">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 2">
+                                          <span class="star">★</span>
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 1">
+                                          <span class="star">★</span>
+                                        </p>
+                                        <p *ngIf="averageRating(popularProducts[5]) == 0">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
-                            </div>
+    
+                                <div class="farm-name">
+                                    <p>Riakiania Coffee Factory</p>
+                                </div>
+    
+                                <div class="product-details">
+                                    <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
+                                    <p class="fw-bold">{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
+                                </div>
+                            </div> 
                         </a>
 
                         <div class="latestadd-actions">
@@ -1248,20 +1698,58 @@
 
         <div class="latest-products">
             <div class="product-item product1" data-aos="fade-up" data-aos-delay="100" *ngFor="let item of popularProducts">
-                <a routerLink="/shop/{{item.product.name}}/{{item.id}}">
+                <a routerLink="/shop/{{item.product.name}}/{{item.id}}" class="shopitem-info">
                     <div class="product-image">
                         <img src="{{cloudinaryUrl}}{{item.img}}" alt="package">
                     </div>
 
-                    <div class="product-name">
-                        <p>{{item.product.name}}</p>
-
+                    <div class="products-info">
+                        <div class="product-name">
+                            <div class="name">
+                                <p>{{item.product.name}}</p>
+                            </div>
+    
+                            <div class="rating">
+                                <p *ngIf="averageRating(item) == 5">
+                                  <span class="star">★</span>
+                                  <span class="star">★</span>
+                                  <span class="star">★</span>
+                                  <span class="star">★</span>
+                                  <span class="star">★</span>
+                                </p>
+                                <p *ngIf="averageRating(item) == 4">
+                                  <span class="star">★</span>
+                                  <span class="star">★</span>
+                                  <span class="star">★</span>
+                                  <span class="star">★</span>
+                                </p>
+                                <p *ngIf="averageRating(item) == 3">
+                                  <span class="star">★</span>
+                                  <span class="star">★</span>
+                                  <span class="star">★</span>
+                                </p>
+                                <p *ngIf="averageRating(item) == 2">
+                                  <span class="star">★</span>
+                                  <span class="star">★</span>
+                                </p>
+                                <p *ngIf="averageRating(item) == 1">
+                                  <span class="star">★</span>
+                                </p>
+                                <p *ngIf="averageRating(item) == 0">
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="farm-name">
+                            <p>Kiaragana Coffee Factory</p>
+                        </div>
+    
+                        <div class="product-details">
+                            <p>Origin: {{item.product.origin | titlecase}}</p>
+                            <p class="fw-bold">{{item.price | currency:'USD'}} / 12oz</p>
+                        </div>
                     </div>
-
-                    <div class="product-details">
-                        <p>Origin: {{item.product.origin | titlecase}}</p>
-                        <p>{{item.price | currency:'USD'}} / 12oz</p>
-                    </div>
+                    
                 </a>
 
                 <div class="latestadd-actions">

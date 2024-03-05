@@ -9,6 +9,10 @@
   font-family: Outfit;
 }
 
+span.star {
+  color: #ffa500;
+}
+
 p, dl, ol, ul {
   margin-top: 0;
   margin-bottom: 0;
@@ -1526,14 +1530,24 @@ opacity: .2;
   
   .latest-container .latest-products .product-item {
     width: 100%;
-    height: 400px;
     box-shadow: 0 0 2px 1px #e6e6e6;
     border-radius: 5px;
     transition: all 500ms ease-in-out;
+    gap: 5px;
   }
 
-  .latest-container .latest-products .product1:hover {
-    height: 400px;
+  .latest-container .latest-products .product-item,
+  .product-item a.shopitem-info,
+  .product-item a.shopitem-info .products-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  .product-item a.shopitem-info .products-info {
+    gap: 10px;
+    padding-inline: 5px;
   }
 
   .latest-products .product-item .product-image {
@@ -1575,10 +1589,17 @@ opacity: .2;
   }
 
   .latest-products .product-name,
-  .latest-products .product-details {
-    font-size: 1.1rem;
+  .latest-products .product-details,
+  .latest-products .farm-name {
+    /*font-size: 1.1rem;*/
     color: #101020;
-    padding: .5rem;
+  }
+
+  .popular-container .product-details,
+  .latest-products .product-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .product-item .latestadd-actions {
@@ -1589,6 +1610,10 @@ opacity: .2;
     opacity: 0;
     transition: visibility 0s linear 0.5s,
                 opacity 0.5s linear;
+  }
+
+  .latest-products .product-item .latestadd-actions {
+    margin-bottom: 5px;
   }
 
   .latest-container .latest-products .product1:hover .latestadd-actions {
@@ -1638,10 +1663,6 @@ opacity: .2;
     .product-item .latestadd-actions {
       visibility: visible;
       opacity: 1;
-    }
-
-    .latest-container .latest-products .product-item {
-      height: 400px;
     }
   }
 
@@ -2022,20 +2043,18 @@ opacity: .2;
   .popular-container {
     padding: .5rem;
     margin-bottom: 4rem;
-
-    height: 550px;
+    height: 490px;
     width: 96%;
     margin-inline: auto;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-
     gap: 1rem;
   }
 
   .popular-container .product-name {
-    margin-top: 1rem;
+    margin-top: .5rem;
   }
 
   .popular-container .product-name i {
@@ -2045,8 +2064,6 @@ opacity: .2;
   .popular-container .product-name .name,
   .popular-container .product-details {
     text-align: center;
-    font-size: 1.1rem;
-    padding: .5rem;
   }
 
   .popular-header {
@@ -2801,7 +2818,8 @@ opacity: .2;
     }
 
     .shop-component .product-item .product-name .name p,
-    .farmdetails-component .product-item .product-name .name p {
+    .farmdetails-component .product-item .product-name .name p,
+    .product-item a.shopitem-info .products-info .product-name .name p {
       text-transform: uppercase;
       font-weight: bold;
       font-size: 1.5rem;
@@ -2833,7 +2851,8 @@ opacity: .2;
     }
   
     .shop-component .product-name,
-    .farmdetails-component .product-name {
+    .farmdetails-component .product-name,
+    .latest-products .product-name {
       display: flex;
       justify-content: space-between;
       flex-direction: column;
