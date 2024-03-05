@@ -2298,7 +2298,7 @@
   
   /* ABOUT HEADER */
   .about-component .about-header {
-      background-image: url("../img/about/about.png");
+      background-image: url("../img/about/about.webp");
       background-position: center;
       background-size: cover;
       height: 350px;
@@ -2309,20 +2309,18 @@
   
   /* OUR STORY */
   .about-component .our-story {
-      margin-block: 4rem;
+      margin-top: 4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 1rem;
+      justify-content: center;
+      text-align: center;
   }
   
   .about-component .our-story .story-content {
       display: flex;
       align-items: center;
-  }
-  
-  .about-component .our-story .story-content > * {
-      flex-basis: 100%;
   }
   
   .about-component .our-story .story-content .story-image {
@@ -2338,58 +2336,58 @@
       object-position: center;
   }
   
-  .about-component .our-story .story-content .story p {
-      padding-right: 100px;
-  }
-  
   
   /* OUR MISSION */
   .about-component .our-mission {
-    margin-block: 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    margin: 2rem 0 4rem 0;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 1.5rem;
+    width: 95%;
+    margin-inline: auto;
   }
 
   .about-component .our-mission .mission-card {
       display: flex;
-      width: 95%;
-      margin-inline: auto;
+      flex-direction: column;
       text-align: center;
+    background-color: #f4ceb6;
+    padding-bottom: 1rem;
   }
 
   .about-component .our-mission .mission-card.traceability {
-    flex-direction: row-reverse;
+    background-color: #eceaeb;
   }
-  
-  .about-component .our-mission .mission-card > * {
-      flex-basis: 100%;
+
+  .about-component .our-mission .mission-card.transparency {
+    background-color: #88a1496e;
+  }
+
+  .about-component .our-mission .mission-card.relationships {
+    background-color: #bdd5ee;
   }
   
   .about-component .our-mission .mission-content {
-      background-color: #eceaeb;
-      border-radius: .5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+      position: relative;
   }
 
-  .about-component .our-mission .mission-card.traceability .mission-content {
-    border-radius: .5rem;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+  .about-component .our-mission .mission-content h2 {
+    margin: 3rem 0 1.5rem 0;
+    font-weight: 500;
   }
   
   .about-component .our-mission .mission-content p {
       font-size: 1.2rem;
+      width: 90%;
       margin-inline: auto;
   }
   
   .about-component .our-mission .mission-image {
-      height: 350px;
+      height: 260px;
   }
   
   .about-component .our-mission .mission-image img {
@@ -2397,15 +2395,30 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: .5rem;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
   }
 
-  .about-component .our-mission .mission-card.traceability .mission-image img {
-    border-radius: .5rem;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+  .about-component .our-mission .mission-icon {
+    border: 1px solid #d6d6d6;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    position: absolute;
+    top: -45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eceaeb;
+  }
+
+  .about-component .our-mission .mission-icon img {
+    height: 60%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .about-component .our-mission .mission-icon i.fa-cart-shopping::after {
+    background-color: transparent;
   }
   
   /* WHY US */
@@ -2500,7 +2513,7 @@
   
   .about-component .how-container .how-content .how-card.prefinancing,
   .about-component .how-container .how-content .how-card.marketing,
-  .about-component .how-container .how-content .how-card.shop {
+  .about-component .how-container .how-content .how-card.roasting {
       flex-direction: row-reverse;
   }
   
@@ -2563,13 +2576,13 @@
   
   .about-component .how-card.prefinancing .how-image::after,
   .about-component .how-card.marketing .how-image::after,
-  .about-component .how-card.shop .how-image::after {
+  .about-component .how-card.roasting .how-image::after {
       left: 0;
       right: 50%;
   }
   
   .about-component .how-card.prefinancing .how-image::after {
-      background-color: #bebfc1;
+      background-color: #aebee1;
   }
   
   .about-component .how-card.logistics .how-image::after {
@@ -2583,6 +2596,10 @@
   .about-component .how-card.transparency .how-image::after {
       background-color: #d7d7d7;
   }
+
+  .about-component .how-card.roasting .how-image::after {
+    background-color: #d49e7c;
+}
   
   .about-component .how-card.shop .how-image::after {
       background-color: #ff735c;
@@ -2708,46 +2725,13 @@
       width: 95%;
     }
 
-    .about-component .our-mission .mission-card {
-      flex-direction: column-reverse;
-    }
-
-    .about-component .our-mission .mission-card.traceability {
-      flex-direction: column-reverse;
-    }
-
     .about-component .our-mission .mission-content {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
       padding-block: 1rem;
       padding-inline: 5px;
-      border-bottom-right-radius: .5rem;
-    }
-
-    .about-component .our-mission .mission-card.traceability .mission-content {
-      border-radius: .5rem;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
     }
 
     .about-component .our-mission .mission-content p {
       font-size: 1rem;
-    }
-
-    .about-component .our-mission .mission-image img {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      border-top-left-radius: .5rem;
-    }
-
-    .about-component .our-mission .mission-card.traceability .mission-image img {
-      border-radius: .5rem;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    .about-component .our-mission .mission-card > * {
-      flex-basis: auto;
     }
 
     .about-component .our-mission .mission-image {
@@ -2809,7 +2793,7 @@
 
     .about-component .how-container .how-content .how-card.prefinancing,
     .about-component .how-container .how-content .how-card.marketing,
-    .about-component .how-container .how-content .how-card.shop {
+    .about-component .how-container .how-content .how-card.roasting {
       flex-direction: column-reverse;
     }
 
@@ -2828,6 +2812,10 @@
 
     .about-component .team-container .team-list {
       grid-template-columns: 1fr;
+    }
+
+    .about-component .our-mission {
+      grid-template: 1fr / 1fr;
     }
   }
 

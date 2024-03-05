@@ -15,10 +15,10 @@
           </div>
           <!-- <input type="hidden" id="previous_select"> -->
           <ul *ngIf="isShowVariety">
-            <div class="options" *ngFor="let flavour of flavourOptions">
+            <div class="options" *ngFor="let flavour of flavourOptions; let indexPosition = index">
               <li class="customRadio">
-                <input type="radio" value="{{flavour}}" (click)="optionsFlavorFilter(flavour)" id="{{flavour}}" name="{{flavour}}"  />
-                <label for="{{flavour}}"><span><span></span></span>{{flavour}}</label>
+                <input type="radio" value="{{flavour}}" (click)="optionsFlavorFilter(flavour, indexPosition)" (change)="checkStatus1($event);" id="{{flavour}}" name="{{flavour}}"  />
+                <label for="{{flavour}}" [ngClass]="(isChecked && activatedRadio == indexPosition) ? 'active' : '' "><span><span></span></span>{{flavour}}</label>
               </li>
             </div>
           </ul>
@@ -33,10 +33,10 @@
           </div>
           <!-- <input type="hidden" id="previous_select"> -->
           <ul *ngIf="isShowFarms">
-            <div class="origins" *ngFor="let origin of originOptions">
+            <div class="origins" *ngFor="let origin of originOptions; let indexPosition2 = index">
               <li class="customRadio">
-                <input type="radio" value="{{origin}}" id="{{origin}}" (click)="optionsOriginFilter(origin)"  name="{{origin}}" />
-                <label for="{{origin}}"><span><span></span></span>{{origin}}</label>
+                <input type="radio" value="{{origin}}" id="{{origin}}" (click)="optionsOriginFilter(origin, indexPosition2)" (change)="checkStatus2($event);"  name="{{origin}}" />
+                <label for="{{origin}}" [ngClass]="(isChecked2 && activatedRadio2 == indexPosition2) ? 'active' : '' "><span><span></span></span>{{origin}}</label>
               </li>
             </div>
           </ul>

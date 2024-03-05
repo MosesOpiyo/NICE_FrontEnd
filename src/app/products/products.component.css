@@ -57,6 +57,12 @@
   color: #000;
 }
 
+.options .active,
+.origins .active {
+  color: #b9850b;
+  font-weight: bold;
+}
+
 .shop-component .product-item .product-details {
   display: flex;
   justify-content: space-between;

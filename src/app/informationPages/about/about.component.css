@@ -70,9 +70,22 @@
     color: #2f4d5a;
   }
 
-  .fa-chevron-up,
-  .fa-chevron-down {
+  .fa-plus,
+  .fa-minus {
     color: #0000008c;
+  }
+
+  .about-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .about-header p {
+    font-size: 1.3rem;
   }
 
   .expogallery-item,
@@ -143,6 +156,7 @@
     display: flex;
     gap: 1rem;
     padding: 8rem 1rem;
+    margin-bottom: 4rem;
   }
 
   .faq-container .faq-header {
@@ -167,12 +181,13 @@
   .faq-container .faq-header .faq-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
 
   .faq-container .faqs-accordion {
     width: 60%;
+    height: 600px;
   }
 
   .faq-container .faqs-accordion > * {
@@ -196,7 +211,7 @@
   }
 
   .accordion-label:hover {
-    background-color: #e5e5e5;
+    background-color: #e5e5e55c;
   }
 
   .accordion-content {
@@ -214,6 +229,15 @@
 
   .accordion-input:checked ~ .accordion-content { /*if input is checked target its content*/
     display: block;
+  }
+
+  .accordion-content a strong {
+    color: #0000ff;
+    transition: all 250ms ease-in-out9;
+  }
+
+  .accordion-content a strong:hover {
+    text-decoration: underline;
   }
 
   /* media queries */
@@ -240,12 +264,9 @@
       width: 100%;
     }
 
-    .faq-container .faq-header .faq-image {
-      height: auto;
-    }
-
     .faq-container .faqs-accordion {
       width: 100%;
+      height: auto;
     }
   }
 
