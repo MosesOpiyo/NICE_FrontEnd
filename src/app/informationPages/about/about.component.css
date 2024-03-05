@@ -23,7 +23,8 @@
     color: #67b0d1;
   }
 
-  :host ::ng-deep #header .navbar a:hover {
+  :host ::ng-deep #header .navbar a:hover,
+  :host ::ng-deep #header .navbar ul li button:hover {
     background-color: rgb(216 216 216 / 68%);
   }
   
@@ -46,7 +47,7 @@
   :host ::ng-deep #header.header-scrolled .navbar .about-link,
   :host ::ng-deep #header.header-scrolled .navbar .active:hover,
   :host ::ng-deep #header.header-scrolled .navbar .about-link {
-    background-color: #eccece;
+    background-color: #d8d8d8ad;
   }
 
   :host ::ng-deep #header .navbar .cart a:hover,

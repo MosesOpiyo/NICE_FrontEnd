@@ -35,7 +35,7 @@
 :host ::ng-deep #header.header-scrolled .navbar .shop,
 :host ::ng-deep #header.header-scrolled .navbar .active:hover,
 :host ::ng-deep #header.header-scrolled .navbar ul li button:hover {
-  background-color: #eccece;
+  background-color: #d8d8d8ad;
 }
 
 :host ::ng-deep #header .navbar .cart a:hover,
