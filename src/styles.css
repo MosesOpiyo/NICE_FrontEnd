@@ -2770,20 +2770,21 @@ opacity: .2;
       padding: .5rem;
       display: grid;
       width: 100%;
-      grid: auto / repeat(4, 1fr);
+      grid-template: auto / repeat(4, 1fr);
       justify-content: center;
       gap: .5rem;
     }
   
     .shop-component .product-card,
     .farmdetails-component .product-card {
-      height: 370px;
       width: 100%;
       margin-bottom: 1rem;
       box-shadow: 0 0 2px 1px #e6e6e6;
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      justify-content: space-between;
+      padding-bottom: 0.5rem
     }
   
     /* .shop-component .product-card .product-item > *,
@@ -2906,14 +2907,6 @@ opacity: .2;
       .shop-component .productlist-content,
       .farmdetails-component .productlist-content {
         grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 850px) {
-      .shop-component .product-card,
-      .farmdetails-component .product-card {
-        height: max-content;
-        padding-bottom: 0.5rem
       }
     }
   
