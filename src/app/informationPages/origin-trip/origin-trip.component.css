@@ -23,7 +23,7 @@
 :host ::ng-deep #header.header-scrolled .navbar .trip-link,
 :host ::ng-deep #header.header-scrolled .navbar .active:hover,
 :host ::ng-deep #header.header-scrolled .navbar .trip-link {
-  background-color: #eccece;
+  background-color: #d8d8d8ad;
 }
 
 :host ::ng-deep #header .navbar .dropdown ul a:hover {

@@ -67,9 +67,36 @@ input{
     border-bottom: 1px solid #737373;
 }
 
-@media (max-width: 600px) {
-    form .form-content {
-        grid-template-columns: 1fr;
+.growerhistory input {
+    min-height: 70px;
+}
+
+.production-history {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    grid-area: auto / 1 / auto / 3;
+    gap: 0 6px;
+}
+
+.production-history h3 {
+    grid-area: auto / 1 / auto / 3;
+}
+
+:host ::ng-deep ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+:host  ::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+@media (max-width: 700px) {
+    form .form-content,
+    .production-history {
+        display: flex;
+        flex-direction: column;
     }
 }
 

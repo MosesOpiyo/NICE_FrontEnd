@@ -147,42 +147,34 @@
               <mat-label>Availability e.g February - April</mat-label>
               <input matInput placeholder="Availability" formControlName="availability" required>
             </mat-form-field>
-          
-            <mat-form-field>
-              <mat-label>Location</mat-label>
-              <input matInput placeholder="Location" formControlName="location" required>
-            </mat-form-field>
-          
-            <mat-form-field>
-              <mat-label>Farm Area</mat-label>
-              <input matInput placeholder="Farm Area" formControlName="farm_area" type="number" required>
-            </mat-form-field>
-          
-          
-            <mat-form-field>
+
+            <mat-form-field class="extend growerhistory">
               <mat-label>Grower's History</mat-label>
               <input matInput placeholder="Grower's History" formControlName="grower_history" required>
             </mat-form-field>
 
-            <mat-form-field>
-              <mat-label>Production history(2019 - 2020)</mat-label>
-              <input matInput placeholder="(kgs of cherry)" formControlName="farm_area" type="number" required>
-            </mat-form-field>
-
-            <mat-form-field>
-              <mat-label>Production history(2020 - 2021)</mat-label>
-              <input matInput placeholder="(kgs of cherry)" formControlName="farm_area" type="number" required>
-            </mat-form-field>
-
-            <mat-form-field>
-              <mat-label>Production history(2021 - 2022)</mat-label>
-              <input matInput placeholder="(kgs of cherry)" formControlName="farm_area" type="number" required>
-            </mat-form-field>
-
-            <mat-form-field class="extend">
-              <mat-label>Production history(2022 - 2023)</mat-label>
-              <input matInput placeholder="(kgs of cherry)" formControlName="farm_area" type="number" required>
-            </mat-form-field>
+            <div class="production-history">
+              <h3 mat-subheader>Production history:</h3>
+              <mat-form-field>
+                <mat-label>2019 - 2020</mat-label>
+                <input matInput placeholder="(kgs of cherry)" formControlName="farm_area" type="number" required>
+              </mat-form-field>
+  
+              <mat-form-field>
+                <mat-label>2020 - 2021</mat-label>
+                <input matInput placeholder="(kgs of cherry)" formControlName="farm_area" type="number" required>
+              </mat-form-field>
+  
+              <mat-form-field>
+                <mat-label>2021 - 2022</mat-label>
+                <input matInput placeholder="(kgs of cherry)" formControlName="farm_area" type="number" required>
+              </mat-form-field>
+  
+              <mat-form-field>
+                <mat-label>2022 - 2023</mat-label>
+                <input matInput placeholder="(kgs of cherry)" formControlName="farm_area" type="number" required>
+              </mat-form-field>              
+            </div>
 
             <mat-selection-list #dryingmethod>
               <h3 mat-subheader>Select drying method:</h3>

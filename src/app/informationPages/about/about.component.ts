@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
   
-  isShowContent: boolean = true;
+  isShowContent: boolean;
   checkStatus1(event:any){
     // Check if radio button is checked
     if(event.target.checked == true){

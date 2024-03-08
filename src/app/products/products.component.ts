@@ -38,6 +38,22 @@ export class ProductsComponent implements OnInit {
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
+
+
+  isChecked: boolean = false;
+  checkStatus1(event:any) {
+    if(event.target.checked == true){
+      this.isChecked = true
+    }
+  }
+
+  isChecked2: boolean = false;
+  checkStatus2(event:any) {
+    if(event.target.checked == true){
+      this.isChecked2 = true
+    }
+  }
+
   
   // paginator
   onPageChange(page: number) {

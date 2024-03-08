@@ -111,6 +111,7 @@ export class NavbarComponent implements OnInit {
         this.productStore.productData()
         this.cartStore.data$.subscribe((data:any) =>{
           this.userCart = data['products']?.length
+          console.log(this.userCart)
         })
         this.authStore.data$.subscribe((data:any)=>{
           this.user = data['user']
