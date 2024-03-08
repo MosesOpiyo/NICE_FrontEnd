@@ -449,15 +449,15 @@
             <swiper-container slides-per-view=1 navigation="true" pagination="true" pagination-clickable="true"
                 loop="true" autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true"
                 autoplay-disable-on-interaction="false" space-between="10" class="mobile">
-                <swiper-slide class="slide-content">
+                <swiper-slide *ngFor="let product of popularProducts" class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}'>
+                        <a routerLink='/shop/{{product.product.name}}/{{product.id}}'>
                             <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[0].img}}' alt="package">
+                                <img src='{{cloudinaryUrl}}{{product.img}}' alt="package">
                             </div>
 
                             <div class="product-name">
-                                <p>{{popularProducts[0].product.name}}</p>
+                                <p>{{product.product.name}}</p>
 
                                 <div class="rating">
                                     <p><i class="fa-solid fa-star"></i>
@@ -474,218 +474,8 @@
                             </div>
 
                             <div class="product-details">
-                                <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
-                            </div>
-                        </a>
-
-                        <div class="latestadd-actions">
-                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                            </a>
-                            <a role="button" title="wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide-content">
-                    <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}'>
-                            <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[1].img}}' alt="package">
-                            </div>
-
-                            <div class="product-name">
-                                <p>{{popularProducts[1].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
-                            </div>
-                        </a>
-
-                        <div class="latestadd-actions">
-                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                            </a>
-                            <a role="button" title="wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide-content">
-                    <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}'>
-                            <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[2].img}}' alt="package">
-                            </div>
-
-                            <div class="product-name">
-                                <p>{{popularProducts[2].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
-                            </div>
-                        </a>
-
-                        <div class="latestadd-actions">
-                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                            </a>
-                            <a role="button" title="wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide-content">
-                    <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}'>
-                            <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[3].img}}' alt="package">
-                            </div>
-
-                            <div class="product-name">
-                                <p>{{popularProducts[3].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
-                            </div>
-                        </a>
-
-                        <div class="latestadd-actions">
-                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                            </a>
-                            <a role="button" title="wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide-content">
-                    <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}'>
-                            <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[4].img}}' alt="package">
-                            </div>
-
-                            <div class="product-name">
-                                <p>{{popularProducts[4].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
-                            </div>
-                        </a>
-
-                        <div class="latestadd-actions">
-                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                            </a>
-                            <a role="button" title="wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide-content">
-                    <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}'>
-                            <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[5].img}}' alt="package">
-                            </div>
-
-                            <div class="product-name">
-                                <p>{{popularProducts[5].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
+                                <p>Origin: {{product.product.origin | titlecase}}</p>
+                                <p>{{product.price | currency:'USD'}} / 12oz</p>
                             </div>
                         </a>
 
@@ -706,15 +496,15 @@
             <swiper-container slides-per-view=2 navigation="true" pagination="true" pagination-clickable="true"
                 loop="true" autoplay="true" autoplay-delay="3000" autoplay-pause-on-mouse-enter="true"
                 autoplay-disable-on-interaction="false" space-between="10" class="tablet">
-                <swiper-slide class="slide-content">
+                <swiper-slide *ngFor="let product of popularProducts" class="slide-content">
                     <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[0].product.name}}/{{popularProducts[0].id}}'>
+                        <a routerLink='/shop/{{product.product.name}}/{{product.id}}'>
                             <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[0].img}}' alt="package">
+                                <img src='{{cloudinaryUrl}}{{product.img}}' alt="package">
                             </div>
 
                             <div class="product-name">
-                                <p>{{popularProducts[0].product.name}}</p>
+                                <p>{{product.product.name}}</p>
 
                                 <div class="rating">
                                     <p><i class="fa-solid fa-star"></i>
@@ -731,218 +521,8 @@
                             </div>
 
                             <div class="product-details">
-                                <p>Origin: {{popularProducts[0].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[0].price | currency:'USD'}} / 12oz</p>
-                            </div>
-                        </a>
-
-                        <div class="latestadd-actions">
-                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                            </a>
-                            <a role="button" title="wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide-content">
-                    <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[1].product.name}}/{{popularProducts[1].id}}'>
-                            <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[1].img}}' alt="package">
-                            </div>
-
-                            <div class="product-name">
-                                <p>{{popularProducts[1].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[1].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[1].price | currency:'USD'}} / 12oz</p>
-                            </div>
-                        </a>
-
-                        <div class="latestadd-actions">
-                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                            </a>
-                            <a role="button" title="wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide-content">
-                    <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[2].product.name}}/{{popularProducts[2].id}}'>
-                            <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[2].img}}' alt="package">
-                            </div>
-
-                            <div class="product-name">
-                                <p>{{popularProducts[2].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[2].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[2].price | currency:'USD'}} / 12oz</p>
-                            </div>
-                        </a>
-
-                        <div class="latestadd-actions">
-                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                            </a>
-                            <a role="button" title="wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide-content">
-                    <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[3].product.name}}/{{popularProducts[3].id}}'>
-                            <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[3].img}}' alt="package">
-                            </div>
-
-                            <div class="product-name">
-                                <p>{{popularProducts[3].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[3].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[3].price | currency:'USD'}} / 12oz</p>
-                            </div>
-                        </a>
-
-                        <div class="latestadd-actions">
-                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                            </a>
-                            <a role="button" title="wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide-content">
-                    <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[4].product.name}}/{{popularProducts[4].id}}'>
-                            <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[4].img}}' alt="package">
-                            </div>
-
-                            <div class="product-name">
-                                <p>{{popularProducts[4].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[4].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[4].price | currency:'USD'}} / 12oz</p>
-                            </div>
-                        </a>
-
-                        <div class="latestadd-actions">
-                            <a role="button" (click)="showAddtocartDialog('500ms', '500ms')">
-                                Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
-                            </a>
-                            <a role="button" title="wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide-content">
-                    <div class="product-item product1">
-                        <a routerLink='/shop/{{popularProducts[5].product.name}}/{{popularProducts[5].id}}'>
-                            <div class="product-image">
-                                <img src='{{cloudinaryUrl}}{{popularProducts[5].img}}' alt="package">
-                            </div>
-
-                            <div class="product-name">
-                                <p>{{popularProducts[5].product.name}}</p>
-
-                                <div class="rating">
-                                    <p><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="farm-name">
-                                <p>Riakiania Coffee Factory</p>
-                            </div>
-
-                            <div class="product-details">
-                                <p>Origin: {{popularProducts[5].product.origin | titlecase}}</p>
-                                <p>{{popularProducts[5].price | currency:'USD'}} / 12oz</p>
+                                <p>Origin: {{product.product.origin | titlecase}}</p>
+                                <p>{{product.price | currency:'USD'}} / 12oz</p>
                             </div>
                         </a>
 

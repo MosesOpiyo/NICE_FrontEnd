@@ -186,62 +186,43 @@
 
             <mat-selection-list #dryingmethod>
               <h3 mat-subheader>Select drying method:</h3>
-              <div class="dryingmethod">
-                <mat-list-option checkboxPosition="before" value="organic">Sun drying</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="inorganic">Mechanical drying</mat-list-option>
+              <div *ngFor="let method of dryingMethods" class="dryingmethod">
+                <mat-list-option checkboxPosition="before" (click)="selectDryingMethods(method)" [value]="method">{{method}}</mat-list-option>
               </div>
             </mat-selection-list>
 
             <mat-selection-list #farmingmethod>
               <h3 mat-subheader>Select farming method:</h3>
-              <div class="farmingmethod">
-                <mat-list-option checkboxPosition="before" value="organic">Organic</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="inorganic">Inorganic</mat-list-option>
+              <div *ngFor="let method of farmingMethods" class="farmingmethod">
+                <mat-list-option checkboxPosition="before" (click)="selectFarmingMethods(method)" [value]="method">{{method}}</mat-list-option>
               </div>
             </mat-selection-list>
 
             <mat-selection-list #species>
               <h3 mat-subheader>Select species:</h3>
-              <div class="species">
-                <mat-list-option checkboxPosition="before" value="arabica">Arabica</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="robusta">Robusta</mat-list-option>
+              <div *ngFor="let one of speciesOptions" class="species">
+                <mat-list-option checkboxPosition="before" (click)="selectSpecies(one)" [value]="one">{{one}}</mat-list-option>
               </div>
             </mat-selection-list>
 
             <mat-selection-list #processing>
               <h3 mat-subheader>Select processing method:</h3>
-              <div class="processing">
-                <mat-list-option togglePosition="before" value="fully">Fully washed</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="partially">Partially washed</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="natural">Natural</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="anaerobic">Anaerobic fermentation</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="carbonic">Carbonic maceration</mat-list-option>
+              <div *ngFor="let method of processingMethods" class="processing">
+                <mat-list-option togglePosition="before" (click)="selectProcessingMethods(method)" [value]="method">{{method}}</mat-list-option>
               </div>
             </mat-selection-list>
 
             <mat-selection-list #variety>
               <h3 mat-subheader>Select coffee variety:</h3>
-              <div class="variety-list">
-                <mat-list-option checkboxPosition="before" value="ruiruII">Ruiru II</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="SL-28">SL-28</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="SL-34">SL-34</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="grafted">Grafted</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="batian">Batian</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="bluemountain">Blue Mountain</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="geisha">Geisha</mat-list-option>
+              <div *ngFor="let variety of varieties" class="variety-list">
+                <mat-list-option checkboxPosition="before"  (click)="selectVarieties(variety)" [value]="variety">{{variety}}</mat-list-option>
               </div>
             </mat-selection-list>
   
             <mat-selection-list #certification>
               <h3 mat-subheader>Select certification:</h3>
-              <div class="certification-list">
-                <mat-list-option checkboxPosition="before" value="fairtrade">Fairtrade</mat-list-option>
-                <mat-list-option checkboxPosition="before" value=">rainforestalliance">Rainforest Alliance</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="UTZ">UTZ</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="4C">4C</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="organic">Organic</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="birdfriendly">Bird Friendly</mat-list-option>
-                <mat-list-option checkboxPosition="before" value="cafepractices">Cafe Practices</mat-list-option>
+              <div *ngFor="let type of certificationTypes" class="certification-list">
+                <mat-list-option checkboxPosition="before" (click)="selectCertificationType(type)" [value]="type">{{type}}</mat-list-option>
               </div>
             </mat-selection-list>
           </div>

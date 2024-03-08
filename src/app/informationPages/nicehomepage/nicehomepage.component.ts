@@ -266,11 +266,16 @@ export class NicehomepageComponent implements OnInit {
     this.product.data$.subscribe((res:any)=>{
       if(res == ""){
         this.product.productData()
-        this.product.data$.subscribe((res:any)=>{})
+        this.product.data$.subscribe((res:any)=>{
+          this.popularProducts = res.slice(0,6)
+          this.products = res.slice(0,8)
+          console.log(res)
+        })
       }
       else {
         this.popularProducts = res.slice(0,6)
         this.products = res.slice(0,8)
+        console.log(this.popularProducts)
       }
 
       this.products.forEach((product:any) => {

@@ -29,7 +29,6 @@ constructor(private _formBuilder: FormBuilder,private farmer:FarmerprofileServic
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
 
-
 county:any
 country:any
 wet_mill_name:any
@@ -55,7 +54,19 @@ availability:any
 grower_history:any
 location:any
 farm_area:any
+selectedSpecies:  string[] = [];
+selectedVarieties: string[] = [];
+selectedFarmingMethods: string[] = [];
+selectedProcessingMethods: string[] = [];
+selectedDryingMethods: string[] = [];
+selectedCertificationTypes: string[] = [];
 
+speciesOptions: string[] = ['arabica','robusta'];
+varieties: string[] = ['Ruiru II', 'SL-28', 'SL-34', 'Grafted', 'Batian', 'Blue Mountain', 'Geisha'];
+farmingMethods: string[] = ['Organic', 'Inorganic'];
+processingMethods: string[] = ['Fully', 'washed', 'partially washed', 'Natural', 'Anaerobic', 'Fermentation', 'Carbonic Maceration'];
+dryingMethods: string[] = ['Sun drying', 'Mechanical drying'];
+certificationTypes: string[] = ['Fairtrade','Rainforest Alliance','UTZ','4C','Organic','Bird Friendly','Cafe Practices'];
 isEstateFarmer: boolean
 
 ngOnInit(): void {
@@ -78,7 +89,6 @@ ngOnInit(): void {
     annual_rainfall_amount: ['', Validators.required],
     coffee_variety: ['', Validators.required],
     farming_method:['',Validators.required],
-    certification_type: ['', Validators.required],
     soil_type: ['',Validators.required],
     processing_method: ['',Validators.required],
     cupping_notes: ['',Validators.required],
@@ -107,17 +117,20 @@ submit(){
       altitude: new FormControl(this.secondFormGroup.controls['altitude'].value),
       harvest_season: new FormControl(this.secondFormGroup.controls['harvest_season'].value),
       annual_rainfall_amount: new FormControl(this.secondFormGroup.controls['annual_rainfall_amount'].value),
-      coffee_variety: new FormControl(this.secondFormGroup.controls['coffee_variety'].value),
-      farming_method: new FormControl(this.secondFormGroup.controls['farming_method'].value),
-      certification_type: new FormControl(this.secondFormGroup.controls['certification_type'].value),
       soil_type: new FormControl(this.secondFormGroup.controls['soil_type'].value),
-      processing_method: new FormControl(this.secondFormGroup.controls['processing_method'].value),
       cupping_notes: new FormControl(this.secondFormGroup.controls['cupping_notes'].value),
       availability: new FormControl(this.secondFormGroup.controls['availability'].value),
       grower_history: new FormControl(this.secondFormGroup.controls['grower_history'].value),
       location: new FormControl(this.secondFormGroup.controls['location'].value),
       farm_area: new FormControl(this.secondFormGroup.controls['farm_area'].value),
+      species: new FormControl(this.selectedSpecies.toString()),
+      varieties: new FormControl(this.selectedVarieties.toString()),
+      farming_method: new FormControl(this.selectedFarmingMethods.toString()),
+      processing_method: new FormControl(this.selectedProcessingMethods.toString()),
+      drying_method: new FormControl(this.selectedDryingMethods.toString()),
+      certification_type: new FormControl(this.selectedCertificationTypes.toString()),
     });
+    console.log(form.value)
     this.dialog.close()
     this.farmer.addProfileDetails(form.value)
   }
@@ -138,21 +151,103 @@ submit(){
       altitude: new FormControl(this.secondFormGroup.controls['altitude'].value),
       harvest_season: new FormControl(this.secondFormGroup.controls['harvest_season'].value),
       annual_rainfall_amount: new FormControl(this.secondFormGroup.controls['annual_rainfall_amount'].value),
-      coffee_variety: new FormControl(this.secondFormGroup.controls['coffee_variety'].value),
-      farming_method: new FormControl(this.secondFormGroup.controls['farming_method'].value),
-      certification_type: new FormControl(this.secondFormGroup.controls['certification_type'].value),
       soil_type: new FormControl(this.secondFormGroup.controls['soil_type'].value),
-      processing_method: new FormControl(this.secondFormGroup.controls['processing_method'].value),
       cupping_notes: new FormControl(this.secondFormGroup.controls['cupping_notes'].value),
       availability: new FormControl(this.secondFormGroup.controls['availability'].value),
       grower_history: new FormControl(this.secondFormGroup.controls['grower_history'].value),
       location: new FormControl(this.secondFormGroup.controls['location'].value),
       farm_area: new FormControl(this.secondFormGroup.controls['farm_area'].value),
+      species: new FormControl(this.selectedSpecies.toString()),
+      varieties: new FormControl(this.selectedVarieties.toString()),
+      farming_method: new FormControl(this.selectedFarmingMethods.toString()),
+      processing_method: new FormControl(this.selectedProcessingMethods.toString()),
+      drying_method: new FormControl(this.selectedDryingMethods.toString()),
+      certification_type: new FormControl(this.selectedCertificationTypes.toString()),
     });
+    console.log(form.value)
     this.dialog.close()
     this.farmer.addProfileDetails(form.value)
   }
 }
+
+selectSpecies(species:string){
+  if(!this.selectedSpecies.includes(species)){
+    this.selectedSpecies.push(species)
+    console.log(this.selectedSpecies)
+  }else{
+    const index = this.selectedSpecies.indexOf(species);
+      if (index > -1) {
+        this.selectedSpecies.splice(index, 1);
+      }
+    console.log(this.selectedSpecies)
+  }
+}
+
+selectVarieties(variety:string){
+  if(!this.selectedVarieties.includes(variety)){
+    this.selectedVarieties.push(variety)
+    console.log(this.selectedVarieties)
+  }else{
+    const index = this.selectedVarieties.indexOf(variety);
+      if (index > -1) {
+        this.selectedVarieties.splice(index, 1);
+      }
+    console.log(this.selectedVarieties)
+  }
+}
+
+selectFarmingMethods(method:string){
+  if(!this.selectedFarmingMethods.includes(method)){
+    this.selectedFarmingMethods.push(method)
+    console.log(this.selectedFarmingMethods)
+  }else{
+    const index = this.selectedFarmingMethods.indexOf(method);
+      if (index > -1) {
+        this.selectedFarmingMethods.splice(index, 1);
+      }
+    console.log(this.selectedFarmingMethods)
+  }
+}
+
+selectProcessingMethods(method:string){
+  if(!this.selectedProcessingMethods.includes(method)){
+    this.selectedProcessingMethods.push(method)
+    console.log(this.selectedProcessingMethods)
+  }else{
+    const index = this.selectedProcessingMethods.indexOf(method);
+      if (index > -1) {
+        this.selectedProcessingMethods.splice(index, 1);
+      }
+    console.log(this.selectedProcessingMethods)
+  }
+}
+
+selectDryingMethods(method:string){
+  if(!this.selectedDryingMethods.includes(method)){
+    this.selectedDryingMethods.push(method)
+    console.log(this.selectedDryingMethods)
+  }else{
+    const index = this.selectedDryingMethods.indexOf(method);
+      if (index > -1) {
+        this.selectedDryingMethods.splice(index, 1);
+      }
+    console.log(this.selectedDryingMethods)
+  }
+}
+
+selectCertificationType(method:string){
+  if(!this.selectedCertificationTypes.includes(method)){
+    this.selectedCertificationTypes.push(method)
+    console.log(this.selectedCertificationTypes)
+  }else{
+    const index = this.selectedCertificationTypes.indexOf(method);
+      if (index > -1) {
+        this.selectedCertificationTypes.splice(index, 1);
+      }
+    console.log(this.selectedCertificationTypes)
+  }
+}
+
 
 toggleIsEstateFarmer() {
   if (this.activatedTabIndex == 0) {
