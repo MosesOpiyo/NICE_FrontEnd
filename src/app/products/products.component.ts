@@ -87,47 +87,23 @@ export class ProductsComponent implements OnInit {
       return item.product.name.indexOf(data.toUpperCase()) > -1
     })
   }
-  optionsFlavorFilter(option:string){
-    if(option == 'All'){
-      this.filteredProducts = null
-    }else{
-      if(this.filteredProducts == null){
-        this.filteredProducts = this.products.filter(item => {
-          return item.product.cup_notes.indexOf(option) > -1
-        })
-      }
-      else{
-        this.filteredProducts = this.filteredProducts.filter(item => {
-          return item.product.cup_notes.indexOf(option) > -1
-        })
-        if(this.filteredProducts.length == 0){
-          this.filteredProducts = this.products.filter(item => {
-            return item.product.cup_notes.indexOf(option) > -1
-          })
-        }
-      }
-    }
-    
+
+  activatedRadio: number = 0;
+  optionsFlavorFilter(option:string, index:number){
+    this.filteredProducts = this.products.filter(item => {
+      return item.product.cup_notes.indexOf(option) > -1
+    })
+    //this.isChecked2 = false;
+    this.activatedRadio = index;
   }
-  optionsOriginFilter(option:string){
-    if(option == 'All'){
-      this.filteredProducts = null
-    }else{
-      if(this.filteredProducts == null){
-        this.filteredProducts = this.products.filter(item => {
-          return item.product.origin.indexOf(option) > -1
-        })
-      }else{
-        this.filteredProducts = this.filteredProducts.filter(item => {
-          return item.product.origin.indexOf(option) > -1
-        })
-        if(this.filteredProducts.length == 0){
-          this.filteredProducts = this.products.filter(item => {
-            return item.product.origin.indexOf(option) > -1
-          })
-        }
-      }
-    }
+
+  activatedRadio2: number = 0;
+  optionsOriginFilter(option:string, index:number){
+    this.filteredProducts = this.products.filter(item => {
+      return item.product.origin.indexOf(option) > -1
+    })
+    //this.isChecked = false;
+    this.activatedRadio2 = index;
   }
   
   //Variety sidenav
