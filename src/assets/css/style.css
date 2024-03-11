@@ -2301,15 +2301,16 @@
       background-image: url("../img/about/about.webp");
       background-position: center;
       background-size: cover;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 400px;
+  }
+
+  .about-component .about-header h2 {
+    margin-top: 2rem;
   }
   
   /* OUR STORY */
   .about-component .our-story {
-      margin-top: 4rem;
+      margin-block: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;

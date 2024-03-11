@@ -1119,7 +1119,8 @@ opacity: .2;
       margin-bottom: 0;
     }
 
-    .hero-content .hero-button{
+    .hero-content .hero-button,
+    .hero .one .hero-content .hero-button {
       display: none;
     }
 
