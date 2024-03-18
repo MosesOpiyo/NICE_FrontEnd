@@ -11,6 +11,7 @@ import { CartService } from '../Service/Cart/cart.service';
 import { CartStoreService } from '../Store/Cart/cart-store.service';
 import { ProductStoreService } from '../Store/Products/product-store.service';
 import { TimelinecontentComponent } from '../timelinecontent/timelinecontent.component';
+import { StoriesStoreService } from '../dash-board/Stores/Stories/stories-store.service';
 
 
 @Component({
@@ -45,7 +46,7 @@ export class ProductDetailsComponent implements OnInit {
   size: any;
 
   myScriptElement: HTMLScriptElement;
-  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private store:ProductStoreService,private cart:CartService,private cartStore:CartStoreService){
+  constructor(private snackBar:MatSnackBar,private dialog: MatDialog,private service:AuthenticationService,private route:Router,private idRouter:ActivatedRoute,private product:ProductsService,private store:ProductStoreService,private cart:CartService,private cartStore:CartStoreService,private story:StoriesStoreService){
      this.myScriptElement = document.createElement("script");
      this.myScriptElement.src = "./assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
@@ -341,12 +342,16 @@ openFarmDetails() {
    
  }
  ngOnInit(): void {
-  
   this.idRouter.params.subscribe(params => {
    this.getProduct(params['id'])
    this.getSession()
   });
-  }
+  this.story.data$.subscribe((response:any) => {
+    if(response){
 
-  
+    }else{
+      this.story.storeStoriesData()
+    }
+  })
+  }
 }

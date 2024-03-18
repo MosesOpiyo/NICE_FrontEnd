@@ -65,10 +65,10 @@
                 </div>
 
                 <div class="incrdecr">
-                    <div (click)=decrement() class="decrement">-</div>
+                    <button type="button" (click)=decrement() class="decrement"><span>&minus;</span></button>
                     <input type="number" name="quantity" id="counting" [(ngModel)]="number_value"
                         (change)="check($event)" title="input-count">
-                    <div (click)=increment() class="increment">+</div>
+                    <button type="button" (click)=increment() class="increment"><span>&plus;</span></button>
                 </div>
 
                 <div class="submit-btn">
@@ -138,10 +138,10 @@
                 </div>
 
                 <div class="incrdecr">
-                    <div (click)=decrement2() class="decrement">-</div>
+                    <button type="button" (click)=decrement2() class="decrement"><span>&minus;</span></button>
                     <input type="number" name="green-quantity" id="green-counting" [(ngModel)]="number_value2"
                         (change)="check2($event)" title="input-count">
-                    <div (click)=increment2() class="increment">+</div>
+                    <button type="button" (click)=increment2() class="increment"><span>&plus;</span></button>
                 </div>
 
                 <div class="submit-btn">

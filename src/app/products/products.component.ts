@@ -38,6 +38,22 @@ export class ProductsComponent implements OnInit {
      this.myScriptElement.src = "../../assets/js/main.js";
      document.body.appendChild(this.myScriptElement);
   }
+
+
+  isChecked: boolean = false;
+  checkStatus1(event:any) {
+    if(event.target.checked == true){
+      this.isChecked = true
+    }
+  }
+
+  isChecked2: boolean = false;
+  checkStatus2(event:any) {
+    if(event.target.checked == true){
+      this.isChecked2 = true
+    }
+  }
+
   
   // paginator
   onPageChange(page: number) {
@@ -45,6 +61,9 @@ export class ProductsComponent implements OnInit {
     window.scrollTo(0, 0);
   }
   getFlavourOptions(){
+    if(!this.flavourOptions.includes('All')){
+      this.flavourOptions.push('All')
+    }
     this.products.forEach((product:any) => {
       if(!this.flavourOptions.includes(product.product.cup_notes)){
         this.flavourOptions.push(product.product.cup_notes)
@@ -53,6 +72,9 @@ export class ProductsComponent implements OnInit {
   }
 
   getOriginrOptions(){
+    if(!this.originOptions.includes('All')){
+      this.originOptions.push('All')
+    }
     this.products.forEach((product:any) => {
       if(!this.originOptions.includes(product.product.origin)){
         this.originOptions.push(product.product.origin)
@@ -61,19 +83,27 @@ export class ProductsComponent implements OnInit {
   }
   
   handleDataFromChild(data: string) {
-      this.filteredProducts = this.products.filter(item => {
-        return item.product.name.indexOf(data.toUpperCase()) > -1
-      })
+    this.filteredProducts = this.products.filter(item => {
+      return item.product.name.indexOf(data.toUpperCase()) > -1
+    })
   }
-  optionsFlavorFilter(option:string){
+
+  activatedRadio: number = 0;
+  optionsFlavorFilter(option:string, index:number){
     this.filteredProducts = this.products.filter(item => {
       return item.product.cup_notes.indexOf(option) > -1
     })
+    //this.isChecked2 = false;
+    this.activatedRadio = index;
   }
-  optionsOriginFilter(option:string){
+
+  activatedRadio2: number = 0;
+  optionsOriginFilter(option:string, index:number){
     this.filteredProducts = this.products.filter(item => {
       return item.product.origin.indexOf(option) > -1
     })
+    //this.isChecked = false;
+    this.activatedRadio2 = index;
   }
   
   //Variety sidenav
@@ -146,8 +176,7 @@ export class ProductsComponent implements OnInit {
  
 
  addToWishList(id:any,item:any){
-  const session = localStorage.getItem("session")
-  this.cart.addToWishlist(id,session).subscribe((res:any) => {
+  this.cart.addToWishlist(id).subscribe((res:any) => {
     this.snackbar.open(`${item.product.name} has been added to your wishlist.`, 'Close', {
       duration: 3000,
       panelClass: ['green-snackbar'],

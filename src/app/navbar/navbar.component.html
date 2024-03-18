@@ -33,29 +33,29 @@
             <ul class="navbar-links">
                 <li><a class="nav-link active" routerLink="/">Home</a></li>
                 <li><a class="nav-link shop" routerLink="/shop">Shop Coffee</a></li>
-                <li class="dropdown"><a class="expo-link" routerLink="/Expo"><span>Expo</span> <i class="fa-solid fa-chevron-down"></i></a>
+                <!-- <li class="dropdown"><a class="expo-link" routerLink="/Expo"><span>Expo</span> <i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
                         <li><a routerLink="/Expo">NICE Expo</a></li>
                         <li><a href="Expo#sponsor">Sponsors</a></li>
                         <li><a href="Expo#exhibitor">Exhibitors</a></li>
                         <li><a (click)="showRegisterDialog()" class="register-expo">Register for NICE Expo</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="dropdown"><a class="trip-link" routerLink="/Origin-Trip"><span>Origin Trip</span><i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
                         <li><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
                         <li><a href="Origin-Trip#tips">Origin Trip Tips</a></li>
-                        <li><a href="Origin-Trip#itinerary">Itinerary</a></li>
+                        <!--<li><a href="Origin-Trip#itinerary">Itinerary</a></li>-->
                         <li><a (click)="showTripRegisterDialog()" class="register-trip">Register for Origin Trip</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a routerLink="/about" class="about-link"><span>About Us</span><i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
                         <li><a routerLink="/about">About Us</a></li>
-                        <li><a href="about#how-it-works">How NiceDirect Works</a></li>
-                        <li><a href="about#partners">Partners</a></li>
-                        <li><a href="about#gallery">Gallery</a></li>
+                        <li><a href="about#how-it-works">How It Works</a></li>
+                        <!--<li><a href="about#partners">Partners</a></li>-->
                         <li><a href="about#faqs">FAQ</a></li>
+                        <li><a href="about#gallery">Gallery</a></li>
                     </ul>
                 </li>
                 <li>
@@ -85,7 +85,7 @@
                 <li (click)="toggleMenu()"><a class="nav-link active" routerLink="/">Home</a></li>
                 <li (click)="toggleMenu()"><a class="nav-link shop" routerLink="/shop">Shop Coffee</a></li>
 
-                <li (click)=toggleDivOn() class="expo dropdown-header"><span>Expo</span><i class="fa-solid fa-chevron-down"></i></li>
+                <!-- <li (click)=toggleDivOn() class="expo dropdown-header"><span>Expo</span><i class="fa-solid fa-chevron-down"></i></li>
                 <div *ngIf="isShowDiv" class="dropdown">
                     <ul>
                         <li (click)="toggleMenu()"><a routerLink="/Expo">NICE Expo</a></li>
@@ -93,14 +93,14 @@
                         <li (click)="toggleMenu()"><a href="Expo#exhibitor">Exhibitors</a></li>
                         <li (click)="toggleMenu()"><a (click)="showRegisterDialog()" class="register-expo">Register for NICE Expo</a></li>
                     </ul>
-                </div>
+                </div> -->
 
                 <li (click)=toggleDivOn2() class="trip-link dropdown-header"><span> Origin Trip</span><i class="fa-solid fa-chevron-down"></i></li>
                 <div *ngIf="isShowDiv2" class="dropdown">
                     <ul>
                         <li (click)="toggleMenu()"><a routerLink="/Origin-Trip">Nyeri Origin Trip</a></li>
                         <li (click)="toggleMenu()"><a href="Origin-Trip#tips">Origin Trip Tips</a></li>
-                        <li (click)="toggleMenu()"><a href="Origin-Trip#itinerary">Itinerary</a></li>
+                        <!--<li (click)="toggleMenu()"><a href="Origin-Trip#itinerary">Itinerary</a></li>-->
                         <li (click)="toggleMenu()"><a (click)="showTripRegisterDialog()" class="register-trip">Register for Origin Trip</a></li>
                     </ul>
                 </div>
@@ -109,10 +109,10 @@
                 <div *ngIf="isShowDiv3" class="dropdown">
                     <ul>
                         <li (click)="toggleMenu()"><a routerLink="/about">About Us</a></li>
-                        <li (click)="toggleMenu()"><a href="about#how-it-works">How NiceDirect Works</a></li>
-                        <li (click)="toggleMenu()"><a href="about#partners">Partners</a></li>
-                        <li (click)="toggleMenu()"><a href="about#gallery">Gallery</a></li>
+                        <li (click)="toggleMenu()"><a href="about#how-it-works">How It Works</a></li>
+                        <!--<li (click)="toggleMenu()"><a href="about#partners">Partners</a></li>-->
                         <li (click)="toggleMenu()"><a href="about#faqs">FAQ</a></li>
+                        <li (click)="toggleMenu()"><a href="about#gallery">Gallery</a></li>
                     </ul>
                 </div>
                 <li (click)="toggleMenu()"><a class="nav-link sell" (click)="showFarmerSignUpDialog()">Sell Coffee</a></li>

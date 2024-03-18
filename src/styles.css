@@ -9,6 +9,10 @@
   font-family: Outfit;
 }
 
+span.star {
+  color: #ffa500;
+}
+
 p, dl, ol, ul {
   margin-top: 0;
   margin-bottom: 0;
@@ -206,7 +210,7 @@ opacity: .2;
   #header.header-scrolled .navbar .active,
   #header.header-scrolled .navbar .active:focus,
   #header.header-scrolled .navbar li:hover>a {
-    background-color: #eccece;
+    background-color: #d8d8d8ad;
   }
 
   #header.header-scrolled .navbar .cart-icon li:hover a {
@@ -347,7 +351,7 @@ opacity: .2;
   }
 
   #header.header-scrolled .navbar ul li button:hover {
-    background-color: #eccece;
+    background-color: #d8d8d8ad;
   }
 
   .navbar li.cart:hover>a {
@@ -859,6 +863,9 @@ opacity: .2;
     width: 35%;
     position: relative;
     right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   /* .hero .swiper-slide.two .slide-header .hero-content {
@@ -876,9 +883,6 @@ opacity: .2;
   .hero .swiper-slide.three .slide-header .hero-content {
     width: 40%;
     right: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
     padding-left: 5rem;
   }
 
@@ -899,17 +903,8 @@ opacity: .2;
   #hero .hero-content h2 {
     font-size: 50px;
     line-height: 3rem;
-    margin-bottom: 25px;
     font-weight: 400;
     color: #000000;
-  }
-
-  #hero .one h1 {
-    margin-bottom: 40px;
-  }
-
-  #hero .hero-content h2 {
-    margin-block: 25px;
   }
 
   #hero p {
@@ -1011,6 +1006,12 @@ opacity: .2;
     height: 300px;
   }
 
+  #hero .hero-content p {
+    margin-bottom: 0;
+    color: #212529;
+  }
+
+  .hero .one .hero-content .hero-button,
   .hero .two .hero-content .hero-button,
   .hero .three .hero-content .hero-button {
     display: block;
@@ -1424,7 +1425,7 @@ opacity: .2;
     background-repeat: no-repeat;
     transition: all .7s ease;
     transform: scale(1.3) rotate(3deg);
-    background-color: #888;
+    background-color: #8888889c;
     background-blend-mode: multiply;
   }
 
@@ -1529,14 +1530,24 @@ opacity: .2;
   
   .latest-container .latest-products .product-item {
     width: 100%;
-    height: 400px;
     box-shadow: 0 0 2px 1px #e6e6e6;
     border-radius: 5px;
     transition: all 500ms ease-in-out;
+    gap: 5px;
   }
 
-  .latest-container .latest-products .product1:hover {
-    height: 400px;
+  .latest-container .latest-products .product-item,
+  .product-item a.shopitem-info,
+  .product-item a.shopitem-info .products-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  .product-item a.shopitem-info .products-info {
+    gap: 10px;
+    padding-inline: 5px;
   }
 
   .latest-products .product-item .product-image {
@@ -1578,10 +1589,17 @@ opacity: .2;
   }
 
   .latest-products .product-name,
-  .latest-products .product-details {
-    font-size: 1.1rem;
+  .latest-products .product-details,
+  .latest-products .farm-name {
+    /*font-size: 1.1rem;*/
     color: #101020;
-    padding: .5rem;
+  }
+
+  .popular-container .product-details,
+  .latest-products .product-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .product-item .latestadd-actions {
@@ -1592,6 +1610,10 @@ opacity: .2;
     opacity: 0;
     transition: visibility 0s linear 0.5s,
                 opacity 0.5s linear;
+  }
+
+  .latest-products .product-item .latestadd-actions {
+    margin-bottom: 5px;
   }
 
   .latest-container .latest-products .product1:hover .latestadd-actions {
@@ -1641,10 +1663,6 @@ opacity: .2;
     .product-item .latestadd-actions {
       visibility: visible;
       opacity: 1;
-    }
-
-    .latest-container .latest-products .product-item {
-      height: 400px;
     }
   }
 
@@ -1754,15 +1772,14 @@ opacity: .2;
 
   .modal-contents .product-form .roasted,
   .product-component .product-form .roasted {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   @media (max-width: 500px) {
     .modal-contents .product-form .roasted,
-      .product-component .product-form .roasted {
-        padding: 1rem;
+    .product-component .product-form .roasted {
         padding-inline: .5rem;
-      }
+    }
   }
 
   .modal-contents .product-form .roasted form,
@@ -1820,25 +1837,32 @@ opacity: .2;
     display: flex;
     align-items: center;
     width: max-content;
+    gap: 0.2rem;
   }
 
   /* .product-container is in the individual product component  */
-  .modal-contents .product-form .roasted .incrdecr div,
-  .modal-contents .product-form .green .incrdecr div,
-  .product-container .incrdecr div { 
-    background-color: rgb(197, 188, 188);
-    padding: .2rem .3rem;
-    color: #000000;
-    padding-inline: 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    cursor: pointer;
+  .modal-contents .product-form .roasted .incrdecr button,
+  .modal-contents .product-form .green .incrdecr button,
+  .product-container .incrdecr button { 
+    border: 1px solid #00000047;
+    background-color: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    color: black;
   }
 
-  .incrdecr span {
+  .modal-contents .product-form .roasted .incrdecr button span,
+  .modal-contents .product-form .green .incrdecr button span,
+  .product-container .incrdecr button span {
     font-weight: bold;
     font-size: 1.2rem;
-    color: #fff;
+    color: #000000;
   }
 
   .submit-btn .buy {
@@ -1857,11 +1881,7 @@ opacity: .2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 2rem;
-  }
-
-  .modal-contents .product-form .green {
-    padding: 1rem .2rem;
+    padding: 1rem;
   }
 
   .modal-contents .product-form .green .packaging,
@@ -2023,20 +2043,18 @@ opacity: .2;
   .popular-container {
     padding: .5rem;
     margin-bottom: 4rem;
-
-    height: 550px;
+    height: 490px;
     width: 96%;
     margin-inline: auto;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-
     gap: 1rem;
   }
 
   .popular-container .product-name {
-    margin-top: 1rem;
+    margin-top: .5rem;
   }
 
   .popular-container .product-name i {
@@ -2046,8 +2064,6 @@ opacity: .2;
   .popular-container .product-name .name,
   .popular-container .product-details {
     text-align: center;
-    font-size: 1.1rem;
-    padding: .5rem;
   }
 
   .popular-header {
@@ -2195,6 +2211,10 @@ opacity: .2;
   @media (max-width: 320px) {
     .popular-header {
       width: 90%;
+    }
+
+    .modal-contents .product-form .roasted .incrdecr {
+      flex-direction: column;
     }
   }
 
@@ -2750,20 +2770,21 @@ opacity: .2;
       padding: .5rem;
       display: grid;
       width: 100%;
-      grid: auto / repeat(4, 1fr);
+      grid-template: auto / repeat(4, 1fr);
       justify-content: center;
       gap: .5rem;
     }
   
     .shop-component .product-card,
     .farmdetails-component .product-card {
-      height: 370px;
       width: 100%;
       margin-bottom: 1rem;
       box-shadow: 0 0 2px 1px #e6e6e6;
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      justify-content: space-between;
+      padding-bottom: 0.5rem
     }
   
     /* .shop-component .product-card .product-item > *,
@@ -2798,7 +2819,8 @@ opacity: .2;
     }
 
     .shop-component .product-item .product-name .name p,
-    .farmdetails-component .product-item .product-name .name p {
+    .farmdetails-component .product-item .product-name .name p,
+    .product-item a.shopitem-info .products-info .product-name .name p {
       text-transform: uppercase;
       font-weight: bold;
       font-size: 1.5rem;
@@ -2830,7 +2852,8 @@ opacity: .2;
     }
   
     .shop-component .product-name,
-    .farmdetails-component .product-name {
+    .farmdetails-component .product-name,
+    .latest-products .product-name {
       display: flex;
       justify-content: space-between;
       flex-direction: column;
@@ -2884,14 +2907,6 @@ opacity: .2;
       .shop-component .productlist-content,
       .farmdetails-component .productlist-content {
         grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 850px) {
-      .shop-component .product-card,
-      .farmdetails-component .product-card {
-        height: max-content;
-        padding-bottom: 0.5rem
       }
     }
   
@@ -3064,6 +3079,7 @@ opacity: .2;
 
   .product-component .product-container .product-detail > * {
     margin-bottom: .2rem;
+    font-weight: 400;
   }
 
   .product-component .product-alldetails {
@@ -3099,7 +3115,6 @@ opacity: .2;
 
   .product-component .product-form .roasted,
   .product-component .product-form .green {
-    padding-block: 2rem;
     border: 1px solid #00000017;
     border-radius: .5rem;
     height: 395px;

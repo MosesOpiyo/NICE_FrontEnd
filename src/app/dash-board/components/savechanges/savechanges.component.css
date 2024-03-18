@@ -38,6 +38,12 @@
     padding-inline: .5rem;
 }
 
+.changes .form-controls.select input {
+    width: auto;
+    height: 20px;
+    width: 20px;
+}
+
 /* input animations */
 .changes .form-controls {
     position: relative;
@@ -50,6 +56,15 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
+}
+
+.changes .form-controls.select label {
+    position: relative;
+    bottom: 0px;
+    left: 0;
+    width: auto;
+    height: auto;
+    pointer-events: all;
 }
 
 .changes .form-controls label::after {
@@ -85,6 +100,18 @@
 }
 /* end of input animations */
 
+.changes .form-controls.select div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.changes .form-controls.select h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
 .changes form input:focus {
     border: 1px solid #0000ff85;
     box-shadow: none;
@@ -117,4 +144,26 @@ mat-dialog-actions {
     letter-spacing: 3px;
     background-color: #fff;
     color: #000000;
+}
+
+::ng-deep .mat-accent .mat-pseudo-checkbox-checked,
+::ng-deep .mat-accent .mat-pseudo-checkbox-indeterminate {
+    background: green;
+}
+  
+::ng-deep .mat-accent .mat-pseudo-checkbox.mat-pseudo-checkbox-checked,
+::ng-deep .mat-accent .mat-pseudo-checkbox.mat-pseudo-checkbox-indeterminate {
+    border-color: blue;
+}
+
+::ng-deep .mat-mdc-selection-list .mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+    border-color: #404040;
+}
+
+::ng-deep .mat-mdc-selection-list .mdc-list-item__primary-text {
+    color: #404040;
+}
+
+::ng-deep .mat-mdc-selection-list .mdc-list-item:hover .mdc-list-item__primary-text {
+    color: #404040;
 }

@@ -81,19 +81,94 @@
                     <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
-                <div class="form-controls name" *ngIf="data.id == 15">
-                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
-                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                <div class="form-controls name select" *ngIf="data.id == 15">
+                    <h3 class="subheader">Select coffee varieties:</h3>
+
+                    <div>
+                        <input type="checkbox" id="RuiruII" name="Ruiru-II" value="Ruiru-II">
+                        <label for="RuiruII"> Ruiru II </label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="SL-28" name="SL-28" value="SL-28">
+                        <label for="SL-28"> SL-28</label><br>
+                    </div>
+                    
+                    <div><input type="checkbox" id="SL-34" name="SL-34" value="SL-34">
+                        <label for="SL-34">SL-34</label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="Grafted" name="Grafted" value="Grafted">
+                        <label for="Grafted"> Grafted</label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="Batian" name="Batian" value="Batian">
+                        <label for="Batian"> Batian</label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="BlueMountain" name="BlueMountain" value="BlueMountain">
+                        <label for="BlueMountain">Blue Mountain</label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="Geisha" name="Geisha" value="Geisha">
+                        <label for="Geisha"> Geisha</label><br>
+                    </div>
                 </div>
 
-                <div class="form-controls name" *ngIf="data.id == 16">
-                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
-                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                <div class="form-controls name select" *ngIf="data.id == 16">
+                    <h3 class="subheader">Select farming method:</h3>
+
+                    <div>
+                        <input type="checkbox" id="Organic" name="Organic" value="Organic">
+                        <label for="Organic"> Organic </label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="Inorganic" name="Inorganic" value="Inorganic">
+                        <label for="Inorganic"> Inorganic</label><br>
+                    </div>
                 </div>
 
-                <div class="form-controls name" *ngIf="data.id == 17">
-                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
-                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                <div class="form-controls name select" *ngIf="data.id == 17">
+                    <h3 class="subheader">Select certification:</h3>
+
+                    <div>
+                        <input type="checkbox" id="Fairtrade" name="Fairtrade" value="Fairtrade">
+                        <label for="Fairtrade"> Fairtrade </label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="rainforestalliance" name="rainforestalliance" value="Rainforest Alliance">
+                        <label for="rainforestalliance"> Rainforest Alliance</label><br>
+                    </div>
+                    
+                    <div><input type="checkbox" id="UTZ" name="UTZ" value="UTZ">
+                        <label for="UTZ">UTZ</label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="4C" name="4C" value="4C">
+                        <label for="4C"> 4C</label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="Organic" name="Organic" value="Organic">
+                        <label for="Organic"> Organic</label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="birdfriendly" name="birdfriendly" value="Bird Friendly">
+                        <label for="birdfriendly">Bird Friendly</label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="cafepractices" name="cafepractices" value="Cafe Practices">
+                        <label for="cafepractices"> Cafe Practices</label><br>
+                    </div>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 18">
@@ -101,9 +176,33 @@
                     <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
-                <div class="form-controls name" *ngIf="data.id == 19">
-                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
-                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                <div class="form-controls name select" *ngIf="data.id == 19">
+                        <h3 class="subheader">Select processing method:</h3>
+    
+                        <div>
+                            <input type="checkbox" id="Fullywashed" name="Fullywashed" value="Fullywashed">
+                            <label for="Fullywashed"> Fully washed </label><br>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="Partiallywashed" name="Partiallywashed" value="Partiallywashed">
+                            <label for="Partiallywashed"> Partially washed</label><br>
+                        </div>
+                        
+                        <div><input type="checkbox" id="Natural" name="Natural" value="Natural">
+                            <label for="Natural">Natural</label><br>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="Anaerobicfermentation" name="Anaerobicfermentation" value="Anaerobicfermentation">
+                            <label for="Anaerobicfermentation"> Anaerobic fermentation</label><br>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="Carbonicmaceration" name="Carbonicmaceration" value="Carbonicmaceration">
+                            <label for="Carbonicmaceration"> Carbonic maceration</label><br>
+                        </div>
+                   
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 20">
@@ -131,15 +230,37 @@
                     <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
-                <div class="form-controls name" *ngIf="data.id == 25">
-                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
-                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                <div class="form-controls name select" *ngIf="data.id == 25">
+                    <h3 class="subheader">Select species:</h3>
+                
+                    <div>
+                        <input type="checkbox" id="Arabica" name="Arabica" value="Arabica">
+                        <label for="Arabica"> Arabica </label><br>
+                    </div>
+                
+                    <div>
+                        <input type="checkbox" id="Robusta" name="Robusta" value="Robusta">
+                        <label for="Robusta"> Robusta</label><br>
+                    </div>
                 </div>
 
-                <div class="form-controls name" *ngIf="data.id == 26">
-                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
-                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
-                </div>
+                
+
+                
+
+                <div class="form-controls name select" *ngIf="data.id == 26">
+                    <h3 class="subheader">Select drying method:</h3>
+
+                    <div>
+                        <input type="checkbox" id="Sundrying" name="Sundrying" value="Sundrying">
+                        <label for="Sundrying"> Sun drying </label><br>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="Mechanicaldrying" name="Mechanicaldrying" value="Mechanicaldrying">
+                        <label for="Mechanicaldrying"> Mechanical drying</label><br>
+                    </div>
+                </div>                
 
                 <div class="form-controls name" *ngIf="data.id == 27">
                     <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
@@ -163,15 +284,25 @@
 
                 <div class="form-controls name" *ngIf="data.id == 31">
                     <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
-                    <input type="number" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 32">
                     <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
-                    <input type="email" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                    <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>
 
                 <div class="form-controls name" *ngIf="data.id == 33">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="number" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 34">
+                    <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
+                    <input type="email" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
+                </div>
+
+                <div class="form-controls name" *ngIf="data.id == 35">
                     <label for="{{data.key}}" class="block">{{data.value}}:</label><br>
                     <input type="text" [(ngModel)]="change" id="{{data.key}}" name="{{data.key}}" required>
                 </div>

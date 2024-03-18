@@ -59,6 +59,7 @@ import { FarminfoComponent } from './informationPages/farminfo/farminfo.componen
 import { TimelinecontentComponent } from './timelinecontent/timelinecontent.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
+import { environment } from 'src/environments/environment.development';
 // register Swiper custom elements
 register();
 
@@ -133,7 +134,7 @@ register();
           {
             id:GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '537434316637-217taafkc9uqkp1efl6nr2puekrftkan.apps.googleusercontent.com'
+              environment.GOOGLE_PROVIDER
             )
           }
         ],
