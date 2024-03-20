@@ -23,6 +23,7 @@ export class CartComponent implements OnInit {
   user:any | null = null;
   displayedColumns: string[] = ['image','weight','quantity','totalPrice','delete'];
   userCart:any | null = null;
+  userWishList:any | null = null;
   isLoggedIn:any
   itemQuantity:number = 1
   quantity = 0
@@ -131,8 +132,12 @@ increment(element: any, id: number, quantity: number){
   }
 }
 
-showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string){
+showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: string,item:any,name:any){
   const dialogRef = this.dialog.open(AddtocartComponent,{
+    data: {
+      item:item.id,
+      name:item.product.name
+    },
     width: '30pc',
     maxWidth: '90vw',
     autoFocus: false,
@@ -152,6 +157,7 @@ showAddtocartDialog(enterAnimationDuration: string, exitAnimationDuration: strin
       this.cart.updateCart(session)
       this.cart.data$.subscribe((data:any) =>{
         this.userCart = data['products']
+        this.userWishList = data['wishlist']
       })
     }else{
       this.userCart = data['products']

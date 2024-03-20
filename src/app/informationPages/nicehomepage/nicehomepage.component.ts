@@ -23,8 +23,8 @@ export class NicehomepageComponent implements OnInit {
   isShowDiv = false;
   isShowDiv2 = false;
   email: any;
-  products:any;
-  popularProducts: any;
+  products:any[] = [];
+  popularProducts: any[] = [];
   ratings : number[] = [];
   cloudinaryUrl = environment.CLOUDINARY_URL;
   filteredProducts:any
@@ -283,26 +283,23 @@ export class NicehomepageComponent implements OnInit {
     this.product.data$.subscribe((res:any)=>{
       if(res == ""){
         this.product.productData()
-        this.product.data$.subscribe((res:any)=>{})
+        this.product.data$.subscribe((res:any)=>{
+          this.popularProducts = res.slice(0,6)
+          this.products = res.slice(0,8)
+          console.log(res)
+        })
       }
       else {
-        let eightproducts: any[] = [];
-        let sixproducts: any[] = [];
-
-        for(let i=0; i<6; i++) {
-          sixproducts.push(res[i])
-          this.popularProducts = sixproducts;
-        }
-
-        for(let i=0; i<8; i++) {
-          eightproducts.push(res[i])
-          this.products = eightproducts;
-        }
+        this.popularProducts = res.slice(0,6)
+        this.products = res.slice(0,8)
+        console.log(this.popularProducts)
       }
 
       this.products.forEach((product:any) => {
         product.rating.forEach((ratingItem: any) => {
-          this.ratings.push(ratingItem.rating)
+          if(ratingItem){
+            this.ratings.push(ratingItem.rating)
+          }
         });
       })
     });

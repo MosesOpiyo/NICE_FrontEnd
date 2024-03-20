@@ -26,6 +26,7 @@ export class ProductStoreService {
   }
   productData(){
     this.product.getProcessedProducts().subscribe((res:any) => {
+      console.log('Response:',res)
       this.updateData(res)
     })
   }

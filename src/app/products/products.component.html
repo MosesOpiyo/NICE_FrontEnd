@@ -134,7 +134,7 @@
               <a role="button" (click)="showAddtocartDialog('500ms', '500ms',item,item.product.name)">
                 Add To Cart <i class="fa-solid fa-cart-arrow-down"></i>
               </a>
-              <a role="button" title="wishlist">
+              <a role="button" (click)="addToWishList(item.id,item)" title="wishlist">
                 <i class="fa-solid fa-heart"></i>
               </a>
             </div>
