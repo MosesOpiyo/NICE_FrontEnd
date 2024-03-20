@@ -135,6 +135,10 @@ export class NavbarComponent implements OnInit {
     }
     else{
       console.log("No token")
+      this.cartStore.data$.subscribe((data:any) =>{
+        this.userCart = data['products']?.length
+        console.log(this.userCart)
+      })
     }
    }
 

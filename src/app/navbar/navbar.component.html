@@ -9,10 +9,12 @@
 
         <div class="mobile-icons">
             <ul>
-                <li *ngIf="user" class="mobile-cart">
-                    <a routerLink="/Cart" title="Cart"><i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i></a>
+                <li *ngIf="userCart" class="mobile-cart">
+                    <a routerLink="/Cart" title="Cart">
+                        <i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i>
+                    </a>
                 </li>
-                <li *ngIf="!user" class="mobile-cart">
+                <li *ngIf="!userCart" class="mobile-cart">
                     <a routerLink="/Cart" title="Cart"><i class="fa-solid fa-cart-shopping two"></i></a>
                 </li>
                 <li *ngIf="!user">
@@ -63,12 +65,6 @@
                 </li>
                 
             </ul>
-            <!-- <ul *ngIf="user" class="cart-icon">
-                <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i></a></li>
-            </ul>
-            <ul *ngIf="!user" class="cart-icon">
-                <li class="cart"><a routerLink="/Cart"><i class="fa-solid fa-cart-shopping two"></i></a></li>
-            </ul> -->
 
             <span *ngIf="!isMenuOpen" class="burger" (click)="toggleMenu()">
                 <i class="fa-solid fa-bars"></i>
@@ -122,17 +118,11 @@
         </nav>
         
         <div class="credentials-nonmobile">
-            <ul *ngIf="userCart" class="cart-icon">
+            <ul class="cart-icon">
                 <li class="cart">
                     <a routerLink="/Cart" title="Cart">
-                        <i class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i>
-                    </a>
-                </li>
-            </ul>
-            <ul *ngIf="!userCart" class="cart-icon">
-                <li class="cart">
-                    <a routerLink="/Cart" title="Cart">
-                        <i class="fa-solid fa-cart-shopping two"></i>
+                        <i *ngIf="!userCart" class="fa-solid fa-cart-shopping two"></i>
+                        <i *ngIf="userCart" class="fa-solid fa-cart-shopping" [attr.value]="userCart"></i>
                     </a>
                 </li>
             </ul>
@@ -143,9 +133,6 @@
                         <i class="fa-solid fa-user"></i>
                     </button>
                 </li>
-                <!-- <li>
-                    <button (click)="showSignUpDialog()" type="button"><i class="fa-solid fa-arrow-right-to-bracket"></i>&nbsp;&nbsp;Sign Up</button>
-                </li> -->
             </ul>
 
             <ul *ngIf="user">
